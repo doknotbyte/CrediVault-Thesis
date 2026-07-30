@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrediVault Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons for modern UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="logo-text">Credi<span>Vault</span></div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#repository" class="nav-item"><i class="fa-solid fa-book-bookmark"></i> Repository</a>
+                <a href="#simulator" class="nav-item"><i class="fa-solid fa-gamepad"></i> Simulator</a>
+                <a href="#sources" class="nav-item"><i class="fa-solid fa-magnifying-glass-chart"></i> Fact-Check</a>
+                <a href="#developers" class="nav-item btn-contact">Developers</a>
+
+                <!-- 1. GITHUB REPO LINK IN NAVBAR -->
+                <a href="https://github.com/doknotbyte/CrediVault" target="_blank" class="nav-item nav-github" title="View Source Code on GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge-tag">
+                    <i class="fa-solid fa-graduation-cap"></i> TUP-Manila • BSIE-ICT Safety Portal
+                </div>
+                <h1>See <span>Safety</span> in a Whole New Way</h1>
+                <p>
+                    A collaborative learning platform designed to strengthen safety awareness, 
+                    master hazard identification, and build responsible behavior for future educators and practitioners.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#repository" class="btn btn-primary">
+                        <i class="fa-solid fa-compass"></i> Explore Repository
+                    </a>
+                    <a href="#simulator" class="btn btn-secondary">
+                        <i class="fa-solid fa-play"></i> Try Simulator
+                    </a>
+                </div>
+            </div>
+
+            <!-- CREATIVE ILLUSTRATION / BADGE WRAPPER -->
+            <div class="hero-visual">
+                <div class="badge-circle-wrapper">
+                    <div class="glowing-ring"></div>
+                    <div class="badge-content">
+                        <i class="fa-solid fa-hard-hat safety-icon"></i>
+                        <h2>SAFETY FIRST</h2>
+                        <span class="subtext">Interactive Hub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE FEATURES / LANDING MODULES PREVIEW -->
+    <section class="features-section" id="repository">
+        <div class="section-header">
+            <h2>Explore Core Learning</h2>
+            <p>Select a pathway below to start evaluating social media news credibility.</p>
+        </div>
+
+        <div class="feature-grid">
+            <!-- Repository Card -->
+            <div class="feature-card">
+                <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h3>Foundational Repository</h3>
+                <p>Access structured OHS concepts, sub-topics, and complete learning guidelines in one organized space.</p>
+                <a href="#" class="card-link">View Modules <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Interactive Simulator Card -->
+            <div class="feature-card highlighted" id="simulator">
+                <div class="card-badge">Interactive</div>
+                <div class="card-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <h3>Assessment Simulator</h3>
+                <p>Test your knowledge with real-time feedback. Learn from instant correct/wrong visual cues.</p>
+                <a href="#" class="card-link">Launch Simulator <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Fact Checking / External Sources Card -->
+            <div class="feature-card" id="sources">
+                <div class="card-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                <h3>Verified Sources & RRL</h3>
+                <p>Explore fact-checked references and external research links safely through our security portal.</p>
+                <!-- External Link Sample to Test Warning Pop-up -->
+                <button class="card-link btn-external" data-url="https://www.dole.gov.ph" data-name="DOLE Official OHS Portal">
+                    Browse Sources <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXTERNAL LINK WARNING MODAL (INTERSTITIAL POPUP) -->
+    <div class="modal-overlay" id="externalModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <i class="fa-solid fa-triangle-exclamation warning-icon"></i>
+                <h3>Leaving CrediVault</h3>
+            </div>
+            <div class="modal-body">
+                <p>You are about to be redirected to an external fact-checking reference:</p>
+                <div class="target-url-display" id="modalTargetUrl">https://example.com</div>
+                <p class="small-text">Make sure to verify external content with standard safety guidelines.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" id="closeModalBtn">Cancel</button>
+                <a href="#" id="proceedBtn" target="_blank" class="btn-proceed">Proceed to Source <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
