@@ -118,26 +118,31 @@ body {
 
 .hero-section {
     position: relative;
-    background: var(--bg-dark);
+    /* Nilagyan ng background image at pina-fit nang maayos */
+    background-image: url(images/home-bg.png); /* Siguraduhing tamang file extension (.png / .jpg) */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--white);
     padding: 5rem 2rem 6rem;
     overflow: hidden;
 }
 
-/* Optional background image overlay with dark gradient */
+/* Dark Overlay para malinaw pa rin ang mga puting text at buttons */
 .hero-bg-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(2, 132, 199, 0.25) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 40%);
-    z-index: 1;
+    /* Dark gradient at radial glow sa ibabaw ng image */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.70) 100%),
+                radial-gradient(circle at 20% 50%, rgba(2, 132, 199, 0.2) 0%, transparent 50%);
+    z-index: 1; /* Ilalagay sa likod ng text at buttons */
 }
 
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Nakapaibabaw sa overlay para fully clickable ang buttons */
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 3rem;
@@ -148,7 +153,8 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.6); /* Binawasan ang transparency para mas visible */
+    backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 6px 14px;
     border-radius: 20px;
@@ -162,6 +168,7 @@ body {
     line-height: 1.2;
     font-weight: 800;
     margin-bottom: 1.2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Binigyan ng drop shadow para standout sa image */
 }
 
 .hero-content h1 span {
@@ -172,10 +179,11 @@ body {
 }
 
 .hero-content p {
-    color: #cbd5e1;
+    color: #f1f5f9; /* Pinalinaw ang kulay ng text */
     font-size: 1.1rem;
     margin-bottom: 2rem;
     max-width: 580px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hero-buttons {
@@ -199,17 +207,20 @@ body {
 .btn-primary {
     background: var(--primary-color);
     color: var(--white);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
 }
 
 .btn-primary:hover {
     background: var(--primary-hover);
     transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.6);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
     color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .btn-secondary:hover {
