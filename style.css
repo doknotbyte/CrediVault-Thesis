@@ -1909,6 +1909,7 @@ HERO
 
 }
 
+
 .menu-toggle{
 
     display:flex;
@@ -1927,7 +1928,6 @@ HERO
 
     background:#08111f;
 
-    display:none;
 
     flex-direction:column;
 
@@ -1937,10 +1937,11 @@ HERO
 
     gap:8px;
 
-    
+    display:none;
+
     border-top:1px solid rgba(255,255,255,.08);
 
-    z-index:9999;
+
 
 }
 
@@ -2172,6 +2173,36 @@ font-size:2rem;
 
 }
 
+}
+
+.floating-card{
+    min-width:110px;
+    font-size:.62rem;
+    padding:8px 10px;
+}
+
+.card-top{
+    top:-45px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.card-bottom{
+    bottom:-45px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.card-left{
+    left:-65px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.card-right{
+    right:-65px;
+    top:50%;
+    transform:translateY(-50%);
 }
 
 @media(max-width:576px){
