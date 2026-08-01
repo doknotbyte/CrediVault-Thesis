@@ -2076,15 +2076,24 @@ HERO
 .hero-visual{
 
     margin-top:15px;
-
+    
     min-height:auto;
 
 }
 
 .vault-core{
+    transform:scale(.70);
+}
 
-    transform:scale(.82);
+.floating-card{
+    min-width:85px;
+    padding:6px 8px;
+    font-size:.55rem;
+    gap:5px;
+}
 
+.floating-card i{
+    font-size:.7rem;
 }
 
 }
@@ -2209,7 +2218,7 @@ font-size:2rem;
 
 @media(max-width:576px){
 
-    
+
 .hero-section{
 
 padding:120px 20px 80px;
