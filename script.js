@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const url = button.dataset.url;
 
             modalTargetUrl.textContent = url;
-
             proceedBtn.href = url;
 
             modal.classList.add("active");
@@ -65,15 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 40) {
-
-            navbar.classList.add("scrolled");
-
-        } else {
-
-            navbar.classList.remove("scrolled");
-
-        }
+        navbar.classList.toggle("scrolled", window.scrollY > 40);
 
     });
 
@@ -91,9 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.documentElement.scrollHeight -
             document.documentElement.clientHeight;
 
-        const percentage = (scrollTop / height) * 100;
-
-        progress.style.width = percentage + "%";
+        progress.style.width = (scrollTop / height) * 100 + "%";
 
     });
 
@@ -128,7 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.innerWidth > 992) {
 
         const hero = document.querySelector(".hero-section");
-
         const cards = document.querySelectorAll(".floating-card");
 
         if (hero) {
@@ -136,12 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
             hero.addEventListener("mousemove", (e) => {
 
                 const x = (e.clientX / window.innerWidth - .5) * 20;
-
                 const y = (e.clientY / window.innerHeight - .5) * 20;
 
                 cards.forEach((card, index) => {
 
-                    const speed = (index + 1) * 0.4;
+                    const speed = (index + 1) * .4;
 
                     card.style.transform =
                         `translate(${x * speed}px, ${y * speed}px)`;
@@ -181,7 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (entry.isIntersecting) {
 
                 entry.target.style.opacity = "1";
-
                 entry.target.style.transform = "translateY(0)";
 
             }
@@ -197,9 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach(item => {
 
         item.style.opacity = "0";
-
         item.style.transform = "translateY(40px)";
-
         item.style.transition = ".8s ease";
 
         observer.observe(item);
@@ -207,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /*==================================================
-        COUNTER ANIMATION
+        COUNTER
     ==================================================*/
 
     const counters = document.querySelectorAll(".stat-box h2");
@@ -215,13 +199,11 @@ document.addEventListener("DOMContentLoaded", () => {
     counters.forEach(counter => {
 
         const original = counter.innerText;
-
         const number = parseInt(original);
 
         if (isNaN(number)) return;
 
         let count = 0;
-
         const speed = Math.ceil(number / 60);
 
         function animate() {
@@ -251,7 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ==================================================*/
 
     const sections = document.querySelectorAll("section");
-
     const navItems = document.querySelectorAll(".nav-item");
 
     window.addEventListener("scroll", () => {
@@ -297,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ==================================================*/
 
     const menuToggle = document.getElementById("menuToggle");
-    const mobileNav = document.querySelector(".nav-links");
+    const mobileNav = document.getElementById("navLinks");
 
     if (menuToggle && mobileNav) {
 

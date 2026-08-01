@@ -1864,19 +1864,76 @@ HERO
 
 }
 
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
+
 /* ==========================================
    MOBILE MENU
 ========================================== */
 
 .menu-toggle{
 
+    .menu-toggle{
+
     display:none;
 
-    width:46px;
-    height:46px;
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+}
+
+
+@media (max-width:992px){
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.nav-container{
+
+    position:relative;
+
+    padding:16px 20px;
+
+}
+
+
+
+.logo-text{
+
+    font-size:1rem;
+
+}
+
+
+
+.menu-toggle{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:45px;
+
+    height:45px;
 
     border:none;
 
@@ -1892,34 +1949,7 @@ HERO
 
 }
 
-
-@media (max-width:992px){
-
-.nav-container{
-
-    padding:16px 20px;
-
-}
-
-/* logo */
-
-.logo-text{
-
-    font-size:1rem;
-
-}
-
-/* menu */
-
-.menu-toggle{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
+/* Mobile Menu */
 
 .nav-links{
 
@@ -1933,31 +1963,23 @@ HERO
 
     background:#08111f;
 
-    display:flex;
+    border-top:1px solid rgba(255,255,255,.08);
+
+    display:none;
 
     flex-direction:column;
 
-    gap:5px;
+    gap:8px;
 
-    padding:15px;
+    padding:18px;
 
-    transform:translateY(-20px);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.35s;
+    z-index:999;
 
 }
 
 .nav-links.active{
 
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateY(0);
+    display:flex;
 
 }
 
@@ -1965,19 +1987,32 @@ HERO
 
     width:100%;
 
-    padding:15px;
+    padding:14px 16px;
+
+    border-radius:10px;
 
 }
 
-/* hero */
+/* ==========================
+   HERO
+========================== */
+
+.hero-section{
+
+    padding:120px 20px 70px;
+
+}
+
+
 
 .hero-container{
 
     grid-template-columns:1fr;
 
+    gap:35px;
+
     text-align:center;
 
-    gap:30px;
 
 }
 
@@ -1991,13 +2026,19 @@ HERO
 
     margin:auto;
 
+    font-size:1rem;
+
 }
+
+/* Buttons */
 
 .hero-buttons{
 
     flex-direction:column;
 
     align-items:center;
+
+    gap:15px;
 
 }
 
@@ -2011,31 +2052,49 @@ HERO
 
 }
 
+/* Stats */
+
 .hero-stats{
 
     flex-direction:column;
 
     align-items:center;
 
+    gap:15px;
+
 }
 
-/* remove animation sa phone */
+.stat-box{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
+/* ==========================
+   HERO VISUAL
+========================== */
 
 .hero-visual{
 
-    margin-top:20px;
+    margin-top:15px;
 
-}
-
-.floating-card{
-
-    display:none;
+    min-height:auto;
 
 }
 
 .vault-core{
 
-    transform:scale(.85);
+    transform:scale(.82);
+
+}
+
+/* Hide floating cards */
+
+.floating-card{
+
+    display:none;
 
 }
 
@@ -2045,7 +2104,9 @@ HERO
 
 }
 
-/* cards */
+/* ==========================
+   FEATURES
+========================== */
 
 .feature-grid{
 
@@ -2053,13 +2114,61 @@ HERO
 
 }
 
+.feature-card{
+
+    padding:28px;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
 .footer-container{
 
     flex-direction:column;
 
+    justify-content:center;
+
+    align-items:center;
+
     text-align:center;
 
+    gap:25px;
+
 }
+
+.footer-brand{
+
+    justify-content:center;
+
+}
+
+.footer-links{
+
+    justify-content:center;
+
+}
+
+.footer-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:10px;
+
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    font-size:.85rem;
+
+    padding:20px;
 
 }
 
@@ -2137,4 +2246,5 @@ display:none;
 
 }
 
+}
 }
