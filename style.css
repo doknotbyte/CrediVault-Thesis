@@ -1907,18 +1907,28 @@ HERO
 
     position:relative;
 
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
 }
 
 .nav-actions{
 
-    margin-left:auto;
+    display:flex;
 
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:0;
 }
 
-.nav-github{
+.nav-actions a{
 
-    display:none !important;
-
+    display:none;
 }
 
 .menu-toggle{
