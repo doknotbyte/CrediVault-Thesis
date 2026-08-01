@@ -122,39 +122,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /*==================================================
-        HERO FLOAT EFFECT
+        HERO FLOAT EFFECT (Desktop Only)
     ==================================================*/
 
-    const hero = document.querySelector(".hero-section");
+    if (window.innerWidth > 992) {
 
-    const cards = document.querySelectorAll(".floating-card");
+        const hero = document.querySelector(".hero-section");
 
-    hero.addEventListener("mousemove", (e) => {
+        const cards = document.querySelectorAll(".floating-card");
 
-        const x = (e.clientX / window.innerWidth - .5) * 20;
+        if (hero) {
 
-        const y = (e.clientY / window.innerHeight - .5) * 20;
+            hero.addEventListener("mousemove", (e) => {
 
-        cards.forEach((card, index) => {
+                const x = (e.clientX / window.innerWidth - .5) * 20;
 
-            const speed = (index + 1) * 0.4;
+                const y = (e.clientY / window.innerHeight - .5) * 20;
 
-            card.style.transform =
-                `translate(${x * speed}px, ${y * speed}px)`;
+                cards.forEach((card, index) => {
 
-        });
+                    const speed = (index + 1) * 0.4;
 
-    });
+                    card.style.transform =
+                        `translate(${x * speed}px, ${y * speed}px)`;
 
-    hero.addEventListener("mouseleave", () => {
+                });
 
-        cards.forEach(card => {
+            });
 
-            card.style.transform = "";
+            hero.addEventListener("mouseleave", () => {
 
-        });
+                cards.forEach(card => {
 
-    });
+                    card.style.transform = "";
+
+                });
+
+            });
+
+        }
+
+    }
 
     /*==================================================
         SCROLL REVEAL
@@ -244,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const sections = document.querySelectorAll("section");
 
-    const navLinks = document.querySelectorAll(".nav-item");
+    const navItems = document.querySelectorAll(".nav-item");
 
     window.addEventListener("scroll", () => {
 
@@ -262,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-        navLinks.forEach(link => {
+        navItems.forEach(link => {
 
             link.classList.remove("active");
 
@@ -283,5 +291,51 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
+
+    /*==================================================
+        MOBILE MENU
+    ==================================================*/
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.querySelector(".nav-links");
+
+    if (menuToggle && mobileNav) {
+
+        menuToggle.addEventListener("click", () => {
+
+            mobileNav.classList.toggle("active");
+
+            const icon = menuToggle.querySelector("i");
+
+            if (mobileNav.classList.contains("active")) {
+
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+
+            } else {
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            }
+
+        });
+
+        mobileNav.querySelectorAll(".nav-item").forEach(item => {
+
+            item.addEventListener("click", () => {
+
+                mobileNav.classList.remove("active");
+
+                const icon = menuToggle.querySelector("i");
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            });
+
+        });
+
+    }
 
 });
