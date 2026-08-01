@@ -2209,6 +2209,36 @@ font-size:2rem;
 
 @media(max-width:576px){
 
+.floating-card{
+        min-width:90px;
+        max-width:95px;
+        padding:6px 8px;
+        font-size:.55rem;
+        gap:4px;
+    }
+
+    .floating-card i{
+        font-size:.7rem;
+    }
+
+    .card-top{
+        top:-28px;
+    }
+
+    .card-bottom{
+        bottom:-28px;
+    }
+
+    .card-left{
+        left:-45px;
+    }
+
+    .card-right{
+        right:-45px;
+    }
+
+}
+
 .hero-section{
 
 padding:120px 20px 80px;
@@ -2239,4 +2269,4 @@ display:none;
 
 }
 
-}
+
