@@ -1906,47 +1906,14 @@ HERO
 .nav-container{
 
     position:relative;
-    
 
 }
-
-
-
-.logo-text{
-
-    font-size:1rem;
-
-}
-
-
 
 .menu-toggle{
 
     display:flex;
 
-    justify-content:center;
-
-    align-items:center;
-
-    width:45px;
-
-    height:45px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:rgba(255,255,255,.08);
-
-    color:#fff;
-
-    font-size:20px;
-
-    cursor:pointer;
-
 }
-
-/* Mobile Menu */
 
 .nav-links{
 
@@ -1960,17 +1927,17 @@ HERO
 
     background:#08111f;
 
-    border-top:1px solid rgba(255,255,255,.08);
-
-    display:none;
-
     flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:15px;
 
     gap:8px;
 
-    padding:18px;
+    display:none;
 
-    z-index:999;
+    border-top:1px solid rgba(255,255,255,.08);
 
 }
 
@@ -1985,12 +1952,7 @@ HERO
 
     width:100%;
 
-    padding:14px 16px;
-
-    border-radius:10px;
-
 }
-
 /* ==========================
    HERO
 ========================== */
