@@ -1927,6 +1927,8 @@ HERO
 
     background:#08111f;
 
+    display:none;
+
     flex-direction:column;
 
     align-items:flex-start;
@@ -1935,11 +1937,13 @@ HERO
 
     gap:8px;
 
-    display:none;
-
+    
     border-top:1px solid rgba(255,255,255,.08);
 
+    z-index:9999;
+
 }
+
 
 .nav-links.active{
 
