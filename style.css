@@ -2087,14 +2087,7 @@ HERO
 .vault-core{
 
     transform:scale(.82);
-
 }
-
-/* Hide floating cards */
-
-.floating-card{
-
-    display:flex;
 
 }
 
@@ -2172,79 +2165,54 @@ HERO
 
 }
 
-@media(max-width:768px){
+.hero-visual{
 
-.hero-content h1{
-
-font-size:2.8rem;
+    margin-top:15px;
+    min-height:520px;
 
 }
 
 .vault-core{
 
-transform:scale(.8);
+    transform:scale(.78);
 
 }
 
-.hero-stats{
+.floating-card{
 
-flex-direction:column;
+    display:flex;
 
-align-items:center;
+    min-width:120px;
 
-}
+    padding:8px 10px;
 
-.features-section{
-
-margin-top:40px;
-
-}
-
-.section-header h2{
-
-font-size:2rem;
-
-}
-
-.developer-container h2{
-
-font-size:2rem;
-
-}
+    font-size:.72rem;
 
 }
 
 @media(max-width:576px){
 
-.hero-section{
+.hero-visual{
 
-padding:120px 20px 80px;
-
-}
-
-.hero-content h1{
-
-font-size:2.3rem;
-
-}
-
-.feature-card{
-
-padding:28px;
+    min-height:470px;
 
 }
 
 .vault-core{
 
-transform:scale(.65);
+    transform:scale(.65);
 
 }
 
-.scroll-indicator{
+.floating-card{
 
-display:none;
+    display:flex;
 
-}
+    min-width:105px;
+
+    padding:6px 10px;
+
+    font-size:.65rem;
 
 }
 
