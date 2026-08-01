@@ -2077,7 +2077,7 @@ HERO
 
 .scroll-indicator{
 
-    display:none;
+    display:flex;
 
 }
 
