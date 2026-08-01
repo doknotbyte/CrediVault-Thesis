@@ -2094,7 +2094,7 @@ HERO
 
 .floating-card{
 
-    display:none;
+    display:flex;
 
 }
 
@@ -2247,4 +2247,5 @@ display:none;
 }
 
 }
+
 }
