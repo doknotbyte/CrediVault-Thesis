@@ -2210,8 +2210,8 @@ font-size:2rem;
 @media(max-width:576px){
 
 .floating-card{
-        min-width:50px;
-        max-width:55px;
+        min-width:90px;
+        max-width:95px;
         padding:6px 8px;
         font-size:.55rem;
         gap:4px;
@@ -2268,5 +2268,4 @@ transform:scale(.65);
 display:none;
 
 }
-
 
