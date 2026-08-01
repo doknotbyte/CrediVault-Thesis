@@ -1909,6 +1909,18 @@ HERO
 
 }
 
+.nav-actions{
+
+    margin-left:auto;
+
+}
+
+.nav-github{
+
+    display:none !important;
+
+}
+
 .menu-toggle{
 
     display:flex;
