@@ -1905,16 +1905,47 @@ HERO
 .nav-container{
 
     position:relative;
-
+    
 
 }
+
+
+
+.logo-text{
+
+    font-size:1rem;
+
+}
+
 
 
 .menu-toggle{
 
     display:flex;
 
+    justify-content:center;
+
+    align-items:center;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:20px;
+
+    cursor:pointer;
+
 }
+
+/* Mobile Menu */
 
 .nav-links{
 
@@ -1928,20 +1959,17 @@ HERO
 
     background:#08111f;
 
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    padding:15px;
-
-    gap:8px;
+    border-top:1px solid rgba(255,255,255,.08);
 
     display:none;
 
-    border-top:1px solid rgba(255,255,255,.08);
+    flex-direction:column;
 
+    gap:8px;
 
+    padding:18px;
+
+    z-index:999;
 
 }
 
@@ -1956,7 +1984,9 @@ HERO
 
     width:100%;
 
-}
+    padding:14px 16px;
+
+    border-radius:10px;
 
 }
 
@@ -2057,7 +2087,7 @@ HERO
 
 }
 
-
+}
 
 .scroll-indicator{
 
@@ -2175,35 +2205,7 @@ font-size:2rem;
 
 }
 
-.floating-card{
-    min-width:90px;
-    font-size:.62rem;
-    padding:8px 10px;
-}
 
-.card-top{
-    top:-45px;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-.card-bottom{
-    bottom:-45px;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-.card-left{
-    left:-65px;
-    top:50%;
-    transform:translateY(-50%);
-}
-
-.card-right{
-    right:-65px;
-    top:50%;
-    transform:translateY(-50%);
-}
 
 @media(max-width:576px){
 
