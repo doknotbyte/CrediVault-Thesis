@@ -1915,10 +1915,6 @@ HERO
 
 }
 
-.nav-github{
-    display:none !important;
-}
-
 .nav-links{
 
     position:absolute;
@@ -1957,6 +1953,7 @@ HERO
     width:100%;
 
 }
+
 /* ==========================
    HERO
 ========================== */
