@@ -1870,203 +1870,336 @@ HERO
 ========================================== */
 
 .menu-toggle{
+
     display:none;
+
     width:45px;
     height:45px;
+
     border:none;
+
     border-radius:12px;
+
     background:rgba(255,255,255,.08);
+
     color:#fff;
+
     cursor:pointer;
+
     font-size:20px;
+
     align-items:center;
+
     justify-content:center;
+
 }
 
-/* ==========================================
-   TABLET
-========================================== */
+
 
 @media (max-width:992px){
 
-/* NAVBAR */
+/* ==========================
+   NAVBAR
+========================== */
 
 .nav-container{
+
     position:relative;
+    
 }
 
+
 .logo-text{
+
     font-size:1rem;
+
 }
 
 .menu-toggle{
+
     display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:20px;
+
+    cursor:pointer;
+
 }
 
+.nav-github{
+    display:none;
+}
+
+/* Mobile Menu */
+
 .nav-links{
+
     position:absolute;
+
     top:100%;
+
     left:0;
+
     width:100%;
+
     background:#08111f;
+
     border-top:1px solid rgba(255,255,255,.08);
 
     display:none;
+
     flex-direction:column;
 
     gap:8px;
+
     padding:18px;
 
     z-index:999;
+
 }
 
 .nav-links.active{
+
     display:flex;
+
 }
 
 .nav-item{
+
     width:100%;
+
     padding:14px 16px;
+
+    border-radius:10px;
+
 }
 
-/* HERO */
+/* ==========================
+   HERO
+========================== */
 
 .hero-section{
+
     padding:120px 20px 70px;
+
 }
 
+
+
 .hero-container{
+
     grid-template-columns:1fr;
+
     gap:35px;
+
     text-align:center;
+
+
 }
 
 .hero-content h1{
-    font-size:2.8rem;
+
+    font-size:2.5rem;
+
 }
 
 .hero-content p{
+
     margin:auto;
+
+    font-size:1rem;
+
 }
 
+/* Buttons */
+
 .hero-buttons{
+
     flex-direction:column;
+
     align-items:center;
+
     gap:15px;
+
 }
 
 .hero-buttons .btn{
+
     width:100%;
+
     max-width:320px;
+
     justify-content:center;
+
 }
 
-/* STATS */
+/* Stats */
 
 .hero-stats{
+
     flex-direction:column;
+
     align-items:center;
+
     gap:15px;
+
 }
 
 .stat-box{
+
     width:100%;
+
     max-width:320px;
+
 }
 
-/* HERO VISUAL */
+/* ==========================
+   HERO VISUAL
+========================== */
 
 .hero-visual{
-    margin-top:20px;
-    min-height:520px;
+
+    margin-top:15px;
+
+    min-height:auto;
+
 }
 
 .vault-core{
+
     transform:scale(.82);
+
 }
 
-/* HUWAG ITAGO */
-
-.floating-card{
-    display:flex;
-}
-
-/* FEATURES */
-
-.feature-grid{
-    grid-template-columns:1fr;
-}
-
-.feature-card{
-    padding:28px;
-}
-
-/* FOOTER */
-
-.footer-container{
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    gap:25px;
-}
-
-.footer-brand{
-    justify-content:center;
-}
-
-.footer-links{
-    justify-content:center;
-}
-
-.footer-social{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:10px;
 }
 
 .scroll-indicator{
+
     display:none;
-}
 
 }
 
-/* ==========================================
-   MOBILE
-========================================== */
+/* ==========================
+   FEATURES
+========================== */
+
+.feature-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.feature-card{
+
+    padding:28px;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer-container{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:25px;
+
+}
+
+.footer-brand{
+
+    justify-content:center;
+
+}
+
+.footer-links{
+
+    justify-content:center;
+
+}
+
+.footer-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:10px;
+
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    font-size:.85rem;
+
+    padding:20px;
+
+}
 
 @media(max-width:768px){
 
 .hero-content h1{
-    font-size:2.3rem;
+
+font-size:2.8rem;
+
 }
 
 .vault-core{
-    transform:scale(.72);
+
+transform:scale(.8);
+
 }
 
-.hero-visual{
-    min-height:470px;
-}
+.hero-stats{
 
-.floating-card{
-    display:flex;
-    min-width:105px;
-    font-size:.65rem;
-    padding:6px 10px;
+flex-direction:column;
+
+align-items:center;
+
 }
 
 .features-section{
-    margin-top:40px;
+
+margin-top:40px;
+
 }
 
 .section-header h2{
-    font-size:2rem;
+
+font-size:2rem;
+
 }
 
 .developer-container h2{
-    font-size:2rem;
+
+font-size:2rem;
+
 }
 
 }
@@ -2074,34 +2207,33 @@ HERO
 @media(max-width:576px){
 
 .hero-section{
-    padding:120px 20px 80px;
+
+padding:120px 20px 80px;
+
 }
 
 .hero-content h1{
-    font-size:2rem;
-}
 
-.vault-core{
-    transform:scale(.62);
-}
+font-size:2.3rem;
 
-.hero-visual{
-    min-height:430px;
-}
-
-.floating-card{
-    display:flex;
-    min-width:90px;
-    font-size:.60rem;
-    padding:6px 8px;
 }
 
 .feature-card{
-    padding:24px;
+
+padding:28px;
+
+}
+
+.vault-core{
+
+transform:scale(.65);
+
 }
 
 .scroll-indicator{
-    display:none;
+
+display:none;
+
 }
 
 }
