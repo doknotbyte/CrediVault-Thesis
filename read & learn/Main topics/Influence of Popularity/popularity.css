@@ -104,37 +104,6 @@ HEADER
 
 }
 
-.back-btn{
-
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-
-    padding:12px 22px;
-
-    border-radius:14px;
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid var(--border);
-
-    color:#fff;
-
-    font-size:.95rem;
-    font-weight:600;
-
-    transition:.3s;
-
-}
-
-.back-btn:hover{
-
-    background:linear-gradient(135deg,#2563eb,#38bdf8);
-
-    transform:translateY(-3px);
-
-}
-
 .page-title{
 
     margin-top:28px;
@@ -144,21 +113,13 @@ HEADER
 .page-tag{
 
     display:inline-block;
-
     padding:7px 16px;
-
     border-radius:50px;
-
     background:rgba(56,189,248,.12);
-
     color:#38bdf8;
-
     font-size:.78rem;
-
     font-weight:700;
-
     letter-spacing:1px;
-
     margin-bottom:18px;
 
 }
@@ -166,7 +127,6 @@ HEADER
 .page-title h1{
 
     font-size:2.45rem;
-
     margin-bottom:14px;
 
 }
@@ -174,11 +134,8 @@ HEADER
 .page-title p{
 
     max-width:720px;
-
     color:var(--muted);
-
     font-size:.98rem;
-
     line-height:1.8;
 
 }
@@ -197,13 +154,9 @@ PROGRESS
 .progress-info{
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     margin-bottom:12px;
-
     font-weight:600;
 
 }
@@ -212,22 +165,16 @@ PROGRESS
 
     width:100%;
     height:8px;
-
     background:rgba(255,255,255,.08);
-
     border-radius:50px;
-
     overflow:hidden;
 
 }
 
 .progress-fill{
 
-    width:50%;
     height:100%;
-
     border-radius:50px;
-
     background:linear-gradient(135deg,#2563eb,#38bdf8);
 
 }
@@ -239,17 +186,13 @@ CONTENT CARD
 .content-card{
 
     width:min(1180px,92%);
-
     margin:0 auto 28px;
 
     display:flex;
-
     gap:24px;
 
     background:var(--card);
-
     border:1px solid var(--border);
-
     border-radius:24px;
 
     padding:32px;
@@ -261,9 +204,7 @@ CONTENT CARD
 .section-number{
 
     width:68px;
-
     height:68px;
-
     flex-shrink:0;
 
     border-radius:18px;
@@ -271,13 +212,10 @@ CONTENT CARD
     background:linear-gradient(135deg,#2563eb,#38bdf8);
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
     font-size:1.35rem;
-
     font-weight:800;
 
 }
@@ -291,7 +229,6 @@ CONTENT CARD
 .section-content h2{
 
     font-size:1.85rem;
-
     margin-bottom:16px;
 
 }
@@ -299,9 +236,7 @@ CONTENT CARD
 .section-content p{
 
     color:var(--muted);
-
     line-height:1.8;
-
     font-size:.97rem;
 
 }
@@ -315,9 +250,7 @@ REFERENCE
     margin-top:22px;
 
     display:flex;
-
     gap:14px;
-
     align-items:flex-start;
 
     padding:16px 20px;
@@ -333,17 +266,14 @@ REFERENCE
 .reference-box i{
 
     color:#38bdf8;
-
     margin-top:3px;
 
 }
 
 .reference-box span{
 
-    font-size:.92rem;
-
     color:#cbd5e1;
-
+    font-size:.92rem;
     line-height:1.7;
 
 }
@@ -355,11 +285,8 @@ CONCERNS
 .concern-grid{
 
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:18px;
-
     margin-top:22px;
 
 }
@@ -367,11 +294,9 @@ CONCERNS
 .concern-card{
 
     padding:24px;
-
     border-radius:18px;
 
     background:rgba(255,255,255,.04);
-
     border:1px solid rgba(255,255,255,.06);
 
     transition:.3s;
@@ -381,7 +306,6 @@ CONCERNS
 .concern-card:hover{
 
     transform:translateY(-6px);
-
     border-color:#38bdf8;
 
 }
@@ -389,9 +313,7 @@ CONCERNS
 .concern-card i{
 
     font-size:28px;
-
     color:#38bdf8;
-
     margin-bottom:18px;
 
 }
@@ -399,16 +321,14 @@ CONCERNS
 .concern-card h3{
 
     margin-bottom:10px;
-
     font-size:1.1rem;
 
 }
 
 .concern-card p{
 
-    font-size:.93rem;
-
     margin:0;
+    font-size:.93rem;
 
 }
 
@@ -422,9 +342,7 @@ INTERACTIVE ACTIVITY
     margin:0 auto 28px;
 
     background:var(--card);
-
     border:1px solid var(--border);
-
     border-radius:24px;
 
     padding:32px;
@@ -436,7 +354,6 @@ INTERACTIVE ACTIVITY
 .activity-title{
 
     text-align:center;
-
     margin-bottom:28px;
 
 }
@@ -448,9 +365,7 @@ INTERACTIVE ACTIVITY
     color:#38bdf8;
 
     font-size:.82rem;
-
     font-weight:700;
-
     letter-spacing:1px;
 
     margin-bottom:12px;
@@ -460,7 +375,6 @@ INTERACTIVE ACTIVITY
 .activity-title h2{
 
     font-size:2rem;
-
     margin-bottom:12px;
 
 }
@@ -468,11 +382,9 @@ INTERACTIVE ACTIVITY
 .activity-title p{
 
     max-width:650px;
-
     margin:auto;
 
     color:var(--muted);
-
     line-height:1.8;
 
 }
@@ -547,17 +459,19 @@ IMAGE GAME
 
     bottom:0;
 
-    padding:15px;
+    padding:16px;
 
-    text-align:center;
-
-    background:linear-gradient(to top,rgba(0,0,0,.82),transparent);
+    background:linear-gradient(to top,rgba(0,0,0,.88),transparent);
 
     color:#fff;
 
+    text-align:center;
+
     font-weight:700;
 
-    font-size:.95rem;
+    font-size:.92rem;
+
+    line-height:1.6;
 
 }
 
@@ -599,7 +513,7 @@ CORRECT / WRONG
 
     font-size:20px;
 
-    font-weight:bold;
+    font-weight:700;
 
 }
 
@@ -639,7 +553,7 @@ CORRECT / WRONG
 
     font-size:20px;
 
-    font-weight:bold;
+    font-weight:700;
 
 }
 
@@ -698,7 +612,7 @@ FEEDBACK
 }
 
 /* ==========================================================
-TIPS
+HOW TO DETECT
 ========================================================== */
 
 .tips-grid{
@@ -723,13 +637,23 @@ TIPS
 
     padding:22px;
 
+    transition:.3s;
+
+}
+
+.tip-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#38bdf8;
+
 }
 
 .tip-card i{
 
-    color:#38bdf8;
-
     font-size:26px;
+
+    color:#38bdf8;
 
     margin-bottom:16px;
 
@@ -746,6 +670,10 @@ TIPS
     margin:0;
 
     font-size:.93rem;
+
+    color:var(--muted);
+
+    line-height:1.8;
 
 }
 
@@ -820,28 +748,25 @@ BOTTOM NAVIGATION
 .lesson-navigation{
 
     width:min(1180px,92%);
-
     margin:35px auto 70px;
 
     display:flex;
-
-    justify-content:space-between;
+    justify-content:flex-start;
 
 }
 
-.next-btn{
+.lesson-navigation .back-btn{
 
     display:inline-flex;
-
     align-items:center;
-
     gap:10px;
 
     padding:13px 26px;
 
     border-radius:14px;
 
-    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--border);
 
     color:#fff;
 
@@ -851,8 +776,9 @@ BOTTOM NAVIGATION
 
 }
 
-.next-btn:hover{
+.lesson-navigation .back-btn:hover{
 
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
     transform:translateY(-3px);
 
 }
@@ -863,25 +789,11 @@ ANIMATION
 
 @keyframes shake{
 
-0%{
-    transform:translateX(0);
-}
-
-25%{
-    transform:translateX(-6px);
-}
-
-50%{
-    transform:translateX(6px);
-}
-
-75%{
-    transform:translateX(-6px);
-}
-
-100%{
-    transform:translateX(0);
-}
+0%{transform:translateX(0);}
+25%{transform:translateX(-6px);}
+50%{transform:translateX(6px);}
+75%{transform:translateX(-6px);}
+100%{transform:translateX(0);}
 
 }
 
@@ -889,258 +801,152 @@ ANIMATION
 RESPONSIVE
 ========================================================== */
 
-@media(max-width:900px){
-
-.content-card{
-
-    flex-direction:column;
-
-}
-
-.concern-grid,
-.tips-grid,
-.tool-grid,
-.image-game{
-
-    grid-template-columns:1fr;
-
-}
-
-.image-option img{
-
-    height:260px;
-
-}
-
-.lesson-navigation{
-
-    flex-direction:column;
-
-    gap:16px;
-
-}
-
-.next-btn,
-.back-btn{
-
-    justify-content:center;
-
-}
-
-}
-
-@media(max-width:600px){
-
-.page-title h1{
-
-    font-size:2rem;
-
-}
-
-.section-content h2{
-
-    font-size:1.5rem;
-
-}
-
-.activity-title h2{
-
-    font-size:1.6rem;
-
-}
-
-.image-option img{
-
-    height:220px;
-
-}
-
-.content-card,
-.activity-card{
-
-    padding:22px;
-
-}
-
-}
-
-/* ==========================================================
-RESPONSIVE DESIGN
-========================================================== */
-
 @media (max-width:992px){
 
-.content-card{
+    .content-card{
 
-    flex-direction:column;
-    padding:35px;
+        flex-direction:column;
+        padding:35px;
 
-}
+    }
 
-.section-number{
+    .section-number{
 
-    width:70px;
-    height:70px;
-    min-width:70px;
+        width:70px;
+        height:70px;
+        min-width:70px;
 
-}
+    }
 
-.concern-grid,
-.tips-grid,
-.tool-grid{
+    .concern-grid,
+    .tips-grid,
+    .tool-grid{
 
-    grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
 
-}
+    }
 
-.image-game{
+    .image-game{
 
-    grid-template-columns:1fr;
-    gap:25px;
+        grid-template-columns:1fr;
+        gap:25px;
 
-}
+    }
 
 }
 
 @media (max-width:768px){
 
-.ai-header{
+    .ai-header{
 
-    width:92%;
-    margin:35px auto;
+        width:92%;
+        margin:35px auto;
 
-}
+    }
 
-.page-title h1{
+    .page-title h1{
 
-    font-size:2rem;
+        font-size:2rem;
 
-}
+    }
 
-.page-title p{
+    .page-title p{
 
-    font-size:.95rem;
+        font-size:.95rem;
 
-}
+    }
 
-.content-card{
+    .content-card{
 
-    width:92%;
-    padding:25px;
-    border-radius:22px;
+        width:92%;
+        padding:25px;
+        border-radius:22px;
 
-}
+    }
 
-.section-content h2{
+    .activity-card{
 
-    font-size:1.5rem;
+        width:92%;
+        padding:25px;
 
-}
+    }
 
-.section-content p{
+    .section-content h2{
 
-    font-size:.95rem;
+        font-size:1.5rem;
 
-}
+    }
 
-.activity-card{
+    .activity-title h2{
 
-    width:92%;
-    padding:25px;
+        font-size:1.6rem;
 
-}
+    }
 
-.activity-title h2{
+    .image-option img{
 
-    font-size:1.6rem;
+        height:230px;
 
-}
+    }
 
-.image-option img{
+    .concern-grid,
+    .tips-grid,
+    .tool-grid{
 
-    height:230px;
+        grid-template-columns:1fr;
 
-}
-
-.concern-grid,
-.tips-grid,
-.tool-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.lesson-navigation{
-
-    width:92%;
-    flex-direction:column;
-    gap:15px;
-
-}
-
-.back-btn,
-.next-btn{
-
-    width:100%;
-    justify-content:center;
-
-}
+    }
 
 }
 
 @media (max-width:480px){
 
-.page-tag{
+    .page-tag{
 
-    font-size:.7rem;
-    padding:6px 14px;
+        font-size:.7rem;
+        padding:6px 14px;
 
-}
+    }
 
-.page-title h1{
+    .page-title h1{
 
-    font-size:1.7rem;
-    line-height:1.3;
+        font-size:1.7rem;
+        line-height:1.3;
 
-}
+    }
 
-.progress-info{
+    .progress-info{
 
-    font-size:.85rem;
+        font-size:.85rem;
 
-}
+    }
 
-.section-number{
+    .section-number{
 
-    width:60px;
-    height:60px;
-    font-size:1.2rem;
+        width:60px;
+        height:60px;
+        font-size:1.2rem;
 
-}
+    }
 
-.content-card{
+    .content-card,
+    .activity-card{
 
-    padding:20px;
+        padding:20px;
 
-}
+    }
 
-.activity-card{
+    .image-option img{
 
-    padding:20px;
+        height:190px;
 
-}
+    }
 
-.image-option img{
+    .reference-box{
 
-    height:190px;
+        flex-direction:column;
+        gap:10px;
 
-}
-
-.reference-box{
-
-    flex-direction:column;
-    gap:10px;
-
-}
+    }
 
 }
