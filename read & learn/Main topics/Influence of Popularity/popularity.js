@@ -61,7 +61,7 @@ imageOptions.forEach(option => {
 
                 `;
 
-            },2500);
+            },10000);
 
         }
 
@@ -89,7 +89,7 @@ imageOptions.forEach(option => {
 
             answered=false;
 
-        },7000);
+        },10000);
 
     });
 

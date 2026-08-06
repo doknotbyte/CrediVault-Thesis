@@ -32,7 +32,7 @@ imageOptions.forEach(option => {
 
             feedbackBox.classList.add("show");
 
-            setTimeout(resetActivity, 3000);
+            setTimeout(resetActivity, 10000);
 
         }
 
@@ -54,7 +54,7 @@ imageOptions.forEach(option => {
 
                 feedbackBox.classList.add("show");
 
-                setTimeout(resetActivity, 3000);
+                setTimeout(resetActivity, 10000);
 
             }, 3000);
 

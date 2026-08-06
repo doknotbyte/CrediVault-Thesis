@@ -99,7 +99,7 @@ checkButton.addEventListener("click", () => {
 
         answered = false;
 
-    }, 6000);
+    }, 10000);
 
 });
 
