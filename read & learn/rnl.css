@@ -98,8 +98,11 @@ READ & LEARN
 
 .lesson-header{
 
-    width:min(1390px,90%);
-    margin:30px auto 15px;
+    max-width:1450px;
+
+    margin:55px auto 25px;
+
+    padding:0 5%;
 
 }
 
@@ -141,9 +144,11 @@ READ & LEARN
 
 .lesson-title h1{
 
-    font-size:3.2rem;
+    font-size:3.3rem;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
+
+    line-height:1.05;
 
 }
 

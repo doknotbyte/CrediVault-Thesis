@@ -1,0 +1,949 @@
+/* ==========================================================
+GLOBAL
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#08111f;
+    --card:rgba(18,27,46,.82);
+    --border:rgba(255,255,255,.08);
+    --primary:#2563eb;
+    --secondary:#38bdf8;
+    --text:#ffffff;
+    --muted:#9caec8;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    position:relative;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+/* ==========================================================
+BACKGROUND
+========================================================== */
+
+.hero-grid{
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+
+    background-size:60px 60px;
+
+    z-index:-3;
+
+}
+
+.gradient-blob{
+
+    position:fixed;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.25;
+    z-index:-2;
+
+}
+
+.blob-1{
+
+    width:430px;
+    height:430px;
+    background:#2563eb;
+    left:-130px;
+    top:-130px;
+
+}
+
+.blob-2{
+
+    width:520px;
+    height:520px;
+    background:#06b6d4;
+    right:-180px;
+    bottom:-180px;
+
+}
+
+/* ==========================================================
+HEADER
+========================================================== */
+
+.ai-header{
+
+    width:min(1180px,92%);
+    margin:45px auto 35px;
+
+}
+
+.back-btn{
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:12px 22px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid var(--border);
+
+    color:#fff;
+
+    font-size:.95rem;
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+
+    transform:translateY(-3px);
+
+}
+
+.page-title{
+
+    margin-top:28px;
+
+}
+
+.page-tag{
+
+    display:inline-block;
+
+    padding:7px 16px;
+
+    border-radius:50px;
+
+    background:rgba(56,189,248,.12);
+
+    color:#38bdf8;
+
+    font-size:.78rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:18px;
+
+}
+
+.page-title h1{
+
+    font-size:2.45rem;
+
+    margin-bottom:14px;
+
+}
+
+.page-title p{
+
+    max-width:720px;
+
+    color:var(--muted);
+
+    font-size:.98rem;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+PROGRESS
+========================================================== */
+
+.progress-section{
+
+    width:min(1180px,92%);
+    margin:auto auto 35px;
+
+}
+
+.progress-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+
+}
+
+.progress-bar{
+
+    width:100%;
+    height:8px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:50%;
+    height:100%;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+
+}
+
+/* ==========================================================
+CONTENT CARD
+========================================================== */
+
+.content-card{
+
+    width:min(1180px,92%);
+
+    margin:0 auto 28px;
+
+    display:flex;
+
+    gap:24px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:32px;
+
+    backdrop-filter:blur(16px);
+
+}
+
+.section-number{
+
+    width:68px;
+
+    height:68px;
+
+    flex-shrink:0;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.35rem;
+
+    font-weight:800;
+
+}
+
+.section-content{
+
+    flex:1;
+
+}
+
+.section-content h2{
+
+    font-size:1.85rem;
+
+    margin-bottom:16px;
+
+}
+
+.section-content p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    font-size:.97rem;
+
+}
+
+/* ==========================================================
+REFERENCE
+========================================================== */
+
+.reference-box{
+
+    margin-top:22px;
+
+    display:flex;
+
+    gap:14px;
+
+    align-items:flex-start;
+
+    padding:16px 20px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.05);
+
+    border-left:4px solid #38bdf8;
+
+}
+
+.reference-box i{
+
+    color:#38bdf8;
+
+    margin-top:3px;
+
+}
+
+.reference-box span{
+
+    font-size:.92rem;
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+CONCERNS
+========================================================== */
+
+.concern-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin-top:22px;
+
+}
+
+.concern-card{
+
+    padding:24px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:.3s;
+
+}
+
+.concern-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#38bdf8;
+
+}
+
+.concern-card i{
+
+    font-size:28px;
+
+    color:#38bdf8;
+
+    margin-bottom:18px;
+
+}
+
+.concern-card h3{
+
+    margin-bottom:10px;
+
+    font-size:1.1rem;
+
+}
+
+.concern-card p{
+
+    font-size:.93rem;
+
+    margin:0;
+
+}
+
+/* ==========================================================
+INTERACTIVE ACTIVITY
+========================================================== */
+
+.activity-card{
+
+    width:min(1180px,92%);
+    margin:0 auto 28px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:32px;
+
+    backdrop-filter:blur(16px);
+
+}
+
+.activity-title{
+
+    text-align:center;
+
+    margin-bottom:28px;
+
+}
+
+.activity-title span{
+
+    display:inline-block;
+
+    color:#38bdf8;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:12px;
+
+}
+
+.activity-title h2{
+
+    font-size:2rem;
+
+    margin-bottom:12px;
+
+}
+
+.activity-title p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+IMAGE GAME
+========================================================== */
+
+.image-game{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+    margin-top:30px;
+
+}
+
+.image-option{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    border:2px solid rgba(255,255,255,.08);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    background:#111827;
+
+}
+
+.image-option:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#38bdf8;
+
+    box-shadow:0 20px 35px rgba(0,0,0,.35);
+
+}
+
+.image-option img{
+
+    width:100%;
+
+    height:340px;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.image-overlay{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    padding:15px;
+
+    text-align:center;
+
+    background:linear-gradient(to top,rgba(0,0,0,.82),transparent);
+
+    color:#fff;
+
+    font-weight:700;
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================================
+CORRECT / WRONG
+========================================================== */
+
+.image-option.correct{
+
+    border:3px solid #22c55e;
+
+}
+
+.image-option.correct::after{
+
+    content:"✔";
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+.image-option.wrong{
+
+    border:3px solid #ef4444;
+
+    animation:shake .4s;
+
+}
+
+.image-option.wrong::after{
+
+    content:"✖";
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#ef4444;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+.image-option.fade img{
+
+    opacity:.25;
+
+    transition:3s;
+
+}
+
+/* ==========================================================
+FEEDBACK
+========================================================== */
+
+.feedback-box{
+
+    display:none;
+
+    margin-top:28px;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.05);
+
+    border-left:5px solid #38bdf8;
+
+    gap:18px;
+
+    align-items:flex-start;
+
+}
+
+.feedback-box.show{
+
+    display:flex;
+
+}
+
+.feedback-icon{
+
+    color:#38bdf8;
+
+    font-size:1.6rem;
+
+}
+
+.feedback-text{
+
+    color:#d7e3f3;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+TIPS
+========================================================== */
+
+.tips-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:22px;
+
+}
+
+.tip-card{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:22px;
+
+}
+
+.tip-card i{
+
+    color:#38bdf8;
+
+    font-size:26px;
+
+    margin-bottom:16px;
+
+}
+
+.tip-card h3{
+
+    margin-bottom:10px;
+
+}
+
+.tip-card p{
+
+    margin:0;
+
+    font-size:.93rem;
+
+}
+
+/* ==========================================================
+TOOLS
+========================================================== */
+
+.tool-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:22px;
+
+}
+
+.tool-card{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:.3s;
+
+}
+
+.tool-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#38bdf8;
+
+}
+
+.tool-card i{
+
+    font-size:28px;
+
+    color:#38bdf8;
+
+    margin-bottom:14px;
+
+}
+
+.tool-card h3{
+
+    margin-bottom:10px;
+
+}
+
+.tool-card p{
+
+    font-size:.93rem;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+BOTTOM NAVIGATION
+========================================================== */
+
+.lesson-navigation{
+
+    width:min(1180px,92%);
+
+    margin:35px auto 70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+.next-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:13px 26px;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+
+    color:#fff;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.next-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================================
+ANIMATION
+========================================================== */
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+25%{transform:translateX(-6px);}
+50%{transform:translateX(6px);}
+75%{transform:translateX(-6px);}
+100%{transform:translateX(0);}
+
+}
+
+/* ==========================================================
+RESPONSIVE
+========================================================== */
+
+@media(max-width:900px){
+
+.content-card{
+
+    flex-direction:column;
+
+}
+
+.concern-grid,
+.tips-grid,
+.tool-grid,
+.image-game{
+
+    grid-template-columns:1fr;
+
+}
+
+.image-option img{
+
+    height:260px;
+
+}
+
+.lesson-navigation{
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.next-btn,
+.back-btn{
+
+    justify-content:center;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.page-title h1{
+
+    font-size:2rem;
+
+}
+
+.section-content h2{
+
+    font-size:1.5rem;
+
+}
+
+.activity-title h2{
+
+    font-size:1.6rem;
+
+}
+
+.image-option img{
+
+    height:220px;
+
+}
+
+.content-card,
+.activity-card{
+
+    padding:22px;
+
+}
+
+}

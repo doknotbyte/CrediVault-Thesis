@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Read & Learn | CrediVault</title>
+
+    <link rel="stylesheet" href="ai.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+BACKGROUND
+========================================================== -->
+
+<div class="hero-grid"></div>
+
+<div class="gradient-blob blob-1"></div>
+<div class="gradient-blob blob-2"></div>
+
+<!-- ==========================================================
+HEADER
+========================================================== -->
+
+<header class="ai-header">
+
+    <div class="page-title">
+
+        <span class="page-tag">
+
+            AI Topic
+
+        </span>
+
+        <h1>
+
+            AI Manipulation Identification
+
+        </h1>
+
+        <p>
+
+            Learn how Artificial Intelligence can manipulate digital
+            images and understand how to distinguish authentic media
+            from AI-generated content through interactive activities.
+
+        </p>
+
+    </div>
+
+</header>
+
+<!-- ==========================================================
+PROGRESS
+========================================================== -->
+
+<section class="progress-section">
+
+    <div class="progress-info">
+
+        <span>
+
+            Module Progress
+
+        </span>
+
+        <strong>
+
+            Topic 1 of 2
+
+        </strong>
+
+    </div>
+
+    <div class="progress-bar">
+
+        <div class="progress-fill"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+TOPIC 1
+========================================================== -->
+
+<section class="content-card">
+
+    <div class="section-number">
+
+        01
+
+    </div>
+
+    <div class="section-content">
+
+        <h2>
+
+            What is Digital Manipulation?
+
+        </h2>
+
+        <p>
+
+            Digital manipulation is the alteration of a photo,
+            video, or audio file using editing software,
+            cropping, splicing, retouching, or Artificial
+            Intelligence to change what it originally showed.
+
+        </p>
+
+        <div class="reference-box">
+
+            <i class="fa-solid fa-book"></i>
+
+            <span>
+
+                Reference:
+                https://cloud.google.com/learn/what-is-artificial-intelligence
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+CONCERNS
+========================================================== -->
+
+<section class="content-card">
+
+    <div class="section-number">
+
+        02
+
+    </div>
+
+    <div class="section-content">
+
+        <h2>
+
+            Concerns About Digital AI Manipulation
+
+        </h2>
+
+        <div class="concern-grid">
+
+            <div class="concern-card">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <h3>
+
+                    False Narratives
+
+                </h3>
+
+                <p>
+
+                    AI-manipulated media can spread false stories
+                    about events that never actually happened.
+
+                </p>
+
+            </div>
+
+            <div class="concern-card">
+
+                <i class="fa-solid fa-user-xmark"></i>
+
+                <h3>
+
+                    Reputation Damage
+
+                </h3>
+
+                <p>
+
+                    People may appear in fabricated images or
+                    videos that can negatively affect their
+                    reputation.
+
+                </p>
+
+            </div>
+
+            <div class="concern-card">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <h3>
+
+                    Loss of Trust
+
+                </h3>
+
+                <p>
+
+                    Constant exposure to manipulated media can
+                    reduce public trust in legitimate photos,
+                    videos, and online information.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="reference-box">
+
+            <i class="fa-solid fa-book"></i>
+
+            <span>
+
+                Reference:
+                https://www.ibm.com/think/insights/10-ai-dangers-and-risks-and-how-to-manage-them
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+INTERACTIVE ACTIVITY
+========================================================== -->
+
+<section class="activity-card">
+
+    <div class="activity-title">
+
+        <span>
+
+            Interactive Challenge
+
+        </span>
+
+        <h2>
+
+            Which Image is AI Generated?
+
+        </h2>
+
+        <p>
+
+            Click one image. After selecting, immediate feedback
+            will appear explaining why your answer is correct or
+            incorrect.
+
+        </p>
+
+    </div>
+
+    <div class="image-game">
+
+        <!-- REAL IMAGE -->
+
+        <div class="image-option"
+            data-answer="correct">
+
+            <img
+                src="images/digital-real.jpg"
+                alt="Real Image">
+
+            <div class="image-overlay">
+
+                Click to Select
+
+            </div>
+
+        </div>
+
+        <!-- AI IMAGE -->
+
+        <div class="image-option"
+            data-answer="wrong">
+
+            <img
+                src="images/digital-ai.jpg"
+                alt="AI Image">
+
+            <div class="image-overlay">
+
+                Click to Select
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FEEDBACK -->
+
+    <div class="feedback-box" id="feedbackBox">
+
+        <div class="feedback-icon">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+        </div>
+
+        <div class="feedback-text">
+
+            Feedback will appear here.
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+HOW TO DETECT
+========================================================== -->
+
+<section class="content-card">
+
+    <div class="section-number">
+
+        03
+
+    </div>
+
+    <div class="section-content">
+
+        <h2>
+
+            How to Detect Digital AI Manipulation
+
+        </h2>
+
+        <div class="tips-grid">
+
+            <div class="tip-card">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                <h3>Lighting & Shadows</h3>
+
+                <p>
+
+                    Check whether the lighting direction and shadows
+                    are consistent throughout the image.
+
+                </p>
+
+            </div>
+
+            <div class="tip-card">
+
+                <i class="fa-solid fa-image"></i>
+
+                <h3>Reverse Image Search</h3>
+
+                <p>
+
+                    Search the image online to determine whether an
+                    original version already exists.
+
+                </p>
+
+            </div>
+
+            <div class="tip-card">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <h3>Metadata (EXIF)</h3>
+
+                <p>
+
+                    Inspect image metadata for editing software or AI
+                    generation traces.
+
+                </p>
+
+            </div>
+
+            <div class="tip-card">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h3>Repeated Patterns</h3>
+
+                <p>
+
+                    Look closely for blurred edges, repeated textures,
+                    or unnatural facial symmetry.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="reference-box">
+
+            <i class="fa-solid fa-book"></i>
+
+            <span>
+
+                Reference:
+                https://www.youtube.com/watch?v=bBOJJlP68qo
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+TOOLS
+========================================================== -->
+
+<section class="content-card">
+
+    <div class="section-number">
+
+        04
+
+    </div>
+
+    <div class="section-content">
+
+        <h2>
+
+            AI Image Detection Tools
+
+        </h2>
+
+        <div class="tool-grid">
+
+            <div class="tool-card">
+
+                <i class="fa-solid fa-shield"></i>
+
+                <h3>Hive Moderation</h3>
+
+                <p>
+
+                    A free AI detector that performs an initial analysis
+                    of images and identifies AI-generated content.
+
+                </p>
+
+            </div>
+
+            <div class="tool-card">
+
+                <i class="fa-solid fa-fire"></i>
+
+                <h3>Illuminarty</h3>
+
+                <p>
+
+                    Uses visual heatmaps to explain which image regions
+                    appear to be AI generated.
+
+                </p>
+
+            </div>
+
+            <div class="tool-card">
+
+                <i class="fa-solid fa-camera"></i>
+
+                <h3>Reverse Image Search</h3>
+
+                <p>
+
+                    Compare the uploaded image with earlier versions
+                    found across the internet.
+
+                </p>
+
+            </div>
+
+            <div class="tool-card">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <h3>Metadata Checker</h3>
+
+                <p>
+
+                    Examine EXIF information to determine editing
+                    history and file origin.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="reference-box">
+
+            <i class="fa-solid fa-book"></i>
+
+            <span>
+
+                Reference:
+                https://walterwrites.ai/best-ai-image-detector/
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+NEXT LESSON
+========================================================== -->
+
+<section class="lesson-navigation">
+
+    <a href="../../rnl.html" class="back-btn">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Read & Learn
+
+    </a>
+
+    <a href="ai-misinformation.html" class="next-btn">
+
+        Next Topic
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</section>
+
+<script src="ai.js"></script>
+
+</body>
+</html>
