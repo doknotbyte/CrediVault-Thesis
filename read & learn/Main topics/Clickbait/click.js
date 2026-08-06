@@ -32,9 +32,8 @@ imageOptions.forEach(option => {
 
                 <strong>Correct!</strong><br><br>
 
-                Nice work! This headline appears more balanced and
-                informative. It provides information without relying
-                on exaggerated emotions or misleading curiosity.
+                This headline uses emotional trigger words ("SURPRISE," "Mind-BLOWING") and exaggerated claims to bait clicks.
+
 
             `;
 
@@ -56,10 +55,8 @@ imageOptions.forEach(option => {
 
                     <strong>Incorrect.</strong><br><br>
 
-                    This headline uses clickbait techniques such as
-                    exaggerated wording, emotional triggers, or vague
-                    promises designed to attract clicks instead of
-                    accurately describing the content.
+                    This headline is factual and uses neutral language from a credible source.
+
 
                 `;
 

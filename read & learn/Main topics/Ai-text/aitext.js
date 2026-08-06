@@ -24,10 +24,10 @@ imageOptions.forEach(option => {
 
             feedbackText.innerHTML = `
                 <strong>Correct!</strong><br><br>
-                Excellent observation. This image appears authentic because
-                its lighting, facial details, proportions, and background
-                elements remain consistent. Real photographs generally
-                maintain natural textures and realistic visual patterns.
+                This post is actually about AI-generated fake wildfire images being 
+                spread online — officials had to step in to warn the public. 
+                The dramatic, almost too-perfect imagery is a red flag: always check if a 
+                photo looks artificially polished or lacks a verifiable news source.
             `;
 
             feedbackBox.classList.add("show");
@@ -45,11 +45,11 @@ imageOptions.forEach(option => {
 
                 feedbackText.innerHTML = `
                     <strong>Incorrect.</strong><br><br>
-                    This image contains characteristics commonly found
-                    in AI-generated content such as unnatural textures,
-                    inconsistent lighting, distorted edges, or unrealistic
-                    visual details. Always inspect images carefully before
-                    believing or sharing them online.
+                    This is real, verified reporting — a named journalist,
+                    a credited outlet, an on-the-ground video, and a specific 
+                    dateline (Pacific Palisades, LA). Authentic disaster coverage
+                    comes with real bylines and raw, imperfect footage — not cinematic AI-generated visuals.
+
                 `;
 
                 feedbackBox.classList.add("show");
@@ -155,7 +155,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
 
         progress.style.transition = "1.2s ease";
-        progress.style.width = "50%";
+        progress.style.width = "100%";
 
     }, 300);
 

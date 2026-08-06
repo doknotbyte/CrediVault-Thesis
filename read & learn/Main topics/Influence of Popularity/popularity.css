@@ -395,13 +395,15 @@ IMAGE GAME
 
 .image-game{
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:repeat(2,1fr);
+    justify-content:center;
 
-    gap:24px;
+    gap:30px;
 
     margin-top:30px;
+
+    flex-wrap:wrap;
 
 }
 
@@ -410,6 +412,8 @@ IMAGE GAME
     position:relative;
 
     overflow:hidden;
+
+    width:420px; 
 
     border-radius:20px;
 
@@ -437,15 +441,13 @@ IMAGE GAME
 
     width:100%;
 
-    height:340px;
+    height:auto;
 
     display:block;
 
-    object-fit:cover;
+    object-fit:contain;
 
-    transition:.4s;
-
-    border-radius:18px;
+    background:#111827;
 
 }
 
