@@ -36,12 +36,30 @@ imageOptions.forEach(option => {
                 maintain natural textures and realistic visual patterns.
             `;
 
+            feedbackBox.classList.add("show");
+
+            // RESET AFTER 3 SECONDS
+            setTimeout(() => {
+
+                feedbackBox.classList.remove("show");
+
+                imageOptions.forEach(card => {
+
+                    card.classList.remove("correct", "wrong", "fade");
+                    card.style.pointerEvents = "auto";
+                    card.style.transform = "";
+
+                });
+
+                answered = false;
+
+            }, 3000);
+
         }
 
         else {
 
             this.classList.add("wrong");
-
             this.classList.add("fade");
 
             setTimeout(() => {
@@ -55,11 +73,28 @@ imageOptions.forEach(option => {
                     believing or sharing them online.
                 `;
 
+                feedbackBox.classList.add("show");
+
+                // RESET AFTER SHOWING FEEDBACK
+                setTimeout(() => {
+
+                    feedbackBox.classList.remove("show");
+
+                    imageOptions.forEach(card => {
+
+                        card.classList.remove("correct", "wrong", "fade");
+                        card.style.pointerEvents = "auto";
+                        card.style.transform = "";
+
+                    });
+
+                    answered = false;
+
+                }, 3000);
+
             }, 3000);
 
         }
-
-        feedbackBox.classList.add("show");
 
     });
 

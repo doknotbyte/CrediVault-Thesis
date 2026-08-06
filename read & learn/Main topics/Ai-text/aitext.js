@@ -1,74 +1,177 @@
-const options = document.querySelectorAll(".image-option");
+// ======================================================
+// AI MANIPULATION INTERACTIVE ACTIVITY
+// ======================================================
+
+const imageOptions = document.querySelectorAll(".image-option");
 const feedbackBox = document.getElementById("feedbackBox");
 const feedbackText = document.querySelector(".feedback-text");
 
 let answered = false;
 
-options.forEach(option => {
+imageOptions.forEach(option => {
 
-    option.addEventListener("click", () => {
+    option.addEventListener("click", function () {
 
-        if(answered) return;
+        if (answered) return;
 
         answered = true;
 
-        const answer = option.dataset.answer;
+        const answer = this.dataset.answer;
 
-        options.forEach(card => {
+        imageOptions.forEach(card => {
 
             card.style.pointerEvents = "none";
 
         });
 
-        if(answer === "correct"){
+        if (answer === "correct") {
 
-            option.classList.add("correct");
+            this.classList.add("correct");
 
             feedbackText.innerHTML = `
-
                 <strong>Correct!</strong><br><br>
-
-                This image appears to be authentic and does not show obvious
-                signs of AI-generated misinformation. Always verify content
-                using trusted sources before sharing online.
-
+                Excellent observation. This image appears authentic because
+                its lighting, facial details, proportions, and background
+                elements remain consistent. Real photographs generally
+                maintain natural textures and realistic visual patterns.
             `;
 
+            feedbackBox.classList.add("show");
+
+            // RESET AFTER 3 SECONDS
+            setTimeout(() => {
+
+                feedbackBox.classList.remove("show");
+
+                imageOptions.forEach(card => {
+
+                    card.classList.remove("correct", "wrong", "fade");
+                    card.style.pointerEvents = "auto";
+                    card.style.transform = "";
+
+                });
+
+                answered = false;
+
+            }, 3000);
+
         }
 
-        else{
+        else {
 
-            option.classList.add("wrong");
+            this.classList.add("wrong");
+            this.classList.add("fade");
 
-            option.classList.add("fade");
-
-            setTimeout(()=>{
+            setTimeout(() => {
 
                 feedbackText.innerHTML = `
-
-                    <strong>Not Quite!</strong><br><br>
-
-                    This image represents AI-generated misinformation.
-                    AI can create convincing but misleading content that
-                    appears real at first glance. Always verify information,
-                    inspect the source, and compare it with reliable
-                    references before believing or sharing it.
-
+                    <strong>Incorrect.</strong><br><br>
+                    This image contains characteristics commonly found
+                    in AI-generated content such as unnatural textures,
+                    inconsistent lighting, distorted edges, or unrealistic
+                    visual details. Always inspect images carefully before
+                    believing or sharing them online.
                 `;
 
-            },3000);
+                feedbackBox.classList.add("show");
+
+                // RESET AFTER SHOWING FEEDBACK
+                setTimeout(() => {
+
+                    feedbackBox.classList.remove("show");
+
+                    imageOptions.forEach(card => {
+
+                        card.classList.remove("correct", "wrong", "fade");
+                        card.style.pointerEvents = "auto";
+                        card.style.transform = "";
+
+                    });
+
+                    answered = false;
+
+                }, 3000);
+
+            }, 3000);
 
         }
 
-        feedbackBox.classList.add("show");
+    });
 
-        feedbackBox.scrollIntoView({
+});
 
-            behavior:"smooth",
-            block:"center"
+// ======================================================
+// OPTIONAL HOVER ANIMATION
+// ======================================================
 
-        });
+imageOptions.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        if (answered) return;
+
+        card.style.transform = "translateY(-8px) scale(1.02)";
 
     });
+
+    card.addEventListener("mouseleave", () => {
+
+        if (answered) return;
+
+        card.style.transform = "";
+
+    });
+
+});
+
+// ======================================================
+// SCROLL REVEAL ANIMATION
+// ======================================================
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+        }
+
+    });
+
+}, {
+
+    threshold: .15
+
+});
+
+document.querySelectorAll(".content-card, .activity-card").forEach(card => {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+    card.style.transition = ".7s ease";
+
+    observer.observe(card);
+
+});
+
+// ======================================================
+// PROGRESS BAR ANIMATION
+// ======================================================
+
+window.addEventListener("load", () => {
+
+    const progress = document.querySelector(".progress-fill");
+
+    progress.style.width = "0%";
+
+    setTimeout(() => {
+
+        progress.style.transition = "1.2s ease";
+        progress.style.width = "50%";
+
+    }, 300);
 
 });
