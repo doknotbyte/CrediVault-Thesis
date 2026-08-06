@@ -6,23 +6,17 @@ const imageOptions = document.querySelectorAll(".image-option");
 const feedbackBox = document.getElementById("feedbackBox");
 const feedbackText = document.querySelector(".feedback-text");
 
-let answered = false;
+let isProcessing = false;
 
 imageOptions.forEach(option => {
 
     option.addEventListener("click", function () {
 
-        if (answered) return;
+        if (isProcessing) return;
 
-        answered = true;
+        isProcessing = true;
 
         const answer = this.dataset.answer;
-
-        imageOptions.forEach(card => {
-
-            card.style.pointerEvents = "none";
-
-        });
 
         if (answer === "correct") {
 
@@ -38,22 +32,7 @@ imageOptions.forEach(option => {
 
             feedbackBox.classList.add("show");
 
-            // RESET AFTER 3 SECONDS
-            setTimeout(() => {
-
-                feedbackBox.classList.remove("show");
-
-                imageOptions.forEach(card => {
-
-                    card.classList.remove("correct", "wrong", "fade");
-                    card.style.pointerEvents = "auto";
-                    card.style.transform = "";
-
-                });
-
-                answered = false;
-
-            }, 3000);
+            setTimeout(resetActivity, 3000);
 
         }
 
@@ -75,22 +54,7 @@ imageOptions.forEach(option => {
 
                 feedbackBox.classList.add("show");
 
-                // RESET AFTER SHOWING FEEDBACK
-                setTimeout(() => {
-
-                    feedbackBox.classList.remove("show");
-
-                    imageOptions.forEach(card => {
-
-                        card.classList.remove("correct", "wrong", "fade");
-                        card.style.pointerEvents = "auto";
-                        card.style.transform = "";
-
-                    });
-
-                    answered = false;
-
-                }, 3000);
+                setTimeout(resetActivity, 3000);
 
             }, 3000);
 
@@ -101,6 +65,27 @@ imageOptions.forEach(option => {
 });
 
 // ======================================================
+// RESET ACTIVITY
+// ======================================================
+
+function resetActivity() {
+
+    feedbackBox.classList.remove("show");
+
+    imageOptions.forEach(card => {
+
+        card.classList.remove("correct");
+        card.classList.remove("wrong");
+        card.classList.remove("fade");
+        card.style.transform = "";
+
+    });
+
+    isProcessing = false;
+
+}
+
+// ======================================================
 // OPTIONAL HOVER ANIMATION
 // ======================================================
 
@@ -108,7 +93,7 @@ imageOptions.forEach(card => {
 
     card.addEventListener("mouseenter", () => {
 
-        if (answered) return;
+        if (isProcessing) return;
 
         card.style.transform = "translateY(-8px) scale(1.02)";
 
@@ -116,7 +101,7 @@ imageOptions.forEach(card => {
 
     card.addEventListener("mouseleave", () => {
 
-        if (answered) return;
+        if (isProcessing) return;
 
         card.style.transform = "";
 
