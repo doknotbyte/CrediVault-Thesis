@@ -6,165 +6,186 @@ const imageOptions = document.querySelectorAll(".image-option");
 const feedbackBox = document.getElementById("feedbackBox");
 const feedbackText = document.querySelector(".feedback-text");
 
-let answered = false;
+
+// ======================================================
+// IMAGE CLICK
+// ======================================================
 
 imageOptions.forEach(option => {
 
     option.addEventListener("click", function () {
 
-        if (answered) return;
-
-        answered = true;
-
         const answer = this.dataset.answer;
+
+
+        // ==============================================
+        // REMOVE PREVIOUS STATES FROM ALL IMAGES
+        // ==============================================
 
         imageOptions.forEach(card => {
 
-            card.style.pointerEvents = "none";
+            card.classList.remove("correct");
+            card.classList.remove("wrong");
+            card.classList.remove("fade");
 
         });
 
-        if(answer === "correct"){
+
+        // ==============================================
+        // CORRECT ANSWER
+        // ==============================================
+
+        if (answer === "correct") {
 
             this.classList.add("correct");
 
             feedbackText.innerHTML = `
 
-            <strong>Correct!</strong><br><br>
+                <strong>Correct!</strong><br><br>
 
-            Low popularity does not automatically mean false,
-            just as high popularity does not automatically mean true.
+                Low popularity does not automatically mean false,
+                just as high popularity does not automatically mean true.
 
-            Every post should be verified using trusted sources,
-            regardless of its number of likes, comments, or shares.
+                Every post should be verified using trusted sources,
+                regardless of its number of likes, comments, or shares.
 
             `;
 
+            feedbackBox.classList.remove("incorrect-feedback");
+            feedbackBox.classList.add("correct-feedback");
+            feedbackBox.classList.add("show");
+
         }
 
-        else{
+
+        // ==============================================
+        // INCORRECT ANSWER
+        // ==============================================
+
+        else {
 
             this.classList.add("wrong");
             this.classList.add("fade");
 
-            setTimeout(()=>{
 
-                feedbackText.innerHTML = `
-
-                <strong>Incorrect.</strong><br><br>
-
-                Many people believe viral posts are automatically
-                trustworthy because thousands of users have shared
-                them. However, popularity reflects engagement—not
-                credibility. Even highly shared content can spread
-                misinformation.
-
-                `;
-
-            },10000);
-
-        }
-
-        feedbackBox.classList.add("show");
-
-        // ============================================
-        // AUTO RESET
-        // ============================================
-
-        setTimeout(()=>{
-
-            imageOptions.forEach(card=>{
-
-                card.classList.remove("correct");
-                card.classList.remove("wrong");
-                card.classList.remove("fade");
-
-                card.style.pointerEvents="auto";
-
-            });
+            // Keep feedback hidden while image fades
 
             feedbackBox.classList.remove("show");
 
-            feedbackText.innerHTML="Feedback will appear here.";
 
-            answered=false;
+            setTimeout(() => {
 
-        },10000);
+                // Restore original image appearance
+
+                this.classList.remove("wrong");
+                this.classList.remove("fade");
+
+
+                // Show incorrect feedback
+
+                feedbackText.innerHTML = `
+
+                    <strong>Incorrect.</strong><br><br>
+
+                    Many people believe viral posts are automatically
+                    trustworthy because thousands of users have shared
+                    them. However, popularity reflects engagement—not
+                    credibility. Even highly shared content can spread
+                    misinformation.
+
+                `;
+
+                feedbackBox.classList.remove("correct-feedback");
+                feedbackBox.classList.add("incorrect-feedback");
+                feedbackBox.classList.add("show");
+
+            }, 2000);
+
+        }
 
     });
 
 });
+
 
 // ======================================================
 // HOVER EFFECT
 // ======================================================
 
-imageOptions.forEach(card=>{
+imageOptions.forEach(card => {
 
-    card.addEventListener("mouseenter",()=>{
+    card.addEventListener("mouseenter", () => {
 
-        if(answered) return;
-
-        card.style.transform="translateY(-8px) scale(1.02)";
+        card.style.transform = "translateY(-8px) scale(1.02)";
 
     });
 
-    card.addEventListener("mouseleave",()=>{
 
-        if(answered) return;
+    card.addEventListener("mouseleave", () => {
 
-        card.style.transform="";
+        card.style.transform = "";
 
     });
 
 });
+
 
 // ======================================================
 // SCROLL REVEAL
 // ======================================================
 
-const observer = new IntersectionObserver((entries)=>{
+const observer = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry=>{
+    entries.forEach(entry => {
 
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
 
-            entry.target.style.opacity="1";
-            entry.target.style.transform="translateY(0)";
+            entry.target.style.opacity = "1";
+
+            entry.target.style.transform = "translateY(0)";
 
         }
 
     });
 
-},{
-    threshold:.15
+}, {
+
+    threshold: .15
+
 });
 
-document.querySelectorAll(".content-card,.activity-card").forEach(card=>{
 
-    card.style.opacity="0";
-    card.style.transform="translateY(40px)";
-    card.style.transition=".7s ease";
+document.querySelectorAll(".content-card, .activity-card").forEach(card => {
+
+    card.style.opacity = "0";
+
+    card.style.transform = "translateY(40px)";
+
+    card.style.transition = ".7s ease";
 
     observer.observe(card);
 
 });
 
+
 // ======================================================
 // PROGRESS BAR
 // ======================================================
 
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
-    const progress=document.querySelector(".progress-fill");
+    const progress = document.querySelector(".progress-fill");
 
-    progress.style.width="0%";
+    if (!progress) return;
 
-    setTimeout(()=>{
+    progress.style.width = "0%";
 
-        progress.style.transition="1.2s ease";
-        progress.style.width="80%";
+    setTimeout(() => {
 
-    },300);
+        progress.style.transition = "1.2s ease";
+
+        progress.style.width = "80%";
+
+    }, 300);
 
 });
