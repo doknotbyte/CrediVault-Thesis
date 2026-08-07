@@ -6,17 +6,34 @@ const imageOptions = document.querySelectorAll(".image-option");
 const feedbackBox = document.getElementById("feedbackBox");
 const feedbackText = document.querySelector(".feedback-text");
 
-let isProcessing = false;
+
+// ======================================================
+// IMAGE OPTION CLICK
+// ======================================================
 
 imageOptions.forEach(option => {
 
     option.addEventListener("click", function () {
 
-        if (isProcessing) return;
-
-        isProcessing = true;
-
         const answer = this.dataset.answer;
+
+
+        // --------------------------------------------------
+        // REMOVE PREVIOUS CORRECT / WRONG STATES
+        // --------------------------------------------------
+
+        imageOptions.forEach(card => {
+
+            card.classList.remove("correct");
+            card.classList.remove("wrong");
+            card.classList.remove("fade");
+
+        });
+
+
+        // --------------------------------------------------
+        // CORRECT ANSWER
+        // --------------------------------------------------
 
         if (answer === "correct") {
 
@@ -30,19 +47,31 @@ imageOptions.forEach(option => {
                 maintain natural textures and realistic visual patterns.
             `;
 
+            feedbackBox.classList.remove("incorrect-feedback");
+            feedbackBox.classList.add("correct-feedback");
             feedbackBox.classList.add("show");
 
-            setTimeout(resetActivity, 10000);
-
         }
+
+
+        // --------------------------------------------------
+        // INCORRECT ANSWER
+        // --------------------------------------------------
 
         else {
 
             this.classList.add("wrong");
             this.classList.add("fade");
 
+            // Show the incorrect visual state for 2 seconds
             setTimeout(() => {
 
+                // Return the image to its original appearance
+                this.classList.remove("wrong");
+                this.classList.remove("fade");
+
+
+                // Show incorrect feedback
                 feedbackText.innerHTML = `
                     <strong>Incorrect.</strong><br><br>
                     This image contains characteristics commonly found
@@ -52,11 +81,11 @@ imageOptions.forEach(option => {
                     believing or sharing them online.
                 `;
 
+                feedbackBox.classList.remove("correct-feedback");
+                feedbackBox.classList.add("incorrect-feedback");
                 feedbackBox.classList.add("show");
 
-                setTimeout(resetActivity, 10000);
-
-            }, 3000);
+            }, 2000);
 
         }
 
@@ -64,26 +93,6 @@ imageOptions.forEach(option => {
 
 });
 
-// ======================================================
-// RESET ACTIVITY
-// ======================================================
-
-function resetActivity() {
-
-    feedbackBox.classList.remove("show");
-
-    imageOptions.forEach(card => {
-
-        card.classList.remove("correct");
-        card.classList.remove("wrong");
-        card.classList.remove("fade");
-        card.style.transform = "";
-
-    });
-
-    isProcessing = false;
-
-}
 
 // ======================================================
 // OPTIONAL HOVER ANIMATION
@@ -93,21 +102,24 @@ imageOptions.forEach(card => {
 
     card.addEventListener("mouseenter", () => {
 
-        if (isProcessing) return;
+        if (
+            card.classList.contains("correct") ||
+            card.classList.contains("wrong")
+        ) return;
 
         card.style.transform = "translateY(-8px) scale(1.02)";
 
     });
 
-    card.addEventListener("mouseleave", () => {
 
-        if (isProcessing) return;
+    card.addEventListener("mouseleave", () => {
 
         card.style.transform = "";
 
     });
 
 });
+
 
 // ======================================================
 // SCROLL REVEAL ANIMATION
@@ -132,6 +144,7 @@ const observer = new IntersectionObserver((entries) => {
 
 });
 
+
 document.querySelectorAll(".content-card, .activity-card").forEach(card => {
 
     card.style.opacity = "0";
@@ -142,6 +155,7 @@ document.querySelectorAll(".content-card, .activity-card").forEach(card => {
 
 });
 
+
 // ======================================================
 // PROGRESS BAR ANIMATION
 // ======================================================
@@ -149,6 +163,8 @@ document.querySelectorAll(".content-card, .activity-card").forEach(card => {
 window.addEventListener("load", () => {
 
     const progress = document.querySelector(".progress-fill");
+
+    if (!progress) return;
 
     progress.style.width = "0%";
 

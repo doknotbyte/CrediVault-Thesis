@@ -700,6 +700,43 @@ FEEDBACK
 }
 
 /* ==========================================================
+CORRECT FEEDBACK
+========================================================== */
+
+.feedback-box.correct-feedback{
+
+    border-left-color:#22c55e;
+
+    background:rgba(34,197,94,.10);
+
+}
+
+.feedback-box.correct-feedback .feedback-icon{
+
+    color:#22c55e;
+
+}
+
+
+/* ==========================================================
+INCORRECT FEEDBACK
+========================================================== */
+
+.feedback-box.incorrect-feedback{
+
+    border-left-color:#ef4444;
+
+    background:rgba(239,68,68,.10);
+
+}
+
+.feedback-box.incorrect-feedback .feedback-icon{
+
+    color:#ef4444;
+
+}
+
+/* ==========================================================
 TIPS
 ========================================================== */
 

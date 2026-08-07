@@ -240,89 +240,171 @@
 
     </section>
 
-    <!-- ==========================================================
-    INTERACTIVE CHALLENGE
-    ========================================================== -->
+<!-- ======================================================
+INTERACTIVE CHALLENGE
+====================================================== -->
 
-    <section class="activity-card">
+<div class="activity-card">
 
-        <div class="activity-title">
+    <div class="activity-title">
 
-            <span>
+        <span>
+            Interactive Challenge
+        </span>
 
-                Interactive Challenge
+        <h2>
+            Headline Breakdown Challenge
+        </h2>
 
-            </span>
+        <p>
+            Instructions: Examine the post and identify the clickbait technique being used. 
+        </p>
 
-            <h2>
+        <p>
+            First, click an image to analyze it, then select the technique that best explains how the post tries to attract attention and encourage clicks.
+        </p>
 
-                Which Headline is Clickbait?
+    </div>
 
-            </h2>
 
-            <p>
+    <!-- ==================================================
+    IMAGE OPTIONS
+    ================================================== -->
 
-                Click the headline you believe is an example of clickbait.
-                Instant feedback will explain why your choice is correct
-                or incorrect.
+    <div class="image-game">
 
-            </p>
+        <!-- BAIT 1 -->
 
-        </div>
+        <div
+            class="image-option"
+            data-image="bait1"
+        >
 
-        <div class="image-game">
+            <img
+                src="images/bait1.jpg"
+                alt="Clickbait headline example"
+            >
 
-            <div class="image-option"
-                data-answer="correct">
-
-                <img src="images/bait1.jpg"
-                    alt="Clickbait Headline">
-
-                <div class="image-overlay">
-
-                    Click to Select
-
-                </div>
-
-            </div>
-
-            <div class="image-option"
-                data-answer="wrong">
-
-                <img src="images/bait2.jpg"
-                    alt="Normal Headline">
-
-                <div class="image-overlay">
-
-                    Click to Select
-
-                </div>
-
+            <div class="image-overlay">
+                Click to Analyze
             </div>
 
         </div>
 
-        <div class="feedback-box"
-            id="feedbackBox">
 
-            <div class="feedback-icon">
+        <!-- BAIT 2 -->
 
-                <i class="fa-solid fa-circle-info"></i>
+        <div
+            class="image-option"
+            data-image="bait2"
+        >
 
-            </div>
+            <img
+                src="images/bait2.png"
+                alt="Social media clickbait example"
+            >
 
-            <div class="feedback-text">
-
-                Feedback will appear here.
-
+            <div class="image-overlay">
+                Click to Analyze
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+
+    <!-- ==================================================
+    TECHNIQUE OPTIONS
+    ================================================== -->
+
+    <div class="technique-options">
+
+        <button
+            type="button"
+            class="technique-btn"
+            data-technique="curiosity"
+        >
+
+            <i class="fa-solid fa-question"></i>
+
+            Curiosity Gap
+
+        </button>
+
+
+        <button
+            type="button"
+            class="technique-btn"
+            data-technique="sensationalism"
+        >
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            Sensationalism
+
+        </button>
+
+
+        <button
+            type="button"
+            class="technique-btn"
+            data-technique="emotional"
+        >
+
+            <i class="fa-solid fa-heart"></i>
+
+            Emotional Appeal
+
+        </button>
+
+
+        <button
+            type="button"
+            class="technique-btn"
+            data-technique="misleading"
+        >
+
+            <i class="fa-solid fa-arrow-pointer"></i>
+
+            Misleading Teaser
+
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+    FEEDBACK
+    ================================================== -->
+
+    <div
+        class="feedback-box"
+        id="feedbackBox"
+    >
+
+        <div class="feedback-icon">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+        </div>
+
+
+        <div
+            class="feedback-text"
+            id="feedbackText"
+        >
+
+            Click an image first, then choose the clickbait
+            technique you think is being used.
+
+        </div>
+
+    </div>
+
+</div>
 
 <!-- ==========================================================
-HOW TO DETECT CLICKBAIT
+SECTION 03
 ========================================================== -->
 
 <section class="content-card">
@@ -349,81 +431,85 @@ HOW TO DETECT CLICKBAIT
 
                 <h3>
 
-                    Sensational Headlines
+                    Exaggerated Headlines
 
                 </h3>
 
                 <p>
 
-                    Clickbait often uses exaggerated words,
-                    dramatic phrases, or shocking statements
-                    designed to trigger curiosity or emotions.
+                    Look for dramatic, extreme, or exaggerated
+                    wording that is designed mainly to attract
+                    attention and encourage clicks.
 
                 </p>
 
             </div>
 
+
             <div class="tip-card">
 
-                <i class="fa-solid fa-circle-question"></i>
+                <i class="fa-solid fa-question"></i>
 
                 <h3>
 
-                    Curiosity Gap
+                    Curiosity Gaps
 
                 </h3>
 
                 <p>
 
-                    Headlines that say "You Won't Believe..."
-                    or intentionally hide important information
-                    are common clickbait techniques.
+                    Be cautious when a headline leaves out important
+                    information and makes you feel that you must click
+                    to find out what happened.
 
                 </p>
 
             </div>
 
+
             <div class="tip-card">
 
-                <i class="fa-solid fa-newspaper"></i>
+                <i class="fa-solid fa-heart"></i>
 
                 <h3>
 
-                    Read Beyond the Headline
+                    Emotional Language
 
                 </h3>
 
                 <p>
 
-                    Always read the article itself and verify
-                    whether the content actually supports the
-                    headline being presented.
+                    Strong emotional words can trigger fear, anger,
+                    excitement, or surprise and encourage an immediate
+                    reaction instead of careful evaluation.
 
                 </p>
 
             </div>
 
+
             <div class="tip-card">
 
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-link"></i>
 
                 <h3>
 
-                    Check the Source
+                    Check the Actual Content
 
                 </h3>
 
                 <p>
 
-                    Evaluate whether the website is trustworthy
-                    and whether other reliable sources report
-                    the same information.
+                    Compare the headline with the actual article or
+                    post. If the content does not support the headline,
+                    treat the information with caution.
 
                 </p>
 
             </div>
 
         </div>
+
 
         <div class="reference-box">
 
@@ -434,6 +520,10 @@ HOW TO DETECT CLICKBAIT
                 Reference:
                 https://www.mdpi.com/2076-3417/13/4/2456
 
+                <br><br>
+
+                https://www.nature.com/articles/s41598-025-30229-5
+
             </span>
 
         </div>
@@ -442,8 +532,9 @@ HOW TO DETECT CLICKBAIT
 
 </section>
 
+
 <!-- ==========================================================
-TOOLS
+SECTION 04
 ========================================================== -->
 
 <section class="content-card">
@@ -458,7 +549,7 @@ TOOLS
 
         <h2>
 
-            Tools to Detect Clickbait
+            Common Clickbait Techniques
 
         </h2>
 
@@ -466,85 +557,86 @@ TOOLS
 
             <div class="tool-card">
 
-                <i class="fa-solid fa-laptop-code"></i>
+                <i class="fa-solid fa-question"></i>
 
                 <h3>
 
-                    Clickbait Detector
+                    Curiosity Gap
 
                 </h3>
 
                 <p>
 
-                    Chrome extension and GitHub project that
-                    analyzes headlines and estimates how
-                    clickbait they appear.
+                    Withholds important information to make readers
+                    curious enough to click and find out what happened.
 
                 </p>
 
             </div>
 
+
             <div class="tool-card">
 
-                <i class="fa-solid fa-robot"></i>
+                <i class="fa-solid fa-triangle-exclamation"></i>
 
                 <h3>
 
-                    Nyckel Clickbait Identifier
+                    Sensationalism
 
                 </h3>
 
                 <p>
 
-                    AI-powered classifier that labels whether
-                    a headline is clickbait together with a
-                    confidence score.
+                    Uses dramatic or exaggerated wording to make a
+                    story appear more shocking or important than it is.
 
                 </p>
 
             </div>
 
+
             <div class="tool-card">
 
-                <i class="fa-solid fa-brain"></i>
+                <i class="fa-solid fa-heart"></i>
 
                 <h3>
 
-                    Hugging Face Models
+                    Emotional Appeal
 
                 </h3>
 
                 <p>
 
-                    Machine-learning models trained to identify
-                    sensationalized headlines using Natural
-                    Language Processing.
+                    Uses fear, anger, excitement, or surprise to
+                    encourage an immediate reaction from readers.
 
                 </p>
 
             </div>
 
+
             <div class="tool-card">
 
-                <i class="fa-solid fa-check-double"></i>
+                <i class="fa-solid fa-arrow-pointer"></i>
 
                 <h3>
 
-                    Manual Verification
+                    Misleading Teaser
 
                 </h3>
 
                 <p>
 
-                    Compare the headline with multiple trusted
-                    news sources before believing or sharing
-                    the information.
+                    Presents an interesting or incomplete teaser that
+                    does not accurately represent what the reader will
+                    find after clicking.
 
                 </p>
 
             </div>
 
         </div>
+
 
         <div class="reference-box">
 
@@ -553,11 +645,7 @@ TOOLS
             <span>
 
                 Reference:
-                https://github.com/saurabhmathur96/clickbait-detector
-
-                <br><br>
-
-                https://www.nyckel.com/pretrained-classifiers/clickbait-identifier/
+                https://www.nature.com/articles/s41598-025-30229-5
 
             </span>
 
@@ -567,21 +655,34 @@ TOOLS
 
 </section>
 
+
 <!-- ==========================================================
-NAVIGATION
+LESSON NAVIGATION
 ========================================================== -->
 
 <section class="lesson-navigation">
 
-    <a href="../../rnl.html" class="back-btn">
+    <a href="../Ai Manipulation/ai.html"
+        class="back-btn">
 
         <i class="fa-solid fa-arrow-left"></i>
 
-        Read & Learn
+        Previous Topic
+
+    </a>
+
+
+    <a href="../../rnl.html"
+        class="next-btn">
+
+        Finish Module
+
+        <i class="fa-solid fa-check"></i>
 
     </a>
 
 </section>
+
 
 <script src="click.js"></script>
 

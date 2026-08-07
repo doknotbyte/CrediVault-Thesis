@@ -5,13 +5,7 @@
 const checkButton = document.getElementById("checkAnswers");
 const feedbackBox = document.getElementById("feedbackBox");
 
-let answered = false;
-
 checkButton.addEventListener("click", () => {
-
-    if (answered) return;
-
-    answered = true;
 
     const checks = document.querySelectorAll(".check-item input");
 
@@ -24,6 +18,10 @@ checkButton.addEventListener("click", () => {
         checks[3].checked;
 
     feedbackBox.classList.add("show");
+
+    // ==================================================
+    // WRONG CHOICE
+    // ==================================================
 
     if (wrongChoice) {
 
@@ -42,7 +40,14 @@ checkButton.addEventListener("click", () => {
 
         `;
 
+        feedbackBox.classList.remove("correct-feedback");
+        feedbackBox.classList.add("incorrect-feedback");
+
     }
+
+    // ==================================================
+    // CORRECT CHOICE
+    // ==================================================
 
     else if (hasCorrect) {
 
@@ -62,7 +67,14 @@ checkButton.addEventListener("click", () => {
 
         `;
 
+        feedbackBox.classList.remove("incorrect-feedback");
+        feedbackBox.classList.add("correct-feedback");
+
     }
+
+    // ==================================================
+    // NO ANSWER
+    // ==================================================
 
     else {
 
@@ -79,27 +91,10 @@ checkButton.addEventListener("click", () => {
 
         `;
 
+        feedbackBox.classList.remove("correct-feedback");
+        feedbackBox.classList.add("incorrect-feedback");
+
     }
-
-    checkButton.disabled = true;
-
-    setTimeout(() => {
-
-        checks.forEach(box => {
-
-            box.checked = false;
-
-        });
-
-        feedbackBox.classList.remove("show");
-
-        feedbackBox.innerHTML = "";
-
-        checkButton.disabled = false;
-
-        answered = false;
-
-    }, 10000);
 
 });
 
@@ -112,15 +107,11 @@ document.querySelectorAll(".check-item").forEach(item => {
 
     item.addEventListener("mouseenter", () => {
 
-        if (answered) return;
-
         item.style.transform = "translateX(6px)";
 
     });
 
     item.addEventListener("mouseleave", () => {
-
-        if (answered) return;
 
         item.style.transform = "";
 
@@ -170,6 +161,8 @@ document.querySelectorAll(".content-card, .activity-card").forEach(card => {
 window.addEventListener("load", () => {
 
     const progress = document.querySelector(".progress-fill");
+
+    if (!progress) return;
 
     progress.style.width = "0%";
 
