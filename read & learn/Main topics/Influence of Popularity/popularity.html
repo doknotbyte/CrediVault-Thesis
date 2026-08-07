@@ -28,6 +28,27 @@ BACKGROUND
 <div class="gradient-blob blob-1"></div>
 <div class="gradient-blob blob-2"></div>
 
+    <!-- QUICK NAVIGATION -->
+    <div class="page-layout">
+
+    <aside class="quick-nav">
+
+        <span class="quick-nav-title">
+            ON THIS PAGE
+        </span>
+
+        <a href="#section-01">01 Introduction</a>
+
+        <a href="#section-02">02 Key Concerns</a>
+
+        <a href="#interactive">Interactive Challenge</a>
+
+        <a href="#section-03">03 How to Detect</a>
+
+        <a href="#section-04">04 Tools</a>
+
+    </aside>
+
 <!-- ==========================================================
 HEADER
 ========================================================== -->
@@ -94,7 +115,7 @@ PROGRESS
 TOPIC 1
 ========================================================== -->
 
-<section class="content-card">
+<section class="content-card" id="section-01">
 
     <div class="section-number">
 
@@ -143,7 +164,7 @@ TOPIC 1
 CONCERNS
 ========================================================== -->
 
-<section class="content-card">
+<section class="content-card" id="section-02">
 
     <div class="section-number">
 
@@ -239,11 +260,11 @@ CONCERNS
 
 </section>
 
-<!-- ==========================================================
-INTERACTIVE CHALLENGE
-========================================================== -->
+<!-- ======================================================
+INTERACTIVE ACTIVITY
+====================================================== -->
 
-<section class="activity-card">
+<div class="activity-card" id="interactive">
 
     <div class="activity-title">
 
@@ -254,33 +275,35 @@ INTERACTIVE CHALLENGE
         </span>
 
         <h2>
-
+            
             Which Post Would You Trust First?
 
         </h2>
 
         <p>
-
-            Instructions: Both posts discuss the same topic but have different engagement levels. 
-
-        </p>
-
-        <p>
-            Select the post you would verify first. Remember that popularity does not always mean credibility.
+            Both posts discuss the same topic but have different
+            engagement levels. Select the post you would verify first.
+            Remember that popularity does not always mean credibility.
         </p>
 
     </div>
+
+
+    <!-- ==================================================
+    IMAGE OPTIONS
+    ================================================== -->
 
     <div class="image-game">
 
         <!-- HIGH POPULARITY -->
 
         <div class="image-option"
+            data-image="high"
             data-answer="wrong">
 
             <img
                 src="images/high.png"
-                alt="High Popularity">
+                alt="High Popularity Post">
 
             <div class="image-overlay">
 
@@ -292,14 +315,16 @@ INTERACTIVE CHALLENGE
 
         </div>
 
+
         <!-- LOW POPULARITY -->
 
         <div class="image-option"
+            data-image="low"
             data-answer="correct">
 
             <img
                 src="images/low.png"
-                alt="Low Popularity">
+                alt="Low Popularity Post">
 
             <div class="image-overlay">
 
@@ -313,9 +338,72 @@ INTERACTIVE CHALLENGE
 
     </div>
 
-    <!-- FEEDBACK -->
 
-    <div class="feedback-box" id="feedbackBox">
+    
+
+    <!-- ==================================================
+    ACTION CHOICES
+    ================================================== -->
+
+    <div class="action-options">
+
+        <button
+            type="button"
+            class="action-btn"
+            data-action="source">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            Check the Original Source
+
+        </button>
+
+
+        <button
+            type="button"
+            class="action-btn"
+            data-action="date">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            Check the Publication Date
+
+        </button>
+
+
+        <button
+            type="button"
+            class="action-btn"
+            data-action="reliable">
+
+            <i class="fa-solid fa-newspaper"></i>
+
+            Look for Other Reliable Sources
+
+        </button>
+
+
+        <button
+            type="button"
+            class="action-btn"
+            data-action="popularity">
+
+            <i class="fa-solid fa-heart"></i>
+
+            Trust It Because It Has Many Likes
+
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+    FEEDBACK
+    ================================================== -->
+
+    <div
+        class="feedback-box"
+        id="feedbackBox">
 
         <div class="feedback-icon">
 
@@ -323,21 +411,26 @@ INTERACTIVE CHALLENGE
 
         </div>
 
-        <div class="feedback-text">
+        <div
+            class="feedback-text"
+            id="feedbackText">
 
-            Feedback will appear here.
+            Select a post first, then choose one or more
+            actions you would take before trusting it.
 
         </div>
 
     </div>
 
-</section>
+</div>
+
+
 
 <!-- ==========================================================
 HOW TO DETECT
 ========================================================== -->
 
-<section class="content-card">
+<section class="content-card" id="section-03">
 
     <div class="section-number">
 
@@ -454,7 +547,7 @@ HOW TO DETECT
 TOOLS
 ========================================================== -->
 
-<section class="content-card">
+<section class="content-card" id="section-04">
 
     <div class="section-number">
 
