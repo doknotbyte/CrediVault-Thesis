@@ -1858,22 +1858,25 @@ SHIFT MAIN CONTENT TO THE RIGHT
 }
 
 /* ==========================================================
-MOBILE HAMBURGER — FINAL OVERRIDE
+MOBILE — LEFT EDGE HAMBURGER TAB
 ========================================================== */
 
 @media (max-width:768px){
 
+    /* Hide the normal mobile button styling */
     .mobile-menu-btn{
 
         display:flex !important;
 
         position:fixed !important;
 
-        top:18px !important;
-        left:18px !important;
+        top:50% !important;
+        left:0 !important;
 
-        width:52px !important;
-        height:52px !important;
+        transform:translateY(-50%) !important;
+
+        width:38px !important;
+        height:70px !important;
 
         padding:0 !important;
         margin:0 !important;
@@ -1882,35 +1885,77 @@ MOBILE HAMBURGER — FINAL OVERRIDE
         align-items:center !important;
 
         border:none !important;
-        border-radius:12px !important;
+
+        border-radius:0 12px 12px 0 !important;
 
         background:rgba(10,15,25,.95) !important;
 
         color:#fff !important;
 
-        font-size:26px !important;
-        line-height:1 !important;
+        font-size:22px !important;
 
         cursor:pointer !important;
 
         z-index:99999 !important;
 
         box-shadow:
-            0 6px 20px rgba(0,0,0,.35);
+            4px 0 15px rgba(0,0,0,.25);
 
         pointer-events:auto !important;
 
     }
 
+
     .mobile-menu-btn i{
 
-        display:block !important;
-
-        font-size:26px !important;
-
-        color:#fff !important;
+        font-size:22px !important;
 
         pointer-events:none !important;
+
+    }
+
+
+    /* ======================================================
+    QUICK NAV — SLIDE FROM LEFT
+    ====================================================== */
+
+    .quick-nav{
+
+        position:fixed !important;
+
+        top:0 !important;
+        left:-260px !important;
+
+        width:230px !important;
+        height:100vh !important;
+
+        padding:90px 25px 40px 35px !important;
+
+        transition:left .3s ease !important;
+
+        z-index:9998 !important;
+
+    }
+
+
+    .quick-nav.open{
+
+        left:0 !important;
+
+    }
+
+
+    /* ======================================================
+    MAIN CONTENT — NO HORIZONTAL PUSH
+    ====================================================== */
+
+    .main-content{
+
+        margin-left:0 !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
 
     }
 
