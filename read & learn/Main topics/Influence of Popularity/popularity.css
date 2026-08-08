@@ -377,57 +377,45 @@ MAIN CONTENT
 
 
 /* ==========================================================
-RESPONSIVE
+RESPONSIVE — TABLET
 ========================================================== */
 
 @media (max-width:992px){
 
     .quick-nav{
 
-        width:200px;
+        width:190px;
 
         padding-left:25px;
-
-    }
-
-    .quick-nav a::before{
-
-        left:-25px;
+        padding-right:20px;
 
     }
 
     .main-content{
 
-        margin-left:200px;
+        margin-left:190px;
 
-        width:calc(100% - 200px);
+        width:calc(100% - 190px);
+
+    }
+
+    .quick-nav a{
+
+        font-size:.82rem;
+
+    }
+
+    .quick-nav a .nav-number{
+
+        width:28px;
+        height:28px;
+
+        font-size:.68rem;
 
     }
 
 }
 
-
-@media (max-width:768px){
-
-    .quick-nav{
-
-        display:none;
-
-    }
-
-    
-    .main-content{
-
-        margin-left:0;
-
-        width:100%;
-
-    }
-
-    
-
-
-}
 
 
     /* ======================================================
