@@ -363,3 +363,32 @@ window.addEventListener("load", () => {
     }, 300);
 
 });
+
+// ======================================================
+// MOBILE HAMBURGER QUICK NAVIGATION
+// ======================================================
+
+const quickNav = document.querySelector(".quick-nav");
+const menuButton = document.querySelector(".mobile-menu-btn");
+
+if (quickNav && menuButton) {
+
+    menuButton.addEventListener("click", () => {
+
+        quickNav.classList.toggle("open");
+
+    });
+
+
+    // Close menu after clicking a navigation link
+    quickNav.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            quickNav.classList.remove("open");
+
+        });
+
+    });
+
+}

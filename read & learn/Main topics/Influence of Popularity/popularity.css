@@ -94,16 +94,18 @@ BACKGROUND
 }
 
 /* ==========================================================
-   QUICK NAVIGATION
+QUICK NAVIGATION
 ========================================================== */
 
 .page-layout{
+
     width:100%;
+
 }
 
 
 /* ==========================================================
-   FIXED LEFT NAVIGATION
+FIXED LEFT NAVIGATION
 ========================================================== */
 
 .quick-nav{
@@ -116,11 +118,13 @@ BACKGROUND
     width:230px;
     height:100vh;
 
-    padding:110px 25px 40px 35px;
+    padding:45px 25px 40px 35px;
 
-    border-right:1px solid rgba(255,255,255,.12);
+    background:rgba(10,15,25,.72);
 
-    background:transparent;
+    border-right:1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(14px);
 
     display:flex;
     flex-direction:column;
@@ -131,7 +135,7 @@ BACKGROUND
 
 
 /* ==========================================================
-   NAV TITLE
+NAV TITLE
 ========================================================== */
 
 .quick-nav-title{
@@ -148,18 +152,27 @@ BACKGROUND
     letter-spacing:1.5px;
 
     text-transform:uppercase;
+
 }
 
 
 /* ==========================================================
-   NAV LINKS
+NAV LINKS
 ========================================================== */
 
 .quick-nav a{
 
-    display:block;
+    position:relative;
 
-    padding:7px 0;
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:9px 10px 9px 0;
+
+    margin-bottom:4px;
 
     color:var(--muted);
 
@@ -170,39 +183,188 @@ BACKGROUND
 
     line-height:1.5;
 
+    border-bottom:1px solid rgba(255,255,255,.06);
+
     transition:.25s ease;
 
 }
 
 
 /* ==========================================================
-   NAV HOVER
+NUMBER / SECTION INDICATOR
+========================================================== */
+
+.quick-nav a .nav-number{
+
+    width:30px;
+    height:30px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:8px;
+
+    background:rgba(255,255,255,.06);
+
+    color:#94a3b8;
+
+    font-size:.72rem;
+    font-weight:800;
+
+    transition:.25s ease;
+
+}
+
+
+/* ==========================================================
+SIDE LINE — HOVER
+========================================================== */
+
+.quick-nav a::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-30px;
+
+    top:4px;
+    bottom:4px;
+
+    width:2px;
+
+    background:transparent;
+
+    border-radius:10px;
+
+    transition:.25s ease;
+
+}
+
+
+/* ==========================================================
+HOVER
 ========================================================== */
 
 .quick-nav a:hover{
 
-    color:#38bdf8;
+    color:#fff;
 
     transform:translateX(4px);
 
 }
 
+.quick-nav a:hover::before{
 
-/* ==========================================================
-   ACTIVE / CURRENT SECTION
-========================================================== */
+    background:#38bdf8;
 
-.quick-nav a.active{
+}
+
+.quick-nav a:hover .nav-number{
+
+    background:rgba(56,189,248,.14);
 
     color:#38bdf8;
 
-    font-weight:700;
+    box-shadow:0 0 14px rgba(56,189,248,.10);
 
 }
 
 
 /* ==========================================================
-   MAIN CONTENT
+ACTIVE / CURRENT SECTION
+========================================================== */
+
+.quick-nav a.active{
+
+    color:#fff;
+
+    font-weight:700;
+
+}
+
+.quick-nav a.active::before{
+
+    background:#38bdf8;
+
+}
+
+.quick-nav a.active .nav-number{
+
+    background:rgba(56,189,248,.16);
+
+    color:#38bdf8;
+
+}
+
+
+/* ==========================================================
+INTERACTIVE CHALLENGE
+NO NUMBER BOX
+========================================================== */
+
+.quick-nav a.interactive-link{
+
+    padding-left:0;
+
+    color:#cbd5e1;
+
+    font-weight:600;
+
+}
+
+
+/* Keep separator line */
+
+.quick-nav a.interactive-link{
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+
+/* Hover */
+
+.quick-nav a.interactive-link:hover{
+
+    color:#fff;
+
+    background:rgba(56,189,248,.035);
+
+    transform:translateX(4px);
+
+}
+
+.quick-nav a.interactive-link:hover::before{
+
+    background:#38bdf8;
+
+}
+
+
+/* Active */
+
+.quick-nav a.interactive-link.active{
+
+    color:#fff;
+
+    font-weight:700;
+
+}
+
+.quick-nav a.interactive-link.active::before{
+
+    background:#38bdf8;
+
+}
+
+
+/* ==========================================================
+MAIN CONTENT
 ========================================================== */
 
 .main-content{
@@ -213,9 +375,15 @@ BACKGROUND
 
 }
 
+.mobile-menu-btn{
+
+    display:none;
+
+}
+
 
 /* ==========================================================
-   RESPONSIVE — TABLET
+RESPONSIVE — TABLET
 ========================================================== */
 
 @media (max-width:992px){
@@ -243,21 +411,55 @@ BACKGROUND
 
     }
 
+    .quick-nav a .nav-number{
+
+        width:28px;
+        height:28px;
+
+        font-size:.68rem;
+
+    }
+
 }
 
 
 /* ==========================================================
-   RESPONSIVE — MOBILE
+RESPONSIVE — MOBILE
 ========================================================== */
 
 @media (max-width:768px){
 
-    .quick-nav{
+    .mobile-menu-btn{
 
-        display:none;
+    display:flex;
 
-    }
+    position:fixed;
 
+    top:20px;
+    left:20px;
+
+    width:44px;
+    height:44px;
+
+    justify-content:center;
+    align-items:center;
+
+    border:none;
+    border-radius:10px;
+
+    background:rgba(10,15,25,.85);
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    z-index:1100;
+
+}
+
+    /* Main content becomes full width */
     .main-content{
 
         margin-left:0;
@@ -266,7 +468,37 @@ BACKGROUND
 
     }
 
+
+    /* Quick Navigation becomes a slide-out menu */
+    .quick-nav{
+
+        position:fixed;
+
+        top:0;
+        left:-260px;
+
+        width:230px;
+        height:100vh;
+
+        padding:90px 25px 40px 35px;
+
+        transition:.3s ease;
+
+        z-index:1000;
+
+    }
+
+
+    /* Open state for hamburger */
+    .quick-nav.open{
+
+        left:0;
+
+    }
+
 }
+
+
 
 /* ==========================================================
 HEADER
@@ -309,7 +541,7 @@ PAGE TITLE
 
     letter-spacing:1px;
 
-    margin-bottom:14px;
+    margin-bottom:19px;
 
 }
 
@@ -329,7 +561,7 @@ PAGE TITLE
 
     font-size:.9rem;
 
-    line-height:1.6;
+    line-height:1.8;
 
 }
 
@@ -1456,6 +1688,16 @@ RESPONSIVE — MOBILE
 
 }
 
+.ai-header,
+.progress-section,
+.content-card,
+.activity-card,
+.lesson-navigation{
+
+    left:0;
+
+}
+
 
 /* ==========================================================
 RESPONSIVE — SMALL PHONE
@@ -1570,5 +1812,21 @@ RESPONSIVE — SMALL PHONE
         gap:8px;
 
     }
+
+}
+
+/* ==========================================================
+SHIFT MAIN CONTENT TO THE RIGHT
+========================================================== */
+
+.ai-header,
+.progress-section,
+.content-card,
+.activity-card,
+.lesson-navigation{
+
+    position:relative;
+
+    left:100px;
 
 }
