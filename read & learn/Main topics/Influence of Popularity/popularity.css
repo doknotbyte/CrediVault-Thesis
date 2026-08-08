@@ -435,23 +435,7 @@ RESPONSIVE — MOBILE
 @media (max-width:768px){
 
     /* ======================================================
-    PREVENT HORIZONTAL SCREEN SHIFT
-    ====================================================== */
-
-    html,
-    body{
-
-        width:100%;
-
-        max-width:100%;
-
-        overflow-x:hidden;
-
-    }
-
-
-    /* ======================================================
-    MOBILE MENU — LEFT EDGE TAB
+    HAMBURGER TAB
     ====================================================== */
 
     .mobile-menu-btn{
@@ -460,21 +444,22 @@ RESPONSIVE — MOBILE
 
         position:fixed;
 
-        top:110px;
+        top:50%;
         left:0;
 
-        width:5px;
-        height:85px;
+        transform:translateY(-50%);
+
+        width:8px;
+        height:165px;
 
         padding:0;
-        margin:0;
 
         justify-content:center;
         align-items:center;
 
         border:none;
 
-        border-radius:0 4px 4px 0;
+        border-radius:0 8px 8px 0;
 
         background:#38bdf8;
 
@@ -486,14 +471,17 @@ RESPONSIVE — MOBILE
 
         z-index:2000;
 
-        box-shadow:0 4px 14px rgba(56,189,248,.18);
+        box-shadow:0 4px 15px rgba(56,189,248,.20);
 
         transition:.25s ease;
 
     }
 
 
-    /* Remove the icon visually */
+    /* ======================================================
+    HAMBURGER ICON
+    Hidden — tab itself is clickable
+    ====================================================== */
 
     .mobile-menu-btn i{
 
@@ -502,162 +490,353 @@ RESPONSIVE — MOBILE
     }
 
 
-    /* Small hover indication */
-
-    .mobile-menu-btn:hover{
-
-        width:7px;
-
-        background:#38bdf8;
-
-        transform:none;
-
-    }
-
-
     /* ======================================================
-    MAIN CONTENT — FULL MOBILE WIDTH
+    MAIN CONTENT — RESET DESKTOP OFFSET
     ====================================================== */
 
     .main-content{
 
-    margin-left:0;
+        margin-left:0 !important;
 
-    width:100%;
+        width:100% !important;
 
-    max-width:100%;
+        max-width:100% !important;
 
-    min-width:0;
+        padding-left:0 !important;
 
-}
+        padding-right:0 !important;
 
-/* ======================================================
-MOBILE CONTENT SCALE
-====================================================== */
-
-.ai-header,
-.progress-section,
-.content-card,
-.activity-card,
-.lesson-navigation{
-
-    width:92%;
-
-    max-width:92%;
-
-    margin-left:auto;
-    margin-right:auto;
-
-}
-
-
-.page-title h1{
-
-    font-size:1.7rem;
-
-    line-height:1.25;
-
-}
-
-
-.page-title p{
-
-    max-width:100%;
-
-    font-size:.85rem;
-
-    line-height:1.6;
-
-}
-
-
-.progress-info{
-
-    font-size:.8rem;
-
-}
-
-
-.section-content h2{
-
-    font-size:1.35rem;
-
-    line-height:1.35;
-
-}
-
-
-.section-content p{
-
-    font-size:.84rem;
-
-    line-height:1.6;
-
-}
-
-
-.content-card{
-
-    padding:20px;
-
-}
-
-
-.activity-card{
-
-    padding:20px;
-
-}
-
-
-.reference-box{
-
-    max-width:100%;
-
-    overflow-wrap:anywhere;
-
-    word-break:break-word;
-
-}
-
-
-    /* ======================================================
-    QUICK NAVIGATION — MOBILE SLIDE OUT
-    ====================================================== */
-
-    .quick-nav{
-
-        position:fixed;
-
-        top:0;
-        left:-260px;
-
-        width:230px;
-        height:100vh;
-
-        padding:90px 25px 40px 35px;
-
-        background:rgba(10,15,25,.96);
-
-        transition:left .3s ease;
-
-        z-index:1500;
+        box-sizing:border-box;
 
     }
 
 
     /* ======================================================
-    OPEN STATE
+    PAGE LAYOUT
     ====================================================== */
 
-    .quick-nav.open{
+    .page-layout{
 
-        left:0;
+        width:100%;
+
+        max-width:100%;
+
+        margin:0;
+
+        padding:0;
+
+        box-sizing:border-box;
+
+        overflow-x:hidden;
+
+    }
+
+
+    /* ======================================================
+    HEADER
+    ====================================================== */
+
+    .ai-header{
+
+        width:92%;
+
+        max-width:100%;
+
+        margin:30px auto 24px;
+
+        box-sizing:border-box;
+
+    }
+
+
+    .page-title{
+
+        margin-top:0;
+
+    }
+
+
+    .page-title h1{
+
+        font-size:1.75rem;
+
+        line-height:1.25;
+
+        margin-bottom:12px;
+
+    }
+
+
+    .page-title p{
+
+        max-width:100%;
+
+        font-size:.88rem;
+
+        line-height:1.6;
+
+    }
+
+
+    /* ======================================================
+    PROGRESS
+    ====================================================== */
+
+    .progress-section{
+
+        width:92%;
+
+        max-width:100%;
+
+        margin:0 auto 22px;
+
+        box-sizing:border-box;
+
+    }
+
+
+    /* ======================================================
+    CONTENT CARDS
+    ====================================================== */
+
+    .content-card{
+
+        width:92%;
+
+        max-width:100%;
+
+        margin:0 auto 20px;
+
+        padding:22px;
+
+        box-sizing:border-box;
+
+        flex-direction:column;
+
+        gap:18px;
+
+        border-radius:18px;
+
+    }
+
+
+    .section-number{
+
+        width:58px;
+
+        height:58px;
+
+    }
+
+
+    .section-content{
+
+        width:100%;
+
+        min-width:0;
+
+    }
+
+
+    .section-content h2{
+
+        font-size:1.4rem;
+
+        line-height:1.3;
+
+    }
+
+
+    .section-content p{
+
+        font-size:.86rem;
+
+        line-height:1.65;
+
+    }
+
+
+    /* ======================================================
+    ACTIVITY CARD
+    ====================================================== */
+
+    .activity-card{
+
+        width:92%;
+
+        max-width:100%;
+
+        margin:0 auto 20px;
+
+        padding:22px;
+
+        box-sizing:border-box;
+
+        border-radius:18px;
+
+    }
+
+
+    .activity-title h2{
+
+        font-size:1.5rem;
+
+        line-height:1.3;
+
+    }
+
+
+    .activity-title p{
+
+        max-width:100%;
+
+        font-size:.86rem;
+
+    }
+
+
+    /* ======================================================
+    IMAGE GAME
+    ====================================================== */
+
+    .image-game{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:18px;
+
+        width:100%;
+
+        margin-top:18px;
+
+    }
+
+
+    .image-option{
+
+        width:100%;
+
+        max-width:360px;
+
+        height:auto;
+
+        box-sizing:border-box;
+
+    }
+
+
+    .image-option img{
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+
+    /* ======================================================
+    ACTION CHOICES
+    ====================================================== */
+
+    .action-options{
+
+        grid-template-columns:1fr;
+
+        width:100%;
+
+        gap:10px;
+
+    }
+
+
+    .action-btn{
+
+        width:100%;
+
+        min-height:50px;
+
+        box-sizing:border-box;
+
+    }
+
+
+    /* ======================================================
+    GRIDS
+    ====================================================== */
+
+    .concern-grid,
+    .tips-grid,
+    .tool-grid{
+
+        grid-template-columns:1fr;
+
+        width:100%;
+
+    }
+
+
+    /* ======================================================
+    FEEDBACK
+    ====================================================== */
+
+    .feedback-box{
+
+        width:100%;
+
+        max-width:100%;
+
+        box-sizing:border-box;
+
+    }
+
+
+    /* ======================================================
+    REFERENCE
+    ====================================================== */
+
+    .reference-box{
+
+        max-width:100%;
+
+        box-sizing:border-box;
+
+        overflow-wrap:anywhere;
+
+        word-break:break-word;
+
+    }
+
+
+    .reference-box span{
+
+        overflow-wrap:anywhere;
+
+        word-break:break-word;
+
+    }
+
+
+    /* ======================================================
+    BOTTOM NAVIGATION
+    ====================================================== */
+
+    .lesson-navigation{
+
+        width:92%;
+
+        max-width:100%;
+
+        margin:25px auto 45px;
+
+        box-sizing:border-box;
 
     }
 
 }
-
 
 
 /* ==========================================================
