@@ -365,30 +365,36 @@ window.addEventListener("load", () => {
 });
 
 // ======================================================
-// MOBILE HAMBURGER QUICK NAVIGATION
+// MOBILE QUICK NAVIGATION
 // ======================================================
 
+const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
 const quickNav = document.querySelector(".quick-nav");
-const menuButton = document.querySelector(".mobile-menu-btn");
 
-if (quickNav && menuButton) {
 
-    menuButton.addEventListener("click", () => {
+if (mobileMenuBtn && quickNav) {
+
+    mobileMenuBtn.addEventListener("click", () => {
 
         quickNav.classList.toggle("open");
 
     });
 
+}
 
-    // Close menu after clicking a navigation link
-    quickNav.querySelectorAll("a").forEach(link => {
 
-        link.addEventListener("click", () => {
+// ======================================================
+// CLOSE MOBILE NAVIGATION AFTER SELECTING SECTION
+// ======================================================
 
-            quickNav.classList.remove("open");
+const quickNavLinks = document.querySelectorAll(".quick-nav a");
 
-        });
+quickNavLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        quickNav.classList.remove("open");
 
     });
 
-}
+});
