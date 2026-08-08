@@ -118,7 +118,7 @@ FIXED LEFT NAVIGATION
     width:230px;
     height:100vh;
 
-    padding:45px 25px 40px 35px;
+    padding:110px 25px 40px 35px;
 
     background:rgba(10,15,25,.72);
 
@@ -230,7 +230,7 @@ SIDE LINE — HOVER
 
     position:absolute;
 
-    left:-30px;
+    left:-35px;
 
     top:4px;
     bottom:4px;
@@ -376,82 +376,7 @@ MAIN CONTENT
 }
 
 
-/* ==========================================================
-MOBILE MENU BUTTON
-========================================================== */
 
-.mobile-menu-btn{
-
-    display:none;
-
-}
-
-
-/* ==========================================================
-RESPONSIVE — TABLET
-========================================================== */
-
-@media (max-width:992px){
-
-    .quick-nav{
-
-        width:190px;
-
-        padding-left:25px;
-        padding-right:20px;
-
-    }
-
-    .main-content{
-
-        margin-left:190px;
-
-        width:calc(100% - 190px);
-
-    }
-
-    .quick-nav a{
-
-        font-size:.82rem;
-
-    }
-
-    .quick-nav a .nav-number{
-
-        width:28px;
-        height:28px;
-
-        font-size:.68rem;
-
-    }
-
-}
-
-
-/* ==========================================================
-RESPONSIVE — MOBILE
-========================================================== */
-
-@media (max-width:768px){
-
-    .quick-nav{
-
-        display:none;
-
-    }
-
-
-
-    .main-content{
-
-        margin-left:0;
-
-        width:100%;
-
-    }
-
-
-}
 
     /* ======================================================
     HEADER
@@ -758,7 +683,7 @@ RESPONSIVE — MOBILE
     }
 
 
-    
+
 
 /* ==========================================================
 HEADER
@@ -2076,7 +2001,7 @@ RESPONSIVE — SMALL PHONE
 }
 
 /* ==========================================================
-SHIFT MAIN CONTENT TO THE RIGHT
+SHIFT MAIN CONTENT TO THE RIGHT — DESKTOP
 ========================================================== */
 
 .ai-header,
@@ -2090,5 +2015,26 @@ SHIFT MAIN CONTENT TO THE RIGHT
     left:100px;
 
 }
+
+
+/* ==========================================================
+RESET MAIN CONTENT SHIFT — MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .ai-header,
+    .progress-section,
+    .content-card,
+    .activity-card,
+    .lesson-navigation{
+
+        left:0;
+
+    }
+
+}
+
+
 
 
