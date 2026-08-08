@@ -375,111 +375,47 @@ MAIN CONTENT
 
 }
 
+
 /* ==========================================================
-RESPONSIVE — TABLET
+RESPONSIVE
 ========================================================== */
 
 @media (max-width:992px){
 
     .quick-nav{
 
-        width:190px;
+        width:200px;
 
         padding-left:25px;
-        padding-right:20px;
+
+    }
+
+    .quick-nav a::before{
+
+        left:-25px;
 
     }
 
     .main-content{
 
-        margin-left:190px;
+        margin-left:200px;
 
-        width:calc(100% - 190px);
-
-    }
-
-    .quick-nav a{
-
-        font-size:.82rem;
-
-    }
-
-    .quick-nav a .nav-number{
-
-        width:28px;
-        height:28px;
-
-        font-size:.68rem;
+        width:calc(100% - 200px);
 
     }
 
 }
 
 
-/* ==========================================================
-RESPONSIVE — MOBILE
-========================================================== */
-
 @media (max-width:768px){
 
-    /* ======================================================
-    MOBILE MENU TAB
-    ====================================================== */
+    .quick-nav{
 
-    .mobile-menu-btn{
-
-        display:flex;
-
-        position:fixed;
-
-        top:50%;
-        left:0;
-
-        width:8px;
-        height:64px;
-
-        padding:0;
-
-        justify-content:center;
-        align-items:center;
-
-        border:none;
-        border-radius:0 8px 8px 0;
-
-        background:#38bdf8;
-
-        color:transparent;
-
-        font-size:0;
-
-        cursor:pointer;
-
-        z-index:2000;
-
-        box-shadow:0 0 16px rgba(56,189,248,.25);
-
-        transition:.3s ease;
+        display:none;
 
     }
 
-
-    /* ======================================================
-    MOBILE MENU TAB — HOVER
-    ====================================================== */
-
-    .mobile-menu-btn:hover{
-
-        width:12px;
-
-        background:#38bdf8;
-
-    }
-
-
-    /* ======================================================
-    MAIN CONTENT — FULL SCREEN
-    ====================================================== */
-
+    
     .main-content{
 
         margin-left:0;
@@ -488,41 +424,8 @@ RESPONSIVE — MOBILE
 
     }
 
+    
 
-    /* ======================================================
-    QUICK NAVIGATION — HIDDEN
-    ====================================================== */
-
-    .quick-nav{
-
-        position:fixed;
-
-        top:0;
-        left:-260px;
-
-        width:230px;
-        height:100vh;
-
-        padding:90px 25px 40px 35px;
-
-        background:rgba(10,15,25,.94);
-
-        transition:left .3s ease;
-
-        z-index:1500;
-
-    }
-
-
-    /* ======================================================
-    QUICK NAVIGATION — OPEN
-    ====================================================== */
-
-    .quick-nav.open{
-
-        left:0;
-
-    }
 
 }
 
