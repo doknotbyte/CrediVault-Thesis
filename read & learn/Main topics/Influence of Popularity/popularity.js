@@ -364,3 +364,36 @@ window.addEventListener("load", () => {
 
 });
 
+// ======================================================
+// MOBILE QUICK NAVIGATION
+// ======================================================
+
+const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+const quickNav = document.querySelector(".quick-nav");
+
+if (mobileMenuBtn && quickNav) {
+
+    mobileMenuBtn.addEventListener("click", () => {
+
+        quickNav.classList.toggle("open");
+
+    });
+
+}
+
+
+// ======================================================
+// CLOSE MOBILE NAVIGATION AFTER SELECTING SECTION
+// ======================================================
+
+const quickNavLinks = document.querySelectorAll(".quick-nav a");
+
+quickNavLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        quickNav.classList.remove("open");
+
+    });
+
+});
