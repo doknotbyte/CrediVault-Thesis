@@ -1858,12 +1858,15 @@ SHIFT MAIN CONTENT TO THE RIGHT
 }
 
 /* ==========================================================
-MOBILE — LEFT EDGE HAMBURGER TAB
+RESPONSIVE — MOBILE
 ========================================================== */
 
 @media (max-width:768px){
 
-    /* Hide the normal mobile button styling */
+    /* ======================================================
+    HAMBURGER BUTTON — LEFT EDGE TAB
+    ====================================================== */
+
     .mobile-menu-btn{
 
         display:flex !important;
@@ -1875,8 +1878,8 @@ MOBILE — LEFT EDGE HAMBURGER TAB
 
         transform:translateY(-50%) !important;
 
-        width:38px !important;
-        height:70px !important;
+        width:42px !important;
+        height:72px !important;
 
         padding:0 !important;
         margin:0 !important;
@@ -1892,23 +1895,31 @@ MOBILE — LEFT EDGE HAMBURGER TAB
 
         color:#fff !important;
 
-        font-size:22px !important;
+        font-size:23px !important;
 
         cursor:pointer !important;
 
         z-index:99999 !important;
 
         box-shadow:
-            4px 0 15px rgba(0,0,0,.25);
+            4px 0 16px rgba(0,0,0,.30);
 
-        pointer-events:auto !important;
+        transition:
+            background .25s ease,
+            width .25s ease;
 
     }
 
 
+    /* ======================================================
+    HAMBURGER ICON
+    ====================================================== */
+
     .mobile-menu-btn i{
 
-        font-size:22px !important;
+        display:block !important;
+
+        font-size:23px !important;
 
         pointer-events:none !important;
 
@@ -1916,37 +1927,21 @@ MOBILE — LEFT EDGE HAMBURGER TAB
 
 
     /* ======================================================
-    QUICK NAV — SLIDE FROM LEFT
+    HAMBURGER HOVER
     ====================================================== */
 
-    .quick-nav{
+    .mobile-menu-btn:hover{
 
-        position:fixed !important;
+        background:rgba(30,41,59,.98) !important;
 
-        top:0 !important;
-        left:-260px !important;
-
-        width:230px !important;
-        height:100vh !important;
-
-        padding:90px 25px 40px 35px !important;
-
-        transition:left .3s ease !important;
-
-        z-index:9998 !important;
-
-    }
-
-
-    .quick-nav.open{
-
-        left:0 !important;
+        transform:
+            translateY(-50%) !important;
 
     }
 
 
     /* ======================================================
-    MAIN CONTENT — NO HORIZONTAL PUSH
+    MAIN CONTENT
     ====================================================== */
 
     .main-content{
@@ -1956,6 +1951,42 @@ MOBILE — LEFT EDGE HAMBURGER TAB
         width:100% !important;
 
         max-width:100% !important;
+
+    }
+
+
+    /* ======================================================
+    QUICK NAVIGATION — MOBILE
+    ====================================================== */
+
+    .quick-nav{
+
+        position:fixed !important;
+
+        top:0 !important;
+
+        left:-260px !important;
+
+        width:230px !important;
+
+        height:100vh !important;
+
+        padding:90px 25px 40px 35px !important;
+
+        transition:left .3s ease !important;
+
+        z-index:99998 !important;
+
+    }
+
+
+    /* ======================================================
+    OPEN STATE
+    ====================================================== */
+
+    .quick-nav.open{
+
+        left:0 !important;
 
     }
 
