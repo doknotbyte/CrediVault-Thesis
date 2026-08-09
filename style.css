@@ -253,10 +253,13 @@ MENU
 
     display:flex;
 
-    gap:12px;
+    gap:15px;
 
     align-items:center;
 
+    margin-left:auto;
+
+    margin-right:20px;
 }
 
 .nav-item{
