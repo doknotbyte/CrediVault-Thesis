@@ -1863,6 +1863,21 @@ RESPONSIVE — MOBILE (768px and below)
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
+    .quick-nav a::before {
+        width: 1px;
+    }
+
+    .quick-nav a:hover::before {
+        background: #38bdf8;
+        width: 1px;
+    }
+
+    .quick-nav a.active::before {
+        background: #38bdf8;
+        width: 1px;
+    }
+
     }
 
     /* ======================================================
