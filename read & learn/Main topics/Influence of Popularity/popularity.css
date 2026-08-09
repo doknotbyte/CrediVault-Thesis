@@ -261,6 +261,8 @@ HOVER
 .quick-nav a:hover::before{
 
     background:#38bdf8;
+    
+    width:1px;  /* ← ADD HERE */
 
 }
 
@@ -290,6 +292,8 @@ ACTIVE / CURRENT SECTION
 .quick-nav a.active::before{
 
     background:#38bdf8;
+    
+    width:1px;  /* ← ADD HERE */
 
 }
 
