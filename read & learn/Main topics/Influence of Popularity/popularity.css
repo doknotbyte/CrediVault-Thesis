@@ -383,310 +383,6 @@ MAIN CONTENT
 
 
 
-    /* ======================================================
-    HEADER
-    ====================================================== */
-
-    .ai-header{
-
-        width:92%;
-
-        max-width:100%;
-
-        margin:30px auto 24px;
-
-        box-sizing:border-box;
-
-    }
-
-
-    .page-title{
-
-        margin-top:0;
-
-    }
-
-
-    .page-title h1{
-
-        font-size:1.75rem;
-
-        line-height:1.25;
-
-        margin-bottom:12px;
-
-    }
-
-
-    .page-title p{
-
-        max-width:100%;
-
-        font-size:.88rem;
-
-        line-height:1.6;
-
-    }
-
-
-    /* ======================================================
-    PROGRESS
-    ====================================================== */
-
-    .progress-section{
-
-        width:92%;
-
-        max-width:100%;
-
-        margin:0 auto 22px;
-
-        box-sizing:border-box;
-
-    }
-
-
-    /* ======================================================
-    CONTENT CARDS
-    ====================================================== */
-
-    .content-card{
-
-        width:92%;
-
-        max-width:100%;
-
-        margin:0 auto 20px;
-
-        padding:22px;
-
-        box-sizing:border-box;
-
-        flex-direction:column;
-
-        gap:18px;
-
-        border-radius:18px;
-
-    }
-
-
-    .section-number{
-
-        width:58px;
-
-        height:58px;
-
-    }
-
-
-    .section-content{
-
-        width:100%;
-
-        min-width:0;
-
-    }
-
-
-    .section-content h2{
-
-        font-size:1.4rem;
-
-        line-height:1.3;
-
-    }
-
-
-    .section-content p{
-
-        font-size:.86rem;
-
-        line-height:1.65;
-
-    }
-
-
-    /* ======================================================
-    ACTIVITY CARD
-    ====================================================== */
-
-    .activity-card{
-
-        width:92%;
-
-        max-width:100%;
-
-        margin:0 auto 20px;
-
-        padding:22px;
-
-        box-sizing:border-box;
-
-        border-radius:18px;
-
-    }
-
-
-    .activity-title h2{
-
-        font-size:1.5rem;
-
-        line-height:1.3;
-
-    }
-
-
-    .activity-title p{
-
-        max-width:100%;
-
-        font-size:.86rem;
-
-    }
-
-
-    /* ======================================================
-    IMAGE GAME
-    ====================================================== */
-
-    .image-game{
-
-        display:flex;
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:18px;
-
-        width:100%;
-
-        margin-top:18px;
-
-    }
-
-
-    .image-option{
-
-        width:100%;
-
-        max-width:360px;
-
-        height:auto;
-
-        box-sizing:border-box;
-
-    }
-
-
-    .image-option img{
-
-        width:100%;
-
-        height:auto;
-
-    }
-
-
-    /* ======================================================
-    ACTION CHOICES
-    ====================================================== */
-
-    .action-options{
-
-        grid-template-columns:1fr;
-
-        width:100%;
-
-        gap:10px;
-
-    }
-
-
-    .action-btn{
-
-        width:100%;
-
-        min-height:50px;
-
-        box-sizing:border-box;
-
-    }
-
-
-    /* ======================================================
-    GRIDS
-    ====================================================== */
-
-    .concern-grid,
-    .tips-grid,
-    .tool-grid{
-
-        grid-template-columns:1fr;
-
-        width:100%;
-
-    }
-
-
-    /* ======================================================
-    FEEDBACK
-    ====================================================== */
-
-    .feedback-box{
-
-        width:100%;
-
-        max-width:100%;
-
-        box-sizing:border-box;
-
-    }
-
-
-    /* ======================================================
-    REFERENCE
-    ====================================================== */
-
-    .reference-box{
-
-        max-width:100%;
-
-        box-sizing:border-box;
-
-        overflow-wrap:anywhere;
-
-        word-break:break-word;
-
-    }
-
-
-    .reference-box span{
-
-        overflow-wrap:anywhere;
-
-        word-break:break-word;
-
-    }
-
-
-    /* ======================================================
-    BOTTOM NAVIGATION
-    ====================================================== */
-
-    .lesson-navigation{
-
-        width:92%;
-
-        max-width:100%;
-
-        margin:25px auto 45px;
-
-        box-sizing:border-box;
-
-    }
-
 
 
 
@@ -698,7 +394,7 @@ HEADER
 
     width:min(1100px,92%);
 
-    margin:35px auto 28px;
+    margin: -10px auto 28px;
 
 }
 
@@ -1688,19 +1384,7 @@ ANIMATION
         transform:translateX(0);
     }
 
-}
-
-
-
-
-.ai-header,
-.progress-section,
-.content-card,
-.activity-card,
-.lesson-navigation{
-
-    left:0;
-
+    
 }
 
 
@@ -1879,7 +1563,7 @@ RESPONSIVE — MOBILE (768px and below)
         width: 1px;
     }
 
-    }
+
 
     /* ======================================================
     MAIN CONTENT — CONSTRAINED
@@ -2096,7 +1780,7 @@ RESPONSIVE — MOBILE (768px and below)
         left: 0;
     }
 
-}
+
 
 
 /* ==========================================================
@@ -2189,7 +1873,6 @@ RESPONSIVE — SMALL PHONE (480px and below)
 
 }
 
-
-
+}
 
 
