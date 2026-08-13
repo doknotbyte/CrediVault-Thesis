@@ -113,7 +113,7 @@ NAVBAR
 
     transition:.4s;
 
-    background:rgba(8,17,31,.35);
+    background: #08111f !important;
 
     backdrop-filter:blur(18px);
 
@@ -144,6 +144,8 @@ NAVBAR
     padding:18px 25px;
 
 }
+
+
 
 /* ==========================================================
 LOGO
