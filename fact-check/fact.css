@@ -2491,7 +2491,7 @@ MENU
 
         margin: 0;
 
-        background: #08111f;
+        background: #08111f !important;
 
         border-top: 1px solid rgba(255,255,255,.08);
 
