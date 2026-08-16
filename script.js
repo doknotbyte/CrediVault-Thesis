@@ -320,3 +320,220 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+    /*==================================================
+        CHECK BEFORE YOU SHARE
+    ==================================================*/
+
+    const checkSteps = document.querySelectorAll(".check-step");
+
+    const checkDetail = document.getElementById("checkDetail");
+
+    const detailStep = checkDetail
+        ? checkDetail.querySelector(".check-detail-top > span:first-child")
+        : null;
+
+    const detailProgress = checkDetail
+        ? checkDetail.querySelector(".detail-progress-fill")
+        : null;
+
+    const detailCount = checkDetail
+        ? checkDetail.querySelector(".detail-count")
+        : null;
+
+    const detailIcon = checkDetail
+        ? checkDetail.querySelector(".check-detail-icon i")
+        : null;
+
+    const detailTitle = checkDetail
+        ? checkDetail.querySelector(".check-detail-content h3")
+        : null;
+
+    const detailText = checkDetail
+        ? checkDetail.querySelector(".check-detail-content p")
+        : null;
+
+    const detailFooter = checkDetail
+        ? checkDetail.querySelector(".check-detail-footer span")
+        : null;
+
+
+    const checkData = {
+
+        1: {
+            icon: "fa-pause",
+            step: "STEP 01",
+            title: "Stop before you share.",
+            text:
+                "Give yourself a moment to pause. Avoid reacting based only on emotion, popularity, or urgency.",
+            footer:
+                "Credibility starts with a pause."
+        },
+
+        2: {
+            icon: "fa-magnifying-glass",
+            step: "STEP 02",
+            title: "Check the source and evidence.",
+            text:
+                "Look at who published the information and examine whether the claim is supported by reliable evidence.",
+            footer:
+                "Look beyond the headline."
+        },
+
+        3: {
+            icon: "fa-code-compare",
+            step: "STEP 03",
+            title: "Verify with trusted sources.",
+            text:
+                "Compare the information with reliable and independent sources before accepting or sharing the claim.",
+            footer:
+                "Verification strengthens your decision."
+        }
+
+    };
+
+
+    function updateCheckStep(stepNumber) {
+
+        const selected = checkData[stepNumber];
+
+        if (!selected || !checkDetail) return;
+
+
+        /*------------------------------------------
+            ACTIVE STEP
+        ------------------------------------------*/
+
+        checkSteps.forEach(step => {
+
+            const stepValue =
+                Number(step.dataset.step);
+
+            const stateIcon =
+                step.querySelector(".step-state i");
+
+            const isActive =
+                stepValue === stepNumber;
+
+            step.classList.toggle(
+                "active-step",
+                isActive
+            );
+
+            step.setAttribute(
+                "aria-expanded",
+                isActive ? "true" : "false"
+            );
+
+
+            if (stateIcon) {
+
+                stateIcon.classList.toggle(
+                    "fa-solid",
+                    isActive
+                );
+
+                stateIcon.classList.toggle(
+                    "fa-regular",
+                    !isActive
+                );
+
+                stateIcon.classList.toggle(
+                    "fa-circle",
+                    true
+                );
+
+            }
+
+        });
+
+
+        /*------------------------------------------
+            UPDATE DETAIL PANEL
+        ------------------------------------------*/
+
+        if (detailStep) {
+
+            detailStep.textContent =
+                selected.step;
+
+        }
+
+
+        if (detailProgress) {
+
+            detailProgress.style.width =
+                `${(stepNumber / 3) * 100}%`;
+
+        }
+
+
+        if (detailCount) {
+
+            detailCount.textContent =
+                `${stepNumber} / 3`;
+
+        }
+
+
+        if (detailIcon) {
+
+            detailIcon.className =
+                `fa-solid ${selected.icon}`;
+
+        }
+
+
+        if (detailTitle) {
+
+            detailTitle.textContent =
+                selected.title;
+
+        }
+
+
+        if (detailText) {
+
+            detailText.textContent =
+                selected.text;
+
+        }
+
+
+        if (detailFooter) {
+
+            detailFooter.textContent =
+                selected.footer;
+
+        }
+
+    }
+
+
+    /*------------------------------------------
+        STEP CLICK
+    ------------------------------------------*/
+
+    checkSteps.forEach(step => {
+
+        step.addEventListener("click", () => {
+
+            const stepNumber =
+                Number(step.dataset.step);
+
+            updateCheckStep(stepNumber);
+
+        });
+
+    });
+
+
+    /*------------------------------------------
+        INITIAL STATE
+    ------------------------------------------*/
+
+    if (checkSteps.length) {
+
+        updateCheckStep(1);
+
+    }

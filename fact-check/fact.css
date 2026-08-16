@@ -15,16 +15,16 @@
 
     --white:#ffffff;
 
-    --text:#1e293b;
+    --text:#ffffff;
     --muted:#94a3b8;
 
-    --card:#ffffff;
+    --card:rgba(18,27,46,.82);
 
     --border:rgba(255,255,255,.08);
 
     --glass:rgba(255,255,255,.08);
 
-    --shadow-sm:0 10px 30px rgba(0,0,0,.08);
+    --shadow-sm:0 10px 30px rgba(0,0,0,.12);
 
     --shadow-lg:0 25px 60px rgba(37,99,235,.18);
 
@@ -50,9 +50,16 @@ body{
 
     font-family:'Plus Jakarta Sans',sans-serif;
 
-    background:#f6f9fc;
+    background:
+        linear-gradient(
+            180deg,
+            #b8c6d6 0%,
+            #c5d1de 25%,
+            #d1dbe5 55%,
+            #d9e2ea 100%
+        );
 
-    color:var(--text);
+    color:#1e293b;
 
     overflow-x:hidden;
 
@@ -366,14 +373,17 @@ MENU
 
 
 /* ==========================================================
-   FACT CHECK HERO — MODERN INTERACTIVE VERSION
+   FACT CHECK HERO — MODERN DARK INTERACTIVE VERSION
 ========================================================== */
 
 .fact-hero {
 
     position: relative;
+
     min-height: 760px;
+
     padding: 135px 30px 90px;
+
     overflow: hidden;
 
     background:
@@ -386,15 +396,17 @@ MENU
 
         radial-gradient(
             circle at 90% 75%,
-            rgba(6, 182, 212, 0.12),
+            rgba(6, 182, 212, 0.10),
             transparent 32%
         ),
+
         linear-gradient(
-            135deg,
-            #f8fbff 0%,
-            #eef5ff 48%,
-            #f8fcff 100%
+            180deg,
+            #08111f 0%,
+            #091523 100%
         );
+
+    color:#fff;
 }
 
 
@@ -403,17 +415,21 @@ MENU
 ========================================================== */
 
 .hero-grid {
+
     position: absolute;
+
     inset: 0;
 
     background-image:
+
         linear-gradient(
-            rgba(37, 99, 235, 0.045) 1px,
+            rgba(56, 189, 248, 0.035) 1px,
             transparent 1px
         ),
+
         linear-gradient(
             90deg,
-            rgba(37, 99, 235, 0.045) 1px,
+            rgba(56, 189, 248, 0.035) 1px,
             transparent 1px
         );
 
@@ -435,34 +451,42 @@ MENU
 ========================================================== */
 
 .hero-orb {
+
     position: absolute;
+
     border-radius: 50%;
+
     pointer-events: none;
+
     filter: blur(2px);
 }
 
 .hero-orb-one {
+
     width: 420px;
     height: 420px;
 
     top: -220px;
     left: -180px;
 
-    background: rgba(37, 99, 235, 0.06);
+    background: rgba(37, 99, 235, 0.09);
 
-    animation: heroOrbFloat 8s ease-in-out infinite;
+    animation:
+        heroOrbFloat 8s ease-in-out infinite;
 }
 
 .hero-orb-two {
+
     width: 320px;
     height: 320px;
 
     right: -120px;
     bottom: -130px;
 
-    background: rgba(6, 182, 212, 0.07);
+    background: rgba(6, 182, 212, 0.08);
 
-    animation: heroOrbFloat 10s ease-in-out infinite reverse;
+    animation:
+        heroOrbFloat 10s ease-in-out infinite reverse;
 }
 
 
@@ -473,13 +497,18 @@ MENU
 .fact-hero-container {
 
     position: relative;
+
     z-index: 5;
 
     max-width: 1280px;
+
     margin: auto;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(470px, 0.9fr);
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(470px, 0.9fr);
 
     align-items: center;
 
@@ -507,11 +536,13 @@ MENU
 ========================================================== */
 
 .fact-hero-content h1 {
+
     margin: 22px 0 14px;
 
-    color: #0f172a;
+    color: #ffffff;
 
-    font-size: clamp(3.5rem, 6vw, 5.4rem);
+    font-size:
+        clamp(3.5rem, 6vw, 5.4rem);
 
     line-height: 0.94;
 
@@ -523,14 +554,14 @@ MENU
         heroHeadingIn 0.9s ease-out 0.1s both;
 }
 
-
 .fact-hero-content h1 span {
+
     display: block;
 
     background:
         linear-gradient(
             90deg,
-            #2563eb 0%,
+            #38bdf8 0%,
             #06b6d4 45%,
             #2563eb 90%
         );
@@ -552,11 +583,13 @@ MENU
 ========================================================== */
 
 .fact-hero-content h2 {
+
     margin: 0 0 17px;
 
-    color: #172033;
+    color: #e2e8f0;
 
-    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-size:
+        clamp(1.15rem, 2vw, 1.4rem);
 
     font-weight: 800;
 
@@ -566,13 +599,13 @@ MENU
         heroContentIn 0.8s ease-out 0.25s both;
 }
 
-
 .hero-description {
+
     max-width: 610px;
 
     margin: 0;
 
-    color: #526176;
+    color: #94a3b8;
 
     font-size: 1rem;
 
@@ -588,8 +621,11 @@ MENU
 ========================================================== */
 
 .hero-actions {
+
     display: flex;
+
     align-items: center;
+
     flex-wrap: wrap;
 
     gap: 12px;
@@ -600,11 +636,12 @@ MENU
         heroContentIn 0.8s ease-out 0.45s both;
 }
 
-
 .hero-btn {
+
     min-height: 55px;
 
     display: inline-flex;
+
     align-items: center;
 
     text-decoration: none;
@@ -612,18 +649,23 @@ MENU
     border-radius: 13px;
 
     font-size: 0.78rem;
+
     font-weight: 800;
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
-        background 0.3s ease;
+        background 0.3s ease,
+        border-color 0.3s ease;
 }
 
 
-/* PRIMARY */
+/* ==========================================================
+   PRIMARY BUTTON
+========================================================== */
 
 .hero-btn-primary {
+
     gap: 12px;
 
     padding: 7px 10px 7px 7px;
@@ -634,15 +676,15 @@ MENU
         linear-gradient(
             135deg,
             #2563eb,
-            #1d4ed8
+            #06b6d4
         );
 
     box-shadow:
         0 12px 28px rgba(37, 99, 235, 0.24);
 }
 
-
 .hero-btn-primary:hover {
+
     color: #fff;
 
     transform: translateY(-4px);
@@ -651,30 +693,34 @@ MENU
         0 20px 40px rgba(37, 99, 235, 0.32);
 }
 
-
 .btn-icon {
+
     width: 40px;
     height: 40px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 9px;
 
-    background: rgba(255, 255, 255, 0.16);
+    background:
+        rgba(255, 255, 255, 0.16);
 }
 
-
 .hero-btn-primary span:not(.btn-icon) {
+
     display: flex;
+
     flex-direction: column;
 
     gap: 1px;
 }
 
-
 .hero-btn-primary small {
+
     font-size: 0.55rem;
 
     opacity: 0.7;
@@ -682,65 +728,86 @@ MENU
     letter-spacing: 0.8px;
 }
 
-
 .btn-arrow {
+
     margin-left: 8px;
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease;
 }
-
 
 .hero-btn-primary:hover .btn-arrow {
-    transform: translateX(4px);
+
+    transform:
+        translateX(4px);
 }
 
 
-/* SECONDARY */
+/* ==========================================================
+   SECONDARY BUTTON
+========================================================== */
 
 .hero-btn-secondary {
+
     gap: 9px;
 
     padding: 0 18px;
 
-    color: #1e3a8a;
+    color: #cbd5e1;
 
-    background: rgba(255, 255, 255, 0.75);
+    background:
+        rgba(255,255,255,.045);
 
-    border: 1px solid rgba(37, 99, 235, 0.15);
+    border:
+        1px solid rgba(255,255,255,.10);
 
     box-shadow:
-        0 8px 20px rgba(15, 23, 42, 0.05);
+        0 8px 20px rgba(0,0,0,.12);
+
+    backdrop-filter:
+        blur(14px);
 }
 
-
 .hero-btn-secondary:hover {
-    color: #2563eb;
+
+    color: #fff;
 
     transform: translateY(-4px);
 
-    background: #fff;
+    background:
+        rgba(56,189,248,.08);
+
+    border-color:
+        rgba(56,189,248,.25);
 
     box-shadow:
-        0 15px 30px rgba(37, 99, 235, 0.12);
+        0 15px 30px rgba(37,99,235,.12);
 }
 
-
 .secondary-icon {
+
     width: 30px;
     height: 30px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
 
-    color: #2563eb;
+    color: #38bdf8;
 
-    background: #dbeafe;
+    background:
+        rgba(56,189,248,.10);
+
+    border:
+        1px solid rgba(56,189,248,.10);
 
     font-size: 10px;
 }
+
 
 /* ==========================================================
    PROCESS
@@ -751,7 +818,6 @@ MENU
     display: flex;
 
     align-items: center;
-    
 
     margin-top: 85px;
 
@@ -759,43 +825,47 @@ MENU
         heroContentIn 0.8s ease-out 0.65s both;
 }
 
-
 .process-item {
+
     position: relative;
 
     display: flex;
+
     align-items: center;
 
     gap: 8px;
 
     cursor: pointer;
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease;
 }
-
 
 .process-item:hover {
-    transform: translateY(-4px);
+
+    transform:
+        translateY(-4px);
 }
 
-
 .process-number {
+
     position: absolute;
 
     top: -12px;
+
     left: 38px;
 
     font-size: 0.48rem;
 
     font-weight: 900;
 
-    color: #94a3b8;
+    color: #64748b;
 
     letter-spacing: 0.5px;
 }
 
-
 .process-icon {
+
     width: 48px;
     height: 48px;
 
@@ -818,13 +888,15 @@ MENU
         box-shadow 0.3s ease;
 }
 
-
 .process-item:hover .process-icon {
-    transform: rotate(-5deg) scale(1.08);
+
+    transform:
+        rotate(-5deg)
+        scale(1.08);
 }
 
-
 .process-icon.blue {
+
     background:
         linear-gradient(
             135deg,
@@ -836,8 +908,8 @@ MENU
         0 8px 20px rgba(37, 99, 235, 0.22);
 }
 
-
 .process-icon.cyan {
+
     background:
         linear-gradient(
             135deg,
@@ -849,8 +921,8 @@ MENU
         0 8px 20px rgba(6, 182, 212, 0.22);
 }
 
-
 .process-icon.green {
+
     background:
         linear-gradient(
             135deg,
@@ -862,11 +934,11 @@ MENU
         0 8px 20px rgba(34, 197, 94, 0.22);
 }
 
-
 .process-text h3 {
+
     margin: 0 0 3px;
 
-    color: #172033;
+    color: #e2e8f0;
 
     font-size: 0.68rem;
 
@@ -875,37 +947,43 @@ MENU
     letter-spacing: 0.4px;
 }
 
-
 .process-text p {
+
     margin: 0;
 
-    color: #7a8799;
+    color: #64748b;
 
     font-size: 0.59rem;
 
     white-space: nowrap;
 }
 
-
 .process-line {
+
     width: 35px;
     height: 1px;
 
     margin: 0 12px;
 
-    background: #cbd5e1;
+    background:
+        rgba(148,163,184,.18);
 
     overflow: hidden;
 }
 
-
 .process-line span {
+
     display: block;
 
     width: 45%;
     height: 100%;
 
-    background: #2563eb;
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #38bdf8
+        );
 
     animation:
         processLine 2s ease-in-out infinite;
@@ -917,12 +995,15 @@ MENU
 ========================================================== */
 
 .fact-hero-visual {
+
     position: relative;
 
     min-height: 540px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     animation:
@@ -935,6 +1016,7 @@ MENU
 ========================================================== */
 
 .visual-glow {
+
     position: absolute;
 
     width: 400px;
@@ -945,8 +1027,8 @@ MENU
     background:
         radial-gradient(
             circle,
-            rgba(37, 99, 235, 0.18),
-            rgba(6, 182, 212, 0.07) 45%,
+            rgba(37, 99, 235, 0.20),
+            rgba(6, 182, 212, 0.08) 45%,
             transparent 70%
         );
 
@@ -962,17 +1044,19 @@ MENU
 ========================================================== */
 
 .visual-ring {
+
     position: absolute;
 
     border-radius: 50%;
 
-    border: 1px solid rgba(37, 99, 235, 0.1);
+    border:
+        1px solid rgba(56,189,248,.10);
 
     pointer-events: none;
 }
 
-
 .ring-one {
+
     width: 460px;
     height: 460px;
 
@@ -980,12 +1064,13 @@ MENU
         ringRotate 20s linear infinite;
 }
 
-
 .ring-two {
+
     width: 370px;
     height: 370px;
 
-    border-color: rgba(6, 182, 212, 0.12);
+    border-color:
+        rgba(6, 182, 212, 0.12);
 
     animation:
         ringRotate 15s linear infinite reverse;
@@ -997,10 +1082,13 @@ MENU
 ========================================================== */
 
 .fact-scanner {
+
     position: relative;
+
     z-index: 4;
 
     width: 390px;
+
     min-height: 405px;
 
     overflow: hidden;
@@ -1008,28 +1096,41 @@ MENU
     border-radius: 24px;
 
     background:
-        rgba(255, 255, 255, 0.88);
+        linear-gradient(
+            145deg,
+            rgba(18,29,49,.96),
+            rgba(7,16,30,.97)
+        );
 
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    border:
+        1px solid rgba(56,189,248,.15);
 
     box-shadow:
-        0 35px 80px rgba(30, 64, 175, 0.16),
-        0 8px 25px rgba(15, 23, 42, 0.06);
+        0 35px 80px rgba(0,0,0,.30),
+        0 8px 25px rgba(37,99,235,.08),
+        inset 0 1px 0 rgba(255,255,255,.04);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(18px);
 
     transition:
         transform 0.4s ease,
-        box-shadow 0.4s ease;
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
 }
 
-
 .fact-scanner:hover {
-    transform: translateY(-8px) rotateX(2deg);
+
+    transform:
+        translateY(-8px)
+        rotateX(2deg);
+
+    border-color:
+        rgba(56,189,248,.30);
 
     box-shadow:
-        0 45px 100px rgba(30, 64, 175, 0.22),
-        0 12px 35px rgba(15, 23, 42, 0.08);
+        0 45px 100px rgba(0,0,0,.38),
+        0 12px 35px rgba(37,99,235,.12);
 }
 
 
@@ -1038,53 +1139,60 @@ MENU
 ========================================================== */
 
 .scanner-header {
+
     height: 47px;
 
     display: flex;
+
     align-items: center;
 
     padding: 0 16px;
 
-    border-bottom: 1px solid #edf1f7;
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
 
-    background: rgba(248, 250, 252, 0.8);
+    background:
+        rgba(255,255,255,.035);
 }
 
-
 .browser-dots {
+
     display: flex;
+
     gap: 5px;
 }
 
-
 .browser-dots span {
+
     width: 7px;
     height: 7px;
 
     border-radius: 50%;
 
-    background: #cbd5e1;
+    background: #475569;
 }
-
 
 .browser-dots span:nth-child(1) {
-    background: #f87171;
-}
 
+    background: #ef4444;
+}
 
 .browser-dots span:nth-child(2) {
-    background: #fbbf24;
-}
 
+    background: #f59e0b;
+}
 
 .browser-dots span:nth-child(3) {
-    background: #4ade80;
+
+    background: #22c55e;
 }
 
-
 .browser-address {
+
     display: flex;
+
     align-items: center;
+
     gap: 7px;
 
     margin: auto;
@@ -1093,25 +1201,27 @@ MENU
 
     border-radius: 7px;
 
-    color: #7c8798;
+    color: #64748b;
 
-    background: #fff;
+    background:
+        rgba(8,17,31,.75);
 
-    border: 1px solid #edf1f7;
+    border:
+        1px solid rgba(255,255,255,.06);
 
     font-size: 0.58rem;
 }
 
-
 .browser-address i {
-    color: #16a34a;
+
+    color: #22c55e;
 
     font-size: 8px;
 }
 
-
 .scanner-menu {
-    color: #94a3b8;
+
+    color: #64748b;
 
     font-size: 12px;
 }
@@ -1122,17 +1232,19 @@ MENU
 ========================================================== */
 
 .scanner-content {
+
     padding: 25px;
 }
 
-
 .scanner-label {
+
     display: inline-flex;
+
     align-items: center;
 
     gap: 7px;
 
-    color: #dc2626;
+    color: #f87171;
 
     font-size: 0.58rem;
 
@@ -1141,8 +1253,8 @@ MENU
     letter-spacing: 0.8px;
 }
 
-
 .scanner-label i {
+
     font-size: 10px;
 }
 
@@ -1152,6 +1264,7 @@ MENU
 ========================================================== */
 
 .claim-box {
+
     display: flex;
 
     gap: 12px;
@@ -1162,39 +1275,47 @@ MENU
 
     border-radius: 14px;
 
-    background: #f8fafc;
+    background:
+        rgba(255,255,255,.035);
 
-    border: 1px solid #e7edf5;
+    border:
+        1px solid rgba(255,255,255,.07);
 }
 
-
 .claim-avatar {
+
     width: 34px;
     height: 34px;
 
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 10px;
 
-    color: #2563eb;
+    color: #38bdf8;
 
-    background: #dbeafe;
+    background:
+        rgba(56,189,248,.10);
+
+    border:
+        1px solid rgba(56,189,248,.10);
 
     font-size: 13px;
 }
 
-
 .claim-content {
+
     min-width: 0;
 }
 
-
 .claim-source {
-    color: #94a3b8;
+
+    color: #64748b;
 
     font-size: 0.5rem;
 
@@ -1203,32 +1324,34 @@ MENU
     letter-spacing: 0.7px;
 }
 
-
 .claim-content h3 {
+
     margin: 5px 0 8px;
 
-    color: #1e293b;
+    color: #e2e8f0;
 
     font-size: 0.83rem;
 
     line-height: 1.4;
 }
 
-
 .claim-meta {
+
     display: flex;
 
     gap: 12px;
 
-    color: #94a3b8;
+    color: #64748b;
 
     font-size: 0.48rem;
 }
 
-
 .claim-meta span {
+
     display: flex;
+
     align-items: center;
+
     gap: 4px;
 }
 
@@ -1238,6 +1361,7 @@ MENU
 ========================================================== */
 
 .scan-area {
+
     position: relative;
 
     height: 110px;
@@ -1249,17 +1373,23 @@ MENU
     border-radius: 13px;
 
     background:
+        radial-gradient(
+            circle at center,
+            rgba(56,189,248,.08),
+            transparent 50%
+        ),
         linear-gradient(
             135deg,
-            #eff6ff,
-            #f0fdfa
+            #0d213b,
+            #0a172d
         );
 
-    border: 1px solid #dbeafe;
+    border:
+        1px solid rgba(56,189,248,.12);
 }
 
-
 .scan-line {
+
     position: absolute;
 
     left: 0;
@@ -1272,6 +1402,7 @@ MENU
             90deg,
             transparent,
             #06b6d4,
+            #38bdf8,
             #2563eb,
             transparent
         );
@@ -1283,8 +1414,8 @@ MENU
         scanMove 2.5s ease-in-out infinite;
 }
 
-
 .scan-target {
+
     position: absolute;
 
     top: 50%;
@@ -1294,16 +1425,19 @@ MENU
     height: 40px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
-    color: #2563eb;
+    color: #38bdf8;
 
     font-size: 20px;
 
-    opacity: 0.65;
+    opacity: 0.7;
 
     animation:
         targetPulse 2s ease-in-out infinite;
@@ -1315,48 +1449,53 @@ MENU
 ========================================================== */
 
 .scan-corners {
+
     position: absolute;
 
     width: 18px;
     height: 18px;
 
-    border-color: #2563eb;
+    border-color: #38bdf8;
 
     border-style: solid;
 
     opacity: 0.6;
 }
 
-
 .corner-tl {
+
     top: 13px;
     left: 13px;
 
-    border-width: 2px 0 0 2px;
+    border-width:
+        2px 0 0 2px;
 }
-
 
 .corner-tr {
+
     top: 13px;
     right: 13px;
 
-    border-width: 2px 2px 0 0;
+    border-width:
+        2px 2px 0 0;
 }
 
-
 .corner-bl {
+
     bottom: 13px;
     left: 13px;
 
-    border-width: 0 0 2px 2px;
+    border-width:
+        0 0 2px 2px;
 }
 
-
 .corner-br {
+
     bottom: 13px;
     right: 13px;
 
-    border-width: 0 2px 2px 0;
+    border-width:
+        0 2px 2px 0;
 }
 
 
@@ -1365,7 +1504,9 @@ MENU
 ========================================================== */
 
 .verification-result {
+
     display: flex;
+
     align-items: center;
 
     gap: 10px;
@@ -1376,18 +1517,22 @@ MENU
 
     border-radius: 12px;
 
-    background: #f0fdf4;
+    background:
+        rgba(34,197,94,.06);
 
-    border: 1px solid #dcfce7;
+    border:
+        1px solid rgba(34,197,94,.13);
 }
 
-
 .verification-icon {
+
     width: 32px;
     height: 32px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 9px;
@@ -1402,20 +1547,21 @@ MENU
         );
 
     box-shadow:
-        0 6px 15px rgba(34, 197, 94, 0.2);
+        0 6px 15px rgba(34,197,94,.20);
 }
 
-
 .verification-copy {
+
     display: flex;
+
     flex-direction: column;
 
     gap: 2px;
 }
 
-
 .verification-copy span {
-    color: #65a374;
+
+    color: #86efac;
 
     font-size: 0.45rem;
 
@@ -1424,15 +1570,15 @@ MENU
     letter-spacing: 0.7px;
 }
 
-
 .verification-copy strong {
-    color: #15803d;
+
+    color: #4ade80;
 
     font-size: 0.64rem;
 }
 
-
 .verification-progress {
+
     width: 40px;
     height: 4px;
 
@@ -1442,14 +1588,16 @@ MENU
 
     border-radius: 20px;
 
-    background: #dcfce7;
+    background:
+        rgba(34,197,94,.12);
 }
 
-
 .verification-progress span {
+
     display: block;
 
     width: 70%;
+
     height: 100%;
 
     border-radius: inherit;
@@ -1466,11 +1614,13 @@ MENU
 ========================================================== */
 
 .floating-badge {
+
     position: absolute;
 
     z-index: 7;
 
     display: flex;
+
     align-items: center;
 
     gap: 7px;
@@ -1479,14 +1629,16 @@ MENU
 
     border-radius: 50px;
 
-    color: #2563eb;
+    color: #7dd3fc;
 
-    background: rgba(255, 255, 255, 0.9);
+    background:
+        rgba(8,17,31,.86);
 
-    border: 1px solid rgba(37, 99, 235, 0.12);
+    border:
+        1px solid rgba(56,189,248,.15);
 
     box-shadow:
-        0 12px 30px rgba(15, 23, 42, 0.09);
+        0 12px 30px rgba(0,0,0,.20);
 
     backdrop-filter: blur(10px);
 
@@ -1500,14 +1652,14 @@ MENU
         floatingCard 4s ease-in-out infinite;
 }
 
-
 .badge-top {
+
     top: 55px;
     left: 8px;
 }
 
-
 .badge-dot {
+
     width: 7px;
     height: 7px;
 
@@ -1516,14 +1668,14 @@ MENU
     background: #22c55e;
 
     box-shadow:
-        0 0 0 4px rgba(34, 197, 94, 0.12);
+        0 0 0 4px rgba(34,197,94,.12);
 
     animation:
         statusPulse 1.8s ease-in-out infinite;
 }
 
-
 .floating-badge i {
+
     color: #22c55e;
 
     font-size: 9px;
@@ -1535,11 +1687,13 @@ MENU
 ========================================================== */
 
 .floating-card {
+
     position: absolute;
 
     z-index: 8;
 
     display: flex;
+
     align-items: center;
 
     gap: 9px;
@@ -1550,41 +1704,56 @@ MENU
 
     border-radius: 14px;
 
-    background: rgba(255, 255, 255, 0.92);
+    background:
+        rgba(18,29,49,.92);
 
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    border:
+        1px solid rgba(56,189,248,.12);
 
     box-shadow:
-        0 18px 40px rgba(15, 23, 42, 0.1);
+        0 18px 40px rgba(0,0,0,.24);
 
     backdrop-filter: blur(14px);
+
+    color:#fff;
 
     cursor: pointer;
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
 }
-
 
 .floating-card:hover {
-    transform: translateY(-7px) scale(1.03);
+
+    transform:
+        translateY(-7px)
+        scale(1.03);
+
+    border-color:
+        rgba(56,189,248,.28);
+
+    background:
+        rgba(20,35,58,.96);
 
     box-shadow:
-        0 25px 50px rgba(37, 99, 235, 0.15);
+        0 25px 50px rgba(37,99,235,.12);
 }
 
-
 .floating-card > div:nth-child(2) {
+
     display: flex;
+
     flex-direction: column;
 
     gap: 2px;
 }
 
-
 .floating-card span {
-    color: #94a3b8;
+
+    color: #64748b;
 
     font-size: 0.45rem;
 
@@ -1593,31 +1762,33 @@ MENU
     letter-spacing: 0.6px;
 }
 
-
 .floating-card strong {
-    color: #1e293b;
+
+    color: #e2e8f0;
 
     font-size: 0.58rem;
 
     white-space: nowrap;
 }
 
-
 .floating-card > i:last-child {
+
     margin-left: auto;
 
-    color: #94a3b8;
+    color: #64748b;
 
     font-size: 9px;
 }
 
-
 .floating-card-icon {
+
     width: 31px;
     height: 31px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 9px;
@@ -1625,20 +1796,26 @@ MENU
     font-size: 12px;
 }
 
-
 .floating-card-icon.blue {
-    color: #2563eb;
-    background: #dbeafe;
-}
 
+    color: #38bdf8;
+
+    background:
+        rgba(56,189,248,.10);
+
+}
 
 .floating-card-icon.purple {
-    color: #9333ea;
-    background: #f3e8ff;
+
+    color: #c084fc;
+
+    background:
+        rgba(168,85,247,.10);
+
 }
 
-
 .source-card {
+
     top: 145px;
     right: -30px;
 
@@ -1646,8 +1823,8 @@ MENU
         floatingCard 4s ease-in-out infinite;
 }
 
-
 .image-card {
+
     left: -35px;
     bottom: 125px;
 
@@ -1655,8 +1832,8 @@ MENU
         floatingCard 4.5s ease-in-out 0.5s infinite;
 }
 
-
 .verified-card {
+
     right: -45px;
     bottom: 75px;
 
@@ -1664,13 +1841,15 @@ MENU
         floatingCard 4.2s ease-in-out 1s infinite;
 }
 
-
 .verified-check {
+
     width: 31px;
     height: 31px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
@@ -1680,6 +1859,9 @@ MENU
     background: #22c55e;
 
     font-size: 11px;
+
+    box-shadow:
+        0 0 14px rgba(34,197,94,.18);
 }
 
 
@@ -1688,6 +1870,7 @@ MENU
 ========================================================== */
 
 .question-bubble {
+
     position: absolute;
 
     z-index: 8;
@@ -1699,19 +1882,23 @@ MENU
     height: 43px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
 
-    color: #2563eb;
+    color: #38bdf8;
 
-    background: #fff;
+    background:
+        rgba(18,29,49,.94);
 
-    border: 1px solid #dbeafe;
+    border:
+        1px solid rgba(56,189,248,.16);
 
     box-shadow:
-        0 15px 30px rgba(37, 99, 235, 0.13);
+        0 15px 30px rgba(0,0,0,.20);
 
     font-size: 16px;
 
@@ -1723,16 +1910,28 @@ MENU
     transition:
         transform 0.3s ease,
         background 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        border-color .3s ease;
 }
 
-
 .question-bubble:hover {
+
     color: #fff;
 
-    background: #2563eb;
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
 
-    transform: rotate(12deg) scale(1.12);
+    border-color:
+        rgba(56,189,248,.35);
+
+    transform:
+        rotate(12deg)
+        scale(1.12);
+
 }
 
 
@@ -1741,6 +1940,7 @@ MENU
 ========================================================== */
 
 .visual-status {
+
     position: absolute;
 
     z-index: 7;
@@ -1748,9 +1948,11 @@ MENU
     bottom: 25px;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     display: flex;
+
     align-items: center;
 
     gap: 7px;
@@ -1763,18 +1965,23 @@ MENU
 
     color: #64748b;
 
-    background: rgba(255, 255, 255, 0.72);
+    background:
+        rgba(8,17,31,.82);
 
-    border: 1px solid rgba(37, 99, 235, 0.08);
+    border:
+        1px solid rgba(56,189,248,.10);
 
     font-size: 0.52rem;
 
     box-shadow:
-        0 8px 20px rgba(15, 23, 42, 0.05);
+        0 8px 20px rgba(0,0,0,.16);
+
+    backdrop-filter:
+        blur(10px);
 }
 
-
 .status-pulse {
+
     width: 6px;
     height: 6px;
 
@@ -1783,7 +1990,7 @@ MENU
     background: #22c55e;
 
     box-shadow:
-        0 0 0 4px rgba(34, 197, 94, 0.1);
+        0 0 0 4px rgba(34,197,94,.10);
 
     animation:
         statusPulse 1.8s ease-in-out infinite;
@@ -3537,37 +3744,51 @@ MENU
     border-top: 1px solid #eef1f5;
 }
 
-
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
 
 
 /* ==========================================================
    TABLET / SMALL LAPTOP — 1100px
 ========================================================== */
 
-@media (max-width: 1100px) {
+@media (max-width:1100px){
 
     /* TOOL GRID */
 
-    .tool-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .tool-grid{
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+
     }
 
 
     /* REMINDER GRID */
 
-    .reminder-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .reminder-grid{
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+
     }
 
 
     /* HOW TO USE */
 
-    .how-steps {
-        flex-wrap: wrap;
+    .how-steps{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
     }
 
-    .step-arrow {
-        display: none;
+    .step-arrow{
+
+        display:none;
+
     }
 
 }
@@ -3577,59 +3798,89 @@ MENU
    TABLET — 992px
 ========================================================== */
 
-@media (max-width: 992px) {
+@media (max-width:992px){
 
     /* ======================================================
        NAVIGATION
     ====================================================== */
 
-    .nav-container {
-        position: relative;
+    .nav-container{
+
+        position:relative;
+
     }
 
-    .nav-actions {
-        display: flex;
-        align-items: center;
+    .nav-actions{
+
+        display:flex;
+
+        align-items:center;
+
+        margin-left:auto;
+
     }
 
-    .nav-actions .nav-github {
-        display: none;
+    .nav-actions .nav-github{
+
+        display:none;
+
     }
 
-    .menu-toggle {
-        display: flex;
+    .menu-toggle{
+
+        display:flex;
+
     }
 
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
+    .nav-links{
 
-        width: 100%;
+        position:absolute;
 
-        background: #08111f;
+        top:100%;
+        left:0;
 
-        flex-direction: column;
-        align-items: flex-start;
+        width:100%;
 
-        padding: 15px;
-        gap: 8px;
+        padding:15px;
 
-        display: none;
+        display:none;
 
-        border-top: 1px solid rgba(255, 255, 255, .08);
+        flex-direction:column;
 
-        margin: 0;
+        align-items:stretch;
 
-        z-index: 999;
+        gap:7px;
+
+        margin:0;
+
+        background:#08111f !important;
+
+        border-top:
+            1px solid rgba(255,255,255,.08);
+
+        box-shadow:
+            0 18px 40px rgba(0,0,0,.28);
+
+        z-index:999;
+
     }
 
-    .nav-links.active {
-        display: flex;
+    .nav-links.active{
+
+        display:flex;
+
     }
 
-    .nav-item {
-        width: 100%;
+    .nav-item{
+
+        width:100%;
+
+        display:flex;
+
+        align-items:center;
+
+        gap:10px;
+
     }
 
 
@@ -3637,23 +3888,75 @@ MENU
        HERO
     ====================================================== */
 
-    .fact-hero-container {
-        grid-template-columns: 1fr;
+    .fact-hero{
 
-        text-align: center;
+        min-height:auto;
+
+        padding:
+            125px 25px 70px;
+
     }
 
-    .fact-hero-content {
-        max-width: 800px;
-        margin: auto;
+    .fact-hero-container{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+        text-align:center;
+
     }
 
-    .fact-hero-content > p {
-        margin: auto;
+    .fact-hero-content{
+
+        width:100%;
+
+        max-width:800px;
+
+        margin:0 auto;
+
     }
 
-    .fact-process {
-        justify-content: center;
+    .fact-hero-content h1{
+
+        font-size:
+            clamp(3rem,7vw,4.4rem);
+
+        letter-spacing:-2.5px;
+
+    }
+
+    .fact-hero-content h2{
+
+        font-size:1.15rem;
+
+    }
+
+    .hero-description{
+
+        max-width:680px;
+
+        margin:0 auto;
+
+        font-size:.94rem;
+
+    }
+
+    .hero-actions{
+
+        justify-content:center;
+
+    }
+
+
+    /* ======================================================
+       PROCESS
+    ====================================================== */
+
+    .fact-process{
+
+        justify-content:center;
+
     }
 
 
@@ -3661,16 +3964,20 @@ MENU
        HERO VISUAL
     ====================================================== */
 
-    .fact-hero-visual {
-        width: 100%;
-        max-width: 650px;
+    .fact-hero-visual{
 
-        min-height: 320px;
+        width:100%;
 
-        margin: 0 auto;
+        max-width:680px;
 
-        transform: scale(.88);
-        transform-origin: center center;
+        min-height:420px;
+
+        margin:0 auto;
+
+        transform:scale(.86);
+
+        transform-origin:center center;
+
     }
 
 }
@@ -3680,23 +3987,30 @@ MENU
    TABLET — 900px
 ========================================================== */
 
-@media (max-width: 900px) {
+@media (max-width:900px){
 
     /* ======================================================
        NAVBAR
     ====================================================== */
 
-    .nav-container {
-        padding: 15px 20px;
+    .nav-container{
+
+        padding:15px 20px;
+
     }
 
-    .brand-logo {
-        flex-shrink: 0;
+    .brand-logo{
+
+        flex-shrink:0;
+
     }
 
-    .nav-item {
-        font-size: .82rem;
-        padding: 7px 9px;
+    .nav-item{
+
+        font-size:.84rem;
+
+        padding:9px 11px;
+
     }
 
 
@@ -3704,192 +4018,38 @@ MENU
        HERO
     ====================================================== */
 
-    .fact-hero {
-        padding-left: 25px;
-        padding-right: 25px;
+    .fact-hero{
+
+        padding-left:22px;
+
+        padding-right:22px;
+
     }
 
-    .fact-hero-container {
-        gap: 40px;
+    .fact-hero-container{
+
+        gap:30px;
+
     }
 
-    .fact-hero-content h1 {
-        font-size: 3.4rem;
+    .fact-hero-content h1{
+
+        font-size:3.35rem;
+
+        letter-spacing:-2px;
+
     }
 
-    .fact-hero-content > p {
-        font-size: .95rem;
+    .fact-hero-content h2{
+
+        font-size:1.05rem;
+
     }
 
+    .hero-description{
 
-    /* ======================================================
-       HERO VISUAL
-    ====================================================== */
+        font-size:.9rem;
 
-    .fact-hero-visual {
-        width: 100%;
-        max-width: 600px;
-
-        min-height: 300px;
-
-        margin: -10px auto 0;
-
-        transform: scale(.78);
-        transform-origin: center center;
-    }
-
-
-    /* ======================================================
-       TOOLS
-    ====================================================== */
-
-    .tool-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .tool-card {
-        min-height: 320px;
-    }
-
-
-    /* ======================================================
-       REMINDERS
-    ====================================================== */
-
-    .reminder-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-/* ==========================================================
-   MOBILE NAVIGATION — 700px
-========================================================== */
-
-@media (max-width: 700px) {
-
-    /* ======================================================
-       NAVBAR
-    ====================================================== */
-
-    .nav-container {
-        padding: 13px 18px;
-    }
-
-    .logo-icon {
-        width: 38px;
-        height: 38px;
-        border-radius: 11px;
-    }
-
-    .logo-text {
-        font-size: 1.1rem;
-    }
-
-    .nav-actions {
-        margin-left: auto;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav-links {
-        position: absolute;
-
-        top: 100%;
-        left: 0;
-
-        width: 100%;
-
-        display: none;
-
-        flex-direction: column;
-        align-items: stretch;
-
-        gap: 5px;
-
-        padding: 12px 15px;
-        margin: 0;
-
-        background: #08111f !important;
-
-        border-top: 1px solid rgba(255,255,255,.08);
-
-        box-shadow: 0 15px 30px rgba(0,0,0,.25);
-
-        z-index: 999;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-item {
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-
-        gap: 10px;
-
-        padding: 11px 13px;
-
-        font-size: .85rem;
-    }
-
-    .nav-item i {
-        width: 20px;
-        text-align: center;
-    }
-
-    .nav-github {
-        display: none;
-    }
-
-
-    /* ======================================================
-       HERO
-    ====================================================== */
-
-    .fact-hero {
-        min-height: auto;
-
-        padding: 120px 20px 55px;
-    }
-
-    .fact-hero-container {
-        display: flex;
-        flex-direction: column;
-
-        gap: 30px;
-
-        width: 100%;
-    }
-
-    .fact-hero-content {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .fact-label {
-        font-size: .72rem;
-        padding: 8px 13px;
-    }
-
-    .fact-hero-content h1 {
-        font-size: 2.8rem;
-        letter-spacing: -1.5px;
-    }
-
-    .fact-hero-content h2 {
-        font-size: 1.05rem;
-    }
-
-    .fact-hero-content > p {
-        font-size: .88rem;
-        line-height: 1.7;
     }
 
 
@@ -3897,37 +4057,21 @@ MENU
        PROCESS
     ====================================================== */
 
-    .fact-process {
-        width: 100%;
+    .fact-process{
 
-        justify-content: center;
+        margin-top:65px;
 
-        gap: 8px;
+        gap:6px;
 
-        flex-wrap: wrap;
     }
 
-    .process-item {
-        width: 95px;
-    }
+    .process-line{
 
-    .process-item h3 {
-        font-size: .78rem;
-    }
+        width:25px;
 
-    .process-item p {
-        font-size: .65rem;
-    }
+        margin:
+            0 8px;
 
-    .process-icon {
-        width: 50px;
-        height: 50px;
-
-        font-size: 19px;
-    }
-
-    .process-arrow {
-        font-size: 14px;
     }
 
 
@@ -3935,20 +4079,622 @@ MENU
        HERO VISUAL
     ====================================================== */
 
-    .fact-hero-visual {
-        width: 100%;
-        max-width: 520px;
+    .fact-hero-visual{
 
-        min-height: 270px;
+        max-width:620px;
 
-        margin: -15px auto -10px;
+        min-height:380px;
 
-        transform: scale(.70);
-        transform-origin: center center;
+        margin:-5px auto 0;
+
+        transform:scale(.76);
+
     }
 
-    .news-window {
-        width: 290px;
+
+    /* ======================================================
+       TOOLS
+    ====================================================== */
+
+    .tool-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .tool-card{
+
+        min-height:320px;
+
+    }
+
+
+    /* ======================================================
+       REMINDERS
+    ====================================================== */
+
+    .reminder-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE — 700px
+========================================================== */
+
+@media (max-width:700px){
+
+    /* ======================================================
+       NAVBAR
+    ====================================================== */
+
+    .nav-container{
+
+        padding:13px 18px;
+
+    }
+
+    .logo-icon{
+
+        width:38px;
+
+        height:38px;
+
+        border-radius:11px;
+
+    }
+
+    .logo-text{
+
+        font-size:1.08rem;
+
+    }
+
+    .nav-actions{
+
+        margin-left:auto;
+
+    }
+
+    .menu-toggle{
+
+        display:flex;
+
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:100%;
+        left:0;
+
+        width:100%;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:5px;
+
+        padding:
+            12px 15px;
+
+        margin:0;
+
+        background:
+            #08111f !important;
+
+        border-top:
+            1px solid rgba(255,255,255,.08);
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.28);
+
+        z-index:999;
+
+    }
+
+    .nav-links.active{
+
+        display:flex;
+
+    }
+
+    .nav-item{
+
+        width:100%;
+
+        display:flex;
+
+        align-items:center;
+
+        gap:10px;
+
+        padding:
+            11px 13px;
+
+        font-size:.84rem;
+
+    }
+
+    .nav-item i{
+
+        width:20px;
+
+        text-align:center;
+
+    }
+
+    .nav-github{
+
+        display:none;
+
+    }
+
+
+    /* ======================================================
+       HERO
+    ====================================================== */
+
+    .fact-hero{
+
+        min-height:auto;
+
+        padding:
+            110px 18px 55px;
+
+    }
+
+    .fact-hero-container{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:24px;
+
+        width:100%;
+
+    }
+
+    .fact-hero-content{
+
+        width:100%;
+
+        max-width:100%;
+
+        margin:0 auto;
+
+    }
+
+    .fact-hero-content h1{
+
+        font-size:
+            clamp(2.45rem,9vw,3.2rem);
+
+        line-height:1.02;
+
+        letter-spacing:-1.8px;
+
+    }
+
+    .fact-hero-content h2{
+
+        font-size:1rem;
+
+        line-height:1.4;
+
+        margin-bottom:13px;
+
+    }
+
+    .hero-description{
+
+        font-size:.83rem;
+
+        line-height:1.7;
+
+    }
+
+
+    /* ======================================================
+       HERO BUTTONS
+    ====================================================== */
+
+    .hero-actions{
+
+        width:100%;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:10px;
+
+        margin-top:24px;
+
+    }
+
+    .hero-btn{
+
+        width:100%;
+
+        max-width:320px;
+
+        justify-content:center;
+
+    }
+
+
+    /* ======================================================
+       PROCESS
+    ====================================================== */
+
+    .fact-process{
+
+        width:100%;
+
+        margin-top:50px;
+
+        justify-content:center;
+
+        gap:8px;
+
+        flex-wrap:wrap;
+
+    }
+
+    .process-item{
+
+        width:105px;
+
+        justify-content:center;
+
+    }
+
+    .process-number{
+
+        left:34px;
+
+    }
+
+    .process-icon{
+
+        width:46px;
+
+        height:46px;
+
+        font-size:17px;
+
+    }
+
+    .process-text h3{
+
+        font-size:.66rem;
+
+    }
+
+    .process-text p{
+
+        font-size:.56rem;
+
+    }
+
+    .process-line{
+
+        width:18px;
+
+        margin:
+            0 3px;
+
+    }
+
+
+    /* ======================================================
+       HERO VISUAL
+    ====================================================== */
+
+    .fact-hero-visual{
+
+        width:100%;
+
+        max-width:500px;
+
+        min-height:290px;
+
+        margin:
+            -5px auto -5px;
+
+        transform:scale(.66);
+
+        transform-origin:center center;
+
+    }
+
+    .fact-scanner{
+
+        width:370px;
+
+        min-height:390px;
+
+    }
+
+
+    /* Keep floating objects inside viewport */
+
+    .source-card{
+
+        right:-10px;
+
+    }
+
+    .image-card{
+
+        left:-10px;
+
+    }
+
+    .verified-card{
+
+        right:-15px;
+
+    }
+
+    .badge-top{
+
+        left:8px;
+
+    }
+
+    .question-bubble{
+
+        left:25px;
+
+    }
+
+
+    /* ======================================================
+       TOOLS
+    ====================================================== */
+
+    .tools-section{
+
+        width:100%;
+
+        padding:
+            55px 18px 65px;
+
+    }
+
+    .section-heading h2{
+
+        font-size:1.35rem;
+
+        margin:
+            0 8px;
+
+    }
+
+    .section-heading p{
+
+        font-size:.78rem;
+
+    }
+
+
+    /* ======================================================
+       FILTERS
+    ====================================================== */
+
+    .tool-filters{
+
+        width:100%;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:8px;
+
+    }
+
+    .filter-btn{
+
+        width:100%;
+
+    }
+
+
+    /* ======================================================
+       TOOLS
+    ====================================================== */
+
+    .tool-grid{
+
+        width:100%;
+
+        grid-template-columns:1fr;
+
+        gap:15px;
+
+    }
+
+    .tool-card{
+
+        width:100%;
+
+        min-height:300px;
+
+        padding:20px 16px;
+
+    }
+
+
+    /* ======================================================
+       HOW TO USE
+    ====================================================== */
+
+    .how-section{
+
+        width:100%;
+
+        padding:
+            25px 18px 50px;
+
+    }
+
+    .how-container{
+
+        width:100%;
+
+        padding:
+            28px 14px;
+
+        border-radius:18px;
+
+    }
+
+    .how-heading h2{
+
+        font-size:1.3rem;
+
+    }
+
+    .how-heading p{
+
+        font-size:.78rem;
+
+    }
+
+    .how-steps{
+
+        width:100%;
+
+        flex-direction:column;
+
+        gap:25px;
+
+    }
+
+    .how-step{
+
+        width:100%;
+
+        min-height:150px;
+
+    }
+
+    .step-arrow{
+
+        display:none;
+
+    }
+
+
+    /* ======================================================
+       REMINDERS
+    ====================================================== */
+
+    .reminders-section{
+
+        width:100%;
+
+        padding:
+            30px 18px 50px;
+
+    }
+
+    .reminders-heading h2{
+
+        font-size:1.35rem;
+
+    }
+
+    .reminder-grid{
+
+        width:100%;
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+
+    }
+
+    .reminder-card{
+
+        width:100%;
+
+    }
+
+
+    /* ======================================================
+       FINAL REMINDER
+    ====================================================== */
+
+    .final-reminder{
+
+        width:100%;
+
+        padding:
+            0 18px 45px;
+
+    }
+
+    .final-reminder-content{
+
+        width:100%;
+
+        padding:
+            18px 15px;
+
+        flex-direction:column;
+
+        gap:8px;
+
+    }
+
+    .final-reminder-content strong{
+
+        font-size:.8rem;
+
+    }
+
+    .final-reminder-content span{
+
+        font-size:.72rem;
+
+        line-height:1.5;
+
+    }
+
+
+    /* ======================================================
+       MODAL
+    ====================================================== */
+
+    .modal-content{
+
+        width:92%;
+
+        max-width:92%;
+
+        max-height:85vh;
+
+        overflow-y:auto;
+
+        padding:20px;
+
+        border-radius:18px;
+
     }
 
 }
@@ -3958,15 +4704,18 @@ MENU
    MOBILE — 576px
 ========================================================== */
 
-@media (max-width: 576px) {
+@media (max-width:576px){
 
     /* ======================================================
        GENERAL
     ====================================================== */
 
-    body {
-        width: 100%;
-        overflow-x: hidden;
+    body{
+
+        width:100%;
+
+        overflow-x:hidden;
+
     }
 
 
@@ -3974,18 +4723,27 @@ MENU
        NAVBAR
     ====================================================== */
 
-    .nav-container {
-        width: 100%;
-        padding: 12px 15px;
+    .nav-container{
+
+        width:100%;
+
+        padding:
+            12px 15px;
+
     }
 
-    .logo-icon {
-        width: 36px;
-        height: 36px;
+    .logo-icon{
+
+        width:36px;
+
+        height:36px;
+
     }
 
-    .logo-text {
-        font-size: 1rem;
+    .logo-text{
+
+        font-size:1rem;
+
     }
 
 
@@ -3993,22 +4751,63 @@ MENU
        HERO
     ====================================================== */
 
-    .fact-hero {
-        padding: 110px 18px 45px;
+    .fact-hero{
+
+        padding:
+            105px 16px 45px;
+
     }
 
-    .fact-hero-content h1 {
-        font-size: 2.45rem;
-        line-height: 1.05;
+    .fact-hero-content h1{
+
+        font-size:
+            clamp(2.15rem,10vw,2.65rem);
+
+        line-height:1.04;
+
+        letter-spacing:-1.25px;
+
     }
 
-    .fact-hero-content h2 {
-        font-size: .95rem;
-        margin-bottom: 14px;
+    .fact-hero-content h2{
+
+        font-size:.91rem;
+
     }
 
-    .fact-hero-content > p {
-        font-size: .82rem;
+    .hero-description{
+
+        font-size:.79rem;
+
+    }
+
+
+    /* ======================================================
+       BUTTONS
+    ====================================================== */
+
+    .hero-btn{
+
+        min-height:51px;
+
+        font-size:.74rem;
+
+    }
+
+    .btn-icon{
+
+        width:37px;
+
+        height:37px;
+
+    }
+
+    .secondary-icon{
+
+        width:28px;
+
+        height:28px;
+
     }
 
 
@@ -4016,25 +4815,36 @@ MENU
        PROCESS
     ====================================================== */
 
-    .fact-process {
-        flex-direction: column;
-        gap: 12px;
+    .fact-process{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        margin-top:42px;
+
     }
 
-    .process-item {
-        width: 150px;
+    .process-item{
+
+        width:145px;
+
+        justify-content:flex-start;
+
     }
 
-    .process-arrow {
-        font-size: 12px;
-        transform: rotate(90deg);
+    .process-line{
+
+        display:none;
+
     }
 
-    .process-icon {
-        width: 45px;
-        height: 45px;
+    .process-number{
 
-        font-size: 17px;
+        top:-9px;
+
+        left:33px;
+
     }
 
 
@@ -4042,58 +4852,77 @@ MENU
        HERO VISUAL
     ====================================================== */
 
-    .fact-hero-visual {
-        width: 100%;
-        max-width: 450px;
+    .fact-hero-visual{
 
-        min-height: 230px;
+        width:100%;
 
-        margin: -20px auto -25px;
+        max-width:420px;
 
-        transform: scale(.62);
-        transform-origin: center center;
+        min-height:220px;
+
+        margin:
+            -10px auto -25px;
+
+        transform:scale(.58);
+
+        transform-origin:center center;
+
+    }
+
+    .fact-scanner{
+
+        width:360px;
+
+    }
+
+    .source-card{
+
+        right:-18px;
+
+    }
+
+    .image-card{
+
+        left:-18px;
+
+    }
+
+    .verified-card{
+
+        right:-20px;
+
+    }
+
+    .question-bubble{
+
+        left:20px;
+
     }
 
 
     /* ======================================================
-       TOOLS SECTION
+       TOOLS
     ====================================================== */
 
-    .tools-section {
-        width: 100%;
-        padding: 55px 18px 65px;
+    .tools-section{
+
+        padding:
+            50px 16px 60px;
+
     }
 
-    .section-heading h2 {
-        font-size: 1.35rem;
-        margin: 0 8px;
+    .section-heading h2{
+
+        font-size:1.25rem;
+
     }
 
-    .heading-line {
-        width: 20px;
-    }
+    .section-heading p{
 
-    .section-heading p {
-        font-size: .78rem;
-    }
+        font-size:.75rem;
 
+        line-height:1.7;
 
-    /* ======================================================
-       FILTER BUTTONS
-    ====================================================== */
-
-    .tool-filters {
-        width: 100%;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 8px;
-    }
-
-    .filter-btn {
-        width: 100%;
     }
 
 
@@ -4101,20 +4930,13 @@ MENU
        TOOL CARDS
     ====================================================== */
 
-    .tool-grid {
-        width: 100%;
+    .tool-card{
 
-        grid-template-columns: 1fr;
+        min-height:290px;
 
-        gap: 15px;
-    }
+        padding:
+            20px 15px;
 
-    .tool-card {
-        width: 100%;
-
-        min-height: 300px;
-
-        padding: 20px 16px;
     }
 
 
@@ -4122,43 +4944,30 @@ MENU
        HOW TO USE
     ====================================================== */
 
-    .how-section {
-        width: 100%;
+    .how-section{
 
-        padding: 25px 18px 50px;
+        padding:
+            22px 16px 45px;
+
     }
 
-    .how-container {
-        width: 100%;
+    .how-container{
 
-        padding: 28px 14px;
+        padding:
+            24px 13px;
 
-        border-radius: 18px;
     }
 
-    .how-heading h2 {
-        font-size: 1.3rem;
+    .how-heading h2{
+
+        font-size:1.25rem;
+
     }
 
-    .how-heading p {
-        font-size: .78rem;
-    }
+    .how-heading p{
 
-    .how-steps {
-        width: 100%;
+        font-size:.74rem;
 
-        flex-direction: column;
-
-        gap: 25px;
-    }
-
-    .how-step {
-        width: 100%;
-        min-height: 150px;
-    }
-
-    .step-arrow {
-        display: none;
     }
 
 
@@ -4166,26 +4975,17 @@ MENU
        REMINDERS
     ====================================================== */
 
-    .reminders-section {
-        width: 100%;
+    .reminders-section{
 
-        padding: 30px 18px 50px;
+        padding:
+            28px 16px 45px;
+
     }
 
-    .reminders-heading h2 {
-        font-size: 1.35rem;
-    }
+    .reminders-heading h2{
 
-    .reminder-grid {
-        width: 100%;
+        font-size:1.25rem;
 
-        grid-template-columns: 1fr;
-
-        gap: 12px;
-    }
-
-    .reminder-card {
-        width: 100%;
     }
 
 
@@ -4193,45 +4993,35 @@ MENU
        FINAL REMINDER
     ====================================================== */
 
-    .final-reminder {
-        width: 100%;
+    .final-reminder{
 
-        padding: 0 18px 45px;
+        padding:
+            0 16px 40px;
+
     }
 
-    .final-reminder-content {
-        width: 100%;
+    .final-reminder-content{
 
-        padding: 18px 15px;
+        padding:
+            17px 14px;
 
-        flex-direction: column;
-
-        gap: 8px;
-    }
-
-    .final-reminder-content strong {
-        font-size: .8rem;
-    }
-
-    .final-reminder-content span {
-        font-size: .72rem;
-        line-height: 1.5;
     }
 
 
     /* ======================================================
-       MODAL — MOBILE
+       MODAL
     ====================================================== */
 
-    .modal-content {
-        width: 92%;
-        max-width: 92%;
+    .modal-content{
 
-        max-height: 85vh;
+        width:93%;
 
-        overflow-y: auto;
+        max-width:93%;
 
-        padding: 20px;
+        max-height:86vh;
+
+        padding:18px;
+
     }
 
 }
@@ -4241,19 +5031,24 @@ MENU
    VERY SMALL PHONES — 400px
 ========================================================== */
 
-@media (max-width: 400px) {
+@media (max-width:400px){
 
     /* ======================================================
        NAVBAR
     ====================================================== */
 
-    .logo-text {
-        font-size: .92rem;
+    .logo-text{
+
+        font-size:.92rem;
+
     }
 
-    .logo-icon {
-        width: 34px;
-        height: 34px;
+    .logo-icon{
+
+        width:34px;
+
+        height:34px;
+
     }
 
 
@@ -4261,12 +5056,22 @@ MENU
        HERO
     ====================================================== */
 
-    .fact-hero-content h1 {
-        font-size: 2.15rem;
+    .fact-hero-content h1{
+
+        font-size:2.08rem;
+
     }
 
-    .fact-hero-content h2 {
-        font-size: .88rem;
+    .fact-hero-content h2{
+
+        font-size:.85rem;
+
+    }
+
+    .hero-description{
+
+        font-size:.76rem;
+
     }
 
 
@@ -4274,20 +5079,32 @@ MENU
        PROCESS
     ====================================================== */
 
-    .fact-process {
-        gap: 7px;
+    .process-item{
+
+        width:130px;
+
     }
 
-    .process-item {
-        width: 72px;
+    .process-item h3{
+
+        font-size:.63rem;
+
     }
 
-    .process-item h3 {
-        font-size: .7rem;
+    .process-item p{
+
+        font-size:.55rem;
+
     }
 
-    .process-item p {
-        font-size: .6rem;
+    .process-icon{
+
+        width:42px;
+
+        height:42px;
+
+        font-size:15px;
+
     }
 
 
@@ -4295,30 +5112,42 @@ MENU
        HERO VISUAL
     ====================================================== */
 
-    .fact-hero-visual {
-        width: 100%;
-        max-width: 380px;
+    .fact-hero-visual{
 
-        min-height: 210px;
+        max-width:370px;
 
-        margin: -25px auto -40px;
+        min-height:200px;
 
-        transform: scale(.54);
-        transform-origin: center center;
+        margin:
+            -20px auto -40px;
+
+        transform:scale(.52);
+
+        transform-origin:center center;
+
+    }
+
+    .fact-scanner{
+
+        width:350px;
+
     }
 
 
     /* ======================================================
-       MODAL — VERY SMALL PHONE
+       MODAL
     ====================================================== */
 
-    .modal-content {
-        width: 94%;
-        max-width: 94%;
+    .modal-content{
 
-        max-height: 88vh;
+        width:94%;
 
-        padding: 16px;
+        max-width:94%;
+
+        max-height:88vh;
+
+        padding:16px;
+
     }
 
 }
