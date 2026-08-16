@@ -3537,10 +3537,7 @@ MENU
     border-top: 1px solid #eef1f5;
 }
 
-/* ==========================================================
-   RESPONSIVE DESIGN
-   Desktop → Tablet → Mobile → Small Phone
-========================================================== */
+
 
 
 /* ==========================================================
@@ -3555,11 +3552,13 @@ MENU
         grid-template-columns: repeat(3, 1fr);
     }
 
+
     /* REMINDER GRID */
 
     .reminder-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
 
     /* HOW TO USE */
 
@@ -3657,8 +3656,21 @@ MENU
         justify-content: center;
     }
 
+
+    /* ======================================================
+       HERO VISUAL
+    ====================================================== */
+
     .fact-hero-visual {
-        min-height: 350px;
+        width: 100%;
+        max-width: 650px;
+
+        min-height: 320px;
+
+        margin: 0 auto;
+
+        transform: scale(.88);
+        transform-origin: center center;
     }
 
 }
@@ -3709,8 +3721,21 @@ MENU
         font-size: .95rem;
     }
 
+
+    /* ======================================================
+       HERO VISUAL
+    ====================================================== */
+
     .fact-hero-visual {
-        transform: scale(.9);
+        width: 100%;
+        max-width: 600px;
+
+        min-height: 300px;
+
+        margin: -10px auto 0;
+
+        transform: scale(.78);
+        transform-origin: center center;
     }
 
 
@@ -3912,12 +3937,14 @@ MENU
 
     .fact-hero-visual {
         width: 100%;
+        max-width: 520px;
 
-        min-height: 300px;
+        min-height: 270px;
 
-        transform: scale(.78);
+        margin: -15px auto -10px;
 
-        margin: -25px 0;
+        transform: scale(.70);
+        transform-origin: center center;
     }
 
     .news-window {
@@ -4016,11 +4043,15 @@ MENU
     ====================================================== */
 
     .fact-hero-visual {
-        transform: scale(.68);
+        width: 100%;
+        max-width: 450px;
 
-        min-height: 250px;
+        min-height: 230px;
 
-        margin: -35px 0;
+        margin: -20px auto -25px;
+
+        transform: scale(.62);
+        transform-origin: center center;
     }
 
 
@@ -4265,9 +4296,15 @@ MENU
     ====================================================== */
 
     .fact-hero-visual {
-        transform: scale(.58);
+        width: 100%;
+        max-width: 380px;
 
-        margin: -50px 0;
+        min-height: 210px;
+
+        margin: -25px auto -40px;
+
+        transform: scale(.54);
+        transform-origin: center center;
     }
 
 
