@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const proceedBtn = document.getElementById("proceedBtn");
     const closeModalBtn = document.getElementById("closeModalBtn");
 
-    const externalButtons = document.querySelectorAll(".btn-external");
+    const externalButtons =
+        document.querySelectorAll(".btn-external");
 
     externalButtons.forEach(button => {
 
@@ -19,32 +20,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const url = button.dataset.url;
 
-            modalTargetUrl.textContent = url;
-            proceedBtn.href = url;
+            if (modal && modalTargetUrl && proceedBtn) {
 
-            modal.classList.add("active");
+                modalTargetUrl.textContent = url;
+                proceedBtn.href = url;
+
+                modal.classList.add("active");
+
+            }
 
         });
 
     });
 
+
     function closeModal() {
 
-        modal.classList.remove("active");
+        if (modal) {
 
-    }
-
-    closeModalBtn.addEventListener("click", closeModal);
-
-    modal.addEventListener("click", (e) => {
-
-        if (e.target === modal) {
-
-            closeModal();
+            modal.classList.remove("active");
 
         }
 
-    });
+    }
+
+
+    if (closeModalBtn) {
+
+        closeModalBtn.addEventListener(
+            "click",
+            closeModal
+        );
+
+    }
+
+
+    if (modal) {
+
+        modal.addEventListener("click", (e) => {
+
+            if (e.target === modal) {
+
+                closeModal();
+
+            }
+
+        });
+
+    }
+
 
     document.addEventListener("keydown", (e) => {
 
@@ -56,348 +80,674 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+
     /*==================================================
         NAVBAR SCROLL
     ==================================================*/
 
-    const navbar = document.querySelector(".navbar");
+    const navbar =
+        document.querySelector(".navbar");
 
-    window.addEventListener("scroll", () => {
 
-        navbar.classList.toggle("scrolled", window.scrollY > 40);
+    if (navbar) {
 
-    });
+        window.addEventListener("scroll", () => {
+
+            navbar.classList.toggle(
+                "scrolled",
+                window.scrollY > 40
+            );
+
+        });
+
+    }
+
 
     /*==================================================
         SCROLL PROGRESS BAR
     ==================================================*/
 
-    const progress = document.querySelector(".scroll-progress");
+    const progress =
+        document.querySelector(".scroll-progress");
 
-    window.addEventListener("scroll", () => {
 
-        const scrollTop = window.scrollY;
+    if (progress) {
 
-        const height =
-            document.documentElement.scrollHeight -
-            document.documentElement.clientHeight;
+        window.addEventListener("scroll", () => {
 
-        progress.style.width = (scrollTop / height) * 100 + "%";
+            const scrollTop =
+                window.scrollY;
 
-    });
+            const height =
+                document.documentElement.scrollHeight -
+                document.documentElement.clientHeight;
+
+            if (height > 0) {
+
+                progress.style.width =
+                    (scrollTop / height) * 100 + "%";
+
+            }
+
+        });
+
+    }
+
 
     /*==================================================
         SMOOTH SCROLL
     ==================================================*/
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(link => {
 
-        link.addEventListener("click", function (e) {
+            link.addEventListener("click", function (e) {
 
-            const target = document.querySelector(this.getAttribute("href"));
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
 
-            if (!target) return;
+                if (!target) return;
 
-            e.preventDefault();
+                e.preventDefault();
 
-            target.scrollIntoView({
-
-                behavior: "smooth"
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
 
             });
 
         });
 
-    });
 
     /*==================================================
-        HERO FLOAT EFFECT (Desktop Only)
+        HERO FLOAT EFFECT
+        DESKTOP ONLY
     ==================================================*/
 
     if (window.innerWidth > 992) {
 
-        const hero = document.querySelector(".hero-section");
-        const cards = document.querySelectorAll(".floating-card");
+        const hero =
+            document.querySelector(".hero-section");
 
-        if (hero) {
+        const cards =
+            document.querySelectorAll(".floating-card");
 
-            hero.addEventListener("mousemove", (e) => {
 
-                const x = (e.clientX / window.innerWidth - .5) * 20;
-                const y = (e.clientY / window.innerHeight - .5) * 20;
+        if (hero && cards.length) {
 
-                cards.forEach((card, index) => {
+            hero.addEventListener(
+                "mousemove",
+                (e) => {
 
-                    const speed = (index + 1) * .4;
+                    const x =
+                        (e.clientX /
+                            window.innerWidth -
+                            .5) * 20;
 
-                    card.style.transform =
-                        `translate(${x * speed}px, ${y * speed}px)`;
+                    const y =
+                        (e.clientY /
+                            window.innerHeight -
+                            .5) * 20;
 
-                });
 
-            });
+                    cards.forEach(
+                        (card, index) => {
 
-            hero.addEventListener("mouseleave", () => {
+                            const speed =
+                                (index + 1) * .4;
 
-                cards.forEach(card => {
+                            card.style.transform =
+                                `translate(
+                                    ${x * speed}px,
+                                    ${y * speed}px
+                                )`;
 
-                    card.style.transform = "";
+                        }
+                    );
 
-                });
+                }
+            );
 
-            });
+
+            hero.addEventListener(
+                "mouseleave",
+                () => {
+
+                    cards.forEach(card => {
+
+                        card.style.transform = "";
+
+                    });
+
+                }
+            );
 
         }
 
     }
+
 
     /*==================================================
         SCROLL REVEAL
     ==================================================*/
 
-    const revealItems = document.querySelectorAll(
+    const revealItems =
+        document.querySelectorAll(
+            ".feature-card, " +
+            ".developer-container, " +
+            ".hero-content, " +
+            ".hero-visual"
+        );
 
-        ".feature-card, .developer-container, .hero-content, .hero-visual"
 
-    );
+    if (revealItems.length) {
 
-    const observer = new IntersectionObserver((entries) => {
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
 
-        entries.forEach(entry => {
+                    entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+                            entry.target.style.opacity =
+                                "1";
 
-            }
+                            entry.target.style.transform =
+                                "translateY(0)";
 
-        });
+                        }
 
-    }, {
+                    });
 
-        threshold: .15
+                },
+                {
+                    threshold: .15
+                }
+            );
 
-    });
 
-    revealItems.forEach(item => {
+        revealItems.forEach(item => {
 
-        item.style.opacity = "0";
-        item.style.transform = "translateY(40px)";
-        item.style.transition = ".8s ease";
+            item.style.opacity = "0";
 
-        observer.observe(item);
+            item.style.transform =
+                "translateY(40px)";
 
-    });
+            item.style.transition =
+                ".8s ease";
 
-    /*==================================================
-        COUNTER
-    ==================================================*/
-
-    const counters = document.querySelectorAll(".stat-box h2");
-
-    counters.forEach(counter => {
-
-        const original = counter.innerText;
-        const number = parseInt(original);
-
-        if (isNaN(number)) return;
-
-        let count = 0;
-        const speed = Math.ceil(number / 60);
-
-        function animate() {
-
-            count += speed;
-
-            if (count >= number) {
-
-                counter.innerText = original;
-
-            } else {
-
-                counter.innerText = count + "+";
-
-                requestAnimationFrame(animate);
-
-            }
-
-        }
-
-        animate();
-
-    });
-
-    /*==================================================
-        ACTIVE NAVIGATION
-    ==================================================*/
-
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll(".nav-item");
-
-    window.addEventListener("scroll", () => {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop - 150;
-
-            if (window.scrollY >= sectionTop) {
-
-                current = section.getAttribute("id");
-
-            }
-
-        });
-
-        navItems.forEach(link => {
-
-            link.classList.remove("active");
-
-            const href = link.getAttribute("href");
-
-            if (href === "#" && current === "") {
-
-                link.classList.add("active");
-
-            }
-
-            if (href === "#" + current) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
-    });
-
-    /*==================================================
-        MOBILE MENU
-    ==================================================*/
-
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileNav = document.getElementById("navLinks");
-
-    if (menuToggle && mobileNav) {
-
-        menuToggle.addEventListener("click", () => {
-
-            mobileNav.classList.toggle("active");
-
-            const icon = menuToggle.querySelector("i");
-
-            if (mobileNav.classList.contains("active")) {
-
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-xmark");
-
-            } else {
-
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
-
-            }
-
-        });
-
-        mobileNav.querySelectorAll(".nav-item").forEach(item => {
-
-            item.addEventListener("click", () => {
-
-                mobileNav.classList.remove("active");
-
-                const icon = menuToggle.querySelector("i");
-
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
-
-            });
+            observer.observe(item);
 
         });
 
     }
 
-});
+
+    /*==================================================
+        COUNTER
+    ==================================================*/
+
+    const counters =
+        document.querySelectorAll(
+            ".stat-box h2"
+        );
+
+
+    counters.forEach(counter => {
+
+        const original =
+            counter.innerText;
+
+        const number =
+            parseInt(original);
+
+
+        if (isNaN(number)) return;
+
+
+        let count = 0;
+
+        const speed =
+            Math.ceil(number / 60);
+
+
+        function animate() {
+
+            count += speed;
+
+
+            if (count >= number) {
+
+                counter.innerText =
+                    original;
+
+            } else {
+
+                counter.innerText =
+                    count + "+";
+
+                requestAnimationFrame(
+                    animate
+                );
+
+            }
+
+        }
+
+
+        animate();
+
+    });
+
+
+    /*==================================================
+        ACTIVE NAVIGATION
+    ==================================================*/
+
+    const sections =
+        document.querySelectorAll("section");
+
+    const navItems =
+        document.querySelectorAll(".nav-item");
+
+
+    if (sections.length && navItems.length) {
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                let current = "";
+
+
+                sections.forEach(section => {
+
+                    const sectionTop =
+                        section.offsetTop - 150;
+
+
+                    if (
+                        window.scrollY >=
+                        sectionTop
+                    ) {
+
+                        current =
+                            section.getAttribute(
+                                "id"
+                            );
+
+                    }
+
+                });
+
+
+                navItems.forEach(link => {
+
+                    link.classList.remove(
+                        "active"
+                    );
+
+
+                    const href =
+                        link.getAttribute(
+                            "href"
+                        );
+
+
+                    if (
+                        href === "#" &&
+                        current === ""
+                    ) {
+
+                        link.classList.add(
+                            "active"
+                        );
+
+                    }
+
+
+                    if (
+                        href === "#" + current
+                    ) {
+
+                        link.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                });
+
+            }
+        );
+
+    }
+
+
+    /*==================================================
+        MOBILE MENU
+        HAMBURGER NAVIGATION
+    ==================================================*/
+
+    const menuToggle =
+        document.getElementById(
+            "menuToggle"
+        );
+
+    const mobileNav =
+        document.getElementById(
+            "navLinks"
+        );
+
+
+    if (menuToggle && mobileNav) {
+
+
+        /*------------------------------------------
+            HAMBURGER CLICK
+        ------------------------------------------*/
+
+        menuToggle.addEventListener(
+            "click",
+            (e) => {
+
+                e.preventDefault();
+
+                e.stopPropagation();
+
+
+                mobileNav.classList.toggle(
+                    "active"
+                );
+
+
+                const icon =
+                    menuToggle.querySelector(
+                        "i"
+                    );
+
+
+                if (icon) {
+
+                    if (
+                        mobileNav.classList
+                            .contains("active")
+                    ) {
+
+                        icon.classList.remove(
+                            "fa-bars"
+                        );
+
+                        icon.classList.add(
+                            "fa-xmark"
+                        );
+
+                    } else {
+
+                        icon.classList.remove(
+                            "fa-xmark"
+                        );
+
+                        icon.classList.add(
+                            "fa-bars"
+                        );
+
+                    }
+
+                }
+
+            }
+        );
+
+
+        /*------------------------------------------
+            CLOSE MENU AFTER NAV ITEM CLICK
+        ------------------------------------------*/
+
+        mobileNav
+            .querySelectorAll(".nav-item")
+            .forEach(item => {
+
+                item.addEventListener(
+                    "click",
+                    () => {
+
+                        mobileNav.classList.remove(
+                            "active"
+                        );
+
+
+                        const icon =
+                            menuToggle.querySelector(
+                                "i"
+                            );
+
+
+                        if (icon) {
+
+                            icon.classList.remove(
+                                "fa-xmark"
+                            );
+
+                            icon.classList.add(
+                                "fa-bars"
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+        /*------------------------------------------
+            CLOSE MENU WHEN CLICKING OUTSIDE
+        ------------------------------------------*/
+
+        document.addEventListener(
+            "click",
+            (e) => {
+
+                if (
+                    !mobileNav.contains(e.target) &&
+                    !menuToggle.contains(e.target)
+                ) {
+
+                    mobileNav.classList.remove(
+                        "active"
+                    );
+
+
+                    const icon =
+                        menuToggle.querySelector(
+                            "i"
+                        );
+
+
+                    if (icon) {
+
+                        icon.classList.remove(
+                            "fa-xmark"
+                        );
+
+                        icon.classList.add(
+                            "fa-bars"
+                        );
+
+                    }
+
+                }
+
+            }
+        );
+
+    }
+
 
     /*==================================================
         CHECK BEFORE YOU SHARE
     ==================================================*/
 
-    const checkSteps = document.querySelectorAll(".check-step");
+    const checkSteps =
+        document.querySelectorAll(
+            ".check-step"
+        );
 
-    const checkDetail = document.getElementById("checkDetail");
+    const checkDetail =
+        document.getElementById(
+            "checkDetail"
+        );
 
-    const detailStep = checkDetail
-        ? checkDetail.querySelector(".check-detail-top > span:first-child")
-        : null;
 
-    const detailProgress = checkDetail
-        ? checkDetail.querySelector(".detail-progress-fill")
-        : null;
+    const detailStep =
+        checkDetail
+            ? checkDetail.querySelector(
+                ".check-detail-top > span:first-child"
+            )
+            : null;
 
-    const detailCount = checkDetail
-        ? checkDetail.querySelector(".detail-count")
-        : null;
 
-    const detailIcon = checkDetail
-        ? checkDetail.querySelector(".check-detail-icon i")
-        : null;
+    const detailProgress =
+        checkDetail
+            ? checkDetail.querySelector(
+                ".detail-progress-fill"
+            )
+            : null;
 
-    const detailTitle = checkDetail
-        ? checkDetail.querySelector(".check-detail-content h3")
-        : null;
 
-    const detailText = checkDetail
-        ? checkDetail.querySelector(".check-detail-content p")
-        : null;
+    const detailCount =
+        checkDetail
+            ? checkDetail.querySelector(
+                ".detail-count"
+            )
+            : null;
 
-    const detailFooter = checkDetail
-        ? checkDetail.querySelector(".check-detail-footer span")
-        : null;
 
+    const detailIcon =
+        checkDetail
+            ? checkDetail.querySelector(
+                ".check-detail-icon i"
+            )
+            : null;
+
+
+    const detailTitle =
+        checkDetail
+            ? checkDetail.querySelector(
+                ".check-detail-content h3"
+            )
+            : null;
+
+
+    const detailText =
+        checkDetail
+            ? checkDetail.querySelector(
+                ".check-detail-content p"
+            )
+            : null;
+
+
+    const detailFooter =
+        checkDetail
+            ? checkDetail.querySelector(
+                ".check-detail-footer span"
+            )
+            : null;
+
+
+    /*==================================================
+        CHECK STEP DATA
+    ==================================================*/
 
     const checkData = {
 
         1: {
+
             icon: "fa-pause",
+
             step: "STEP 01",
-            title: "Stop before you share.",
+
+            title:
+                "Stop before you share.",
+
             text:
                 "Give yourself a moment to pause. Avoid reacting based only on emotion, popularity, or urgency.",
+
             footer:
                 "Credibility starts with a pause."
+
         },
+
 
         2: {
-            icon: "fa-magnifying-glass",
-            step: "STEP 02",
-            title: "Check the source and evidence.",
+
+            icon:
+                "fa-magnifying-glass",
+
+            step:
+                "STEP 02",
+
+            title:
+                "Check the source and evidence.",
+
             text:
                 "Look at who published the information and examine whether the claim is supported by reliable evidence.",
+
             footer:
                 "Look beyond the headline."
+
         },
 
+
         3: {
-            icon: "fa-code-compare",
-            step: "STEP 03",
-            title: "Verify with trusted sources.",
+
+            icon:
+                "fa-code-compare",
+
+            step:
+                "STEP 03",
+
+            title:
+                "Verify with trusted sources.",
+
             text:
                 "Compare the information with reliable and independent sources before accepting or sharing the claim.",
+
             footer:
                 "Verification strengthens your decision."
+
         }
 
     };
 
 
-    function updateCheckStep(stepNumber) {
+    /*==================================================
+        UPDATE CHECK STEP
+    ==================================================*/
 
-        const selected = checkData[stepNumber];
+    function updateCheckStep(
+        stepNumber
+    ) {
 
-        if (!selected || !checkDetail) return;
+        const selected =
+            checkData[stepNumber];
+
+
+        if (
+            !selected ||
+            !checkDetail
+        ) {
+
+            return;
+
+        }
 
 
         /*------------------------------------------
@@ -407,22 +757,32 @@ document.addEventListener("DOMContentLoaded", () => {
         checkSteps.forEach(step => {
 
             const stepValue =
-                Number(step.dataset.step);
+                Number(
+                    step.dataset.step
+                );
+
 
             const stateIcon =
-                step.querySelector(".step-state i");
+                step.querySelector(
+                    ".step-state i"
+                );
+
 
             const isActive =
                 stepValue === stepNumber;
+
 
             step.classList.toggle(
                 "active-step",
                 isActive
             );
 
+
             step.setAttribute(
                 "aria-expanded",
-                isActive ? "true" : "false"
+                isActive
+                    ? "true"
+                    : "false"
             );
 
 
@@ -438,9 +798,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     !isActive
                 );
 
-                stateIcon.classList.toggle(
-                    "fa-circle",
-                    true
+                stateIcon.classList.add(
+                    "fa-circle"
                 );
 
             }
@@ -449,7 +808,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*------------------------------------------
-            UPDATE DETAIL PANEL
+            DETAIL STEP
         ------------------------------------------*/
 
         if (detailStep) {
@@ -460,6 +819,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
+        /*------------------------------------------
+            PROGRESS
+        ------------------------------------------*/
+
         if (detailProgress) {
 
             detailProgress.style.width =
@@ -467,6 +830,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
+
+        /*------------------------------------------
+            STEP COUNT
+        ------------------------------------------*/
 
         if (detailCount) {
 
@@ -476,6 +843,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
+        /*------------------------------------------
+            ICON
+        ------------------------------------------*/
+
         if (detailIcon) {
 
             detailIcon.className =
@@ -483,6 +854,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
+
+        /*------------------------------------------
+            TITLE
+        ------------------------------------------*/
 
         if (detailTitle) {
 
@@ -492,6 +867,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
+        /*------------------------------------------
+            DESCRIPTION
+        ------------------------------------------*/
+
         if (detailText) {
 
             detailText.textContent =
@@ -499,6 +878,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
+
+        /*------------------------------------------
+            FOOTER
+        ------------------------------------------*/
 
         if (detailFooter) {
 
@@ -510,30 +893,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*------------------------------------------
-        STEP CLICK
-    ------------------------------------------*/
+    /*==================================================
+        CHECK STEP CLICK
+    ==================================================*/
 
     checkSteps.forEach(step => {
 
-        step.addEventListener("click", () => {
+        step.addEventListener(
+            "click",
+            () => {
 
-            const stepNumber =
-                Number(step.dataset.step);
+                const stepNumber =
+                    Number(
+                        step.dataset.step
+                    );
 
-            updateCheckStep(stepNumber);
+                updateCheckStep(
+                    stepNumber
+                );
 
-        });
+            }
+        );
 
     });
 
 
-    /*------------------------------------------
-        INITIAL STATE
-    ------------------------------------------*/
+    /*==================================================
+        INITIAL CHECK STEP
+    ==================================================*/
 
     if (checkSteps.length) {
 
         updateCheckStep(1);
 
     }
+
+});
