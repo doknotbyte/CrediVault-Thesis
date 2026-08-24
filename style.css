@@ -3813,6 +3813,58 @@ MENU
 
 
 
+    /* ======================================================
+
+       HERO STATS
+
+    ====================================================== */
+
+
+
+    .hero-stats {
+
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 12px;
+
+        width: 100%;
+
+    }
+
+
+
+    .stat-box {
+
+        padding: 16px 12px;
+
+        border-radius: 15px;
+
+    }
+
+
+
+    .stat-box h2 {
+
+        font-size: .95rem;
+
+        margin-bottom: 4px;
+
+    }
+
+
+
+    .stat-box span {
+
+        font-size: .65rem;
+
+        line-height: 1.4;
+
+    }
+
+
+
 
 
     /* ======================================================
@@ -3891,9 +3943,9 @@ MENU
 
         width: 100%;
 
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
 
-        gap: 12px;
+        gap: 15px;
 
     }
 
@@ -3915,7 +3967,7 @@ MENU
 
         height: auto;
 
-        min-height: 280px;
+        min-height: 330px;
 
         border-radius: 18px;
 
@@ -3925,7 +3977,7 @@ MENU
 
     .topic-visual {
 
-        height: 140px;
+        height: 175px;
 
     }
 
@@ -3933,7 +3985,7 @@ MENU
 
     .topic-content {
 
-        padding: 12px 14px 14px;
+        padding: 16px 18px 19px;
 
     }
 
@@ -3941,7 +3993,7 @@ MENU
 
     .topic-content h3 {
 
-        font-size: .82rem;
+        font-size: .95rem;
 
     }
 
@@ -3949,7 +4001,7 @@ MENU
 
     .topic-content p {
 
-        font-size: .63rem;
+        font-size: .73rem;
 
     }
 
@@ -3967,11 +4019,11 @@ MENU
 
     .topic-core {
 
-        width: 55px;
+        width: 70px;
 
-        height: 65px;
+        height: 80px;
 
-        font-size: 24px;
+        font-size: 29px;
 
     }
 
@@ -3979,9 +4031,9 @@ MENU
 
     .headline-window {
 
-        width: 140px;
+        width: 165px;
 
-        height: 90px;
+        height: 110px;
 
     }
 
@@ -3989,9 +4041,9 @@ MENU
 
     .document-window {
 
-        width: 140px;
+        width: 165px;
 
-        height: 90px;
+        height: 110px;
 
     }
 
@@ -3999,7 +4051,7 @@ MENU
 
     .popularity-counter {
 
-        padding: 7px 11px;
+        padding: 9px 14px;
 
     }
 
@@ -4367,6 +4419,60 @@ MENU
 
 
 
+    /* ======================================================
+
+       HERO STATS
+
+    ====================================================== */
+
+
+
+    .hero-stats {
+
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 10px;
+
+        width: 100%;
+
+    }
+
+
+
+    .stat-box {
+
+        padding: 14px 10px;
+
+        border-radius: 14px;
+
+    }
+
+
+
+    .stat-box h2 {
+
+        font-size: .82rem;
+
+        margin-bottom: 3px;
+
+    }
+
+
+
+    .stat-box span {
+
+        font-size: .58rem;
+
+        line-height: 1.3;
+
+        display: block;
+
+    }
+
+
+
 
 
     /* ======================================================
@@ -4439,9 +4545,9 @@ MENU
 
         width: 100%;
 
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
 
-        gap: 10px;
+        gap: 13px;
 
     }
 
@@ -4451,7 +4557,7 @@ MENU
 
         width: 100%;
 
-        min-height: 260px;
+        min-height: 310px;
 
         height: auto;
 
@@ -4475,7 +4581,7 @@ MENU
 
         width: 100%;
 
-        height: 130px;
+        height: 160px;
 
     }
 
@@ -4483,11 +4589,11 @@ MENU
 
     .topic-core {
 
-        width: 50px;
+        width: 65px;
 
-        height: 60px;
+        height: 74px;
 
-        font-size: 22px;
+        font-size: 27px;
 
     }
 
@@ -4495,11 +4601,11 @@ MENU
 
     .headline-window {
 
-        width: 130px;
+        width: 155px;
 
-        height: 85px;
+        height: 104px;
 
-        padding: 8px;
+        padding: 10px;
 
     }
 
@@ -4507,11 +4613,11 @@ MENU
 
     .document-window {
 
-        width: 130px;
+        width: 155px;
 
-        height: 85px;
+        height: 104px;
 
-        padding: 11px;
+        padding: 14px;
 
     }
 
@@ -4519,9 +4625,9 @@ MENU
 
     .popularity-counter {
 
-        padding: 6px 10px;
+        padding: 8px 12px;
 
-        gap: 5px;
+        gap: 7px;
 
     }
 
@@ -4529,7 +4635,7 @@ MENU
 
     .popularity-counter strong {
 
-        font-size: .90rem;
+        font-size: 1.05rem;
 
     }
 
@@ -4537,7 +4643,7 @@ MENU
 
     .popularity-counter i {
 
-        font-size: 14px;
+        font-size: 16px;
 
     }
 
@@ -4545,7 +4651,7 @@ MENU
 
     .audience-icons i {
 
-        font-size: 16px;
+        font-size: 20px;
 
     }
 
@@ -4563,7 +4669,7 @@ MENU
 
     .topic-content {
 
-        padding: 11px 12px 13px;
+        padding: 15px 16px 17px;
 
     }
 
@@ -4571,9 +4677,9 @@ MENU
 
     .topic-number {
 
-        font-size: .48rem;
+        font-size: .55rem;
 
-        margin-bottom: 4px;
+        margin-bottom: 6px;
 
     }
 
@@ -4581,9 +4687,9 @@ MENU
 
     .topic-content h3 {
 
-        font-size: .76rem;
+        font-size: .88rem;
 
-        margin-bottom: 4px;
+        margin-bottom: 6px;
 
     }
 
@@ -4591,9 +4697,9 @@ MENU
 
     .topic-content p {
 
-        font-size: .58rem;
+        font-size: .68rem;
 
-        line-height: 1.4;
+        line-height: 1.55;
 
     }
 
@@ -4883,6 +4989,60 @@ MENU
 
 
 
+    /* ======================================================
+
+       HERO STATS
+
+    ====================================================== */
+
+
+
+    .hero-stats {
+
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 8px;
+
+        width: 100%;
+
+    }
+
+
+
+    .stat-box {
+
+        padding: 12px 8px;
+
+        border-radius: 12px;
+
+    }
+
+
+
+    .stat-box h2 {
+
+        font-size: .70rem;
+
+        margin-bottom: 2px;
+
+    }
+
+
+
+    .stat-box span {
+
+        font-size: .50rem;
+
+        line-height: 1.2;
+
+        display: block;
+
+    }
+
+
+
 
 
     /* ======================================================
@@ -4919,7 +5079,7 @@ MENU
 
     .topic-grid {
 
-        gap: 8px;
+        gap: 11px;
 
     }
 
@@ -4927,7 +5087,7 @@ MENU
 
     .topic-card {
 
-        min-height: 240px;
+        min-height: 295px;
 
     }
 
@@ -4935,7 +5095,7 @@ MENU
 
     .topic-visual {
 
-        height: 120px;
+        height: 150px;
 
     }
 
@@ -4943,7 +5103,7 @@ MENU
 
     .topic-content {
 
-        padding: 10px;
+        padding: 14px;
 
     }
 
@@ -4951,7 +5111,7 @@ MENU
 
     .topic-content h3 {
 
-        font-size: .70rem;
+        font-size: .82rem;
 
     }
 
@@ -4959,7 +5119,7 @@ MENU
 
     .topic-content p {
 
-        font-size: .55rem;
+        font-size: .63rem;
 
     }
 
