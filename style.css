@@ -3204,7 +3204,6 @@ MENU
 
 /* ==========================================================
    RESPONSIVE DESIGN
-   HOME PAGE + NAVIGATION
 ========================================================== */
 
 
@@ -3214,27 +3213,21 @@ MENU
 
 @media (max-width: 1100px) {
 
-    /* ======================================================
-       ORIGINAL — TOOL GRID
-    ====================================================== */
+    /* TOOL GRID */
 
     .tool-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
 
-    /* ======================================================
-       ORIGINAL — REMINDER GRID
-    ====================================================== */
+    /* REMINDER GRID */
 
     .reminder-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
 
-    /* ======================================================
-       ORIGINAL — HOW TO USE
-    ====================================================== */
+    /* HOW TO USE */
 
     .how-steps {
         flex-wrap: wrap;
@@ -3246,32 +3239,12 @@ MENU
 
 
     /* ======================================================
-       HOME — FEATURES
+       HOME — WHAT DO YOU WANT TO LEARN TODAY?
     ====================================================== */
 
     .topic-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        width: min(1200px, 94%);
-    }
-
-
-    .features-section {
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-
-
-    /* ======================================================
-       HOME — CHECK SECTION
-    ====================================================== */
-
-    .check-container {
-        width: min(1150px, 94%);
-
-        grid-template-columns:
-            .9fr 1.1fr;
-
-        gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
     }
 
 }
@@ -3285,7 +3258,6 @@ MENU
 
     /* ======================================================
        NAVIGATION
-       KEEP HAMBURGER FUNCTIONAL
     ====================================================== */
 
     .nav-container {
@@ -3307,7 +3279,6 @@ MENU
 
     .nav-links {
         position: absolute;
-
         top: 100%;
         left: 0;
 
@@ -3369,7 +3340,6 @@ MENU
 
     .fact-hero-visual {
         width: 100%;
-
         max-width: 650px;
 
         min-height: 320px;
@@ -3377,13 +3347,12 @@ MENU
         margin: 0 auto;
 
         transform: scale(.88);
-
         transform-origin: center center;
     }
 
 
     /* ======================================================
-       HOME — FEATURES
+       HOME — WHAT DO YOU WANT TO LEARN TODAY?
     ====================================================== */
 
     .features-section {
@@ -3391,7 +3360,8 @@ MENU
     }
 
     .features-section .section-header {
-        width: min(900px, 94%);
+        width: 90%;
+        margin-bottom: 40px;
     }
 
     .features-section .section-header h2 {
@@ -3399,20 +3369,23 @@ MENU
     }
 
     .features-section .section-header p {
-        font-size: .88rem;
+        font-size: .86rem;
     }
 
     .topic-grid {
-        width: min(1200px, 94%);
+        width: 92%;
 
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        gap: 18px;
+        gap: 16px;
     }
 
     .topic-card {
         height: 350px;
+    }
+
+    .topic-visual {
+        height: 180px;
     }
 
 
@@ -3425,7 +3398,7 @@ MENU
     }
 
     .check-container {
-        width: min(1150px, 94%);
+        width: 92%;
 
         grid-template-columns: 1fr;
 
@@ -3441,17 +3414,15 @@ MENU
     }
 
     .check-content h2 {
-        font-size: 2.2rem;
+        font-size: 2.15rem;
     }
 
     .check-content p {
-        margin-left: auto;
-        margin-right: auto;
+        font-size: .86rem;
     }
 
     .check-status {
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
     }
 
     .check-hint {
@@ -3521,7 +3492,6 @@ MENU
 
     .fact-hero-visual {
         width: 100%;
-
         max-width: 600px;
 
         min-height: 300px;
@@ -3529,13 +3499,12 @@ MENU
         margin: -10px auto 0;
 
         transform: scale(.78);
-
         transform-origin: center center;
     }
 
 
     /* ======================================================
-       ORIGINAL — TOOLS
+       TOOLS
     ====================================================== */
 
     .tool-grid {
@@ -3548,7 +3517,7 @@ MENU
 
 
     /* ======================================================
-       ORIGINAL — REMINDERS
+       REMINDERS
     ====================================================== */
 
     .reminder-grid {
@@ -3557,7 +3526,7 @@ MENU
 
 
     /* ======================================================
-       HOME — FEATURES
+       HOME — LEARNING TOPICS
     ====================================================== */
 
     .features-section {
@@ -3566,8 +3535,6 @@ MENU
 
     .features-section .section-header {
         width: 94%;
-
-        margin-bottom: 40px;
     }
 
     .features-section .section-header h2 {
@@ -3577,10 +3544,9 @@ MENU
     .topic-grid {
         width: 94%;
 
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        gap: 16px;
+        gap: 15px;
     }
 
     .topic-card {
@@ -3591,9 +3557,13 @@ MENU
         height: 175px;
     }
 
+    .topic-content {
+        padding: 16px 17px 18px;
+    }
+
 
     /* ======================================================
-       HOME — CHECK
+       HOME — CHECK BEFORE YOU SHARE
     ====================================================== */
 
     .check-section {
@@ -3610,6 +3580,10 @@ MENU
         font-size: 2rem;
     }
 
+    .check-content p {
+        font-size: .84rem;
+    }
+
 }
 
 
@@ -3621,7 +3595,6 @@ MENU
 
     /* ======================================================
        NAVBAR
-       HAMBURGER PRESERVED
     ====================================================== */
 
     .nav-container {
@@ -3631,7 +3604,6 @@ MENU
     .logo-icon {
         width: 38px;
         height: 38px;
-
         border-radius: 11px;
     }
 
@@ -3658,21 +3630,18 @@ MENU
         display: none;
 
         flex-direction: column;
-
         align-items: stretch;
 
         gap: 5px;
 
         padding: 12px 15px;
-
         margin: 0;
 
         background: #08111f !important;
 
         border-top: 1px solid rgba(255,255,255,.08);
 
-        box-shadow:
-            0 15px 30px rgba(0,0,0,.25);
+        box-shadow: 0 15px 30px rgba(0,0,0,.25);
 
         z-index: 999;
     }
@@ -3685,7 +3654,6 @@ MENU
         width: 100%;
 
         display: flex;
-
         align-items: center;
 
         gap: 10px;
@@ -3697,7 +3665,6 @@ MENU
 
     .nav-item i {
         width: 20px;
-
         text-align: center;
     }
 
@@ -3718,7 +3685,6 @@ MENU
 
     .fact-hero-container {
         display: flex;
-
         flex-direction: column;
 
         gap: 30px;
@@ -3728,19 +3694,16 @@ MENU
 
     .fact-hero-content {
         width: 100%;
-
         max-width: 100%;
     }
 
     .fact-label {
         font-size: .72rem;
-
         padding: 8px 13px;
     }
 
     .fact-hero-content h1 {
         font-size: 2.8rem;
-
         letter-spacing: -1.5px;
     }
 
@@ -3750,7 +3713,6 @@ MENU
 
     .fact-hero-content > p {
         font-size: .88rem;
-
         line-height: 1.7;
     }
 
@@ -3799,7 +3761,6 @@ MENU
 
     .fact-hero-visual {
         width: 100%;
-
         max-width: 520px;
 
         min-height: 270px;
@@ -3807,7 +3768,6 @@ MENU
         margin: -15px auto -10px;
 
         transform: scale(.70);
-
         transform-origin: center center;
     }
 
@@ -3817,12 +3777,10 @@ MENU
 
 
     /* ======================================================
-       HOME — FEATURES
+       HOME — WHAT DO YOU WANT TO LEARN TODAY?
     ====================================================== */
 
     .features-section {
-        width: 100%;
-
         padding: 55px 18px 65px;
     }
 
@@ -3833,15 +3791,15 @@ MENU
     }
 
     .features-section .mini-title {
-        font-size: .62rem;
+        font-size: .61rem;
 
-        padding: 6px 12px;
+        padding: 6px 11px;
 
         margin-bottom: 14px;
     }
 
     .features-section .section-header h2 {
-        font-size: 1.75rem;
+        font-size: 1.8rem;
 
         line-height: 1.2;
 
@@ -3854,11 +3812,6 @@ MENU
         line-height: 1.7;
     }
 
-
-    /* ======================================================
-       HOME — TOPIC GRID
-    ====================================================== */
-
     .topic-grid {
         width: 100%;
 
@@ -3870,62 +3823,34 @@ MENU
     .topic-card {
         width: 100%;
 
-        height: 340px;
+        height: auto;
 
-        border-radius: 18px;
+        min-height: 350px;
     }
 
     .topic-visual {
-        height: 175px;
+        height: 185px;
     }
 
     .topic-content {
-        padding: 16px 18px 18px;
+        padding: 17px 18px 20px;
     }
 
     .topic-content h3 {
-        font-size: .92rem;
+        font-size: .94rem;
     }
 
     .topic-content p {
-        font-size: .72rem;
+        font-size: .73rem;
     }
 
 
     /* ======================================================
-       HOME — TOPIC VISUALS
-    ====================================================== */
-
-    .topic-core {
-        width: 72px;
-        height: 82px;
-
-        font-size: 30px;
-    }
-
-    .headline-window {
-        width: 170px;
-        height: 112px;
-    }
-
-    .document-window {
-        width: 170px;
-        height: 112px;
-    }
-
-    .popularity-counter {
-        padding: 9px 15px;
-    }
-
-
-    /* ======================================================
-       HOME — CHECK SECTION
+       HOME — CHECK BEFORE YOU SHARE
     ====================================================== */
 
     .check-section {
-        width: 100%;
-
-        padding: 65px 18px 70px;
+        padding: 65px 18px;
     }
 
     .check-container {
@@ -3940,57 +3865,42 @@ MENU
         width: 100%;
 
         max-width: 100%;
-
-        text-align: center;
     }
 
     .check-content .mini-title {
-        font-size: .62rem;
+        font-size: .61rem;
 
-        padding: 6px 12px;
+        padding: 6px 11px;
     }
 
     .check-content h2 {
-        font-size: 1.75rem;
+        font-size: 1.8rem;
 
         line-height: 1.2;
     }
 
     .check-content p {
-        font-size: .80rem;
+        font-size: .78rem;
 
         line-height: 1.7;
     }
 
     .check-status {
         font-size: .62rem;
+
+        padding: 7px 11px;
     }
 
     .check-hint {
         font-size: .64rem;
-
-        justify-content: center;
     }
-
-
-    /* ======================================================
-       HOME — CHECK INTERACTIVE
-    ====================================================== */
 
     .check-interactive {
         width: 100%;
-
-        max-width: 100%;
-    }
-
-    .check-step-list {
-        width: 100%;
-
-        gap: 8px;
     }
 
     .check-step {
-        min-height: 66px;
+        min-height: 68px;
 
         padding: 10px 11px;
 
@@ -3999,35 +3909,30 @@ MENU
         border-radius: 15px;
     }
 
+    .check-step:hover {
+        transform: none;
+    }
+
     .step-number {
         width: 42px;
         height: 42px;
 
         border-radius: 12px;
 
-        font-size: .66rem;
+        font-size: .64rem;
     }
 
     .step-content strong {
-        font-size: .80rem;
+        font-size: .79rem;
     }
 
     .step-content small {
         font-size: .64rem;
     }
 
-    .step-state {
-        font-size: .54rem;
-    }
-
     .step-arrow {
         font-size: .65rem;
     }
-
-
-    /* ======================================================
-       HOME — CHECK DETAIL
-    ====================================================== */
 
     .check-detail {
         padding: 16px;
@@ -4035,21 +3940,15 @@ MENU
         border-radius: 17px;
     }
 
-    .check-detail-top {
-        gap: 8px;
-
-        margin-bottom: 11px;
-    }
-
     .check-detail-main {
         gap: 11px;
     }
 
     .check-detail-icon {
-        width: 39px;
-        height: 39px;
+        width: 40px;
+        height: 40px;
 
-        border-radius: 11px;
+        border-radius: 12px;
 
         font-size: 15px;
     }
@@ -4061,192 +3960,7 @@ MENU
     .check-detail-content p {
         font-size: .69rem;
 
-        line-height: 1.6;
-    }
-
-
-    /* ======================================================
-       ORIGINAL — TOOLS SECTION
-    ====================================================== */
-
-    .tools-section {
-        width: 100%;
-
-        padding: 55px 18px 65px;
-    }
-
-    .section-heading h2 {
-        font-size: 1.35rem;
-
-        margin: 0 8px;
-    }
-
-    .heading-line {
-        width: 20px;
-    }
-
-    .section-heading p {
-        font-size: .78rem;
-    }
-
-
-    /* ======================================================
-       ORIGINAL — FILTER BUTTONS
-    ====================================================== */
-
-    .tool-filters {
-        width: 100%;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 8px;
-    }
-
-    .filter-btn {
-        width: 100%;
-    }
-
-
-    /* ======================================================
-       ORIGINAL — TOOL CARDS
-    ====================================================== */
-
-    .tool-grid {
-        width: 100%;
-
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-    }
-
-    .tool-card {
-        width: 100%;
-
-        min-height: 300px;
-
-        padding: 20px 16px;
-    }
-
-
-    /* ======================================================
-       ORIGINAL — HOW TO USE
-    ====================================================== */
-
-    .how-section {
-        width: 100%;
-
-        padding: 25px 18px 50px;
-    }
-
-    .how-container {
-        width: 100%;
-
-        padding: 28px 14px;
-
-        border-radius: 18px;
-    }
-
-    .how-heading h2 {
-        font-size: 1.3rem;
-    }
-
-    .how-heading p {
-        font-size: .78rem;
-    }
-
-    .how-steps {
-        width: 100%;
-
-        flex-direction: column;
-
-        gap: 25px;
-    }
-
-    .how-step {
-        width: 100%;
-
-        min-height: 150px;
-    }
-
-    .step-arrow {
-        display: none;
-    }
-
-
-    /* ======================================================
-       ORIGINAL — REMINDERS
-    ====================================================== */
-
-    .reminders-section {
-        width: 100%;
-
-        padding: 30px 18px 50px;
-    }
-
-    .reminders-heading h2 {
-        font-size: 1.35rem;
-    }
-
-    .reminder-grid {
-        width: 100%;
-
-        grid-template-columns: 1fr;
-
-        gap: 12px;
-    }
-
-    .reminder-card {
-        width: 100%;
-    }
-
-
-    /* ======================================================
-       ORIGINAL — FINAL REMINDER
-    ====================================================== */
-
-    .final-reminder {
-        width: 100%;
-
-        padding: 0 18px 45px;
-    }
-
-    .final-reminder-content {
-        width: 100%;
-
-        padding: 18px 15px;
-
-        flex-direction: column;
-
-        gap: 8px;
-    }
-
-    .final-reminder-content strong {
-        font-size: .8rem;
-    }
-
-    .final-reminder-content span {
-        font-size: .72rem;
-
-        line-height: 1.5;
-    }
-
-
-    /* ======================================================
-       MODAL — MOBILE
-    ====================================================== */
-
-    .modal-content {
-        width: 92%;
-
-        max-width: 92%;
-
-        max-height: 85vh;
-
-        overflow-y: auto;
-
-        padding: 20px;
+        line-height: 1.65;
     }
 
 }
@@ -4264,7 +3978,6 @@ MENU
 
     body {
         width: 100%;
-
         overflow-x: hidden;
     }
 
@@ -4275,13 +3988,11 @@ MENU
 
     .nav-container {
         width: 100%;
-
         padding: 12px 15px;
     }
 
     .logo-icon {
         width: 36px;
-
         height: 36px;
     }
 
@@ -4300,13 +4011,11 @@ MENU
 
     .fact-hero-content h1 {
         font-size: 2.45rem;
-
         line-height: 1.05;
     }
 
     .fact-hero-content h2 {
         font-size: .95rem;
-
         margin-bottom: 14px;
     }
 
@@ -4321,7 +4030,6 @@ MENU
 
     .fact-process {
         flex-direction: column;
-
         gap: 12px;
     }
 
@@ -4331,13 +4039,11 @@ MENU
 
     .process-arrow {
         font-size: 12px;
-
         transform: rotate(90deg);
     }
 
     .process-icon {
         width: 45px;
-
         height: 45px;
 
         font-size: 17px;
@@ -4350,7 +4056,6 @@ MENU
 
     .fact-hero-visual {
         width: 100%;
-
         max-width: 450px;
 
         min-height: 230px;
@@ -4358,331 +4063,21 @@ MENU
         margin: -20px auto -25px;
 
         transform: scale(.62);
-
         transform-origin: center center;
     }
 
 
     /* ======================================================
-       HOME — FEATURES
-    ====================================================== */
-
-    .features-section {
-        width: 100%;
-
-        padding: 50px 15px 60px;
-    }
-
-    .features-section .section-header {
-        width: 100%;
-
-        margin-bottom: 30px;
-    }
-
-    .features-section .mini-title {
-        font-size: .58rem;
-
-        padding: 6px 11px;
-
-        letter-spacing: 1px;
-    }
-
-    .features-section .section-header h2 {
-        font-size: 1.5rem;
-
-        line-height: 1.2;
-    }
-
-    .features-section .section-header p {
-        font-size: .74rem;
-
-        line-height: 1.65;
-    }
-
-
-    /* ======================================================
-       HOME — TOPIC CARDS
-    ====================================================== */
-
-    .topic-grid {
-        width: 100%;
-
-        grid-template-columns: 1fr;
-
-        gap: 13px;
-    }
-
-    .topic-card {
-        height: auto;
-
-        min-height: 325px;
-
-        border-radius: 17px;
-    }
-
-    .topic-visual {
-        height: 165px;
-    }
-
-    .topic-content {
-        padding: 15px 17px 18px;
-    }
-
-    .topic-number {
-        font-size: .55rem;
-    }
-
-    .topic-content h3 {
-        font-size: .88rem;
-    }
-
-    .topic-content p {
-        font-size: .69rem;
-
-        line-height: 1.55;
-    }
-
-    .topic-badge {
-        top: 11px;
-
-        right: 11px;
-
-        padding: 4px 8px;
-
-        font-size: .52rem;
-    }
-
-
-    /* ======================================================
-       HOME — TOPIC VISUALS
-    ====================================================== */
-
-    .topic-core {
-        width: 67px;
-
-        height: 77px;
-
-        border-radius: 23px 23px 28px 28px;
-
-        font-size: 27px;
-    }
-
-    .topic-core::before,
-    .topic-core::after {
-        top: 22px;
-
-        width: 7px;
-
-        height: 7px;
-    }
-
-    .topic-core::before {
-        left: 14px;
-    }
-
-    .topic-core::after {
-        right: 14px;
-    }
-
-    .headline-window {
-        width: 160px;
-
-        height: 105px;
-
-        padding: 10px;
-    }
-
-    .document-window {
-        width: 160px;
-
-        height: 105px;
-
-        padding: 14px;
-    }
-
-    .popularity-counter {
-        padding: 8px 13px;
-
-        gap: 7px;
-    }
-
-    .popularity-counter i {
-        font-size: 16px;
-    }
-
-    .popularity-counter strong {
-        font-size: 1.1rem;
-    }
-
-    .audience-icons {
-        margin-top: 10px;
-    }
-
-    .audience-icons i {
-        font-size: 20px;
-    }
-
-
-    /* ======================================================
-       HOME — CHECK SECTION
-    ====================================================== */
-
-    .check-section {
-        width: 100%;
-
-        padding: 55px 15px 60px;
-    }
-
-    .check-container {
-        width: 100%;
-
-        gap: 25px;
-    }
-
-    .check-content .mini-title {
-        font-size: .58rem;
-
-        padding: 6px 11px;
-    }
-
-    .check-content h2 {
-        font-size: 1.5rem;
-
-        line-height: 1.2;
-    }
-
-    .check-content p {
-        font-size: .74rem;
-
-        line-height: 1.65;
-
-        margin-bottom: 18px;
-    }
-
-    .check-status {
-        padding: 7px 11px;
-
-        font-size: .58rem;
-    }
-
-    .check-hint {
-        font-size: .60rem;
-
-        margin-top: 12px;
-    }
-
-
-    /* ======================================================
-       HOME — CHECK STEPS
-    ====================================================== */
-
-    .check-step {
-        min-height: 62px;
-
-        padding: 9px 10px;
-
-        gap: 9px;
-
-        border-radius: 14px;
-    }
-
-    .step-number {
-        width: 39px;
-
-        height: 39px;
-
-        border-radius: 11px;
-
-        font-size: .62rem;
-    }
-
-    .step-content {
-        gap: 3px;
-    }
-
-    .step-content strong {
-        font-size: .76rem;
-    }
-
-    .step-content small {
-        font-size: .60rem;
-
-        line-height: 1.4;
-    }
-
-    .step-state {
-        font-size: .50rem;
-    }
-
-    .step-arrow {
-        display: none;
-    }
-
-
-    /* ======================================================
-       HOME — CHECK DETAIL
-    ====================================================== */
-
-    .check-detail {
-        padding: 14px;
-
-        border-radius: 16px;
-    }
-
-    .check-detail-top {
-        gap: 7px;
-
-        margin-bottom: 10px;
-    }
-
-    .check-detail-top > span:first-child {
-        font-size: .53rem;
-    }
-
-    .detail-count {
-        font-size: .53rem;
-    }
-
-    .check-detail-main {
-        gap: 9px;
-    }
-
-    .check-detail-icon {
-        width: 36px;
-
-        height: 36px;
-
-        border-radius: 10px;
-
-        font-size: 14px;
-    }
-
-    .check-detail-content h3 {
-        font-size: .82rem;
-
-        margin-bottom: 5px;
-    }
-
-    .check-detail-content p {
-        font-size: .64rem;
-
-        line-height: 1.55;
-    }
-
-
-    /* ======================================================
-       ORIGINAL — TOOLS SECTION
+       TOOLS SECTION
     ====================================================== */
 
     .tools-section {
         width: 100%;
-
         padding: 55px 18px 65px;
     }
 
     .section-heading h2 {
         font-size: 1.35rem;
-
         margin: 0 8px;
     }
 
@@ -4696,7 +4091,7 @@ MENU
 
 
     /* ======================================================
-       ORIGINAL — FILTER BUTTONS
+       FILTER BUTTONS
     ====================================================== */
 
     .tool-filters {
@@ -4715,7 +4110,7 @@ MENU
 
 
     /* ======================================================
-       ORIGINAL — TOOL CARDS
+       TOOL CARDS
     ====================================================== */
 
     .tool-grid {
@@ -4736,7 +4131,7 @@ MENU
 
 
     /* ======================================================
-       ORIGINAL — HOW TO USE
+       HOW TO USE
     ====================================================== */
 
     .how-section {
@@ -4771,7 +4166,6 @@ MENU
 
     .how-step {
         width: 100%;
-
         min-height: 150px;
     }
 
@@ -4781,7 +4175,7 @@ MENU
 
 
     /* ======================================================
-       ORIGINAL — REMINDERS
+       REMINDERS
     ====================================================== */
 
     .reminders-section {
@@ -4808,7 +4202,7 @@ MENU
 
 
     /* ======================================================
-       ORIGINAL — FINAL REMINDER
+       FINAL REMINDER
     ====================================================== */
 
     .final-reminder {
@@ -4833,7 +4227,6 @@ MENU
 
     .final-reminder-content span {
         font-size: .72rem;
-
         line-height: 1.5;
     }
 
@@ -4844,7 +4237,6 @@ MENU
 
     .modal-content {
         width: 92%;
-
         max-width: 92%;
 
         max-height: 85vh;
@@ -4852,6 +4244,214 @@ MENU
         overflow-y: auto;
 
         padding: 20px;
+    }
+
+
+    /* ======================================================
+       HOME — LEARNING TOPICS
+    ====================================================== */
+
+    .features-section {
+        padding: 50px 16px 60px;
+    }
+
+    .features-section .section-header {
+        margin-bottom: 30px;
+    }
+
+    .features-section .section-header h2 {
+        font-size: 1.55rem;
+
+        letter-spacing: -.3px;
+    }
+
+    .features-section .section-header p {
+        font-size: .73rem;
+
+        line-height: 1.65;
+    }
+
+    .topic-grid {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+    }
+
+    .topic-card {
+        min-height: 335px;
+
+        border-radius: 18px;
+    }
+
+    .topic-visual {
+        height: 175px;
+    }
+
+    .topic-badge {
+        top: 11px;
+        right: 11px;
+
+        font-size: .52rem;
+    }
+
+    .topic-content {
+        padding: 15px 16px 18px;
+    }
+
+    .topic-number {
+        font-size: .56rem;
+    }
+
+    .topic-content h3 {
+        font-size: .9rem;
+    }
+
+    .topic-content p {
+        font-size: .69rem;
+
+        line-height: 1.55;
+    }
+
+    .topic-core {
+        width: 72px;
+        height: 82px;
+
+        font-size: 30px;
+    }
+
+    .headline-window,
+    .document-window {
+        width: 165px;
+        height: 108px;
+    }
+
+    .popularity-counter {
+        padding: 9px 14px;
+    }
+
+
+    /* ======================================================
+       HOME — CHECK BEFORE YOU SHARE
+    ====================================================== */
+
+    .check-section {
+        padding: 55px 16px;
+    }
+
+    .check-container {
+        width: 100%;
+
+        gap: 27px;
+    }
+
+    .check-content h2 {
+        font-size: 1.55rem;
+    }
+
+    .check-content p {
+        font-size: .73rem;
+
+        line-height: 1.65;
+    }
+
+    .check-status {
+        font-size: .58rem;
+
+        padding: 6px 10px;
+    }
+
+    .check-hint {
+        font-size: .59rem;
+
+        margin-top: 12px;
+    }
+
+    .check-step {
+        min-height: 64px;
+
+        padding: 9px 10px;
+
+        gap: 9px;
+
+        border-radius: 14px;
+    }
+
+    .step-number {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 11px;
+
+        font-size: .60rem;
+    }
+
+    .step-content {
+        gap: 3px;
+    }
+
+    .step-content strong {
+        font-size: .74rem;
+    }
+
+    .step-content small {
+        font-size: .60rem;
+
+        line-height: 1.4;
+    }
+
+    .step-state {
+        font-size: .52rem;
+    }
+
+    .step-arrow {
+        font-size: .58rem;
+    }
+
+    .check-detail {
+        padding: 14px;
+
+        border-radius: 15px;
+    }
+
+    .check-detail-top {
+        gap: 7px;
+
+        margin-bottom: 10px;
+    }
+
+    .check-detail-top > span:first-child {
+        font-size: .52rem;
+    }
+
+    .detail-count {
+        font-size: .52rem;
+    }
+
+    .check-detail-main {
+        gap: 9px;
+    }
+
+    .check-detail-icon {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+    }
+
+    .check-detail-content h3 {
+        font-size: .78rem;
+
+        margin-bottom: 5px;
+    }
+
+    .check-detail-content p {
+        font-size: .63rem;
+
+        line-height: 1.55;
     }
 
 }
@@ -4873,7 +4473,6 @@ MENU
 
     .logo-icon {
         width: 34px;
-
         height: 34px;
     }
 
@@ -4918,7 +4517,6 @@ MENU
 
     .fact-hero-visual {
         width: 100%;
-
         max-width: 380px;
 
         min-height: 210px;
@@ -4926,236 +4524,7 @@ MENU
         margin: -25px auto -40px;
 
         transform: scale(.54);
-
         transform-origin: center center;
-    }
-
-
-    /* ======================================================
-       HOME — FEATURES
-    ====================================================== */
-
-    .features-section {
-        padding: 45px 13px 55px;
-    }
-
-    .features-section .section-header {
-        margin-bottom: 27px;
-    }
-
-    .features-section .mini-title {
-        font-size: .54rem;
-
-        padding: 5px 9px;
-    }
-
-    .features-section .section-header h2 {
-        font-size: 1.3rem;
-
-        letter-spacing: -.3px;
-    }
-
-    .features-section .section-header p {
-        font-size: .68rem;
-
-        line-height: 1.6;
-    }
-
-
-    /* ======================================================
-       HOME — TOPIC CARDS
-    ====================================================== */
-
-    .topic-grid {
-        gap: 11px;
-    }
-
-    .topic-card {
-        min-height: 310px;
-
-        border-radius: 15px;
-    }
-
-    .topic-visual {
-        height: 155px;
-    }
-
-    .topic-content {
-        padding: 13px 15px 16px;
-    }
-
-    .topic-number {
-        font-size: .52rem;
-
-        margin-bottom: 6px;
-    }
-
-    .topic-content h3 {
-        font-size: .82rem;
-
-        margin-bottom: 5px;
-    }
-
-    .topic-content p {
-        font-size: .64rem;
-
-        line-height: 1.5;
-    }
-
-    .topic-badge {
-        top: 9px;
-
-        right: 9px;
-
-        padding: 4px 7px;
-
-        font-size: .48rem;
-    }
-
-
-    /* ======================================================
-       HOME — VISUALS
-    ====================================================== */
-
-    .topic-core {
-        width: 61px;
-
-        height: 70px;
-
-        font-size: 24px;
-
-        border-radius: 21px 21px 25px 25px;
-    }
-
-    .headline-window {
-        width: 145px;
-
-        height: 96px;
-
-        padding: 9px;
-    }
-
-    .document-window {
-        width: 145px;
-
-        height: 96px;
-
-        padding: 12px;
-    }
-
-    .popularity-counter {
-        padding: 7px 11px;
-    }
-
-    .popularity-counter strong {
-        font-size: 1rem;
-    }
-
-    .audience-icons i {
-        font-size: 18px;
-    }
-
-
-    /* ======================================================
-       HOME — CHECK SECTION
-    ====================================================== */
-
-    .check-section {
-        padding: 48px 13px 55px;
-    }
-
-    .check-content .mini-title {
-        font-size: .54rem;
-
-        padding: 5px 9px;
-    }
-
-    .check-content h2 {
-        font-size: 1.3rem;
-    }
-
-    .check-content p {
-        font-size: .68rem;
-
-        line-height: 1.6;
-    }
-
-    .check-status {
-        font-size: .54rem;
-
-        padding: 6px 9px;
-    }
-
-    .check-hint {
-        font-size: .56rem;
-    }
-
-
-    /* ======================================================
-       HOME — CHECK STEPS
-    ====================================================== */
-
-    .check-step {
-        min-height: 58px;
-
-        padding: 8px;
-
-        gap: 8px;
-
-        border-radius: 13px;
-    }
-
-    .step-number {
-        width: 35px;
-
-        height: 35px;
-
-        border-radius: 10px;
-
-        font-size: .58rem;
-    }
-
-    .step-content strong {
-        font-size: .70rem;
-    }
-
-    .step-content small {
-        font-size: .55rem;
-
-        line-height: 1.35;
-    }
-
-    .step-state {
-        display: none;
-    }
-
-
-    /* ======================================================
-       HOME — CHECK DETAIL
-    ====================================================== */
-
-    .check-detail {
-        padding: 12px;
-
-        border-radius: 14px;
-    }
-
-    .check-detail-content h3 {
-        font-size: .76rem;
-    }
-
-    .check-detail-content p {
-        font-size: .59rem;
-
-        line-height: 1.5;
-    }
-
-    .check-detail-icon {
-        width: 33px;
-
-        height: 33px;
-
-        font-size: 13px;
     }
 
 
@@ -5165,12 +4534,124 @@ MENU
 
     .modal-content {
         width: 94%;
-
         max-width: 94%;
 
         max-height: 88vh;
 
         padding: 16px;
+    }
+
+
+    /* ======================================================
+       HOME — LEARNING TOPICS
+    ====================================================== */
+
+    .features-section {
+        padding: 45px 13px 55px;
+    }
+
+    .features-section .section-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .features-section .section-header p {
+        font-size: .68rem;
+    }
+
+    .topic-card {
+        min-height: 325px;
+
+        border-radius: 17px;
+    }
+
+    .topic-visual {
+        height: 165px;
+    }
+
+    .topic-content {
+        padding: 14px 15px 17px;
+    }
+
+    .topic-content h3 {
+        font-size: .86rem;
+    }
+
+    .topic-content p {
+        font-size: .65rem;
+    }
+
+    .topic-core {
+        width: 67px;
+        height: 76px;
+
+        font-size: 27px;
+    }
+
+    .headline-window,
+    .document-window {
+        width: 150px;
+        height: 100px;
+    }
+
+
+    /* ======================================================
+       HOME — CHECK BEFORE YOU SHARE
+    ====================================================== */
+
+    .check-section {
+        padding: 48px 13px;
+    }
+
+    .check-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .check-content p {
+        font-size: .68rem;
+    }
+
+    .check-step {
+        min-height: 61px;
+
+        padding: 8px 9px;
+
+        gap: 8px;
+    }
+
+    .step-number {
+        width: 35px;
+        height: 35px;
+
+        border-radius: 10px;
+
+        font-size: .56rem;
+    }
+
+    .step-content strong {
+        font-size: .70rem;
+    }
+
+    .step-content small {
+        font-size: .56rem;
+    }
+
+    .check-detail {
+        padding: 12px;
+    }
+
+    .check-detail-icon {
+        width: 33px;
+        height: 33px;
+
+        font-size: 13px;
+    }
+
+    .check-detail-content h3 {
+        font-size: .73rem;
+    }
+
+    .check-detail-content p {
+        font-size: .59rem;
     }
 
 }
