@@ -3586,192 +3586,136 @@ MENU
 
 
 /* ==========================================================
-
    MOBILE NAVIGATION — 700px
-
 ========================================================== */
-
-
 
 @media (max-width: 700px) {
 
-
-
     /* ======================================================
-
        NAVBAR
-
     ====================================================== */
 
-
-
     .nav-container {
-
         padding: 13px 18px;
-
     }
-
-
 
     .logo-icon {
-
         width: 38px;
-
         height: 38px;
-
         border-radius: 11px;
-
     }
-
-
 
     .logo-text {
-
         font-size: 1.1rem;
-
     }
-
-
 
     .nav-actions {
-
         margin-left: auto;
 
-        display: flex;
-
-        align-items: center;
-
     }
-
-
 
     .menu-toggle {
-
         display: flex;
-
-        width: 45px;
-
-        height: 45px;
-
-        flex-shrink: 0;
 
     }
 
-
-
     .nav-links {
-
         position: absolute;
 
         top: 100%;
-
         left: 0;
 
         width: 100%;
 
-
-
         display: none;
 
         flex-direction: column;
-
         align-items: stretch;
-
-
 
         gap: 5px;
 
         padding: 12px 15px;
-
         margin: 0;
-
-
 
         background: #08111f !important;
 
-
-
         border-top: 1px solid rgba(255,255,255,.08);
 
-
-
-        box-shadow:
-
-            0 15px 30px rgba(0,0,0,.25);
-
-
+        box-shadow: 0 15px 30px rgba(0,0,0,.25);
 
         z-index: 999;
-
     }
-
-
 
     .nav-links.active {
-
         display: flex;
-
     }
 
-
-
     .nav-item {
-
         width: 100%;
 
         display: flex;
-
         align-items: center;
-
-
 
         gap: 10px;
 
         padding: 11px 13px;
 
-
-
         font-size: .85rem;
-
     }
-
-
 
     .nav-item i {
-
         width: 20px;
-
         text-align: center;
-
     }
-
-
 
     .nav-github {
-
         display: none;
-
     }
-
-
-
 
 
     /* ======================================================
-
-       HERO
-
+       HOME HERO
     ====================================================== */
-
-
 
     .hero-section {
 
         min-height: auto;
 
+        width: 100%;
+
+        padding: 105px 20px 65px;
+
+        overflow: hidden;
+
     }
 
 
+    /* ======================================================
+       HERO CONTAINER
+    ====================================================== */
+
+    .hero-container {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+        align-items: center;
+
+    }
+
+
+    /* ======================================================
+       HERO CONTENT
+    ====================================================== */
 
     .hero-content {
 
@@ -3779,113 +3723,442 @@ MENU
 
         max-width: 100%;
 
+        min-width: 0;
+
+        text-align: center;
+
     }
 
 
+    /* ======================================================
+       HERO BADGE
+    ====================================================== */
+
+    .hero-badge {
+
+        max-width: 100%;
+
+        padding: 7px 12px;
+
+        margin-bottom: 15px;
+
+        font-size: .68rem;
+
+        gap: 7px;
+
+        justify-content: center;
+
+    }
+
+
+    /* ======================================================
+       HERO TITLE
+    ====================================================== */
 
     .hero-content h1 {
-
-        font-size: 2.6rem;
-
-        line-height: 1.05;
-
-    }
-
-
-
-    .hero-content p {
-
-        font-size: .88rem;
-
-        line-height: 1.7;
-
-    }
-
-
-
-    .hero-visual {
 
         width: 100%;
 
         max-width: 100%;
 
+        margin: 0 auto 17px;
+
+        color: #fff;
+
+        font-size: 2.55rem;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.2px;
+
+        overflow-wrap: anywhere;
+
+        word-break: normal;
+
     }
-
-
-
 
 
     /* ======================================================
-
-       WHAT DO YOU WANT TO LEARN TODAY?
-
+       HERO PARAGRAPH
     ====================================================== */
 
-
-
-    .features-section {
+    .hero-content p {
+        
 
         width: 100%;
 
-        padding: 60px 18px 70px;
+        max-width: 560px;
+
+        margin: 0 auto;
+
+        font-size: .84rem;
+
+        line-height: 1.65;
+
+        overflow-wrap: break-word;
 
     }
 
 
+    /* ======================================================
+       HERO BUTTONS
+    ====================================================== */
+
+    .hero-buttons {
+
+        width: 100%;
+
+        max-width: 430px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        margin: 23px auto 0;
+
+    }
+
+    .hero-buttons .btn {
+
+        width: 100%;
+
+        justify-content: center;
+
+        padding: 13px 18px;
+
+        font-size: .8rem;
+
+        border-radius: 12px;
+
+    }
+
+
+    /* ======================================================
+       HERO STATS
+    ====================================================== */
+
+    .hero-stats {
+
+        width: 100%;
+
+        max-width: 430px;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+
+        margin: 25px auto 0;
+
+    }
+
+    .stat-box {
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 13px 9px;
+
+        text-align: center;
+
+        border-radius: 14px;
+
+    }
+
+    .stat-box h2 {
+
+        font-size: 1.15rem;
+
+        margin-bottom: 5px;
+
+    }
+
+    .stat-box span {
+
+        font-size: .68rem;
+
+        line-height: 1.4;
+
+    }
+
+
+    /* ======================================================
+       HERO VISUAL
+    ====================================================== */
+
+    .hero-visual {
+
+        position: relative;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-height: 330px;
+
+        margin: 0 auto;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        overflow: visible;
+
+    }
+
+
+    /* ======================================================
+       VAULT CORE
+    ====================================================== */
+
+    .vault-core {
+
+        width: 260px;
+
+        height: 260px;
+
+    }
+
+
+    /* ======================================================
+       RINGS
+    ====================================================== */
+
+    .ring-1 {
+
+        width: 260px;
+
+        height: 265px;
+
+    }
+
+    .ring-2 {
+
+        width: 205px;
+
+        height: 205px;
+
+    }
+
+    .ring-3 {
+
+        width: 155px;
+
+        height: 155px;
+
+    }
+
+
+    /* ======================================================
+       CENTER CARD
+    ====================================================== */
+
+    .core-card {
+
+        width: 165px;
+
+        height: 165px;
+
+        border-radius: 25px;
+
+    }
+
+    .core-card h2 {
+
+        font-size: 1.25rem;
+
+        margin-bottom: 5px;
+
+    }
+
+    .core-card p {
+
+        font-size: .7rem;
+
+        line-height: 1.4;
+
+        margin-bottom: 11px;
+
+    }
+
+
+    /* ======================================================
+       SHIELD
+    ====================================================== */
+
+    .shield-logo {
+
+        margin-bottom: 13px;
+
+    }
+
+    .shield-bg {
+
+        width: 60px;
+
+        height: 46px;
+
+        border-radius: 17px;
+
+    }
+
+    .shield-bg i {
+
+        font-size: 21px;
+
+    }
+
+
+    /* ======================================================
+       STATUS
+    ====================================================== */
+
+    .status {
+
+        padding: 6px 10px;
+
+        gap: 6px;
+
+        font-size: .63rem;
+
+    }
+
+    .status-dot {
+
+        width: 7px;
+
+        height: 7px;
+
+    }
+
+
+    /* ======================================================
+       FLOATING CARDS
+    ====================================================== */
+
+    .floating-card {
+
+        min-width: 105px;
+
+        max-width: 125px;
+
+        padding: 7px 9px;
+
+        gap: 6px;
+
+        font-size: .59rem;
+
+        border-radius: 11px;
+
+    }
+
+    .card-top {
+
+        top: 0;
+
+        left: 50%;
+
+    }
+
+    .card-left {
+
+        left: 0;
+
+        top: 50%;
+
+    }
+
+    .card-right {
+
+        right: 0;
+
+        top: 50%;
+
+    }
+
+    .card-bottom {
+
+        bottom: 0;
+
+        left: 50%;
+
+    }
+
+
+    /* ======================================================
+       SCROLL INDICATOR
+    ====================================================== */
+
+    .scroll-indicator {
+
+        bottom: 6px;
+
+        font-size: .68rem;
+
+        gap: 5px;
+
+    }
+
+    .scroll-indicator i {
+
+        font-size: 14px;
+
+    }
+
+
+    /* ======================================================
+       HOME — WHAT DO YOU WANT TO LEARN TODAY?
+    ====================================================== */
+
+    .features-section {
+
+        padding: 55px 18px 65px;
+
+    }
 
     .features-section .section-header {
 
         width: 100%;
 
-        margin: 0 auto 35px;
+        margin-bottom: 35px;
 
     }
 
+    .features-section .mini-title {
 
+        font-size: .61rem;
+
+        padding: 6px 11px;
+
+        margin-bottom: 14px;
+
+    }
 
     .features-section .section-header h2 {
 
-        font-size: 1.7rem;
+        font-size: 1.8rem;
 
         line-height: 1.2;
 
-        letter-spacing: -.3px;
+        letter-spacing: -.4px;
 
     }
 
-
-
     .features-section .section-header p {
-
-        width: 100%;
 
         font-size: .78rem;
 
         line-height: 1.7;
 
     }
-
-
-
-    .features-section .mini-title {
-
-        font-size: .58rem;
-
-        padding: 6px 11px;
-
-    }
-
-
-
-
-
-    /* ======================================================
-
-       TOPIC GRID
-
-    ====================================================== */
-
-
 
     .topic-grid {
 
@@ -3897,55 +4170,33 @@ MENU
 
     }
 
-
-
-
-
-    /* ======================================================
-
-       TOPIC CARD
-
-    ====================================================== */
-
-
-
     .topic-card {
 
         width: 100%;
 
         height: auto;
 
-        min-height: 330px;
-
-        border-radius: 18px;
+        min-height: 350px;
 
     }
-
-
 
     .topic-visual {
 
-        height: 175px;
+        height: 185px;
 
     }
-
-
 
     .topic-content {
 
-        padding: 16px 18px 19px;
+        padding: 17px 18px 20px;
 
     }
-
-
 
     .topic-content h3 {
 
-        font-size: .95rem;
+        font-size: .94rem;
 
     }
-
-
 
     .topic-content p {
 
@@ -3954,108 +4205,25 @@ MENU
     }
 
 
-
-
-
     /* ======================================================
-
-       TOPIC VISUALS
-
+       HOME — CHECK BEFORE YOU SHARE
     ====================================================== */
-
-
-
-    .topic-core {
-
-        width: 70px;
-
-        height: 80px;
-
-        font-size: 29px;
-
-    }
-
-
-
-    .headline-window {
-
-        width: 165px;
-
-        height: 110px;
-
-    }
-
-
-
-    .document-window {
-
-        width: 165px;
-
-        height: 110px;
-
-    }
-
-
-
-    .popularity-counter {
-
-        padding: 9px 14px;
-
-    }
-
-
-
-
-
-    /* ======================================================
-
-       CHECK BEFORE YOU SHARE
-
-    ====================================================== */
-
-
 
     .check-section {
 
-        width: 100%;
-
-        padding: 70px 18px;
+        padding: 65px 18px;
 
     }
-
-
 
     .check-container {
 
         width: 100%;
 
+        grid-template-columns: 1fr;
 
-
-        display: flex;
-
-        flex-direction: column;
-
-
-
-        gap: 35px;
-
-
-
-        align-items: stretch;
+        gap: 30px;
 
     }
-
-
-
-
-
-    /* ======================================================
-
-       CHECK INTRO
-
-    ====================================================== */
-
-
 
     .check-content {
 
@@ -4065,17 +4233,21 @@ MENU
 
     }
 
+    .check-content .mini-title {
 
+        font-size: .61rem;
+
+        padding: 6px 11px;
+
+    }
 
     .check-content h2 {
 
-        font-size: 1.75rem;
+        font-size: 1.8rem;
 
         line-height: 1.2;
 
     }
-
-
 
     .check-content p {
 
@@ -4085,45 +4257,19 @@ MENU
 
     }
 
-
-
-    .check-content .mini-title {
-
-        font-size: .58rem;
-
-        padding: 6px 11px;
-
-    }
-
-
-
     .check-status {
-
-        max-width: 100%;
 
         font-size: .62rem;
 
+        padding: 7px 11px;
+
     }
-
-
 
     .check-hint {
 
-        font-size: .65rem;
+        font-size: .64rem;
 
     }
-
-
-
-
-
-    /* ======================================================
-
-       CHECK INTERACTIVE
-
-    ====================================================== */
-
-
 
     .check-interactive {
 
@@ -4131,37 +4277,23 @@ MENU
 
     }
 
-
-
-    .check-step-list {
-
-        width: 100%;
-
-    }
-
-
-
     .check-step {
-
-        width: 100%;
 
         min-height: 68px;
 
-
-
-        padding: 10px 12px;
-
-
+        padding: 10px 11px;
 
         gap: 10px;
-
-
 
         border-radius: 15px;
 
     }
 
+    .check-step:hover {
 
+        transform: none;
+
+    }
 
     .step-number {
 
@@ -4169,25 +4301,17 @@ MENU
 
         height: 42px;
 
-
-
         border-radius: 12px;
 
-
-
-        flex-shrink: 0;
+        font-size: .64rem;
 
     }
-
-
 
     .step-content strong {
 
-        font-size: .78rem;
+        font-size: .79rem;
 
     }
-
-
 
     .step-content small {
 
@@ -4195,29 +4319,13 @@ MENU
 
     }
 
-
-
     .step-arrow {
 
         font-size: .65rem;
 
     }
 
-
-
-
-
-    /* ======================================================
-
-       CHECK DETAIL
-
-    ====================================================== */
-
-
-
     .check-detail {
-
-        width: 100%;
 
         padding: 16px;
 
@@ -4225,15 +4333,11 @@ MENU
 
     }
 
-
-
     .check-detail-main {
 
-        gap: 10px;
+        gap: 11px;
 
     }
-
-
 
     .check-detail-icon {
 
@@ -4241,11 +4345,11 @@ MENU
 
         height: 40px;
 
+        border-radius: 12px;
+
         font-size: 15px;
 
     }
-
-
 
     .check-detail-content h3 {
 
@@ -4253,43 +4357,41 @@ MENU
 
     }
 
-
-
     .check-detail-content p {
 
-        font-size: .70rem;
+        font-size: .69rem;
 
-        line-height: 1.6;
+        line-height: 1.65;
 
     }
-
-
 
 }
 
 
-
-
-
 /* ==========================================================
-
    MOBILE — 576px
-
 ========================================================== */
-
-
 
 @media (max-width: 576px) {
 
+    /* ======================================================
+       GENERAL
+    ====================================================== */
+
+    body {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow-x: hidden;
+
+    }
 
 
     /* ======================================================
-
        NAVBAR
-
     ====================================================== */
-
-
 
     .nav-container {
 
@@ -4299,8 +4401,6 @@ MENU
 
     }
 
-
-
     .logo-icon {
 
         width: 36px;
@@ -4309,8 +4409,6 @@ MENU
 
     }
 
-
-
     .logo-text {
 
         font-size: 1rem;
@@ -4318,64 +4416,370 @@ MENU
     }
 
 
+    /* ======================================================
+       HOME HERO
+    ====================================================== */
 
-    .menu-toggle {
+    .hero-section {
 
-        width: 43px;
+        width: 100%;
 
-        height: 43px;
+        min-height: auto;
+
+        padding: 95px 16px 55px;
+
+        overflow: hidden;
+
+    }
+
+    .hero-container {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        gap: 20px;
+
+    }
+
+    .hero-content {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
 
     }
 
 
+    /* ======================================================
+       BADGE
+    ====================================================== */
 
+    .hero-badge {
+
+        font-size: .61rem;
+
+        padding: 6px 10px;
+
+        gap: 6px;
+
+        margin-bottom: 13px;
+
+    }
 
 
     /* ======================================================
-
-       HERO
-
+       TITLE
     ====================================================== */
-
-
 
     .hero-content h1 {
 
-        font-size: 2.25rem;
+        width: 100%;
 
-        line-height: 1.05;
+        max-width: 100%;
 
-    }
+        font-size: 2.15rem;
 
+        line-height: 1.06;
 
+        letter-spacing: -.9px;
 
-    .hero-content h2 {
+        margin-bottom: 14px;
 
-        font-size: .95rem;
-
-    }
-
-
-
-    .hero-content p {
-
-        font-size: .80rem;
-
-        line-height: 1.65;
+        overflow-wrap: anywhere;
 
     }
-
-
-
 
 
     /* ======================================================
-
-       WHAT DO YOU WANT TO LEARN TODAY?
-
+       PARAGRAPH
     ====================================================== */
 
+    .hero-content p {
 
+        width: 100%;
+
+        max-width: 430px;
+
+        margin: 0 auto;
+
+        font-size: .76rem;
+
+        line-height: 1.6;
+
+    }
+
+
+    /* ======================================================
+       BUTTONS
+    ====================================================== */
+
+    .hero-buttons {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 20px;
+
+        gap: 8px;
+
+    }
+
+    .hero-buttons .btn {
+
+        width: 100%;
+
+        padding: 11px 14px;
+
+        font-size: .72rem;
+
+        border-radius: 11px;
+
+    }
+
+
+    /* ======================================================
+       STATS
+    ====================================================== */
+
+    .hero-stats {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+
+        margin-top: 20px;
+
+    }
+
+    .stat-box {
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 11px 6px;
+
+        border-radius: 12px;
+
+    }
+
+    .stat-box h2 {
+
+        font-size: .98rem;
+
+        margin-bottom: 4px;
+
+    }
+
+    .stat-box span {
+
+        font-size: .59rem;
+
+        line-height: 1.35;
+
+    }
+
+
+    /* ======================================================
+       HERO VISUAL
+    ====================================================== */
+
+    .hero-visual {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-height: 285px;
+
+        margin: 0 auto;
+
+        overflow: visible;
+
+    }
+
+
+    /* ======================================================
+       VAULT
+    ====================================================== */
+
+    .vault-core {
+
+        width: 225px;
+
+        height: 225px;
+
+    }
+
+
+    /* ======================================================
+       RINGS
+    ====================================================== */
+
+    .ring-1 {
+
+        width: 225px;
+
+        height: 230px;
+
+    }
+
+    .ring-2 {
+
+        width: 175px;
+
+        height: 175px;
+
+    }
+
+    .ring-3 {
+
+        width: 135px;
+
+        height: 135px;
+
+    }
+
+
+    /* ======================================================
+       CENTER CARD
+    ====================================================== */
+
+    .core-card {
+
+        width: 145px;
+
+        height: 145px;
+
+        border-radius: 22px;
+
+    }
+
+    .core-card h2 {
+
+        font-size: 1.08rem;
+
+        margin-bottom: 4px;
+
+    }
+
+    .core-card p {
+
+        font-size: .64rem;
+
+        line-height: 1.35;
+
+        margin-bottom: 9px;
+
+    }
+
+
+    /* ======================================================
+       SHIELD
+    ====================================================== */
+
+    .shield-logo {
+
+        margin-bottom: 10px;
+
+    }
+
+    .shield-bg {
+
+        width: 53px;
+
+        height: 41px;
+
+        border-radius: 15px;
+
+    }
+
+    .shield-bg i {
+
+        font-size: 19px;
+
+    }
+
+
+    /* ======================================================
+       STATUS
+    ====================================================== */
+
+    .status {
+
+        padding: 5px 8px;
+
+        gap: 5px;
+
+        font-size: .57rem;
+
+    }
+
+    .status-dot {
+
+        width: 6px;
+
+        height: 6px;
+
+    }
+
+
+    /* ======================================================
+       FLOATING CARDS
+    ====================================================== */
+
+    .floating-card {
+
+        min-width: 92px;
+
+        max-width: 105px;
+
+        padding: 6px 7px;
+
+        gap: 5px;
+
+        font-size: .52rem;
+
+        border-radius: 10px;
+
+    }
+
+    .card-top {
+
+        top: -2px;
+
+    }
+
+    .card-left {
+
+        left: -7px;
+
+    }
+
+    .card-right {
+
+        right: -7px;
+
+    }
+
+    .card-bottom {
+
+        bottom: -2px;
+
+    }
+
+
+    /* ======================================================
+       FEATURES
+    ====================================================== */
 
     .features-section {
 
@@ -4383,57 +4787,27 @@ MENU
 
     }
 
-
-
     .features-section .section-header {
-
-        width: 100%;
 
         margin-bottom: 30px;
 
     }
 
-
-
     .features-section .section-header h2 {
 
-        font-size: 1.4rem;
+        font-size: 1.55rem;
 
-        margin: 0 5px 12px;
+        letter-spacing: -.3px;
 
     }
 
-
-
     .features-section .section-header p {
 
-        font-size: .72rem;
+        font-size: .73rem;
 
         line-height: 1.65;
 
     }
-
-
-
-    .features-section .mini-title {
-
-        font-size: .54rem;
-
-        padding: 6px 10px;
-
-    }
-
-
-
-
-
-    /* ======================================================
-
-       TOPIC GRID
-
-    ====================================================== */
-
-
 
     .topic-grid {
 
@@ -4445,225 +4819,129 @@ MENU
 
     }
 
-
-
     .topic-card {
 
-        width: 100%;
+        min-height: 335px;
 
-        min-height: 310px;
-
-        height: auto;
-
-        border-radius: 17px;
+        border-radius: 18px;
 
     }
-
-
-
-
-
-    /* ======================================================
-
-       TOPIC VISUAL
-
-    ====================================================== */
-
-
 
     .topic-visual {
 
-        width: 100%;
-
-        height: 160px;
+        height: 175px;
 
     }
 
+    .topic-badge {
 
+        top: 11px;
 
-    .topic-core {
+        right: 11px;
 
-        width: 65px;
-
-        height: 74px;
-
-        font-size: 27px;
+        font-size: .52rem;
 
     }
-
-
-
-    .headline-window {
-
-        width: 155px;
-
-        height: 104px;
-
-        padding: 10px;
-
-    }
-
-
-
-    .document-window {
-
-        width: 155px;
-
-        height: 104px;
-
-        padding: 14px;
-
-    }
-
-
-
-    .popularity-counter {
-
-        padding: 8px 12px;
-
-        gap: 7px;
-
-    }
-
-
-
-    .popularity-counter strong {
-
-        font-size: 1.05rem;
-
-    }
-
-
-
-    .popularity-counter i {
-
-        font-size: 16px;
-
-    }
-
-
-
-    .audience-icons i {
-
-        font-size: 20px;
-
-    }
-
-
-
-
-
-    /* ======================================================
-
-       TOPIC CONTENT
-
-    ====================================================== */
-
-
 
     .topic-content {
 
-        padding: 15px 16px 17px;
+        padding: 15px 16px 18px;
 
     }
-
-
 
     .topic-number {
 
-        font-size: .55rem;
-
-        margin-bottom: 6px;
+        font-size: .56rem;
 
     }
-
-
 
     .topic-content h3 {
 
-        font-size: .88rem;
-
-        margin-bottom: 6px;
+        font-size: .9rem;
 
     }
 
-
-
     .topic-content p {
 
-        font-size: .68rem;
+        font-size: .69rem;
 
         line-height: 1.55;
 
     }
 
+    .topic-core {
 
+        width: 72px;
 
+        height: 82px;
 
+        font-size: 30px;
 
-    /* ======================================================
+    }
 
-       CHECK BEFORE YOU SHARE
+    .headline-window,
+    .document-window {
 
-    ====================================================== */
+        width: 165px;
 
+        height: 108px;
 
+    }
 
-    .check-section {
+    .popularity-counter {
 
-        padding: 60px 16px;
+        padding: 9px 14px;
 
     }
 
 
+    /* ======================================================
+       CHECK BEFORE YOU SHARE
+    ====================================================== */
+
+    .check-section {
+
+        padding: 55px 16px;
+
+    }
 
     .check-container {
 
         width: 100%;
 
-        gap: 28px;
+        gap: 27px;
 
     }
-
-
 
     .check-content h2 {
 
-        font-size: 1.4rem;
+        font-size: 1.55rem;
 
     }
 
-
-
     .check-content p {
 
-        font-size: .72rem;
+        font-size: .73rem;
 
         line-height: 1.65;
 
     }
 
+    .check-status {
 
-
-    .check-content .mini-title {
-
-        font-size: .54rem;
+        font-size: .58rem;
 
         padding: 6px 10px;
 
     }
 
+    .check-hint {
 
+        font-size: .59rem;
 
+        margin-top: 12px;
 
-
-    /* ======================================================
-
-       CHECK STEPS
-
-    ====================================================== */
-
-
+    }
 
     .check-step {
 
@@ -4673,9 +4951,9 @@ MENU
 
         gap: 9px;
 
+        border-radius: 14px;
+
     }
-
-
 
     .step-number {
 
@@ -4683,13 +4961,11 @@ MENU
 
         height: 38px;
 
-        border-radius: 10px;
+        border-radius: 11px;
 
-        font-size: .62rem;
+        font-size: .60rem;
 
     }
-
-
 
     .step-content {
 
@@ -4697,25 +4973,221 @@ MENU
 
     }
 
-
-
     .step-content strong {
 
-        font-size: .73rem;
+        font-size: .74rem;
 
     }
 
-
-
     .step-content small {
 
-        font-size: .59rem;
+        font-size: .60rem;
 
         line-height: 1.4;
 
     }
 
+    .step-state {
 
+        font-size: .52rem;
+
+    }
+
+    .step-arrow {
+
+        font-size: .58rem;
+
+    }
+
+    .check-detail {
+
+        padding: 14px;
+
+        border-radius: 15px;
+
+    }
+
+    .check-detail-top {
+
+        gap: 7px;
+
+        margin-bottom: 10px;
+
+    }
+
+    .check-detail-top > span:first-child {
+
+        font-size: .52rem;
+
+    }
+
+    .detail-count {
+
+        font-size: .52rem;
+
+    }
+
+    .check-detail-main {
+
+        gap: 9px;
+
+    }
+
+    .check-detail-icon {
+
+        width: 36px;
+
+        height: 36px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+
+    }
+
+    .check-detail-content h3 {
+
+        font-size: .78rem;
+
+        margin-bottom: 5px;
+
+    }
+
+    .check-detail-content p {
+
+        font-size: .63rem;
+
+        line-height: 1.55;
+
+    }
+
+
+    /* ======================================================
+       OTHER EXISTING MOBILE SECTIONS
+    ====================================================== */
+
+    .tools-section {
+
+        width: 100%;
+
+        padding: 55px 18px 65px;
+
+    }
+
+    .section-heading h2 {
+
+        font-size: 1.35rem;
+
+        margin: 0 8px;
+
+    }
+
+    .heading-line {
+
+        width: 20px;
+
+    }
+
+    .section-heading p {
+
+        font-size: .78rem;
+
+    }
+
+
+    /* FILTER BUTTONS */
+
+    .tool-filters {
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+
+    }
+
+    .filter-btn {
+
+        width: 100%;
+
+    }
+
+
+    /* TOOL CARDS */
+
+    .tool-grid {
+
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+    .tool-card {
+
+        width: 100%;
+
+        min-height: 300px;
+
+        padding: 20px 16px;
+
+    }
+
+
+    /* HOW TO USE */
+
+    .how-section {
+
+        width: 100%;
+
+        padding: 25px 18px 50px;
+
+    }
+
+    .how-container {
+
+        width: 100%;
+
+        padding: 28px 14px;
+
+        border-radius: 18px;
+
+    }
+
+    .how-heading h2 {
+
+        font-size: 1.3rem;
+
+    }
+
+    .how-heading p {
+
+        font-size: .78rem;
+
+    }
+
+    .how-steps {
+
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+    }
+
+    .how-step {
+
+        width: 100%;
+
+        min-height: 150px;
+
+    }
 
     .step-arrow {
 
@@ -4724,353 +5196,291 @@ MENU
     }
 
 
+    /* REMINDERS */
 
+    .reminders-section {
 
+        width: 100%;
 
-    /* ======================================================
+        padding: 30px 18px 50px;
 
-       CHECK DETAIL
+    }
 
-    ====================================================== */
+    .reminders-heading h2 {
 
+        font-size: 1.35rem;
 
+    }
 
-    .check-detail {
+    .reminder-grid {
 
-        padding: 14px;
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+    }
+
+    .reminder-card {
+
+        width: 100%;
 
     }
 
 
+    /* FINAL REMINDER */
 
-    .check-detail-top {
+    .final-reminder {
 
-        margin-bottom: 11px;
+        width: 100%;
+
+        padding: 0 18px 45px;
+
+    }
+
+    .final-reminder-content {
+
+        width: 100%;
+
+        padding: 18px 15px;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+    .final-reminder-content strong {
+
+        font-size: .8rem;
+
+    }
+
+    .final-reminder-content span {
+
+        font-size: .72rem;
+
+        line-height: 1.5;
 
     }
 
 
+    /* MODAL */
 
-    .check-detail-main {
+    .modal-content {
 
-        gap: 9px;
+        width: 92%;
 
-    }
+        max-width: 92%;
 
+        max-height: 85vh;
 
+        overflow-y: auto;
 
-    .check-detail-icon {
-
-        width: 37px;
-
-        height: 37px;
-
-        border-radius: 10px;
-
-        font-size: 14px;
+        padding: 20px;
 
     }
-
-
-
-    .check-detail-content h3 {
-
-        font-size: .82rem;
-
-        margin-bottom: 5px;
-
-    }
-
-
-
-    .check-detail-content p {
-
-        font-size: .65rem;
-
-        line-height: 1.55;
-
-    }
-
-
 
 }
-
-
-
 
 
 /* ==========================================================
-
    VERY SMALL PHONES — 400px
-
 ========================================================== */
-
-
 
 @media (max-width: 400px) {
 
-
-
     /* ======================================================
-
        NAVBAR
-
     ====================================================== */
-
-
 
     .logo-text {
-
         font-size: .92rem;
-
     }
-
-
 
     .logo-icon {
-
         width: 34px;
-
         height: 34px;
-
     }
-
-
-
-    .menu-toggle {
-
-        width: 41px;
-
-        height: 41px;
-
-        font-size: 18px;
-
-    }
-
-
-
 
 
     /* ======================================================
-
        HERO
-
     ====================================================== */
 
-
-
-    .hero-content h1 {
-
-        font-size: 2rem;
-
+    .fact-hero-content h1 {
+        font-size: 2.15rem;
     }
 
-
-
-    .hero-content h2 {
-
-        font-size: .85rem;
-
+    .fact-hero-content h2 {
+        font-size: .88rem;
     }
-
-
-
-    .hero-content p {
-
-        font-size: .75rem;
-
-    }
-
-
-
 
 
     /* ======================================================
-
-       FEATURES
-
+       PROCESS
     ====================================================== */
 
+    .fact-process {
+        gap: 7px;
+    }
 
+    .process-item {
+        width: 72px;
+    }
+
+    .process-item h3 {
+        font-size: .7rem;
+    }
+
+    .process-item p {
+        font-size: .6rem;
+    }
+
+
+    /* ======================================================
+       HERO VISUAL
+    ====================================================== */
+
+    .fact-hero-visual {
+        width: 100%;
+        max-width: 380px;
+
+        min-height: 210px;
+
+        margin: -25px auto -40px;
+
+        transform: scale(.54);
+        transform-origin: center center;
+    }
+
+
+    /* ======================================================
+       MODAL — VERY SMALL PHONE
+    ====================================================== */
+
+    .modal-content {
+        width: 94%;
+        max-width: 94%;
+
+        max-height: 88vh;
+
+        padding: 16px;
+    }
+
+
+    /* ======================================================
+       HOME — LEARNING TOPICS
+    ====================================================== */
 
     .features-section {
-
         padding: 45px 13px 55px;
-
     }
-
-
 
     .features-section .section-header h2 {
-
-        font-size: 1.25rem;
-
+        font-size: 1.4rem;
     }
-
-
 
     .features-section .section-header p {
-
         font-size: .68rem;
-
     }
-
-
-
-    .topic-grid {
-
-        gap: 11px;
-
-    }
-
-
 
     .topic-card {
+        min-height: 325px;
 
-        min-height: 295px;
-
+        border-radius: 17px;
     }
-
-
 
     .topic-visual {
-
-        height: 150px;
-
+        height: 165px;
     }
-
-
 
     .topic-content {
-
-        padding: 14px;
-
+        padding: 14px 15px 17px;
     }
-
-
 
     .topic-content h3 {
-
-        font-size: .82rem;
-
+        font-size: .86rem;
     }
-
-
 
     .topic-content p {
-
-        font-size: .63rem;
-
+        font-size: .65rem;
     }
 
+    .topic-core {
+        width: 67px;
+        height: 76px;
 
+        font-size: 27px;
+    }
 
+    .headline-window,
+    .document-window {
+        width: 150px;
+        height: 100px;
+    }
 
 
     /* ======================================================
-
-       CHECK
-
+       HOME — CHECK BEFORE YOU SHARE
     ====================================================== */
 
-
-
     .check-section {
-
-        padding: 50px 13px;
-
+        padding: 48px 13px;
     }
-
-
 
     .check-content h2 {
-
-        font-size: 1.25rem;
-
+        font-size: 1.4rem;
     }
-
-
 
     .check-content p {
-
-        font-size: .67rem;
-
+        font-size: .68rem;
     }
-
-
 
     .check-step {
+        min-height: 61px;
 
-        padding: 8px;
+        padding: 8px 9px;
 
-        gap: 7px;
-
+        gap: 8px;
     }
-
-
 
     .step-number {
+        width: 35px;
+        height: 35px;
 
-        width: 34px;
+        border-radius: 10px;
 
-        height: 34px;
-
-        font-size: .57rem;
-
+        font-size: .56rem;
     }
-
-
 
     .step-content strong {
-
-        font-size: .67rem;
-
+        font-size: .70rem;
     }
-
-
 
     .step-content small {
-
-        font-size: .55rem;
-
+        font-size: .56rem;
     }
-
-
 
     .check-detail {
-
         padding: 12px;
-
     }
-
-
 
     .check-detail-icon {
-
-        width: 34px;
-
-        height: 34px;
+        width: 33px;
+        height: 33px;
 
         font-size: 13px;
-
     }
-
-
 
     .check-detail-content h3 {
-
-        font-size: .76rem;
-
+        font-size: .73rem;
     }
-
-
 
     .check-detail-content p {
-
-        font-size: .60rem;
-
+        font-size: .59rem;
     }
 
-
-
 }
+
