@@ -3204,1099 +3204,1458 @@ MENU
 
 
 /* ==========================================================
-   TABLET — 992px AND BELOW
+   TABLET / SMALL LAPTOP — 1100px
 ========================================================== */
 
-@media (max-width:992px){
+@media (max-width: 1100px) {
 
-    /* ==========================
-       NAVBAR
-    ========================== */
+    /* TOOL GRID */
 
-    .nav-container{
-
-        position:relative;
-
-        display:flex;
-
-        justify-content:space-between;
-
-        align-items:center;
-
-    }
-
-    .nav-actions{
-
-        display:flex;
-
-        justify-content:flex-end;
-
-        align-items:center;
-
-        gap:0;
-
-    }
-
-    .nav-actions a{
-
-        display:none;
-
-    }
-
-    .menu-toggle{
-
-        display:flex;
-
-    }
-
-    .nav-links{
-
-        position:absolute;
-
-        top:100%;
-
-        left:0;
-
-        width:100%;
-
-        background:#08111f;
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        padding:15px;
-
-        gap:8px;
-
-        display:none;
-
-        border-top:1px solid rgba(255,255,255,.08);
-
-        box-shadow:
-            0 18px 35px rgba(0,0,0,.22);
-
-    }
-
-    .nav-links.active{
-
-        display:flex;
-
-    }
-
-    .nav-item{
-
-        width:100%;
-
+    .tool-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
 
-    /* ==========================
+    /* REMINDER GRID */
+
+    .reminder-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* HOW TO USE */
+
+    .how-steps {
+        flex-wrap: wrap;
+    }
+
+    .step-arrow {
+        display: none;
+    }
+
+
+    /* ======================================================
+       HOMEPAGE — FEATURES
+    ====================================================== */
+
+    .topic-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+
+    /* ======================================================
+       HOMEPAGE — CHECK SECTION
+    ====================================================== */
+
+    .check-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET — 992px
+========================================================== */
+
+@media (max-width: 992px) {
+
+    /* ======================================================
+       NAVIGATION
+    ====================================================== */
+
+    .nav-container {
+        position: relative;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-actions .nav-github {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: #08111f;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 15px;
+        gap: 8px;
+
+        display: none;
+
+        border-top: 1px solid rgba(255, 255, 255, .08);
+
+        margin: 0;
+
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+
+    /* ======================================================
        HERO
-    ========================== */
+    ====================================================== */
 
-    .hero-section{
+    .fact-hero-container {
+        grid-template-columns: 1fr;
 
-        padding:120px 20px 70px;
-
+        text-align: center;
     }
 
-    .hero-container{
-
-        grid-template-columns:1fr;
-
-        gap:35px;
-
-        text-align:center;
-
+    .fact-hero-content {
+        max-width: 800px;
+        margin: auto;
     }
 
-    .hero-content h1{
-
-        font-size:2.8rem;
-
+    .fact-hero-content > p {
+        margin: auto;
     }
 
-    .hero-content p{
-
-        margin:auto;
-
-        font-size:1rem;
-
-    }
-
-    .hero-buttons{
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:15px;
-
-    }
-
-    .hero-buttons .btn{
-
-        width:100%;
-
-        max-width:320px;
-
-        justify-content:center;
-
+    .fact-process {
+        justify-content: center;
     }
 
 
-    /* ==========================
-       STATS
-    ========================== */
-
-    .hero-stats{
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:15px;
-
-    }
-
-    .stat-box{
-
-        width:100%;
-
-        max-width:320px;
-
-    }
-
-
-    /* ==========================
+    /* ======================================================
        HERO VISUAL
-    ========================== */
+    ====================================================== */
 
-    .hero-visual{
+    .fact-hero-visual {
+        width: 100%;
+        max-width: 650px;
 
-        margin-top:15px;
+        min-height: 320px;
 
-        min-height:390px;
+        margin: 0 auto;
 
-    }
-
-    .vault-core{
-
-        transform:scale(.82);
-
-    }
-
-    .floating-card{
-
-        min-width:135px;
-
-        padding:9px 12px;
-
-        font-size:.78rem;
-
-    }
-
-    .card-left{
-
-        left:0;
-
-    }
-
-    .card-right{
-
-        right:0;
-
+        transform: scale(.88);
+        transform-origin: center center;
     }
 
 
-    /* ==========================
-       WHAT YOU WANT TO LEARN
-    ========================== */
+    /* ======================================================
+       HOMEPAGE — FEATURES
+    ====================================================== */
 
-    .features-section{
-
-        padding:70px 20px 80px;
-
+    .features-section {
+        padding: 65px 25px 80px;
     }
 
-    .topic-grid{
+    .features-section .section-header {
+        width: 94%;
+        margin-bottom: 40px;
+    }
+
+    .features-section .section-header h2 {
+        font-size: 2.15rem;
+    }
+
+    .features-section .section-header p {
+        font-size: .86rem;
+    }
+
+    .topic-grid {
+        width: 94%;
 
         grid-template-columns:
-            repeat(2,minmax(0,1fr));
+            repeat(2, minmax(0, 1fr));
 
-        gap:18px;
-
-        width:100%;
-
-    }
-
-    .topic-card{
-
-        height:370px;
-
-    }
-
-    .topic-visual{
-
-        height:190px;
-
-    }
-
-    .topic-content{
-
-        padding:17px 19px 20px;
-
+        gap: 18px;
     }
 
 
-    /* ==========================
-       CHECK BEFORE YOU SHARE
-    ========================== */
+    /* ======================================================
+       HOMEPAGE — CHECK SECTION
+    ====================================================== */
 
-    .check-section{
-
-        padding:85px 20px;
-
+    .check-section {
+        padding: 80px 25px;
     }
 
-    .check-container{
+    .check-container {
+        width: 94%;
 
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-        gap:35px;
-
-        width:100%;
-
-        text-align:left;
-
+        gap: 45px;
     }
 
-    .check-content{
-
-        max-width:700px;
-
-        margin:auto;
-
-        width:100%;
-
+    .check-content {
+        max-width: 700px;
+        margin: auto;
+        text-align: center;
     }
 
-    .check-content h2{
-
-        font-size:2.1rem;
-
+    .check-status {
+        margin: 0 auto;
     }
 
-    .check-interactive{
-
-        width:100%;
-
-        max-width:700px;
-
-        margin:auto;
-
+    .check-hint {
+        justify-content: center;
     }
 
-    .check-step{
-
-        min-height:70px;
-
-    }
-
-
-    /* ==========================
-       FOOTER
-    ========================== */
-
-    .footer-container{
-
-        flex-direction:column;
-
-        justify-content:center;
-
-        align-items:center;
-
-        text-align:center;
-
-        gap:25px;
-
-    }
-
-    .footer-brand{
-
-        justify-content:center;
-
-    }
-
-    .footer-links{
-
-        justify-content:center;
-
-    }
-
-    .footer-social{
-
-        display:flex;
-
-        justify-content:center;
-
-        gap:15px;
-
-        margin-top:10px;
-
-    }
-
-    .footer-bottom{
-
-        text-align:center;
-
-        font-size:.82rem;
-
-        padding:20px;
-
+    .check-interactive {
+        width: 100%;
+        max-width: 750px;
+        margin: auto;
     }
 
 }
 
 
 /* ==========================================================
-   MOBILE — 768px AND BELOW
+   TABLET — 900px
 ========================================================== */
 
-@media (max-width:768px){
+@media (max-width: 900px) {
 
-    /* ==========================
+    /* ======================================================
+       NAVBAR
+    ====================================================== */
+
+    .nav-container {
+        padding: 15px 20px;
+    }
+
+    .brand-logo {
+        flex-shrink: 0;
+    }
+
+    .nav-item {
+        font-size: .82rem;
+        padding: 7px 9px;
+    }
+
+
+    /* ======================================================
        HERO
-    ========================== */
+    ====================================================== */
 
-    .hero-section{
-
-        padding:115px 20px 75px;
-
+    .fact-hero {
+        padding-left: 25px;
+        padding-right: 25px;
     }
 
-    .hero-content h1{
-
-        font-size:2.45rem;
-
-        line-height:1.15;
-
+    .fact-hero-container {
+        gap: 40px;
     }
 
-    .hero-content p{
-
-        font-size:.94rem;
-
-        line-height:1.7;
-
+    .fact-hero-content h1 {
+        font-size: 3.4rem;
     }
 
-    .hero-buttons .btn{
-
-        max-width:340px;
-
+    .fact-hero-content > p {
+        font-size: .95rem;
     }
 
 
-    /* ==========================
+    /* ======================================================
        HERO VISUAL
-    ========================== */
+    ====================================================== */
 
-    .hero-visual{
+    .fact-hero-visual {
+        width: 100%;
+        max-width: 600px;
 
-        min-height:360px;
+        min-height: 300px;
 
-    }
+        margin: -10px auto 0;
 
-    .vault-core{
-
-        transform:scale(.74);
-
-    }
-
-    .floating-card{
-
-        min-width:125px;
-
-        padding:8px 10px;
-
-        font-size:.72rem;
-
-        gap:7px;
-
-    }
-
-    .card-top{
-
-        top:30px;
-
-    }
-
-    .card-bottom{
-
-        bottom:25px;
-
-    }
-
-    .card-left{
-
-        left:-8px;
-
-    }
-
-    .card-right{
-
-        right:-8px;
-
+        transform: scale(.78);
+        transform-origin: center center;
     }
 
 
-    /* ==========================
-       SECTION HEADER
-    ========================== */
+    /* ======================================================
+       TOOLS
+    ====================================================== */
 
-    .features-section .section-header,
-    .credibility-section .section-header{
-
-        width:100%;
-
-        margin-bottom:38px;
-
+    .tool-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .features-section .section-header h2,
-    .credibility-section .section-header h2{
-
-        font-size:2rem;
-
-    }
-
-    .features-section .section-header p,
-    .credibility-section .section-header p{
-
-        font-size:.85rem;
-
+    .tool-card {
+        min-height: 320px;
     }
 
 
-    /* ==========================
-       TOPIC GRID
-    ========================== */
+    /* ======================================================
+       REMINDERS
+    ====================================================== */
 
-    .topic-grid{
-
-        grid-template-columns:1fr;
-
-        gap:16px;
-
-    }
-
-    .topic-card{
-
-        height:350px;
-
-        width:100%;
-
-    }
-
-    .topic-visual{
-
-        height:185px;
-
-    }
-
-    .topic-content h3{
-
-        font-size:1rem;
-
-    }
-
-    .topic-content p{
-
-        font-size:.76rem;
-
+    .reminder-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 
-    /*
-       Better touch interaction:
-       preserve active appearance while pressing
-    */
+    /* ======================================================
+       HOMEPAGE — FEATURES
+    ====================================================== */
 
-    .topic-card:active{
+    .features-section {
+        padding: 60px 25px 75px;
+    }
 
-        transform:scale(.985);
+    .topic-card {
+        height: 350px;
+    }
 
+    .topic-visual {
+        height: 180px;
     }
 
 
-    /* ==========================
-       CHECK SECTION
-    ========================== */
+    /* ======================================================
+       HOMEPAGE — CHECK SECTION
+    ====================================================== */
 
-    .check-section{
-
-        padding:75px 20px;
-
+    .check-section {
+        padding: 75px 25px;
     }
 
-    .check-content{
-
-        text-align:center;
-
+    .check-container {
+        gap: 38px;
     }
 
-    .check-content .mini-title{
-
-        justify-content:center;
-
-    }
-
-    .check-content h2{
-
-        font-size:1.95rem;
-
-    }
-
-    .check-content p{
-
-        font-size:.84rem;
-
-    }
-
-    .check-status{
-
-        margin-left:auto;
-
-        margin-right:auto;
-
-    }
-
-    .check-hint{
-
-        justify-content:center;
-
-    }
-
-    .check-interactive{
-
-        width:100%;
-
-    }
-
-    .check-step{
-
-        min-height:68px;
-
-        padding:10px 12px;
-
-        gap:11px;
-
-    }
-
-    .step-number{
-
-        width:43px;
-
-        height:43px;
-
-        border-radius:12px;
-
-        font-size:.66rem;
-
-    }
-
-    .step-content strong{
-
-        font-size:.82rem;
-
-    }
-
-    .step-content small{
-
-        font-size:.66rem;
-
-    }
-
-    .step-arrow{
-
-        display:none;
-
-    }
-
-    .step-state{
-
-        margin-left:auto;
-
-    }
-
-    .check-detail{
-
-        padding:17px;
-
-    }
-
-    .check-detail-main{
-
-        gap:12px;
-
-    }
-
-    .check-detail-icon{
-
-        width:40px;
-
-        height:40px;
-
-    }
-
-    .check-detail-content h3{
-
-        font-size:.88rem;
-
-    }
-
-    .check-detail-content p{
-
-        font-size:.70rem;
-
-    }
-
-
-    /* ==========================
-       FOOTER
-    ========================== */
-
-    .footer-container{
-
-        padding:40px 20px;
-
-    }
-
-    .footer-links{
-
-        gap:15px;
-
+    .check-content h2 {
+        font-size: 2.15rem;
     }
 
 }
 
 
 /* ==========================================================
-   SMALL PHONE — 576px AND BELOW
+   MOBILE NAVIGATION — 700px
 ========================================================== */
 
-@media (max-width:576px){
+@media (max-width: 700px) {
 
-    /* ==========================
+    /* ======================================================
+       NAVBAR
+    ====================================================== */
+
+    .nav-container {
+        padding: 13px 18px;
+    }
+
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 12px 15px;
+        margin: 0;
+
+        background: #08111f !important;
+
+        border-top: 1px solid rgba(255,255,255,.08);
+
+        box-shadow: 0 15px 30px rgba(0,0,0,.25);
+
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-item {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 11px 13px;
+
+        font-size: .85rem;
+    }
+
+    .nav-item i {
+        width: 20px;
+        text-align: center;
+    }
+
+    .nav-github {
+        display: none;
+    }
+
+
+    /* ======================================================
        HERO
-    ========================== */
+    ====================================================== */
 
-    .hero-section{
+    .fact-hero {
+        min-height: auto;
 
-        padding:110px 16px 70px;
-
+        padding: 120px 20px 55px;
     }
 
-    .hero-content h1{
+    .fact-hero-container {
+        display: flex;
+        flex-direction: column;
 
-        font-size:2.05rem;
+        gap: 30px;
 
+        width: 100%;
     }
 
-    .hero-content p{
-
-        font-size:.86rem;
-
+    .fact-hero-content {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .hero-badge{
-
-        font-size:.72rem;
-
-        padding:7px 12px;
-
+    .fact-label {
+        font-size: .72rem;
+        padding: 8px 13px;
     }
 
-    .hero-buttons{
-
-        gap:12px;
-
+    .fact-hero-content h1 {
+        font-size: 2.8rem;
+        letter-spacing: -1.5px;
     }
 
-    .hero-buttons .btn{
+    .fact-hero-content h2 {
+        font-size: 1.05rem;
+    }
 
-        max-width:100%;
-
-        width:100%;
-
-        padding:13px 20px;
-
-        font-size:.84rem;
-
+    .fact-hero-content > p {
+        font-size: .88rem;
+        line-height: 1.7;
     }
 
 
-    /* ==========================
-       STATS
-    ========================== */
+    /* ======================================================
+       PROCESS
+    ====================================================== */
 
-    .hero-stats{
+    .fact-process {
+        width: 100%;
 
-        gap:11px;
+        justify-content: center;
 
-        margin-top:35px;
+        gap: 8px;
 
+        flex-wrap: wrap;
     }
 
-    .stat-box{
-
-        max-width:100%;
-
-        padding:16px;
-
-        min-width:0;
-
+    .process-item {
+        width: 95px;
     }
 
-    .stat-box h2{
-
-        font-size:1.15rem;
-
+    .process-item h3 {
+        font-size: .78rem;
     }
 
-    .stat-box span{
+    .process-item p {
+        font-size: .65rem;
+    }
 
-        font-size:.76rem;
+    .process-icon {
+        width: 50px;
+        height: 50px;
 
+        font-size: 19px;
+    }
+
+    .process-arrow {
+        font-size: 14px;
     }
 
 
-    /* ==========================
+    /* ======================================================
        HERO VISUAL
-    ========================== */
+    ====================================================== */
 
-    .hero-visual{
+    .fact-hero-visual {
+        width: 100%;
+        max-width: 520px;
 
-        min-height:320px;
+        min-height: 270px;
 
+        margin: -15px auto -10px;
+
+        transform: scale(.70);
+        transform-origin: center center;
     }
 
-    .vault-core{
-
-        transform:scale(.60);
-
-    }
-
-    .floating-card{
-
-        min-width:105px;
-
-        max-width:120px;
-
-        padding:7px 8px;
-
-        font-size:.62rem;
-
-        border-radius:11px;
-
-    }
-
-    .floating-card i{
-
-        font-size:.68rem;
-
-    }
-
-    .card-left{
-
-        left:-2px;
-
-    }
-
-    .card-right{
-
-        right:-2px;
-
-    }
-
-    .card-top{
-
-        top:24px;
-
-    }
-
-    .card-bottom{
-
-        bottom:18px;
-
+    .news-window {
+        width: 290px;
     }
 
 
-    /* ==========================
-       FEATURES
-    ========================== */
+    /* ======================================================
+       HOMEPAGE — FEATURES
+    ====================================================== */
 
-    .features-section{
-
-        padding:60px 16px 70px;
-
+    .features-section {
+        padding: 55px 20px 65px;
     }
 
-    .features-section .section-header h2{
-
-        font-size:1.75rem;
-
+    .features-section .section-header {
+        width: 100%;
+        margin-bottom: 35px;
     }
 
-    .features-section .section-header p{
-
-        font-size:.82rem;
-
-        line-height:1.7;
-
+    .features-section .mini-title {
+        font-size: .62rem;
+        padding: 7px 12px;
+        margin-bottom: 14px;
     }
 
-    .topic-grid{
-
-        gap:14px;
-
+    .features-section .section-header h2 {
+        font-size: 1.8rem;
+        line-height: 1.15;
     }
 
-    .topic-card{
-
-        height:335px;
-
-        border-radius:18px;
-
+    .features-section .section-header p {
+        font-size: .8rem;
+        line-height: 1.7;
     }
 
-    .topic-visual{
+    .topic-grid {
+        width: 100%;
 
-        height:175px;
+        grid-template-columns: 1fr;
 
+        gap: 15px;
     }
 
-    .topic-content{
-
-        padding:15px 17px 18px;
-
+    .topic-card {
+        width: 100%;
+        height: auto;
+        min-height: 340px;
     }
 
-    .topic-content h3{
-
-        font-size:.94rem;
-
+    .topic-visual {
+        height: 180px;
     }
 
-    .topic-content p{
-
-        font-size:.72rem;
-
+    .topic-content {
+        padding: 17px 18px 20px;
     }
 
 
-    /* ==========================
-       CHECK BEFORE YOU SHARE
-    ========================== */
+    /* ======================================================
+       HOMEPAGE — CHECK SECTION
+    ====================================================== */
 
-    .check-section{
-
-        padding:65px 16px;
-
+    .check-section {
+        padding: 65px 20px;
     }
 
-    .check-content h2{
+    .check-container {
+        width: 100%;
 
-        font-size:1.75rem;
+        grid-template-columns: 1fr;
 
+        gap: 32px;
     }
 
-    .check-content p{
-
-        font-size:.80rem;
-
+    .check-content {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .check-status{
-
-        font-size:.61rem;
-
+    .check-content h2 {
+        font-size: 1.85rem;
     }
 
-    .check-hint{
-
-        font-size:.62rem;
-
+    .check-content p {
+        font-size: .82rem;
+        line-height: 1.7;
     }
 
-    .check-step{
-
-        min-height:64px;
-
-        padding:9px 10px;
-
-        border-radius:14px;
-
+    .check-interactive {
+        width: 100%;
     }
 
-    .step-number{
-
-        width:40px;
-
-        height:40px;
-
-        font-size:.62rem;
-
+    .check-step {
+        min-height: 68px;
+        padding: 10px 12px;
+        gap: 11px;
     }
 
-    .step-content strong{
-
-        font-size:.78rem;
-
+    .step-number {
+        width: 43px;
+        height: 43px;
+        border-radius: 12px;
+        font-size: .66rem;
     }
 
-    .step-content small{
-
-        font-size:.62rem;
-
+    .step-content strong {
+        font-size: .82rem;
     }
 
-    .check-detail{
-
-        padding:15px;
-
-        border-radius:16px;
-
+    .step-content small {
+        font-size: .66rem;
     }
 
-    .check-detail-top{
-
-        gap:8px;
-
+    .step-arrow {
+        font-size: .65rem;
     }
 
-    .check-detail-top > span:first-child{
-
-        font-size:.54rem;
-
+    .check-detail {
+        padding: 16px 17px;
     }
 
-    .detail-count{
-
-        font-size:.54rem;
-
+    .check-detail-main {
+        gap: 11px;
     }
 
-    .check-detail-main{
-
-        gap:10px;
-
+    .check-detail-icon {
+        width: 39px;
+        height: 39px;
+        border-radius: 11px;
+        font-size: 15px;
     }
 
-    .check-detail-icon{
-
-        width:37px;
-
-        height:37px;
-
-        font-size:15px;
-
+    .check-detail-content h3 {
+        font-size: .88rem;
     }
 
-    .check-detail-content h3{
-
-        font-size:.82rem;
-
+    .check-detail-content p {
+        font-size: .69rem;
+        line-height: 1.65;
     }
 
-    .check-detail-content p{
+}
 
-        font-size:.66rem;
 
-        line-height:1.6;
+/* ==========================================================
+   MOBILE — 576px
+========================================================== */
 
-    }
+@media (max-width: 576px) {
 
-    .check-detail-footer{
+    /* ======================================================
+       GENERAL
+    ====================================================== */
 
-        font-size:.56rem;
-
-        margin-top:12px;
-
-        padding-top:9px;
-
+    body {
+        width: 100%;
+        overflow-x: hidden;
     }
 
 
-    /* ==========================
-       FOOTER
-    ========================== */
+    /* ======================================================
+       NAVBAR
+    ====================================================== */
 
-    .footer-container{
-
-        padding:35px 16px;
-
-        gap:20px;
-
+    .nav-container {
+        width: 100%;
+        padding: 12px 15px;
     }
 
-    .footer-brand{
-
-        flex-direction:column;
-
-        gap:10px;
-
+    .logo-icon {
+        width: 36px;
+        height: 36px;
     }
 
-    .footer-brand span{
-
-        font-size:.74rem;
-
-    }
-
-    .footer-links{
-
-        gap:12px 18px;
-
-    }
-
-    .footer-links a{
-
-        font-size:.74rem;
-
-    }
-
-    .footer-social a{
-
-        width:42px;
-
-        height:42px;
-
-        font-size:17px;
-
-    }
-
-    .footer-bottom{
-
-        padding:17px 14px;
-
-        font-size:.68rem;
-
-        line-height:1.6;
-
+    .logo-text {
+        font-size: 1rem;
     }
 
 
-    /* ==========================
-       SCROLL INDICATOR
-    ========================== */
+    /* ======================================================
+       HERO
+    ====================================================== */
 
-    .scroll-indicator{
+    .fact-hero {
+        padding: 110px 18px 45px;
+    }
 
-        display:none;
+    .fact-hero-content h1 {
+        font-size: 2.45rem;
+        line-height: 1.05;
+    }
 
+    .fact-hero-content h2 {
+        font-size: .95rem;
+        margin-bottom: 14px;
+    }
+
+    .fact-hero-content > p {
+        font-size: .82rem;
+    }
+
+
+    /* ======================================================
+       PROCESS
+    ====================================================== */
+
+    .fact-process {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .process-item {
+        width: 150px;
+    }
+
+    .process-arrow {
+        font-size: 12px;
+        transform: rotate(90deg);
+    }
+
+    .process-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 17px;
+    }
+
+
+    /* ======================================================
+       HERO VISUAL
+    ====================================================== */
+
+    .fact-hero-visual {
+        width: 100%;
+        max-width: 450px;
+
+        min-height: 230px;
+
+        margin: -20px auto -25px;
+
+        transform: scale(.62);
+        transform-origin: center center;
+    }
+
+
+    /* ======================================================
+       TOOLS SECTION
+    ====================================================== */
+
+    .tools-section {
+        width: 100%;
+        padding: 55px 18px 65px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.35rem;
+        margin: 0 8px;
+    }
+
+    .heading-line {
+        width: 20px;
+    }
+
+    .section-heading p {
+        font-size: .78rem;
+    }
+
+
+    /* ======================================================
+       FILTER BUTTONS
+    ====================================================== */
+
+    .tool-filters {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
+
+    /* ======================================================
+       TOOL CARDS
+    ====================================================== */
+
+    .tool-grid {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .tool-card {
+        width: 100%;
+
+        min-height: 300px;
+
+        padding: 20px 16px;
+    }
+
+
+    /* ======================================================
+       HOW TO USE
+    ====================================================== */
+
+    .how-section {
+        width: 100%;
+
+        padding: 25px 18px 50px;
+    }
+
+    .how-container {
+        width: 100%;
+
+        padding: 28px 14px;
+
+        border-radius: 18px;
+    }
+
+    .how-heading h2 {
+        font-size: 1.3rem;
+    }
+
+    .how-heading p {
+        font-size: .78rem;
+    }
+
+    .how-steps {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+    .how-step {
+        width: 100%;
+        min-height: 150px;
+    }
+
+    .step-arrow {
+        display: none;
+    }
+
+
+    /* ======================================================
+       REMINDERS
+    ====================================================== */
+
+    .reminders-section {
+        width: 100%;
+
+        padding: 30px 18px 50px;
+    }
+
+    .reminders-heading h2 {
+        font-size: 1.35rem;
+    }
+
+    .reminder-grid {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .reminder-card {
+        width: 100%;
+    }
+
+
+    /* ======================================================
+       FINAL REMINDER
+    ====================================================== */
+
+    .final-reminder {
+        width: 100%;
+
+        padding: 0 18px 45px;
+    }
+
+    .final-reminder-content {
+        width: 100%;
+
+        padding: 18px 15px;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .final-reminder-content strong {
+        font-size: .8rem;
+    }
+
+    .final-reminder-content span {
+        font-size: .72rem;
+        line-height: 1.5;
+    }
+
+
+    /* ======================================================
+       MODAL — MOBILE
+    ====================================================== */
+
+    .modal-content {
+        width: 92%;
+        max-width: 92%;
+
+        max-height: 85vh;
+
+        overflow-y: auto;
+
+        padding: 20px;
+    }
+
+
+    /* ======================================================
+       HOMEPAGE — FEATURES
+    ====================================================== */
+
+    .features-section {
+        width: 100%;
+        padding: 50px 18px 60px;
+    }
+
+    .features-section .section-header {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .features-section .mini-title {
+        font-size: .58rem;
+        padding: 6px 11px;
+        letter-spacing: 1px;
+    }
+
+    .features-section .section-header h2 {
+        font-size: 1.5rem;
+        letter-spacing: -.3px;
+    }
+
+    .features-section .section-header p {
+        font-size: .74rem;
+        line-height: 1.65;
+    }
+
+    .topic-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .topic-card {
+        min-height: 320px;
+        border-radius: 17px;
+    }
+
+    .topic-visual {
+        height: 165px;
+    }
+
+    .topic-content {
+        padding: 15px 16px 18px;
+    }
+
+    .topic-number {
+        font-size: .56rem;
+        margin-bottom: 7px;
+    }
+
+    .topic-content h3 {
+        font-size: .88rem;
+    }
+
+    .topic-content p {
+        font-size: .69rem;
+        line-height: 1.55;
+    }
+
+    .topic-badge {
+        top: 10px;
+        right: 10px;
+
+        padding: 4px 8px;
+
+        font-size: .52rem;
+    }
+
+
+    /* ======================================================
+       HOMEPAGE — TOPIC VISUALS
+    ====================================================== */
+
+    .topic-core {
+        width: 70px;
+        height: 78px;
+
+        border-radius: 23px 23px 28px 28px;
+
+        font-size: 29px;
+    }
+
+    .topic-core::before,
+    .topic-core::after {
+        top: 22px;
+
+        width: 7px;
+        height: 7px;
+    }
+
+    .topic-core::before {
+        left: 14px;
+    }
+
+    .topic-core::after {
+        right: 14px;
+    }
+
+    .headline-window {
+        width: 165px;
+        height: 108px;
+
+        padding: 11px;
+    }
+
+    .headline-window strong {
+        font-size: .62rem;
+    }
+
+    .headline-window > span {
+        font-size: .60rem;
+    }
+
+    .document-window {
+        width: 165px;
+        height: 108px;
+
+        padding: 15px;
+    }
+
+    .popularity-counter {
+        padding: 9px 14px;
+    }
+
+    .popularity-counter strong {
+        font-size: 1.1rem;
+    }
+
+    .audience-icons i {
+        font-size: 20px;
+    }
+
+
+    /* ======================================================
+       HOMEPAGE — CHECK SECTION
+    ====================================================== */
+
+    .check-section {
+        width: 100%;
+        padding: 55px 18px 65px;
+    }
+
+    .check-container {
+        width: 100%;
+        gap: 28px;
+    }
+
+    .check-content .mini-title {
+        font-size: .58rem;
+        padding: 6px 11px;
+    }
+
+    .check-content h2 {
+        font-size: 1.5rem;
+        line-height: 1.12;
+    }
+
+    .check-content p {
+        font-size: .75rem;
+        line-height: 1.65;
+        margin-bottom: 18px;
+    }
+
+    .check-status {
+        font-size: .59rem;
+        padding: 7px 11px;
+    }
+
+    .check-hint {
+        font-size: .60rem;
+        margin-top: 12px;
+    }
+
+    .check-step-list {
+        gap: 8px;
+    }
+
+    .check-step {
+        min-height: 64px;
+
+        padding: 9px 10px;
+
+        gap: 9px;
+
+        border-radius: 14px;
+    }
+
+    .step-number {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+
+        font-size: .60rem;
+    }
+
+    .step-content {
+        gap: 3px;
+    }
+
+    .step-content strong {
+        font-size: .76rem;
+    }
+
+    .step-content small {
+        font-size: .61rem;
+        line-height: 1.4;
+    }
+
+    .step-state {
+        font-size: .52rem;
+    }
+
+    .step-arrow {
+        font-size: .58rem;
+    }
+
+    .check-detail {
+        padding: 14px 14px;
+        border-radius: 16px;
+    }
+
+    .check-detail-top {
+        gap: 7px;
+        margin-bottom: 10px;
+    }
+
+    .check-detail-top > span:first-child {
+        font-size: .52rem;
+    }
+
+    .detail-count {
+        font-size: .52rem;
+    }
+
+    .check-detail-main {
+        gap: 9px;
+    }
+
+    .check-detail-icon {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+    }
+
+    .check-detail-content h3 {
+        font-size: .82rem;
+        margin-bottom: 5px;
+    }
+
+    .check-detail-content p {
+        font-size: .64rem;
+        line-height: 1.55;
+    }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL PHONES — 400px
+========================================================== */
+
+@media (max-width: 400px) {
+
+    /* ======================================================
+       NAVBAR
+    ====================================================== */
+
+    .logo-text {
+        font-size: .92rem;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    /* ======================================================
+       HERO
+    ====================================================== */
+
+    .fact-hero-content h1 {
+        font-size: 2.15rem;
+    }
+
+    .fact-hero-content h2 {
+        font-size: .88rem;
+    }
+
+
+    /* ======================================================
+       PROCESS
+    ====================================================== */
+
+    .fact-process {
+        gap: 7px;
+    }
+
+    .process-item {
+        width: 72px;
+    }
+
+    .process-item h3 {
+        font-size: .7rem;
+    }
+
+    .process-item p {
+        font-size: .6rem;
+    }
+
+
+    /* ======================================================
+       HERO VISUAL
+    ====================================================== */
+
+    .fact-hero-visual {
+        width: 100%;
+        max-width: 380px;
+
+        min-height: 210px;
+
+        margin: -25px auto -40px;
+
+        transform: scale(.54);
+        transform-origin: center center;
+    }
+
+
+    /* ======================================================
+       MODAL — VERY SMALL PHONE
+    ====================================================== */
+
+    .modal-content {
+        width: 94%;
+        max-width: 94%;
+
+        max-height: 88vh;
+
+        padding: 16px;
+    }
+
+
+    /* ======================================================
+       HOMEPAGE — FEATURES
+    ====================================================== */
+
+    .features-section {
+        padding: 45px 15px 55px;
+    }
+
+    .features-section .section-header h2 {
+        font-size: 1.32rem;
+    }
+
+    .features-section .section-header p {
+        font-size: .68rem;
+    }
+
+    .topic-grid {
+        gap: 11px;
+    }
+
+    .topic-card {
+        min-height: 300px;
+        border-radius: 15px;
+    }
+
+    .topic-visual {
+        height: 150px;
+    }
+
+    .topic-content {
+        padding: 14px 14px 16px;
+    }
+
+    .topic-content h3 {
+        font-size: .82rem;
+    }
+
+    .topic-content p {
+        font-size: .64rem;
+    }
+
+    .topic-badge {
+        font-size: .48rem;
+        padding: 4px 7px;
+    }
+
+    .topic-core {
+        width: 64px;
+        height: 72px;
+        font-size: 26px;
+    }
+
+    .headline-window {
+        width: 150px;
+        height: 98px;
+    }
+
+    .document-window {
+        width: 150px;
+        height: 98px;
+    }
+
+    .popularity-counter {
+        padding: 8px 12px;
+        gap: 7px;
+    }
+
+    .popularity-counter strong {
+        font-size: 1rem;
+    }
+
+    .audience-icons {
+        margin-top: 10px;
+    }
+
+    .audience-icons i {
+        font-size: 18px;
+    }
+
+
+    /* ======================================================
+       HOMEPAGE — CHECK SECTION
+    ====================================================== */
+
+    .check-section {
+        padding: 48px 15px 55px;
+    }
+
+    .check-content h2 {
+        font-size: 1.32rem;
+    }
+
+    .check-content p {
+        font-size: .68rem;
+    }
+
+    .check-status {
+        font-size: .54rem;
+    }
+
+    .check-hint {
+        font-size: .56rem;
+    }
+
+    .check-step {
+        min-height: 60px;
+        padding: 8px 8px;
+        gap: 7px;
+        border-radius: 13px;
+    }
+
+    .step-number {
+        width: 35px;
+        height: 35px;
+        border-radius: 9px;
+        font-size: .56rem;
+    }
+
+    .step-content strong {
+        font-size: .70rem;
+    }
+
+    .step-content small {
+        font-size: .57rem;
+    }
+
+    .step-state {
+        font-size: .48rem;
+    }
+
+    .step-arrow {
+        font-size: .52rem;
+    }
+
+    .check-detail {
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    .check-detail-icon {
+        width: 33px;
+        height: 33px;
+        border-radius: 9px;
+        font-size: 13px;
+    }
+
+    .check-detail-content h3 {
+        font-size: .76rem;
+    }
+
+    .check-detail-content p {
+        font-size: .59rem;
     }
 
 }
