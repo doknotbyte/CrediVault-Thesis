@@ -109,6 +109,8 @@ body {
     padding: 8px 15px 0;
 
     text-align: center;
+
+    transform: translateX(20px);
 }
 
 
@@ -313,15 +315,22 @@ body {
 ========================================================== */
 
 .topic-grid {
-    width: 100%;
+    width: 85%;
+
+    margin: 0 auto;
 
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 16px;
+    grid-auto-rows: max-content;
+
+    row-gap: 8px;
+    column-gap: 12px;
 
     text-align: left;
+
+    align-items: start;
 }
 
 
@@ -334,11 +343,17 @@ body {
 
     min-width: 0;
 
+    height: 85%;
+
     padding: 0;
+
+    display: flex;
+
+    flex-direction: column;
 
     border: 1px solid rgba(255,255,255,.10);
 
-    border-radius: 16px;
+    border-radius: 14px;
 
     overflow: hidden;
 
@@ -356,6 +371,21 @@ body {
         box-shadow .25s ease;
 }
 
+
+/* ==========================================================
+   MOVE SECOND ROW OF TOPIC CARDS UP
+========================================================== */
+
+.topic-card:nth-child(3),
+.topic-card:nth-child(4) {
+    transform: translateY(-50px);
+}
+
+
+/* ==========================================================
+   TOPIC CARD HOVER
+========================================================== */
+
 .topic-card:hover {
     transform: translateY(-4px);
 
@@ -367,21 +397,44 @@ body {
 
 
 /* ==========================================================
-   TOPIC IMAGE
+   SECOND ROW HOVER
+   Keeps the -50px position + same 4px hover lift
+========================================================== */
+
+.topic-card:nth-child(3):hover,
+.topic-card:nth-child(4):hover {
+    transform: translateY(-54px);
+
+    border-color: rgba(59,221,255,.35);
+
+    box-shadow:
+        0 14px 30px rgba(0,0,0,.22);
+}
+
+
+/* ==========================================================
+   INTERACTIVE TOPIC ICON AREA
 ========================================================== */
 
 .topic-image {
     width: 100%;
-
-    height: 125px;
+    height: 105px;
 
     display: flex;
 
     align-items: center;
-
+    
     justify-content: center;
 
-    background: #102337;
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(59,221,255,.10),
+            transparent 65%
+        ),
+        #102337;
 
     border-bottom: 1px solid rgba(255,255,255,.06);
 
@@ -389,72 +442,158 @@ body {
 }
 
 
-/*
-   WHEN YOU HAVE THE ACTUAL IMAGE:
+/* ==========================================================
+   DECORATIVE GLOW CIRCLE
+========================================================== */
 
-   .topic-image img {
-       width: 100%;
-       height: 100%;
-       object-fit: cover;
-       display: block;
-   }
-*/
+.topic-image::before {
+    content: "";
 
+    position: absolute;
 
-.image-placeholder {
-    display: flex;
+    width: 72px;
+    height: 72px;
 
-    flex-direction: column;
+    border-radius: 50%;
 
-    align-items: center;
+    background: rgba(59,221,255,.06);
 
-    justify-content: center;
+    border: 1px solid rgba(59,221,255,.12);
 
-    gap: 7px;
+    box-shadow:
+        0 0 25px rgba(59,221,255,.08);
 
-    color: #607286;
-
-    font-size: 1.5rem;
-}
-
-.image-placeholder small {
-    font-size: .65rem;
-
-    color: #607286;
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
 }
 
 
 /* ==========================================================
-   TOPIC CARD CONTENT
+   DECORATIVE RING
 ========================================================== */
 
-.topic-card-content {
-    padding: 17px 18px 18px;
+.topic-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 92px;
+    height: 92px;
+
+    border-radius: 50%;
+
+    border: 1px dashed rgba(59,221,255,.16);
+
+    transform: rotate(0deg);
+
+    transition:
+        transform .5s ease,
+        border-color .3s ease;
 }
 
 
 /* ==========================================================
-   TOPIC ICON
+   MAIN ICON
 ========================================================== */
 
-.topic-icon {
-    width: 38px;
-    height: 38px;
+.topic-main-icon {
+    position: relative;
 
-    display: flex;
+    z-index: 2;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex !important;
 
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 12px;
+    border-radius: 14px;
 
-    border-radius: 10px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,221,255,.16),
+            rgba(59,221,255,.05)
+        );
 
-    background: rgba(59,221,255,.09);
+    border: 1px solid rgba(59,221,255,.18);
 
     color: #3bddff;
 
-    font-size: .9rem;
+    font-size: 1.65rem;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.18),
+        0 0 18px rgba(59,221,255,.08);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+}
+
+
+/* ==========================================================
+   HOVER EFFECT
+========================================================== */
+
+.topic-card:hover .topic-image::before {
+    transform: scale(1.18);
+
+    background: rgba(59,221,255,.10);
+
+    box-shadow:
+        0 0 35px rgba(59,221,255,.12);
+}
+
+
+.topic-card:hover .topic-image::after {
+    transform: rotate(35deg) scale(1.08);
+
+    border-color: rgba(59,221,255,.28);
+}
+
+
+.topic-card:hover .topic-main-icon {
+    transform: translateY(-3px) scale(1.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,221,255,.25),
+            rgba(59,221,255,.08)
+        );
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.22),
+        0 0 25px rgba(59,221,255,.18);
+}
+
+
+/* ==========================================================
+   SUBTLE ICON ANIMATION
+========================================================== */
+
+.topic-card:hover .topic-main-icon {
+    animation: topicIconFloat 1.5s ease-in-out infinite;
+}
+
+
+@keyframes topicIconFloat {
+
+    0%,
+    100% {
+        transform: translateY(-2px) scale(1.08);
+    }
+
+    50% {
+        transform: translateY(-6px) scale(1.1);
+    }
+
 }
 
 
@@ -463,11 +602,11 @@ body {
 ========================================================== */
 
 .topic-card h2 {
-    margin: 0 0 7px;
+    margin: 0 0 5px;
 
-    font-size: .95rem;
+    font-size: .84rem;
 
-    line-height: 1.3;
+    line-height: 1.25;
 
     font-weight: 700;
 
@@ -484,9 +623,9 @@ body {
 
     color: #8fa2b8;
 
-    font-size: .72rem;
+    font-size: .65rem;
 
-    line-height: 1.55;
+    line-height: 1.4;
 }
 
 
@@ -499,11 +638,11 @@ body {
 
     flex-direction: column;
 
-    gap: 5px;
+    gap: 3px;
 
-    margin-top: 10px;
+    margin-top: 7px;
 
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 .topic-subtopics span {
@@ -511,15 +650,15 @@ body {
 
     align-items: center;
 
-    gap: 7px;
+    gap: 5px;
 
     color: #8fa2b8;
 
-    font-size: .65rem;
+    font-size: .58rem;
 }
 
 .topic-subtopics i {
-    width: 14px;
+    width: 12px;
 
     color: #3bddff;
 
@@ -536,13 +675,15 @@ body {
 
     align-items: center;
 
-    gap: 7px;
+    gap: 5px;
 
-    margin-top: 13px;
+    margin-top: auto;
+
+    padding-top: 7px;
 
     color: #3bddff;
 
-    font-size: .68rem;
+    font-size: .61rem;
 
     font-weight: 700;
 
@@ -550,11 +691,11 @@ body {
 }
 
 .topic-card:hover .start-topic {
-    gap: 10px;
+    gap: 8px;
 }
 
 .start-topic i {
-    font-size: .65rem;
+    font-size: .57rem;
 }
 
 
@@ -572,7 +713,7 @@ body {
 
     padding: 22px;
 
-    margin-left: 18px;
+    margin-left: 40px;
 
     background: rgba(255,255,255,.035);
 
@@ -1612,14 +1753,22 @@ body {
 
 .question-card {
 
-    background: #0d1a2b;
+    width: 100%;
 
-    border: 1px solid rgba(255,255,255,.08);
+    max-width: 1100px;
 
-    border-radius: 25px;
+    margin: 0 auto;
+
+    background: #0d1b2b;
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    border-radius: 24px;
 
     overflow: hidden;
 
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.18);
 }
 
 
@@ -1631,14 +1780,7 @@ body {
 
     width: 100%;
 
-    height: 280px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #10253b,
-            #091523
-        );
+    min-height: 360px;
 
     display: flex;
 
@@ -1646,13 +1788,29 @@ body {
 
     justify-content: center;
 
+    padding: 0;
+
+    background: #081625;
+
+    overflow: hidden;
 }
 
 
-.question-image .image-placeholder {
+/* ACTUAL QUESTION IMAGE */
 
-    font-size: 2.5rem;
+.question-image img {
 
+    width: 100%;
+
+    height: 360px;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: #081625;
 }
 
 
@@ -1662,36 +1820,40 @@ body {
 
 .question-content {
 
-    padding: 35px;
-
+    padding: 30px 32px 32px;
 }
 
 
-.question-label {
+/* ==========================================================
+   QUESTION TEXT
+========================================================== */
 
-    display: inline-block;
-
-    color: #3bddff;
-
-    font-size: .65rem;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 12px;
-
-}
-
-
+.question-text,
 .question-content h2 {
 
-    font-size: 1.45rem;
+    margin: 8px 0 10px;
+
+    font-size: 1.35rem;
+
+    line-height: 1.4;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================================
+   QUESTION INSTRUCTION
+========================================================== */
+
+.question-instruction {
+
+    margin: 0 0 20px;
+
+    color: #8fa2b8;
+
+    font-size: .85rem;
 
     line-height: 1.5;
-
-    margin-bottom: 25px;
-
 }
 
 
@@ -1701,40 +1863,51 @@ body {
 
 .choices {
 
-    display: grid;
+    display: flex;
 
-    gap: 11px;
+    flex-direction: column;
 
+    gap: 12px;
+
+    width: 100%;
 }
 
+
+/* ==========================================================
+   CHOICE BUTTON
+========================================================== */
 
 .choice-button {
 
     width: 100%;
 
-    border: 1px solid rgba(255,255,255,.1);
+    min-height: 62px;
 
-    border-radius: 13px;
-
-    background: rgba(255,255,255,.035);
-
-    color: #dbe4ed;
-
-    padding: 15px 17px;
+    padding: 14px 18px;
 
     display: flex;
 
     align-items: center;
 
-    gap: 13px;
+    gap: 14px;
 
-    text-align: left;
+    border: 1px solid rgba(255,255,255,.10);
 
-    cursor: pointer;
+    border-radius: 14px;
+
+    background: #172638;
+
+    color: #ffffff;
 
     font-family: inherit;
 
     font-size: .82rem;
+
+    line-height: 1.45;
+
+    text-align: left;
+
+    cursor: pointer;
 
     transition:
         background .2s ease,
@@ -1744,24 +1917,31 @@ body {
 }
 
 
-.choice-button:hover {
+/* ==========================================================
+   CHOICE HOVER
+========================================================== */
 
-    background: rgba(59,221,255,.06);
+.choice-button:hover:not(.disabled) {
+
+    transform: translateY(-2px);
 
     border-color: rgba(59,221,255,.35);
 
-    transform: translateX(3px);
-
+    background: #1b3045;
 }
 
 
+/* ==========================================================
+   CHOICE LETTER
+========================================================== */
+
 .choice-letter {
 
-    width: 30px;
+    flex-shrink: 0;
 
-    height: 30px;
+    width: 38px;
 
-    min-width: 30px;
+    height: 38px;
 
     display: flex;
 
@@ -1769,82 +1949,84 @@ body {
 
     justify-content: center;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
-    background: rgba(255,255,255,.07);
+    background: rgba(59,221,255,.12);
 
-    color: #aeb9c8;
+    color: #3bddff;
 
-    font-size: .72rem;
+    font-size: .85rem;
 
     font-weight: 800;
 
 }
 
 
+/* ==========================================================
+   CORRECT ANSWER
+========================================================== */
+
 .choice-button.correct {
 
-    border-color: #36d399;
+    background: rgba(34, 197, 94, .16);
 
-    background: rgba(54,211,153,.09);
+    border-color: rgba(34, 197, 94, .65);
 
+    color: #ffffff;
 }
 
 
 .choice-button.correct .choice-letter {
 
-    background: #36d399;
+    background: rgba(34, 197, 94, .22);
 
-    color: #07140f;
-
+    color: #4ade80;
 }
 
 
+/* ==========================================================
+   WRONG ANSWER
+========================================================== */
+
 .choice-button.wrong {
 
-    border-color: #ff5d73;
+    background: rgba(239, 68, 68, .16);
 
-    background: rgba(255,93,115,.09);
+    border-color: rgba(239, 68, 68, .65);
 
+    color: #ffffff;
 }
 
 
 .choice-button.wrong .choice-letter {
 
-    background: #ff5d73;
+    background: rgba(239, 68, 68, .22);
 
-    color: #ffffff;
-
-}
-
-
-.choice-button.disabled {
-
-    pointer-events: none;
-
+    color: #f87171;
 }
 
 
 /* ==========================================================
-   FEEDBACK
+   DISABLED CHOICES
+========================================================== */
+
+.choice-button.disabled {
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ==========================================================
+   ANSWER FEEDBACK
 ========================================================== */
 
 .answer-feedback {
 
-    display: none;
-
-    align-items: flex-start;
-
-    gap: 13px;
-
     margin-top: 20px;
 
-    padding: 15px;
-
-    border-radius: 13px;
-
-    background: rgba(255,255,255,.04);
-
+    display: none;
 }
 
 
@@ -1852,18 +2034,45 @@ body {
 
     display: flex;
 
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 16px 18px;
+
+    border-radius: 12px;
+
+    background: rgba(34, 197, 94, .10);
+
+    border: 1px solid rgba(34, 197, 94, .25);
+
+    color: #ffffff;
 }
 
 
+/* ==========================================================
+   WRONG ANSWER FEEDBACK
+========================================================== */
+
+.answer-feedback.wrong {
+
+    background: rgba(239, 68, 68, .10);
+
+    border-color: rgba(239, 68, 68, .25);
+}
+
+
+/* ==========================================================
+   FEEDBACK ICON
+========================================================== */
+
 .feedback-icon {
 
-    width: 32px;
+    flex-shrink: 0;
 
-    height: 32px;
+    width: 34px;
 
-    min-width: 32px;
-
-    border-radius: 9px;
+    height: 34px;
 
     display: flex;
 
@@ -1871,39 +2080,53 @@ body {
 
     justify-content: center;
 
-    background: #36d399;
+    border-radius: 50%;
 
-    color: #07140f;
+    background: rgba(34, 197, 94, .18);
 
+    color: #4ade80;
 }
 
 
 .answer-feedback.wrong .feedback-icon {
 
-    background: #ff5d73;
+    background: rgba(239, 68, 68, .18);
 
-    color: #ffffff;
-
+    color: #f87171;
 }
 
 
+/* ==========================================================
+   FEEDBACK TEXT
+========================================================== */
+
 .answer-feedback strong {
 
-    font-size: .8rem;
+    display: block;
 
+    margin-bottom: 4px;
+
+    font-size: .9rem;
+
+    color: #4ade80;
+}
+
+
+.answer-feedback.wrong strong {
+
+    color: #f87171;
 }
 
 
 .answer-feedback p {
 
-    color: #9ba8b8;
+    margin: 0;
 
-    font-size: .72rem;
+    color: #a9b8c8;
 
-    line-height: 1.6;
+    font-size: .78rem;
 
-    margin-top: 3px;
-
+    line-height: 1.55;
 }
 
 
@@ -1913,9 +2136,11 @@ body {
 
 .next-button {
 
-    margin-top: 25px;
+    margin-top: 20px;
 
     width: 100%;
+
+    min-height: 52px;
 
     border: 0;
 
@@ -1964,6 +2189,7 @@ body {
     cursor: not-allowed;
 
 }
+
 
 
 /* ==========================================================

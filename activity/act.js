@@ -20,37 +20,43 @@ const activities = {
 
         {
             question:
-                "PLACEHOLDER: Digital manipulation question goes here.",
+                "Look at the image. What is the main concern with digitally manipulated content?",
 
             choices: [
-                "Choice A",
-                "Choice B",
-                "Choice C",
-                "Choice D"
+                "It may change or distort the original information.",
+                "It is always created for entertainment.",
+                "It cannot influence people's opinions.",
+                "It is automatically verified by social media."
             ],
 
             answer: 0,
 
             explanation:
-                "PLACEHOLDER: Add the explanation for the correct answer."
+                "Digital manipulation can alter images or information, making people believe something that may not accurately represent reality.",
+
+            image:
+                "images/digital.jpg"
         },
 
 
         {
             question:
-                "PLACEHOLDER: AI-generated misinformation question goes here.",
+                "The image is an example of information involving AI-generated content. What should you do before believing or sharing it?",
 
             choices: [
-                "Choice A",
-                "Choice B",
-                "Choice C",
-                "Choice D"
+                "Share it immediately because it looks realistic.",
+                "Check the information using reliable and independent sources.",
+                "Believe it if many people are commenting on it.",
+                "Assume that all AI-generated images are true."
             ],
 
-            answer: 0,
+            answer: 1,
 
             explanation:
-                "PLACEHOLDER: Add the explanation for the correct answer."
+                "AI-generated images can look realistic even when they are false. Always verify the information through reliable and independent sources before sharing it.",
+
+            image:
+                "images/ai-text.jpg"
         }
 
     ],
@@ -64,19 +70,22 @@ const activities = {
 
         {
             question:
-                "PLACEHOLDER: Clickbait question goes here.",
+                "What makes the headline in the image an example of clickbait?",
 
             choices: [
-                "Choice A",
-                "Choice B",
-                "Choice C",
-                "Choice D"
+                "It uses attention-grabbing language to encourage people to click.",
+                "It provides complete evidence for every claim.",
+                "It comes from a government website.",
+                "It avoids emotional or exaggerated wording."
             ],
 
             answer: 0,
 
             explanation:
-                "PLACEHOLDER: Add the explanation for the correct answer."
+                "Clickbait commonly uses exaggerated, emotional, or surprising wording to attract attention and encourage people to click on the content.",
+
+            image:
+                "images/clickbait.jpg"
         }
 
     ],
@@ -90,19 +99,22 @@ const activities = {
 
         {
             question:
-                "PLACEHOLDER: Influence of Popularity question goes here.",
+                "Why should popularity or the number of views not be treated as proof that information is true?",
 
             choices: [
-                "Choice A",
-                "Choice B",
-                "Choice C",
-                "Choice D"
+                "Popular content is always false.",
+                "Information becomes true when many people share it.",
+                "A large number of views or shares does not guarantee accuracy.",
+                "Only unpopular information can be trusted."
             ],
 
-            answer: 0,
+            answer: 2,
 
             explanation:
-                "PLACEHOLDER: Add the explanation for the correct answer."
+                "Popularity shows how widely content is viewed or shared, but it does not prove that the information is accurate or reliable.",
+
+            image:
+                "images/popularity.png"
         }
 
     ],
@@ -116,19 +128,22 @@ const activities = {
 
         {
             question:
-                "PLACEHOLDER: Cross-Checking question goes here.",
+                "What is the best way to cross-check information found online?",
 
             choices: [
-                "Choice A",
-                "Choice B",
-                "Choice C",
-                "Choice D"
+                "Believe the first result that appears in a search.",
+                "Check the information against multiple reliable sources.",
+                "Trust the post with the most likes and comments.",
+                "Share the information first and verify it later."
             ],
 
-            answer: 0,
+            answer: 1,
 
             explanation:
-                "PLACEHOLDER: Add the explanation for the correct answer."
+                "Cross-checking means comparing information with multiple reliable and independent sources before accepting or sharing it.",
+
+            image:
+                null
         }
 
     ]
@@ -239,6 +254,14 @@ const topicsButton =
 
 
 /* ==========================================================
+   QUESTION IMAGE
+========================================================== */
+
+const questionImage =
+    document.querySelector(".question-image");
+
+
+/* ==========================================================
    SESSION PARTICIPANTS
 ========================================================== */
 
@@ -259,8 +282,6 @@ let participants = [];
 ========================================================== */
 
 function createNameModal() {
-
-    /* Prevent duplicate modal */
 
     if (
         document.getElementById("nameEntryModal")
@@ -423,8 +444,6 @@ function enterActivity() {
         input.value.trim();
 
 
-    /* Prevent empty name */
-
     if (!name) {
 
         input.classList.add(
@@ -447,12 +466,8 @@ function enterActivity() {
         name;
 
 
-    /* Add actual participant */
-
     addParticipant(name);
 
-
-    /* Close modal */
 
     const modal =
         document.getElementById(
@@ -483,14 +498,6 @@ function enterActivity() {
 ========================================================== */
 
 function addParticipant(name) {
-
-    /*
-        Add ONLY the name actually entered.
-
-        No default participants.
-        No fake records.
-        No localStorage.
-    */
 
     if (!name) return;
 
@@ -524,8 +531,6 @@ function updateParticipantPanel() {
     if (!list) return;
 
 
-    /* Update count */
-
     if (count) {
 
         count.textContent =
@@ -533,15 +538,6 @@ function updateParticipantPanel() {
 
     }
 
-
-    /*
-        IMPORTANT:
-
-        If there are NO participants,
-        do not create a fake participant record.
-
-        Keep the list empty.
-    */
 
     if (
         participants.length === 0
@@ -553,8 +549,6 @@ function updateParticipantPanel() {
 
     }
 
-
-    /* Generate ONLY actual participants */
 
     list.innerHTML =
         participants.map(
@@ -627,15 +621,6 @@ function initializeActivityEntry() {
 
     if (!activityPage) return;
 
-
-    /*
-        ALWAYS create a new modal
-        when entering the Activity page.
-
-        No localStorage.
-        No sessionStorage.
-        No "already entered" check.
-    */
 
     createNameModal();
 
@@ -774,7 +759,9 @@ function loadQuestion() {
         false;
 
 
-    /* Question number */
+    /* ======================================================
+       QUESTION NUMBER
+    ====================================================== */
 
     if (questionNumber) {
 
@@ -784,7 +771,9 @@ function loadQuestion() {
     }
 
 
-    /* Progress */
+    /* ======================================================
+       PROGRESS
+    ====================================================== */
 
     if (progressFill) {
 
@@ -799,7 +788,49 @@ function loadQuestion() {
     }
 
 
-    /* Question text */
+    /* ======================================================
+       QUESTION IMAGE
+    ====================================================== */
+
+    if (questionImage) {
+
+        if (question.image) {
+
+            questionImage.innerHTML = `
+
+                <img
+                    src="${escapeHTML(question.image)}"
+                    alt="Activity question image"
+                >
+
+            `;
+
+        }
+
+        else {
+
+            questionImage.innerHTML = `
+
+                <span class="image-placeholder">
+
+                    <i class="fa-solid fa-image"></i>
+
+                    <small>
+                        No image for this question
+                    </small>
+
+                </span>
+
+            `;
+
+        }
+
+    }
+
+
+    /* ======================================================
+       QUESTION TEXT
+    ====================================================== */
 
     if (questionText) {
 
@@ -809,7 +840,9 @@ function loadQuestion() {
     }
 
 
-    /* Clear choices */
+    /* ======================================================
+       CLEAR CHOICES
+    ====================================================== */
 
     if (choicesContainer) {
 
@@ -819,7 +852,9 @@ function loadQuestion() {
     }
 
 
-    /* Reset feedback */
+    /* ======================================================
+       RESET FEEDBACK
+    ====================================================== */
 
     if (answerFeedback) {
 
@@ -834,12 +869,9 @@ function loadQuestion() {
     }
 
 
-    /*
-        VERY IMPORTANT:
-
-        Every new question starts
-        with Next disabled.
-    */
+    /* ======================================================
+       RESET NEXT BUTTON
+    ====================================================== */
 
     if (nextButton) {
 
@@ -972,10 +1004,6 @@ function selectAnswer(
     selectedButton
 ) {
 
-    /*
-        Prevent answering twice.
-    */
-
     if (answered) return;
 
 
@@ -998,9 +1026,9 @@ function selectAnswer(
         );
 
 
-    /*
-        Disable all answer choices.
-    */
+    /* ======================================================
+       DISABLE ALL CHOICES
+    ====================================================== */
 
     choiceButtons.forEach(
         button => {
@@ -1098,7 +1126,9 @@ function selectAnswer(
     }
 
 
-    /* Explanation */
+    /* ======================================================
+       EXPLANATION
+    ====================================================== */
 
     if (feedbackText) {
 
@@ -1108,7 +1138,9 @@ function selectAnswer(
     }
 
 
-    /* Show feedback */
+    /* ======================================================
+       SHOW FEEDBACK
+    ====================================================== */
 
     if (answerFeedback) {
 
@@ -1119,16 +1151,9 @@ function selectAnswer(
     }
 
 
-    /*
-        ======================================================
-        ENABLE NEXT BUTTON
-        ======================================================
-
-        This is the important fix.
-
-        We explicitly remove the disabled
-        property AND the disabled class.
-    */
+    /* ======================================================
+       ENABLE NEXT BUTTON
+    ====================================================== */
 
     if (nextButton) {
 
@@ -1163,11 +1188,6 @@ if (nextButton) {
             event.preventDefault();
 
 
-            /*
-                Next cannot work until
-                an answer has been selected.
-            */
-
             if (!answered) {
 
                 return;
@@ -1196,10 +1216,9 @@ if (nextButton) {
             currentQuestion++;
 
 
-            /*
-                If there are no more questions,
-                show result screen.
-            */
+            /* =================================================
+               FINISH ACTIVITY
+            ================================================= */
 
             if (
                 currentQuestion >=
@@ -1213,9 +1232,9 @@ if (nextButton) {
             }
 
 
-            /*
-                Otherwise load next question.
-            */
+            /* =================================================
+               LOAD NEXT QUESTION
+            ================================================= */
 
             loadQuestion();
 
@@ -1480,11 +1499,6 @@ document.addEventListener(
             event.key === "Escape"
         ) {
 
-            /*
-                Don't close the name modal
-                with Escape.
-            */
-
             const nameModal =
                 document.getElementById(
                     "nameEntryModal"
@@ -1517,20 +1531,14 @@ document.addEventListener(
 
 document.addEventListener(
     "DOMContentLoaded",
+
     () => {
 
-        /*
-            Participant list starts empty.
-            No default records.
-        */
+
 
         updateParticipantPanel();
 
-
-        /*
-            Name modal is created when
-            Activity page loads.
-        */
+        
 
         initializeActivityEntry();
 
