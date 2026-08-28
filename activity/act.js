@@ -363,7 +363,7 @@ function createNameModal() {
 
             <p>
 
-                Enter your name before starting
+                Enter your name/nickname before starting
                 the activity.
 
             </p>
@@ -1562,7 +1562,7 @@ document.addEventListener(
 ========================================================== */
 
 document.addEventListener(
-    
+
     "DOMContentLoaded",
 
     () => {
