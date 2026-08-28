@@ -1,5 +1,11 @@
 /* ==========================================================
-GLOBAL
+   CREDIVAULT — SOURCE & EVIDENCE VERIFICATION
+   SAME DESIGN SYSTEM AS AI MANIPULATION
+========================================================== */
+
+
+/* ==========================================================
+   GLOBAL
 ========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
@@ -38,7 +44,7 @@ a {
 
 
 /* ==========================================================
-BACKGROUND
+   BACKGROUND
 ========================================================== */
 
 .hero-grid {
@@ -46,8 +52,15 @@ BACKGROUND
     inset: 0;
 
     background-image:
-        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+        linear-gradient(
+            rgba(255,255,255,.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.04) 1px,
+            transparent 1px
+        );
 
     background-size: 60px 60px;
     z-index: -3;
@@ -77,317 +90,274 @@ BACKGROUND
     bottom: -180px;
 }
 
+
 /* ==========================================================
-QUICK NAVIGATION
+   PAGE LAYOUT
 ========================================================== */
 
-.page-layout{
-
-    width:100%;
-
+.page-layout {
+    width: 100%;
 }
 
 
 /* ==========================================================
-FIXED LEFT NAVIGATION
+   FIXED LEFT NAVIGATION
 ========================================================== */
 
-.quick-nav{
+.quick-nav {
+    position: fixed;
 
-    position:fixed;
+    top: 0;
+    left: 0;
 
-    top:0;
-    left:0;
+    width: 230px;
+    height: 100vh;
 
-    width:230px;
-    height:100vh;
+    padding: 45px 25px 40px 35px;
 
-    padding:45px 25px 40px 35px;
+    background: rgba(10,15,25,.72);
 
-    background:rgba(10,15,25,.72);
+    border-right: 1px solid rgba(255,255,255,.10);
 
-    border-right:1px solid rgba(255,255,255,.10);
+    backdrop-filter: blur(14px);
 
-    backdrop-filter:blur(14px);
+    display: flex;
+    flex-direction: column;
 
-    display:flex;
-    flex-direction:column;
-
-    z-index:100;
-
+    z-index: 100;
 }
 
 
 /* ==========================================================
-NAV TITLE
+   NAV TITLE
 ========================================================== */
 
-.quick-nav-title{
+.quick-nav-title {
+    display: block;
 
-    display:block;
+    margin-bottom: 22px;
 
-    margin-bottom:22px;
+    color: var(--muted);
 
-    color:var(--muted);
+    font-size: .72rem;
+    font-weight: 800;
 
-    font-size:.72rem;
-    font-weight:800;
+    letter-spacing: 1.5px;
 
-    letter-spacing:1.5px;
-
-    text-transform:uppercase;
-
+    text-transform: uppercase;
 }
 
 
 /* ==========================================================
-NAV LINKS
+   NAV LINKS
 ========================================================== */
 
-.quick-nav a{
+.quick-nav a {
+    position: relative;
 
-    position:relative;
+    display: flex;
 
-    display:flex;
+    align-items: center;
 
-    align-items:center;
+    gap: 10px;
 
-    gap:10px;
+    padding: 9px 10px 9px 0;
 
-    padding:9px 10px 9px 0;
+    margin-bottom: 4px;
 
-    margin-bottom:4px;
+    color: var(--muted);
 
-    color:var(--muted);
+    font-size: .88rem;
+    font-weight: 600;
 
-    text-decoration:none;
+    line-height: 1.5;
 
-    font-size:.88rem;
-    font-weight:600;
+    border-bottom: 1px solid rgba(255,255,255,.06);
 
-    line-height:1.5;
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
-    transition:.25s ease;
-
+    transition: .25s ease;
 }
 
 
 /* ==========================================================
-NUMBER / SECTION INDICATOR
+   NUMBER / SECTION INDICATOR
 ========================================================== */
 
-.quick-nav a .nav-number{
+.quick-nav a .nav-number {
+    width: 30px;
+    height: 30px;
 
-    width:30px;
-    height:30px;
+    flex-shrink: 0;
 
-    flex-shrink:0;
+    display: flex;
 
-    display:flex;
+    justify-content: center;
+    align-items: center;
 
-    justify-content:center;
-    align-items:center;
+    border-radius: 8px;
 
-    border-radius:8px;
+    background: rgba(255,255,255,.06);
 
-    background:rgba(255,255,255,.06);
+    color: #94a3b8;
 
-    color:#94a3b8;
+    font-size: .72rem;
+    font-weight: 800;
 
-    font-size:.72rem;
-    font-weight:800;
-
-    transition:.25s ease;
-
+    transition: .25s ease;
 }
 
 
 /* ==========================================================
-SIDE LINE — HOVER
+   SIDE LINE
 ========================================================== */
 
-.quick-nav a::before{
+.quick-nav a::before {
+    content: "";
 
-    content:"";
+    position: absolute;
 
-    position:absolute;
+    left: -35px;
 
-    left:-35px;
+    top: 3px;
+    bottom: 3px;
 
-    top:3px;
-    bottom:3px;
+    width: 1px;
 
-    width:1px;
+    background: transparent;
 
-    background:transparent;
+    border-radius: 10px;
 
-    border-radius:10px;
-
-    transition:.25s ease;
-
+    transition: .25s ease;
 }
 
 
 /* ==========================================================
-HOVER
+   NAV HOVER
 ========================================================== */
 
-.quick-nav a:hover{
+.quick-nav a:hover {
+    color: #fff;
 
-    color:#fff;
-
-    transform:translateX(4px);
-
+    transform: translateX(4px);
 }
 
-.quick-nav a:hover::before{
-
-    background:#38bdf8;
-    
-    width:1px;  /* ← ADD HERE */
-
+.quick-nav a:hover::before {
+    background: #38bdf8;
+    width: 1px;
 }
 
-.quick-nav a:hover .nav-number{
+.quick-nav a:hover .nav-number {
+    background: rgba(56,189,248,.14);
 
-    background:rgba(56,189,248,.14);
+    color: #38bdf8;
 
-    color:#38bdf8;
-
-    box-shadow:0 0 14px rgba(56,189,248,.10);
-
+    box-shadow:
+        0 0 14px rgba(56,189,248,.10);
 }
 
 
 /* ==========================================================
-ACTIVE / CURRENT SECTION
+   ACTIVE NAV
 ========================================================== */
 
-.quick-nav a.active{
-
-    color:#fff;
-
-    font-weight:700;
-
+.quick-nav a.active {
+    color: #fff;
+    font-weight: 700;
 }
 
-.quick-nav a.active::before{
-
-    background:#38bdf8;
-    
-    width:1px;  /* ← ADD HERE */
-
+.quick-nav a.active::before {
+    background: #38bdf8;
+    width: 1px;
 }
 
-.quick-nav a.active .nav-number{
-
-    background:rgba(56,189,248,.16);
-
-    color:#38bdf8;
-
-    
-
+.quick-nav a.active .nav-number {
+    background: rgba(56,189,248,.16);
+    color: #38bdf8;
 }
 
 
 /* ==========================================================
-INTERACTIVE CHALLENGE
-NO NUMBER BOX
+   INTERACTIVE LINK
 ========================================================== */
 
-.quick-nav a.interactive-link{
+.quick-nav a.interactive-link {
+    padding-left: 0;
 
-    padding-left:0;
+    color: #cbd5e1;
 
-    color:#cbd5e1;
+    font-weight: 600;
 
-    font-weight:600;
-
+    border-bottom:
+        1px solid rgba(255,255,255,.06);
 }
 
+.quick-nav a.interactive-link:hover {
+    color: #fff;
 
+    background:
+        rgba(56,189,248,.035);
 
-/* Keep separator line */
-
-.quick-nav a.interactive-link{
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
+    transform: translateX(4px);
 }
 
-
-/* Hover */
-
-.quick-nav a.interactive-link:hover{
-
-    color:#fff;
-
-    background:rgba(56,189,248,.035);
-
-    transform:translateX(4px);
-
+.quick-nav a.interactive-link:hover::before {
+    background: #38bdf8;
 }
 
-.quick-nav a.interactive-link:hover::before{
-
-    background:#38bdf8;
-
+.quick-nav a.interactive-link.active {
+    color: #fff;
+    font-weight: 700;
 }
 
-
-/* Active */
-
-.quick-nav a.interactive-link.active{
-
-    color:#fff;
-
-    font-weight:700;
-
+.quick-nav a.interactive-link.active::before {
+    background: #38bdf8;
 }
-
-.quick-nav a.interactive-link.active::before{
-
-    background:#38bdf8;
-
-}
-
-
 
 
 /* ==========================================================
-MAIN CONTENT
+   MAIN CONTENT
 ========================================================== */
 
-.main-content{
+.main-content {
+    margin-left: 230px;
 
-    margin-left:230px;
-
-    width:calc(100% - 230px);
-
+    width:
+        calc(100% - 230px);
 }
 
+
 /* ==========================================================
-HEADER
+   HEADER
 ========================================================== */
 
 .ai-header {
     width: min(1100px, 92%);
-    margin: -10px auto 28px;
+
+    margin:
+        -10px auto 28px;
 }
+
+
+/* ==========================================================
+   BACK BUTTON
+========================================================== */
 
 .back-btn {
     display: inline-flex;
+
     align-items: center;
+
     gap: 10px;
 
-    padding: 10px 18px;
+    padding:
+        10px 18px;
 
     border-radius: 12px;
 
-    background: rgba(255,255,255,.05);
-    border: 1px solid var(--border);
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid var(--border);
 
     color: #fff;
 
@@ -398,9 +368,21 @@ HEADER
 }
 
 .back-btn:hover {
-    background: linear-gradient(135deg,#2563eb,#38bdf8);
-    transform: translateY(-3px);
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #38bdf8
+        );
+
+    transform:
+        translateY(-3px);
 }
+
+
+/* ==========================================================
+   PAGE TITLE
+========================================================== */
 
 .page-title {
     margin-top: 22px;
@@ -412,14 +394,12 @@ HEADER
     padding: 6px 14px;
 
     border-radius: 50px;
-
     background: rgba(56,189,248,.12);
 
     color: #38bdf8;
 
     font-size: .72rem;
     font-weight: 700;
-
     letter-spacing: 1px;
 
     margin-bottom: 19px;
@@ -441,65 +421,92 @@ HEADER
 
 
 /* ==========================================================
-PROGRESS
+   PROGRESS
 ========================================================== */
 
 .progress-section {
-    width: min(1100px, 92%);
-    margin: auto auto 25px;
+    width:
+        min(1100px, 92%);
+
+    margin:
+        auto auto 25px;
 }
 
 .progress-info {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
     margin-bottom: 9px;
 
     font-weight: 600;
+
     font-size: .9rem;
 }
 
 .progress-bar {
     width: 100%;
+
     height: 7px;
 
-    background: rgba(255,255,255,.08);
+    background:
+        rgba(255,255,255,.08);
 
     border-radius: 50px;
+
     overflow: hidden;
 }
 
 .progress-fill {
-    width: 100%;
+    width: 50%;
+
     height: 100%;
 
     border-radius: 50px;
 
-    background: linear-gradient(135deg,#2563eb,#38bdf8);
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #38bdf8
+        );
 }
 
 
 /* ==========================================================
-CONTENT CARD
+   CONTENT CARD
 ========================================================== */
 
 .content-card {
-    width: min(1100px, 92%);
-    margin: 0 auto 22px;
+    width:
+        min(1100px, 92%);
+
+    margin:
+        0 auto 22px;
 
     display: flex;
+
     gap: 20px;
 
-    background: var(--card);
+    background:
+        var(--card);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
+
     border-radius: 20px;
 
     padding: 24px;
 
-    backdrop-filter: blur(16px);
+    backdrop-filter:
+        blur(16px);
 }
+
+
+/* ==========================================================
+   SECTION NUMBER
+========================================================== */
 
 .section-number {
     width: 58px;
@@ -509,15 +516,27 @@ CONTENT CARD
 
     border-radius: 15px;
 
-    background: linear-gradient(135deg,#2563eb,#38bdf8);
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #38bdf8
+        );
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
     font-size: 1.15rem;
+
     font-weight: 800;
 }
+
+
+/* ==========================================================
+   SECTION CONTENT
+========================================================== */
 
 .section-content {
     flex: 1;
@@ -525,6 +544,7 @@ CONTENT CARD
 
 .section-content h2 {
     font-size: 1.6rem;
+
     margin-bottom: 12px;
 }
 
@@ -532,33 +552,39 @@ CONTENT CARD
     color: var(--muted);
 
     line-height: 1.65;
+
     font-size: .9rem;
 }
 
 
 /* ==========================================================
-REFERENCE
+   REFERENCE
 ========================================================== */
 
 .reference-box {
     margin-top: 18px;
 
     display: flex;
+
     gap: 12px;
 
     align-items: flex-start;
 
-    padding: 13px 16px;
+    padding:
+        13px 16px;
 
     border-radius: 14px;
 
-    background: rgba(255,255,255,.05);
+    background:
+        rgba(255,255,255,.05);
 
-    border-left: 4px solid #38bdf8;
+    border-left:
+        4px solid #38bdf8;
 }
 
 .reference-box i {
     color: #38bdf8;
+
     margin-top: 2px;
 }
 
@@ -566,18 +592,20 @@ REFERENCE
     color: #d6e2f1;
 
     font-size: .84rem;
+
     line-height: 1.6;
 }
 
 
 /* ==========================================================
-CONCERNS
+   CONCERNS
 ========================================================== */
 
 .concern-grid {
     display: grid;
 
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 15px;
 
@@ -589,16 +617,21 @@ CONCERNS
 
     border-radius: 15px;
 
-    background: rgba(255,255,255,.04);
+    background:
+        rgba(255,255,255,.04);
 
-    border: 1px solid rgba(255,255,255,.06);
+    border:
+        1px solid rgba(255,255,255,.06);
 
     transition: .3s;
 }
 
 .concern-card:hover {
-    transform: translateY(-5px);
-    border-color: #38bdf8;
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #38bdf8;
 }
 
 .concern-card i {
@@ -611,18 +644,59 @@ CONCERNS
 
 .concern-card h3 {
     margin-bottom: 8px;
+
     font-size: 1rem;
 }
 
 .concern-card p {
     margin: 0;
+
     font-size: .86rem;
+
     line-height: 1.6;
 }
 
 
 /* ==========================================================
-INTERACTIVE CHECKLIST
+   IMAGE PLACEHOLDER
+========================================================== */
+
+.source-image {
+    width: 100%;
+
+    margin-top: 20px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.04);
+
+    min-height: 260px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.source-image img {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+/* ==========================================================
+   INTERACTIVE ACTIVITY
 ========================================================== */
 
 .activity-card {
@@ -640,197 +714,113 @@ INTERACTIVE CHECKLIST
 }
 
 .activity-title {
-    text-align: center;
-    margin-bottom: 22px;
+    margin-bottom: 30px;
 }
 
 .activity-title span {
     display: inline-block;
-
     color: #38bdf8;
-
-    font-size: .78rem;
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
 .activity-title h2 {
-    font-size: 1.7rem;
+    color: #fff;
+    font-size: 28px;
     margin-bottom: 10px;
 }
 
 .activity-title p {
-    max-width: 650px;
-
-    margin: auto;
-
-    color: var(--muted);
-
-    font-size: .9rem;
+    color: #9caec8;
     line-height: 1.7;
 }
 
+/* IMAGE CHALLENGE */
 
-/* ==========================================================
-CROSS CHECKING IMAGE
-========================================================== */
-
-.check-image {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: 22px 0;
+.image-game {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-.check-image img {
-    width: 380px;
-    max-width: 100%;
-
-    height: auto;
-
-    display: block;
-
-    border-radius: 16px;
-
-    border: 2px solid rgba(255,255,255,.08);
-}
-
-
-/* ==========================================================
-CHECKLIST
-========================================================== */
-
-.checklist {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.check-item {
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 15px 17px;
-
+.image-option {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.08);
+    cursor: pointer;
     background: rgba(255,255,255,.04);
-
-    border: 1px solid rgba(255,255,255,.06);
-
-    border-radius: 14px;
-
-    transition: .3s;
+    transition: .3s ease;
 }
 
-.check-item:hover {
-    border-color: #38bdf8;
-    transform: translateX(4px);
+.image-option img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
-.check-item input {
-    width: 20px;
-    height: 20px;
-
-    accent-color: #38bdf8;
-
-    cursor: pointer;
+.image-option:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56,189,248,.5);
 }
 
-.check-item label {
-    flex: 1;
-
+.image-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 14px;
+    text-align: center;
+    background: linear-gradient(
+        transparent,
+        rgba(8,17,31,.9)
+    );
     color: #fff;
-
-    cursor: pointer;
-
-    line-height: 1.5;
-
-    font-size: .9rem;
-}
-
-.check-button {
-    margin-top: 22px;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-
-    padding: 13px 26px;
-
-    border: none;
-
-    border-radius: 13px;
-
-    background: linear-gradient(135deg,#2563eb,#38bdf8);
-
-    color: #fff;
-
     font-weight: 700;
-    font-size: .9rem;
-
-    cursor: pointer;
-
-    transition: .3s;
 }
 
-.check-button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* ==========================================================
-FEEDBACK
-========================================================== */
+/* FEEDBACK */
 
 .feedback-box {
-    display: none;
-
-    margin-top: 20px;
-
-    padding: 18px;
-
-    border-radius: 15px;
-
-    background: rgba(255,255,255,.05);
-
-    border-left: 4px solid #38bdf8;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(37,99,235,.10);
+    border: 1px solid rgba(56,189,248,.18);
+    color: #dbeafe;
 }
 
-.feedback-box.show {
-    display: block;
-    animation: fade .35s ease;
-}
-
-.feedback-box h3 {
-    margin-bottom: 10px;
+.feedback-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(56,189,248,.12);
     color: #38bdf8;
 }
 
-.feedback-box p {
-    color: #d7e3f3;
-    line-height: 1.7;
-    font-size: .9rem;
+.feedback-text {
+    line-height: 1.6;
 }
 
 
 /* ==========================================================
-TIPS
+   HOW TO DETECT
 ========================================================== */
 
 .tips-grid {
     display: grid;
 
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 15px;
 
@@ -838,13 +828,25 @@ TIPS
 }
 
 .tip-card {
-    background: rgba(255,255,255,.04);
+    background:
+        rgba(255,255,255,.04);
 
-    border: 1px solid rgba(255,255,255,.06);
+    border:
+        1px solid rgba(255,255,255,.06);
 
     border-radius: 15px;
 
     padding: 19px;
+
+    transition: .3s;
+}
+
+.tip-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #38bdf8;
 }
 
 .tip-card i {
@@ -857,24 +859,30 @@ TIPS
 
 .tip-card h3 {
     margin-bottom: 8px;
+
     font-size: 1rem;
 }
 
 .tip-card p {
     margin: 0;
+
     font-size: .86rem;
+
     line-height: 1.6;
+
+    color: var(--muted);
 }
 
 
 /* ==========================================================
-TOOLS
+   TOOLS
 ========================================================== */
 
 .tool-grid {
     display: grid;
 
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 15px;
 
@@ -882,9 +890,11 @@ TOOLS
 }
 
 .tool-card {
-    background: rgba(255,255,255,.04);
+    background:
+        rgba(255,255,255,.04);
 
-    border: 1px solid rgba(255,255,255,.06);
+    border:
+        1px solid rgba(255,255,255,.06);
 
     border-radius: 15px;
 
@@ -894,8 +904,11 @@ TOOLS
 }
 
 .tool-card:hover {
-    transform: translateY(-5px);
-    border-color: #38bdf8;
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #38bdf8;
 }
 
 .tool-card i {
@@ -908,29 +921,37 @@ TOOLS
 
 .tool-card h3 {
     margin-bottom: 8px;
+
     font-size: 1rem;
 }
 
 .tool-card p {
+    font-size: .86rem;
+
     color: var(--muted);
 
-    font-size: .86rem;
     line-height: 1.6;
 }
 
 
 /* ==========================================================
-BOTTOM NAVIGATION
+   BOTTOM NAVIGATION
 ========================================================== */
 
 .lesson-navigation {
-    width: min(1100px,92%);
+    width:
+        min(1100px, 92%);
 
-    margin: 28px auto 55px;
+    margin:
+        35px auto 70px;
 
     display: flex;
 
-    justify-content: flex-start;
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
 }
 
 .next-btn {
@@ -940,75 +961,95 @@ BOTTOM NAVIGATION
 
     gap: 10px;
 
-    padding: 12px 24px;
+    padding:
+        9px 22px;
 
-    border-radius: 13px;
+    border-radius: 14px;
 
-    background: linear-gradient(135deg,#2563eb,#38bdf8);
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #38bdf8
+        );
 
     color: #fff;
 
     font-weight: 700;
 
-    font-size: .9rem;
-
     transition: .3s;
 }
 
 .next-btn:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 }
 
 
 /* ==========================================================
-ANIMATION
+   ANIMATION
 ========================================================== */
 
-@keyframes fade {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
+@keyframes shake {
+
+    0% {
+        transform: translateX(0);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    25% {
+        transform: translateX(-6px);
     }
+
+    50% {
+        transform: translateX(6px);
+    }
+
+    75% {
+        transform: translateX(-6px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
 }
 
 
-
 /* ==========================================================
-SHIFT MAIN CONTENT TO THE RIGHT
+   SHIFT MAIN CONTENT TO THE RIGHT
 ========================================================== */
 
 .ai-header,
 .progress-section,
 .content-card,
 .activity-card,
-.lesson-navigation{
+.lesson-navigation {
 
-    position:relative;
+    position: relative;
 
-    left:100px;
-
+    left: 100px;
 }
 
+
 /* ==========================================================
-RESPONSIVE — TABLET (992px and below)
+   RESPONSIVE — TABLET
+   992px and below
 ========================================================== */
 
 @media (max-width: 992px) {
 
     .quick-nav {
         width: 190px;
+
         padding-left: 25px;
         padding-right: 20px;
     }
 
     .main-content {
         margin-left: 190px;
-        width: calc(100% - 190px);
+
+        width:
+            calc(100% - 190px);
     }
 
     .quick-nav a {
@@ -1018,45 +1059,36 @@ RESPONSIVE — TABLET (992px and below)
     .quick-nav a .nav-number {
         width: 28px;
         height: 28px;
+
         font-size: .68rem;
     }
 
     .content-card {
         flex-direction: column;
+
         padding: 28px;
     }
 
     .section-number {
         width: 62px;
         height: 62px;
+
         min-width: 62px;
     }
 
     .concern-grid,
     .tips-grid,
     .tool-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .image-game {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-    }
-
-    .image-option {
-        width: 100%;
-    }
-
-    .action-options {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .ai-header,
+    .source-header,
     .progress-section,
     .content-card,
-    .activity-card,
     .lesson-navigation {
+
         left: 50px;
     }
 
@@ -1064,403 +1096,471 @@ RESPONSIVE — TABLET (992px and below)
 
 
 /* ==========================================================
-RESPONSIVE — MOBILE (768px and below)
+   RESPONSIVE — MOBILE
+   768px and below
 ========================================================== */
 
 @media (max-width: 768px) {
 
-    /* Prevent horizontal overflow */
-    html, body {
-        width: 100%;
-        overflow-x: hidden;
-        position: relative;
-    }
-
     /* ======================================================
-    MOBILE MENU BUTTON
+       MOBILE MENU BUTTON
     ====================================================== */
 
     .mobile-menu-btn {
+
         display: flex;
+
         position: fixed;
+
         top: 50%;
         left: 0;
+
         width: 8px;
         height: 64px;
+
         padding: 0;
+
         justify-content: center;
         align-items: center;
+
         border: none;
-        border-radius: 0 8px 8px 0;
-        background: #38bdf8;
+
+        border-radius:
+            0 8px 8px 0;
+
+        background:
+            #38bdf8;
+
         color: transparent;
+
         font-size: 0;
+
         cursor: pointer;
+
         z-index: 2000;
-        box-shadow: 0 0 16px rgba(56, 189, 248, .25);
-        transition: .3s ease;
+
+        box-shadow:
+            0 0 16px
+            rgba(56,189,248,.25);
+
+        transition:
+            .3s ease;
     }
 
     .mobile-menu-btn:hover {
+
         width: 12px;
-        background: #38bdf8;
+
+        background:
+            #38bdf8;
     }
 
+
     /* ======================================================
-    QUICK NAVIGATION — MOBILE DRAWER
+       QUICK NAVIGATION — MOBILE DRAWER
     ====================================================== */
 
     .quick-nav {
+
         position: fixed;
+
         top: 0;
+
         left: -260px;
+
         width: 230px;
+
         height: 100vh;
-        padding: 90px 15px 40px 20px;
-        background: rgba(10, 15, 25, .94);
-        transition: left .3s ease;
+
+        padding:
+            90px 15px 40px 20px;
+
+        background:
+            rgba(10,15,25,.94);
+
+        transition:
+            left .3s ease;
+
         z-index: 1500;
+
         overflow-y: auto;
+
         box-sizing: border-box;
     }
 
     .quick-nav.open {
+
         left: 0;
     }
 
     .quick-nav a,
     .quick-nav button,
     .quick-nav li {
+
         width: 100%;
+
         overflow: hidden;
+
         text-overflow: ellipsis;
+
         white-space: nowrap;
     }
 
     .quick-nav a::before {
+
         width: 1px;
     }
 
     .quick-nav a:hover::before {
-        background: #38bdf8;
+
+        background:
+            #38bdf8;
+
         width: 1px;
     }
 
     .quick-nav a.active::before {
-        background: #38bdf8;
+
+        background:
+            #38bdf8;
+
         width: 1px;
     }
 
 
-
     /* ======================================================
-    MAIN CONTENT — CONSTRAINED
+       MAIN CONTENT
     ====================================================== */
 
     .main-content {
+
         margin-left: 0;
+
         width: 100%;
+
         max-width: 100vw;
+
         overflow-x: hidden;
+
         box-sizing: border-box;
     }
 
     .main-content > * {
+
         max-width: 100%;
+
         box-sizing: border-box;
     }
 
+
     /* ======================================================
-    HEADER
+       HEADER
     ====================================================== */
 
-    .ai-header {
+    .source-header {
+
         width: 92%;
+
         max-width: 100%;
-        margin: 30px auto 24px;
+
+        margin:
+            30px auto 24px;
+
         box-sizing: border-box;
     }
 
     .page-title {
+
         margin-top: 0;
     }
 
     .page-title h1 {
+
         font-size: 1.75rem;
+
         line-height: 1.25;
+
         margin-bottom: 12px;
     }
 
     .page-title p {
+
         max-width: 100%;
+
         font-size: .88rem;
+
         line-height: 1.6;
     }
 
+
     /* ======================================================
-    PROGRESS
+       PROGRESS
     ====================================================== */
 
     .progress-section {
+
         width: 92%;
+
         max-width: 100%;
-        margin: 0 auto 22px;
+
+        margin:
+            0 auto 22px;
+
         box-sizing: border-box;
     }
 
+
     /* ======================================================
-    CONTENT CARDS
+       CONTENT CARDS
     ====================================================== */
 
     .content-card {
+
         width: 92%;
+
         max-width: 100%;
-        margin: 0 auto 20px;
+
+        margin:
+            0 auto 20px;
+
         padding: 22px;
+
         box-sizing: border-box;
+
         flex-direction: column;
+
         gap: 18px;
+
         border-radius: 18px;
     }
 
     .section-number {
+
         width: 58px;
         height: 58px;
     }
 
     .section-content {
+
         width: 100%;
+
         min-width: 0;
     }
 
     .section-content h2 {
+
         font-size: 1.4rem;
+
         line-height: 1.3;
     }
 
     .section-content p {
+
         font-size: .86rem;
+
         line-height: 1.65;
     }
 
-    /* ======================================================
-    ACTIVITY CARD
-    ====================================================== */
-
-    .activity-card {
-        width: 92%;
-        max-width: 100%;
-        margin: 0 auto 20px;
-        padding: 22px;
-        box-sizing: border-box;
-        border-radius: 18px;
-    }
-
-    .activity-title h2 {
-        font-size: 1.5rem;
-        line-height: 1.3;
-    }
-
-    .activity-title p {
-        max-width: 100%;
-        font-size: .86rem;
-    }
 
     /* ======================================================
-    IMAGE GAME
+       IMAGE
     ====================================================== */
 
-    .image-game {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
+    .source-image {
+
         width: 100%;
+
+        min-height: 200px;
+
         margin-top: 18px;
     }
 
-    .image-option {
-        width: 100%;
-        max-width: 360px;
-        height: auto;
-        box-sizing: border-box;
-    }
+    .source-image img {
 
-    .image-option img {
         width: 100%;
+
         height: auto;
     }
 
-    /* ======================================================
-    ACTION CHOICES
-    ====================================================== */
-
-    .action-options {
-        grid-template-columns: 1fr;
-        width: 100%;
-        gap: 10px;
-    }
-
-    .action-btn {
-        width: 100%;
-        min-height: 50px;
-        box-sizing: border-box;
-    }
 
     /* ======================================================
-    GRIDS
+       GRIDS
     ====================================================== */
 
     .concern-grid,
     .tips-grid,
     .tool-grid {
+
         grid-template-columns: 1fr;
+
         width: 100%;
     }
 
-    /* ======================================================
-    FEEDBACK
-    ====================================================== */
-
-    .feedback-box {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
 
     /* ======================================================
-    REFERENCE
+       REFERENCE
     ====================================================== */
 
     .reference-box {
+
         max-width: 100%;
+
         box-sizing: border-box;
+
         overflow-wrap: anywhere;
+
         word-break: break-word;
     }
 
     .reference-box span {
+
         overflow-wrap: anywhere;
+
         word-break: break-word;
     }
 
+
     /* ======================================================
-    BOTTOM NAVIGATION
+       BOTTOM NAVIGATION
     ====================================================== */
 
     .lesson-navigation {
+
         width: 92%;
+
         max-width: 100%;
-        margin: 25px auto 45px;
+
+        margin:
+            25px auto 45px;
+
         box-sizing: border-box;
     }
 
+
     /* ======================================================
-    REMOVE DESKTOP SHIFT ON MOBILE
+       REMOVE DESKTOP SHIFT
     ====================================================== */
 
-    .ai-header,
+    .source-header,
     .progress-section,
     .content-card,
-    .activity-card,
     .lesson-navigation {
+
         position: relative;
+
         left: 0;
     }
 
-
+}
 
 
 /* ==========================================================
-RESPONSIVE — SMALL PHONE (480px and below)
+   RESPONSIVE — SMALL PHONE
+   480px and below
 ========================================================== */
 
 @media (max-width: 480px) {
 
     .page-tag {
+
         font-size: .68rem;
-        padding: 5px 12px;
+
+        padding:
+            5px 12px;
     }
 
     .page-title h1 {
+
         font-size: 1.6rem;
+
         line-height: 1.3;
     }
 
     .progress-info {
+
         font-size: .82rem;
     }
 
     .section-number {
+
         width: 56px;
         height: 56px;
+
         font-size: 1.1rem;
     }
 
-    .content-card,
-    .activity-card {
+    .content-card {
+
         padding: 18px;
     }
 
-    .activity-title {
-        margin-bottom: 18px;
+    .page-title p {
+
+        font-size: .84rem;
     }
 
-    .activity-title h2 {
-        font-size: 1.4rem;
+    .section-content h2 {
+
+        font-size: 1.3rem;
     }
 
-    .activity-title p {
-        font-size: .86rem;
+    .section-content p {
+
+        font-size: .84rem;
     }
 
-    .image-option {
-        width: 100%;
-        border-radius: 16px;
+    .concern-card,
+    .tip-card,
+    .tool-card {
+
+        padding: 17px;
     }
 
-    .image-overlay {
-        padding: 10px;
-        font-size: .76rem;
-    }
+    .concern-card p,
+    .tip-card p,
+    .tool-card p {
 
-    .action-btn {
-        font-size: .85rem;
-        padding: 12px 14px;
-    }
-
-    .feedback-box {
-        padding: 16px;
-        gap: 10px;
-    }
-
-    .feedback-icon {
-        font-size: 1.25rem;
-    }
-
-    .feedback-text {
-        font-size: .85rem;
+        font-size: .82rem;
     }
 
     .reference-box {
+
         flex-direction: column;
+
         gap: 8px;
     }
 
+    .source-image {
+
+        min-height: 170px;
+
+        border-radius: 15px;
+    }
+
+    .lesson-navigation {
+
+        gap: 10px;
+    }
+
+    .back-btn,
+    .next-btn {
+
+        font-size: .8rem;
+
+        padding:
+            9px 13px;
+    }
+
     /* ======================================================
-    ENSURE NO SHIFT ON SMALL PHONE
+       ENSURE NO SHIFT
     ====================================================== */
 
-    .ai-header,
+    .source-header,
     .progress-section,
     .content-card,
-    .activity-card,
     .lesson-navigation {
+
         left: 0;
     }
 
 }
-
-}
-
-
