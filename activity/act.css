@@ -2690,38 +2690,674 @@ body {
 
 }
 
-
 /* ==========================================================
-   TABLET / SMALL LAPTOP
+   ACTIVITY PAGE
+   COMPLETE RESPONSIVE UPDATE
+   TABLET + MOBILE + VERY SMALL PHONES
 ========================================================== */
 
-@media (max-width: 768px) {
+
+/* ==========================================================
+   TABLET — 901px AND BELOW
+========================================================== */
+
+@media (max-width: 900px) {
+
+    /* ======================================================
+       OVERVIEW
+    ====================================================== */
+
+    .overview-screen {
+        padding: 45px 25px 60px;
+    }
+
+
+    .overview-layout {
+        width: 100%;
+        max-width: 760px;
+
+        grid-template-columns: 1fr;
+
+        row-gap: 35px;
+        column-gap: 0;
+    }
+
+
+    .overview-content {
+        width: 100%;
+
+        padding: 8px 0 0;
+
+        transform: none;
+    }
+
+
+    /* ======================================================
+       TITLE
+    ====================================================== */
+
+    .overview-content h1 {
+        max-width: 760px;
+
+        font-size: clamp(2.8rem, 7vw, 4rem);
+
+        letter-spacing: -2px;
+    }
+
+
+    .overview-description {
+        max-width: 620px;
+    }
+
+
+    /* ======================================================
+       TOPIC GRID
+    ====================================================== */
+
+    .topic-grid {
+        width: 100%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 16px;
+
+        margin-top: 35px;
+    }
+
+
+    /* Remove desktop offset */
+
+    .topic-card:nth-child(3),
+    .topic-card:nth-child(4) {
+        transform: none;
+    }
+
+
+    .topic-card:nth-child(3):hover,
+    .topic-card:nth-child(4):hover {
+        transform: translateY(-5px);
+    }
+
+
+    /* ======================================================
+       TOPIC CARD
+    ====================================================== */
+
+    .topic-card {
+        height: auto;
+
+        min-height: 0;
+    }
+
+
+    .topic-image {
+        height: 160px;
+    }
+
+
+    .topic-card-content {
+        padding: 21px;
+    }
+
+
+    /* ======================================================
+       PARTICIPANTS PANEL
+    ====================================================== */
+
+    .participants-panel {
+        width: 100%;
+
+        min-height: 0;
+        height: auto;
+
+        margin-left: 0;
+
+        position: relative;
+
+        top: auto;
+    }
+
+
+    /* ======================================================
+       QUESTION SCREEN
+    ====================================================== */
+
+    .question-screen {
+        padding: 45px 30px 60px;
+    }
+
+
+    .question-container {
+        max-width: 760px;
+    }
+
+
+    .question-image {
+        min-height: 320px;
+    }
+
+
+    .question-image img {
+        height: 320px;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE — 576px AND BELOW
+========================================================== */
+
+@media (max-width: 576px) {
+
+    /* ======================================================
+       BODY
+    ====================================================== */
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    /* ======================================================
+       OVERVIEW SCREEN
+    ====================================================== */
+
+    .overview-screen {
+        width: 100%;
+
+        min-height: 100vh;
+
+        padding: 78px 16px 45px;
+
+        display: none;
+
+        align-items: flex-start;
+
+        justify-content: center;
+    }
+
+
+    .overview-screen.active {
+        display: flex;
+    }
+
+
+    /* ======================================================
+       OVERVIEW LAYOUT
+    ====================================================== */
+
+    .overview-layout {
+        width: 100%;
+
+        max-width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 28px;
+
+        margin: 0;
+    }
+
+
+    /* ======================================================
+       OVERVIEW CONTENT
+    ====================================================== */
+
+    .overview-content {
+        width: 100%;
+
+        padding: 0;
+
+        margin: 0;
+
+        text-align: center;
+
+        transform: none;
+    }
+
+
+    /* ======================================================
+       ACTIVITY BADGE
+    ====================================================== */
+
+    .activity-badge {
+        max-width: 100%;
+
+        padding: 8px 13px;
+
+        margin-bottom: 19px;
+
+        border-radius: 25px;
+
+        font-size: .57rem;
+
+        letter-spacing: 1.15px;
+
+        gap: 7px;
+    }
+
+
+    .activity-badge i {
+        font-size: .72rem;
+    }
+
+
+    /* ======================================================
+       MAIN TITLE
+    ====================================================== */
+
+    .overview-content h1 {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin: 0 auto 19px;
+
+        padding: 0;
+
+        font-size: clamp(2.45rem, 13vw, 3.35rem);
+
+        line-height: 1.02;
+
+        letter-spacing: -1.7px;
+
+        word-break: normal;
+
+        overflow-wrap: normal;
+    }
+
+
+    .overview-content h1 span {
+        display: block;
+
+        margin-top: 3px;
+    }
+
+
+    /* ======================================================
+       DESCRIPTION
+    ====================================================== */
+
+    .overview-description {
+        width: 100%;
+
+        max-width: 430px;
+
+        margin: 0 auto 26px;
+
+        padding: 0 5px;
+
+        font-size: .76rem;
+
+        line-height: 1.75;
+
+        text-align: center;
+    }
+
+
+    /* ======================================================
+       TOPIC GRID
+    ====================================================== */
+
+    .topic-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin: 25px 0 0;
+
+        text-align: left;
+    }
+
+
+    /* ======================================================
+       TOPIC CARDS
+    ====================================================== */
+
+    .topic-card {
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        border-radius: 18px;
+
+        transform: none !important;
+    }
+
+
+    .topic-card:hover {
+        transform: translateY(-4px) !important;
+    }
+
+
+    /* ======================================================
+       TOPIC IMAGE
+    ====================================================== */
+
+    .topic-image {
+        width: 100%;
+
+        height: 145px;
+
+        min-height: 145px;
+    }
+
+
+    .topic-image::before {
+        width: 62px;
+        height: 62px;
+    }
+
+
+    .topic-image::after {
+        width: 80px;
+        height: 80px;
+    }
+
+
+    .topic-main-icon {
+        width: 47px;
+        height: 47px;
+
+        border-radius: 12px;
+
+        font-size: 1.45rem;
+    }
+
+
+    /* ======================================================
+       TOPIC CONTENT
+    ====================================================== */
+
+    .topic-card-content {
+        width: 100%;
+
+        padding: 19px;
+    }
+
+
+    .topic-icon {
+        width: 38px;
+        height: 38px;
+
+        margin-bottom: 12px;
+
+        border-radius: 10px;
+
+        font-size: .9rem;
+    }
+
+
+    .topic-card h2 {
+        margin-bottom: 7px;
+
+        font-size: 1rem;
+
+        line-height: 1.3;
+    }
+
+
+    .topic-card p {
+        margin-bottom: 15px;
+
+        font-size: .73rem;
+
+        line-height: 1.6;
+    }
+
+
+    /* ======================================================
+       SUBTOPICS
+    ====================================================== */
+
+    .topic-subtopics {
+        gap: 5px;
+
+        margin-top: 8px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .topic-subtopics span {
+        gap: 6px;
+
+        font-size: .58rem;
+
+        line-height: 1.4;
+    }
+
+
+    .topic-subtopics i {
+        width: 13px;
+
+        flex-shrink: 0;
+    }
+
+
+    /* ======================================================
+       START ACTIVITY
+    ====================================================== */
+
+    .start-topic {
+        padding-top: 6px;
+
+        font-size: .62rem;
+    }
+
+
+    /* ======================================================
+       PARTICIPANTS PANEL
+    ====================================================== */
+
+    .participants-panel {
+        width: 100%;
+
+        min-height: 0;
+
+        height: auto;
+
+        margin: 0;
+
+        padding: 18px;
+
+        position: relative;
+
+        top: auto;
+
+        border-radius: 16px;
+    }
+
+
+    /* ======================================================
+       PARTICIPANTS HEADER
+    ====================================================== */
+
+    .participants-header {
+        width: 100%;
+
+        padding-bottom: 13px;
+
+        gap: 9px;
+    }
+
+
+    .participants-title {
+        min-width: 0;
+
+        gap: 9px;
+    }
+
+
+    .participants-icon {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+
+        font-size: .84rem;
+    }
+
+
+    .participants-title > div {
+        min-width: 0;
+    }
+
+
+    .participants-title h2 {
+        margin-bottom: 3px;
+
+        font-size: .84rem;
+
+        white-space: nowrap;
+    }
+
+
+    .participants-title p {
+        font-size: .56rem;
+
+        line-height: 1.35;
+
+        white-space: normal;
+    }
+
+
+    .participants-count {
+        min-width: 34px;
+
+        height: 30px;
+
+        padding: 0 8px;
+
+        border-radius: 8px;
+
+        font-size: .7rem;
+    }
+
+
+    /* ======================================================
+       PARTICIPANT LIST
+    ====================================================== */
+
+    .participants-list {
+        gap: 7px;
+
+        padding: 13px 0;
+    }
+
+
+    .participant-item {
+        width: 100%;
+
+        padding: 10px;
+
+        gap: 9px;
+
+        border-radius: 10px;
+    }
+
+
+    .participant-avatar {
+        width: 33px;
+        height: 33px;
+
+        font-size: .65rem;
+    }
+
+
+    .participant-info {
+        min-width: 0;
+    }
+
+
+    .participant-info strong {
+        font-size: .69rem;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+    }
+
+
+    .participant-info span {
+        font-size: .55rem;
+    }
+
+
+    /* ======================================================
+       PARTICIPANTS FOOTER
+    ====================================================== */
+
+    .participants-footer {
+        padding-top: 12px;
+
+        gap: 7px;
+
+        font-size: .55rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* ======================================================
+       HAMBURGER BUTTON
+    ====================================================== */
 
     .floating-menu-btn {
-        top: 18px;
-        left: 18px;
+        top: 15px;
 
-        width: 45px;
-        height: 45px;
+        left: 15px;
 
-        font-size: 18px;
+        width: 43px;
+
+        height: 43px;
+
+        border-radius: 11px;
+
+        font-size: 17px;
+
+        z-index: 10001;
     }
 
+
+    /* ======================================================
+       SIDE NAVIGATION
+    ====================================================== */
 
     .floating-nav {
-        width: min(300px, 82vw);
+        width: min(82%, 285px);
 
-        padding: 22px 16px;
+        max-width: 285px;
 
-        overflow-x: hidden;
+        height: 100vh;
+
+        padding: 20px 15px;
+
         overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
     }
 
 
-    .floating-nav-header {
-        padding: 5px 4px 20px;
+    /* ======================================================
+       NAV HEADER
+    ====================================================== */
 
-        margin-bottom: 16px;
+    .floating-nav-header {
+        padding: 4px 4px 20px;
+
+        margin-bottom: 15px;
 
         gap: 10px;
     }
@@ -2730,94 +3366,6 @@ body {
     .floating-nav-title {
         min-width: 0;
 
-        font-size: .95rem;
-    }
-
-
-    .floating-nav-title i {
-        flex-shrink: 0;
-
-        font-size: 17px;
-    }
-
-
-    .floating-nav-close {
-        width: 36px;
-        height: 36px;
-
-        flex-shrink: 0;
-
-        font-size: 16px;
-    }
-
-
-    .floating-nav-links {
-        gap: 6px;
-    }
-
-
-    .floating-nav-item {
-        padding: 13px 14px;
-
-        gap: 12px;
-
-        font-size: .84rem;
-
-        white-space: normal;
-
-        overflow-wrap: anywhere;
-    }
-
-
-    .floating-nav-item i {
-        width: 21px;
-
-        flex-shrink: 0;
-
-        font-size: 15px;
-    }
-
-}
-
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media (max-width: 576px) {
-
-    .floating-menu-btn {
-        top: 14px;
-        left: 14px;
-
-        width: 43px;
-        height: 43px;
-
-        border-radius: 11px;
-
-        font-size: 17px;
-    }
-
-
-    .floating-nav {
-        width: 86vw;
-        max-width: 290px;
-        min-width: 240px;
-
-        padding: 20px 14px;
-
-        overflow-x: hidden;
-    }
-
-
-    .floating-nav-header {
-        padding: 4px 3px 18px;
-
-        margin-bottom: 15px;
-    }
-
-
-    .floating-nav-title {
         gap: 9px;
 
         font-size: .9rem;
@@ -2826,18 +3374,32 @@ body {
 
     .floating-nav-title i {
         font-size: 16px;
+
+        flex-shrink: 0;
+    }
+
+
+    .floating-nav-title span {
+        white-space: nowrap;
     }
 
 
     .floating-nav-close {
-        width: 35px;
-        height: 35px;
+        width: 36px;
+
+        height: 36px;
+
+        flex-shrink: 0;
 
         border-radius: 9px;
 
-        font-size: 15px;
+        font-size: 16px;
     }
 
+
+    /* ======================================================
+       NAV LINKS
+    ====================================================== */
 
     .floating-nav-links {
         gap: 6px;
@@ -2845,52 +3407,710 @@ body {
 
 
     .floating-nav-item {
-        min-height: 45px;
+        width: 100%;
 
-        padding: 12px 13px;
+        padding: 13px 13px;
 
         gap: 11px;
 
-        border-radius: 11px;
+        border-radius: 10px;
 
-        font-size: .82rem;
-
-        line-height: 1.35;
+        font-size: .8rem;
     }
 
 
     .floating-nav-item i {
         width: 20px;
 
-        font-size: 14px;
+        flex-shrink: 0;
+
+        font-size: 15px;
     }
 
 
-    .floating-nav-item:hover {
-        transform: translateX(2px);
+    /* ======================================================
+       QUESTION SCREEN
+    ====================================================== */
+
+    .question-screen {
+        width: 100%;
+
+        padding: 72px 14px 40px;
     }
 
 
-    .floating-nav-item.active::before {
-        width: 3px;
+    .question-container {
+        width: 100%;
 
-        height: 22px;
+        max-width: 100%;
+
+        margin: 0;
+    }
+
+
+    /* ======================================================
+       QUESTION TOP BAR
+    ====================================================== */
+
+    .question-topbar {
+        width: 100%;
+
+        align-items: center;
+
+        gap: 10px;
+
+        margin-bottom: 13px;
+    }
+
+
+    .back-button {
+        flex-shrink: 0;
+
+        gap: 6px;
+
+        font-size: .7rem;
+    }
+
+
+    .progress-info {
+        min-width: 0;
+
+        gap: 8px;
+
+        font-size: .65rem;
+
+        text-align: right;
+    }
+
+
+    #topicTitle {
+        max-width: 150px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+    }
+
+
+    /* ======================================================
+       PROGRESS BAR
+    ====================================================== */
+
+    .progress-bar {
+        height: 4px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* ======================================================
+       QUESTION CARD
+    ====================================================== */
+
+    .question-card {
+        width: 100%;
+
+        max-width: 100%;
+
+        border-radius: 18px;
+    }
+
+
+    /* ======================================================
+       QUESTION IMAGE
+    ====================================================== */
+
+    .question-image {
+        width: 100%;
+
+        min-height: 220px;
+
+        max-height: 320px;
+
+        padding: 0;
+    }
+
+
+    .question-image img {
+        width: 100%;
+
+        height: 220px;
+
+        max-height: 320px;
+
+        object-fit: contain;
+    }
+
+
+    /* ======================================================
+       IMAGE PLACEHOLDER
+    ====================================================== */
+
+    .image-placeholder {
+        width: 100%;
+
+        min-height: 220px;
+
+        gap: 8px;
+
+        font-size: 1.8rem;
+    }
+
+
+    .image-placeholder small {
+        font-size: .6rem;
+
+        text-align: center;
+    }
+
+
+    /* ======================================================
+       QUESTION CONTENT
+    ====================================================== */
+
+    .question-content {
+        width: 100%;
+
+        padding: 21px 17px 20px;
+    }
+
+
+    /* ======================================================
+       QUESTION TEXT
+    ====================================================== */
+
+    .question-text,
+    .question-content h2 {
+        margin: 3px 0 9px;
+
+        font-size: 1rem;
+
+        line-height: 1.45;
+    }
+
+
+    /* ======================================================
+       QUESTION INSTRUCTION
+    ====================================================== */
+
+    .question-instruction {
+        margin: 0 0 15px;
+
+        font-size: .7rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* ======================================================
+       CHOICES
+    ====================================================== */
+
+    .choices {
+        gap: 9px;
+    }
+
+
+    .choice-button {
+        width: 100%;
+
+        min-height: 55px;
+
+        padding: 11px 12px;
+
+        gap: 10px;
+
+        border-radius: 11px;
+
+        font-size: .7rem;
+
+        line-height: 1.45;
+    }
+
+
+    /* ======================================================
+       CHOICE LETTER
+    ====================================================== */
+
+    .choice-letter {
+        width: 31px;
+
+        height: 31px;
+
+        border-radius: 8px;
+
+        font-size: .72rem;
+    }
+
+
+    /* ======================================================
+       FEEDBACK
+    ====================================================== */
+
+    .answer-feedback {
+        margin-top: 15px;
+    }
+
+
+    .answer-feedback.show {
+        gap: 9px;
+
+        padding: 13px;
+
+        border-radius: 10px;
+    }
+
+
+    .feedback-icon {
+        width: 29px;
+
+        height: 29px;
+
+        flex-shrink: 0;
+
+        font-size: .7rem;
+    }
+
+
+    .answer-feedback strong {
+        margin-bottom: 3px;
+
+        font-size: .76rem;
+    }
+
+
+    .answer-feedback p {
+        font-size: .66rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* ======================================================
+       NEXT BUTTON
+    ====================================================== */
+
+    .next-button {
+        min-height: 48px;
+
+        margin-top: 15px;
+
+        padding: 12px;
+
+        border-radius: 10px;
+
+        font-size: .7rem;
+    }
+
+
+    /* ======================================================
+       RESULT SCREEN
+    ====================================================== */
+
+    .result-screen {
+        width: 100%;
+
+        min-height: 100vh;
+
+        padding: 75px 16px 45px;
+    }
+
+
+    .result-card {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 40px 20px 28px;
+
+        border-radius: 19px;
+    }
+
+
+    .result-icon {
+        width: 62px;
+
+        height: 62px;
+
+        margin-bottom: 19px;
+
+        border-radius: 16px;
+
+        font-size: 1.65rem;
+    }
+
+
+    .result-label {
+        font-size: .58rem;
+
+        letter-spacing: 1.6px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .result-card h1 {
+        font-size: 1.9rem;
+
+        line-height: 1.1;
+    }
+
+
+    .result-card > p {
+        font-size: .72rem;
+
+        line-height: 1.65;
+
+        margin-bottom: 23px;
+    }
+
+
+    .score-box {
+        margin-bottom: 23px;
+
+        padding: 19px 15px;
+
+        border-radius: 13px;
+    }
+
+
+    .score-box span {
+        font-size: .58rem;
+
+        margin-bottom: 8px;
+    }
+
+
+    .score-box strong {
+        font-size: 2.2rem;
+    }
+
+
+    /* ======================================================
+       RESULT BUTTONS
+    ====================================================== */
+
+    .result-actions {
+        flex-direction: column;
+
+        gap: 9px;
+
+        margin-top: 3px;
+    }
+
+
+    .result-button {
+        width: 100%;
+
+        min-height: 45px;
+
+        padding: 12px;
+
+        border-radius: 10px;
+
+        font-size: .7rem;
+    }
+
+
+    /* ======================================================
+       NAME MODAL
+    ====================================================== */
+
+    .name-entry-modal {
+        padding: 16px;
+    }
+
+
+    .name-entry-box {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 27px 20px 23px;
+
+        border-radius: 18px;
+    }
+
+
+    .name-entry-icon {
+        width: 51px;
+
+        height: 51px;
+
+        margin-bottom: 14px;
+
+        border-radius: 14px;
+
+        font-size: 1.12rem;
+    }
+
+
+    .name-entry-label {
+        margin-bottom: 7px;
+
+        font-size: .59rem;
+
+        letter-spacing: 1.4px;
+    }
+
+
+    .name-entry-box h2 {
+        font-size: 1.4rem;
+
+        margin-bottom: 8px;
+    }
+
+
+    .name-entry-box p {
+        max-width: 300px;
+
+        margin-bottom: 18px;
+
+        font-size: .7rem;
+
+        line-height: 1.6;
+    }
+
+
+    .name-input-wrapper {
+        padding: 0 12px;
+
+        margin-bottom: 11px;
+
+        border-radius: 10px;
+    }
+
+
+    .name-input-wrapper input {
+        height: 44px;
+
+        font-size: .72rem;
+    }
+
+
+    .name-entry-button {
+        height: 44px;
+
+        border-radius: 10px;
+
+        font-size: .7rem;
     }
 
 }
 
 
 /* ==========================================================
-   VERY SMALL PHONES
+   VERY SMALL PHONES — 400px AND BELOW
 ========================================================== */
 
 @media (max-width: 400px) {
 
+    /* ======================================================
+       OVERVIEW
+    ====================================================== */
+
+    .overview-screen {
+        padding: 73px 12px 38px;
+    }
+
+
+    .overview-layout {
+        gap: 24px;
+    }
+
+
+    .activity-badge {
+        padding: 7px 11px;
+
+        font-size: .54rem;
+
+        letter-spacing: 1px;
+    }
+
+
+    .overview-content h1 {
+        font-size: 2.25rem;
+
+        letter-spacing: -1.3px;
+    }
+
+
+    .overview-description {
+        padding: 0 3px;
+
+        font-size: .7rem;
+
+        line-height: 1.65;
+    }
+
+
+    /* ======================================================
+       TOPIC CARDS
+    ====================================================== */
+
+    .topic-grid {
+        gap: 12px;
+
+        margin-top: 21px;
+    }
+
+
+    .topic-card {
+        border-radius: 16px;
+    }
+
+
+    .topic-image {
+        height: 125px;
+
+        min-height: 125px;
+    }
+
+
+    .topic-image::before {
+        width: 55px;
+        height: 55px;
+    }
+
+
+    .topic-image::after {
+        width: 72px;
+        height: 72px;
+    }
+
+
+    .topic-main-icon {
+        width: 43px;
+        height: 43px;
+
+        border-radius: 10px;
+
+        font-size: 1.3rem;
+    }
+
+
+    .topic-card-content {
+        padding: 16px;
+    }
+
+
+    .topic-icon {
+        width: 35px;
+        height: 35px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .topic-card h2 {
+        font-size: .91rem;
+    }
+
+
+    .topic-card p {
+        font-size: .68rem;
+
+        line-height: 1.55;
+    }
+
+
+    .topic-subtopics span {
+        font-size: .54rem;
+    }
+
+
+    .start-topic {
+        font-size: .58rem;
+    }
+
+
+    /* ======================================================
+       PARTICIPANTS
+    ====================================================== */
+
+    .participants-panel {
+        padding: 15px;
+
+        border-radius: 14px;
+    }
+
+
+    .participants-header {
+        gap: 7px;
+    }
+
+
+    .participants-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+
+    .participants-title {
+        gap: 7px;
+    }
+
+
+    .participants-title h2 {
+        font-size: .76rem;
+    }
+
+
+    .participants-title p {
+        font-size: .51rem;
+    }
+
+
+    .participants-count {
+        min-width: 31px;
+
+        height: 28px;
+
+        font-size: .66rem;
+    }
+
+
+    .participant-item {
+        padding: 9px;
+
+        gap: 8px;
+    }
+
+
+    .participant-avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .participant-info strong {
+        font-size: .65rem;
+    }
+
+
+    .participant-info span {
+        font-size: .52rem;
+    }
+
+
+    .participants-footer {
+        font-size: .51rem;
+    }
+
+
+    /* ======================================================
+       HAMBURGER
+    ====================================================== */
+
     .floating-menu-btn {
-        top: 12px;
-        left: 12px;
+        top: 13px;
+
+        left: 13px;
 
         width: 40px;
+
         height: 40px;
 
         border-radius: 10px;
@@ -2899,92 +4119,264 @@ body {
     }
 
 
-    .floating-nav {
-        width: 88vw;
-        max-width: 275px;
-        min-width: 225px;
+    /* ======================================================
+       SIDE NAV
+    ====================================================== */
 
-        padding: 18px 12px;
+    .floating-nav {
+        width: 85%;
+
+        max-width: 280px;
+
+        padding: 18px 13px;
     }
 
 
-    .floating-nav-header {
-        padding-bottom: 16px;
+    .floating-nav-title {
+        font-size: .84rem;
+    }
+
+
+    .floating-nav-item {
+        padding: 12px;
+
+        font-size: .76rem;
+    }
+
+
+    /* ======================================================
+       QUESTION
+    ====================================================== */
+
+    .question-screen {
+        padding: 68px 11px 35px;
+    }
+
+
+    .question-topbar {
+        gap: 7px;
+    }
+
+
+    .back-button {
+        font-size: .65rem;
+    }
+
+
+    .progress-info {
+        gap: 6px;
+
+        font-size: .59rem;
+    }
+
+
+    #topicTitle {
+        max-width: 115px;
+    }
+
+
+    .question-card {
+        border-radius: 15px;
+    }
+
+
+    .question-image {
+        min-height: 190px;
+
+        max-height: 260px;
+    }
+
+
+    .question-image img {
+        height: 190px;
+
+        max-height: 260px;
+    }
+
+
+    .image-placeholder {
+        min-height: 190px;
+
+        font-size: 1.55rem;
+    }
+
+
+    .question-content {
+        padding: 18px 14px 17px;
+    }
+
+
+    .question-text,
+    .question-content h2 {
+        font-size: .91rem;
+
+        line-height: 1.4;
+    }
+
+
+    .question-instruction {
+        font-size: .65rem;
 
         margin-bottom: 13px;
     }
 
 
-    .floating-nav-title {
+    .choices {
+        gap: 8px;
+    }
+
+
+    .choice-button {
+        min-height: 51px;
+
+        padding: 10px;
+
         gap: 8px;
 
-        font-size: .84rem;
+        border-radius: 10px;
+
+        font-size: .65rem;
     }
 
 
-    .floating-nav-title i {
-        font-size: 15px;
+    .choice-letter {
+        width: 28px;
+
+        height: 28px;
+
+        border-radius: 7px;
+
+        font-size: .67rem;
     }
 
 
-    .floating-nav-close {
-        width: 33px;
-        height: 33px;
-
-        font-size: 14px;
+    .answer-feedback.show {
+        padding: 11px;
     }
 
 
-    .floating-nav-item {
+    .feedback-icon {
+        width: 27px;
+
+        height: 27px;
+    }
+
+
+    .answer-feedback strong {
+        font-size: .7rem;
+    }
+
+
+    .answer-feedback p {
+        font-size: .61rem;
+    }
+
+
+    .next-button {
+        min-height: 45px;
+
+        font-size: .66rem;
+    }
+
+
+    /* ======================================================
+       RESULT
+    ====================================================== */
+
+    .result-screen {
+        padding: 70px 13px 40px;
+    }
+
+
+    .result-card {
+        padding: 35px 17px 25px;
+
+        border-radius: 17px;
+    }
+
+
+    .result-icon {
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 1.5rem;
+    }
+
+
+    .result-card h1 {
+        font-size: 1.75rem;
+    }
+
+
+    .result-card > p {
+        font-size: .68rem;
+    }
+
+
+    .score-box {
+        padding: 17px 13px;
+    }
+
+
+    .score-box strong {
+        font-size: 2rem;
+    }
+
+
+    .result-button {
         min-height: 43px;
 
-        padding: 11px 12px;
-
-        gap: 10px;
-
-        font-size: .78rem;
+        font-size: .66rem;
     }
 
 
-    .floating-nav-item i {
-        width: 19px;
+    /* ======================================================
+       NAME MODAL
+    ====================================================== */
 
-        font-size: 13px;
-    }
-
-}
-
-
-/* ==========================================================
-   ULTRA SMALL PHONES
-   Prevents the side navigation from becoming too narrow
-========================================================== */
-
-@media (max-width: 320px) {
-
-    .floating-nav {
-        width: 92vw;
-
-        min-width: 0;
-
-        padding: 17px 10px;
+    .name-entry-modal {
+        padding: 13px;
     }
 
 
-    .floating-nav-title {
-        font-size: .8rem;
+    .name-entry-box {
+        padding: 24px 17px 21px;
+
+        border-radius: 16px;
     }
 
 
-    .floating-nav-item {
-        padding: 10px 10px;
+    .name-entry-icon {
+        width: 47px;
 
-        font-size: .75rem;
+        height: 47px;
+
+        font-size: 1rem;
     }
 
 
-    .floating-nav-item i {
-        width: 18px;
+    .name-entry-box h2 {
+        font-size: 1.3rem;
+    }
+
+
+    .name-entry-box p {
+        font-size: .67rem;
+    }
+
+
+    .name-input-wrapper input {
+        height: 42px;
+
+        font-size: .69rem;
+    }
+
+
+    .name-entry-button {
+        height: 42px;
+
+        font-size: .67rem;
     }
 
 }
