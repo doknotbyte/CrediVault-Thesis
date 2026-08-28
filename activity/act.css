@@ -1318,66 +1318,7 @@ body {
 }
 
 
-/* ==========================================================
-   MODAL — SMALL SCREENS
-========================================================== */
 
-@media (max-width: 576px) {
-
-    .name-entry-modal {
-
-        padding: 18px;
-
-    }
-
-
-    .name-entry-box {
-
-        max-width: 100%;
-
-        padding: 29px 22px 25px;
-
-        border-radius: 19px;
-
-    }
-
-
-    .name-entry-icon {
-
-        width: 52px;
-
-        height: 52px;
-
-        margin-bottom: 15px;
-
-        font-size: 1.15rem;
-
-    }
-
-
-    .name-entry-box h2 {
-
-        font-size: 1.45rem;
-
-    }
-
-
-    .name-entry-box p {
-
-        font-size: .74rem;
-
-        margin-bottom: 19px;
-
-    }
-
-
-    .name-entry-button {
-
-        height: 44px;
-
-    }
-
-}
 
 /* ==========================================================
    TOPIC GRID
@@ -2746,11 +2687,12 @@ body {
 
 .floating-nav-item.active i {
     color: #3bddff;
+
 }
 
 
 /* ==========================================================
-   RESPONSIVE — TABLET
+   TABLET / SMALL LAPTOP
 ========================================================== */
 
 @media (max-width: 768px) {
@@ -2762,25 +2704,91 @@ body {
         width: 45px;
         height: 45px;
 
-        border-radius: 12px;
+        font-size: 18px;
     }
 
+
     .floating-nav {
-        width: 270px;
+        width: min(300px, 82vw);
+
+        padding: 22px 16px;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+    .floating-nav-header {
+        padding: 5px 4px 20px;
+
+        margin-bottom: 16px;
+
+        gap: 10px;
+    }
+
+
+    .floating-nav-title {
+        min-width: 0;
+
+        font-size: .95rem;
+    }
+
+
+    .floating-nav-title i {
+        flex-shrink: 0;
+
+        font-size: 17px;
+    }
+
+
+    .floating-nav-close {
+        width: 36px;
+        height: 36px;
+
+        flex-shrink: 0;
+
+        font-size: 16px;
+    }
+
+
+    .floating-nav-links {
+        gap: 6px;
+    }
+
+
+    .floating-nav-item {
+        padding: 13px 14px;
+
+        gap: 12px;
+
+        font-size: .84rem;
+
+        white-space: normal;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    .floating-nav-item i {
+        width: 21px;
+
+        flex-shrink: 0;
+
+        font-size: 15px;
     }
 
 }
 
 
 /* ==========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
 ========================================================== */
 
 @media (max-width: 576px) {
 
     .floating-menu-btn {
-        top: 15px;
-        left: 15px;
+        top: 14px;
+        left: 14px;
 
         width: 43px;
         height: 43px;
@@ -2790,17 +2798,83 @@ body {
         font-size: 17px;
     }
 
-    .floating-nav {
-        width: 82%;
-        max-width: 285px;
 
-        padding: 20px 15px;
+    .floating-nav {
+        width: 86vw;
+        max-width: 290px;
+        min-width: 240px;
+
+        padding: 20px 14px;
+
+        overflow-x: hidden;
     }
 
-    .floating-nav-item {
-        padding: 13px 14px;
 
-        font-size: .84rem;
+    .floating-nav-header {
+        padding: 4px 3px 18px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .floating-nav-title {
+        gap: 9px;
+
+        font-size: .9rem;
+    }
+
+
+    .floating-nav-title i {
+        font-size: 16px;
+    }
+
+
+    .floating-nav-close {
+        width: 35px;
+        height: 35px;
+
+        border-radius: 9px;
+
+        font-size: 15px;
+    }
+
+
+    .floating-nav-links {
+        gap: 6px;
+    }
+
+
+    .floating-nav-item {
+        min-height: 45px;
+
+        padding: 12px 13px;
+
+        gap: 11px;
+
+        border-radius: 11px;
+
+        font-size: .82rem;
+
+        line-height: 1.35;
+    }
+
+
+    .floating-nav-item i {
+        width: 20px;
+
+        font-size: 14px;
+    }
+
+
+    .floating-nav-item:hover {
+        transform: translateX(2px);
+    }
+
+
+    .floating-nav-item.active::before {
+        width: 3px;
+
+        height: 22px;
     }
 
 }
@@ -2812,17 +2886,105 @@ body {
 
 @media (max-width: 400px) {
 
-    .floating-nav {
-        width: 85%;
-    }
-
     .floating-menu-btn {
+        top: 12px;
+        left: 12px;
+
         width: 40px;
         height: 40px;
 
+        border-radius: 10px;
+
         font-size: 16px;
+    }
+
+
+    .floating-nav {
+        width: 88vw;
+        max-width: 275px;
+        min-width: 225px;
+
+        padding: 18px 12px;
+    }
+
+
+    .floating-nav-header {
+        padding-bottom: 16px;
+
+        margin-bottom: 13px;
+    }
+
+
+    .floating-nav-title {
+        gap: 8px;
+
+        font-size: .84rem;
+    }
+
+
+    .floating-nav-title i {
+        font-size: 15px;
+    }
+
+
+    .floating-nav-close {
+        width: 33px;
+        height: 33px;
+
+        font-size: 14px;
+    }
+
+
+    .floating-nav-item {
+        min-height: 43px;
+
+        padding: 11px 12px;
+
+        gap: 10px;
+
+        font-size: .78rem;
+    }
+
+
+    .floating-nav-item i {
+        width: 19px;
+
+        font-size: 13px;
     }
 
 }
 
 
+/* ==========================================================
+   ULTRA SMALL PHONES
+   Prevents the side navigation from becoming too narrow
+========================================================== */
+
+@media (max-width: 320px) {
+
+    .floating-nav {
+        width: 92vw;
+
+        min-width: 0;
+
+        padding: 17px 10px;
+    }
+
+
+    .floating-nav-title {
+        font-size: .8rem;
+    }
+
+
+    .floating-nav-item {
+        padding: 10px 10px;
+
+        font-size: .75rem;
+    }
+
+
+    .floating-nav-item i {
+        width: 18px;
+    }
+
+}

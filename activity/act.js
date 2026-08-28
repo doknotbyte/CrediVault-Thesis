@@ -122,25 +122,57 @@ const activities = {
 
     /* ======================================================
        CROSS-CHECKING
+       TWO SUBTOPICS:
+       1. Source & Evidence Verification
+       2. Social Validation & Verification Effort
     ====================================================== */
 
     cross: [
 
+        /* ==================================================
+           SOURCE & EVIDENCE VERIFICATION
+        ================================================== */
+
         {
             question:
-                "What is the best way to cross-check information found online?",
+                "You see a trending claim with only a headline and no visible source. What should you do first to verify the information?",
 
             choices: [
-                "Believe the first result that appears in a search.",
-                "Check the information against multiple reliable sources.",
-                "Trust the post with the most likes and comments.",
-                "Share the information first and verify it later."
+                "Check the number of likes and shares.",
+                "Find the original source of the claim.",
+                "Read the comments to see what people think.",
+                "Take a screenshot and share it with others."
             ],
 
             answer: 1,
 
             explanation:
-                "Cross-checking means comparing information with multiple reliable and independent sources before accepting or sharing it.",
+                "The best first step is to find the original source of the claim. Checking the source allows you to examine where the information came from and whether there is reliable evidence supporting it.",
+
+            image:
+                null
+        },
+
+
+        /* ==================================================
+           SOCIAL VALIDATION & VERIFICATION EFFORT
+        ================================================== */
+
+        {
+            question:
+                "A post claims that drinking water can cure cancer and has 50K likes, 10K shares, and 500 comments. What should you understand about this level of engagement?",
+
+            choices: [
+                "More people will share the post.",
+                "Comments will reveal that it is false, causing engagement to drop.",
+                "News articles will cite the claim as fact.",
+                "The government will ban the post."
+            ],
+
+            answer: 1,
+
+            explanation:
+                "High engagement does not prove that information is true. Comments and further verification may reveal that a viral claim is false or unsupported, showing why popularity should not replace evidence and careful verification.",
 
             image:
                 null
@@ -816,7 +848,7 @@ function loadQuestion() {
                     <i class="fa-solid fa-image"></i>
 
                     <small>
-                        No image for this question
+                        Image placeholder
                     </small>
 
                 </span>
@@ -1530,6 +1562,7 @@ document.addEventListener(
 ========================================================== */
 
 document.addEventListener(
+    
     "DOMContentLoaded",
 
     () => {
@@ -1538,7 +1571,6 @@ document.addEventListener(
 
         updateParticipantPanel();
 
-        
 
         initializeActivityEntry();
 
