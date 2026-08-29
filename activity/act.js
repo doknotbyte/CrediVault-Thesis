@@ -129,54 +129,55 @@ const activities = {
 
     cross: [
 
-        /* ==================================================
-           SOURCE & EVIDENCE VERIFICATION
-        ================================================== */
+    /* ==================================================
+       SOURCE & EVIDENCE VERIFICATION
+    ================================================== */
 
-        {
-            question:
-                "You see a trending claim with only a headline and no visible source. What should you do first to verify the information?",
+    {
+        question:
+            "You see a health-related video making a strong claim but the creator does not provide any credible source or evidence. What should you do first to verify the claim?",
 
-            choices: [
-                "Check the number of likes and shares.",
-                "Find the original source of the claim.",
-                "Read the comments to see what people think.",
-                "Take a screenshot and share it with others."
-            ],
+        choices: [
+            "Believe the claim because the video looks professional.",
+            "Check the creator’s credibility and look for reliable sources supporting the claim.",
+            "Share the video and wait for others to confirm it.",
+            "Assume the claim is true because it has many views."
+        ],
 
-            answer: 1,
+        answer: 1,
 
-            explanation:
-                "The best first step is to find the original source of the claim. Checking the source allows you to examine where the information came from and whether there is reliable evidence supporting it.",
+        explanation:
+            "The first step is to check the creator’s credibility and look for reliable sources that support the claim. This helps determine whether the information is supported by trustworthy evidence.",
 
-            image:
-                null
-        },
+        image:
+            "images/source.jpeg"
+    },
 
 
-        /* ==================================================
-           SOCIAL VALIDATION & VERIFICATION EFFORT
-        ================================================== */
+    /* ==================================================
+       SOCIAL VALIDATION & VERIFICATION EFFORT
+    ================================================== */
 
-        {
-            question:
-                "A post claims that drinking water can cure cancer and has 50K likes, 10K shares, and 500 comments. What should you understand about this level of engagement?",
+    {
+        question:
+            "A YouTube video makes a viral claim and has over 1.2 million views. What should you understand about the number of views?",
 
-            choices: [
-                "More people will share the post.",
-                "Comments will reveal that it is false, causing engagement to drop.",
-                "News articles will cite the claim as fact.",
-                "The government will ban the post."
-            ],
+        choices: [
+            "The claim must be true because millions of people watched it.",
+            "The high number of views proves that the information came from an expert.",
+            "The views show that the video is popular, but they do not prove that the claim is accurate.",
+            "The claim is reliable because YouTube allows the video to remain online."
+        ],
 
-            answer: 1,
+        answer: 2,
 
-            explanation:
-                "High engagement does not prove that information is true. Comments and further verification may reveal that a viral claim is false or unsupported, showing why popularity should not replace evidence and careful verification.",
+        explanation:
+            "A high number of views shows that the video is popular and has reached many people, but popularity does not prove that the claim is accurate or trustworthy.",
 
-            image:
-                null
-        }
+        image:
+            "images/social.jpeg"
+    }
+    
 
     ]
 
