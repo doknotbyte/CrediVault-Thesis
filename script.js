@@ -1154,15 +1154,15 @@ if (pageLoader) {
                             pageLoader.style.display =
                                 "none";
 
-                        }, 600);
+                        }, 400);
 
 
-                    }, 400);
+                    }, 200);
 
                 }
 
 
-            }, 50);
+            }, 30);
             
 
     }
