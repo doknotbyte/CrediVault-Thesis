@@ -1581,82 +1581,15 @@ MENU
 ========================================================== */
 
 .hero-section {
-    opacity: 0;
-}
-
-.hero-section.page-enter {
-    animation: heroFadeIn .8s ease-out forwards;
+    opacity: 1;
 }
 
 .hero-content {
-    opacity: 0;
-}
-
-.hero-section.page-enter .hero-content {
-    animation: heroContentSlide .9s cubic-bezier(.22,1,.36,1) .1s forwards;
+    opacity: 1;
 }
 
 .hero-visual {
-    opacity: 0;
-}
-
-.hero-section.page-enter .hero-visual {
-    animation: heroVisualSlide .9s cubic-bezier(.22,1,.36,1) .2s forwards;
-}
-
-
-/* ==========================================================
-   FADE
-========================================================== */
-
-@keyframes heroFadeIn {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-
-}
-
-
-/* ==========================================================
-   LEFT CONTENT — SLIDE FROM LEFT
-========================================================== */
-
-@keyframes heroContentSlide {
-
-    from {
-        opacity: 0;
-        transform: translateX(-45px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-
-
-/* ==========================================================
-   RIGHT VISUAL — SLIDE FROM RIGHT
-========================================================== */
-
-@keyframes heroVisualSlide {
-
-    from {
-        opacity: 0;
-        transform: translateX(45px) scale(.96);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-    }
-
+    opacity: 1;
 }
 
 
@@ -3552,6 +3485,11 @@ MENU
 }
 
 
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
 
 
 /* ==========================================================

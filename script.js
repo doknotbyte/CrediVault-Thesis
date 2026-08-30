@@ -944,6 +944,10 @@ const loaderRing =
 
 if (pageLoader) {
 
+    /*==================================================
+        NAVIGATION TYPE
+    ==================================================*/
+
     const navigationEntry =
         performance.getEntriesByType("navigation")[0];
 
@@ -954,23 +958,26 @@ if (pageLoader) {
 
 
     /*==================================================
-        DETERMINE IF LOADER SHOULD SHOW
+        SESSION CHECK
     ==================================================*/
 
     const loaderAlreadyShown =
-        sessionStorage.getItem("crediVaultLoaderShown");
+        sessionStorage.getItem(
+            "crediVaultLoaderShown"
+        );
 
 
     /*
-     * SHOW LOADER WHEN:
+     * LOADER WILL SHOW:
      *
-     * 1. Website is opened for the first time
-     * 2. Page is manually refreshed
+     * 1. First opening of the website
+     * 2. Manual page refresh
      *
-     * DO NOT SHOW WHEN:
+     * LOADER WILL NOT SHOW:
      *
-     * 1. Moving between navigation pages
-     * 2. Using browser back/forward
+     * 1. Moving from one navigation page to another
+     * 2. Returning to Home from another page
+     * 3. Browser back / forward navigation
      */
 
     const shouldShowLoader =
@@ -979,7 +986,7 @@ if (pageLoader) {
 
 
     /*==================================================
-        IF LOADER SHOULD NOT SHOW
+        DO NOT SHOW LOADER
     ==================================================*/
 
     if (!shouldShowLoader) {
@@ -996,11 +1003,10 @@ if (pageLoader) {
     else {
 
         /*
-         * Remember that the website has already
-         * displayed the loader during this session.
+         * Save loader state immediately.
          *
          * This prevents the loader from appearing
-         * again when switching between HTML pages.
+         * again when navigating between pages.
          */
 
         sessionStorage.setItem(
@@ -1009,12 +1015,12 @@ if (pageLoader) {
         );
 
 
+        /*==================================================
+            INITIAL STATE
+        ==================================================*/
+
         let progress = 0;
 
-
-        /*==================================================
-            INITIAL STATE — 0%
-        ==================================================*/
 
         pageLoader.classList.remove(
             "loader-hidden"
@@ -1025,7 +1031,8 @@ if (pageLoader) {
 
         if (loaderPercentage) {
 
-            loaderPercentage.textContent = "0%";
+            loaderPercentage.textContent =
+                "0%";
 
         }
 
@@ -1115,9 +1122,9 @@ if (pageLoader) {
                 }
 
 
-                /*------------------------------------------
+                /*==================================================
                     LOADING COMPLETE
-                ------------------------------------------*/
+                ==================================================*/
 
                 if (progress >= 100) {
 
@@ -1138,8 +1145,8 @@ if (pageLoader) {
 
 
                         /*
-                         * Remove loader completely
-                         * after fade-out.
+                         * Completely remove loader
+                         * after fade-out animation.
                          */
 
                         setTimeout(() => {
