@@ -1620,13 +1620,47 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
 @media (max-width: 768px) {
 
+    /* ======================================================
+       GLOBAL MOBILE RESET
+    ====================================================== */
+
     html,
     body {
         width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       MAIN CONTENT — IMPORTANT
+    ====================================================== */
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+
+        width: 100%;
+        max-width: 100vw;
 
         overflow-x: hidden;
 
-        position: relative;
+        box-sizing: border-box;
+    }
+
+    .main-content > * {
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
     }
 
 
@@ -1635,6 +1669,10 @@ SHIFT MAIN CONTENT TO THE RIGHT
     ====================================================== */
 
     .mobile-menu-btn {
+        display: flex;
+
+        position: fixed;
+
         top: 50%;
         left: 0;
 
@@ -1644,16 +1682,19 @@ SHIFT MAIN CONTENT TO THE RIGHT
         padding: 0;
 
         justify-content: center;
+        align-items: center;
 
         border: none;
-
         border-radius: 0 8px 8px 0;
 
         background: #38bdf8;
 
         color: transparent;
-
         font-size: 0;
+
+        cursor: pointer;
+
+        z-index: 2000;
 
         box-shadow:
             0 0 16px rgba(56,189,248,.25);
@@ -1663,7 +1704,6 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
     .mobile-menu-btn:hover {
         width: 12px;
-
         background: #38bdf8;
     }
 
@@ -1686,7 +1726,6 @@ SHIFT MAIN CONTENT TO THE RIGHT
         background: rgba(10,15,25,.94);
 
         border-right: 1px solid rgba(255,255,255,.10);
-
         border-radius: 0;
 
         transition: left .3s ease;
@@ -1694,6 +1733,8 @@ SHIFT MAIN CONTENT TO THE RIGHT
         overflow-y: auto;
 
         z-index: 1500;
+
+        box-sizing: border-box;
     }
 
     .quick-nav.open,
@@ -1719,13 +1760,11 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
     .quick-nav a:hover::before {
         background: #38bdf8;
-
         width: 1px;
     }
 
     .quick-nav a.active::before {
         background: #38bdf8;
-
         width: 1px;
     }
 
@@ -1736,18 +1775,24 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
     .ai-header {
         width: 92%;
-
         max-width: 100%;
 
         margin: 30px auto 24px;
 
         padding: 0;
+
+        position: relative;
+        left: 0;
+
+        box-sizing: border-box;
     }
 
     .page-title {
         width: 100%;
 
         margin-top: 0;
+
+        box-sizing: border-box;
     }
 
     .page-tag {
@@ -1766,14 +1811,19 @@ SHIFT MAIN CONTENT TO THE RIGHT
         letter-spacing: -.4px;
 
         margin-bottom: 12px;
+
+        overflow-wrap: break-word;
     }
 
     .page-title p {
+        width: 100%;
         max-width: 100%;
 
         font-size: .88rem;
 
         line-height: 1.6;
+
+        overflow-wrap: break-word;
     }
 
 
@@ -1783,12 +1833,16 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
     .progress-section {
         width: 92%;
-
         max-width: 100%;
 
         margin: 0 auto 22px;
 
         padding: 16px 18px;
+
+        position: relative;
+        left: 0;
+
+        box-sizing: border-box;
     }
 
     .progress-info {
@@ -1802,41 +1856,54 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
     .content-card {
         width: 92%;
-
         max-width: 100%;
 
         margin: 0 auto 20px;
 
         padding: 22px;
 
+        display: flex;
         flex-direction: column;
 
         gap: 18px;
 
         border-radius: 18px;
+
+        position: relative;
+        left: 0;
+
+        box-sizing: border-box;
     }
 
     .section-number {
         width: 58px;
         height: 58px;
+
+        flex-shrink: 0;
     }
 
     .section-content {
         width: 100%;
-
+        max-width: 100%;
         min-width: 0;
+
+        box-sizing: border-box;
     }
 
     .section-content h2 {
         font-size: 1.4rem;
 
         line-height: 1.3;
+
+        overflow-wrap: break-word;
     }
 
     .section-content p {
         font-size: .86rem;
 
         line-height: 1.65;
+
+        overflow-wrap: break-word;
     }
 
 
@@ -1847,19 +1914,25 @@ SHIFT MAIN CONTENT TO THE RIGHT
     .concern-grid,
     .tips-grid,
     .tool-grid {
+        width: 100%;
+        max-width: 100%;
+
         grid-template-columns: 1fr;
 
-        width: 100%;
-
         gap: 12px;
+
+        box-sizing: border-box;
     }
 
     .concern-card,
     .tip-card,
     .tool-card {
         width: 100%;
+        max-width: 100%;
 
         padding: 18px;
+
+        box-sizing: border-box;
     }
 
 
@@ -1869,7 +1942,6 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
     .activity-card {
         width: 92%;
-
         max-width: 100%;
 
         margin: 0 auto 20px;
@@ -1877,15 +1949,26 @@ SHIFT MAIN CONTENT TO THE RIGHT
         padding: 22px;
 
         border-radius: 18px;
+
+        position: relative;
+        left: 0;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
     }
 
     .activity-title {
+        width: 100%;
+        max-width: 100%;
+
         margin-bottom: 18px;
+
+        box-sizing: border-box;
     }
 
     .activity-label {
         font-size: .70rem;
-
         margin-bottom: 8px;
     }
 
@@ -1895,14 +1978,19 @@ SHIFT MAIN CONTENT TO THE RIGHT
         line-height: 1.3;
 
         margin-bottom: 9px;
+
+        overflow-wrap: break-word;
     }
 
     .activity-title p {
+        width: 100%;
         max-width: 100%;
 
         font-size: .86rem;
 
         line-height: 1.65;
+
+        overflow-wrap: break-word;
     }
 
 
@@ -1912,17 +2000,25 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
     .social-post {
         width: 100%;
+        max-width: 100%;
 
         min-height: 0;
 
         padding: 10px;
 
+        margin: 0;
+
         border-radius: 14px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
     }
 
     .social-post img {
-        width: 100%;
+        display: block;
 
+        width: 100%;
         max-width: 100%;
 
         height: auto;
@@ -1932,6 +2028,8 @@ SHIFT MAIN CONTENT TO THE RIGHT
         object-fit: contain;
 
         border-radius: 9px;
+
+        box-sizing: border-box;
     }
 
 
@@ -1940,15 +2038,25 @@ SHIFT MAIN CONTENT TO THE RIGHT
     ====================================================== */
 
     .verification-section {
+        width: 100%;
+        max-width: 100%;
+
         margin-top: 18px;
+
+        box-sizing: border-box;
     }
 
     .verification-heading {
+        width: 100%;
+        max-width: 100%;
+
         gap: 9px;
 
         margin-bottom: 11px;
 
         padding-bottom: 9px;
+
+        box-sizing: border-box;
     }
 
     .verification-heading-icon {
@@ -1958,28 +2066,52 @@ SHIFT MAIN CONTENT TO THE RIGHT
         flex: 0 0 34px;
     }
 
+    .verification-heading-text {
+        min-width: 0;
+        width: 100%;
+    }
+
     .verification-heading h3 {
         font-size: .82rem;
+
+        overflow-wrap: break-word;
     }
 
     .verification-heading p {
         font-size: .63rem;
 
         line-height: 1.5;
+
+        overflow-wrap: break-word;
     }
 
+
+    /* ======================================================
+       VERIFICATION OPTIONS
+    ====================================================== */
+
     .verification-options {
+        width: 100%;
+        max-width: 100%;
+
         grid-template-columns: 1fr;
 
         gap: 9px;
+
+        box-sizing: border-box;
     }
 
     .verification-option {
+        width: 100%;
+        max-width: 100%;
+
         min-height: 68px;
 
         padding: 11px;
 
         gap: 9px;
+
+        box-sizing: border-box;
     }
 
     .option-icon {
@@ -1989,12 +2121,21 @@ SHIFT MAIN CONTENT TO THE RIGHT
         flex: 0 0 31px;
     }
 
+    .option-content {
+        min-width: 0;
+        flex: 1;
+    }
+
     .option-content strong {
         font-size: .69rem;
+
+        overflow-wrap: break-word;
     }
 
     .option-content small {
         font-size: .59rem;
+
+        overflow-wrap: break-word;
     }
 
     .option-check {
@@ -2010,7 +2151,12 @@ SHIFT MAIN CONTENT TO THE RIGHT
     ====================================================== */
 
     .verification-actions {
+        width: 100%;
+        max-width: 100%;
+
         gap: 8px;
+
+        box-sizing: border-box;
     }
 
     .check-answers-btn {
@@ -2019,6 +2165,8 @@ SHIFT MAIN CONTENT TO THE RIGHT
         padding: 10px 13px;
 
         font-size: .70rem;
+
+        box-sizing: border-box;
     }
 
     .reset-answers-btn {
@@ -2027,6 +2175,8 @@ SHIFT MAIN CONTENT TO THE RIGHT
         padding: 10px 12px;
 
         font-size: .66rem;
+
+        box-sizing: border-box;
     }
 
 
@@ -2036,7 +2186,6 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
     .feedback-box {
         width: 100%;
-
         max-width: 100%;
 
         margin-top: 16px;
@@ -2044,6 +2193,10 @@ SHIFT MAIN CONTENT TO THE RIGHT
         padding: 13px;
 
         gap: 9px;
+
+        box-sizing: border-box;
+
+        overflow-wrap: break-word;
     }
 
     .feedback-icon {
@@ -2054,9 +2207,13 @@ SHIFT MAIN CONTENT TO THE RIGHT
     }
 
     .feedback-text {
+        min-width: 0;
+
         font-size: .67rem;
 
         line-height: 1.55;
+
+        overflow-wrap: break-word;
     }
 
 
@@ -2066,25 +2223,26 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
     .reference-box {
         width: 100%;
-
         max-width: 100%;
 
         padding: 12px 14px;
 
         gap: 10px;
 
-        overflow-wrap: anywhere;
+        box-sizing: border-box;
 
+        overflow-wrap: anywhere;
         word-break: break-word;
     }
 
     .reference-box span {
+        min-width: 0;
+
         font-size: .76rem;
 
         line-height: 1.55;
 
         overflow-wrap: anywhere;
-
         word-break: break-word;
     }
 
@@ -2095,7 +2253,6 @@ SHIFT MAIN CONTENT TO THE RIGHT
 
     .lesson-navigation {
         width: 92%;
-
         max-width: 100%;
 
         margin: 25px auto 45px;
@@ -2103,6 +2260,11 @@ SHIFT MAIN CONTENT TO THE RIGHT
         padding: 0;
 
         gap: 10px;
+
+        position: relative;
+        left: 0;
+
+        box-sizing: border-box;
     }
 
     .back-btn,
@@ -2110,7 +2272,25 @@ SHIFT MAIN CONTENT TO THE RIGHT
         padding: 10px 14px;
 
         font-size: .70rem;
+
+        box-sizing: border-box;
     }
+
+
+    /* ======================================================
+       REMOVE DESKTOP SHIFT ON MOBILE
+    ====================================================== */
+
+    .ai-header,
+    .progress-section,
+    .content-card,
+    .activity-card,
+    .lesson-navigation {
+        position: relative;
+        left: 0;
+        right: auto;
+    }
+
 }
 
 
