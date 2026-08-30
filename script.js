@@ -928,7 +928,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    /*==================================================
+/*==================================================
     CREDIVAULT PAGE LOADER
 ==================================================*/
 
@@ -942,30 +942,117 @@ const loaderRing =
     document.querySelector(".loader-ring-fill");
 
 
-if (pageLoader) {
+/*==================================================
+    CHECK HOW THE PAGE WAS OPENED
+==================================================*/
+
+/*
+ * Navigation type:
+ *
+ * reload  = browser refresh
+ * navigate = clicking a link / opening another page
+ * back_forward = browser back/forward
+ *
+ * Loader should appear when:
+ * 1. The page is opened directly
+ * 2. The page is refreshed
+ *
+ * Loader should NOT appear when navigating
+ * between pages of CrediVault.
+ */
+
+let navigationType = "navigate";
+
+if (performance.getEntriesByType) {
+
+    const navigationEntries =
+        performance.getEntriesByType("navigation");
+
+    if (
+        navigationEntries.length > 0
+    ) {
+
+        navigationType =
+            navigationEntries[0].type;
+
+    }
+
+}
+
+
+/*==================================================
+    DETERMINE IF LOADER SHOULD SHOW
+==================================================*/
+
+/*
+ * sessionStorage remembers that the user has
+ * already entered the website during this tab session.
+ */
+
+const hasVisited =
+    sessionStorage.getItem(
+        "crediVaultVisited"
+    );
+
+
+/*
+ * Show loader when:
+ *
+ * - This is the first page visit in this tab
+ * OR
+ * - The browser page was refreshed
+ *
+ * Otherwise skip loader.
+ */
+
+const shouldShowLoader =
+    !hasVisited ||
+    navigationType === "reload";
+
+
+/*==================================================
+    PAGE LOADER
+==================================================*/
+
+if (
+    pageLoader &&
+    shouldShowLoader
+) {
 
     let progress = 0;
+
+
+    /*==================================================
+        MARK WEBSITE AS VISITED
+    ==================================================*/
+
+    sessionStorage.setItem(
+        "crediVaultVisited",
+        "true"
+    );
 
 
     /*==================================================
         INITIAL STATE — 0%
     ==================================================*/
 
-    pageLoader.classList.remove("loader-hidden");
+    pageLoader.classList.remove(
+        "loader-hidden"
+    );
+
 
     if (loaderPercentage) {
 
-        loaderPercentage.textContent = "0%";
+        loaderPercentage.textContent =
+            "0%";
 
     }
 
 
-    /*
-     * SVG circle circumference
-     *
-     * radius = 45
-     * circumference = 2 × π × 45 ≈ 282.74
-     */
+    /*==================================================
+        SVG CIRCLE CIRCUMFERENCE
+    ==================================================*/
+
     const circumference = 282.74;
 
 
@@ -984,96 +1071,175 @@ if (pageLoader) {
         LOADING COUNTER
     ==================================================*/
 
-    const loadingInterval = setInterval(() => {
-
-        /*
-         * Increase percentage
-         */
-        if (progress < 70) {
-
-            progress += 2;
-
-        } else if (progress < 90) {
-
-            progress += 1;
-
-        } else if (progress < 100) {
-
-            progress += 1;
-
-        }
+    const loadingInterval =
+        setInterval(() => {
 
 
-        if (progress > 100) {
+            /*------------------------------------------
+                INCREASE PROGRESS
+            ------------------------------------------*/
 
-            progress = 100;
+            if (progress < 70) {
 
-        }
+                progress += 2;
 
+            }
 
-        /*----------------------------------------------
-            UPDATE NUMBER
-        ----------------------------------------------*/
+            else if (progress < 90) {
 
-        if (loaderPercentage) {
+                progress += 1;
 
-            loaderPercentage.textContent =
-                progress + "%";
+            }
 
-        }
+            else if (progress < 100) {
 
+                progress += 1;
 
-        /*----------------------------------------------
-            UPDATE RING
-        ----------------------------------------------*/
-
-        if (loaderRing) {
-
-            const offset =
-                circumference -
-                (progress / 100) * circumference;
-
-            loaderRing.style.strokeDashoffset =
-                offset;
-
-        }
+            }
 
 
-        /*----------------------------------------------
-            FINISHED
-        ----------------------------------------------*/
+            if (progress > 100) {
 
-        if (progress >= 100) {
+                progress = 100;
 
-            clearInterval(loadingInterval);
+            }
 
 
-            /*
-             * Keep 100% visible briefly
-             */
-            setTimeout(() => {
+            /*------------------------------------------
+                UPDATE PERCENTAGE
+            ------------------------------------------*/
 
-                pageLoader.classList.add(
-                    "loader-hidden"
+            if (loaderPercentage) {
+
+                loaderPercentage.textContent =
+                    progress + "%";
+
+            }
+
+
+            /*------------------------------------------
+                UPDATE RING
+            ------------------------------------------*/
+
+            if (loaderRing) {
+
+                const offset =
+                    circumference -
+                    (progress / 100) *
+                    circumference;
+
+                loaderRing.style.strokeDashoffset =
+                    offset;
+
+            }
+
+
+            /*------------------------------------------
+                FINISHED
+            ------------------------------------------*/
+
+            if (progress >= 100) {
+
+                clearInterval(
+                    loadingInterval
                 );
 
 
                 /*
-                 * Remove from screen after
-                 * fade-out animation.
+                 * Keep 100% visible briefly.
                  */
+
                 setTimeout(() => {
 
-                    pageLoader.style.display =
-                        "none";
 
-                }, 600);
+                    /*----------------------------------
+                        FADE OUT LOADER
+                    ----------------------------------*/
 
-            }, 400);
+                    pageLoader.classList.add(
+                        "loader-hidden"
+                    );
 
-        }
 
-    }, 50);
+                    /*
+                     * Wait for loader fade-out.
+                     */
+
+                    setTimeout(() => {
+
+
+                        /*------------------------------
+                            REMOVE LOADER
+                        ------------------------------*/
+
+                        pageLoader.style.display =
+                            "none";
+
+
+                        /*------------------------------
+                            HOME ENTRANCE
+                        ------------------------------*/
+
+                        const heroSection =
+                            document.querySelector(
+                                ".hero-section"
+                            );
+
+
+                        if (heroSection) {
+
+                            heroSection.classList.add(
+                                "page-enter"
+                            );
+
+                        }
+
+                    }, 600);
+
+                }, 400);
+
+            }
+
+        }, 50);
+
+}
+
+
+/*==================================================
+    SKIP LOADER
+    INTERNAL PAGE NAVIGATION
+==================================================*/
+
+/*
+ * If the user is moving between CrediVault pages
+ * and the loader should not appear, hide it immediately.
+ */
+
+else if (pageLoader) {
+
+    pageLoader.style.display =
+        "none";
+
+
+    /*----------------------------------------------
+        SHOW HOME PAGE IMMEDIATELY
+    ----------------------------------------------*/
+
+    const heroSection =
+        document.querySelector(
+            ".hero-section"
+        );
+
+
+    if (heroSection) {
+
+        heroSection.style.opacity =
+            "1";
+
+        heroSection.style.transform =
+            "none";
+
+    }
 
 }
 
