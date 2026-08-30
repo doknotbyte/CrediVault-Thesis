@@ -942,302 +942,221 @@ const loaderRing =
     document.querySelector(".loader-ring-fill");
 
 
-/*==================================================
-    CHECK HOW THE PAGE WAS OPENED
-==================================================*/
+if (pageLoader) {
 
-/*
- * Navigation type:
- *
- * reload  = browser refresh
- * navigate = clicking a link / opening another page
- * back_forward = browser back/forward
- *
- * Loader should appear when:
- * 1. The page is opened directly
- * 2. The page is refreshed
- *
- * Loader should NOT appear when navigating
- * between pages of CrediVault.
- */
+    const navigationEntry =
+        performance.getEntriesByType("navigation")[0];
 
-let navigationType = "navigate";
-
-if (performance.getEntriesByType) {
-
-    const navigationEntries =
-        performance.getEntriesByType("navigation");
-
-    if (
-        navigationEntries.length > 0
-    ) {
-
-        navigationType =
-            navigationEntries[0].type;
-
-    }
-
-}
-
-
-/*==================================================
-    DETERMINE IF LOADER SHOULD SHOW
-==================================================*/
-
-/*
- * sessionStorage remembers that the user has
- * already entered the website during this tab session.
- */
-
-const hasVisited =
-    sessionStorage.getItem(
-        "crediVaultVisited"
-    );
-
-
-/*
- * Show loader when:
- *
- * - This is the first page visit in this tab
- * OR
- * - The browser page was refreshed
- *
- * Otherwise skip loader.
- */
-
-const shouldShowLoader =
-    !hasVisited ||
-    navigationType === "reload";
-
-
-/*==================================================
-    PAGE LOADER
-==================================================*/
-
-if (
-    pageLoader &&
-    shouldShowLoader
-) {
-
-    let progress = 0;
+    const navigationType =
+        navigationEntry
+            ? navigationEntry.type
+            : "navigate";
 
 
     /*==================================================
-        MARK WEBSITE AS VISITED
+        DETERMINE IF LOADER SHOULD SHOW
     ==================================================*/
 
-    sessionStorage.setItem(
-        "crediVaultVisited",
-        "true"
-    );
+    const loaderAlreadyShown =
+        sessionStorage.getItem("crediVaultLoaderShown");
+
+
+    /*
+     * SHOW LOADER WHEN:
+     *
+     * 1. Website is opened for the first time
+     * 2. Page is manually refreshed
+     *
+     * DO NOT SHOW WHEN:
+     *
+     * 1. Moving between navigation pages
+     * 2. Using browser back/forward
+     */
+
+    const shouldShowLoader =
+        !loaderAlreadyShown ||
+        navigationType === "reload";
 
 
     /*==================================================
-        INITIAL STATE — 0%
+        IF LOADER SHOULD NOT SHOW
     ==================================================*/
 
-    pageLoader.classList.remove(
-        "loader-hidden"
-    );
+    if (!shouldShowLoader) {
 
-
-    if (loaderPercentage) {
-
-        loaderPercentage.textContent =
-            "0%";
+        pageLoader.style.display = "none";
 
     }
 
 
     /*==================================================
-        SVG CIRCLE CIRCUMFERENCE
+        SHOW LOADER
     ==================================================*/
 
-    const circumference = 282.74;
+    else {
+
+        /*
+         * Remember that the website has already
+         * displayed the loader during this session.
+         *
+         * This prevents the loader from appearing
+         * again when switching between HTML pages.
+         */
+
+        sessionStorage.setItem(
+            "crediVaultLoaderShown",
+            "true"
+        );
 
 
-    if (loaderRing) {
-
-        loaderRing.style.strokeDasharray =
-            circumference;
-
-        loaderRing.style.strokeDashoffset =
-            circumference;
-
-    }
+        let progress = 0;
 
 
-    /*==================================================
-        LOADING COUNTER
-    ==================================================*/
+        /*==================================================
+            INITIAL STATE — 0%
+        ==================================================*/
 
-    const loadingInterval =
-        setInterval(() => {
+        pageLoader.classList.remove(
+            "loader-hidden"
+        );
 
-
-            /*------------------------------------------
-                INCREASE PROGRESS
-            ------------------------------------------*/
-
-            if (progress < 70) {
-
-                progress += 2;
-
-            }
-
-            else if (progress < 90) {
-
-                progress += 1;
-
-            }
-
-            else if (progress < 100) {
-
-                progress += 1;
-
-            }
+        pageLoader.style.display = "flex";
 
 
-            if (progress > 100) {
+        if (loaderPercentage) {
 
-                progress = 100;
+            loaderPercentage.textContent = "0%";
 
-            }
-
-
-            /*------------------------------------------
-                UPDATE PERCENTAGE
-            ------------------------------------------*/
-
-            if (loaderPercentage) {
-
-                loaderPercentage.textContent =
-                    progress + "%";
-
-            }
+        }
 
 
-            /*------------------------------------------
-                UPDATE RING
-            ------------------------------------------*/
+        /*==================================================
+            SVG CIRCLE
+        ==================================================*/
 
-            if (loaderRing) {
-
-                const offset =
-                    circumference -
-                    (progress / 100) *
-                    circumference;
-
-                loaderRing.style.strokeDashoffset =
-                    offset;
-
-            }
+        const circumference = 282.74;
 
 
-            /*------------------------------------------
-                FINISHED
-            ------------------------------------------*/
+        if (loaderRing) {
 
-            if (progress >= 100) {
+            loaderRing.style.strokeDasharray =
+                circumference;
 
-                clearInterval(
-                    loadingInterval
-                );
+            loaderRing.style.strokeDashoffset =
+                circumference;
 
-
-                /*
-                 * Keep 100% visible briefly.
-                 */
-
-                setTimeout(() => {
+        }
 
 
-                    /*----------------------------------
-                        FADE OUT LOADER
-                    ----------------------------------*/
+        /*==================================================
+            LOADING COUNTER
+        ==================================================*/
 
-                    pageLoader.classList.add(
-                        "loader-hidden"
+        const loadingInterval =
+            setInterval(() => {
+
+
+                /*------------------------------------------
+                    PROGRESS SPEED
+                ------------------------------------------*/
+
+                if (progress < 70) {
+
+                    progress += 2;
+
+                }
+
+                else if (progress < 90) {
+
+                    progress += 1;
+
+                }
+
+                else if (progress < 100) {
+
+                    progress += 1;
+
+                }
+
+
+                if (progress > 100) {
+
+                    progress = 100;
+
+                }
+
+
+                /*------------------------------------------
+                    UPDATE PERCENTAGE
+                ------------------------------------------*/
+
+                if (loaderPercentage) {
+
+                    loaderPercentage.textContent =
+                        progress + "%";
+
+                }
+
+
+                /*------------------------------------------
+                    UPDATE RING
+                ------------------------------------------*/
+
+                if (loaderRing) {
+
+                    const offset =
+                        circumference -
+                        (progress / 100) *
+                        circumference;
+
+                    loaderRing.style.strokeDashoffset =
+                        offset;
+
+                }
+
+
+                /*------------------------------------------
+                    LOADING COMPLETE
+                ------------------------------------------*/
+
+                if (progress >= 100) {
+
+                    clearInterval(
+                        loadingInterval
                     );
 
 
                     /*
-                     * Wait for loader fade-out.
+                     * Keep 100% visible briefly
                      */
 
                     setTimeout(() => {
 
-
-                        /*------------------------------
-                            REMOVE LOADER
-                        ------------------------------*/
-
-                        pageLoader.style.display =
-                            "none";
+                        pageLoader.classList.add(
+                            "loader-hidden"
+                        );
 
 
-                        /*------------------------------
-                            HOME ENTRANCE
-                        ------------------------------*/
+                        /*
+                         * Remove loader completely
+                         * after fade-out.
+                         */
 
-                        const heroSection =
-                            document.querySelector(
-                                ".hero-section"
-                            );
+                        setTimeout(() => {
 
+                            pageLoader.style.display =
+                                "none";
 
-                        if (heroSection) {
-
-                            heroSection.classList.add(
-                                "page-enter"
-                            );
-
-                        }
-
-                    }, 600);
-
-                }, 400);
-
-            }
-
-        }, 50);
-
-}
+                        }, 600);
 
 
-/*==================================================
-    SKIP LOADER
-    INTERNAL PAGE NAVIGATION
-==================================================*/
+                    }, 400);
 
-/*
- * If the user is moving between CrediVault pages
- * and the loader should not appear, hide it immediately.
- */
-
-else if (pageLoader) {
-
-    pageLoader.style.display =
-        "none";
+                }
 
 
-    /*----------------------------------------------
-        SHOW HOME PAGE IMMEDIATELY
-    ----------------------------------------------*/
-
-    const heroSection =
-        document.querySelector(
-            ".hero-section"
-        );
-
-
-    if (heroSection) {
-
-        heroSection.style.opacity =
-            "1";
-
-        heroSection.style.transform =
-            "none";
+            }, 50);
+            
 
     }
 
