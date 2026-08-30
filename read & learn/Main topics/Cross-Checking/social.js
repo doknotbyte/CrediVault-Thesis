@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function () {
             progress.style.transition =
                 "width 1.2s ease";
 
-            progress.style.width = "50%";
+            progress.style.width = "100%";
 
         }, 300);
 
