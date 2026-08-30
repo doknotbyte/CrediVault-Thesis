@@ -8,7 +8,7 @@
 
     <title>Social Validation | CrediVault</title>
 
-    <link rel="stylesheet" href="source.css">
+    <link rel="stylesheet" href="social.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
@@ -260,78 +260,372 @@ CONCERNS
 
 
 <!-- ==========================================================
-INTERACTIVE ACTIVITY
+     INTERACTIVE CHALLENGE
 ========================================================== -->
 
 <section class="activity-card" id="interactive">
 
+    <!-- ======================================================
+         ACTIVITY HEADER
+    ======================================================= -->
+
     <div class="activity-title">
 
-        <span>
+        <span class="activity-label">
             Interactive Challenge
         </span>
 
         <h2>
-            Which Post Needs Verification?
+            How Would You Verify This Post?
         </h2>
 
         <p>
-            Instructions: Click the post that should be verified
-            before being trusted or shared. Immediate feedback will
-            appear after selecting your answer.
+            Examine the social media post below. Select the
+            verification steps you would take before believing
+            or sharing the information.
         </p>
 
     </div>
 
 
-    <div class="image-game">
+    <!-- ======================================================
+         SOCIAL MEDIA POST
+    ======================================================= -->
 
-        <!-- NEEDS VERIFICATION -->
+    <div class="social-post">
 
-        <div class="image-option"
-             data-answer="correct">
+        <img
+            src="images/social.jpg"
+            alt="Social media post claiming that NASA found five planets"
+        >
 
-            <img
-                src="images/social-verify.jpg"
-                alt="Social media post that needs verification">
+    </div>
 
-            <div class="image-overlay">
-                Click to Select
+
+    <!-- ======================================================
+         VERIFICATION SECTION
+    ======================================================= -->
+
+    <div class="verification-section">
+
+        <!-- ==================================================
+             VERIFICATION HEADING
+        =================================================== -->
+
+        <div class="verification-heading">
+
+            <div class="verification-heading-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="verification-heading-text">
+
+                <h3>
+                    Examine the Post
+                </h3>
+
+                <p>
+                    Select all the verification steps you would
+                    take before trusting or sharing this post.
+                </p>
+
             </div>
 
         </div>
 
 
-        <!-- DOES NOT REPRESENT THE TARGET -->
+        <!-- ==================================================
+             VERIFICATION OPTIONS
+        =================================================== -->
 
-        <div class="image-option"
-             data-answer="wrong">
+        <div
+            class="verification-options"
+            id="verificationOptions"
+        >
 
-            <img
-                src="images/social-verified.jpg"
-                alt="Social media post with verification information">
+            <!-- OPTION 1 -->
 
-            <div class="image-overlay">
-                Click to Select
-            </div>
+            <button
+                type="button"
+                class="verification-option"
+                data-answer="correct"
+                aria-pressed="false"
+            >
+
+                <span class="option-icon">
+                    <i class="fa-solid fa-link"></i>
+                </span>
+
+                <span class="option-content">
+
+                    <strong>
+                        Check the Original Source
+                    </strong>
+
+                    <small>
+                        Find where the claim originally came from.
+                    </small>
+
+                </span>
+
+                <span
+                    class="option-check"
+                    aria-hidden="true"
+                >
+                    <i class="fa-solid fa-check"></i>
+                </span>
+
+            </button>
+
+
+            <!-- OPTION 2 -->
+
+            <button
+                type="button"
+                class="verification-option"
+                data-answer="correct"
+                aria-pressed="false"
+            >
+
+                <span class="option-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </span>
+
+                <span class="option-content">
+
+                    <strong>
+                        Search for the Claim Online
+                    </strong>
+
+                    <small>
+                        Compare the claim with information from
+                        credible sources.
+                    </small>
+
+                </span>
+
+                <span
+                    class="option-check"
+                    aria-hidden="true"
+                >
+                    <i class="fa-solid fa-check"></i>
+                </span>
+
+            </button>
+
+
+            <!-- OPTION 3 -->
+
+            <button
+                type="button"
+                class="verification-option"
+                data-answer="correct"
+                aria-pressed="false"
+            >
+
+                <span class="option-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                </span>
+
+                <span class="option-content">
+
+                    <strong>
+                        Check Whether NASA Published It
+                    </strong>
+
+                    <small>
+                        Verify whether the organization mentioned
+                        actually supports the claim.
+                    </small>
+
+                </span>
+
+                <span
+                    class="option-check"
+                    aria-hidden="true"
+                >
+                    <i class="fa-solid fa-check"></i>
+                </span>
+
+            </button>
+
+
+            <!-- OPTION 4 -->
+
+            <button
+                type="button"
+                class="verification-option"
+                data-answer="correct"
+                aria-pressed="false"
+            >
+
+                <span class="option-icon">
+                    <i class="fa-solid fa-image"></i>
+                </span>
+
+                <span class="option-content">
+
+                    <strong>
+                        Examine the Image
+                    </strong>
+
+                    <small>
+                        Check where the image came from and whether
+                        it matches the claim being presented.
+                    </small>
+
+                </span>
+
+                <span
+                    class="option-check"
+                    aria-hidden="true"
+                >
+                    <i class="fa-solid fa-check"></i>
+                </span>
+
+            </button>
+
+
+            <!-- OPTION 5 -->
+
+            <button
+                type="button"
+                class="verification-option"
+                data-answer="correct"
+                aria-pressed="false"
+            >
+
+                <span class="option-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </span>
+
+                <span class="option-content">
+
+                    <strong>
+                        Check the Date and Context
+                    </strong>
+
+                    <small>
+                        Make sure the post is current and has not
+                        been taken out of context.
+                    </small>
+
+                </span>
+
+                <span
+                    class="option-check"
+                    aria-hidden="true"
+                >
+                    <i class="fa-solid fa-check"></i>
+                </span>
+
+            </button>
+
+
+            <!-- OPTION 6 -->
+
+            <button
+                type="button"
+                class="verification-option"
+                data-answer="wrong"
+                aria-pressed="false"
+            >
+
+                <span class="option-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </span>
+
+                <span class="option-content">
+
+                    <strong>
+                        Check the Number of Likes and Shares
+                    </strong>
+
+                    <small>
+                        Use the amount of engagement to decide
+                        whether the information is accurate.
+                    </small>
+
+                </span>
+
+                <span
+                    class="option-check"
+                    aria-hidden="true"
+                >
+                    <i class="fa-solid fa-check"></i>
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- ==================================================
+             ACTION AREA
+        =================================================== -->
+
+        <div class="verification-actions">
+
+            <button
+                type="button"
+                class="check-answers-btn"
+                id="checkAnswersBtn"
+            >
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <span>
+                    Check My Answers
+                </span>
+
+            </button>
+
+            <button
+                type="button"
+                class="reset-answers-btn"
+                id="resetAnswersBtn"
+            >
+
+                <i class="fa-solid fa-rotate-left"></i>
+
+                <span>
+                    Reset
+                </span>
+
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- FEEDBACK -->
+    <!-- ======================================================
+         FEEDBACK
+    ======================================================= -->
 
-    <div class="feedback-box" id="feedbackBox">
+    <div
+        class="feedback-box"
+        id="feedbackBox"
+        aria-live="polite"
+    >
 
         <div class="feedback-icon">
 
-            <i class="fa-solid fa-circle-info"></i>
+            <i
+                class="fa-solid fa-circle-info"
+                id="feedbackIcon"
+            ></i>
 
         </div>
 
-        <div class="feedback-text">
-            Feedback will appear here.
+        <div
+            class="feedback-text"
+            id="feedbackText"
+        >
+
+            Select the verification steps you would take,
+            then click <strong>Check My Answers</strong>.
+
         </div>
 
     </div>
