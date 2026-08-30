@@ -657,43 +657,7 @@ a {
 }
 
 
-/* ==========================================================
-   IMAGE PLACEHOLDER
-========================================================== */
 
-.source-image {
-    width: 100%;
-
-    margin-top: 20px;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-    background:
-        rgba(255,255,255,.04);
-
-    min-height: 260px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-}
-
-.source-image img {
-    width: 100%;
-
-    height: auto;
-
-    display: block;
-
-    object-fit: cover;
-}
 
 /* ==========================================================
    INTERACTIVE ACTIVITY
@@ -713,102 +677,297 @@ a {
     backdrop-filter: blur(16px);
 }
 
+
 .activity-title {
-    margin-bottom: 30px;
+    text-align: center;
+
+    margin-bottom: 22px;
 }
 
-.activity-title span {
+.activity-label {
     display: inline-block;
+
     color: #38bdf8;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+
+    font-size: .75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
     margin-bottom: 10px;
+
+    text-transform: uppercase;
 }
 
 .activity-title h2 {
     color: #fff;
-    font-size: 28px;
+
+    font-size: 1.7rem;
+
+    line-height: 1.3;
+
     margin-bottom: 10px;
 }
 
 .activity-title p {
-    color: #9caec8;
+    max-width: 650px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: .9rem;
+
     line-height: 1.7;
 }
 
-/* IMAGE CHALLENGE */
+
+/* ==========================================================
+   IMAGE GAME — THREE SOURCES
+========================================================== */
 
 .image-game {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+
+    /* 3 SOURCES = 3 COLUMNS */
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+
+    width: 100%;
 }
+
+
+/* ==========================================================
+   SOURCE OPTION
+========================================================== */
 
 .image-option {
     position: relative;
-    overflow: hidden;
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,.08);
-    cursor: pointer;
-    background: rgba(255,255,255,.04);
-    transition: .3s ease;
-}
 
-.image-option img {
-    display: block;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+    min-width: 0;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,.04);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
 }
 
 .image-option:hover {
     transform: translateY(-4px);
+
     border-color: rgba(56,189,248,.5);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.20);
 }
 
-.image-overlay {
+
+/* ==========================================================
+   SOURCE IMAGE — PORTRAIT
+========================================================== */
+
+.image-option img {
+    display: block;
+
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: contain;
+
+    object-position: center;
+}
+
+
+/* ==========================================================
+   SOURCE LETTER
+========================================================== */
+
+.source-label {
     position: absolute;
-    inset: auto 0 0 0;
-    padding: 14px;
-    text-align: center;
-    background: linear-gradient(
-        transparent,
-        rgba(8,17,31,.9)
-    );
-    color: #fff;
-    font-weight: 700;
+
+    top: 10px;
+    left: 10px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #38bdf8;
+
+    color: #062033;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    z-index: 3;
 }
 
-/* FEEDBACK */
+
+/* ==========================================================
+   FEEDBACK
+========================================================== */
 
 .feedback-box {
     display: flex;
+
     align-items: center;
+
     gap: 16px;
-    margin-top: 24px;
-    padding: 20px;
+
+    margin-top: 20px;
+
+    padding: 16px;
+
     border-radius: 16px;
+
     background: rgba(37,99,235,.10);
+
     border: 1px solid rgba(56,189,248,.18);
+
+    color: #dbeafe;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        color .25s ease;
+}
+
+
+/* ==========================================================
+   CORRECT FEEDBACK — BLUE
+========================================================== */
+
+.feedback-box.correct-feedback {
+    background: rgba(37,99,235,.10);
+
+    border-color: rgba(56,189,248,.35);
+
     color: #dbeafe;
 }
+
+.feedback-box.correct-feedback .feedback-icon {
+    background: rgba(56,189,248,.15);
+
+    color: #38bdf8;
+}
+
+
+/* ==========================================================
+   INCORRECT / NOT BEST — RED
+========================================================== */
+
+.feedback-box.incorrect-feedback {
+    background: rgba(239,68,68,.10);
+
+    border-color: rgba(239,68,68,.35);
+
+    color: #fee2e2;
+}
+
+.feedback-box.incorrect-feedback .feedback-icon {
+    background: rgba(239,68,68,.15);
+
+    color: #ef4444;
+}
+
+
+/* ==========================================================
+   FEEDBACK ICON
+========================================================== */
 
 .feedback-icon {
     width: 42px;
     height: 42px;
+
     flex-shrink: 0;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     border-radius: 12px;
+
     background: rgba(56,189,248,.12);
+
     color: #38bdf8;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
 }
+
+
+/* ==========================================================
+   FEEDBACK TEXT
+========================================================== */
 
 .feedback-text {
     line-height: 1.6;
+
+    min-width: 0;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .activity-card {
+        width: 92%;
+
+        padding: 18px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-game {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .image-option {
+        width: 100%;
+    }
+
+    .image-option img {
+        height: auto;
+
+        max-height: none;
+
+        object-fit: contain;
+    }
+
+    .image-overlay {
+        display: none;
+    }
+
+    .feedback-box {
+        padding: 14px;
+    }
 }
 
 
@@ -1461,7 +1620,7 @@ a {
 
         margin: 0 auto 20px;
 
-        padding: 22px;
+        padding: 20px;
 
         border-radius: 18px;
 
@@ -1474,17 +1633,41 @@ a {
         overflow: hidden;
     }
 
+
+    /* ======================================================
+       ACTIVITY TITLE
+    ====================================================== */
+
     .activity-title {
         width: 100%;
         max-width: 100%;
 
+        text-align: center;
+
+        margin-bottom: 20px;
+
         box-sizing: border-box;
     }
 
+    .activity-label {
+        display: inline-block;
+
+        font-size: .68rem;
+
+        margin-bottom: 8px;
+
+        letter-spacing: .8px;
+    }
+
     .activity-title h2 {
-        font-size: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 1.35rem;
 
         line-height: 1.3;
+
+        margin-bottom: 9px;
 
         overflow-wrap: break-word;
     }
@@ -1493,12 +1676,135 @@ a {
         width: 100%;
         max-width: 100%;
 
-        font-size: .86rem;
+        margin: 0 auto;
 
-        line-height: 1.65;
+        font-size: .80rem;
+
+        line-height: 1.6;
 
         overflow-wrap: break-word;
     }
+
+
+    /* ======================================================
+       IMAGE GAME — THREE SOURCES
+    ====================================================== */
+
+    .image-game {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       SOURCE OPTION
+    ====================================================== */
+
+    .image-option {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        border-radius: 12px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       SOURCE IMAGE — PORTRAIT
+    ====================================================== */
+
+    .image-option img {
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+
+        height: 300px;
+
+        object-fit: contain;
+        object-position: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       SOURCE LETTER
+    ====================================================== */
+
+    .source-label {
+        top: 7px;
+        left: 7px;
+
+        width: 26px;
+        height: 26px;
+
+        font-size: 11px;
+    }
+
+
+    /* ======================================================
+       FEEDBACK
+    ====================================================== */
+
+    .feedback-box {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        margin-top: 16px;
+
+        padding: 12px;
+
+        border-radius: 13px;
+
+        box-sizing: border-box;
+
+        overflow-wrap: break-word;
+    }
+
+    .feedback-icon {
+        width: 32px;
+        height: 32px;
+
+        flex: 0 0 32px;
+
+        border-radius: 9px;
+
+        font-size: .85rem;
+    }
+
+    .feedback-text {
+        min-width: 0;
+        width: 100%;
+
+        font-size: .70rem;
+
+        line-height: 1.5;
+
+        overflow-wrap: break-word;
+    }
+
+    .feedback-text strong {
+        font-size: .78rem;
+    }
+
 
 
     /* ======================================================
@@ -1553,7 +1859,7 @@ a {
     .content-card,
     .activity-card,
     .lesson-navigation {
-        
+
         position: relative;
 
         left: 0;

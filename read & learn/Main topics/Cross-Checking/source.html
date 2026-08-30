@@ -262,14 +262,15 @@ CONCERNS
 
 
 <!-- ==========================================================
-INTERACTIVE ACTIVITY
+     INTERACTIVE ACTIVITY
 ========================================================== -->
 
 <section class="activity-card" id="interactive">
 
+    <!-- ACTIVITY TITLE -->
     <div class="activity-title">
 
-        <span>
+        <span class="activity-label">
             Interactive Challenge
         </span>
 
@@ -278,63 +279,70 @@ INTERACTIVE ACTIVITY
         </h2>
 
         <p>
-            Instructions: Click one source. After selecting, immediate
-            feedback will appear explaining why your answer is correct
-            or incorrect.
+            Instructions: Click the source you should check first.
+            After selecting, immediate feedback will appear explaining
+            why your answer is correct or incorrect.
         </p>
 
     </div>
 
 
+    <!-- ======================================================
+         SOURCE OPTIONS
+    ======================================================= -->
+
     <div class="image-game">
 
-        <!-- SOURCE OPTION 1 -->
+        <!-- SOURCE 1 — VIRAL POST -->
 
         <div class="image-option"
-            data-answer="correct">
+             data-answer="wrong">
 
-            <div class="image-placeholder">
-
-                <i class="fa-solid fa-image"></i>
-
-                <span>
-                    SOURCE IMAGE 1
-                </span>
-
+            <div class="source-label">
+                A
             </div>
 
-            <div class="image-overlay">
-                Click to Select
-            </div>
+            <img src="images/source1.jpg"
+                 alt="Viral social media post">
 
         </div>
 
 
-        <!-- SOURCE OPTION 2 -->
+        <!-- SOURCE 2 — NEWS ARTICLE -->
 
         <div class="image-option"
-            data-answer="wrong">
+             data-answer="wrong">
 
-            <div class="image-placeholder">
-
-                <i class="fa-solid fa-image"></i>
-
-                <span>
-                    SOURCE IMAGE 2
-                </span>
-
+            <div class="source-label">
+                B
             </div>
 
-            <div class="image-overlay">
-                Click to Select
+            <img src="images/source2.jpg"
+                 alt="News article screenshot">
+
+        </div>
+
+
+        <!-- SOURCE 3 — OFFICIAL SOURCE -->
+
+        <div class="image-option"
+             data-answer="correct">
+
+            <div class="source-label">
+                C
             </div>
+
+            <img src="images/source3.jpg"
+                 alt="Official source screenshot">
 
         </div>
 
     </div>
 
 
-    <!-- FEEDBACK -->
+    <!-- ======================================================
+         FEEDBACK
+    ======================================================= -->
 
     <div class="feedback-box" id="feedbackBox">
 

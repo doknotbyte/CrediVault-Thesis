@@ -928,4 +928,153 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    /*==================================================
+    CREDIVAULT PAGE LOADER
+==================================================*/
+
+const pageLoader =
+    document.getElementById("pageLoader");
+
+const loaderPercentage =
+    document.getElementById("loaderPercentage");
+
+const loaderRing =
+    document.querySelector(".loader-ring-fill");
+
+
+if (pageLoader) {
+
+    let progress = 0;
+
+
+    /*==================================================
+        INITIAL STATE — 0%
+    ==================================================*/
+
+    pageLoader.classList.remove("loader-hidden");
+
+    if (loaderPercentage) {
+
+        loaderPercentage.textContent = "0%";
+
+    }
+
+
+    /*
+     * SVG circle circumference
+     *
+     * radius = 45
+     * circumference = 2 × π × 45 ≈ 282.74
+     */
+    const circumference = 282.74;
+
+
+    if (loaderRing) {
+
+        loaderRing.style.strokeDasharray =
+            circumference;
+
+        loaderRing.style.strokeDashoffset =
+            circumference;
+
+    }
+
+
+    /*==================================================
+        LOADING COUNTER
+    ==================================================*/
+
+    const loadingInterval = setInterval(() => {
+
+        /*
+         * Increase percentage
+         */
+        if (progress < 70) {
+
+            progress += 2;
+
+        } else if (progress < 90) {
+
+            progress += 1;
+
+        } else if (progress < 100) {
+
+            progress += 1;
+
+        }
+
+
+        if (progress > 100) {
+
+            progress = 100;
+
+        }
+
+
+        /*----------------------------------------------
+            UPDATE NUMBER
+        ----------------------------------------------*/
+
+        if (loaderPercentage) {
+
+            loaderPercentage.textContent =
+                progress + "%";
+
+        }
+
+
+        /*----------------------------------------------
+            UPDATE RING
+        ----------------------------------------------*/
+
+        if (loaderRing) {
+
+            const offset =
+                circumference -
+                (progress / 100) * circumference;
+
+            loaderRing.style.strokeDashoffset =
+                offset;
+
+        }
+
+
+        /*----------------------------------------------
+            FINISHED
+        ----------------------------------------------*/
+
+        if (progress >= 100) {
+
+            clearInterval(loadingInterval);
+
+
+            /*
+             * Keep 100% visible briefly
+             */
+            setTimeout(() => {
+
+                pageLoader.classList.add(
+                    "loader-hidden"
+                );
+
+
+                /*
+                 * Remove from screen after
+                 * fade-out animation.
+                 */
+                setTimeout(() => {
+
+                    pageLoader.style.display =
+                        "none";
+
+                }, 600);
+
+            }, 400);
+
+        }
+
+    }, 50);
+
+}
+
 });
