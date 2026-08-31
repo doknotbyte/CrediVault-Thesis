@@ -4506,33 +4506,40 @@ MENU
 
     }
 
-    .topic-grid {
+    /* ======================================================
+   TOPIC GRID — TABLET
+====================================================== */
 
-        width: 94%;
+.topic-grid {
+    width: 94%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+.topic-card {
+    width: 100%;
+    height: 315px;
+    min-height: 0;
+}
 
-        gap: 15px;
+.topic-visual {
+    height: 155px;
+}
 
-    }
+.topic-content {
+    padding: 14px 15px 16px;
+}
 
-    .topic-card {
+.topic-content h3 {
+    font-size: .88rem;
+    line-height: 1.3;
+    margin-bottom: 6px;
+}
 
-        height: 340px;
-
-    }
-
-    .topic-visual {
-
-        height: 175px;
-
-    }
-
-    .topic-content {
-
-        padding: 16px 17px 18px;
-
-    }
+.topic-content p {
+    font-size: .68rem;
+    line-height: 1.5;
+}
 
 
     /* ======================================================
@@ -5214,32 +5221,36 @@ MENU
     }
 
     .topic-grid {
-        width: 100%;
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
 
-    .topic-card {
-        width: 100%;
-        height: auto;
-        min-height: 350px;
-    }
+.topic-card {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    border-radius: 14px;
+    overflow: hidden;
+}
 
-    .topic-visual {
-        height: 185px;
-    }
+.topic-visual {
+    height: 125px;
+}
 
-    .topic-content {
-        padding: 17px 18px 20px;
-    }
+.topic-content {
+    padding: 13px 13px 15px;
+}
 
-    .topic-content h3 {
-        font-size: .94rem;
-    }
+.topic-content h3 {
+    font-size: .82rem;
+    line-height: 1.25;
+    margin-bottom: 6px;
+}
 
-    .topic-content p {
-        font-size: .73rem;
-    }
+.topic-content p {
+    font-size: .64rem;
+    line-height: 1.5;
 }
 
 
@@ -5918,7 +5929,7 @@ MENU
 
     }
 
-}
+
 
 
 /* ==========================================================
@@ -6158,42 +6169,33 @@ MENU
     }
 
     .topic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
 
-        gap: 13px;
+.topic-card {
+    min-height: 0;
+    border-radius: 13px;
+}
 
-    }
+.topic-visual {
+    height: 105px;
+}
 
-    .topic-card {
+.topic-content {
+    padding: 11px 11px 13px;
+}
 
-        min-height: 325px;
+.topic-content h3 {
+    font-size: .74rem;
+    line-height: 1.25;
+    margin-bottom: 5px;
+}
 
-        border-radius: 17px;
-
-    }
-
-    .topic-visual {
-
-        height: 165px;
-
-    }
-
-    .topic-content {
-
-        padding: 14px 15px 17px;
-
-    }
-
-    .topic-content h3 {
-
-        font-size: .86rem;
-
-    }
-
-    .topic-content p {
-
-        font-size: .65rem;
-
-    }
+.topic-content p {
+    font-size: .59rem;
+    line-height: 1.45;
+}
 
     .topic-core {
 
@@ -6670,4 +6672,4 @@ MENU
 }
 
 
-
+}
