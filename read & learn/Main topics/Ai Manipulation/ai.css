@@ -1508,12 +1508,16 @@ RESPONSIVE — SMALL PHONE (480px and below)
     }
 .video-embed {
     margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    width: 100%;
 }
 
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 12px;
