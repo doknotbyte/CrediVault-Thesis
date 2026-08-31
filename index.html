@@ -622,6 +622,300 @@
 </section>
 
 
+<!-- ==========================================================
+     CREDIBOT
+========================================================== -->
+
+<section class="credibot-section" id="credibot">
+
+    <div class="credibot-container">
+
+        <!-- ==================================================
+             CREDIBOT HEADER
+        =================================================== -->
+
+        <div class="credibot-header">
+
+            <div class="credibot-icon">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <div class="credibot-heading">
+
+                <span class="credibot-label">
+                    DIGITAL LITERACY ASSISTANT
+                </span>
+
+                <h2>
+                    Meet CrediBot
+                </h2>
+
+                <p>
+                    Have a question about online information? Choose a question below and let CrediBot help you understand it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             CHAT AREA
+        =================================================== -->
+
+        <div class="credibot-chat">
+
+            <!-- BOT INTRODUCTION -->
+
+            <div class="credibot-message bot-message">
+
+                <div class="message-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div class="message-content">
+
+                    <span class="message-name">
+                        CrediBot
+                    </span>
+
+                    <p>
+                        Hi! I'm CrediBot. Select a question
+                        below or type one of the supported
+                        questions in the box.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 COMMON QUESTIONS
+            =================================================== -->
+
+            <div class="credibot-questions">
+
+                <div class="questions-heading">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    <span>
+                        Common Questions
+                    </span>
+
+                </div>
+
+
+                <div class="question-list">
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What should I do before sharing a post?"
+    >
+        What should I do before sharing a post?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="How can I tell if information is credible?"
+    >
+        How can I tell if information is credible?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Why should I check the original source?"
+    >
+        Why should I check the original source?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Why should I compare information from different sources?"
+    >
+        Why should I compare information from different sources?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Can I trust a post because it has many likes and shares?"
+    >
+        Can I trust a post because it has many likes and shares?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Does a viral post mean that the information is true?"
+    >
+        Does a viral post mean that the information is true?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="How can I identify clickbait?"
+    >
+        How can I identify clickbait?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What is misinformation?"
+    >
+        What is misinformation?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What is AI-generated content?"
+    >
+        What is AI-generated content?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Can AI-generated images look real?"
+    >
+        Can AI-generated images look real?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="How can I verify a claim I see online?"
+    >
+        How can I verify a claim I see online?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What makes a source reliable?"
+    >
+        What makes a source reliable?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Why shouldn't I believe information just because it looks professional?"
+    >
+        Why shouldn't I believe information just because it looks professional?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What does Stop, Check, and Verify mean?"
+    >
+        What does Stop, Check, and Verify mean?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What is the difference between a fact and an opinion?"
+    >
+        What is the difference between a fact and an opinion?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Why is it important to check the date of a post?"
+    >
+        Why is it important to check the date of a post?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What should I do if I cannot find evidence supporting a claim?"
+    >
+        What should I do if I cannot find evidence supporting a claim?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Why can misinformation spread quickly on social media?"
+    >
+        Why can misinformation spread quickly on social media?
+    </button>
+
+</div>
+
+
+            <!-- ==================================================
+                 USER INPUT
+            =================================================== -->
+
+            <div class="credibot-input-area">
+
+                <div class="credibot-input-wrapper">
+
+                    <i class="fa-solid fa-message"></i>
+
+                    <input
+                        type="text"
+                        id="credibotInput"
+                        class="credibot-input"
+                        placeholder="Type a supported question..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="credibotSend"
+                    class="credibot-send"
+                >
+
+                    <span>
+                        Send
+                    </span>
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- ==================================================
+                 RESPONSE AREA
+            =================================================== -->
+
+            <div
+                class="credibot-response"
+                id="credibotResponse"
+                aria-live="polite"
+            >
+
+                <!-- JavaScript will insert the selected
+                     question and CrediBot's answer here. -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- ========================================= -->
 <!-- CHECK BEFORE YOU SHARE -->
 <!-- ========================================= -->

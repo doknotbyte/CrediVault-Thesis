@@ -1,6 +1,25 @@
 /* ==========================================================
    ACTIVITY JAVASCRIPT
+   SUPABASE DATABASE INTEGRATION
 ========================================================== */
+
+
+/* ==========================================================
+   SUPABASE CONNECTION
+========================================================== */
+
+const SUPABASE_URL =
+    "https://tetluvszrzwzpgkibxjt.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_952Ywf1o9aNmRF3_n7Pg_w_JsJCLuq3";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
 
 
 /* ==========================================================
@@ -11,9 +30,6 @@ const activities = {
 
     /* ======================================================
        AI-MANIPULATION IDENTIFICATION
-       TWO CONTENT AREAS:
-       1. Digital Manipulation
-       2. AI-Generated Misinformation
     ====================================================== */
 
     ai: [
@@ -122,62 +138,50 @@ const activities = {
 
     /* ======================================================
        CROSS-CHECKING
-       TWO SUBTOPICS:
-       1. Source & Evidence Verification
-       2. Social Validation & Verification Effort
     ====================================================== */
 
     cross: [
 
-    /* ==================================================
-       SOURCE & EVIDENCE VERIFICATION
-    ================================================== */
+        {
+            question:
+                "You see a health-related video making a strong claim but the creator does not provide any credible source or evidence. What should you do first to verify the claim?",
 
-    {
-        question:
-            "You see a health-related video making a strong claim but the creator does not provide any credible source or evidence. What should you do first to verify the claim?",
+            choices: [
+                "Believe the claim because the video looks professional.",
+                "Check the creator’s credibility and look for reliable sources supporting the claim.",
+                "Share the video and wait for others to confirm it.",
+                "Assume the claim is true because it has many views."
+            ],
 
-        choices: [
-            "Believe the claim because the video looks professional.",
-            "Check the creator’s credibility and look for reliable sources supporting the claim.",
-            "Share the video and wait for others to confirm it.",
-            "Assume the claim is true because it has many views."
-        ],
+            answer: 1,
 
-        answer: 1,
+            explanation:
+                "The first step is to check the creator’s credibility and look for reliable sources that support the claim. This helps determine whether the information is supported by trustworthy evidence.",
 
-        explanation:
-            "The first step is to check the creator’s credibility and look for reliable sources that support the claim. This helps determine whether the information is supported by trustworthy evidence.",
-
-        image:
-            "images/source.jpeg"
-    },
+            image:
+                "images/source.jpeg"
+        },
 
 
-    /* ==================================================
-       SOCIAL VALIDATION & VERIFICATION EFFORT
-    ================================================== */
+        {
+            question:
+                "A YouTube video makes a viral claim and has over 1.2 million views. What should you understand about the number of views?",
 
-    {
-        question:
-            "A YouTube video makes a viral claim and has over 1.2 million views. What should you understand about the number of views?",
+            choices: [
+                "The claim must be true because millions of people watched it.",
+                "The high number of views proves that the information came from an expert.",
+                "The views show that the video is popular, but they do not prove that the claim is accurate.",
+                "The claim is reliable because YouTube allows the video to remain online."
+            ],
 
-        choices: [
-            "The claim must be true because millions of people watched it.",
-            "The high number of views proves that the information came from an expert.",
-            "The views show that the video is popular, but they do not prove that the claim is accurate.",
-            "The claim is reliable because YouTube allows the video to remain online."
-        ],
+            answer: 2,
 
-        answer: 2,
+            explanation:
+                "A high number of views shows that the video is popular and has reached many people, but popularity does not prove that the claim is accurate or trustworthy.",
 
-        explanation:
-            "A high number of views shows that the video is popular and has reached many people, but popularity does not prove that the claim is accurate or trustworthy.",
-
-        image:
-            "images/social.jpeg"
-    }
-    
+            image:
+                "images/social.jpeg"
+        }
 
     ]
 
@@ -214,6 +218,11 @@ let score = 0;
 let answered = false;
 
 let participantName = "";
+
+/*
+   Prevents double submission of the name modal.
+*/
+let isEnteringActivity = false;
 
 
 /* ==========================================================
@@ -295,19 +304,136 @@ const questionImage =
 
 
 /* ==========================================================
-   SESSION PARTICIPANTS
+   SESSION / DATABASE PARTICIPANTS
 ========================================================== */
 
-/*
-    SESSION ONLY
-
-    - No localStorage
-    - Resets after refresh
-    - Unlimited participant entries
-    - Only names actually entered are displayed
-*/
-
 let participants = [];
+
+
+/* ==========================================================
+   SAVE PARTICIPANT TO SUPABASE
+========================================================== */
+
+async function saveParticipant(
+    name,
+    activity
+) {
+
+    if (!name) {
+
+        return false;
+
+    }
+
+
+    try {
+
+        const {
+            data,
+            error
+        } = await supabaseClient
+            .from("activity_participants")
+            .insert([
+                {
+                    name: name,
+                    activity: activity
+                }
+            ])
+            .select()
+            .single();
+
+
+        if (error) {
+
+            console.error(
+                "Supabase participant insert error:",
+                error
+            );
+
+            return false;
+
+        }
+
+
+        console.log(
+            "Participant successfully saved:",
+            data
+        );
+
+
+        return true;
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Unexpected Supabase error:",
+            error
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+/* ==========================================================
+   LOAD PARTICIPANTS FROM SUPABASE
+========================================================== */
+
+async function loadParticipants() {
+
+    try {
+
+        const {
+            data,
+            error
+        } = await supabaseClient
+            .from("activity_participants")
+            .select(
+                "id, name, activity, joined_at"
+            )
+            .order(
+                "joined_at",
+                {
+                    ascending: false
+                }
+            );
+
+
+        if (error) {
+
+            console.error(
+                "Supabase participant load error:",
+                error
+            );
+
+            return;
+
+        }
+
+
+        participants =
+            data || [];
+
+
+        updateParticipantPanel();
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Unexpected participant loading error:",
+            error
+        );
+
+    }
+
+}
 
 
 /* ==========================================================
@@ -317,7 +443,9 @@ let participants = [];
 function createNameModal() {
 
     if (
-        document.getElementById("nameEntryModal")
+        document.getElementById(
+            "nameEntryModal"
+        )
     ) {
 
         return;
@@ -419,11 +547,26 @@ function createNameModal() {
 
     if (input) {
 
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            input.focus();
+                input.focus();
 
-        }, 100);
+            },
+            100
+        );
+
+
+        input.addEventListener(
+            "input",
+            () => {
+
+                input.classList.remove(
+                    "input-error"
+                );
+
+            }
+        );
 
 
         input.addEventListener(
@@ -435,6 +578,7 @@ function createNameModal() {
                 ) {
 
                     event.preventDefault();
+
 
                     enterActivity();
 
@@ -462,7 +606,19 @@ function createNameModal() {
    ENTER ACTIVITY
 ========================================================== */
 
-function enterActivity() {
+async function enterActivity() {
+
+    /*
+       IMPORTANT:
+       Stop duplicate clicks immediately.
+    */
+
+    if (isEnteringActivity) {
+
+        return;
+
+    }
+
 
     const input =
         document.getElementById(
@@ -470,12 +626,26 @@ function enterActivity() {
         );
 
 
-    if (!input) return;
+    const enterButton =
+        document.getElementById(
+            "enterActivityButton"
+        );
+
+
+    if (!input) {
+
+        return;
+
+    }
 
 
     const name =
         input.value.trim();
 
+
+    /* ======================================================
+       VALIDATE NAME
+    ====================================================== */
 
     if (!name) {
 
@@ -483,24 +653,71 @@ function enterActivity() {
             "input-error"
         );
 
+
         input.focus();
+
 
         return;
 
     }
 
 
-    input.classList.remove(
-        "input-error"
-    );
+    /*
+       LOCK THE SUBMISSION IMMEDIATELY.
+
+       This happens BEFORE any Supabase request,
+       so clicking the button multiple times will
+       not create multiple records.
+    */
+
+    isEnteringActivity =
+        true;
+
+
+    input.disabled =
+        true;
+
+
+    if (enterButton) {
+
+        enterButton.disabled =
+            true;
+
+
+        enterButton.classList.add(
+            "disabled"
+        );
+
+
+        enterButton.innerHTML = `
+
+            Entering Activity
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+        `;
+
+    }
 
 
     participantName =
         name;
 
 
-    addParticipant(name);
+    /* ======================================================
+       ADD TO LOCAL DISPLAY
+    ====================================================== */
 
+    addParticipantLocally(
+        name
+    );
+
+
+    /* ======================================================
+       HIDE MODAL IMMEDIATELY
+       
+       DO NOT WAIT FOR SUPABASE.
+    ====================================================== */
 
     const modal =
         document.getElementById(
@@ -515,27 +732,128 @@ function enterActivity() {
         );
 
 
-        setTimeout(() => {
+        /*
+           Remove it after the CSS transition.
+           The user does NOT have to wait for this.
+        */
 
-            modal.remove();
+        setTimeout(
+            () => {
 
-        }, 250);
+                if (
+                    modal &&
+                    modal.parentNode
+                ) {
+
+                    modal.remove();
+
+                }
+
+            },
+            250
+        );
 
     }
+
+
+    /* ======================================================
+       SAVE TO SUPABASE IN BACKGROUND
+       
+       The activity continues immediately.
+    ====================================================== */
+
+    saveParticipant(
+        name,
+        "Activity Started"
+    ).then(
+        success => {
+
+            if (success) {
+
+                console.log(
+                    `Participant "${name}" saved to Supabase.`
+                );
+
+            }
+
+            else {
+
+                console.error(
+                    `Participant "${name}" was not saved to Supabase.`
+                );
+
+            }
+
+        }
+    );
+
+
+    /*
+       No await here.
+
+       This prevents the Supabase connection time
+       from delaying the activity.
+    */
 
 }
 
 
 /* ==========================================================
-   ADD PARTICIPANT
+   ADD PARTICIPANT LOCALLY
 ========================================================== */
 
-function addParticipant(name) {
+function addParticipantLocally(name) {
 
-    if (!name) return;
+    if (!name) {
+
+        return;
+
+    }
 
 
-    participants.push(name);
+    /*
+       Prevent duplicate local entries
+       from the same submission.
+    */
+
+    const alreadyExists =
+        participants.some(
+            participant =>
+                participant.name === name &&
+                participant.id &&
+                String(
+                    participant.id
+                ).startsWith("local-")
+        );
+
+
+    if (alreadyExists) {
+
+        return;
+
+    }
+
+
+    participants.unshift({
+
+        id:
+            "local-" +
+            Date.now() +
+            "-" +
+            Math.random()
+                .toString(36)
+                .slice(2),
+
+        name:
+            name,
+
+        activity:
+            "Activity Started",
+
+        joined_at:
+            new Date().toISOString()
+
+    });
 
 
     updateParticipantPanel();
@@ -561,7 +879,11 @@ function updateParticipantPanel() {
         );
 
 
-    if (!list) return;
+    if (!list) {
+
+        return;
+
+    }
 
 
     if (count) {
@@ -576,7 +898,37 @@ function updateParticipantPanel() {
         participants.length === 0
     ) {
 
-        list.innerHTML = "";
+        list.innerHTML = `
+
+            <div class="participant-item">
+
+                <div class="participant-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="participant-info">
+
+                    <strong>
+
+                        No participants yet
+
+                    </strong>
+
+
+                    <span>
+
+                        Be the first to join.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        `;
 
         return;
 
@@ -585,7 +937,7 @@ function updateParticipantPanel() {
 
     list.innerHTML =
         participants.map(
-            name => `
+            participant => `
 
                 <div class="participant-item">
 
@@ -600,7 +952,9 @@ function updateParticipantPanel() {
 
                         <strong>
 
-                            ${escapeHTML(name)}
+                            ${escapeHTML(
+                                participant.name
+                            )}
 
                         </strong>
 
@@ -652,7 +1006,11 @@ function initializeActivityEntry() {
         );
 
 
-    if (!activityPage) return;
+    if (!activityPage) {
+
+        return;
+
+    }
 
 
     createNameModal();
@@ -666,18 +1024,26 @@ function initializeActivityEntry() {
 
 function showScreen(screen) {
 
-    if (!screen) return;
+    if (!screen) {
+
+        return;
+
+    }
 
 
     document
-        .querySelectorAll(".activity-screen")
-        .forEach(section => {
+        .querySelectorAll(
+            ".activity-screen"
+        )
+        .forEach(
+            section => {
 
-            section.classList.remove(
-                "active"
-            );
+                section.classList.remove(
+                    "active"
+                );
 
-        });
+            }
+        );
 
 
     screen.classList.add(
@@ -700,22 +1066,26 @@ function showScreen(screen) {
    START TOPIC
 ========================================================== */
 
-topicCards.forEach(card => {
+topicCards.forEach(
+    card => {
 
-    card.addEventListener(
-        "click",
-        () => {
+        card.addEventListener(
+            "click",
+            () => {
 
-            const topic =
-                card.dataset.topic;
+                const topic =
+                    card.dataset.topic;
 
 
-            startActivity(topic);
+                startActivity(
+                    topic
+                );
 
-        }
-    );
+            }
+        );
 
-});
+    }
+);
 
 
 /* ==========================================================
@@ -778,14 +1148,22 @@ function loadQuestion() {
         activities[currentTopic];
 
 
-    if (!questions) return;
+    if (!questions) {
+
+        return;
+
+    }
 
 
     const question =
         questions[currentQuestion];
 
 
-    if (!question) return;
+    if (!question) {
+
+        return;
+
+    }
 
 
     answered =
@@ -811,8 +1189,10 @@ function loadQuestion() {
     if (progressFill) {
 
         const progress =
-            (currentQuestion /
-                questions.length) * 100;
+            (
+                currentQuestion /
+                questions.length
+            ) * 100;
 
 
         progressFill.style.width =
@@ -832,7 +1212,9 @@ function loadQuestion() {
             questionImage.innerHTML = `
 
                 <img
-                    src="${escapeHTML(question.image)}"
+                    src="${escapeHTML(
+                        question.image
+                    )}"
                     alt="Activity question image"
                 >
 
@@ -895,6 +1277,7 @@ function loadQuestion() {
             "show"
         );
 
+
         answerFeedback.classList.remove(
             "wrong"
         );
@@ -910,6 +1293,7 @@ function loadQuestion() {
 
         nextButton.disabled =
             true;
+
 
         nextButton.classList.add(
             "disabled"
@@ -934,7 +1318,9 @@ function loadQuestion() {
     ) {
 
         questionInstruction =
-            document.createElement("p");
+            document.createElement(
+                "p"
+            );
 
 
         questionInstruction.id =
@@ -965,7 +1351,11 @@ function loadQuestion() {
        CREATE CHOICES
     ====================================================== */
 
-    if (!choicesContainer) return;
+    if (!choicesContainer) {
+
+        return;
+
+    }
 
 
     question.choices.forEach(
@@ -998,7 +1388,9 @@ function loadQuestion() {
 
                 <span>
 
-                    ${escapeHTML(choice)}
+                    ${escapeHTML(
+                        choice
+                    )}
 
                 </span>
 
@@ -1037,7 +1429,11 @@ function selectAnswer(
     selectedButton
 ) {
 
-    if (answered) return;
+    if (answered) {
+
+        return;
+
+    }
 
 
     const question =
@@ -1046,7 +1442,11 @@ function selectAnswer(
         ][currentQuestion];
 
 
-    if (!question) return;
+    if (!question) {
+
+        return;
+
+    }
 
 
     answered =
@@ -1283,14 +1683,22 @@ if (nextButton) {
 
 function finishActivity() {
 
-    if (!currentTopic) return;
+    if (!currentTopic) {
+
+        return;
+
+    }
 
 
     const questions =
         activities[currentTopic];
 
 
-    if (!questions) return;
+    if (!questions) {
+
+        return;
+
+    }
 
 
     if (finalScore) {
@@ -1563,15 +1971,20 @@ document.addEventListener(
 ========================================================== */
 
 document.addEventListener(
-
     "DOMContentLoaded",
-
     () => {
 
+        /*
+           Load existing participant records
+           from Supabase.
+        */
+
+        loadParticipants();
 
 
-        updateParticipantPanel();
-
+        /*
+           Show name-entry modal.
+        */
 
         initializeActivityEntry();
 
