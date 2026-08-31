@@ -4217,7 +4217,7 @@ MENU
         max-width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
         align-items: center;
     }
 
@@ -4345,58 +4345,78 @@ MENU
 
 
     /* ======================================================
-       HERO VISUAL — COMPACT
+       HERO VISUAL
+       
+       IMPORTANT:
+       Do NOT shrink the visual too aggressively.
+       Side badges need room on both sides.
     ====================================================== */
 
     .fact-hero-visual {
         position: relative;
         width: 100%;
-        max-width: 390px;
-        height: 235px;
-        min-height: 235px;
-        margin: -5px auto -18px;
+        max-width: 100%;
+        height: 275px;
+        min-height: 275px;
+        margin: 0 auto -12px;
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: visible;
-        transform: scale(.58);
-        transform-origin: center center;
+        transform: none;
     }
 
     .fact-scanner {
+        position: relative;
         width: 350px;
-        min-height: 370px;
-        transform: none;
+        min-height: 350px;
+        transform: scale(.72);
+        transform-origin: center center;
     }
 
 
     /* ======================================================
-       FLOATING VISUAL ELEMENTS
+       LEFT SIDE BADGE / CARD
+    ====================================================== */
+
+    .image-card {
+        left: -3px;
+    }
+
+
+    /* ======================================================
+       RIGHT SIDE BADGE / CARD
     ====================================================== */
 
     .source-card {
-        right: -8px;
-    }
-
-    .image-card {
-        left: -8px;
+        right: -3px;
     }
 
     .verified-card {
-        right: -10px;
+        right: -5px;
     }
+
+
+    /* ======================================================
+       TOP ELEMENTS
+    ====================================================== */
 
     .badge-top {
         left: 12px;
     }
 
+
+    /* ======================================================
+       QUESTION / LOWER LEFT ELEMENT
+    ====================================================== */
+
     .question-bubble {
-        left: 24px;
+        left: 20px;
     }
 
 
     /* ======================================================
-       TOOLS SECTION
+       TOOLS
     ====================================================== */
 
     .tools-section {
@@ -4435,7 +4455,7 @@ MENU
 
 
     /* ======================================================
-       TOOL GRID
+       TOOL GRID — 2 COLUMNS
     ====================================================== */
 
     .tool-grid {
@@ -4615,7 +4635,7 @@ MENU
     }
 
     .fact-hero-container {
-        gap: 6px;
+        gap: 5px;
     }
 
     .fact-hero-content h1 {
@@ -4670,11 +4690,11 @@ MENU
 
     .fact-process {
         margin-top: 20px;
-        gap: 8px;
+        gap: 7px;
     }
 
     .process-item {
-        width: 135px;
+        width: 130px;
         justify-content: flex-start;
     }
 
@@ -4684,7 +4704,7 @@ MENU
 
     .process-number {
         top: -8px;
-        left: 30px;
+        left: 29px;
     }
 
     .process-icon {
@@ -4703,47 +4723,60 @@ MENU
 
 
     /* ======================================================
-       HERO VISUAL — EXTRA COMPACT
+       HERO VISUAL — BALANCED
+       
+       Keep enough width for:
+       LEFT BADGE  |  SCANNER  |  RIGHT BADGE
     ====================================================== */
 
     .fact-hero-visual {
         width: 100%;
-        max-width: 350px;
-        height: 195px;
-        min-height: 195px;
-        margin: -10px auto -25px;
-        transform: scale(.52);
-        transform-origin: center center;
+        max-width: 100%;
+        height: 235px;
+        min-height: 235px;
+        margin: -2px auto -27px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+        transform: none;
     }
 
     .fact-scanner {
         width: 340px;
-        min-height: 350px;
+        min-height: 340px;
+        transform: scale(.62);
+        transform-origin: center center;
     }
 
 
     /* ======================================================
-       KEEP VISUAL INSIDE SCREEN
+       SIDE BADGES
     ====================================================== */
 
-    .source-card {
-        right: -5px;
+    .image-card {
+        left: 0;
     }
 
-    .image-card {
-        left: -5px;
+    .source-card {
+        right: 0;
     }
 
     .verified-card {
-        right: -7px;
+        right: -2px;
     }
 
+
+    /* ======================================================
+       OTHER FLOATING ELEMENTS
+    ====================================================== */
+
     .badge-top {
-        left: 15px;
+        left: 13px;
     }
 
     .question-bubble {
-        left: 18px;
+        left: 17px;
     }
 
 
@@ -4908,7 +4941,7 @@ MENU
     ====================================================== */
 
     .fact-hero {
-        padding: 88px 12px 15px;
+        padding: 88px 11px 12px;
     }
 
     .fact-hero-content h1 {
@@ -4932,12 +4965,13 @@ MENU
 
     .hero-actions {
         margin-top: 13px;
+        gap: 6px;
     }
 
     .hero-btn {
-        max-width: 270px;
-        min-height: 43px;
-        font-size: .66rem;
+        max-width: 265px;
+        min-height: 42px;
+        font-size: .65rem;
     }
 
 
@@ -4947,73 +4981,81 @@ MENU
 
     .fact-process {
         margin-top: 17px;
-        gap: 6px;
+        gap: 5px;
     }
 
     .process-item {
-        width: 125px;
+        width: 120px;
     }
 
     .process-item h3 {
-        font-size: .58rem;
+        font-size: .57rem;
     }
 
     .process-item p {
-        font-size: .5rem;
+        font-size: .49rem;
     }
 
     .process-icon {
-        width: 37px;
-        height: 37px;
+        width: 36px;
+        height: 36px;
         font-size: 13px;
     }
 
     .process-number {
-        left: 28px;
+        left: 27px;
     }
 
 
     /* ======================================================
-       HERO VISUAL — VERY COMPACT
+       HERO VISUAL — VERY SMALL PHONE
     ====================================================== */
 
     .fact-hero-visual {
-        max-width: 320px;
-        height: 175px;
-        min-height: 175px;
-        margin: -18px auto -32px;
-        transform: scale(.47);
-        transform-origin: center center;
+        width: 100%;
+        max-width: 100%;
+        height: 205px;
+        min-height: 205px;
+        margin: -10px auto -34px;
+        overflow: visible;
+        transform: none;
     }
 
     .fact-scanner {
         width: 330px;
-        min-height: 340px;
+        min-height: 330px;
+        transform: scale(.55);
+        transform-origin: center center;
     }
 
 
     /* ======================================================
-       FLOATING ELEMENTS
+       LEFT / RIGHT BADGES
     ====================================================== */
 
-    .source-card {
-        right: 0;
+    .image-card {
+        left: 2px;
     }
 
-    .image-card {
-        left: 0;
+    .source-card {
+        right: 2px;
     }
 
     .verified-card {
-        right: -2px;
+        right: 0;
     }
 
+
+    /* ======================================================
+       OTHER FLOATING ELEMENTS
+    ====================================================== */
+
     .badge-top {
-        left: 12px;
+        left: 10px;
     }
 
     .question-bubble {
-        left: 15px;
+        left: 14px;
     }
 
 
@@ -5022,15 +5064,15 @@ MENU
     ====================================================== */
 
     .tools-section {
-        padding: 35px 12px 45px;
+        padding: 35px 11px 45px;
     }
 
     .section-heading h2 {
-        font-size: 1.14rem;
+        font-size: 1.12rem;
     }
 
     .section-heading p {
-        font-size: .66rem;
+        font-size: .64rem;
     }
 
 
@@ -5055,7 +5097,7 @@ MENU
     ====================================================== */
 
     .how-section {
-        padding: 18px 12px 35px;
+        padding: 18px 11px 35px;
     }
 
     .how-container {
@@ -5063,11 +5105,11 @@ MENU
     }
 
     .how-heading h2 {
-        font-size: 1.1rem;
+        font-size: 1.08rem;
     }
 
     .how-heading p {
-        font-size: .65rem;
+        font-size: .63rem;
     }
 
     .how-step {
@@ -5080,11 +5122,11 @@ MENU
     ====================================================== */
 
     .reminders-section {
-        padding: 23px 12px 35px;
+        padding: 23px 11px 35px;
     }
 
     .reminders-heading h2 {
-        font-size: 1.12rem;
+        font-size: 1.1rem;
     }
 
 
@@ -5093,19 +5135,19 @@ MENU
     ====================================================== */
 
     .final-reminder {
-        padding: 0 12px 32px;
+        padding: 0 11px 32px;
     }
 
     .final-reminder-content {
-        padding: 14px 11px;
+        padding: 14px 10px;
     }
 
     .final-reminder-content strong {
-        font-size: .69rem;
+        font-size: .68rem;
     }
 
     .final-reminder-content span {
-        font-size: .62rem;
+        font-size: .61rem;
     }
 
 
