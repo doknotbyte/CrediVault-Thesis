@@ -1087,8 +1087,12 @@ MOBILE — 768px and below
 ====================================================== */
 
 .back-home-wrapper {
-    margin-top: -18px;
-    padding-right: 20px;
+    margin-top: -35px;
+    padding-right: 0;
+    padding-bottom: 15px;
+
+    display: flex;
+    justify-content: flex-end;
 }
 
 .back-home {
