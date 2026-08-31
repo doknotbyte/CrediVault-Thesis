@@ -1082,17 +1082,19 @@ MOBILE — 768px and below
         font-size: .88rem;
     }
 
-    /* BACK TO HOME */
+    /* ======================================================
+   BACK TO HOME — MOBILE
+====================================================== */
 
-    .back-home-wrapper {
-        margin-top: -5px;
-        padding-right: 15px;
-    }
+.back-home-wrapper {
+    margin-top: -18px;
+    padding-right: 20px;
+}
 
-    .back-home {
-        padding: 9px 17px;
-        font-size: .88rem;
-    }
+.back-home {
+    padding: 9px 16px;
+    font-size: .82rem;
+}
 
 }
 
