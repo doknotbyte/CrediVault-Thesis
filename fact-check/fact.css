@@ -4128,116 +4128,75 @@ MENU
    MOBILE — 700px
 ========================================================== */
 
-@media (max-width:700px){
+@media (max-width: 700px) {
 
     /* ======================================================
        NAVBAR
     ====================================================== */
 
-    .nav-container{
-
-        padding:13px 18px;
-
+    .nav-container {
+        width: 100%;
+        padding: 13px 18px;
+        box-sizing: border-box;
     }
 
-    .logo-icon{
-
-        width:38px;
-
-        height:38px;
-
-        border-radius:11px;
-
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
     }
 
-    .logo-text{
-
-        font-size:1.08rem;
-
+    .logo-text {
+        font-size: 1.08rem;
     }
 
-    .nav-actions{
-
-        margin-left:auto;
-
+    .nav-actions {
+        margin-left: auto;
     }
 
-    .menu-toggle{
-
-        display:flex;
-
+    .menu-toggle {
+        display: flex;
     }
 
-    .nav-links{
-
-        position:absolute;
-
-        top:100%;
-        left:0;
-
-        width:100%;
-
-        display:none;
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        gap:5px;
-
-        padding:
-            12px 15px;
-
-        margin:0;
-
-        background:
-            #08111f !important;
-
-        border-top:
-            1px solid rgba(255,255,255,.08);
-
-        box-shadow:
-            0 15px 35px rgba(0,0,0,.28);
-
-        z-index:999;
-
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        padding: 12px 15px;
+        margin: 0;
+        box-sizing: border-box;
+        background: #08111f !important;
+        border-top: 1px solid rgba(255,255,255,.08);
+        box-shadow: 0 15px 35px rgba(0,0,0,.28);
+        z-index: 999;
     }
 
-    .nav-links.active{
-
-        display:flex;
-
+    .nav-links.active {
+        display: flex;
     }
 
-    .nav-item{
-
-        width:100%;
-
-        display:flex;
-
-        align-items:center;
-
-        gap:10px;
-
-        padding:
-            11px 13px;
-
-        font-size:.84rem;
-
+    .nav-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 11px 13px;
+        font-size: .84rem;
+        box-sizing: border-box;
     }
 
-    .nav-item i{
-
-        width:20px;
-
-        text-align:center;
-
+    .nav-item i {
+        width: 20px;
+        text-align: center;
     }
 
-    .nav-github{
-
-        display:none;
-
+    .nav-github {
+        display: none;
     }
 
 
@@ -4245,64 +4204,60 @@ MENU
        HERO
     ====================================================== */
 
-    .fact-hero{
-
-        min-height:auto;
-
-        padding:
-            110px 18px 55px;
-
+    .fact-hero {
+        width: 100%;
+        min-height: auto;
+        padding: 95px 18px 30px;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
-    .fact-hero-container{
-
-        display:flex;
-
-        flex-direction:column;
-
-        gap:24px;
-
-        width:100%;
-
+    .fact-hero-container {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
     }
 
-    .fact-hero-content{
-
-        width:100%;
-
-        max-width:100%;
-
-        margin:0 auto;
-
+    .fact-hero-content {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        box-sizing: border-box;
     }
 
-    .fact-hero-content h1{
 
-        font-size:
-            clamp(2.45rem,9vw,3.2rem);
+    /* ======================================================
+       HERO TITLE
+    ====================================================== */
 
-        line-height:1.02;
-
-        letter-spacing:-1.8px;
-
+    .fact-hero-content h1 {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 10px;
+        font-size: clamp(2.3rem, 9vw, 3.1rem);
+        line-height: 1.02;
+        letter-spacing: -1.7px;
+        overflow-wrap: anywhere;
     }
 
-    .fact-hero-content h2{
-
-        font-size:1rem;
-
-        line-height:1.4;
-
-        margin-bottom:13px;
-
+    .fact-hero-content h2 {
+        width: 100%;
+        margin: 0 auto 11px;
+        font-size: .96rem;
+        line-height: 1.35;
     }
 
-    .hero-description{
-
-        font-size:.83rem;
-
-        line-height:1.7;
-
+    .hero-description {
+        width: 100%;
+        max-width: 560px;
+        margin: 0 auto;
+        font-size: .78rem;
+        line-height: 1.6;
+        overflow-wrap: break-word;
     }
 
 
@@ -4310,28 +4265,33 @@ MENU
        HERO BUTTONS
     ====================================================== */
 
-    .hero-actions{
-
-        width:100%;
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:10px;
-
-        margin-top:24px;
-
+    .hero-actions {
+        width: 100%;
+        margin: 18px auto 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
     }
 
-    .hero-btn{
+    .hero-btn {
+        width: 100%;
+        max-width: 300px;
+        min-height: 47px;
+        justify-content: center;
+        padding: 10px 14px;
+        font-size: .72rem;
+        box-sizing: border-box;
+    }
 
-        width:100%;
+    .btn-icon {
+        width: 34px;
+        height: 34px;
+    }
 
-        max-width:320px;
-
-        justify-content:center;
-
+    .secondary-icon {
+        width: 27px;
+        height: 27px;
     }
 
 
@@ -4339,155 +4299,121 @@ MENU
        PROCESS
     ====================================================== */
 
-    .fact-process{
-
-        width:100%;
-
-        margin-top:50px;
-
-        justify-content:center;
-
-        gap:8px;
-
-        flex-wrap:wrap;
-
+    .fact-process {
+        width: 100%;
+        margin: 25px auto 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: wrap;
+        box-sizing: border-box;
     }
 
-    .process-item{
-
-        width:105px;
-
-        justify-content:center;
-
+    .process-item {
+        width: 100px;
+        min-width: 0;
+        display: flex;
+        justify-content: center;
     }
 
-    .process-number{
-
-        left:34px;
-
+    .process-number {
+        left: 31px;
     }
 
-    .process-icon{
-
-        width:46px;
-
-        height:46px;
-
-        font-size:17px;
-
+    .process-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
     }
 
-    .process-text h3{
-
-        font-size:.66rem;
-
+    .process-text h3 {
+        font-size: .62rem;
+        line-height: 1.25;
     }
 
-    .process-text p{
-
-        font-size:.56rem;
-
+    .process-text p {
+        font-size: .53rem;
+        line-height: 1.35;
     }
 
-    .process-line{
-
-        width:18px;
-
-        margin:
-            0 3px;
-
+    .process-line {
+        width: 13px;
+        margin: 0 1px;
     }
 
 
     /* ======================================================
-       HERO VISUAL
+       HERO VISUAL — COMPACT
     ====================================================== */
 
-    .fact-hero-visual{
-
-        width:100%;
-
-        max-width:500px;
-
-        min-height:290px;
-
-        margin:
-            -5px auto -5px;
-
-        transform:scale(.66);
-
-        transform-origin:center center;
-
+    .fact-hero-visual {
+        position: relative;
+        width: 100%;
+        max-width: 390px;
+        height: 235px;
+        min-height: 235px;
+        margin: -5px auto -18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+        transform: scale(.58);
+        transform-origin: center center;
     }
 
-    .fact-scanner{
-
-        width:370px;
-
-        min-height:390px;
-
-    }
-
-
-    /* Keep floating objects inside viewport */
-
-    .source-card{
-
-        right:-10px;
-
-    }
-
-    .image-card{
-
-        left:-10px;
-
-    }
-
-    .verified-card{
-
-        right:-15px;
-
-    }
-
-    .badge-top{
-
-        left:8px;
-
-    }
-
-    .question-bubble{
-
-        left:25px;
-
+    .fact-scanner {
+        width: 350px;
+        min-height: 370px;
+        transform: none;
     }
 
 
     /* ======================================================
-       TOOLS
+       FLOATING VISUAL ELEMENTS
     ====================================================== */
 
-    .tools-section{
-
-        width:100%;
-
-        padding:
-            55px 18px 65px;
-
+    .source-card {
+        right: -8px;
     }
 
-    .section-heading h2{
-
-        font-size:1.35rem;
-
-        margin:
-            0 8px;
-
+    .image-card {
+        left: -8px;
     }
 
-    .section-heading p{
+    .verified-card {
+        right: -10px;
+    }
 
-        font-size:.78rem;
+    .badge-top {
+        left: 12px;
+    }
 
+    .question-bubble {
+        left: 24px;
+    }
+
+
+    /* ======================================================
+       TOOLS SECTION
+    ====================================================== */
+
+    .tools-section {
+        width: 100%;
+        padding: 45px 18px 55px;
+        box-sizing: border-box;
+    }
+
+    .section-heading h2 {
+        font-size: 1.3rem;
+        line-height: 1.2;
+        margin: 0 6px;
+    }
+
+    .section-heading p {
+        font-size: .74rem;
+        line-height: 1.6;
     }
 
 
@@ -4495,47 +4421,37 @@ MENU
        FILTERS
     ====================================================== */
 
-    .tool-filters{
-
-        width:100%;
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        gap:8px;
-
+    .tool-filters {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 7px;
     }
 
-    .filter-btn{
-
-        width:100%;
-
+    .filter-btn {
+        width: 100%;
+        min-height: 40px;
     }
 
 
     /* ======================================================
-       TOOLS
+       TOOL GRID
     ====================================================== */
 
-    .tool-grid{
-
-        width:100%;
-
-        grid-template-columns:1fr;
-
-        gap:15px;
-
+    .tool-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
     }
 
-    .tool-card{
-
-        width:100%;
-
-        min-height:300px;
-
-        padding:20px 16px;
-
+    .tool-card {
+        width: 100%;
+        min-width: 0;
+        min-height: 180px;
+        padding: 16px 12px;
+        box-sizing: border-box;
+        border-radius: 14px;
     }
 
 
@@ -4543,60 +4459,41 @@ MENU
        HOW TO USE
     ====================================================== */
 
-    .how-section{
-
-        width:100%;
-
-        padding:
-            25px 18px 50px;
-
+    .how-section {
+        width: 100%;
+        padding: 22px 18px 45px;
+        box-sizing: border-box;
     }
 
-    .how-container{
-
-        width:100%;
-
-        padding:
-            28px 14px;
-
-        border-radius:18px;
-
+    .how-container {
+        width: 100%;
+        padding: 25px 14px;
+        border-radius: 17px;
+        box-sizing: border-box;
     }
 
-    .how-heading h2{
-
-        font-size:1.3rem;
-
+    .how-heading h2 {
+        font-size: 1.25rem;
     }
 
-    .how-heading p{
-
-        font-size:.78rem;
-
+    .how-heading p {
+        font-size: .74rem;
+        line-height: 1.6;
     }
 
-    .how-steps{
-
-        width:100%;
-
-        flex-direction:column;
-
-        gap:25px;
-
+    .how-steps {
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
     }
 
-    .how-step{
-
-        width:100%;
-
-        min-height:150px;
-
+    .how-step {
+        width: 100%;
+        min-height: 135px;
     }
 
-    .step-arrow{
-
-        display:none;
-
+    .step-arrow {
+        display: none;
     }
 
 
@@ -4604,35 +4501,24 @@ MENU
        REMINDERS
     ====================================================== */
 
-    .reminders-section{
-
-        width:100%;
-
-        padding:
-            30px 18px 50px;
-
+    .reminders-section {
+        width: 100%;
+        padding: 27px 18px 45px;
+        box-sizing: border-box;
     }
 
-    .reminders-heading h2{
-
-        font-size:1.35rem;
-
+    .reminders-heading h2 {
+        font-size: 1.3rem;
     }
 
-    .reminder-grid{
-
-        width:100%;
-
-        grid-template-columns:1fr;
-
-        gap:12px;
-
+    .reminder-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
-    .reminder-card{
-
-        width:100%;
-
+    .reminder-card {
+        width: 100%;
     }
 
 
@@ -4640,40 +4526,27 @@ MENU
        FINAL REMINDER
     ====================================================== */
 
-    .final-reminder{
-
-        width:100%;
-
-        padding:
-            0 18px 45px;
-
+    .final-reminder {
+        width: 100%;
+        padding: 0 18px 40px;
+        box-sizing: border-box;
     }
 
-    .final-reminder-content{
-
-        width:100%;
-
-        padding:
-            18px 15px;
-
-        flex-direction:column;
-
-        gap:8px;
-
+    .final-reminder-content {
+        width: 100%;
+        padding: 16px 14px;
+        flex-direction: column;
+        gap: 7px;
+        box-sizing: border-box;
     }
 
-    .final-reminder-content strong{
-
-        font-size:.8rem;
-
+    .final-reminder-content strong {
+        font-size: .76rem;
     }
 
-    .final-reminder-content span{
-
-        font-size:.72rem;
-
-        line-height:1.5;
-
+    .final-reminder-content span {
+        font-size: .69rem;
+        line-height: 1.5;
     }
 
 
@@ -4681,20 +4554,14 @@ MENU
        MODAL
     ====================================================== */
 
-    .modal-content{
-
-        width:92%;
-
-        max-width:92%;
-
-        max-height:85vh;
-
-        overflow-y:auto;
-
-        padding:20px;
-
-        border-radius:18px;
-
+    .modal-content {
+        width: 92%;
+        max-width: 92%;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 19px;
+        border-radius: 17px;
+        box-sizing: border-box;
     }
 
 }
@@ -4704,18 +4571,17 @@ MENU
    MOBILE — 576px
 ========================================================== */
 
-@media (max-width:576px){
+@media (max-width: 576px) {
 
     /* ======================================================
        GENERAL
     ====================================================== */
 
-    body{
-
-        width:100%;
-
-        overflow-x:hidden;
-
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
 
@@ -4723,27 +4589,20 @@ MENU
        NAVBAR
     ====================================================== */
 
-    .nav-container{
-
-        width:100%;
-
-        padding:
-            12px 15px;
-
+    .nav-container {
+        width: 100%;
+        padding: 11px 14px;
+        box-sizing: border-box;
     }
 
-    .logo-icon{
-
-        width:36px;
-
-        height:36px;
-
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 10px;
     }
 
-    .logo-text{
-
-        font-size:1rem;
-
+    .logo-text {
+        font-size: .96rem;
     }
 
 
@@ -4751,34 +4610,30 @@ MENU
        HERO
     ====================================================== */
 
-    .fact-hero{
-
-        padding:
-            105px 16px 45px;
-
+    .fact-hero {
+        padding: 92px 14px 20px;
     }
 
-    .fact-hero-content h1{
-
-        font-size:
-            clamp(2.15rem,10vw,2.65rem);
-
-        line-height:1.04;
-
-        letter-spacing:-1.25px;
-
+    .fact-hero-container {
+        gap: 6px;
     }
 
-    .fact-hero-content h2{
-
-        font-size:.91rem;
-
+    .fact-hero-content h1 {
+        font-size: clamp(2.05rem, 10vw, 2.6rem);
+        line-height: 1.03;
+        letter-spacing: -1.3px;
+        margin-bottom: 8px;
     }
 
-    .hero-description{
+    .fact-hero-content h2 {
+        font-size: .88rem;
+        line-height: 1.35;
+        margin-bottom: 9px;
+    }
 
-        font-size:.79rem;
-
+    .hero-description {
+        font-size: .74rem;
+        line-height: 1.55;
     }
 
 
@@ -4786,28 +4641,26 @@ MENU
        BUTTONS
     ====================================================== */
 
-    .hero-btn{
-
-        min-height:51px;
-
-        font-size:.74rem;
-
+    .hero-actions {
+        margin-top: 15px;
+        gap: 7px;
     }
 
-    .btn-icon{
-
-        width:37px;
-
-        height:37px;
-
+    .hero-btn {
+        max-width: 285px;
+        min-height: 45px;
+        font-size: .69rem;
+        padding: 9px 12px;
     }
 
-    .secondary-icon{
+    .btn-icon {
+        width: 32px;
+        height: 32px;
+    }
 
-        width:28px;
-
-        height:28px;
-
+    .secondary-icon {
+        width: 26px;
+        height: 26px;
     }
 
 
@@ -4815,145 +4668,165 @@ MENU
        PROCESS
     ====================================================== */
 
-    .fact-process{
-
-        flex-direction:column;
-
-        gap:10px;
-
-        margin-top:42px;
-
+    .fact-process {
+        margin-top: 20px;
+        gap: 8px;
     }
 
-    .process-item{
-
-        width:145px;
-
-        justify-content:flex-start;
-
+    .process-item {
+        width: 135px;
+        justify-content: flex-start;
     }
 
-    .process-line{
-
-        display:none;
-
+    .process-line {
+        display: none;
     }
 
-    .process-number{
+    .process-number {
+        top: -8px;
+        left: 30px;
+    }
 
-        top:-9px;
+    .process-icon {
+        width: 39px;
+        height: 39px;
+        font-size: 14px;
+    }
 
-        left:33px;
+    .process-text h3 {
+        font-size: .6rem;
+    }
 
+    .process-text p {
+        font-size: .52rem;
     }
 
 
     /* ======================================================
-       HERO VISUAL
+       HERO VISUAL — EXTRA COMPACT
     ====================================================== */
 
-    .fact-hero-visual{
-
-        width:100%;
-
-        max-width:420px;
-
-        min-height:220px;
-
-        margin:
-            -10px auto -25px;
-
-        transform:scale(.58);
-
-        transform-origin:center center;
-
+    .fact-hero-visual {
+        width: 100%;
+        max-width: 350px;
+        height: 195px;
+        min-height: 195px;
+        margin: -10px auto -25px;
+        transform: scale(.52);
+        transform-origin: center center;
     }
 
-    .fact-scanner{
-
-        width:360px;
-
-    }
-
-    .source-card{
-
-        right:-18px;
-
-    }
-
-    .image-card{
-
-        left:-18px;
-
-    }
-
-    .verified-card{
-
-        right:-20px;
-
-    }
-
-    .question-bubble{
-
-        left:20px;
-
+    .fact-scanner {
+        width: 340px;
+        min-height: 350px;
     }
 
 
-/* ======================================================
-   TOOL CARDS — MOBILE
-====================================================== */
+    /* ======================================================
+       KEEP VISUAL INSIDE SCREEN
+    ====================================================== */
 
-.tool-card {
+    .source-card {
+        right: -5px;
+    }
 
-    min-height: 180px;
+    .image-card {
+        left: -5px;
+    }
 
-    padding: 18px 12px;
+    .verified-card {
+        right: -7px;
+    }
 
-}
+    .badge-top {
+        left: 15px;
+    }
 
-/* 2 CARDS PER ROW */
-
-.tool-grid {
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 12px;
-
-}
+    .question-bubble {
+        left: 18px;
+    }
 
 
+    /* ======================================================
+       TOOLS
+    ====================================================== */
 
+    .tools-section {
+        padding: 40px 14px 50px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.22rem;
+        line-height: 1.2;
+    }
+
+    .section-heading p {
+        font-size: .7rem;
+        line-height: 1.55;
+    }
+
+
+    /* ======================================================
+       FILTERS
+    ====================================================== */
+
+    .tool-filters {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        min-height: 38px;
+        font-size: .7rem;
+    }
+
+
+    /* ======================================================
+       TOOL CARDS — 2 PER ROW
+    ====================================================== */
+
+    .tool-grid {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .tool-card {
+        width: 100%;
+        min-width: 0;
+        min-height: 165px;
+        padding: 14px 10px;
+        border-radius: 13px;
+        box-sizing: border-box;
+    }
 
 
     /* ======================================================
        HOW TO USE
     ====================================================== */
 
-    .how-section{
-
-        padding:
-            22px 16px 45px;
-
+    .how-section {
+        padding: 20px 14px 40px;
     }
 
-    .how-container{
-
-        padding:
-            24px 13px;
-
+    .how-container {
+        padding: 22px 12px;
+        border-radius: 15px;
     }
 
-    .how-heading h2{
-
-        font-size:1.25rem;
-
+    .how-heading h2 {
+        font-size: 1.18rem;
     }
 
-    .how-heading p{
+    .how-heading p {
+        font-size: .69rem;
+    }
 
-        font-size:.74rem;
+    .how-steps {
+        gap: 17px;
+    }
 
+    .how-step {
+        min-height: 125px;
     }
 
 
@@ -4961,17 +4834,16 @@ MENU
        REMINDERS
     ====================================================== */
 
-    .reminders-section{
-
-        padding:
-            28px 16px 45px;
-
+    .reminders-section {
+        padding: 25px 14px 40px;
     }
 
-    .reminders-heading h2{
+    .reminders-heading h2 {
+        font-size: 1.18rem;
+    }
 
-        font-size:1.25rem;
-
+    .reminder-grid {
+        gap: 9px;
     }
 
 
@@ -4979,18 +4851,21 @@ MENU
        FINAL REMINDER
     ====================================================== */
 
-    .final-reminder{
-
-        padding:
-            0 16px 40px;
-
+    .final-reminder {
+        padding: 0 14px 35px;
     }
 
-    .final-reminder-content{
+    .final-reminder-content {
+        padding: 15px 12px;
+        gap: 6px;
+    }
 
-        padding:
-            17px 14px;
+    .final-reminder-content strong {
+        font-size: .72rem;
+    }
 
+    .final-reminder-content span {
+        font-size: .65rem;
     }
 
 
@@ -4998,16 +4873,11 @@ MENU
        MODAL
     ====================================================== */
 
-    .modal-content{
-
-        width:93%;
-
-        max-width:93%;
-
-        max-height:86vh;
-
-        padding:18px;
-
+    .modal-content {
+        width: 93%;
+        max-width: 93%;
+        max-height: 86vh;
+        padding: 17px;
     }
 
 }
@@ -5017,24 +4887,19 @@ MENU
    VERY SMALL PHONES — 400px
 ========================================================== */
 
-@media (max-width:400px){
+@media (max-width: 400px) {
 
     /* ======================================================
        NAVBAR
     ====================================================== */
 
-    .logo-text{
-
-        font-size:.92rem;
-
+    .logo-text {
+        font-size: .88rem;
     }
 
-    .logo-icon{
-
-        width:34px;
-
-        height:34px;
-
+    .logo-icon {
+        width: 33px;
+        height: 33px;
     }
 
 
@@ -5042,22 +4907,37 @@ MENU
        HERO
     ====================================================== */
 
-    .fact-hero-content h1{
-
-        font-size:2.08rem;
-
+    .fact-hero {
+        padding: 88px 12px 15px;
     }
 
-    .fact-hero-content h2{
-
-        font-size:.85rem;
-
+    .fact-hero-content h1 {
+        font-size: 2rem;
+        letter-spacing: -1.1px;
     }
 
-    .hero-description{
+    .fact-hero-content h2 {
+        font-size: .82rem;
+    }
 
-        font-size:.76rem;
+    .hero-description {
+        font-size: .7rem;
+        line-height: 1.5;
+    }
 
+
+    /* ======================================================
+       BUTTONS
+    ====================================================== */
+
+    .hero-actions {
+        margin-top: 13px;
+    }
+
+    .hero-btn {
+        max-width: 270px;
+        min-height: 43px;
+        font-size: .66rem;
     }
 
 
@@ -5065,58 +4945,167 @@ MENU
        PROCESS
     ====================================================== */
 
-    .process-item{
-
-        width:130px;
-
+    .fact-process {
+        margin-top: 17px;
+        gap: 6px;
     }
 
-    .process-item h3{
-
-        font-size:.63rem;
-
+    .process-item {
+        width: 125px;
     }
 
-    .process-item p{
-
-        font-size:.55rem;
-
+    .process-item h3 {
+        font-size: .58rem;
     }
 
-    .process-icon{
+    .process-item p {
+        font-size: .5rem;
+    }
 
-        width:42px;
+    .process-icon {
+        width: 37px;
+        height: 37px;
+        font-size: 13px;
+    }
 
-        height:42px;
-
-        font-size:15px;
-
+    .process-number {
+        left: 28px;
     }
 
 
     /* ======================================================
-       HERO VISUAL
+       HERO VISUAL — VERY COMPACT
     ====================================================== */
 
-    .fact-hero-visual{
-
-        max-width:370px;
-
-        min-height:200px;
-
-        margin:
-            -20px auto -40px;
-
-        transform:scale(.52);
-
-        transform-origin:center center;
-
+    .fact-hero-visual {
+        max-width: 320px;
+        height: 175px;
+        min-height: 175px;
+        margin: -18px auto -32px;
+        transform: scale(.47);
+        transform-origin: center center;
     }
 
-    .fact-scanner{
+    .fact-scanner {
+        width: 330px;
+        min-height: 340px;
+    }
 
-        width:350px;
 
+    /* ======================================================
+       FLOATING ELEMENTS
+    ====================================================== */
+
+    .source-card {
+        right: 0;
+    }
+
+    .image-card {
+        left: 0;
+    }
+
+    .verified-card {
+        right: -2px;
+    }
+
+    .badge-top {
+        left: 12px;
+    }
+
+    .question-bubble {
+        left: 15px;
+    }
+
+
+    /* ======================================================
+       TOOLS
+    ====================================================== */
+
+    .tools-section {
+        padding: 35px 12px 45px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.14rem;
+    }
+
+    .section-heading p {
+        font-size: .66rem;
+    }
+
+
+    /* ======================================================
+       TOOL CARDS — 2 PER ROW
+    ====================================================== */
+
+    .tool-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .tool-card {
+        min-height: 150px;
+        padding: 12px 8px;
+        border-radius: 12px;
+    }
+
+
+    /* ======================================================
+       HOW TO USE
+    ====================================================== */
+
+    .how-section {
+        padding: 18px 12px 35px;
+    }
+
+    .how-container {
+        padding: 20px 10px;
+    }
+
+    .how-heading h2 {
+        font-size: 1.1rem;
+    }
+
+    .how-heading p {
+        font-size: .65rem;
+    }
+
+    .how-step {
+        min-height: 115px;
+    }
+
+
+    /* ======================================================
+       REMINDERS
+    ====================================================== */
+
+    .reminders-section {
+        padding: 23px 12px 35px;
+    }
+
+    .reminders-heading h2 {
+        font-size: 1.12rem;
+    }
+
+
+    /* ======================================================
+       FINAL REMINDER
+    ====================================================== */
+
+    .final-reminder {
+        padding: 0 12px 32px;
+    }
+
+    .final-reminder-content {
+        padding: 14px 11px;
+    }
+
+    .final-reminder-content strong {
+        font-size: .69rem;
+    }
+
+    .final-reminder-content span {
+        font-size: .62rem;
     }
 
 
@@ -5124,16 +5113,11 @@ MENU
        MODAL
     ====================================================== */
 
-    .modal-content{
-
-        width:94%;
-
-        max-width:94%;
-
-        max-height:88vh;
-
-        padding:16px;
-
+    .modal-content {
+        width: 94%;
+        max-width: 94%;
+        max-height: 88vh;
+        padding: 15px;
     }
 
 }
