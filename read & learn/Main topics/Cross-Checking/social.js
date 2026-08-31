@@ -40,12 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Toggle selected state
-            option.classList.toggle("selected");
+            this.classList.toggle("selected");
 
             // Accessibility
-            option.setAttribute(
+            this.setAttribute(
                 "aria-pressed",
-                option.classList.contains("selected")
+                this.classList.contains("selected")
                     ? "true"
                     : "false"
             );
@@ -64,17 +64,62 @@ document.addEventListener("DOMContentLoaded", function () {
         checkAnswersBtn.addEventListener("click", function () {
 
             let selectedCount = 0;
-            let allCorrect = true;
+            let correctSelectedCount = 0;
+            let totalCorrectAnswers = 0;
+            let wrongSelectedCount = 0;
 
 
             // ==================================================
-            // COUNT SELECTED ANSWERS
+            // COUNT ANSWERS
             // ==================================================
 
             verificationOptions.forEach(function (option) {
 
-                if (option.classList.contains("selected")) {
+                const answer =
+                    option.getAttribute("data-answer");
+
+                const selected =
+                    option.classList.contains("selected");
+
+
+                // Remove old result colors
+                option.classList.remove(
+                    "correct",
+                    "wrong"
+                );
+
+
+                // Count total correct answers
+                if (answer === "correct") {
+                    totalCorrectAnswers++;
+                }
+
+
+                // Count selected answers
+                if (selected) {
+
                     selectedCount++;
+
+
+                    // Selected correct answer
+                    if (answer === "correct") {
+
+                        correctSelectedCount++;
+
+                        option.classList.add("correct");
+
+                    }
+
+
+                    // Selected wrong answer
+                    else if (answer === "wrong") {
+
+                        wrongSelectedCount++;
+
+                        option.classList.add("wrong");
+
+                    }
+
                 }
 
             });
@@ -95,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 });
 
+
                 if (feedbackBox) {
 
                     feedbackBox.classList.remove(
@@ -104,12 +150,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
+
                 if (feedbackIcon) {
 
                     feedbackIcon.className =
                         "fa-solid fa-circle-info";
 
                 }
+
 
                 if (feedbackText) {
 
@@ -120,78 +168,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
+
                 return;
             }
 
 
             // ==================================================
-            // CHECK EACH OPTION
+            // WRONG ANSWER SELECTED
+            // ==================================================
+            //
+            // RED FEEDBACK ONLY WHEN A WRONG CHOICE
+            // WAS ACTUALLY SELECTED.
+            //
+            // This prevents a correct-but-incomplete answer
+            // from being treated as completely wrong.
             // ==================================================
 
-            verificationOptions.forEach(function (option) {
+            if (wrongSelectedCount > 0) {
 
-                const answer =
-                    option.getAttribute("data-answer");
+                if (feedbackBox) {
 
-                const selected =
-                    option.classList.contains("selected");
+                    feedbackBox.classList.remove(
+                        "correct-feedback"
+                    );
 
-
-                // Clear previous result colors
-                option.classList.remove(
-                    "correct",
-                    "wrong"
-                );
-
-
-                // ==================================================
-                // CORRECT ANSWER
-                // ==================================================
-
-                if (answer === "correct") {
-
-                    if (selected) {
-
-                        // Selected + correct = GREEN
-                        option.classList.add("correct");
-
-                    } else {
-
-                        // Correct but not selected:
-                        // KEEP DEFAULT COLOR
-                        // DO NOT MAKE IT RED
-                        allCorrect = false;
-
-                    }
+                    feedbackBox.classList.add(
+                        "incorrect-feedback"
+                    );
 
                 }
 
 
-                // ==================================================
-                // WRONG ANSWER
-                // ==================================================
+                if (feedbackIcon) {
 
-                else if (answer === "wrong") {
-
-                    if (selected) {
-
-                        // Selected wrong answer = RED
-                        option.classList.add("wrong");
-
-                        allCorrect = false;
-
-                    }
+                    feedbackIcon.className =
+                        "fa-solid fa-circle-xmark";
 
                 }
 
-            });
+
+                if (feedbackText) {
+
+                    feedbackText.innerHTML =
+                        "<strong>Some of your answers need review.</strong><br>" +
+                        "You selected one or more verification steps " +
+                        "that are not appropriate. Remember to check the " +
+                        "original source, search for the claim using credible " +
+                        "sources, verify the organization mentioned, examine " +
+                        "the image, and check the date and context. Likes and " +
+                        "shares do not determine whether information is true.";
+
+                }
+
+
+                // Lock answers
+                checkAnswersBtn.classList.add("checked");
+
+                return;
+            }
 
 
             // ==================================================
-            // ALL ANSWERS CORRECT
+            // ALL CORRECT ANSWERS SELECTED
             // ==================================================
 
-            if (allCorrect) {
+            if (
+                correctSelectedCount === totalCorrectAnswers
+            ) {
 
                 if (feedbackBox) {
 
@@ -205,12 +248,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
+
                 if (feedbackIcon) {
 
                     feedbackIcon.className =
                         "fa-solid fa-circle-check";
 
                 }
+
 
                 if (feedbackText) {
 
@@ -224,54 +269,113 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
+
+                // Lock answers
+                checkAnswersBtn.classList.add("checked");
+
+                return;
             }
 
 
             // ==================================================
-            // SOME ANSWERS ARE WRONG / MISSING
+            // CORRECT BUT INCOMPLETE
+            // ==================================================
+            //
+            // This happens when the user selected only some
+            // of the correct answers and selected NO wrong answers.
+            //
+            // Feedback remains GREEN.
             // ==================================================
 
-            else {
+            if (correctSelectedCount === 1) {
 
                 if (feedbackBox) {
 
                     feedbackBox.classList.remove(
-                        "correct-feedback"
-                    );
-
-                    feedbackBox.classList.add(
                         "incorrect-feedback"
                     );
 
+                    feedbackBox.classList.add(
+                        "correct-feedback"
+                    );
+
                 }
+
 
                 if (feedbackIcon) {
 
                     feedbackIcon.className =
-                        "fa-solid fa-circle-xmark";
+                        "fa-solid fa-circle-check";
 
                 }
+
 
                 if (feedbackText) {
 
                     feedbackText.innerHTML =
-                        "<strong>Some of your answers need review.</strong><br>" +
-                        "The correct verification steps are to check the " +
-                        "original source, search for the claim using credible " +
-                        "sources, verify the organization mentioned, examine " +
-                        "the image, and check the date and context. Likes and " +
-                        "shares do not determine whether information is true.";
+                        "<strong>Good start! Your answer is correct.</strong><br>" +
+                        "You identified one correct verification step, but " +
+                        "you still need to improve your selection by identifying " +
+                        "the other appropriate steps before trusting or sharing " +
+                        "the post.";
 
                 }
 
+
+                // Lock answers
+                checkAnswersBtn.classList.add("checked");
+
+                return;
             }
 
 
             // ==================================================
-            // LOCK ANSWERS AFTER CHECKING
+            // TWO OR MORE CORRECT BUT INCOMPLETE
             // ==================================================
 
-            checkAnswersBtn.classList.add("checked");
+            if (correctSelectedCount >= 2) {
+
+                if (feedbackBox) {
+
+                    feedbackBox.classList.remove(
+                        "incorrect-feedback"
+                    );
+
+                    feedbackBox.classList.add(
+                        "correct-feedback"
+                    );
+
+                }
+
+
+                if (feedbackIcon) {
+
+                    feedbackIcon.className =
+                        "fa-solid fa-circle-check";
+
+                }
+
+
+                if (feedbackText) {
+
+                    feedbackText.innerHTML =
+                        "<strong>You're on the right track!</strong><br>" +
+                        "You selected several correct verification steps, " +
+                        "but your answer is still incomplete. Review the " +
+                        "remaining verification steps and make sure you check " +
+                        "the original source, search for the claim, verify the " +
+                        "organization mentioned, examine the image, and check " +
+                        "the date and context.";
+
+                }
+
+
+                // Lock answers
+                checkAnswersBtn.classList.add("checked");
+
+                return;
+            }
+
 
         });
 
@@ -312,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            // Reset feedback
+            // Reset feedback colors
             if (feedbackBox) {
 
                 feedbackBox.classList.remove(
@@ -323,6 +427,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
+            // Reset feedback icon
             if (feedbackIcon) {
 
                 feedbackIcon.className =
@@ -331,6 +436,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
+            // Reset feedback message
             if (feedbackText) {
 
                 feedbackText.innerHTML =
