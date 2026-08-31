@@ -5926,13 +5926,12 @@ MENU
 
     .credibot-heading p {
 
-        width: 100%;
-
-        max-width: 100%;
-
-        font-size: .75rem;
-
-        line-height: 1.6;
+    width: 100%;
+    max-width: 100%;
+    font-size: .75rem;
+    line-height: 1.6;
+    white-space: normal;
+    overflow-wrap: break-word;
 
     }
 
