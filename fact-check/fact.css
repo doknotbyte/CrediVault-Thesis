@@ -3224,11 +3224,10 @@ MENU
    MODAL BACKGROUND / OVERLAY
 ========================================================== */
 
-
 .tool-info-modal {
+
     position: fixed;
     inset: 0;
-
     z-index: 9999;
 
     display: flex;
@@ -3251,11 +3250,15 @@ MENU
 }
 
 
-/* ACTIVE MODAL */
+/* ==========================================================
+   ACTIVE MODAL
+========================================================== */
 
 .tool-info-modal.active {
+
     opacity: 1;
     visibility: visible;
+
 }
 
 
@@ -3264,6 +3267,7 @@ MENU
 ========================================================== */
 
 .tool-info-card {
+
     position: relative;
 
     width: min(500px, 88vw);
@@ -3290,10 +3294,14 @@ MENU
 }
 
 
-/* CARD ANIMATION */
+/* ==========================================================
+   CARD ANIMATION
+========================================================== */
 
 .tool-info-modal.active .tool-info-card {
+
     transform: translateY(0) scale(1);
+
 }
 
 
@@ -3302,6 +3310,7 @@ MENU
 ========================================================== */
 
 .tool-info-card::before {
+
     content: "";
 
     position: absolute;
@@ -3313,6 +3322,7 @@ MENU
     height: 4px;
 
     background: var(--info-color, #2563eb);
+
 }
 
 
@@ -3322,14 +3332,18 @@ MENU
 
 .tool-info-card h2,
 .tool-info-card h3 {
+
     font-family: "Manrope", sans-serif;
+
 }
 
 .tool-info-card p,
 .tool-info-card li,
 .tool-info-card span,
 .tool-info-card a {
+
     font-family: "DM Sans", sans-serif;
+
 }
 
 
@@ -3338,6 +3352,7 @@ MENU
 ========================================================== */
 
 .tool-info-card h2 {
+
     margin: 0 42px 9px 0;
 
     font-size: 1.32rem;
@@ -3348,6 +3363,7 @@ MENU
     color: #172033;
 
     letter-spacing: -0.3px;
+
 }
 
 
@@ -3356,6 +3372,7 @@ MENU
 ========================================================== */
 
 .tool-info-card .tool-info-category {
+
     display: inline-block;
 
     margin-bottom: 18px;
@@ -3370,6 +3387,7 @@ MENU
     font-weight: 700;
 
     letter-spacing: 0.65px;
+
 }
 
 
@@ -3378,11 +3396,15 @@ MENU
 ========================================================== */
 
 .tool-info-section {
+
     margin-bottom: 17px;
+
 }
 
 .tool-info-section:last-child {
+
     margin-bottom: 0;
+
 }
 
 
@@ -3391,6 +3413,7 @@ MENU
 ========================================================== */
 
 .tool-info-section h3 {
+
     display: flex;
     align-items: center;
 
@@ -3399,23 +3422,27 @@ MENU
     margin: 0 0 6px;
 
     font-size: 0.86rem;
-
     line-height: 1.35;
 
     font-weight: 750;
 
     color: #172033;
+
 }
 
 
-/* SECTION ICON */
+/* ==========================================================
+   SECTION ICON
+========================================================== */
 
 .tool-info-section h3 i {
+
     flex-shrink: 0;
 
     font-size: 0.82rem;
 
     color: var(--info-color, #2563eb);
+
 }
 
 
@@ -3424,15 +3451,16 @@ MENU
 ========================================================== */
 
 .tool-info-section p {
+
     margin: 0;
 
     font-size: 0.76rem;
-
     line-height: 1.62;
 
     font-weight: 400;
 
     color: #5b6678;
+
 }
 
 
@@ -3441,23 +3469,28 @@ MENU
 ========================================================== */
 
 .tool-info-section ol {
+
     margin: 6px 0 0;
 
     padding-left: 19px;
+
 }
 
 .tool-info-section ol li {
+
     margin-bottom: 5px;
 
     font-size: 0.75rem;
-
     line-height: 1.58;
 
     color: #5b6678;
+
 }
 
 .tool-info-section ol li:last-child {
+
     margin-bottom: 0;
+
 }
 
 
@@ -3466,23 +3499,28 @@ MENU
 ========================================================== */
 
 .tool-info-section ul {
+
     margin: 6px 0 0;
 
     padding-left: 19px;
+
 }
 
 .tool-info-section ul li {
+
     margin-bottom: 5px;
 
     font-size: 0.74rem;
-
     line-height: 1.55;
 
     color: #5b6678;
+
 }
 
 .tool-info-section ul li:last-child {
+
     margin-bottom: 0;
+
 }
 
 
@@ -3491,6 +3529,7 @@ MENU
 ========================================================== */
 
 .tool-info-section a {
+
     font-size: 0.74rem;
 
     color: var(--info-color, #2563eb);
@@ -3500,12 +3539,15 @@ MENU
     text-decoration: none;
 
     transition: color 0.2s ease;
+
 }
 
 .tool-info-section a:hover {
+
     color: #172033;
 
     text-decoration: underline;
+
 }
 
 
@@ -3514,6 +3556,7 @@ MENU
 ========================================================== */
 
 .tool-info-close {
+
     position: absolute;
 
     top: 15px;
@@ -3545,15 +3588,17 @@ MENU
         background 0.2s ease,
         color 0.2s ease,
         transform 0.25s ease;
+
 }
 
-
 .tool-info-close:hover {
+
     background: #e2e8f0;
 
     color: #172033;
 
     transform: rotate(90deg);
+
 }
 
 
@@ -3562,45 +3607,62 @@ MENU
 ========================================================== */
 
 .tool-info-card::-webkit-scrollbar {
+
     width: 5px;
+
 }
 
 .tool-info-card::-webkit-scrollbar-track {
+
     background: transparent;
 
     margin: 14px 0;
+
 }
 
 .tool-info-card::-webkit-scrollbar-thumb {
+
     background: #cbd5e1;
 
     border-radius: 10px;
+
 }
 
 .tool-info-card::-webkit-scrollbar-thumb:hover {
+
     background: #94a3b8;
+
 }
 
 
-/* FIREFOX */
+/* ==========================================================
+   FIREFOX
+========================================================== */
 
 .tool-info-card {
+
     scrollbar-width: thin;
 
     scrollbar-color:
         #cbd5e1
         transparent;
+
 }
 
 
 /* ==========================================================
    CATEGORY COLORS
+   MATCHED WITH TOOL CARDS
 ========================================================== */
 
 
 /* ==========================================================
    CLAIM VERIFICATION
    BLUE
+   MATCH:
+   .tool-category.claim
+   .claim-icon
+   .claim-btn
 ========================================================== */
 
 .tool-info-card:has(.tool-info-category.claim) {
@@ -3608,8 +3670,8 @@ MENU
     --info-color: #2563eb;
     --info-bg: #eff6ff;
     --info-border: #bfdbfe;
-}
 
+}
 
 .tool-info-card:has(.tool-info-category.claim)
 .tool-info-category {
@@ -3619,118 +3681,199 @@ MENU
     background: #eff6ff;
 
     border: 1px solid #bfdbfe;
+
 }
 
 
 /* ==========================================================
    IMAGE VERIFICATION
-   PURPLE
+   PINK
+   MATCH:
+   .tool-category.image
+   .image-icon
+   .image-btn
 ========================================================== */
 
 .tool-info-card:has(.tool-info-category.image) {
 
-    --info-color: #9333ea;
-    --info-bg: #faf5ff;
-    --info-border: #e9d5ff;
-}
+    --info-color: #db2777;
+    --info-bg: #fdf2f8;
+    --info-border: #f9a8d4;
 
+}
 
 .tool-info-card:has(.tool-info-category.image)
 .tool-info-category {
 
-    color: #9333ea;
+    color: #db2777;
 
-    background: #faf5ff;
+    background: #fdf2f8;
 
-    border: 1px solid #e9d5ff;
+    border: 1px solid #f9a8d4;
+
 }
 
 
 /* ==========================================================
    VIDEO VERIFICATION
-   RED
+   DARK GREEN
+   MATCH:
+   .tool-category.video
+   .video-icon
+   .video-btn
 ========================================================== */
 
 .tool-info-card:has(.tool-info-category.video) {
 
-    --info-color: #dc2626;
-    --info-bg: #fef2f2;
-    --info-border: #fecaca;
-}
+    --info-color: #166534;
+    --info-bg: #f0fdf4;
+    --info-border: #86efac;
 
+}
 
 .tool-info-card:has(.tool-info-category.video)
 .tool-info-category {
 
-    color: #dc2626;
+    color: #166534;
 
-    background: #fef2f2;
+    background: #f0fdf4;
 
-    border: 1px solid #fecaca;
+    border: 1px solid #86efac;
+
 }
 
 
 /* ==========================================================
    WEBSITE / SOURCE
-   TEAL
+   ORANGE
+   MATCH:
+   .tool-category.website
+   .website-icon
+   .website-btn
 ========================================================== */
 
 .tool-info-card:has(.tool-info-category.website) {
 
-    --info-color: #0f766e;
-    --info-bg: #f0fdfa;
-    --info-border: #99f6e4;
-}
+    --info-color: #c2410c;
+    --info-bg: #fff7ed;
+    --info-border: #fdba74;
 
+}
 
 .tool-info-card:has(.tool-info-category.website)
 .tool-info-category {
 
-    color: #0f766e;
+    color: #c2410c;
 
-    background: #f0fdfa;
+    background: #fff7ed;
 
-    border: 1px solid #99f6e4;
+    border: 1px solid #fdba74;
+
 }
 
 
 /* ==========================================================
    CATEGORY ICON COLORS
+   MATCHED WITH OUTSIDE TOOL COLORS
 ========================================================== */
 
-/* CLAIM */
+
+/* CLAIM — BLUE */
 
 .tool-info-card:has(.tool-info-category.claim)
 .tool-info-section h3 i {
 
     color: #2563eb;
+
+}
+
+
+/* IMAGE — PINK */
+
+.tool-info-card:has(.tool-info-category.image)
+.tool-info-section h3 i {
+
+    color: #db2777;
+
+}
+
+
+/* VIDEO — DARK GREEN */
+
+.tool-info-card:has(.tool-info-category.video)
+.tool-info-section h3 i {
+
+    color: #166534;
+
+}
+
+
+/* WEBSITE — ORANGE */
+
+.tool-info-card:has(.tool-info-category.website)
+.tool-info-section h3 i {
+
+    color: #c2410c;
+
+}
+
+
+/* ==========================================================
+   SOURCE LINK COLORS
+   FORCE MATCH WITH CATEGORY
+========================================================== */
+
+
+/* CLAIM */
+
+.tool-info-card:has(.tool-info-category.claim)
+.tool-info-section a {
+
+    color: #2563eb;
+
 }
 
 
 /* IMAGE */
 
 .tool-info-card:has(.tool-info-category.image)
-.tool-info-section h3 i {
+.tool-info-section a {
 
-    color: #9333ea;
+    color: #db2777;
+
 }
 
 
 /* VIDEO */
 
 .tool-info-card:has(.tool-info-category.video)
-.tool-info-section h3 i {
+.tool-info-section a {
 
-    color: #dc2626;
+    color: #166534;
+
 }
 
 
 /* WEBSITE */
 
 .tool-info-card:has(.tool-info-category.website)
-.tool-info-section h3 i {
+.tool-info-section a {
 
-    color: #0f766e;
+    color: #c2410c;
+
+}
+
+
+/* ==========================================================
+   SOURCE LINK HOVER
+========================================================== */
+
+.tool-info-section a:hover {
+
+    color: #172033 !important;
+
+    text-decoration: underline;
+
 }
 
 
@@ -3739,9 +3882,11 @@ MENU
 ========================================================== */
 
 .tool-info-section + .tool-info-section {
+
     padding-top: 15px;
 
     border-top: 1px solid #eef1f5;
+
 }
 
 /* ==========================================================
