@@ -4398,9 +4398,9 @@ MENU
 
         padding-right: 20px;
 
-        padding-top: 35px;
+        padding-top: 28px;
 
-        padding-bottom: 35px;
+        padding-bottom: 25px;
 
     }
 
@@ -4408,7 +4408,7 @@ MENU
 
         grid-template-columns: 1fr;
 
-        gap: 15px;
+        gap: 8px;
 
         text-align: center;
 
@@ -4416,7 +4416,7 @@ MENU
 
     .hero-content {
 
-        max-width: 700px;
+        max-width: 680px;
 
         margin: auto;
 
@@ -4432,9 +4432,9 @@ MENU
 
         justify-content: center;
 
-        gap: 10px;
+        gap: 9px;
 
-        margin-top: 16px;
+        margin-top: 13px;
 
     }
 
@@ -4442,9 +4442,9 @@ MENU
 
         justify-content: center;
 
-        gap: 18px;
+        gap: 14px;
 
-        margin-top: 20px;
+        margin-top: 16px;
 
     }
 
@@ -4455,22 +4455,22 @@ MENU
 
     .hero-content h1 {
 
-        font-size: 2.65rem;
+        font-size: 2.4rem;
 
         line-height: 1.08;
 
-        margin-bottom: 14px;
+        margin-bottom: 11px;
 
     }
 
 
     .hero-content p {
 
-        font-size: .86rem;
+        font-size: .82rem;
 
-        line-height: 1.55;
+        line-height: 1.5;
 
-        max-width: 620px;
+        max-width: 600px;
 
     }
 
@@ -4482,9 +4482,9 @@ MENU
     .hero-buttons a,
     .hero-buttons button {
 
-        padding: 9px 17px;
+        padding: 8px 15px;
 
-        font-size: .75rem;
+        font-size: .72rem;
 
     }
 
@@ -4495,19 +4495,19 @@ MENU
 
     .hero-stats > div {
 
-        padding: 8px 12px;
+        padding: 7px 10px;
 
     }
 
     .hero-stats strong {
 
-        font-size: 1.05rem;
+        font-size: .98rem;
 
     }
 
     .hero-stats span {
 
-        font-size: .65rem;
+        font-size: .62rem;
 
     }
 
@@ -4520,13 +4520,13 @@ MENU
 
         width: 100%;
 
-        max-width: 470px;
+        max-width: 430px;
 
-        min-height: 220px;
+        min-height: 185px;
 
-        margin: -20px auto 0;
+        margin: -5px auto 0;
 
-        transform: scale(.62);
+        transform: scale(.56);
 
         transform-origin: center center;
 
