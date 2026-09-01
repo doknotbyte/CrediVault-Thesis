@@ -4634,72 +4634,75 @@ MENU
         left: 50%;
     }
 
-}
-
 
     /* ======================================================
        HOME — LEARNING TOPICS
     ====================================================== */
 
     .features-section {
-
         padding: 60px 22px 75px;
-
     }
 
     .features-section .section-header {
-
         width: 94%;
 
         margin-bottom: 40px;
-
     }
 
     .features-section .section-header h2 {
-
         font-size: 2rem;
-
     }
 
     .features-section .section-header p {
-
         font-size: .84rem;
-
     }
 
+
     /* ======================================================
-   TOPIC GRID — TABLET
-====================================================== */
+       TOPIC GRID — TABLET
+       IMPORTANT: KEEP INSIDE MEDIA QUERY
+    ====================================================== */
 
-.topic-grid {
-    width: 94%;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 13px;
-}
+    .topic-grid {
+        width: 94%;
 
-.topic-card {
-    width: 100%;
-    height: 315px;
-    min-height: 0;
-}
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-.topic-visual {
-    height: 155px;
-}
+        gap: 13px;
+    }
 
-.topic-content {
-    padding: 14px 15px 16px;
-}
+    .topic-card {
+        width: 100%;
 
-.topic-content h3 {
-    font-size: .88rem;
-    line-height: 1.3;
-    margin-bottom: 6px;
-}
+        height: 315px;
 
-.topic-content p {
-    font-size: .68rem;
-    line-height: 1.5;
+        min-height: 0;
+    }
+
+    .topic-visual {
+        height: 155px;
+    }
+
+    .topic-content {
+        padding:
+            14px 15px 16px;
+    }
+
+    .topic-content h3 {
+        font-size: .88rem;
+
+        line-height: 1.3;
+
+        margin-bottom: 6px;
+    }
+
+    .topic-content p {
+        font-size: .68rem;
+
+        line-height: 1.5;
+    }
+
 }
 
 
@@ -4709,63 +4712,65 @@ MENU
 
     .check-section {
 
-        padding: 55px 22px;
+    padding: 55px 22px;
 
-    }
+}
 
-    .check-container {
+.check-container {
 
-        width: 94%;
+    width: 94%;
 
-        grid-template-columns: 1fr;
+    grid-template-columns: 1.05fr .95fr;
 
-        gap: 35px;
+    gap: 35px;
 
-    }
+    align-items: center;
 
-    .check-content {
+}
 
-        max-width: 750px;
+.check-content {
 
-        margin: 0 auto;
+    max-width: 750px;
 
-        text-align: center;
+    margin: 0;
 
-    }
+    text-align: left;
 
-    .check-content h2 {
+}
 
-        font-size: 2rem;
+.check-content h2 {
 
-    }
+    font-size: 2rem;
 
-    .check-content p {
+}
 
-        font-size: .84rem;
+.check-content p {
 
-    }
+    font-size: .84rem;
 
-    .check-status {
+}
 
-        margin: 0 auto;
+.check-status {
 
-    }
+    margin: 0;
 
-    .check-hint {
+}
 
-        justify-content: center;
+.check-hint {
 
-    }
+    justify-content: flex-start;
 
-    .check-interactive {
+}
 
-        width: 100%;
+.check-interactive {
 
-        max-width: 750px;
+    width: 100%;
 
-        margin: 0 auto;
+    max-width: 750px;
 
-    }
+    margin: 0;
+
+}
 
 
     /* ======================================================
