@@ -4316,7 +4316,7 @@ MENU
 
         position: relative;
 
-        padding: 15px 20px;
+        padding: 12px 18px;
 
     }
 
@@ -4357,9 +4357,9 @@ MENU
 
         align-items: flex-start;
 
-        padding: 15px;
+        padding: 12px;
 
-        gap: 8px;
+        gap: 6px;
 
         display: none;
 
@@ -4381,9 +4381,9 @@ MENU
 
         width: 100%;
 
-        font-size: .82rem;
+        font-size: .78rem;
 
-        padding: 7px 9px;
+        padding: 6px 8px;
 
     }
 
@@ -4394,9 +4394,13 @@ MENU
 
     .hero-section {
 
-        padding-left: 25px;
+        padding-left: 20px;
 
-        padding-right: 25px;
+        padding-right: 20px;
+
+        padding-top: 35px;
+
+        padding-bottom: 35px;
 
     }
 
@@ -4404,7 +4408,7 @@ MENU
 
         grid-template-columns: 1fr;
 
-        gap: 40px;
+        gap: 15px;
 
         text-align: center;
 
@@ -4412,7 +4416,7 @@ MENU
 
     .hero-content {
 
-        max-width: 800px;
+        max-width: 700px;
 
         margin: auto;
 
@@ -4428,11 +4432,19 @@ MENU
 
         justify-content: center;
 
+        gap: 10px;
+
+        margin-top: 16px;
+
     }
 
     .hero-stats {
 
         justify-content: center;
+
+        gap: 18px;
+
+        margin-top: 20px;
 
     }
 
@@ -4443,14 +4455,59 @@ MENU
 
     .hero-content h1 {
 
-        font-size: 3.4rem;
+        font-size: 2.65rem;
+
+        line-height: 1.08;
+
+        margin-bottom: 14px;
 
     }
 
 
     .hero-content p {
 
-        font-size: .95rem;
+        font-size: .86rem;
+
+        line-height: 1.55;
+
+        max-width: 620px;
+
+    }
+
+
+    /* ======================================================
+       HERO BUTTONS
+    ====================================================== */
+
+    .hero-buttons a,
+    .hero-buttons button {
+
+        padding: 9px 17px;
+
+        font-size: .75rem;
+
+    }
+
+
+    /* ======================================================
+       HERO STATS
+    ====================================================== */
+
+    .hero-stats > div {
+
+        padding: 8px 12px;
+
+    }
+
+    .hero-stats strong {
+
+        font-size: 1.05rem;
+
+    }
+
+    .hero-stats span {
+
+        font-size: .65rem;
 
     }
 
@@ -4463,17 +4520,19 @@ MENU
 
         width: 100%;
 
-        max-width: 600px;
+        max-width: 470px;
 
-        min-height: 300px;
+        min-height: 220px;
 
-        margin: -10px auto 0;
+        margin: -20px auto 0;
 
-        transform: scale(.78);
+        transform: scale(.62);
 
         transform-origin: center center;
 
     }
+
+}
 
 
     /* ======================================================
@@ -4702,11 +4761,17 @@ MENU
 
     .credibot-heading p {
 
-        max-width: 700px;
+        max-width: 600px;
 
-        font-size: .9rem;
+        margin-left: auto;
 
-        line-height: 1.6;
+        margin-right: auto;
+
+        font-size: .82rem;
+
+        line-height: 1.55;
+
+        white-space: normal;
 
     }
 
@@ -4846,7 +4911,7 @@ MENU
 
     }
 
-}
+
 
 
 /* ==========================================================
