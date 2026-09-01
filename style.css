@@ -4307,233 +4307,137 @@ MENU
 ========================================================== */
 
 @media (max-width: 992px) {
-
-    /* ======================================================
-       NAVIGATION
-    ====================================================== */
-
-    .nav-container {
-
-        position: relative;
-
-        padding: 10px 16px;
-
-    }
-
-    .nav-actions {
-
-        display: flex;
-
-        align-items: center;
-
-        margin-left: auto;
-
-    }
-
-    .nav-actions .nav-github {
-
-        display: none;
-
-    }
-
-    .menu-toggle {
-
-        display: flex;
-
-    }
-
-    .nav-links {
-
-        position: absolute;
-
-        top: 100%;
-        left: 0;
-
-        width: 100%;
-
-        background: #08111f;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        padding: 10px;
-
-        gap: 5px;
-
-        display: none;
-
-        border-top: 1px solid rgba(255,255,255,.08);
-
-        margin: 0;
-
-        z-index: 999;
-
-    }
-
-    .nav-links.active {
-
-        display: flex;
-
-    }
-
-    .nav-item {
-
-        width: 100%;
-
-        font-size: .76rem;
-
-        padding: 5px 7px;
-
-    }
-
-
-    /* ======================================================
-       HERO
-    ====================================================== */
-
-    .hero-section {
-
-        padding-left: 18px;
-
-        padding-right: 18px;
-
-        padding-top: 24px;
-
-        padding-bottom: 10px;
-
-    }
-
-    .hero-container {
-
-        grid-template-columns: 1fr;
-
-        gap: 0;
-
-        text-align: center;
-
-    }
-
-    .hero-content {
-
-        max-width: 650px;
-
-        margin: 0 auto;
-
-    }
-
-    .hero-content > p {
-
-        margin: 0 auto;
-
-    }
-
-    .hero-buttons {
-
-        justify-content: center;
-
-        gap: 8px;
-
-        margin-top: 12px;
-
-    }
-
-    .hero-stats {
-
-        justify-content: center;
-
-        gap: 12px;
-
-        margin-top: 14px;
-
-    }
-
-
-    /* ======================================================
-       HERO TITLE
-    ====================================================== */
-
-    .hero-content h1 {
-
-        font-size: 2.35rem;
-
-        line-height: 1.05;
-
-        margin-bottom: 10px;
-
-    }
-    
-
-    .hero-content p {
-
-        font-size: .78rem;
-
-        line-height: 1.45;
-
-        max-width: 570px;
-
-    }
-
-
-    /* ======================================================
-       HERO BUTTONS
-    ====================================================== */
-
-    .hero-buttons a,
-    .hero-buttons button {
-
-        padding: 8px 14px;
-
-        font-size: .72rem;
-
-    }
-
-
-    /* ======================================================
-       HERO STATS
-    ====================================================== */
-
-    .hero-stats > div {
-
-        padding: 6px 10px;
-
-    }
-
-    .hero-stats strong {
-
-        font-size: .95rem;
-
-    }
-
-    .hero-stats span {
-
-        font-size: .6rem;
-
-    }
-
-
-    /* ======================================================
-       HERO VISUAL
-    ====================================================== */
-
-    .hero-visual {
-
-        width: 100%;
-
-        max-width: 360px;
-
-        min-height: 0;
-
-        height: 155px;
-
-        margin: -8px auto -28px;
-
-        transform: scale(.48);
-
-        transform-origin: center center;
-
-    }
-
+  /* ====================================================== NAVIGATION ====================================================== */
+  .nav-container {
+    position: relative;
+    padding: 12px 18px;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .nav-actions .nav-github {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #08111f;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 8px;
+    display: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 0;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  /* ====================================================== HERO ====================================================== */
+  .hero-section {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 32px;
+    padding-bottom: 24px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-content > p {
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* ====================================================== HERO TITLE ====================================================== */
+  .hero-content h1 {
+    font-size: 2.15rem;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .hero-content p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  /* ====================================================== HERO BUTTONS ====================================================== */
+  .hero-buttons a,
+  .hero-buttons button {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    min-width: 120px;
+  }
+
+  /* ====================================================== HERO STATS ====================================================== */
+  .hero-stats > div {
+    padding: 8px 12px;
+    border: 1px solid rgba(0, 200, 255, 0.2);
+    border-radius: 8px;
+  }
+
+  .hero-stats strong {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .hero-stats span {
+    font-size: 0.7rem;
+  }
+
+  /* ====================================================== HERO VISUAL ====================================================== */
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    height: 240px;
+    margin: 0 auto;
+    transform: scale(1);
+    transform-origin: center center;
+  }
 }
 
 
