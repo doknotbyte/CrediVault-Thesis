@@ -4313,25 +4313,37 @@ MENU
     ====================================================== */
 
     .nav-container {
+
         position: relative;
+
         padding: 12px 18px;
+
     }
 
     .nav-actions {
+
         display: flex;
+
         align-items: center;
+
         margin-left: auto;
+
     }
 
     .nav-actions .nav-github {
+
         display: none;
+
     }
 
     .menu-toggle {
+
         display: flex;
+
     }
 
     .nav-links {
+
         position: absolute;
 
         top: 100%;
@@ -4342,32 +4354,37 @@ MENU
         background: #08111f;
 
         flex-direction: column;
+
         align-items: flex-start;
 
-        padding: 12px;
+        padding: 10px;
 
-        gap: 8px;
+        gap: 5px;
 
         display: none;
 
-        border-top:
-            1px solid rgba(255, 255, 255, 0.08);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
 
         margin: 0;
 
         z-index: 999;
+
     }
 
     .nav-links.active {
+
         display: flex;
+
     }
 
     .nav-item {
+
         width: 100%;
 
-        font-size: 0.85rem;
+        font-size: 0.82rem;
 
-        padding: 8px 10px;
+        padding: 7px 9px;
+
     }
 
 
@@ -4376,42 +4393,39 @@ MENU
     ====================================================== */
 
     .hero-section {
-        width: 100%;
 
-        padding:
-            18px 20px
-            32px;
+        padding-left: 20px;
 
-        overflow: hidden;
+        padding-right: 20px;
+
+        padding-top: 25px;
+
+        padding-bottom: 22px;
+
     }
 
     .hero-container {
-        width: 100%;
 
         grid-template-columns: 1fr;
 
-        gap: 22px;
+        gap: 0;
 
         text-align: center;
+
     }
 
-
-    /* ======================================================
-       HERO CONTENT — MOVE UP
-    ====================================================== */
-
     .hero-content {
-        width: 100%;
 
-        max-width: 720px;
+        max-width: 680px;
 
-        margin:
-            -28px auto 0;
+        margin: 0 auto;
+
     }
 
     .hero-content > p {
-        margin-left: auto;
-        margin-right: auto;
+
+        margin: 0 auto 16px;
+
     }
 
 
@@ -4420,24 +4434,36 @@ MENU
     ====================================================== */
 
     .hero-content h1 {
-        font-size: 2.25rem;
+
+        font-size: 2.3rem;
 
         line-height: 1.08;
 
-        margin-bottom: 11px;
+        margin-top: 0;
 
-        letter-spacing: -0.8px;
+        margin-bottom: 14px;
+
     }
 
-    .hero-content p {
-        max-width: 620px;
 
-        margin-left: auto;
-        margin-right: auto;
+    /* ======================================================
+       HERO DESCRIPTION
+    ====================================================== */
+
+    .hero-content p {
 
         font-size: 0.82rem;
 
-        line-height: 1.5;
+        line-height: 1.55;
+
+        max-width: 600px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        margin-bottom: 16px;
+
     }
 
 
@@ -4446,192 +4472,182 @@ MENU
     ====================================================== */
 
     .hero-buttons {
+
         justify-content: center;
 
-        gap: 10px;
+        align-items: center;
+
+        gap: 9px;
 
         margin-top: 14px;
 
+        margin-bottom: 18px;
+
         flex-wrap: wrap;
+
     }
 
     .hero-buttons a,
     .hero-buttons button {
-        padding: 9px 15px;
+
+        padding: 9px 16px;
 
         font-size: 0.76rem;
+
+        min-width: 118px;
+
     }
 
 
     /* ======================================================
        HERO STATS
-       KEEP ORIGINAL DESKTOP CARD SHAPE
+       3 CARDS:
+       DIGITAL / INTERACTIVE / VERIFIED
+
+       FONT SIZE INTENTIONALLY LEFT ALONE
     ====================================================== */
 
     .hero-stats {
+
         justify-content: center;
 
-        gap: 14px;
+        align-items: center;
 
-        margin-top: 17px;
+        gap: 13px;
 
-        flex-wrap: nowrap;
+        margin-top: 16px;
+
+        margin-bottom: 8px;
+
+        flex-wrap: wrap;
+
+    }
+
+    .hero-stats > div {
+
+        padding: 7px 11px;
+
+        border: 1px solid rgba(0, 200, 255, 0.2);
+
+        border-radius: 8px;
+
     }
 
     /*
-       IMPORTANT:
-       No border, border-radius, width,
-       or shape override here.
-
-       Digital / Interactive / Verified
-       keep their original desktop design.
+       DO NOT CHANGE THE FONT SIZES
+       OF THE THREE CARDS.
     */
+
+    .hero-stats strong {
+
+        font-size: 1rem;
+
+        display: block;
+
+        margin-bottom: 4px;
+
+    }
+
+    .hero-stats span {
+
+        font-size: 0.7rem;
+
+    }
 
 
     /* ======================================================
-       HERO VISUAL AREA
+       HERO VISUAL / RINGS
+
+       Slightly larger than before,
+       but still compact for tablet.
     ====================================================== */
 
     .hero-visual {
-        position: relative;
 
         width: 100%;
 
-        max-width: 520px;
+        max-width: 420px;
 
-        min-height: 315px;
+        height: 250px;
 
-        margin:
-            8px auto 0;
+        min-height: 250px;
 
-        transform: scale(.78);
+        margin: 18px auto -18px;
 
-        transform-origin:
-            center top;
+        transform: scale(0.68);
 
-        overflow: visible;
+        transform-origin: center center;
+
+        position: relative;
+
     }
 
 
     /* ======================================================
-       VAULT / ORBIT CORE
-       SLIGHTLY SMALLER
+       RING CONTENT SPACING
+
+       Keeps the labels/topics from touching each other.
     ====================================================== */
 
-    .vault-core {
-        width: 285px;
+    .hero-visual h3,
+    .hero-visual h4 {
 
-        height: 285px;
+        margin-bottom: 7px;
 
-        margin: 0 auto;
+    }
+
+    .hero-visual p {
+
+        margin-bottom: 7px;
+
+        line-height: 1.35;
+
+    }
+
+    .hero-visual span {
+
+        line-height: 1.3;
+
     }
 
 
     /* ======================================================
-       RINGS
+       RING TOPIC TEXT
+
+       Slight increase for readability without
+       making the whole visual oversized.
     ====================================================== */
 
-    .ring-1 {
-        width: 285px;
-        height: 290px;
-    }
+    .hero-visual .topic,
+    .hero-visual .topic-card,
+    .hero-visual .orbit-item,
+    .hero-visual .orbit-card {
 
-    .ring-2 {
-        width: 225px;
-        height: 225px;
-    }
+        font-size: 0.88rem;
 
-    .ring-3 {
-        width: 170px;
-        height: 170px;
     }
 
 
     /* ======================================================
-       CENTER CREDIVAULT CARD
+       RING TOPIC SPACING
     ====================================================== */
 
-    .core-card {
-        width: 180px;
+    .hero-visual .topic h3,
+    .hero-visual .topic-card h3,
+    .hero-visual .orbit-item h3,
+    .hero-visual .orbit-card h3 {
 
-        height: 180px;
+        margin-bottom: 6px;
 
-        border-radius: 26px;
     }
 
-    .core-card h2 {
-        font-size: 1.35rem;
-    }
+    .hero-visual .topic p,
+    .hero-visual .topic-card p,
+    .hero-visual .orbit-item p,
+    .hero-visual .orbit-card p {
 
-    .core-card p {
-        font-size: 0.72rem;
-    }
+        margin-bottom: 5px;
 
-
-    /* ======================================================
-       FLOATING TOPIC CARDS
-       COMPACT AROUND THE ORBIT
-    ====================================================== */
-
-    .floating-card {
-        min-width: 105px;
-
-        max-width: 135px;
-
-        padding:
-            7px 10px;
-
-        gap: 6px;
-
-        border-radius: 11px;
-
-        font-size: 0.62rem;
-
-        white-space: nowrap;
-    }
-
-
-    /* ======================================================
-       TOP TOPIC
-    ====================================================== */
-
-    .card-top {
-        top: -6px;
-
-        left: 50%;
-    }
-
-
-    /* ======================================================
-       LEFT TOPIC
-    ====================================================== */
-
-    .card-left {
-        left: 8px;
-
-        top: 50%;
-    }
-
-
-    /* ======================================================
-       RIGHT TOPIC
-    ====================================================== */
-
-    .card-right {
-        right: 8px;
-
-        top: 50%;
-    }
-
-
-    /* ======================================================
-       BOTTOM TOPIC
-    ====================================================== */
-
-    .card-bottom {
-        bottom: -5px;
-
-        left: 50%;
     }
 
 }
