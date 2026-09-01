@@ -358,7 +358,7 @@ window.addEventListener("load", () => {
         progress.style.transition =
             "1.2s ease";
 
-        progress.style.width = "80%";
+        progress.style.width = "100%";
 
     }, 300);
 
