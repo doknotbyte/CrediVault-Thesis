@@ -1654,14 +1654,31 @@ RESPONSIVE — TABLET (992px and below)
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* ==================================================
+       ACTIVITY IMAGE GAME — TABLET
+    ================================================== */
+
     .image-game {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
+        gap: 16px;
+
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .image-option {
         width: 100%;
+        max-width: 290px;
+        margin: 0 auto;
+    }
+
+    .image-option img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
     }
 
     .action-options {

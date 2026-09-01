@@ -358,6 +358,45 @@ HOME PANEL
     max-width: 650px;
 }
 
+/* ==========================================================
+   CHOOSE A TOPIC BUTTON
+   NON-CLICKABLE / VISUAL ONLY
+========================================================== */
+
+.choose-topic-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 13px 25px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #38bdf8
+    );
+
+    color: #fff;
+
+    font-weight: 700;
+    font-size: .90rem;
+
+    text-decoration: none;
+
+    cursor: default;
+
+    pointer-events: none;
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, .18);
+}
+
+.choose-topic-btn i {
+    font-size: .95rem;
+}
+
 .module-btn {
     display: inline-flex;
 
