@@ -4400,7 +4400,7 @@ MENU
 
         padding-top: 24px;
 
-        padding-bottom: 18px;
+        padding-bottom: 10px;
 
     }
 
@@ -4418,13 +4418,13 @@ MENU
 
         max-width: 650px;
 
-        margin: auto;
+        margin: 0 auto;
 
     }
 
     .hero-content > p {
 
-        margin: auto;
+        margin: 0 auto;
 
     }
 
@@ -4462,7 +4462,7 @@ MENU
         margin-bottom: 10px;
 
     }
-
+    
 
     .hero-content p {
 
@@ -4520,15 +4520,15 @@ MENU
 
         width: 100%;
 
-        max-width: 390px;
+        max-width: 360px;
 
-        min-height: 170px;
+        min-height: 0;
 
-        height: 170px;
+        height: 155px;
 
-        margin: -15px auto -35px;
+        margin: -8px auto -28px;
 
-        transform: scale(.55);
+        transform: scale(.48);
 
         transform-origin: center center;
 
