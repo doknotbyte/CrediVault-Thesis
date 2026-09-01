@@ -4316,7 +4316,7 @@ MENU
 
         position: relative;
 
-        padding: 12px 18px;
+        padding: 10px 16px;
 
     }
 
@@ -4357,9 +4357,9 @@ MENU
 
         align-items: flex-start;
 
-        padding: 12px;
+        padding: 10px;
 
-        gap: 6px;
+        gap: 5px;
 
         display: none;
 
@@ -4381,9 +4381,9 @@ MENU
 
         width: 100%;
 
-        font-size: .78rem;
+        font-size: .76rem;
 
-        padding: 6px 8px;
+        padding: 5px 7px;
 
     }
 
@@ -4394,13 +4394,13 @@ MENU
 
     .hero-section {
 
-        padding-left: 20px;
+        padding-left: 18px;
 
-        padding-right: 20px;
+        padding-right: 18px;
 
-        padding-top: 28px;
+        padding-top: 24px;
 
-        padding-bottom: 25px;
+        padding-bottom: 18px;
 
     }
 
@@ -4408,7 +4408,7 @@ MENU
 
         grid-template-columns: 1fr;
 
-        gap: 8px;
+        gap: 0;
 
         text-align: center;
 
@@ -4416,7 +4416,7 @@ MENU
 
     .hero-content {
 
-        max-width: 680px;
+        max-width: 650px;
 
         margin: auto;
 
@@ -4432,9 +4432,9 @@ MENU
 
         justify-content: center;
 
-        gap: 9px;
+        gap: 8px;
 
-        margin-top: 13px;
+        margin-top: 12px;
 
     }
 
@@ -4442,9 +4442,9 @@ MENU
 
         justify-content: center;
 
-        gap: 14px;
+        gap: 12px;
 
-        margin-top: 16px;
+        margin-top: 14px;
 
     }
 
@@ -4455,22 +4455,22 @@ MENU
 
     .hero-content h1 {
 
-        font-size: 2.4rem;
+        font-size: 2.35rem;
 
-        line-height: 1.08;
+        line-height: 1.05;
 
-        margin-bottom: 11px;
+        margin-bottom: 10px;
 
     }
 
 
     .hero-content p {
 
-        font-size: .82rem;
+        font-size: .78rem;
 
-        line-height: 1.5;
+        line-height: 1.45;
 
-        max-width: 600px;
+        max-width: 570px;
 
     }
 
@@ -4482,7 +4482,7 @@ MENU
     .hero-buttons a,
     .hero-buttons button {
 
-        padding: 8px 15px;
+        padding: 8px 14px;
 
         font-size: .72rem;
 
@@ -4495,19 +4495,19 @@ MENU
 
     .hero-stats > div {
 
-        padding: 7px 10px;
+        padding: 6px 10px;
 
     }
 
     .hero-stats strong {
 
-        font-size: .98rem;
+        font-size: .95rem;
 
     }
 
     .hero-stats span {
 
-        font-size: .62rem;
+        font-size: .6rem;
 
     }
 
@@ -4520,13 +4520,15 @@ MENU
 
         width: 100%;
 
-        max-width: 430px;
+        max-width: 390px;
 
-        min-height: 185px;
+        min-height: 170px;
 
-        margin: -5px auto 0;
+        height: 170px;
 
-        transform: scale(.56);
+        margin: -15px auto -35px;
+
+        transform: scale(.55);
 
         transform-origin: center center;
 
