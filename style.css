@@ -4307,137 +4307,333 @@ MENU
 ========================================================== */
 
 @media (max-width: 992px) {
-  /* NAVIGATION */
-  .nav-container {
-    position: relative;
-    padding: 12px 18px;
-  }
 
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
+    /* ======================================================
+       NAVIGATION
+    ====================================================== */
 
-  .nav-actions .nav-github {
-    display: none;
-  }
+    .nav-container {
+        position: relative;
+        padding: 12px 18px;
+    }
 
-  .menu-toggle {
-    display: flex;
-  }
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
 
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #08111f;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px;
-    gap: 8px;
-    display: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin: 0;
-    z-index: 999;
-  }
+    .nav-actions .nav-github {
+        display: none;
+    }
 
-  .nav-links.active {
-    display: flex;
-  }
+    .menu-toggle {
+        display: flex;
+    }
 
-  .nav-item {
-    width: 100%;
-    font-size: 0.85rem;
-    padding: 8px 10px;
-  }
+    .nav-links {
+        position: absolute;
 
-  /* HERO */
-  .hero-section {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 32px;
-    padding-bottom: 24px;
-  }
+        top: 100%;
+        left: 0;
 
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    text-align: center;
-  }
+        width: 100%;
 
-  .hero-content {
-    max-width: 100%;
-    margin: 0 auto;
-  }
+        background: #08111f;
 
-  .hero-content > p {
-    margin: 0 auto;
-  }
+        flex-direction: column;
+        align-items: flex-start;
 
-  .hero-buttons {
-    justify-content: center;
-    gap: 10px;
-    margin-top: 16px;
-    flex-wrap: wrap;
-  }
+        padding: 12px;
 
-  .hero-stats {
-    justify-content: center;
-    gap: 16px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
+        gap: 8px;
 
-  /* HERO CONTENT */
-  .hero-content h1 {
-    font-size: 2.15rem;
-    line-height: 1.1;
-    margin-bottom: 12px;
-  }
+        display: none;
 
-  .hero-content p {
-    font-size: 0.875rem;
-    line-height: 1.5;
-    max-width: 100%;
-  }
+        border-top:
+            1px solid rgba(255, 255, 255, 0.08);
 
-  /* HERO BUTTONS */
-  .hero-buttons a,
-  .hero-buttons button {
-    padding: 10px 16px;
-    font-size: 0.8rem;
-    min-width: 120px;
-  }
+        margin: 0;
 
-  /* HERO STATS */
-  .hero-stats > div {
-    padding: 8px 12px;
-    border: 1px solid rgba(0, 200, 255, 0.2);
-    border-radius: 8px;
-  }
+        z-index: 999;
+    }
 
-  .hero-stats strong {
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 4px;
-  }
+    .nav-links.active {
+        display: flex;
+    }
 
-  .hero-stats span {
-    font-size: 0.7rem;
-  }
+    .nav-item {
+        width: 100%;
 
-  /* HERO VISUAL */
-  .hero-visual {
-    width: 100%;
-    max-width: 100%;
-    min-height: 0;
-    height: 240px;
-    margin: 0 auto;
-    transform: scale(1);
-    transform-origin: center center;
-  }
+        font-size: 0.85rem;
+
+        padding: 8px 10px;
+    }
+
+
+    /* ======================================================
+       HERO
+    ====================================================== */
+
+    .hero-section {
+        width: 100%;
+
+        padding:
+            18px 20px
+            32px;
+
+        overflow: hidden;
+    }
+
+    .hero-container {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        text-align: center;
+    }
+
+
+    /* ======================================================
+       HERO CONTENT — MOVE UP
+    ====================================================== */
+
+    .hero-content {
+        width: 100%;
+
+        max-width: 720px;
+
+        margin:
+            -28px auto 0;
+    }
+
+    .hero-content > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* ======================================================
+       HERO TITLE
+    ====================================================== */
+
+    .hero-content h1 {
+        font-size: 2.25rem;
+
+        line-height: 1.08;
+
+        margin-bottom: 11px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .hero-content p {
+        max-width: 620px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 0.82rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* ======================================================
+       HERO BUTTONS
+    ====================================================== */
+
+    .hero-buttons {
+        justify-content: center;
+
+        gap: 10px;
+
+        margin-top: 14px;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        padding: 9px 15px;
+
+        font-size: 0.76rem;
+    }
+
+
+    /* ======================================================
+       HERO STATS
+       KEEP ORIGINAL DESKTOP CARD SHAPE
+    ====================================================== */
+
+    .hero-stats {
+        justify-content: center;
+
+        gap: 14px;
+
+        margin-top: 17px;
+
+        flex-wrap: nowrap;
+    }
+
+    /*
+       IMPORTANT:
+       No border, border-radius, width,
+       or shape override here.
+
+       Digital / Interactive / Verified
+       keep their original desktop design.
+    */
+
+
+    /* ======================================================
+       HERO VISUAL AREA
+    ====================================================== */
+
+    .hero-visual {
+        position: relative;
+
+        width: 100%;
+
+        max-width: 520px;
+
+        min-height: 315px;
+
+        margin:
+            8px auto 0;
+
+        transform: scale(.78);
+
+        transform-origin:
+            center top;
+
+        overflow: visible;
+    }
+
+
+    /* ======================================================
+       VAULT / ORBIT CORE
+       SLIGHTLY SMALLER
+    ====================================================== */
+
+    .vault-core {
+        width: 285px;
+
+        height: 285px;
+
+        margin: 0 auto;
+    }
+
+
+    /* ======================================================
+       RINGS
+    ====================================================== */
+
+    .ring-1 {
+        width: 285px;
+        height: 290px;
+    }
+
+    .ring-2 {
+        width: 225px;
+        height: 225px;
+    }
+
+    .ring-3 {
+        width: 170px;
+        height: 170px;
+    }
+
+
+    /* ======================================================
+       CENTER CREDIVAULT CARD
+    ====================================================== */
+
+    .core-card {
+        width: 180px;
+
+        height: 180px;
+
+        border-radius: 26px;
+    }
+
+    .core-card h2 {
+        font-size: 1.35rem;
+    }
+
+    .core-card p {
+        font-size: 0.72rem;
+    }
+
+
+    /* ======================================================
+       FLOATING TOPIC CARDS
+       COMPACT AROUND THE ORBIT
+    ====================================================== */
+
+    .floating-card {
+        min-width: 105px;
+
+        max-width: 135px;
+
+        padding:
+            7px 10px;
+
+        gap: 6px;
+
+        border-radius: 11px;
+
+        font-size: 0.62rem;
+
+        white-space: nowrap;
+    }
+
+
+    /* ======================================================
+       TOP TOPIC
+    ====================================================== */
+
+    .card-top {
+        top: -6px;
+
+        left: 50%;
+    }
+
+
+    /* ======================================================
+       LEFT TOPIC
+    ====================================================== */
+
+    .card-left {
+        left: 8px;
+
+        top: 50%;
+    }
+
+
+    /* ======================================================
+       RIGHT TOPIC
+    ====================================================== */
+
+    .card-right {
+        right: 8px;
+
+        top: 50%;
+    }
+
+
+    /* ======================================================
+       BOTTOM TOPIC
+    ====================================================== */
+
+    .card-bottom {
+        bottom: -5px;
+
+        left: 50%;
+    }
+
 }
 
 
