@@ -194,7 +194,7 @@ const activities = {
 
 const topicNames = {
 
-    ai: "AI-Manipulation Identification",
+    ai: "AI-Generated Misinformation",
 
     clickbait: "Clickbait",
 
