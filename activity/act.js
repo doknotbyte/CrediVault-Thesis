@@ -36,19 +36,19 @@ const activities = {
 
         {
             question:
-                "Look at the image. What is the main concern with digitally manipulated content?",
+                "The image appears realistic and is presented as evidence of an event. However, you are unsure whether the image is authentic. Which action would provide the strongest basis for deciding whether the image should be trusted?",
 
             choices: [
-                "It may change or distort the original information.",
-                "It is always created for entertainment.",
-                "It cannot influence people's opinions.",
-                "It is automatically verified by social media."
+                "Check whether the image appears realistic enough to be genuine.",
+                "Look for the original source, compare the image with credible reports, and check whether the event is independently documented.",
+                "Trust the image if several social media users describe the same event in the comments.",
+                "Assume the image is authentic because digitally manipulated images are usually easy to recognize."
             ],
 
-            answer: 0,
+            answer: 1,
 
             explanation:
-                "Digital manipulation can alter images or information, making people believe something that may not accurately represent reality.",
+                "A realistic appearance is not enough to establish authenticity. The stronger approach is to trace the original source, compare the claim with credible independent reporting, and determine whether the event is supported by reliable evidence.",
 
             image:
                 "images/digital.jpg"
@@ -57,19 +57,19 @@ const activities = {
 
         {
             question:
-                "The image is an example of information involving AI-generated content. What should you do before believing or sharing it?",
+                "An image contains text claiming that a major event happened at a specific location and date. The post provides no original source, but the image looks convincing. What is the most appropriate next step before sharing it?",
 
             choices: [
-                "Share it immediately because it looks realistic.",
-                "Check the information using reliable and independent sources.",
-                "Believe it if many people are commenting on it.",
-                "Assume that all AI-generated images are true."
+                "Search for the same image and claim using independent and credible sources, then compare the date, location, and available evidence.",
+                "Share the image with a warning because people can decide for themselves whether it is true.",
+                "Accept the claim because adding specific details such as a location and date makes the post more credible.",
+                "Check how many reactions the post has and use the audience's response as an indication of accuracy."
             ],
 
-            answer: 1,
+            answer: 0,
 
             explanation:
-                "AI-generated images can look realistic even when they are false. Always verify the information through reliable and independent sources before sharing it.",
+                "Specific details can make misinformation appear convincing, but they do not prove that the claim is true. Searching for independent evidence and comparing the date, location, and original source provides a stronger basis for verification.",
 
             image:
                 "images/ai-text.jpg"
@@ -86,19 +86,19 @@ const activities = {
 
         {
             question:
-                "What makes the headline in the image an example of clickbait?",
+                "A headline claims that a surprising political event happened and uses dramatic wording to encourage readers to click. The article preview provides little evidence and does not clearly identify the original source. What should make you cautious about the post?",
 
             choices: [
-                "It uses attention-grabbing language to encourage people to click.",
-                "It provides complete evidence for every claim.",
-                "It comes from a government website.",
-                "It avoids emotional or exaggerated wording."
+                "The headline uses emotional language and creates urgency while providing insufficient evidence or context for the claim.",
+                "The headline is suspicious only because political topics should never be discussed on social media.",
+                "The article is probably accurate because dramatic headlines are commonly used by professional news organizations.",
+                "The claim can be considered reliable if the headline is repeated by several social media accounts."
             ],
 
             answer: 0,
 
             explanation:
-                "Clickbait commonly uses exaggerated, emotional, or surprising wording to attract attention and encourage people to click on the content.",
+                "Clickbait often combines emotional or sensational wording with limited context to encourage users to click. A dramatic headline should prompt you to examine the source, evidence, and full context instead of accepting the claim immediately.",
 
             image:
                 "images/clickbait.jpg"
@@ -115,19 +115,19 @@ const activities = {
 
         {
             question:
-                "Why should popularity or the number of views not be treated as proof that information is true?",
+                "A social media post has millions of views, thousands of comments, and many shares. Some users argue that the large audience proves the information is trustworthy. Which evaluation is most accurate?",
 
             choices: [
-                "Popular content is always false.",
-                "Information becomes true when many people share it.",
-                "A large number of views or shares does not guarantee accuracy.",
-                "Only unpopular information can be trusted."
+                "The information is likely accurate because a large number of people have already accepted it.",
+                "The number of views is useful evidence of accuracy because false information rarely becomes popular.",
+                "The engagement shows that the content spread widely, but its accuracy still needs to be evaluated using evidence and credible sources.",
+                "The information should be considered unreliable because popular content is usually misinformation."
             ],
 
             answer: 2,
 
             explanation:
-                "Popularity shows how widely content is viewed or shared, but it does not prove that the information is accurate or reliable.",
+                "Views, likes, comments, and shares measure how widely content spreads, not whether the information is accurate. Popularity can increase exposure to both reliable information and misinformation, so the claim still needs to be verified using credible evidence.",
 
             image:
                 "images/popularity.png"
@@ -144,19 +144,19 @@ const activities = {
 
         {
             question:
-                "You see a health-related video making a strong claim but the creator does not provide any credible source or evidence. What should you do first to verify the claim?",
+                "A creator posts a health-related claim and cites no study or organization. The video has a professional presentation and thousands of positive comments. If you want to evaluate the claim responsibly, which sequence of actions is strongest?",
 
             choices: [
-                "Believe the claim because the video looks professional.",
-                "Check the creator’s credibility and look for reliable sources supporting the claim.",
-                "Share the video and wait for others to confirm it.",
-                "Assume the claim is true because it has many views."
+                "Check the number of views, read the comments, and decide whether most viewers seem convinced.",
+                "Search for the exact claim, identify whether credible health organizations or research support it, and compare the evidence with the creator's statement.",
+                "Trust the claim temporarily because the creator appears knowledgeable, then wait for the video to become more popular.",
+                "Look for another social media post making the same claim and treat repeated posts as confirmation."
             ],
 
             answer: 1,
 
             explanation:
-                "The first step is to check the creator’s credibility and look for reliable sources that support the claim. This helps determine whether the information is supported by trustworthy evidence.",
+                "A strong verification process focuses on evidence rather than presentation or popularity. Search for the specific claim, consult credible health organizations or research, and compare the available evidence with what the creator is saying.",
 
             image:
                 "images/source.jpeg"
@@ -165,19 +165,19 @@ const activities = {
 
         {
             question:
-                "A YouTube video makes a viral claim and has over 1.2 million views. What should you understand about the number of views?",
+                "A viral video claims that a recent event occurred and has more than 1.2 million views. You find several accounts repeating the same claim, but most of them appear to have copied the original post. What does this tell you?",
 
             choices: [
-                "The claim must be true because millions of people watched it.",
-                "The high number of views proves that the information came from an expert.",
-                "The views show that the video is popular, but they do not prove that the claim is accurate.",
-                "The claim is reliable because YouTube allows the video to remain online."
+                "The claim is confirmed because multiple accounts are reporting the same information.",
+                "The large number of views and repeated posts make the claim more reliable than information from a less popular source.",
+                "The repeated posts may indicate that the claim spread widely, but they do not independently verify it if the accounts are relying on the same original source.",
+                "The claim should automatically be considered false because viral information is usually manipulated."
             ],
 
             answer: 2,
 
             explanation:
-                "A high number of views shows that the video is popular and has reached many people, but popularity does not prove that the claim is accurate or trustworthy.",
+                "Multiple posts do not necessarily represent independent confirmation. If several accounts copied the same original claim, they may all be relying on the same unverified information. Independent evidence from credible sources is needed to strengthen verification.",
 
             image:
                 "images/social.jpeg"
@@ -715,7 +715,6 @@ async function enterActivity() {
 
     /* ======================================================
        HIDE MODAL IMMEDIATELY
-       
        DO NOT WAIT FOR SUPABASE.
     ====================================================== */
 
@@ -758,7 +757,6 @@ async function enterActivity() {
 
     /* ======================================================
        SAVE TO SUPABASE IN BACKGROUND
-       
        The activity continues immediately.
     ====================================================== */
 
