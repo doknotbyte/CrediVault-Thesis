@@ -108,32 +108,53 @@ const activities = {
 
 
     /* ======================================================
-       INFLUENCE OF POPULARITY
+     INFLUENCE OF POPULARITY
     ====================================================== */
 
     popularity: [
 
-        {
-            question:
-                "A social media post has millions of views, thousands of comments, and many shares. Some users argue that the large audience proves the information is trustworthy. Which evaluation is most accurate?",
+    {
+        question:
+            "A viral post claims that several public figures are involved in a major scam. The post has thousands of shares and many comments, but it provides no clear evidence or reliable source. What is the most appropriate way to evaluate the claim?",
 
-            choices: [
-                "The information is likely accurate because a large number of people have already accepted it.",
-                "The number of views is useful evidence of accuracy because false information rarely becomes popular.",
-                "The engagement shows that the content spread widely, but its accuracy still needs to be evaluated using evidence and credible sources.",
-                "The information should be considered unreliable because popular content is usually misinformation."
-            ],
+        choices: [
+            "Consider the claim credible because many people have already shared and discussed it.",
+            "Assume the claim is false because viral posts about public figures are usually misleading.",
+            "Treat the popularity as evidence that the claim deserves attention, but verify the specific allegation using reliable sources and supporting evidence.",
+            "Accept the claim if several comments describe similar experiences, even if they do not provide independent evidence."
+        ],
 
-            answer: 2,
+        answer: 2,
 
-            explanation:
-                "Views, likes, comments, and shares measure how widely content spreads, not whether the information is accurate. Popularity can increase exposure to both reliable information and misinformation, so the claim still needs to be verified using credible evidence.",
+        explanation:
+            "High engagement shows that the claim has attracted attention, but it does not prove that the claim is accurate. A responsible evaluation requires checking reliable sources, looking for supporting evidence, and determining whether the information comes from independent and credible reporting.",
 
-            image:
-                "images/popularity.png"
-        }
+        image:
+            "images/popularity1.jpg"
+    },
 
-    ],
+
+    {
+        question:
+            "A widely shared post promotes a supposed healing method and shows a large number of reactions and comments from people who claim it worked for them. Which factor should carry the most weight when deciding whether the health claim is trustworthy?",
+
+        choices: [
+            "The number of people who reacted positively because widespread agreement suggests that the method is effective.",
+            "The personal experiences in the comments because real users can provide stronger evidence than professional sources.",
+            "The popularity of the post together with the confidence of the person presenting it.",
+            "Evidence from qualified health professionals, credible health organizations, or reliable research that independently supports the claim."
+        ],
+
+        answer: 3,
+
+        explanation:
+            "Personal experiences, positive comments, and high engagement can make a health claim appear convincing, but they do not establish that the claim is medically reliable. Stronger evidence comes from qualified professionals, credible health organizations, and research that can independently support the claim.",
+
+        image:
+            "images/popularity2.jpg"
+    }
+
+],
 
 
     /* ======================================================
