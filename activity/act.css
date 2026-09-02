@@ -2063,7 +2063,7 @@ body {
 
     justify-content: center;
 
-    padding: 55px 30px 70px;
+    padding: 35px 30px 45px;
 
 }
 
@@ -2083,7 +2083,7 @@ body {
 
     width: 100%;
 
-    max-width: 500px;
+    max-width: 440px;
 
     text-align: center;
 
@@ -2091,9 +2091,9 @@ body {
 
     border: 1px solid rgba(255,255,255,.09);
 
-    border-radius: 25px;
+    border-radius: 20px;
 
-    padding: 55px 38px 40px;
+    padding: 35px 30px 28px;
 
 }
 
@@ -2104,13 +2104,13 @@ body {
 
 .result-icon {
 
-    width: 75px;
+    width: 62px;
 
-    height: 75px;
+    height: 62px;
 
-    margin: 0 auto 24px;
+    margin: 0 auto 17px;
 
-    border-radius: 20px;
+    border-radius: 16px;
 
     display: flex;
 
@@ -2122,7 +2122,7 @@ body {
 
     color: #3bddff;
 
-    font-size: 2rem;
+    font-size: 1.7rem;
 
 }
 
@@ -2137,13 +2137,13 @@ body {
 
     color: #3bddff;
 
-    font-size: .65rem;
+    font-size: .60rem;
 
     font-weight: 800;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.8px;
 
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 
 }
 
@@ -2154,11 +2154,11 @@ body {
 
 .result-card h1 {
 
-    font-size: 2.3rem;
+    font-size: 1.9rem;
 
     line-height: 1.1;
 
-    margin: 0 0 14px;
+    margin: 0 0 9px;
 
 }
 
@@ -2171,13 +2171,13 @@ body {
 
     color: #8f9daf;
 
-    font-size: .82rem;
+    font-size: .75rem;
 
-    line-height: 1.7;
+    line-height: 1.5;
 
-    margin: 0 auto 28px;
+    margin: 0 auto 20px;
 
-    max-width: 380px;
+    max-width: 350px;
 
 }
 
@@ -2188,11 +2188,11 @@ body {
 
 .score-box {
 
-    margin: 0 auto 30px;
+    margin: 0 auto 20px;
 
-    padding: 22px 20px;
+    padding: 17px 18px;
 
-    border-radius: 15px;
+    border-radius: 13px;
 
     background: rgba(255,255,255,.04);
 
@@ -2207,11 +2207,11 @@ body {
 
     color: #8f9daf;
 
-    font-size: .65rem;
+    font-size: .60rem;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.3px;
 
-    margin-bottom: 9px;
+    margin-bottom: 6px;
 
 }
 
@@ -2222,7 +2222,7 @@ body {
 
     display: block;
 
-    font-size: 2.5rem;
+    font-size: 2.1rem;
 
     line-height: 1;
 
@@ -2239,9 +2239,9 @@ body {
 
     display: flex;
 
-    gap: 12px;
+    gap: 10px;
 
-    margin-top: 4px;
+    margin-top: 2px;
 
 }
 
@@ -2254,13 +2254,13 @@ body {
 
     flex: 1;
 
-    padding: 14px 13px;
+    padding: 11px 12px;
 
-    border-radius: 11px;
+    border-radius: 10px;
 
     font-family: inherit;
 
-    font-size: .75rem;
+    font-size: .70rem;
 
     font-weight: 700;
 
@@ -2272,7 +2272,7 @@ body {
 
     justify-content: center;
 
-    gap: 7px;
+    gap: 6px;
 
     transition: .2s ease;
 
