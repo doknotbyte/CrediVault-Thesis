@@ -561,39 +561,72 @@ a {
    REFERENCE
 ========================================================== */
 
-.reference-box {
-    margin-top: 18px;
+.reference-box{
+    margin-top:18px;
 
-    display: flex;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
 
-    gap: 12px;
+    padding:13px 16px;
 
-    align-items: flex-start;
+    border-radius:14px;
 
-    padding:
-        13px 16px;
+    background:rgba(255,255,255,.05);
 
-    border-radius: 14px;
-
-    background:
-        rgba(255,255,255,.05);
-
-    border-left:
-        4px solid #38bdf8;
+    border-left:4px solid #38bdf8;
 }
 
-.reference-box i {
-    color: #38bdf8;
-
-    margin-top: 2px;
+.reference-box i{
+    color:#38bdf8;
+    margin-top:2px;
 }
 
-.reference-box span {
-    color: #d6e2f1;
+.reference-box span{
+    color:#cbd5e1;
 
-    font-size: .84rem;
+    font-size:.84rem;
+    line-height:1.6;
 
-    line-height: 1.6;
+    overflow-wrap:anywhere;
+}
+
+
+/* =========================================
+   CLICKABLE REFERENCES
+========================================= */
+
+.reference-box a{
+    color:#cbd5e1;
+
+    text-decoration:none !important;
+
+    transition:color .2s ease;
+}
+
+.reference-box a:hover{
+    color:#38bdf8;
+
+    text-decoration:none !important;
+}
+
+.reference-box a:visited{
+    color:#cbd5e1;
+
+    text-decoration:none !important;
+}
+
+.reference-box a:active{
+    color:#38bdf8;
+
+    text-decoration:none !important;
+}
+
+.reference-box a:focus{
+    color:#38bdf8;
+
+    text-decoration:none !important;
+    outline:none;
 }
 
 

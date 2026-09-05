@@ -727,29 +727,72 @@ MAIN CONTENT
    FEEDBACK
 ========================================================== */
 
-.feedback-box {
-    display: none;
-    margin-top: 28px;
-    padding: 22px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.05);
-    border-left: 5px solid #38bdf8;
-    gap: 18px;
-    align-items: flex-start;
+.reference-box{
+    margin-top:18px;
+
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+
+    padding:13px 16px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    border-left:4px solid #38bdf8;
 }
 
-.feedback-box.show {
-    display: flex;
+.reference-box i{
+    color:#38bdf8;
+    margin-top:2px;
 }
 
-.feedback-icon {
-    color: #38bdf8;
-    font-size: 1.6rem;
+.reference-box span{
+    color:#cbd5e1;
+
+    font-size:.84rem;
+    line-height:1.6;
+
+    overflow-wrap:anywhere;
 }
 
-.feedback-text {
-    color: #d7e3f3;
-    line-height: 1.8;
+
+/* =========================================
+   CLICKABLE REFERENCES
+========================================= */
+
+.reference-box a{
+    color:#cbd5e1;
+
+    text-decoration:none !important;
+
+    transition:color .2s ease;
+}
+
+.reference-box a:hover{
+    color:#38bdf8;
+
+    text-decoration:none !important;
+}
+
+.reference-box a:visited{
+    color:#cbd5e1;
+
+    text-decoration:none !important;
+}
+
+.reference-box a:active{
+    color:#38bdf8;
+
+    text-decoration:none !important;
+}
+
+.reference-box a:focus{
+    color:#38bdf8;
+
+    text-decoration:none !important;
+    outline:none;
 }
 
 
