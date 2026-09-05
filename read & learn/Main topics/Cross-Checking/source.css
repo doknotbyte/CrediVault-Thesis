@@ -1,0 +1,1984 @@
+/* ==========================================================
+   CREDIVAULT — SOURCE & EVIDENCE VERIFICATION
+   SAME DESIGN SYSTEM AS AI MANIPULATION
+========================================================== */
+
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #08111f;
+    --card: rgba(18,27,46,.82);
+    --border: rgba(255,255,255,.08);
+    --primary: #2563eb;
+    --secondary: #38bdf8;
+    --text: #ffffff;
+    --muted: #9caec8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+.hero-grid {
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.04) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+    z-index: -3;
+}
+
+.gradient-blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: .25;
+    z-index: -2;
+}
+
+.blob-1 {
+    width: 430px;
+    height: 430px;
+    background: #2563eb;
+    left: -130px;
+    top: -130px;
+}
+
+.blob-2 {
+    width: 520px;
+    height: 520px;
+    background: #06b6d4;
+    right: -180px;
+    bottom: -180px;
+}
+
+
+/* ==========================================================
+   PAGE LAYOUT
+========================================================== */
+
+.page-layout {
+    width: 100%;
+}
+
+
+/* ==========================================================
+   FIXED LEFT NAVIGATION
+========================================================== */
+
+.quick-nav {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 230px;
+    height: 100vh;
+
+    padding: 45px 25px 40px 35px;
+
+    background: rgba(10,15,25,.72);
+
+    border-right: 1px solid rgba(255,255,255,.10);
+
+    backdrop-filter: blur(14px);
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 100;
+}
+
+
+/* ==========================================================
+   NAV TITLE
+========================================================== */
+
+.quick-nav-title {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: var(--muted);
+
+    font-size: .72rem;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   NAV LINKS
+========================================================== */
+
+.quick-nav a {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 10px 9px 0;
+
+    margin-bottom: 4px;
+
+    color: var(--muted);
+
+    font-size: .88rem;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    border-bottom: 1px solid rgba(255,255,255,.06);
+
+    transition: .25s ease;
+}
+
+
+/* ==========================================================
+   NUMBER / SECTION INDICATOR
+========================================================== */
+
+.quick-nav a .nav-number {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.06);
+
+    color: #94a3b8;
+
+    font-size: .72rem;
+    font-weight: 800;
+
+    transition: .25s ease;
+}
+
+
+/* ==========================================================
+   SIDE LINE
+========================================================== */
+
+.quick-nav a::before {
+    content: "";
+
+    position: absolute;
+
+    left: -35px;
+
+    top: 3px;
+    bottom: 3px;
+
+    width: 1px;
+
+    background: transparent;
+
+    border-radius: 10px;
+
+    transition: .25s ease;
+}
+
+
+/* ==========================================================
+   NAV HOVER
+========================================================== */
+
+.quick-nav a:hover {
+    color: #fff;
+
+    transform: translateX(4px);
+}
+
+.quick-nav a:hover::before {
+    background: #38bdf8;
+    width: 1px;
+}
+
+.quick-nav a:hover .nav-number {
+    background: rgba(56,189,248,.14);
+
+    color: #38bdf8;
+
+    box-shadow:
+        0 0 14px rgba(56,189,248,.10);
+}
+
+
+/* ==========================================================
+   ACTIVE NAV
+========================================================== */
+
+.quick-nav a.active {
+    color: #fff;
+    font-weight: 700;
+}
+
+.quick-nav a.active::before {
+    background: #38bdf8;
+    width: 1px;
+}
+
+.quick-nav a.active .nav-number {
+    background: rgba(56,189,248,.16);
+    color: #38bdf8;
+}
+
+
+/* ==========================================================
+   INTERACTIVE LINK
+========================================================== */
+
+.quick-nav a.interactive-link {
+    padding-left: 0;
+
+    color: #cbd5e1;
+
+    font-weight: 600;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.06);
+}
+
+.quick-nav a.interactive-link:hover {
+    color: #fff;
+
+    background:
+        rgba(56,189,248,.035);
+
+    transform: translateX(4px);
+}
+
+.quick-nav a.interactive-link:hover::before {
+    background: #38bdf8;
+}
+
+.quick-nav a.interactive-link.active {
+    color: #fff;
+    font-weight: 700;
+}
+
+.quick-nav a.interactive-link.active::before {
+    background: #38bdf8;
+}
+
+
+/* ==========================================================
+   MAIN CONTENT
+========================================================== */
+
+.main-content {
+    margin-left: 230px;
+
+    width:
+        calc(100% - 230px);
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.ai-header {
+    width: min(1100px, 92%);
+
+    margin:
+        -10px auto 28px;
+}
+
+
+/* ==========================================================
+   BACK BUTTON
+========================================================== */
+
+.back-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        10px 18px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid var(--border);
+
+    color: #fff;
+
+    font-size: .88rem;
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.back-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #38bdf8
+        );
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* ==========================================================
+   PAGE TITLE
+========================================================== */
+
+.page-title {
+    margin-top: 22px;
+}
+
+.page-tag {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 50px;
+    background: rgba(56,189,248,.12);
+
+    color: #38bdf8;
+
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    margin-bottom: 19px;
+}
+
+.page-title h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size: .9rem;
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   PROGRESS
+========================================================== */
+
+.progress-section {
+    width:
+        min(1100px, 92%);
+
+    margin:
+        auto auto 25px;
+}
+
+.progress-info {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 9px;
+
+    font-weight: 600;
+
+    font-size: .9rem;
+}
+
+.progress-bar {
+    width: 100%;
+
+    height: 7px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border-radius: 50px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 50%;
+
+    height: 100%;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #38bdf8
+        );
+}
+
+
+/* ==========================================================
+   CONTENT CARD
+========================================================== */
+
+.content-card {
+    width:
+        min(1100px, 92%);
+
+    margin:
+        0 auto 22px;
+
+    display: flex;
+
+    gap: 20px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    backdrop-filter:
+        blur(16px);
+}
+
+
+/* ==========================================================
+   SECTION NUMBER
+========================================================== */
+
+.section-number {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #38bdf8
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.15rem;
+
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   SECTION CONTENT
+========================================================== */
+
+.section-content {
+    flex: 1;
+}
+
+.section-content h2 {
+    font-size: 1.6rem;
+
+    margin-bottom: 12px;
+}
+
+.section-content p {
+    color: var(--muted);
+
+    line-height: 1.65;
+
+    font-size: .9rem;
+}
+
+
+/* ==========================================================
+   REFERENCE
+========================================================== */
+
+.reference-box {
+    margin-top: 18px;
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: flex-start;
+
+    padding:
+        13px 16px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border-left:
+        4px solid #38bdf8;
+}
+
+.reference-box i {
+    color: #38bdf8;
+
+    margin-top: 2px;
+}
+
+.reference-box span {
+    color: #d6e2f1;
+
+    font-size: .84rem;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   CONCERNS
+========================================================== */
+
+.concern-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 18px;
+}
+
+.concern-card {
+    padding: 19px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    transition: .3s;
+}
+
+.concern-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #38bdf8;
+}
+
+.concern-card i {
+    font-size: 24px;
+
+    color: #38bdf8;
+
+    margin-bottom: 14px;
+}
+
+.concern-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 1rem;
+}
+
+.concern-card p {
+    margin: 0;
+
+    font-size: .86rem;
+
+    line-height: 1.6;
+}
+
+
+
+
+/* ==========================================================
+   INTERACTIVE ACTIVITY
+========================================================== */
+
+.activity-card {
+    width: min(1100px, 92%);
+    margin: 0 auto 22px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    padding: 24px;
+
+    backdrop-filter: blur(16px);
+}
+
+
+.activity-title {
+    text-align: center;
+
+    margin-bottom: 22px;
+}
+
+.activity-label {
+    display: inline-block;
+
+    color: #38bdf8;
+
+    font-size: .75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+
+    text-transform: uppercase;
+}
+
+.activity-title h2 {
+    color: #fff;
+
+    font-size: 1.7rem;
+
+    line-height: 1.3;
+
+    margin-bottom: 10px;
+}
+
+.activity-title p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: .9rem;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   IMAGE GAME — THREE SOURCES
+========================================================== */
+
+.image-game {
+    display: grid;
+
+    /* 3 SOURCES = 3 COLUMNS */
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+
+    width: 100%;
+}
+
+
+/* ==========================================================
+   SOURCE OPTION
+========================================================== */
+
+.image-option {
+    position: relative;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,.04);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.image-option:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(56,189,248,.5);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.20);
+}
+
+
+/* ==========================================================
+   SOURCE IMAGE — PORTRAIT
+========================================================== */
+
+.image-option img {
+    display: block;
+
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: contain;
+
+    object-position: center;
+}
+
+
+/* ==========================================================
+   SOURCE LETTER
+========================================================== */
+
+.source-label {
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #38bdf8;
+
+    color: #062033;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    z-index: 3;
+}
+
+
+/* ==========================================================
+   FEEDBACK
+========================================================== */
+
+.feedback-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 20px;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    background: rgba(37,99,235,.10);
+
+    border: 1px solid rgba(56,189,248,.18);
+
+    color: #dbeafe;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        color .25s ease;
+}
+
+
+/* ==========================================================
+   CORRECT FEEDBACK — BLUE
+========================================================== */
+
+.feedback-box.correct-feedback {
+    background: rgba(37,99,235,.10);
+
+    border-color: rgba(56,189,248,.35);
+
+    color: #dbeafe;
+}
+
+.feedback-box.correct-feedback .feedback-icon {
+    background: rgba(56,189,248,.15);
+
+    color: #38bdf8;
+}
+
+
+/* ==========================================================
+   INCORRECT / NOT BEST — RED
+========================================================== */
+
+.feedback-box.incorrect-feedback {
+    background: rgba(239,68,68,.10);
+
+    border-color: rgba(239,68,68,.35);
+
+    color: #fee2e2;
+}
+
+.feedback-box.incorrect-feedback .feedback-icon {
+    background: rgba(239,68,68,.15);
+
+    color: #ef4444;
+}
+
+
+/* ==========================================================
+   FEEDBACK ICON
+========================================================== */
+
+.feedback-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(56,189,248,.12);
+
+    color: #38bdf8;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+}
+
+
+/* ==========================================================
+   FEEDBACK TEXT
+========================================================== */
+
+.feedback-text {
+    line-height: 1.6;
+
+    min-width: 0;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .activity-card {
+        width: 92%;
+
+        padding: 18px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-game {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .image-option {
+        width: 100%;
+    }
+
+    .image-option img {
+        height: auto;
+
+        max-height: none;
+
+        object-fit: contain;
+    }
+
+    .image-overlay {
+        display: none;
+    }
+
+    .feedback-box {
+        padding: 14px;
+    }
+}
+
+
+/* ==========================================================
+   HOW TO DETECT
+========================================================== */
+
+.tips-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 18px;
+}
+
+.tip-card {
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    border-radius: 15px;
+
+    padding: 19px;
+
+    transition: .3s;
+}
+
+.tip-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #38bdf8;
+}
+
+.tip-card i {
+    color: #38bdf8;
+
+    font-size: 24px;
+
+    margin-bottom: 14px;
+}
+
+.tip-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 1rem;
+}
+
+.tip-card p {
+    margin: 0;
+
+    font-size: .86rem;
+
+    line-height: 1.6;
+
+    color: var(--muted);
+}
+
+
+/* ==========================================================
+   TOOLS
+========================================================== */
+
+.tool-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 18px;
+}
+
+.tool-card {
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    border-radius: 15px;
+
+    padding: 19px;
+
+    transition: .3s;
+}
+
+.tool-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #38bdf8;
+}
+
+.tool-card i {
+    font-size: 24px;
+
+    color: #38bdf8;
+
+    margin-bottom: 12px;
+}
+
+.tool-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 1rem;
+}
+
+.tool-card p {
+    font-size: .86rem;
+
+    color: var(--muted);
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   BOTTOM NAVIGATION
+========================================================== */
+
+.lesson-navigation {
+    width:
+        min(1100px, 92%);
+
+    margin:
+        35px auto 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.next-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        9px 22px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #38bdf8
+        );
+
+    color: #fff;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.next-btn:hover {
+    transform:
+        translateY(-3px);
+}
+
+
+/* ==========================================================
+   ANIMATION
+========================================================== */
+
+@keyframes shake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-6px);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+
+    75% {
+        transform: translateX(-6px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ==========================================================
+   SHIFT MAIN CONTENT TO THE RIGHT
+========================================================== */
+
+.ai-header,
+.progress-section,
+.content-card,
+.activity-card,
+.lesson-navigation {
+
+    position: relative;
+
+    left: 100px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+   992px and below
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .quick-nav {
+        width: 190px;
+
+        padding-left: 25px;
+        padding-right: 20px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+
+        width:
+            calc(100% - 190px);
+    }
+
+    .quick-nav a {
+        font-size: .82rem;
+    }
+
+    .quick-nav a .nav-number {
+        width: 28px;
+        height: 28px;
+
+        font-size: .68rem;
+    }
+
+    .content-card {
+        flex-direction: column;
+
+        padding: 28px;
+    }
+
+    .section-number {
+        width: 62px;
+        height: 62px;
+
+        min-width: 62px;
+    }
+
+    .concern-grid,
+    .tips-grid,
+    .tool-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .source-header,
+    .progress-section,
+    .content-card,
+    .lesson-navigation {
+
+        left: 50px;
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+   768px and below
+========================================================== */
+
+@media (max-width: 768px) {
+
+    /* ======================================================
+       GLOBAL MOBILE RESET
+    ====================================================== */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       MAIN CONTENT — CONSTRAINED
+    ====================================================== */
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+
+        width: 100%;
+        max-width: 100vw;
+
+        overflow-x: hidden;
+
+        box-sizing: border-box;
+    }
+
+    .main-content > * {
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       MOBILE MENU BUTTON
+    ====================================================== */
+
+    .mobile-menu-btn {
+        display: flex;
+
+        position: fixed;
+
+        top: 50%;
+        left: 0;
+
+        width: 8px;
+        height: 64px;
+
+        padding: 0;
+
+        justify-content: center;
+        align-items: center;
+
+        border: none;
+        border-radius: 0 8px 8px 0;
+
+        background: #38bdf8;
+
+        color: transparent;
+        font-size: 0;
+
+        cursor: pointer;
+
+        z-index: 2000;
+
+        box-shadow:
+            0 0 16px rgba(56, 189, 248, .25);
+
+        transition: .3s ease;
+    }
+
+    .mobile-menu-btn:hover {
+        width: 12px;
+        background: #38bdf8;
+    }
+
+
+    /* ======================================================
+       QUICK NAVIGATION — MOBILE DRAWER
+    ====================================================== */
+
+    .quick-nav {
+        position: fixed;
+
+        top: 0;
+        left: -260px;
+
+        width: 230px;
+        height: 100vh;
+
+        padding: 90px 15px 40px 20px;
+
+        background: rgba(10, 15, 25, .94);
+
+        border-right: 1px solid rgba(255, 255, 255, .10);
+
+        border-radius: 0;
+
+        transition: left .3s ease;
+
+        z-index: 1500;
+
+        overflow-y: auto;
+
+        box-sizing: border-box;
+    }
+
+    .quick-nav.open {
+        left: 0;
+    }
+
+    .quick-nav a,
+    .quick-nav button,
+    .quick-nav li {
+        width: 100%;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+    }
+
+    .quick-nav a::before {
+        width: 1px;
+    }
+
+    .quick-nav a:hover::before {
+        background: #38bdf8;
+        width: 1px;
+    }
+
+    .quick-nav a.active::before {
+        background: #38bdf8;
+        width: 1px;
+    }
+
+
+    /* ======================================================
+       HEADER
+    ====================================================== */
+
+    .ai-header {
+        width: 92%;
+        max-width: 100%;
+
+        margin: 30px auto 24px;
+
+        padding: 0;
+
+        position: relative;
+        left: 0;
+        right: auto;
+
+        box-sizing: border-box;
+    }
+
+    .source-header {
+        width: 92%;
+        max-width: 100%;
+
+        margin: 30px auto 24px;
+
+        padding: 0;
+
+        position: relative;
+        left: 0;
+        right: auto;
+
+        box-sizing: border-box;
+    }
+
+    .page-title {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 0;
+
+        box-sizing: border-box;
+    }
+
+    .page-title h1 {
+        font-size: 1.75rem;
+
+        line-height: 1.25;
+
+        margin-bottom: 12px;
+
+        overflow-wrap: break-word;
+    }
+
+    .page-title p {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: .88rem;
+
+        line-height: 1.6;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* ======================================================
+       PROGRESS
+    ====================================================== */
+
+    .progress-section {
+        width: 92%;
+        max-width: 100%;
+
+        margin: 0 auto 22px;
+
+        padding: 16px 18px;
+
+        position: relative;
+        left: 0;
+        right: auto;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       CONTENT CARDS
+    ====================================================== */
+
+    .content-card {
+        width: 92%;
+        max-width: 100%;
+
+        margin: 0 auto 20px;
+
+        padding: 22px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 18px;
+
+        border-radius: 18px;
+
+        position: relative;
+        left: 0;
+        right: auto;
+
+        box-sizing: border-box;
+    }
+
+    .section-number {
+        width: 58px;
+        height: 58px;
+
+        flex-shrink: 0;
+    }
+
+    .section-content {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+    .section-content h2 {
+        font-size: 1.4rem;
+
+        line-height: 1.3;
+
+        overflow-wrap: break-word;
+    }
+
+    .section-content p {
+        font-size: .86rem;
+
+        line-height: 1.65;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* ======================================================
+       IMAGE
+    ====================================================== */
+
+    .source-image {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 200px;
+
+        margin-top: 18px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+    .source-image img {
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       GRIDS
+    ====================================================== */
+
+    .concern-grid,
+    .tips-grid,
+    .tool-grid {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        box-sizing: border-box;
+    }
+
+    .concern-card,
+    .tip-card,
+    .tool-card {
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       ACTIVITY CARD / INTERACTIVE CHALLENGE
+    ====================================================== */
+
+    .activity-card {
+        width: 92%;
+        max-width: 100%;
+
+        margin: 0 auto 20px;
+
+        padding: 20px;
+
+        border-radius: 18px;
+
+        position: relative;
+        left: 0;
+        right: auto;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    /* ======================================================
+       ACTIVITY TITLE
+    ====================================================== */
+
+    .activity-title {
+        width: 100%;
+        max-width: 100%;
+
+        text-align: center;
+
+        margin-bottom: 20px;
+
+        box-sizing: border-box;
+    }
+
+    .activity-label {
+        display: inline-block;
+
+        font-size: .68rem;
+
+        margin-bottom: 8px;
+
+        letter-spacing: .8px;
+    }
+
+    .activity-title h2 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 1.35rem;
+
+        line-height: 1.3;
+
+        margin-bottom: 9px;
+
+        overflow-wrap: break-word;
+    }
+
+    .activity-title p {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        font-size: .80rem;
+
+        line-height: 1.6;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* ======================================================
+       IMAGE GAME — THREE SOURCES
+    ====================================================== */
+
+    .image-game {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       SOURCE OPTION
+    ====================================================== */
+
+    .image-option {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        border-radius: 12px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       SOURCE IMAGE — PORTRAIT
+    ====================================================== */
+
+    .image-option img {
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+
+        height: 300px;
+
+        object-fit: contain;
+        object-position: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       SOURCE LETTER
+    ====================================================== */
+
+    .source-label {
+        top: 7px;
+        left: 7px;
+
+        width: 26px;
+        height: 26px;
+
+        font-size: 11px;
+    }
+
+
+    /* ======================================================
+       FEEDBACK
+    ====================================================== */
+
+    .feedback-box {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        margin-top: 16px;
+
+        padding: 12px;
+
+        border-radius: 13px;
+
+        box-sizing: border-box;
+
+        overflow-wrap: break-word;
+    }
+
+    .feedback-icon {
+        width: 32px;
+        height: 32px;
+
+        flex: 0 0 32px;
+
+        border-radius: 9px;
+
+        font-size: .85rem;
+    }
+
+    .feedback-text {
+        min-width: 0;
+        width: 100%;
+
+        font-size: .70rem;
+
+        line-height: 1.5;
+
+        overflow-wrap: break-word;
+    }
+
+    .feedback-text strong {
+        font-size: .78rem;
+    }
+
+
+
+    /* ======================================================
+       REFERENCE
+    ====================================================== */
+
+    .reference-box {
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .reference-box span {
+        min-width: 0;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+
+    /* ======================================================
+       BOTTOM NAVIGATION
+    ====================================================== */
+
+    .lesson-navigation {
+        width: 92%;
+        max-width: 100%;
+
+        margin: 25px auto 45px;
+
+        padding: 0;
+
+        position: relative;
+        left: 0;
+        right: auto;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ======================================================
+       REMOVE ALL DESKTOP SHIFT ON MOBILE
+    ====================================================== */
+
+    .ai-header,
+    .source-header,
+    .progress-section,
+    .content-card,
+    .activity-card,
+    .lesson-navigation {
+
+        position: relative;
+
+        left: 0;
+        right: auto;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — SMALL PHONE
+   480px and below
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .page-tag {
+
+        font-size: .68rem;
+
+        padding:
+            5px 12px;
+    }
+
+    .page-title h1 {
+
+        font-size: 1.6rem;
+
+        line-height: 1.3;
+    }
+
+    .progress-info {
+
+        font-size: .82rem;
+    }
+
+    .section-number {
+
+        width: 56px;
+        height: 56px;
+
+        font-size: 1.1rem;
+    }
+
+    .content-card {
+
+        padding: 18px;
+    }
+
+    .page-title p {
+
+        font-size: .84rem;
+    }
+
+    .section-content h2 {
+
+        font-size: 1.3rem;
+    }
+
+    .section-content p {
+
+        font-size: .84rem;
+    }
+
+    .concern-card,
+    .tip-card,
+    .tool-card {
+
+        padding: 17px;
+    }
+
+    .concern-card p,
+    .tip-card p,
+    .tool-card p {
+
+        font-size: .82rem;
+    }
+
+    .reference-box {
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .source-image {
+
+        min-height: 170px;
+
+        border-radius: 15px;
+    }
+
+    .lesson-navigation {
+
+        gap: 10px;
+    }
+
+    .back-btn,
+    .next-btn {
+
+        font-size: .8rem;
+
+        padding:
+            9px 13px;
+    }
+
+    /* ======================================================
+       ENSURE NO SHIFT
+    ====================================================== */
+
+    .source-header,
+    .progress-section,
+    .content-card,
+    .lesson-navigation {
+
+        left: 0;
+    }
+
+}

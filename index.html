@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CrediVault Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- CREDIVAULT PAGE LOADER -->
+    <!-- ========================================= -->
+
+    <div class="page-loader" id="pageLoader">
+
+        <div class="loader-content">
+
+            <!-- LOGO -->
+            <div class="loader-logo">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <!-- BRAND -->
+            <div class="loader-brand">
+                <h1>CrediVault</h1>
+
+            </div>
+
+            <!-- LOADING RING -->
+            <div class="loader-progress">
+
+                <div class="loader-ring">
+
+                    <svg viewBox="0 0 100 100">
+
+                        <circle
+                            class="loader-ring-bg"
+                            cx="50"
+                            cy="50"
+                            r="45">
+                        </circle>
+
+                        <circle
+                            class="loader-ring-fill"
+                            cx="50"
+                            cy="50"
+                            r="45">
+                        </circle>
+
+                    </svg>
+
+                    <span id="loaderPercentage">
+                        0%
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- LOADING TEXT -->
+            <p class="loader-status">
+                Preparing your experience...
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- PAGE PROGRESS BAR -->
+    <!-- ========================================= -->
+
+    <div class="scroll-progress"></div>
+
+    <!-- ========================================= -->
+    <!-- NAVBAR -->
+    <!-- ========================================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <!-- LOGO -->
+            <a href="index.html" class="brand-logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div class="logo-text">
+
+                    Credi<span>Vault</span>
+
+                </div>
+
+            </a>
+
+            <!-- NAVIGATION -->
+            <nav class="nav-links" id="navLinks">
+
+                <a href="#" class="nav-item active">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Home
+
+                </a>
+
+                <a href="read & learn/rnl.html" class="nav-item">
+
+                    <i class="fa-solid fa-book-open-reader"></i>
+
+                    Read & Learn
+
+                </a>
+
+                <a href="activity/act.html" class="nav-item">
+
+                    <i class="fa-solid fa-list-check"></i>
+
+                    Activities
+
+                </a>
+
+                <a href="fact-check/fact.html" class="nav-item">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Fact Check
+
+                </a>
+
+            </nav>
+
+            <!-- RIGHT SIDE -->
+            <div class="nav-actions">
+
+                <a href="https://github.com/doknotbyte/CrediVault-Thesis"
+                    target="_blank"
+                    class="nav-github">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+                <button class="menu-toggle" id="menuToggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================= -->
+    <!-- HERO -->
+    <!-- ========================================= -->
+
+    <section class="hero-section">
+
+        <!-- Animated Background -->
+
+        <div class="hero-overlay"></div>
+
+        <div class="gradient-blob blob-1"></div>
+
+        <div class="gradient-blob blob-2"></div>
+
+        <div class="gradient-blob blob-3"></div>
+
+        <div class="hero-grid"></div>
+
+        <div class="hero-container">
+
+            <!-- LEFT -->
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <span>
+                        TUP-Manila
+                    </span>
+
+                </div>
+
+                <h1>
+
+                    Your Digital Vault for
+
+                    <span>Credible Information</span>
+
+                </h1>
+
+                <p>
+
+                    A web-based interactive learning platform designed
+                    to enhance your knowledge and skills in Evaluating
+                    Social Media News Credibility.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#repository" class="btn btn-primary">
+
+                        <i class="fa-solid fa-compass"></i>
+
+                        Explore
+
+                    </a>
+
+                    <a href="read & learn/rnl.html" class="btn btn-secondary">
+
+                        <i class="fa-solid fa-play"></i>
+
+                        Start Learning
+
+                    </a>
+
+                </div>
+
+                <!-- Quick Stats -->
+
+                <div class="hero-stats">
+
+                    <div class="stat-box">
+
+                        <h2>Digital</h2>
+
+                        <span>Verification Hub</span>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <h2>Interactive</h2>
+
+                        <span>Learning Activities</span>
+
+                    </div>
+
+                    <div class="stat-box">
+
+                        <h2>Verified</h2>
+
+                        <span>Fact-Checking Sources</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="hero-visual">
+
+                <!-- Floating Cards -->
+
+                <div class="floating-card card-top">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    AI-Generated Content
+
+                </div>
+
+                <div class="floating-card card-left">
+
+                    <i class="fa-solid fa-bullhorn"></i>
+
+                    Clickbait
+
+                </div>
+
+                <div class="floating-card card-right">
+
+                    <i class="fa-solid fa-code-compare"></i>
+
+                    Cross-Checking
+
+                </div>
+
+                <div class="floating-card card-bottom">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Influence of Popularity
+
+                </div>
+
+                <!-- MAIN SHIELD -->
+
+                <div class="vault-core">
+
+                    <div class="ring ring-1"></div>
+
+                    <div class="ring ring-2"></div>
+
+                    <div class="ring ring-3"></div>
+
+                    <div class="core-card">
+
+                        <div class="shield-logo">
+
+                            <div class="shield-bg">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                            </div>
+
+                        </div>
+
+                        <h2>CrediVault</h2>
+
+                        <br>
+
+                        <div class="status">
+
+                            <span class="status-dot"></span>
+
+                            Secure & Trusted
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+<!-- ========================================= -->
+<!-- WHAT DO YOU WANT TO LEARN TODAY? -->
+<!-- ========================================= -->
+
+<section
+    class="features-section"
+    id="repository">
+
+    <div class="section-header">
+
+        <span class="mini-title">
+            EXPLORE CREDIVAULT
+        </span>
+
+        <h2>
+            What Do You Want to Learn Today?
+        </h2>
+
+        <p>
+            Choose a topic to explore and discover how
+            misinformation can affect what you see online.
+        </p>
+
+    </div>
+
+
+    <!-- TOPIC SELECTOR -->
+
+    <div class="topic-grid">
+
+
+        <!-- ========================================= -->
+        <!-- AI-MANIPULATION -->
+        <!-- ========================================= -->
+
+        <article
+            class="topic-card"
+            data-topic="ai">
+
+            <div class="topic-visual ai-topic-visual">
+
+                <div class="topic-orbit orbit-1"></div>
+
+                <div class="topic-orbit orbit-2"></div>
+
+                <div class="topic-core">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                </div>
+
+                <span class="topic-badge">
+                    AI
+                </span>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <div class="topic-number">
+                    01
+                </div>
+
+                <h3>
+                    AI-Generated Content
+                </h3>
+
+                <p>
+                    Recognize signs of manipulated or
+                    AI-generated misinformation.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ========================================= -->
+        <!-- CLICKBAIT -->
+        <!-- ========================================= -->
+
+        <article
+            class="topic-card active-topic"
+            data-topic="clickbait">
+
+            <div class="topic-visual clickbait-topic-visual">
+
+                <div class="headline-window">
+
+                    <div class="window-controls">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="headline-line short"></div>
+
+                    <strong>
+                        SHOCKING!
+                    </strong>
+
+                    <span>
+                        You won't believe this...
+                    </span>
+
+                    <div class="pointer-icon">
+
+                        <i class="fa-solid fa-arrow-pointer"></i>
+
+                    </div>
+
+                </div>
+
+                <span class="topic-badge">
+                    CLICK
+                </span>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <div class="topic-number">
+                    02
+                </div>
+
+                <h3>
+                    Clickbait
+                </h3>
+
+                <p>
+                    Identify misleading headlines and
+                    exaggerated claims.
+                </p>
+
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ========================================= -->
+        <!-- POPULARITY -->
+        <!-- ========================================= -->
+
+        <article
+            class="topic-card"
+            data-topic="popularity">
+
+            <div class="topic-visual popularity-topic-visual">
+
+                <div class="popularity-counter">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <strong>
+                        10K
+                    </strong>
+
+                </div>
+
+                <div class="audience-icons">
+
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <span class="topic-badge">
+                    VIRAL
+                </span>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <div class="topic-number">
+                    03
+                </div>
+
+                <h3>
+                    Influence of Popularity
+                </h3>
+
+                <p>
+                    Understand why likes, comments, and
+                    shares do not always mean credibility.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ========================================= -->
+        <!-- CROSS-CHECKING -->
+        <!-- ========================================= -->
+
+        <article
+            class="topic-card"
+            data-topic="cross-checking">
+
+            <div class="topic-visual cross-topic-visual">
+
+                <div class="document-window">
+
+                    <div class="document-lines">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="search-orbit">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+                </div>
+
+                <span class="topic-badge">
+                    VERIFY
+                </span>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <div class="topic-number">
+                    04
+                </div>
+
+                <h3>
+                    Cross-Checking
+                </h3>
+
+                <p>
+                    Compare information using multiple
+                    reliable and trusted sources.
+                </p>
+
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     CREDIBOT
+========================================================== -->
+
+<section class="credibot-section" id="credibot">
+
+    <div class="credibot-container">
+
+        <!-- ==================================================
+             CREDIBOT HEADER
+        =================================================== -->
+
+        <div class="credibot-header">
+
+            <div class="credibot-icon">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <div class="credibot-heading">
+
+                <span class="credibot-label">
+                    DIGITAL LITERACY ASSISTANT
+                </span>
+
+                <h2>
+                    Meet CrediBot
+                </h2>
+
+                <p>
+                    Have a question about online information? Choose a question below and let CrediBot help you understand it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             CHAT AREA
+        =================================================== -->
+
+        <div class="credibot-chat">
+
+            <!-- BOT INTRODUCTION -->
+
+            <div class="credibot-message bot-message">
+
+                <div class="message-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div class="message-content">
+
+                    <span class="message-name">
+                        CrediBot
+                    </span>
+
+                    <p>
+                        Hi! I'm CrediBot. Select a question
+                        below or type one of the supported
+                        questions in the box.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 COMMON QUESTIONS
+            =================================================== -->
+
+            <div class="credibot-questions">
+
+                <div class="questions-heading">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    <span>
+                        Common Questions
+                    </span>
+
+                </div>
+
+
+                <div class="question-list">
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What should I do before sharing a post?"
+    >
+        What should I do before sharing a post?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="How can I tell if information is credible?"
+    >
+        How can I tell if information is credible?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Why should I check the original source?"
+    >
+        Why should I check the original source?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Why should I compare information from different sources?"
+    >
+        Why should I compare information from different sources?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Can I trust a post because it has many likes and shares?"
+    >
+        Can I trust a post because it has many likes and shares?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Does a viral post mean that the information is true?"
+    >
+        Does a viral post mean that the information is true?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="How can I identify clickbait?"
+    >
+        How can I identify clickbait?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What is misinformation?"
+    >
+        What is misinformation?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What is AI-generated content?"
+    >
+        What is AI-generated content?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Can AI-generated images look real?"
+    >
+        Can AI-generated images look real?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="How can I verify a claim I see online?"
+    >
+        How can I verify a claim I see online?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What makes a source reliable?"
+    >
+        What makes a source reliable?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Why shouldn't I believe information just because it looks professional?"
+    >
+        Why shouldn't I believe information just because it looks professional?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What does Stop, Check, and Verify mean?"
+    >
+        What does Stop, Check, and Verify mean?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What is the difference between a fact and an opinion?"
+    >
+        What is the difference between a fact and an opinion?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Why is it important to check the date of a post?"
+    >
+        Why is it important to check the date of a post?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="What should I do if I cannot find evidence supporting a claim?"
+    >
+        What should I do if I cannot find evidence supporting a claim?
+    </button>
+
+    <button
+        type="button"
+        class="credibot-question"
+        data-question="Why can misinformation spread quickly on social media?"
+    >
+        Why can misinformation spread quickly on social media?
+    </button>
+
+</div>
+
+
+            <!-- ==================================================
+                 USER INPUT
+            =================================================== -->
+
+            <div class="credibot-input-area">
+
+                <div class="credibot-input-wrapper">
+
+                    <i class="fa-solid fa-message"></i>
+
+                    <input
+                        type="text"
+                        id="credibotInput"
+                        class="credibot-input"
+                        placeholder="Type a supported question..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="credibotSend"
+                    class="credibot-send"
+                >
+
+                    <span>
+                        Send
+                    </span>
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- ==================================================
+                 RESPONSE AREA
+            =================================================== -->
+
+            <div
+                class="credibot-response"
+                id="credibotResponse"
+                aria-live="polite"
+            >
+
+                <!-- JavaScript will insert the selected
+                     question and CrediBot's answer here. -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================= -->
+<!-- CHECK BEFORE YOU SHARE -->
+<!-- ========================================= -->
+
+<section
+    class="check-section"
+    id="credibility-flow">
+
+    <div class="check-container">
+
+
+        <!-- ========================================= -->
+        <!-- LEFT CONTENT -->
+        <!-- ========================================= -->
+
+        <div class="check-content">
+
+            <span class="mini-title">
+
+                BEFORE YOU SHARE
+
+            </span>
+
+
+            <h2>
+
+                Check Before You Share
+
+            </h2>
+
+
+            <p>
+
+                Before trusting or sharing something online,
+                take a moment to run through these three
+                credibility checkpoints.
+
+            </p>
+
+
+            <!-- STATUS -->
+
+            <div class="check-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+
+                    3-step credibility flow
+
+                </span>
+
+            </div>
+
+
+            <!-- SMALL LABEL -->
+
+            <div class="check-hint">
+
+                <i class="fa-solid fa-hand-pointer"></i>
+
+                Select a step to explore
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ========================================= -->
+        <!-- INTERACTIVE PROCESS -->
+        <!-- ========================================= -->
+
+        <div class="check-interactive">
+
+
+            <!-- STEP NAVIGATION -->
+
+            <div class="check-step-list">
+
+
+                <!-- STEP 01 -->
+
+                <button
+                    type="button"
+                    class="check-step active-step"
+                    data-step="1"
+                    aria-expanded="true">
+
+                    <span class="step-number">
+
+                        01
+
+                    </span>
+
+
+                    <span class="step-content">
+
+                        <strong>
+                            Stop
+                        </strong>
+
+                        <small>
+                            Pause before reacting or sharing.
+                        </small>
+
+                    </span>
+
+
+                    <span class="step-state">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                    </span>
+
+
+                    <i class="fa-solid fa-arrow-right step-arrow"></i>
+
+                </button>
+
+
+
+                <!-- STEP 02 -->
+
+                <button
+                    type="button"
+                    class="check-step"
+                    data-step="2"
+                    aria-expanded="false">
+
+                    <span class="step-number">
+
+                        02
+
+                    </span>
+
+
+                    <span class="step-content">
+
+                        <strong>
+                            Check
+                        </strong>
+
+                        <small>
+                            Examine the source and evidence.
+                        </small>
+
+                    </span>
+
+
+                    <span class="step-state">
+
+                        <i class="fa-regular fa-circle"></i>
+
+                    </span>
+
+
+                    
+                    <i class="fa-solid fa-arrow-right step-arrow"></i>
+
+                </button>
+
+
+
+                <!-- STEP 03 -->
+
+                <button
+                    type="button"
+                    class="check-step"
+                    data-step="3"
+                    aria-expanded="false">
+
+                    <span class="step-number">
+
+                        03
+
+                    </span>
+
+
+                    <span class="step-content">
+
+                        <strong>
+                            Verify
+                        </strong>
+
+                        <small>
+                            Compare with trusted sources.
+                        </small>
+
+                    </span>
+
+
+                    <span class="step-state">
+
+                        <i class="fa-regular fa-circle"></i>
+
+                    </span>
+
+
+                    <i class="fa-solid fa-arrow-right step-arrow"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ========================================= -->
+            <!-- STEP DETAIL -->
+            <!-- ========================================= -->
+
+            <div
+                class="check-detail"
+                id="checkDetail">
+
+
+                <div class="check-detail-top">
+
+                    <span>
+                        STEP 01
+                    </span>
+
+                    <div class="detail-progress">
+
+                        <span class="detail-progress-fill"></span>
+
+                    </div>
+
+                    <span class="detail-count">
+
+                        1 / 3
+
+                    </span>
+
+                </div>
+
+
+                <div class="check-detail-main">
+
+
+                    <div class="check-detail-icon">
+
+                        <i class="fa-solid fa-pause"></i>
+
+                    </div>
+
+
+                    <div class="check-detail-content">
+
+                        <h3>
+
+                            Stop before you share.
+
+                        </h3>
+
+
+                        <p>
+
+                            Give yourself a moment to pause.
+                            Avoid reacting based only on emotion,
+                            popularity, or urgency.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="check-detail-footer">
+
+                    <span>
+
+                        Credibility starts with a pause.
+
+                    </span>
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+
+    <footer class="footer">
+
+
+        <div class="footer-bottom">
+
+            © 2026 CrediVault • Built by ICT Students of TUP-Manila
+
+        </div>
+
+    </footer>
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
