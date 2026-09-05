@@ -2278,6 +2278,344 @@ body {
 
 }
 
+/* ==========================================================
+   CLICKBAIT ACTIVITY CONTENT
+   ADDITIONAL STYLES ONLY
+========================================================== */
+
+
+/* ==========================================================
+   TOPIC DIVIDER
+========================================================== */
+
+.topic-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin: 12px 0 10px;
+
+    background: rgba(255,255,255,.08);
+
+}
+
+
+/* ==========================================================
+   BEFORE YOU PROCEED
+========================================================== */
+
+.topic-activity-info {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    margin-bottom: 13px;
+
+}
+
+
+.topic-activity-info strong {
+
+    color: #3bddff;
+
+    font-size: .62rem;
+
+    font-weight: 700;
+
+}
+
+
+.topic-activity-info span {
+
+    color: #718096;
+
+    font-size: .60rem;
+
+    line-height: 1.45;
+
+}
+
+
+/* ==========================================================
+   ACTIVITY QUESTION GROUP
+========================================================== */
+
+.activity-question-group {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+/* ==========================================================
+   ACTIVITY QUESTION
+========================================================== */
+
+.activity-question {
+
+    width: 100%;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    background: rgba(255,255,255,.025);
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    border-radius: 11px;
+
+}
+
+
+/* ==========================================================
+   QUESTION SCENARIO
+========================================================== */
+
+.question-scenario {
+
+    margin: 0 0 9px;
+
+    color: #8fa2b8;
+
+    font-size: .61rem;
+
+    line-height: 1.55;
+
+}
+
+
+/* ==========================================================
+   ACTIVITY QUESTION TEXT
+========================================================== */
+
+.activity-question h3 {
+
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-size: .68rem;
+
+    line-height: 1.45;
+
+    font-weight: 700;
+
+}
+
+
+/* ==========================================================
+   ANSWER OPTIONS
+========================================================== */
+
+.answer-options {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+/* ==========================================================
+   ANSWER OPTION
+========================================================== */
+
+.answer-option {
+
+    width: 100%;
+
+    padding: 9px 11px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    border-radius: 9px;
+
+    background: #172638;
+
+    color: #a9b8c8;
+
+    font-family: inherit;
+
+    font-size: .60rem;
+
+    line-height: 1.45;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease,
+        color .2s ease;
+
+}
+
+
+/* ==========================================================
+   ANSWER OPTION HOVER
+========================================================== */
+
+.answer-option:hover {
+
+    transform: translateY(-1px);
+
+    background: #1b3045;
+
+    border-color: rgba(59,221,255,.28);
+
+    color: #ffffff;
+
+}
+
+
+/* ==========================================================
+   CORRECT ANSWER
+========================================================== */
+
+.answer-option.correct {
+
+    background: rgba(34,197,94,.14);
+
+    border-color: rgba(34,197,94,.55);
+
+    color: #ffffff;
+
+}
+
+
+/* ==========================================================
+   WRONG ANSWER
+========================================================== */
+
+.answer-option.wrong {
+
+    background: rgba(239,68,68,.14);
+
+    border-color: rgba(239,68,68,.55);
+
+    color: #ffffff;
+
+}
+
+
+/* ==========================================================
+   ANSWER OPTION LETTER
+========================================================== */
+
+.answer-option strong {
+
+    flex-shrink: 0;
+
+    width: 20px;
+
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background: rgba(59,221,255,.10);
+
+    color: #3bddff;
+
+    font-size: .57rem;
+
+    font-weight: 800;
+
+}
+
+
+/* ==========================================================
+   CORRECT ANSWER LETTER
+========================================================== */
+
+.answer-option.correct strong {
+
+    background: rgba(34,197,94,.20);
+
+    color: #4ade80;
+
+}
+
+
+/* ==========================================================
+   WRONG ANSWER LETTER
+========================================================== */
+
+.answer-option.wrong strong {
+
+    background: rgba(239,68,68,.20);
+
+    color: #f87171;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — ACTIVITY QUESTIONS
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .activity-question {
+
+        padding: 12px;
+
+    }
+
+    .question-scenario {
+
+        font-size: .60rem;
+
+    }
+
+    .activity-question h3 {
+
+        font-size: .66rem;
+
+    }
+
+    .answer-option {
+
+        font-size: .59rem;
+
+        padding: 9px 10px;
+
+    }
+
+}
+
 
 /* ==========================================================
    PRIMARY BUTTON
