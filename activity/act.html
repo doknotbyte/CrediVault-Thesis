@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive Activities | Digital Literacy Hub</title>
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- ACTIVITY CSS -->
+    <link rel="stylesheet" href="act.css">
+
+</head>
+
+<!-- ==========================
+MOBILE / FLOATING MAIN NAVIGATION
+========================== -->
+
+<button class="floating-menu-btn" 
+        
+        id="floatingMenuBtn" 
+        aria-label="Open navigation">
+    <i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<aside class="floating-nav" id="floatingNav">
+
+    <div class="floating-nav-header">
+        <div class="floating-nav-title">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Activity Menu</span>
+        </div>
+
+        <button class="floating-nav-close" id="floatingNavClose" aria-label="Close navigation">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <nav class="floating-nav-links">
+
+        <a href="../index.html" class="floating-nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="../read & learn/rnl.html" class="floating-nav-item">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Read &amp; Learn</span>
+        </a>
+
+        <a href="act.html" class="floating-nav-item active">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Activities</span>
+        </a>
+
+        <a href="../fact-check/fact.html" class="floating-nav-item">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Fact Check</span>
+        </a>
+
+    </nav>
+
+</aside>
+
+<body>
+
+    <!-- =====================================================
+         ACTIVITY APP
+    ====================================================== -->
+
+    <main class="activity-app">
+
+
+        <!-- =================================================
+             OVERVIEW / TOPIC SELECTION
+        ================================================== -->
+
+        <section
+            class="activity-screen overview-screen active"
+            id="home"
+        >
+
+            <div class="overview-layout">
+
+
+                <!-- =================================================
+                     LEFT SIDE — ACTIVITY CONTENT
+                ================================================== -->
+
+                <div class="overview-content">
+
+
+                    <!-- ACTIVITY BADGE -->
+
+                    <div class="activity-badge">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                        INTERACTIVE DIGITAL LITERACY ACTIVITY
+
+                    </div>
+
+
+
+                    <!-- TITLE -->
+
+                    <h1>
+
+                        SPOT THE
+                        <span>TRUTH</span>
+
+                    </h1>
+
+
+
+                    <!-- DESCRIPTION -->
+
+                    <p class="overview-description">
+
+                        Can you tell what’s real, misleading, or manipulated? Choose a topic, test your digital literacy skills, and apply what you’ve learned by spotting AI manipulation, identifying clickbait, questioning popularity, and cross-checking information before believing or sharing digital content.
+
+                    </p>
+
+
+<!-- =================================================
+     TOPIC CARDS
+================================================== -->
+
+<div class="topic-grid">
+
+
+    <!-- =================================================
+         AI — WITH TWO SUBTOPICS
+    ================================================== -->
+
+    <button
+        class="topic-card"
+        data-topic="ai"
+        type="button"
+    >
+
+        <div class="topic-image">
+
+            <i class="fa-solid fa-robot topic-main-icon"></i>
+
+        </div>
+
+
+        <div class="topic-card-content">
+
+
+            <div class="topic-icon">
+
+                <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+
+            <h2>
+
+                AI-Generated Content
+
+            </h2>
+
+
+            <p>
+
+                Identify digitally manipulated
+                and AI-generated misinformation.
+
+            </p>
+
+
+            <!-- AI SUBTOPICS -->
+
+            <div class="topic-subtopics">
+
+                <span>
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Digital Manipulation
+
+                </span>
+
+
+                <span>
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    AI-Generated Misinformation
+
+                </span>
+
+            </div>
+
+
+            <span class="start-topic">
+
+                Start Activity
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+
+        </div>
+
+    </button>
+
+
+
+    <!-- =================================================
+         CLICKBAIT
+    ================================================== -->
+
+    <button
+        class="topic-card"
+        data-topic="clickbait"
+        type="button"
+    >
+
+        <div class="topic-image">
+
+            <i class="fa-solid fa-bullhorn topic-main-icon"></i>
+
+        </div>
+
+
+        <div class="topic-card-content">
+
+
+            <div class="topic-icon">
+
+                <i class="fa-solid fa-bullhorn"></i>
+
+            </div>
+
+
+            <h2>
+
+                Clickbait
+
+            </h2>
+
+
+            <p>
+
+                Recognize misleading headlines
+                and attention-grabbing content.
+
+            </p>
+
+
+            <span class="start-topic">
+
+                Start Activity
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+
+        </div>
+
+    </button>
+
+
+
+<!-- =================================================
+     INFLUENCE OF POPULARITY
+================================================== -->
+
+<button
+    class="topic-card"
+    data-topic="popularity"
+    type="button"
+>
+
+    <div class="topic-image">
+
+        <i class="fa-solid fa-chart-line topic-main-icon"></i>
+
+    </div>
+
+
+    <div class="topic-card-content">
+
+
+        <div class="topic-icon">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+        </div>
+
+
+        <h2>
+
+            Influence of Popularity
+
+        </h2>
+
+
+        <p>
+
+            Examine how popularity can affect
+            the way information is perceived.
+
+        </p>
+
+
+        <span class="start-topic">
+
+            Start Activity
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </span>
+
+
+    </div>
+
+</button>
+
+
+
+    <!-- =================================================
+         CROSS-CHECKING
+    ================================================== -->
+
+    <button
+        class="topic-card"
+        data-topic="cross"
+        type="button"
+    >
+
+        <div class="topic-image">
+
+            <i class="fa-solid fa-code-compare topic-main-icon"></i>
+
+        </div>
+
+
+        <div class="topic-card-content">
+
+
+            <div class="topic-icon">
+
+                <i class="fa-solid fa-code-compare"></i>
+
+            </div>
+
+
+            <h2>
+
+                Cross-Checking
+
+            </h2>
+
+
+            <p>
+
+                Evaluate information by checking
+                multiple reliable sources.
+
+            </p>
+
+            <!-- CROSS-CHECKING SUBTOPICS -->
+
+             <div class="topic-subtopics">
+
+            <span>
+
+             <i class="fa-solid fa-magnifying-glass"></i>
+
+             Source & Evidence Verification
+
+            </span>
+
+    <span>
+
+        <i class="fa-solid fa-comments"></i>
+
+        Social Validation & Verification Effort
+
+    </span>
+
+</div>
+
+
+            <span class="start-topic">
+
+                Start Activity
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+
+        </div>
+
+    </button>
+
+
+</div>
+
+</div>
+
+
+
+                <!-- =================================================
+                     RIGHT SIDE — ACTIVITY PARTICIPANTS
+                ================================================== -->
+
+                <aside class="participants-panel">
+
+
+                    <!-- PANEL HEADER -->
+
+                    <div class="participants-header">
+
+
+                        <div class="participants-title">
+
+
+                            <div class="participants-icon">
+
+                                <i class="fa-solid fa-users"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h2>
+
+                                    Activity Participants
+
+                                </h2>
+
+
+                                <p>
+
+                                    People who have used this activity
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- PARTICIPANT COUNT -->
+
+                        <span
+                            class="participants-count"
+                            id="participantCount"
+                        >
+
+                            0
+
+                        </span>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PARTICIPANT LIST
+                    ================================================== -->
+
+                    <div
+                        class="participants-list"
+                        id="participantsList"
+                    >
+
+                        <!--
+                            JavaScript will insert actual
+                            participants here.
+                        -->
+
+                        <div class="participant-item">
+
+                            <div class="participant-avatar">
+
+                                <i class="fa-solid fa-user"></i>
+
+                            </div>
+
+
+                            <div class="participant-info">
+
+                                <strong>
+
+                                    No participants yet
+
+                                </strong>
+
+
+                                <span>
+
+                                    Be the first to join.
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PARTICIPANT FOOTER
+                    ================================================== -->
+
+                    <div class="participants-footer">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <span>
+
+                            Participation is recorded for
+                            activity engagement.
+
+                        </span>
+
+                    </div>
+
+
+                </aside>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ACTIVITY QUESTION SCREEN
+        ================================================== -->
+
+        <section
+            class="activity-screen question-screen"
+            id="questionScreen"
+        >
+
+            <div class="question-container">
+
+
+                <!-- =================================================
+                     TOP BAR
+                ================================================== -->
+
+                <div class="question-topbar">
+
+
+                    <button
+                        class="back-button"
+                        id="backToTopics"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Topics
+
+                    </button>
+
+
+                    <div class="progress-info">
+
+
+                        <span id="topicTitle">
+
+                            Topic
+
+                        </span>
+
+
+                        <span id="questionNumber">
+
+                            Question 1 of 5
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PROGRESS BAR
+                ================================================== -->
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     QUESTION CARD
+                ================================================== -->
+
+                <div class="question-card">
+
+
+                    <!-- =================================================
+                         QUESTION IMAGE
+                    ================================================== -->
+
+                    <div class="question-image">
+
+                        <!--
+                            JavaScript will control this image.
+
+                            The image will change depending
+                            on the current question.
+                        -->
+
+                        <img
+                            id="questionImage"
+                            src=""
+                            alt="Activity question image"
+                            style="display: none;"
+                        >
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         QUESTION CONTENT
+                    ================================================== -->
+
+                    <div class="question-content">
+
+
+                        <span class="question-label">
+
+                            QUESTION
+
+                        </span>
+
+
+                        <h2 id="questionText">
+
+                            Question goes here.
+
+                        </h2>
+
+
+
+                        <!--
+                            JavaScript will insert the
+                            helper instruction here.
+                        -->
+
+
+
+                        <!-- =================================================
+                             CHOICES
+                        ================================================== -->
+
+                        <div
+                            class="choices"
+                            id="choicesContainer"
+                        >
+
+                            <!--
+                                JAVASCRIPT WILL INSERT
+                                THE CHOICES HERE.
+                            -->
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             ANSWER FEEDBACK
+                        ================================================== -->
+
+                        <div
+                            class="answer-feedback"
+                            id="answerFeedback"
+                        >
+
+
+                            <div class="feedback-icon">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong id="feedbackTitle">
+
+                                    Correct!
+
+                                </strong>
+
+
+                                <p id="feedbackText">
+
+                                    Explanation goes here.
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             NEXT BUTTON
+                        ================================================== -->
+
+                        <button
+                            class="next-button"
+                            id="nextButton"
+                            type="button"
+                            disabled
+                        >
+
+                            <span>
+
+                                Next
+
+                            </span>
+
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             COMPLETION SCREEN
+        ================================================== -->
+
+        <section
+            class="activity-screen result-screen"
+            id="resultScreen"
+        >
+
+            <div class="result-card">
+
+
+                <!-- COMPLETION ICON -->
+
+                <div class="result-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+
+                <span class="result-label">
+
+                    ACTIVITY COMPLETE
+
+                </span>
+
+
+                <h1>
+
+                    Great Job!
+
+                </h1>
+
+
+                <p>
+
+                    You have completed this activity.
+
+                </p>
+
+
+
+                <!-- =================================================
+                     SCORE
+                ================================================== -->
+
+                <div class="score-box">
+
+                    <span>
+
+                        YOUR SCORE
+
+                    </span>
+
+
+                    <strong id="finalScore">
+
+                        0 / 0
+
+                    </strong>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RESULT ACTIONS
+                ================================================== -->
+
+                <div class="result-actions">
+
+
+                    <button
+                        class="result-button secondary"
+                        id="retryButton"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-rotate-right"></i>
+
+                        Try Again
+
+                    </button>
+
+
+                    <button
+                        class="result-button primary"
+                        id="topicsButton"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        Back to Topics
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</body>
+
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- ACTIVITY JAVASCRIPT -->
+
+    <script src="act.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1329 @@
+/* ==========================================================
+GLOBAL
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#08111f;
+    --card:rgba(18,27,46,.75);
+    --border:rgba(255,255,255,.08);
+    --text:#ffffff;
+    --muted:#94a3b8;
+    --primary:#2563eb;
+    --secondary:#38bdf8;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    position:relative;
+    min-height:100vh;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+/* ==========================================================
+BACKGROUND
+========================================================== */
+
+.hero-grid{
+
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+
+    background-size:60px 60px;
+    z-index:-3;
+
+}
+
+.gradient-blob{
+
+    position:fixed;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.28;
+    z-index:-2;
+
+}
+
+.blob-1{
+
+    width:420px;
+    height:420px;
+    background:#2563eb;
+    top:-120px;
+    left:-100px;
+
+}
+
+.blob-2{
+
+    width:500px;
+    height:500px;
+    background:#06b6d4;
+    right:-180px;
+    bottom:-180px;
+
+}
+
+/* ==========================================================
+READ & LEARN
+========================================================== */
+
+.lesson-header {
+    max-width: 1450px;
+    margin: 70px auto 25px;
+    padding: 0 5%;
+}
+
+.back-home-wrapper {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 8px 15px;
+
+    border-radius: 5px;
+
+    color: #fff;
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    transition: .35s;
+
+    margin: 0;
+
+    font-weight: 400;
+}
+
+.back-home:hover {
+    background: linear-gradient(135deg,#2563eb,#38bdf8);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(37,99,235,.30);
+}
+
+.lesson-title h1 {
+    font-size: 3.3rem;
+    margin-bottom: 20px;
+    line-height: 1.05;
+}
+
+.lesson-title p {
+    max-width: 760px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 1.02rem;
+}
+
+
+/* ==========================================================
+LAYOUT
+========================================================== */
+
+.lesson-wrapper {
+    max-width: 1450px;
+
+    margin: 0 auto;
+
+    padding: 0 5% 80px;
+
+    display: grid;
+
+    grid-template-columns: 290px minmax(0,1fr);
+
+    column-gap: 32px;
+
+    align-items: start;
+}
+
+
+
+/* ==========================================================
+LEFT SIDEBAR
+========================================================== */
+
+.lesson-sidebar {
+    position: sticky;
+    top: 30px;
+
+    min-height: 430px;
+
+    background: rgba(18,27,46,.82);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    backdrop-filter: blur(24px);
+
+    border-radius: 24px;
+
+    padding: 22px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,.22);
+}
+
+.lesson-sidebar h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #fff;
+
+    font-size: 1rem;
+
+    margin-bottom: 22px;
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.lesson-link {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px 16px;
+
+    margin-bottom: 10px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: transparent;
+
+    color: #cbd5e1;
+
+    cursor: pointer;
+
+    font-size: .95rem;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    transition: .28s;
+}
+
+.lesson-link i {
+    width: 22px;
+
+    text-align: center;
+
+    color: #38bdf8;
+
+    transition: .3s;
+}
+
+.lesson-link:hover {
+    background: rgba(255,255,255,.05);
+
+    transform: translateX(6px);
+}
+
+.lesson-link.active {
+    background: linear-gradient(135deg,#2563eb,#38bdf8);
+
+    color: #fff;
+
+    box-shadow: 0 12px 30px rgba(37,99,235,.35);
+}
+
+.lesson-link.active i {
+    color: #fff;
+}
+
+
+/* ==========================================================
+RIGHT CONTENT
+========================================================== */
+
+.lesson-content {
+    min-height: 0px;
+}
+
+.lesson-panel {
+    display: none;
+
+    background: rgba(18,27,46,.82);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    backdrop-filter: blur(24px);
+
+    border-radius: 24px;
+
+    padding: 50px;
+
+    animation: fade .35s ease;
+
+    box-shadow: 0 20px 45px rgba(0,0,0,.20);
+}
+
+.lesson-panel.active {
+    display: block;
+}
+
+
+/* ==========================================================
+HOME PANEL
+========================================================== */
+
+.welcome-banner {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+.welcome-text {
+    flex: 1;
+}
+
+.welcome-text span {
+    display: inline-block;
+
+    background: rgba(56,189,248,.12);
+
+    color: #38bdf8;
+
+    padding: 7px 15px;
+
+    border-radius: 999px;
+
+    font-size: .82rem;
+
+    font-weight: 700;
+
+    margin-bottom: 16px;
+}
+
+.welcome-text h2 {
+    font-size: 2.35rem;
+
+    margin-bottom: 16px;
+
+    line-height: 1.2;
+}
+
+.welcome-text p {
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    font-size: .95rem;
+
+    margin-bottom: 28px;
+
+    max-width: 650px;
+}
+
+/* ==========================================================
+   CHOOSE A TOPIC BUTTON
+   NON-CLICKABLE / VISUAL ONLY
+========================================================== */
+
+.choose-topic-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 13px 25px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #38bdf8
+    );
+
+    color: #fff;
+
+    font-weight: 700;
+    font-size: .90rem;
+
+    text-decoration: none;
+
+    cursor: default;
+
+    pointer-events: none;
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, .18);
+}
+
+.choose-topic-btn i {
+    font-size: .95rem;
+}
+
+.module-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 25px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(135deg,#2563eb,#38bdf8);
+
+    color: #fff;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.module-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 18px 35px rgba(37,99,235,.35);
+}
+
+
+/* ==========================================================
+   SIMPLE INTERACTIVE LEARNING ILLUSTRATION
+========================================================== */
+
+.welcome-image {
+
+    width: 310px;
+    height: 250px;
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(37,99,235,.16),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #162542,
+            #0f1b31
+        );
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* ==========================================================
+   SOFT BACKGROUND GLOW
+========================================================== */
+
+.welcome-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(37,99,235,.12);
+
+    filter: blur(45px);
+
+    animation: illustrationGlow 4s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   ILLUSTRATION
+========================================================== */
+
+.simple-illustration {
+
+    width: 180px;
+    height: 170px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/* ==========================================================
+   DOCUMENT
+========================================================== */
+
+.illustration-document {
+
+    position: absolute;
+
+    width: 92px;
+    height: 118px;
+
+    left: 30px;
+    top: 25px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    transform: rotate(-7deg);
+
+    box-shadow:
+        0 20px 35px rgba(0,0,0,.18);
+
+    animation: documentFloat 4s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   DOCUMENT LINES
+========================================================== */
+
+.illustration-document span {
+
+    display: block;
+
+    height: 5px;
+
+    border-radius: 10px;
+
+    background: rgba(148,163,184,.35);
+
+    margin-left: 18px;
+
+}
+
+
+.illustration-document span:nth-child(1) {
+
+    width: 48px;
+
+    margin-top: 28px;
+
+}
+
+
+.illustration-document span:nth-child(2) {
+
+    width: 58px;
+
+    margin-top: 11px;
+
+}
+
+
+.illustration-document span:nth-child(3) {
+
+    width: 40px;
+
+    margin-top: 11px;
+
+}
+
+
+/* ==========================================================
+   SHIELD
+========================================================== */
+
+.illustration-shield {
+
+    position: absolute;
+
+    width: 82px;
+    height: 82px;
+
+    right: 20px;
+    top: 47px;
+
+    border-radius: 24px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    color: #fff;
+
+    font-size: 34px;
+
+    box-shadow:
+        0 18px 35px rgba(37,99,235,.35);
+
+    transform: rotate(5deg);
+
+    animation: shieldFloat 3.5s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   SHIELD GLOW
+========================================================== */
+
+.illustration-shield::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border-radius: 27px;
+
+    border: 1px solid rgba(56,189,248,.25);
+
+    opacity: 0;
+
+    animation: shieldPulse 3.5s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   MAGNIFYING GLASS
+========================================================== */
+
+.illustration-search {
+
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    right: 4px;
+    bottom: 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #0f1b31;
+
+    border: 1px solid rgba(56,189,248,.35);
+
+    color: #38bdf8;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.25);
+
+    animation: searchFloat 3s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   SUBTLE ANIMATIONS
+========================================================== */
+
+@keyframes documentFloat {
+
+    0%,
+    100% {
+
+        transform:
+            rotate(-7deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(-7deg)
+            translateY(-5px);
+
+    }
+
+}
+
+
+@keyframes shieldFloat {
+
+    0%,
+    100% {
+
+        transform:
+            rotate(5deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(5deg)
+            translateY(-7px);
+
+    }
+
+}
+
+
+@keyframes searchFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0, 0);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-5px, -5px);
+
+    }
+
+}
+
+
+@keyframes shieldPulse {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+        opacity: 0;
+
+    }
+
+    50% {
+
+        transform: scale(1.12);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes illustrationGlow {
+
+    0%,
+    100% {
+
+        transform: scale(.9);
+
+        opacity: .6;
+
+    }
+
+    50% {
+
+        transform: scale(1.1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ==========================================================
+MODULES
+========================================================== */
+
+.module-icon {
+    width: 82px;
+
+    height: 82px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: linear-gradient(135deg,#2563eb,#38bdf8);
+
+    color: #fff;
+
+    font-size: 33px;
+
+    margin-bottom: 22px;
+
+    box-shadow: 0 15px 35px rgba(37,99,235,.35);
+}
+
+.lesson-panel h2 {
+    font-size: 2.05rem;
+
+    margin-bottom: 17px;
+}
+
+.lesson-panel p {
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+
+    max-width: 720px;
+}
+
+
+/* ==========================================================
+BACK TO HOME — BELOW RIGHT CONTENT
+========================================================== */
+
+.back-home-wrapper {
+    width: 100%;
+
+    margin-top: -60px;
+
+    padding-right: 120px;
+
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.back-home {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    color: #dbeafe;
+
+    background: rgba(37,99,235,.10);
+
+    border: 1px solid rgba(56,189,248,.25);
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.06);
+
+    transition: .3s ease;
+
+    margin: 0;
+
+    font-size: .9rem;
+
+    font-weight: 700;
+
+    backdrop-filter: blur(10px);
+}
+
+.back-home i {
+    font-size: .78rem;
+
+    color: #38bdf8;
+
+    transition: .3s ease;
+}
+
+.back-home:hover {
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        rgba(37,99,235,.85),
+        rgba(56,189,248,.85)
+    );
+
+    border-color: rgba(56,189,248,.55);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.28),
+        0 0 15px rgba(56,189,248,.12);
+}
+
+.back-home:hover i {
+    color: #fff;
+
+    transform: translateX(-3px);
+}
+
+
+/* ==========================================================
+RESPONSIVE
+========================================================== */
+
+/* ==========================================================
+TABLET — 992px and below
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .lesson-header {
+        margin-top: 50px;
+        padding: 0 4%;
+    }
+
+    .lesson-wrapper {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 4% 70px;
+    }
+
+    /* SIDEBAR */
+
+    .lesson-sidebar {
+        position: relative;
+        top: 0;
+
+        width: 100%;
+        min-height: auto;
+
+        padding: 20px;
+    }
+
+    .lesson-link {
+        padding: 13px 15px;
+        font-size: .9rem;
+    }
+
+    /* RIGHT CONTENT */
+
+    .lesson-content {
+        min-height: auto;
+        width: 100%;
+    }
+
+    .lesson-panel {
+        width: 100%;
+        padding: 40px;
+    }
+
+    /* HOME */
+
+    .welcome-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .welcome-text {
+        width: 100%;
+    }
+
+    .welcome-text p {
+        margin: auto auto 28px;
+    }
+
+    .welcome-image {
+        width: 100%;
+        max-width: 420px;
+        height: 240px;
+    }
+
+    /* BACK TO HOME */
+
+    .back-home-wrapper {
+        margin-top: 5px;
+        padding-right: 30px;
+    }
+
+    .back-home {
+        font-size: .88rem;
+    }
+
+    /* TITLE */
+
+    .lesson-title h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+
+/* ==========================================================
+MOBILE — 768px and below
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .lesson-header {
+        margin-top: 45px;
+        padding: 0 5%;
+    }
+
+    .lesson-title h1 {
+        font-size: 2.1rem;
+        line-height: 1.15;
+        margin-bottom: 16px;
+    }
+
+    .lesson-title p {
+        font-size: .92rem;
+        line-height: 1.8;
+    }
+
+    /* SIDEBAR */
+
+    .lesson-sidebar {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .lesson-sidebar h3 {
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+    }
+
+    .lesson-link {
+        padding: 13px;
+        font-size: .88rem;
+        gap: 11px;
+        margin-bottom: 7px;
+    }
+
+    .lesson-link i {
+        width: 20px;
+    }
+
+    /* RIGHT CARD */
+
+    .lesson-panel {
+        padding: 30px;
+        border-radius: 22px;
+    }
+
+    /* HOME */
+
+    .welcome-banner {
+        gap: 25px;
+    }
+
+    .welcome-text span {
+        font-size: .76rem;
+        padding: 6px 13px;
+    }
+
+    .welcome-text h2 {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-bottom: 14px;
+    }
+
+    .welcome-text p {
+        font-size: .88rem;
+        line-height: 1.75;
+        margin-bottom: 25px;
+    }
+
+    .welcome-image {
+        width: 100%;
+        height: 220px;
+    }
+
+    .welcome-image i {
+        font-size: 55px;
+    }
+
+    /* MODULE ICON */
+
+    .module-icon {
+        width: 75px;
+        height: 75px;
+        font-size: 30px;
+    }
+
+    .lesson-panel h2 {
+        font-size: 1.8rem;
+        line-height: 1.25;
+    }
+
+    .lesson-panel p {
+        font-size: .88rem;
+        line-height: 1.75;
+    }
+
+    /* BUTTON */
+
+    .module-btn {
+        padding: 12px 22px;
+        font-size: .88rem;
+    }
+
+    /* ======================================================
+   BACK TO HOME — MOBILE
+====================================================== */
+
+.back-home-wrapper {
+    margin-top: -35px;
+    padding-right: 0;
+    padding-bottom: 15px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.back-home {
+    padding: 9px 16px;
+    font-size: .82rem;
+}
+
+}
+
+
+/* ==========================================================
+SMALL MOBILE — 576px and below
+========================================================== */
+
+@media (max-width: 576px) {
+
+    .lesson-header {
+        margin-top: 25px;
+        padding: 0 20px;
+    }
+
+    .lesson-wrapper {
+        padding: 0 20px 50px;
+        gap: 20px;
+    }
+
+    /* TITLE */
+
+    .lesson-title h1 {
+        font-size: 1.85rem;
+        line-height: 1.2;
+        margin-bottom: 14px;
+    }
+
+    .lesson-title p {
+        font-size: .88rem;
+        line-height: 1.7;
+    }
+
+    /* SIDEBAR */
+
+    .lesson-sidebar {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .lesson-sidebar h3 {
+        font-size: .92rem;
+    }
+
+    .lesson-link {
+        padding: 12px;
+        font-size: .84rem;
+        border-radius: 12px;
+    }
+
+    /* RIGHT CARD */
+
+    .lesson-panel {
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    /* HOME */
+
+    .welcome-text span {
+        font-size: .7rem;
+        padding: 5px 11px;
+    }
+
+    .welcome-text h2 {
+        font-size: 1.7rem;
+        line-height: 1.25;
+    }
+
+    .welcome-text p {
+        font-size: .84rem;
+        line-height: 1.7;
+        margin-bottom: 22px;
+    }
+
+    .welcome-image {
+        height: 200px;
+        border-radius: 18px;
+    }
+
+    .welcome-image i {
+        font-size: 48px;
+    }
+
+    .welcome-image p {
+        font-size: .82rem;
+    }
+
+    /* MODULES */
+
+    .module-icon {
+        width: 68px;
+        height: 68px;
+        font-size: 27px;
+        border-radius: 17px;
+    }
+
+    .lesson-panel h2 {
+        font-size: 1.6rem;
+    }
+
+    .lesson-panel p {
+        font-size: .84rem;
+        line-height: 1.7;
+    }
+
+    /* BUTTONS */
+
+    .module-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 18px;
+        font-size: .84rem;
+    }
+
+    /* BACK TO HOME */
+
+    .back-home-wrapper {
+        width: 100%;
+        margin-top: 5px;
+        padding-right: 0;
+        justify-content: flex-end;
+    }
+
+    .back-home {
+        padding: 9px 16px;
+        font-size: .86rem;
+    }
+
+}
+
+
+/* ==========================================================
+VERY SMALL PHONE — 400px and below
+========================================================== */
+
+@media (max-width: 400px) {
+
+    .lesson-header {
+        padding: 0 16px;
+    }
+
+    .lesson-wrapper {
+        padding: 0 16px 40px;
+    }
+
+    .lesson-title h1 {
+        font-size: 1.65rem;
+    }
+
+    .lesson-title p {
+        font-size: .84rem;
+    }
+
+    .lesson-sidebar {
+        padding: 14px;
+    }
+
+    .lesson-link {
+        padding: 11px;
+        font-size: .8rem;
+    }
+
+    .lesson-panel {
+        padding: 20px;
+    }
+
+    .welcome-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .welcome-text p {
+        font-size: .82rem;
+    }
+
+    .welcome-image {
+        height: 180px;
+    }
+
+    .module-btn {
+        font-size: .8rem;
+    }
+
+    .back-home {
+        font-size: .82rem;
+        padding: 8px 14px;
+    }
+
+}
