@@ -7523,6 +7523,10 @@ body {
         text-align: center;
     }
 
+    .hero-visual {
+    display: none;
+    }
+
 
     /* ======================================================
        HERO BADGE
@@ -7633,9 +7637,7 @@ body {
         line-height: 1.25;
     }
 
-
-
-
+    
 
     /* ======================================================
        SCROLL INDICATOR
