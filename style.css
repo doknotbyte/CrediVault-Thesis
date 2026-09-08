@@ -7618,217 +7618,6 @@ body {
 
 
     /* ======================================================
-       CREDIVAULT HERO VISUAL — MOBILE
-    ====================================================== */
-
-    .cv-hero-visual {
-        width: 100%;
-        height: 410px;
-        transform: translateX(0);
-        overflow: visible;
-    }
-
-    .cv-ambient-glow {
-        width: 340px;
-        height: 340px;
-        filter: blur(16px);
-    }
-
-    .cv-hero-visual::before {
-        width: 250px;
-        height: 250px;
-        filter: blur(20px);
-    }
-
-    .cv-wave-one {
-        width: 470px;
-        height: 180px;
-        top: 80px;
-        left: -55px;
-    }
-
-    .cv-wave-two {
-        width: 425px;
-        height: 145px;
-        top: 115px;
-        left: -30px;
-    }
-
-    .cv-wave-three {
-        width: 380px;
-        height: 120px;
-        top: 145px;
-        left: 0;
-    }
-
-    .cv-orbit-system {
-        width: 300px;
-        height: 300px;
-    }
-
-    .cv-orbit-outer {
-        width: 280px;
-        height: 280px;
-    }
-
-    .cv-orbit-middle {
-        width: 225px;
-        height: 225px;
-    }
-
-    .cv-orbit-inner {
-        width: 175px;
-        height: 175px;
-    }
-
-    .cv-vault {
-        width: 140px;
-        height: 140px;
-        border-radius: 25px;
-    }
-
-    .cv-vault::before {
-        border-radius: 24px;
-    }
-
-    .cv-vault::after {
-        border-radius: 26px;
-    }
-
-    .cv-vault-core {
-        width: 105px;
-        height: 105px;
-        border-radius: 23px;
-    }
-
-    .cv-vault-core::before {
-        border-radius: 22px;
-    }
-
-    .cv-vault-ring-one {
-        inset: 11px;
-    }
-
-    .cv-vault-ring-two {
-        inset: 21px;
-    }
-
-    .cv-core-symbol {
-        width: 76px;
-        height: 76px;
-        border-radius: 20px;
-    }
-
-    .cv-core-symbol i {
-        font-size: 2.2rem;
-    }
-
-    .cv-core-check {
-        right: -12px;
-        bottom: -12px;
-        width: 37px;
-        height: 37px;
-        border-width: 2px;
-    }
-
-    .cv-core-check i {
-        font-size: .8rem;
-    }
-
-
-    /* ======================================================
-       FLOATING NODES — MOBILE
-    ====================================================== */
-
-    .cv-node {
-        width: 38px;
-        height: 38px;
-        border-radius: 11px;
-    }
-
-    .cv-node i {
-        font-size: .82rem;
-    }
-
-    .cv-node-one {
-        top: 28px;
-        left: 35px;
-    }
-
-    .cv-node-two {
-        top: 48px;
-        right: 25px;
-    }
-
-    .cv-node-three {
-        bottom: 35px;
-        right: 32px;
-    }
-
-    .cv-node-four {
-        bottom: 25px;
-        left: 30px;
-    }
-
-
-    /* ======================================================
-       CONNECTING LINES — MOBILE
-    ====================================================== */
-
-    .cv-line-one {
-        width: 90px;
-        top: 72px;
-        left: 65px;
-    }
-
-    .cv-line-two {
-        width: 88px;
-        top: 88px;
-        right: 58px;
-    }
-
-    .cv-line-three {
-        width: 88px;
-        bottom: 75px;
-        right: 58px;
-    }
-
-    .cv-line-four {
-        width: 90px;
-        bottom: 67px;
-        left: 62px;
-    }
-
-
-    /* ======================================================
-       GLASS DATA CARDS — MOBILE
-    ====================================================== */
-
-    .cv-glass-card {
-        width: 92px;
-        min-height: 52px;
-        padding: 8px;
-        gap: 4px;
-        border-radius: 11px;
-    }
-
-    .cv-card-one {
-        top: 55px;
-        left: -8px;
-    }
-
-    .cv-card-two {
-        top: 145px;
-        right: -7px;
-    }
-
-    .cv-card-three {
-        bottom: 55px;
-        right: 0;
-    }
-
-
-    /* ======================================================
        LEGACY VAULT / ORBIT CORE
     ====================================================== */
 
@@ -8020,6 +7809,386 @@ body {
     .topic-content p {
         font-size: .64rem;
         line-height: 1.5;
+    }
+
+
+    /* ======================================================
+       ABOUT CREDIVAULT — MOBILE
+    ====================================================== */
+
+    .about-credivault-section {
+        width: 100%;
+        min-height: auto;
+        padding: 65px 18px 70px;
+        overflow: hidden;
+    }
+
+    .about-credivault-container {
+        width: 100%;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 45px;
+        align-items: start;
+    }
+
+    .about-credivault-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-eyebrow {
+        margin-bottom: 15px;
+        font-size: .68rem;
+        letter-spacing: 1.5px;
+    }
+
+    .about-eyebrow i {
+        font-size: .8rem;
+    }
+
+    .about-credivault-content h2 {
+        margin-bottom: 18px;
+        font-size: 1.85rem;
+        line-height: 1.15;
+    }
+
+    .about-credivault-content > p {
+        margin-bottom: 14px;
+        font-size: .78rem;
+        line-height: 1.7;
+    }
+
+    .about-learn-more-btn {
+        margin-top: 12px;
+        padding: 11px 16px;
+        font-size: .78rem;
+        border-radius: 9px;
+    }
+
+
+    /* ======================================================
+       ABOUT — WHAT YOU'LL LEARN
+    ====================================================== */
+
+    .about-credivault-topics {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .about-topics-header {
+        margin-bottom: 20px;
+    }
+
+    .about-topics-label {
+        font-size: .63rem;
+        letter-spacing: 1.5px;
+    }
+
+    .about-topics-header h3 {
+        margin-top: 6px;
+        font-size: 1.35rem;
+        line-height: 1.2;
+    }
+
+    .about-topic-list {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .about-topic-card {
+        width: 100%;
+        min-height: 0;
+        padding: 17px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+
+    .about-topic-number {
+        top: 10px;
+        right: 12px;
+        font-size: .62rem;
+    }
+
+    .about-topic-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        font-size: .88rem;
+    }
+
+    .about-topic-content {
+        min-width: 0;
+        padding-right: 12px;
+    }
+
+    .about-topic-content h4 {
+        margin: 1px 0 6px;
+        font-size: .84rem;
+        line-height: 1.3;
+    }
+
+    .about-topic-content p {
+        font-size: .68rem;
+        line-height: 1.55;
+    }
+
+
+    /* ======================================================
+       ABOUT MODAL — MOBILE
+    ====================================================== */
+
+    .about-modal {
+        padding: 12px;
+    }
+
+    .about-modal-content {
+        width: 100%;
+        max-width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 22px 18px;
+        border-radius: 15px;
+    }
+
+    .about-modal-close {
+        top: 12px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        font-size: .85rem;
+    }
+
+    .about-modal-header {
+        padding-right: 38px;
+        margin-bottom: 24px;
+    }
+
+    .about-modal-label {
+        font-size: .62rem;
+        letter-spacing: 1.4px;
+    }
+
+    .about-modal-header h2 {
+        margin: 8px 0 9px;
+        font-size: 1.55rem;
+        line-height: 1.2;
+    }
+
+    .about-modal-header p {
+        font-size: .75rem;
+        line-height: 1.6;
+    }
+
+
+    /* ======================================================
+       ABOUT MODAL — INFO BLOCKS
+    ====================================================== */
+
+    .about-modal-body {
+        gap: 15px;
+    }
+
+    .about-info-block {
+        display: flex;
+        gap: 12px;
+        padding: 16px;
+        border-radius: 11px;
+    }
+
+    .about-info-icon {
+        width: 37px;
+        height: 37px;
+        border-radius: 9px;
+        font-size: .85rem;
+    }
+
+    .about-info-text {
+        min-width: 0;
+    }
+
+    .about-info-text h3 {
+        margin: 1px 0 6px;
+        font-size: .85rem;
+        line-height: 1.3;
+    }
+
+    .about-info-text p {
+        font-size: .72rem;
+        line-height: 1.65;
+    }
+
+
+    /* ======================================================
+       ABOUT MODAL — FEATURE LIST
+    ====================================================== */
+
+    .about-feature-list {
+        gap: 7px;
+    }
+
+    .about-feature-list li {
+        gap: 7px;
+        font-size: .71rem;
+        line-height: 1.5;
+    }
+
+    .about-feature-list li i {
+        margin-top: 3px;
+        font-size: .62rem;
+    }
+
+
+    /* ======================================================
+       ABOUT MODAL — HOW TO USE
+    ====================================================== */
+
+    .about-how-to {
+        margin-top: 2px;
+        padding: 17px;
+        border-radius: 11px;
+    }
+
+    .about-how-header {
+        margin-bottom: 16px;
+    }
+
+    .about-how-header > span {
+        font-size: .61rem;
+        letter-spacing: 1.3px;
+    }
+
+    .about-how-header h3 {
+        margin: 6px 0 5px;
+        font-size: 1rem;
+    }
+
+    .about-how-header p {
+        font-size: .71rem;
+        line-height: 1.5;
+    }
+
+    .about-steps {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .about-step {
+        gap: 10px;
+        padding: 13px;
+        border-radius: 9px;
+    }
+
+    .about-step-number {
+        font-size: .62rem;
+    }
+
+    .about-step h4 {
+        margin-bottom: 4px;
+        font-size: .75rem;
+    }
+
+    .about-step p {
+        font-size: .67rem;
+        line-height: 1.55;
+    }
+
+
+    /* ======================================================
+       READ & LEARN — LEARNING VIDEOS
+    ====================================================== */
+
+    .read-learn-videos-section {
+        width: 100%;
+        padding: 50px 18px 60px;
+    }
+
+    .read-learn-videos-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .read-learn-videos-header {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 25px;
+    }
+
+    .read-learn-eyebrow {
+        margin-bottom: 7px;
+        font-size: .59rem;
+        letter-spacing: 1.2px;
+    }
+
+    .read-learn-videos-header h2 {
+        font-size: 1.55rem;
+        line-height: 1.2;
+    }
+
+    .read-learn-videos-header p {
+        font-size: .71rem;
+        line-height: 1.6;
+    }
+
+
+    /* ======================================================
+       READ & LEARN — VIDEO GRID
+       2 VIDEOS PER ROW ON MOBILE
+    ====================================================== */
+
+    .read-learn-video-grid {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 9px;
+        row-gap: 13px;
+    }
+
+    .read-learn-video-card {
+        width: 100%;
+        min-width: 0;
+        border-radius: 9px;
+    }
+
+    .read-learn-video {
+        width: calc(100% - 8px);
+        margin: 4px;
+        aspect-ratio: 35 / 17;
+        border-radius: 6px;
+    }
+
+    .read-learn-video::before {
+        border-radius: 6px;
+    }
+
+    .read-learn-video iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .read-learn-video-content {
+        padding: 8px 9px 10px;
+    }
+
+    .read-learn-video-number {
+        margin-bottom: 3px;
+        font-size: .45rem;
+        letter-spacing: .8px;
+    }
+
+    .read-learn-video-content h3 {
+        margin-bottom: 3px;
+        font-size: .68rem;
+        line-height: 1.25;
+    }
+
+    .read-learn-video-content p {
+        font-size: .54rem;
+        line-height: 1.4;
     }
 
 
