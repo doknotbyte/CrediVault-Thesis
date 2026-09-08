@@ -7525,7 +7525,7 @@ body {
     
     .cv-hero-visual {
     display: none !important;
-    
+
     }
 
 
@@ -7590,11 +7590,11 @@ body {
 .hero-buttons .btn,
 .hero-buttons .primary-btn,
 .hero-buttons .secondary-btn {
-    width: 100%;
+    width: 90%;
     min-width: 0;
     justify-content: center;
     padding: 10px 16px;
-    font-size: .54rem;
+    font-size: .44rem;
     border-radius: 10px;
 }
 
