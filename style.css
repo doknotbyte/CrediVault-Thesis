@@ -7573,25 +7573,25 @@ body {
     ====================================================== */
 
     .hero-buttons {
-        width: 100%;
-        max-width: 430px;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        margin: 23px auto 0;
-    }
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 9px;
+    margin: 23px auto 0;
+}
 
-    .hero-buttons .btn,
-    .hero-buttons .primary-btn,
-    .hero-buttons .secondary-btn {
-        width: 100%;
-        min-width: 0;
-        justify-content: center;
-        padding: 13px 18px;
-        font-size: .8rem;
-        border-radius: 12px;
-    }
+.hero-buttons .btn,
+.hero-buttons .primary-btn,
+.hero-buttons .secondary-btn {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: .74rem;
+    border-radius: 10px;
+}
 
 
     /* ======================================================
@@ -8466,7 +8466,7 @@ body {
     ====================================================== */
 
     .modal-content {
-        
+
         width: 92%;
         max-width: 92%;
         max-height: 85vh;
