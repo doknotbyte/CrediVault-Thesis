@@ -6729,17 +6729,28 @@ body {
 
     .nav-links {
         position: absolute;
+
         top: 100%;
         left: 0;
+
         width: 100%;
+
         background: #08111f;
+
         flex-direction: column;
         align-items: flex-start;
+
         padding: 12px;
+
         gap: 8px;
+
         display: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+        border-top:
+            1px solid rgba(255, 255, 255, 0.08);
+
         margin: 0;
+
         z-index: 999;
     }
 
@@ -6749,7 +6760,9 @@ body {
 
     .nav-item {
         width: 100%;
+
         font-size: 0.85rem;
+
         padding: 8px 10px;
     }
 
@@ -6760,26 +6773,36 @@ body {
 
     .hero-section {
         width: 100%;
-        padding: 18px 20px 32px;
+
+        padding:
+            18px 20px
+            32px;
+
         overflow: hidden;
     }
 
     .hero-container {
         width: 100%;
+
         grid-template-columns: 1fr;
+
         gap: 22px;
+
         text-align: center;
     }
 
 
     /* ======================================================
-       HERO CONTENT
+       HERO CONTENT — MOVE UP
     ====================================================== */
 
     .hero-content {
         width: 100%;
+
         max-width: 720px;
-        margin: -28px auto 0;
+
+        margin:
+            -28px auto 0;
     }
 
     .hero-content > p {
@@ -6794,16 +6817,22 @@ body {
 
     .hero-content h1 {
         font-size: 2.25rem;
+
         line-height: 1.08;
+
         margin-bottom: 11px;
+
         letter-spacing: -0.8px;
     }
 
     .hero-content p {
         max-width: 620px;
+
         margin-left: auto;
         margin-right: auto;
+
         font-size: 0.82rem;
+
         line-height: 1.5;
     }
 
@@ -6814,28 +6843,45 @@ body {
 
     .hero-buttons {
         justify-content: center;
+
         gap: 10px;
+
         margin-top: 14px;
+
         flex-wrap: wrap;
     }
 
     .hero-buttons a,
     .hero-buttons button {
         padding: 9px 15px;
+
         font-size: 0.76rem;
     }
 
 
     /* ======================================================
        HERO STATS
+       KEEP ORIGINAL DESKTOP CARD SHAPE
     ====================================================== */
 
     .hero-stats {
         justify-content: center;
+
         gap: 14px;
+
         margin-top: 17px;
+
         flex-wrap: nowrap;
     }
+
+    /*
+       IMPORTANT:
+       No border, border-radius, width,
+       or shape override here.
+
+       Digital / Interactive / Verified
+       keep their original desktop design.
+    */
 
 
     /* ======================================================
@@ -6844,192 +6890,42 @@ body {
 
     .hero-visual {
         position: relative;
+
         width: 100%;
+
         max-width: 520px;
+
         min-height: 315px;
-        margin: 8px auto 0;
+
+        margin:
+            8px auto 0;
+
         transform: scale(.78);
-        transform-origin: center top;
+
+        transform-origin:
+            center top;
+
         overflow: visible;
     }
 
 
     /* ======================================================
-       CREDIVAULT HERO VISUAL — TABLET
-    ====================================================== */
-
-    .cv-hero-visual {
-        width: 100%;
-        height: 520px;
-        transform: translateX(0);
-    }
-
-    .cv-ambient-glow {
-        width: 450px;
-        height: 450px;
-    }
-
-    .cv-wave-one {
-        width: 650px;
-        height: 235px;
-        left: -55px;
-    }
-
-    .cv-wave-two {
-        width: 590px;
-        height: 195px;
-        left: -25px;
-    }
-
-    .cv-wave-three {
-        width: 530px;
-        height: 160px;
-        left: 5px;
-    }
-
-    .cv-orbit-system {
-        width: 400px;
-        height: 400px;
-    }
-
-    .cv-orbit-outer {
-        width: 375px;
-        height: 375px;
-    }
-
-    .cv-orbit-middle {
-        width: 305px;
-        height: 305px;
-    }
-
-    .cv-orbit-inner {
-        width: 235px;
-        height: 235px;
-    }
-
-    .cv-vault {
-        width: 175px;
-        height: 175px;
-        border-radius: 29px;
-    }
-
-    .cv-vault::before {
-        border-radius: 28px;
-    }
-
-    .cv-vault::after {
-        border-radius: 30px;
-    }
-
-    .cv-vault-core {
-        width: 128px;
-        height: 128px;
-        border-radius: 27px;
-    }
-
-    .cv-vault-core::before {
-        border-radius: 26px;
-    }
-
-    .cv-core-symbol {
-        width: 90px;
-        height: 90px;
-        border-radius: 24px;
-    }
-
-    .cv-core-symbol i {
-        font-size: 2.7rem;
-    }
-
-    .cv-core-check {
-        right: -14px;
-        bottom: -14px;
-        width: 43px;
-        height: 43px;
-    }
-
-    .cv-node {
-        width: 43px;
-        height: 43px;
-        border-radius: 13px;
-    }
-
-    .cv-node-one {
-        top: 35px;
-        left: 60px;
-    }
-
-    .cv-node-two {
-        top: 65px;
-        right: 38px;
-    }
-
-    .cv-node-three {
-        bottom: 48px;
-        right: 52px;
-    }
-
-    .cv-node-four {
-        bottom: 35px;
-        left: 50px;
-    }
-
-    .cv-line-one {
-        width: 120px;
-        top: 90px;
-        left: 95px;
-    }
-
-    .cv-line-two {
-        width: 115px;
-        top: 108px;
-        right: 85px;
-    }
-
-    .cv-line-three {
-        width: 115px;
-        bottom: 100px;
-        right: 85px;
-    }
-
-    .cv-line-four {
-        width: 120px;
-        bottom: 88px;
-        left: 90px;
-    }
-
-    .cv-glass-card {
-        width: 112px;
-        min-height: 58px;
-        padding: 10px;
-        border-radius: 13px;
-    }
-
-    .cv-card-one {
-        top: 70px;
-        left: -2px;
-    }
-
-    .cv-card-two {
-        top: 180px;
-        right: -2px;
-    }
-
-    .cv-card-three {
-        bottom: 70px;
-        right: 10px;
-    }
-
-
-    /* ======================================================
-       LEGACY VAULT / ORBIT CORE
+       VAULT / ORBIT CORE
+       SLIGHTLY SMALLER
     ====================================================== */
 
     .vault-core {
         width: 285px;
+
         height: 285px;
+
         margin: 0 auto;
     }
+
+
+    /* ======================================================
+       RINGS
+    ====================================================== */
 
     .ring-1 {
         width: 285px;
@@ -7046,9 +6942,16 @@ body {
         height: 170px;
     }
 
+
+    /* ======================================================
+       CENTER CREDIVAULT CARD
+    ====================================================== */
+
     .core-card {
         width: 180px;
+
         height: 180px;
+
         border-radius: 26px;
     }
 
@@ -7063,35 +6966,67 @@ body {
 
     /* ======================================================
        FLOATING TOPIC CARDS
+       COMPACT AROUND THE ORBIT
     ====================================================== */
 
     .floating-card {
         min-width: 105px;
+
         max-width: 135px;
-        padding: 7px 10px;
+
+        padding:
+            7px 10px;
+
         gap: 6px;
+
         border-radius: 11px;
+
         font-size: 0.62rem;
+
         white-space: nowrap;
     }
 
+
+    /* ======================================================
+       TOP TOPIC
+    ====================================================== */
+
     .card-top {
         top: -6px;
+
         left: 50%;
     }
 
+
+    /* ======================================================
+       LEFT TOPIC
+    ====================================================== */
+
     .card-left {
         left: 8px;
+
         top: 50%;
     }
+
+
+    /* ======================================================
+       RIGHT TOPIC
+    ====================================================== */
 
     .card-right {
         right: 8px;
+
         top: 50%;
     }
 
+
+    /* ======================================================
+       BOTTOM TOPIC
+    ====================================================== */
+
     .card-bottom {
         bottom: -5px;
+
         left: 50%;
     }
 
@@ -7106,6 +7041,7 @@ body {
 
     .features-section .section-header {
         width: 94%;
+
         margin-bottom: 40px;
     }
 
@@ -7117,15 +7053,26 @@ body {
         font-size: .84rem;
     }
 
+
+    /* ======================================================
+       TOPIC GRID — TABLET
+       IMPORTANT: KEEP INSIDE MEDIA QUERY
+    ====================================================== */
+
     .topic-grid {
         width: 94%;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
         gap: 13px;
     }
 
     .topic-card {
         width: 100%;
+
         height: 315px;
+
         min-height: 0;
     }
 
@@ -7134,19 +7081,25 @@ body {
     }
 
     .topic-content {
-        padding: 14px 15px 16px;
+        padding:
+            14px 15px 16px;
     }
 
     .topic-content h3 {
         font-size: .88rem;
+
         line-height: 1.3;
+
         margin-bottom: 6px;
     }
 
     .topic-content p {
         font-size: .68rem;
+
         line-height: 1.5;
     }
+
+}
 
 
     /* ======================================================
@@ -7154,43 +7107,66 @@ body {
     ====================================================== */
 
     .check-section {
-        padding: 55px 22px;
-    }
 
-    .check-container {
-        width: 94%;
-        grid-template-columns: 1.05fr .95fr;
-        gap: 35px;
-        align-items: center;
-    }
+    padding: 55px 22px;
 
-    .check-content {
-        max-width: 750px;
-        margin: 0;
-        text-align: left;
-    }
+}
 
-    .check-content h2 {
-        font-size: 2rem;
-    }
+.check-container {
 
-    .check-content p {
-        font-size: .84rem;
-    }
+    width: 94%;
 
-    .check-status {
-        margin: 0;
-    }
+    grid-template-columns: 1.05fr .95fr;
 
-    .check-hint {
-        justify-content: flex-start;
-    }
+    gap: 35px;
 
-    .check-interactive {
-        width: 100%;
-        max-width: 750px;
-        margin: 0;
-    }
+    align-items: center;
+
+}
+
+.check-content {
+
+    max-width: 750px;
+
+    margin: 0;
+
+    text-align: left;
+
+}
+
+.check-content h2 {
+
+    font-size: 2rem;
+
+}
+
+.check-content p {
+
+    font-size: .84rem;
+
+}
+
+.check-status {
+
+    margin: 0;
+
+}
+
+.check-hint {
+
+    justify-content: flex-start;
+
+}
+
+.check-interactive {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 0;
+
+}
 
 
     /* ======================================================
@@ -7198,11 +7174,15 @@ body {
     ====================================================== */
 
     .tool-grid {
+
         grid-template-columns: repeat(2, 1fr);
+
     }
 
     .tool-card {
+
         min-height: 320px;
+
     }
 
 
@@ -7211,7 +7191,9 @@ body {
     ====================================================== */
 
     .reminder-grid {
+
         grid-template-columns: repeat(2, 1fr);
+
     }
 
 
@@ -7220,11 +7202,15 @@ body {
     ====================================================== */
 
     .how-steps {
+
         flex-wrap: wrap;
+
     }
 
     .step-arrow {
+
         display: none;
+
     }
 
 
@@ -7233,153 +7219,202 @@ body {
     ====================================================== */
 
     .credibot-section {
+
         width: 100%;
+
         padding: 70px 22px 75px;
+
     }
 
     .credibot-container {
+
         width: 94%;
+
         max-width: 1100px;
+
         margin: 0 auto;
+
     }
 
     .credibot-header {
+
         gap: 18px;
+
         margin-bottom: 24px;
+
     }
 
     .credibot-icon {
+
         width: 54px;
+
         height: 54px;
+
         border-radius: 15px;
+
         font-size: 1.3rem;
+
     }
 
     .credibot-heading h2 {
+
         font-size: 1.85rem;
+
     }
 
     .credibot-heading p {
+
         max-width: 600px;
+
         margin-left: auto;
+
         margin-right: auto;
+
         font-size: .82rem;
+
         line-height: 1.55;
+
         white-space: normal;
+
     }
 
     .credibot-chat {
+
         padding: 24px;
+
         border-radius: 20px;
+
     }
 
     .credibot-message {
+
         gap: 11px;
+
         margin-bottom: 21px;
+
     }
 
     .message-avatar {
+
         width: 38px;
+
         height: 38px;
+
         font-size: .9rem;
+
     }
 
     .message-content {
+
         max-width: calc(100% - 50px);
+
         padding: 11px 14px;
+
     }
 
     .message-content p {
+
         font-size: .84rem;
+
     }
 
-
-    /* ======================================================
-       CREDIBOT QUESTIONS — TABLET
-    ====================================================== */
-
     .credibot-questions {
-        width: 100%;
+
         margin-top: 15px;
-        padding: 11px 18px 12px;
+
     }
 
     .questions-heading {
+
         margin-bottom: 9px;
-    }
 
-    .questions-heading-left {
-        font-size: .68rem;
-    }
+        font-size: .78rem;
 
-    .questions-hint {
-        font-size: .58rem;
     }
 
     .question-list {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 7px;
-        width: 100%;
-        max-height: none;
-        overflow: visible;
-        padding: 2px 1px 2px;
+
+        gap: 9px;
+
+        padding: 2px 2px 9px;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        flex-wrap: nowrap;
+
+        scrollbar-width: thin;
+
     }
 
     .credibot-question {
-        flex: 0 1 auto;
+
+        flex: 0 0 auto;
+
         width: auto;
-        max-width: 100%;
+
+        max-width: 300px;
+
         min-width: 0;
-        min-height: 34px;
-        padding: 7px 11px;
-        font-size: .65rem;
+
+        min-height: 40px;
+
+        padding: 8px 13px;
+
+        font-size: .73rem;
+
         line-height: 1.2;
+
         white-space: nowrap;
+
         overflow: hidden;
+
+        text-overflow: ellipsis;
+
     }
-
-    .credibot-question i {
-        font-size: .58rem;
-    }
-
-
-    /* ======================================================
-       CREDIBOT INPUT — TABLET
-    ====================================================== */
 
     .credibot-input-area {
+
         gap: 9px;
+
         margin-top: 11px;
-        padding: 10px 18px 8px;
+
     }
 
     .credibot-input-wrapper {
-        height: 42px;
-        padding: 0 13px;
-    }
 
-    .credibot-input-wrapper > i {
-        margin-right: 8px;
-        font-size: .7rem;
+        height: 42px;
+
+        padding: 0 13px;
+
     }
 
     .credibot-input {
+
         font-size: .78rem;
+
+        min-width: 0;
+
     }
 
     .credibot-send {
+
         height: 42px;
+
         padding: 0 15px;
+
         font-size: .76rem;
+
     }
 
     .credibot-response {
+
         margin-top: 13px;
+
     }
 
-}
+
 
 
 /* ==========================================================
@@ -7458,7 +7493,6 @@ body {
         display: none;
     }
 
-
     /* ======================================================
        HOME HERO
     ====================================================== */
@@ -7484,10 +7518,8 @@ body {
         width: 100%;
         max-width: 100%;
         min-width: 0;
-        margin: 0 auto;
         text-align: center;
     }
-
 
     /* ======================================================
        HERO BADGE
@@ -7501,7 +7533,6 @@ body {
         gap: 7px;
         justify-content: center;
     }
-
 
     /* ======================================================
        HERO TITLE
@@ -7518,7 +7549,6 @@ body {
         word-break: normal;
     }
 
-
     /* ======================================================
        HERO PARAGRAPH
     ====================================================== */
@@ -7531,7 +7561,6 @@ body {
         line-height: 1.65;
         overflow-wrap: break-word;
     }
-
 
     /* ======================================================
        HERO BUTTONS
@@ -7547,20 +7576,16 @@ body {
         margin: 23px auto 0;
     }
 
-    .hero-buttons .btn,
-    .hero-buttons .primary-btn,
-    .hero-buttons .secondary-btn {
+    .hero-buttons .btn {
         width: 100%;
-        min-width: 0;
         justify-content: center;
         padding: 13px 18px;
         font-size: .8rem;
         border-radius: 12px;
     }
 
-
     /* ======================================================
-       HERO STATS
+       HERO STATS — COMPACT
     ====================================================== */
 
     .hero-stats {
@@ -7586,21 +7611,13 @@ body {
         line-height: 1.1;
     }
 
-    .stat-box h3,
-    .stat-box strong {
-        font-size: .85rem;
-        margin-bottom: 3px;
-    }
-
-    .stat-box span,
-    .stat-box p {
+    .stat-box span {
         font-size: .59rem;
         line-height: 1.25;
     }
 
-
     /* ======================================================
-       HERO VISUAL
+       HERO VISUAL — COMPACT
     ====================================================== */
 
     .hero-visual {
@@ -7616,15 +7633,14 @@ body {
         transform: none;
     }
 
-
-    /* ======================================================
-       LEGACY VAULT / ORBIT CORE
-    ====================================================== */
-
     .vault-core {
         width: 220px;
         height: 220px;
     }
+
+    /* ======================================================
+       RINGS
+    ====================================================== */
 
     .ring-1 {
         width: 220px;
@@ -7640,7 +7656,6 @@ body {
         width: 135px;
         height: 135px;
     }
-
 
     /* ======================================================
        CENTER CARD
@@ -7663,7 +7678,6 @@ body {
         margin-bottom: 9px;
     }
 
-
     /* ======================================================
        SHIELD
     ====================================================== */
@@ -7682,7 +7696,6 @@ body {
         font-size: 19px;
     }
 
-
     /* ======================================================
        STATUS
     ====================================================== */
@@ -7697,7 +7710,6 @@ body {
         width: 6px;
         height: 6px;
     }
-
 
     /* ======================================================
        FLOATING CARDS
@@ -7732,7 +7744,6 @@ body {
         left: 50%;
     }
 
-
     /* ======================================================
        SCROLL INDICATOR
     ====================================================== */
@@ -7746,7 +7757,6 @@ body {
     .scroll-indicator i {
         font-size: 13px;
     }
-
 
     /* ======================================================
        HOME — LEARNING TOPICS
@@ -7779,417 +7789,37 @@ body {
     }
 
     .topic-grid {
-        width: 100%;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .topic-card {
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        border-radius: 14px;
-        overflow: hidden;
-    }
-
-    .topic-visual {
-        height: 125px;
-    }
-
-    .topic-content {
-        padding: 13px 13px 15px;
-    }
-
-    .topic-content h3 {
-        font-size: .82rem;
-        line-height: 1.25;
-        margin-bottom: 6px;
-    }
-
-    .topic-content p {
-        font-size: .64rem;
-        line-height: 1.5;
-    }
-
-
-    /* ======================================================
-       ABOUT CREDIVAULT — MOBILE
-    ====================================================== */
-
-    .about-credivault-section {
-        width: 100%;
-        min-height: auto;
-        padding: 65px 18px 70px;
-        overflow: hidden;
-    }
-
-    .about-credivault-container {
-        width: 100%;
-        max-width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 45px;
-        align-items: start;
-    }
-
-    .about-credivault-content {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .about-eyebrow {
-        margin-bottom: 15px;
-        font-size: .68rem;
-        letter-spacing: 1.5px;
-    }
-
-    .about-eyebrow i {
-        font-size: .8rem;
-    }
-
-    .about-credivault-content h2 {
-        margin-bottom: 18px;
-        font-size: 1.85rem;
-        line-height: 1.15;
-    }
-
-    .about-credivault-content > p {
-        margin-bottom: 14px;
-        font-size: .78rem;
-        line-height: 1.7;
-    }
-
-    .about-learn-more-btn {
-        margin-top: 12px;
-        padding: 11px 16px;
-        font-size: .78rem;
-        border-radius: 9px;
-    }
-
-
-    /* ======================================================
-       ABOUT — WHAT YOU'LL LEARN
-    ====================================================== */
-
-    .about-credivault-topics {
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        left: 0;
-        top: 0;
-    }
-
-    .about-topics-header {
-        margin-bottom: 20px;
-    }
-
-    .about-topics-label {
-        font-size: .63rem;
-        letter-spacing: 1.5px;
-    }
-
-    .about-topics-header h3 {
-        margin-top: 6px;
-        font-size: 1.35rem;
-        line-height: 1.2;
-    }
-
-    .about-topic-list {
-        width: 100%;
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .about-topic-card {
-        width: 100%;
-        min-height: 0;
-        padding: 17px;
-        gap: 12px;
-        border-radius: 12px;
-    }
-
-    .about-topic-number {
-        top: 10px;
-        right: 12px;
-        font-size: .62rem;
-    }
-
-    .about-topic-icon {
-        width: 38px;
-        height: 38px;
-        border-radius: 9px;
-        font-size: .88rem;
-    }
-
-    .about-topic-content {
-        min-width: 0;
-        padding-right: 12px;
-    }
-
-    .about-topic-content h4 {
-        margin: 1px 0 6px;
-        font-size: .84rem;
-        line-height: 1.3;
-    }
-
-    .about-topic-content p {
-        font-size: .68rem;
-        line-height: 1.55;
-    }
-
-
-    /* ======================================================
-       ABOUT MODAL — MOBILE
-    ====================================================== */
-
-    .about-modal {
-        padding: 12px;
-    }
-
-    .about-modal-content {
-        width: 100%;
-        max-width: 100%;
-        max-height: 90vh;
-        overflow-y: auto;
-        padding: 22px 18px;
-        border-radius: 15px;
-    }
-
-    .about-modal-close {
-        top: 12px;
-        right: 12px;
-        width: 34px;
-        height: 34px;
-        border-radius: 8px;
-        font-size: .85rem;
-    }
-
-    .about-modal-header {
-        padding-right: 38px;
-        margin-bottom: 24px;
-    }
-
-    .about-modal-label {
-        font-size: .62rem;
-        letter-spacing: 1.4px;
-    }
-
-    .about-modal-header h2 {
-        margin: 8px 0 9px;
-        font-size: 1.55rem;
-        line-height: 1.2;
-    }
-
-    .about-modal-header p {
-        font-size: .75rem;
-        line-height: 1.6;
-    }
-
-
-    /* ======================================================
-       ABOUT MODAL — INFO BLOCKS
-    ====================================================== */
-
-    .about-modal-body {
-        gap: 15px;
-    }
-
-    .about-info-block {
-        display: flex;
-        gap: 12px;
-        padding: 16px;
-        border-radius: 11px;
-    }
-
-    .about-info-icon {
-        width: 37px;
-        height: 37px;
-        border-radius: 9px;
-        font-size: .85rem;
-    }
-
-    .about-info-text {
-        min-width: 0;
-    }
-
-    .about-info-text h3 {
-        margin: 1px 0 6px;
-        font-size: .85rem;
-        line-height: 1.3;
-    }
-
-    .about-info-text p {
-        font-size: .72rem;
-        line-height: 1.65;
-    }
-
-
-    /* ======================================================
-       ABOUT MODAL — FEATURE LIST
-    ====================================================== */
-
-    .about-feature-list {
-        gap: 7px;
-    }
-
-    .about-feature-list li {
-        gap: 7px;
-        font-size: .71rem;
-        line-height: 1.5;
-    }
-
-    .about-feature-list li i {
-        margin-top: 3px;
-        font-size: .62rem;
-    }
-
-
-    /* ======================================================
-       ABOUT MODAL — HOW TO USE
-    ====================================================== */
-
-    .about-how-to {
-        margin-top: 2px;
-        padding: 17px;
-        border-radius: 11px;
-    }
-
-    .about-how-header {
-        margin-bottom: 16px;
-    }
-
-    .about-how-header > span {
-        font-size: .61rem;
-        letter-spacing: 1.3px;
-    }
-
-    .about-how-header h3 {
-        margin: 6px 0 5px;
-        font-size: 1rem;
-    }
-
-    .about-how-header p {
-        font-size: .71rem;
-        line-height: 1.5;
-    }
-
-    .about-steps {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .about-step {
-        gap: 10px;
-        padding: 13px;
-        border-radius: 9px;
-    }
-
-    .about-step-number {
-        font-size: .62rem;
-    }
-
-    .about-step h4 {
-        margin-bottom: 4px;
-        font-size: .75rem;
-    }
-
-    .about-step p {
-        font-size: .67rem;
-        line-height: 1.55;
-    }
-
-
-    /* ======================================================
-       READ & LEARN — LEARNING VIDEOS
-    ====================================================== */
-
-    .read-learn-videos-section {
-        width: 100%;
-        padding: 50px 18px 60px;
-    }
-
-    .read-learn-videos-container {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .read-learn-videos-header {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto 25px;
-    }
-
-    .read-learn-eyebrow {
-        margin-bottom: 7px;
-        font-size: .59rem;
-        letter-spacing: 1.2px;
-    }
-
-    .read-learn-videos-header h2 {
-        font-size: 1.55rem;
-        line-height: 1.2;
-    }
-
-    .read-learn-videos-header p {
-        font-size: .71rem;
-        line-height: 1.6;
-    }
-
-
-    /* ======================================================
-       READ & LEARN — VIDEO GRID
-       2 VIDEOS PER ROW ON MOBILE
-    ====================================================== */
-
-    .read-learn-video-grid {
-        width: 100%;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 9px;
-        row-gap: 13px;
-    }
-
-    .read-learn-video-card {
-        width: 100%;
-        min-width: 0;
-        border-radius: 9px;
-    }
-
-    .read-learn-video {
-        width: calc(100% - 8px);
-        margin: 4px;
-        aspect-ratio: 35 / 17;
-        border-radius: 6px;
-    }
-
-    .read-learn-video::before {
-        border-radius: 6px;
-    }
-
-    .read-learn-video iframe {
-        width: 100%;
-        height: 100%;
-    }
-
-    .read-learn-video-content {
-        padding: 8px 9px 10px;
-    }
-
-    .read-learn-video-number {
-        margin-bottom: 3px;
-        font-size: .45rem;
-        letter-spacing: .8px;
-    }
-
-    .read-learn-video-content h3 {
-        margin-bottom: 3px;
-        font-size: .68rem;
-        line-height: 1.25;
-    }
-
-    .read-learn-video-content p {
-        font-size: .54rem;
-        line-height: 1.4;
-    }
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.topic-card {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.topic-visual {
+    height: 125px;
+}
+
+.topic-content {
+    padding: 13px 13px 15px;
+}
+
+.topic-content h3 {
+    font-size: .82rem;
+    line-height: 1.25;
+    margin-bottom: 6px;
+}
+
+.topic-content p {
+    font-size: .64rem;
+    line-height: 1.5;
+}
 
 
     /* ======================================================
@@ -8197,97 +7827,153 @@ body {
     ====================================================== */
 
     .check-section {
+
         padding: 65px 18px;
+
     }
 
     .check-container {
+
         width: 100%;
+
         grid-template-columns: 1fr;
+
         gap: 30px;
+
     }
 
     .check-content {
+
         width: 100%;
+
         max-width: 100%;
+
     }
 
     .check-content .mini-title {
+
         font-size: .61rem;
+
         padding: 6px 11px;
+
     }
 
     .check-content h2 {
+
         font-size: 1.8rem;
+
         line-height: 1.2;
+
     }
 
     .check-content p {
+
         font-size: .78rem;
+
         line-height: 1.7;
+
     }
 
     .check-status {
+
         font-size: .62rem;
+
         padding: 7px 11px;
+
     }
 
     .check-hint {
+
         font-size: .64rem;
+
     }
 
     .check-step {
+
         min-height: 68px;
+
         padding: 10px 11px;
+
         gap: 10px;
+
         border-radius: 15px;
+
     }
 
     .check-step:hover {
+
         transform: none;
+
     }
 
     .step-number {
+
         width: 42px;
+
         height: 42px;
+
         border-radius: 12px;
+
         font-size: .64rem;
+
     }
 
     .step-content strong {
+
         font-size: .79rem;
+
     }
 
     .step-content small {
+
         font-size: .64rem;
+
     }
 
     .step-arrow {
+
         font-size: .65rem;
+
     }
 
     .check-detail {
+
         padding: 16px;
+
         border-radius: 17px;
+
     }
 
     .check-detail-main {
+
         gap: 11px;
+
     }
 
     .check-detail-icon {
+
         width: 40px;
+
         height: 40px;
+
         border-radius: 12px;
+
         font-size: 15px;
+
     }
 
     .check-detail-content h3 {
+
         font-size: .88rem;
+
     }
 
     .check-detail-content p {
+
         font-size: .69rem;
+
         line-height: 1.65;
+
     }
 
 
@@ -8296,44 +7982,69 @@ body {
     ====================================================== */
 
     .tools-section {
+
         width: 100%;
+
         padding: 55px 18px 65px;
+
     }
 
     .section-heading h2 {
+
         font-size: 1.35rem;
+
         margin: 0 8px;
+
     }
 
     .heading-line {
+
         width: 20px;
+
     }
 
     .section-heading p {
+
         font-size: .78rem;
+
     }
 
     .tool-filters {
+
         width: 100%;
+
         flex-direction: column;
+
         align-items: stretch;
+
         gap: 8px;
+
     }
 
     .filter-btn {
+
         width: 100%;
+
     }
 
     .tool-grid {
+
         width: 100%;
+
         grid-template-columns: 1fr;
+
         gap: 15px;
+
     }
 
     .tool-card {
+
         width: 100%;
+
         min-height: 300px;
+
         padding: 20px 16px;
+
     }
 
 
@@ -8342,37 +8053,57 @@ body {
     ====================================================== */
 
     .how-section {
+
         width: 100%;
+
         padding: 25px 18px 50px;
+
     }
 
     .how-container {
+
         width: 100%;
+
         padding: 28px 14px;
+
         border-radius: 18px;
+
     }
 
     .how-heading h2 {
+
         font-size: 1.3rem;
+
     }
 
     .how-heading p {
+
         font-size: .78rem;
+
     }
 
     .how-steps {
+
         width: 100%;
+
         flex-direction: column;
+
         gap: 25px;
+
     }
 
     .how-step {
+
         width: 100%;
+
         min-height: 150px;
+
     }
 
     .step-arrow {
+
         display: none;
+
     }
 
 
@@ -8381,22 +8112,33 @@ body {
     ====================================================== */
 
     .reminders-section {
+
         width: 100%;
+
         padding: 30px 18px 50px;
+
     }
 
     .reminders-heading h2 {
+
         font-size: 1.35rem;
+
     }
 
     .reminder-grid {
+
         width: 100%;
+
         grid-template-columns: 1fr;
+
         gap: 12px;
+
     }
 
     .reminder-card {
+
         width: 100%;
+
     }
 
 
@@ -8405,24 +8147,37 @@ body {
     ====================================================== */
 
     .final-reminder {
+
         width: 100%;
+
         padding: 0 18px 45px;
+
     }
 
     .final-reminder-content {
+
         width: 100%;
+
         padding: 18px 15px;
+
         flex-direction: column;
+
         gap: 8px;
+
     }
 
     .final-reminder-content strong {
+
         font-size: .8rem;
+
     }
 
     .final-reminder-content span {
+
         font-size: .72rem;
+
         line-height: 1.5;
+
     }
 
 
@@ -8431,224 +8186,315 @@ body {
     ====================================================== */
 
     .modal-content {
+
         width: 92%;
+
         max-width: 92%;
+
         max-height: 85vh;
+
         overflow-y: auto;
+
         padding: 20px;
+
     }
 
 
-/* ======================================================
-   CREDIBOT — MOBILE
-====================================================== */
+    /* ======================================================
+       CREDIBOT — MOBILE
+    ====================================================== */
 
-.credibot-section {
-    width: 100%;
-    padding: 58px 18px 65px;
-}
+    .credibot-section {
 
-.credibot-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-}
+        width: 100%;
 
-.credibot-header {
-    width: 100%;
-    gap: 14px;
-    margin-bottom: 20px;
-    align-items: flex-start;
-}
+        padding: 58px 18px 65px;
 
-.credibot-icon {
-    width: 47px;
-    height: 47px;
-    flex-shrink: 0;
-    border-radius: 13px;
-    font-size: 1.1rem;
-}
+    }
 
-.credibot-label {
-    font-size: .61rem;
-    letter-spacing: 1.1px;
-    margin-bottom: 4px;
-}
+    .credibot-container {
 
-.credibot-heading h2 {
-    font-size: 1.55rem;
-    line-height: 1.15;
-    margin-bottom: 5px;
-}
+        width: 100%;
 
-.credibot-heading p {
-    width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+
+    }
+
+    .credibot-header {
+
+        width: 100%;
+
+        gap: 14px;
+
+        margin-bottom: 20px;
+
+        align-items: flex-start;
+
+    }
+
+    .credibot-icon {
+
+        width: 47px;
+
+        height: 47px;
+
+        flex-shrink: 0;
+
+        border-radius: 13px;
+
+        font-size: 1.1rem;
+
+    }
+
+    .credibot-label {
+
+        font-size: .61rem;
+
+        letter-spacing: 1.1px;
+
+        margin-bottom: 4px;
+
+    }
+
+    .credibot-heading h2 {
+
+        font-size: 1.55rem;
+
+        line-height: 1.15;
+
+        margin-bottom: 5px;
+
+    }
+
+    .credibot-heading p {
+
+        width: 100%;
     max-width: 100%;
     font-size: .75rem;
     line-height: 1.6;
     white-space: normal;
     overflow-wrap: break-word;
-}
 
-.credibot-chat {
-    width: 100%;
-    padding: 17px;
-    border-radius: 17px;
-}
+    }
 
-.credibot-message {
-    gap: 9px;
-    margin-bottom: 17px;
-}
+    .credibot-chat {
 
-.message-avatar {
-    width: 34px;
-    height: 34px;
-    font-size: .78rem;
-}
+        width: 100%;
 
-.message-content {
-    max-width: calc(100% - 43px);
-    padding: 9px 11px;
-    border-radius: 0 11px 11px 11px;
-}
+        padding: 17px;
 
-.message-name {
-    font-size: .68rem;
-    margin-bottom: 2px;
-}
+        border-radius: 17px;
 
-.message-content p {
-    font-size: .7rem;
-    line-height: 1.5;
-}
+    }
 
+    .credibot-message {
 
-/* ======================================================
-   CREDIBOT QUESTIONS — MOBILE
-====================================================== */
+        gap: 9px;
 
-.credibot-questions {
-    width: 100%;
-    margin-top: 12px;
-    padding: 11px 12px 12px;
-}
+        margin-bottom: 17px;
 
-.questions-heading {
-    gap: 6px;
-    margin-bottom: 7px;
-}
+    }
 
-.questions-heading-left {
-    font-size: .65rem;
-}
+    .message-avatar {
 
-.questions-heading-left i {
-    font-size: .6rem;
-}
+        width: 34px;
 
-.questions-hint {
-    font-size: .54rem;
-}
+        height: 34px;
 
-.question-list {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px;
-    overflow: visible;
-    padding: 2px 1px 2px;
-}
+        font-size: .78rem;
 
-.credibot-question {
-    flex: 0 1 auto;
-    width: auto;
-    min-width: 0;
-    max-width: 100%;
-    min-height: 34px;
-    height: auto;
-    padding: 7px 10px;
-    border-radius: 9px;
-    font-size: .62rem;
-    line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-flex;
-}
+    }
 
-.credibot-question i {
-    flex-shrink: 0;
-    font-size: .56rem;
-}
+    .message-content {
 
-.credibot-question span {
-    min-width: 0;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        max-width: calc(100% - 43px);
 
+        padding: 9px 11px;
 
-/* ======================================================
-   CREDIBOT INPUT — MOBILE
-====================================================== */
+        border-radius: 0 11px 11px 11px;
 
-.credibot-input-area {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    margin-top: 9px;
-    padding: 10px 12px 8px;
-}
+    }
 
-.credibot-input-wrapper {
-    flex: 1 1 auto;
-    min-width: 0;
-    height: 39px;
-    padding: 0 10px;
-    border-radius: 10px;
-}
+    .message-name {
 
-.credibot-input-wrapper > i {
-    margin-right: 6px;
-    font-size: .7rem;
-}
+        font-size: .68rem;
 
-.credibot-input {
-    width: 100%;
-    min-width: 0;
-    font-size: .68rem;
-}
+        margin-bottom: 2px;
 
-.credibot-input::placeholder {
-    font-size: .66rem;
-}
+    }
 
-.credibot-send {
-    flex: 0 0 auto;
-    height: 39px;
-    padding: 0 11px;
-    gap: 5px;
-    border-radius: 10px;
-    font-size: .67rem;
-}
+    .message-content p {
 
-.credibot-send i {
-    font-size: .68rem;
-}
+        font-size: .7rem;
 
-.credibot-response {
-    width: 100%;
-    margin-top: 11px;
-}
+        line-height: 1.5;
 
-.credibot-response .credibot-message {
-    margin-bottom: 8px;
+    }
 
-}
+    .credibot-questions {
+
+        width: 100%;
+
+        margin-top: 12px;
+
+    }
+
+    .questions-heading {
+
+        gap: 6px;
+
+        margin-bottom: 7px;
+
+        font-size: .7rem;
+
+    }
+
+    .question-list {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        display: flex;
+
+        flex-wrap: nowrap;
+
+        align-items: center;
+
+        gap: 7px;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        padding: 2px 1px 8px;
+
+        scrollbar-width: thin;
+
+        -webkit-overflow-scrolling: touch;
+
+    }
+
+    .credibot-question {
+
+        flex: 0 0 auto;
+
+        width: auto;
+
+        min-width: 0;
+
+        max-width: 250px;
+
+        min-height: 37px;
+
+        height: 37px;
+
+        padding: 7px 11px;
+
+        border-radius: 10px;
+
+        font-size: .66rem;
+
+        line-height: 1;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        display: block;
+
+    }
+
+    .credibot-input-area {
+
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        margin-top: 9px;
+
+    }
+
+    .credibot-input-wrapper {
+
+        flex: 1 1 auto;
+
+        min-width: 0;
+
+        height: 39px;
+
+        padding: 0 10px;
+
+        border-radius: 10px;
+
+    }
+
+    .credibot-input-wrapper > i {
+
+        margin-right: 6px;
+
+        font-size: .7rem;
+
+    }
+
+    .credibot-input {
+
+        width: 100%;
+
+        min-width: 0;
+
+        font-size: .68rem;
+
+    }
+
+    .credibot-input::placeholder {
+
+        font-size: .66rem;
+
+    }
+
+    .credibot-send {
+
+        flex: 0 0 auto;
+
+        height: 39px;
+
+        padding: 0 11px;
+
+        gap: 5px;
+
+        border-radius: 10px;
+
+        font-size: .67rem;
+
+    }
+
+    .credibot-send i {
+
+        font-size: .68rem;
+
+    }
+
+    .credibot-response {
+
+        width: 100%;
+
+        margin-top: 11px;
+
+    }
+
+    .credibot-response .credibot-message {
+
+        margin-bottom: 8px;
+
+    }
 
 }
