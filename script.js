@@ -1166,224 +1166,610 @@ if (pageLoader) {
             
 
     }
-        /*==================================================
-        CREDIBOT
-        PRE-PROGRAMMED DIGITAL LITERACY ASSISTANT
-    ==================================================*/
+/*==================================================
+    CREDIBOT
+    PRE-PROGRAMMED DIGITAL LITERACY ASSISTANT
+==================================================*/
 
-    const credibotInput =
-        document.getElementById("credibotInput");
+const credibotInput =
+    document.getElementById("credibotInput");
 
-    const credibotSend =
-        document.getElementById("credibotSend");
+const credibotSend =
+    document.getElementById("credibotSend");
 
-    const credibotResponse =
-        document.getElementById("credibotResponse");
+const credibotResponse =
+    document.getElementById("credibotResponse");
 
-    const credibotQuestions =
-        document.querySelectorAll(".credibot-question");
+const credibotQuestions =
+    document.querySelectorAll(".credibot-question");
 
+const credibotNewChat =
+    document.querySelector(".credibot-new-chat");
 
-    /*==================================================
-        CREDIBOT ANSWERS
-    ==================================================*/
+const credibotChatHistory =
+    document.querySelector(".credibot-chat-history");
 
-    const credibotAnswers = {
 
-        "what should i do before sharing a post?":
+/*==================================================
+    CREDIBOT ANSWERS
+==================================================*/
 
-            "Before sharing a post, stop and check the information first. Look at the original source, examine the evidence, compare the claim with reliable and independent sources, and check the date and context.",
+const credibotAnswers = {
 
+    "what should i do before sharing a post?":
 
-        "how can i tell if information is credible?":
+        "Before sharing a post, stop and check the information first. Look at the original source, examine the evidence, compare the claim with reliable and independent sources, and check the date and context.",
 
-            "Check who published the information, whether the source is trustworthy, whether evidence is provided, and whether other reliable sources support the same claim. Do not rely only on popularity, likes, or shares.",
 
+    "how can i tell if information is credible?":
 
-        "why should i check the original source?":
+        "Check who published the information, whether the source is trustworthy, whether evidence is provided, and whether other reliable sources support the same claim. Do not rely only on popularity, likes, or shares.",
 
-            "Checking the original source helps you see where the information actually came from. It allows you to examine the original context, evidence, author, and date instead of relying only on someone else's post or interpretation.",
 
+    "why should i check the original source?":
 
-        "why should i compare information from different sources?":
+        "Checking the original source helps you see where the information actually came from. It allows you to examine the original context, evidence, author, and date instead of relying only on someone else's post or interpretation.",
 
-            "Comparing information from different reliable sources helps you identify whether a claim is consistently supported. It can also reveal missing context, conflicting information, or misleading claims.",
 
+    "why should i compare information from different sources?":
 
-        "can i trust a post because it has many likes and shares?":
+        "Comparing information from different reliable sources helps you identify whether a claim is consistently supported. It can also reveal missing context, conflicting information, or misleading claims.",
 
-            "No. Likes and shares show that content is popular or widely circulated, but they do not prove that the information is accurate or trustworthy.",
 
+    "can i trust a post because it has many likes and shares?":
 
-        "does a viral post mean that the information is true?":
+        "No. Likes and shares show that content is popular or widely circulated, but they do not prove that the information is accurate or trustworthy.",
 
-            "No. A viral post can still contain misinformation. Virality measures how widely content spreads, not whether the information is accurate.",
 
+    "does a viral post mean that the information is true?":
 
-        "how can i identify clickbait?":
+        "No. A viral post can still contain misinformation. Virality measures how widely content spreads, not whether the information is accurate.",
 
-            "Look for exaggerated, emotional, shocking, or misleading headlines designed mainly to make you click. Clickbait may create curiosity without providing enough evidence or context for its claims.",
 
+    "how can i identify clickbait?":
 
-        "what is misinformation?":
+        "Look for exaggerated, emotional, shocking, or misleading headlines designed mainly to make you click. Clickbait may create curiosity without providing enough evidence or context for its claims.",
 
-            "Misinformation is false or inaccurate information that is shared without necessarily intending to deceive others. It can spread when people share information without checking whether it is accurate.",
 
+    "what is misinformation?":
 
-        "what is ai-generated content?":
+        "Misinformation is false or inaccurate information that is shared without necessarily intending to deceive others. It can spread when people share information without checking whether it is accurate.",
 
-            "AI-generated content is text, images, audio, video, or other material created or significantly produced using artificial intelligence. It can look realistic, so it is important to verify the information and source before trusting or sharing it.",
 
+    "what is ai-generated content?":
 
-        "can ai-generated images look real?":
+        "AI-generated content is text, images, audio, video, or other material created or significantly produced using artificial intelligence. It can look realistic, so it is important to verify the information and source before trusting or sharing it.",
 
-            "Yes. AI-generated images can look highly realistic and may be difficult to identify at first glance. When an image is connected to an important claim, check its source, context, date, and supporting evidence.",
 
+    "can ai-generated images look real?":
 
-        "how can i verify a claim i see online?":
+        "Yes. AI-generated images can look highly realistic and may be difficult to identify at first glance. When an image is connected to an important claim, check its source, context, date, and supporting evidence.",
 
-            "Start by checking the original source and looking for evidence supporting the claim. Then compare it with reliable and independent sources, verify the organization or person mentioned, examine the image if one is used, and check the date and context.",
 
+    "how can i verify a claim i see online?":
 
-        "what makes a source reliable?":
+        "Start by checking the original source and looking for evidence supporting the claim. Then compare it with reliable and independent sources, verify the organization or person mentioned, examine the image if one is used, and check the date and context.",
 
-            "A reliable source provides credible information, identifies its author or organization, supports claims with evidence, and provides relevant context. It should also be consistent with information from other trustworthy sources.",
 
+    "what makes a source reliable?":
 
-        "why shouldn't i believe information just because it looks professional?":
+        "A reliable source provides credible information, identifies its author or organization, supports claims with evidence, and provides relevant context. It should also be consistent with information from other trustworthy sources.",
 
-            "Professional-looking content does not automatically mean the information is accurate. Misleading or false content can also use polished designs, convincing language, and realistic images. Always check the source and evidence.",
 
+    "why shouldn't i believe information just because it looks professional?":
 
-        "what does stop, check, and verify mean?":
+        "Professional-looking content does not automatically mean the information is accurate. Misleading or false content can also use polished designs, convincing language, and realistic images. Always check the source and evidence.",
 
-            "Stop means pause before reacting or sharing. Check means examine the source and evidence. Verify means compare the information with reliable and independent sources before deciding whether to trust or share it.",
 
+    "what does stop, check, and verify mean?":
 
-        "what is the difference between a fact and an opinion?":
+        "Stop means pause before reacting or sharing. Check means examine the source and evidence. Verify means compare the information with reliable and independent sources before deciding whether to trust or share it.",
 
-            "A fact is a statement that can be checked or supported with evidence. An opinion expresses a person's belief, interpretation, or judgment. Identifying the difference helps you evaluate online information more carefully.",
 
+    "what is the difference between a fact and an opinion?":
 
-        "why is it important to check the date of a post?":
+        "A fact is a statement that can be checked or supported with evidence. An opinion expresses a person's belief, interpretation, or judgment. Identifying the difference helps you evaluate online information more carefully.",
 
-            "Checking the date helps you determine whether the information is current and whether the context has changed. Old information can sometimes be reshared as if it were new, which can make it misleading.",
 
+    "why is it important to check the date of a post?":
 
-        "what should i do if i cannot find evidence supporting a claim?":
+        "Checking the date helps you determine whether the information is current and whether the context has changed. Old information can sometimes be reshared as if it were new, which can make it misleading.",
 
-            "Be cautious and avoid treating the claim as confirmed. Look for reliable sources that can support or challenge it. If credible evidence cannot be found, it is better not to share the claim as though it were true.",
 
+    "what should i do if i cannot find evidence supporting a claim?":
 
-        "why can misinformation spread quickly on social media?":
+        "Be cautious and avoid treating the claim as confirmed. Look for reliable sources that can support or challenge it. If credible evidence cannot be found, it is better not to share the claim as though it were true.",
 
-            "Misinformation can spread quickly because social media makes it easy for people to share content with large audiences. Emotional, surprising, or controversial content can attract attention and encourage rapid sharing before people verify the information."
 
-    };
+    "why can misinformation spread quickly on social media?":
 
+        "Misinformation can spread quickly because social media makes it easy for people to share content with large audiences. Emotional, surprising, or controversial content can attract attention and encourage rapid sharing before people verify the information."
 
-    /*==================================================
-        NORMALIZE QUESTION
-    ==================================================*/
+};
 
-    function normalizeCrediBotQuestion(question) {
 
-        return question
-            .trim()
-            .toLowerCase()
-            .replace(/\s+/g, " ");
+/*==================================================
+    CREDIBOT CHAT STATE
+==================================================*/
+
+let credibotConversation = [];
+
+let credibotTyping = false;
+
+let credibotResponseTimeout = null;
+
+
+/*==================================================
+    NORMALIZE QUESTION
+==================================================*/
+
+function normalizeCrediBotQuestion(question) {
+
+    return question
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, " ");
+
+}
+
+
+/*==================================================
+    MOVE RESPONSE AREA
+    INSIDE CHAT CONVERSATION
+==================================================*/
+
+if (
+    credibotResponse &&
+    credibotResponse.parentElement
+) {
+
+    const questionsArea =
+        document.querySelector(".credibot-questions");
+
+    if (
+        questionsArea &&
+        questionsArea.parentElement ===
+        credibotResponse.parentElement
+    ) {
+
+        questionsArea.parentElement.insertBefore(
+            credibotResponse,
+            questionsArea
+        );
+
+    }
+
+}
+
+
+/*==================================================
+    CREATE CHAT HISTORY CONTAINER
+==================================================*/
+
+if (credibotResponse) {
+
+    credibotResponse.setAttribute(
+        "role",
+        "log"
+    );
+
+    credibotResponse.setAttribute(
+        "aria-live",
+        "polite"
+    );
+
+    credibotResponse.setAttribute(
+        "aria-label",
+        "CrediBot conversation"
+    );
+
+}
+
+
+/*==================================================
+    TIMESTAMP
+==================================================*/
+
+function getCrediBotTime() {
+
+    return new Date().toLocaleTimeString(
+        [],
+        {
+            hour: "numeric",
+            minute: "2-digit"
+        }
+    );
+
+}
+
+
+/*==================================================
+    DISPLAY USER MESSAGE
+==================================================*/
+
+function displayCrediBotUserMessage(
+    question
+) {
+
+    if (!credibotResponse) return;
+
+
+    const message =
+        document.createElement("div");
+
+    message.className =
+        "credibot-message user-message";
+
+
+    message.innerHTML = `
+
+        <div class="message-avatar">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+
+        <div class="message-content">
+
+            <span class="message-name">
+                You
+            </span>
+
+
+            <p>
+                ${escapeCrediBotHTML(question)}
+            </p>
+
+
+            <small
+                style="
+                    display:block;
+                    margin-top:6px;
+                    font-size:.68rem;
+                    color:#64748b;
+                "
+            >
+                ${getCrediBotTime()}
+            </small>
+
+        </div>
+
+    `;
+
+
+    credibotResponse.appendChild(
+        message
+    );
+
+
+    scrollCrediBotToBottom();
+
+}
+
+
+/*==================================================
+    DISPLAY BOT MESSAGE
+==================================================*/
+
+function displayCrediBotBotMessage(
+    answer
+) {
+
+    if (!credibotResponse) return;
+
+
+    const message =
+        document.createElement("div");
+
+    message.className =
+        "credibot-message bot-message";
+
+
+    message.innerHTML = `
+
+        <div class="message-avatar">
+
+            <i class="fa-solid fa-robot"></i>
+
+        </div>
+
+
+        <div class="message-content">
+
+            <span class="message-name">
+                CrediBot
+            </span>
+
+
+            <p>
+                ${escapeCrediBotHTML(answer)}
+            </p>
+
+
+            <small
+                style="
+                    display:block;
+                    margin-top:6px;
+                    font-size:.68rem;
+                    color:#64748b;
+                "
+            >
+                ${getCrediBotTime()}
+            </small>
+
+        </div>
+
+    `;
+
+
+    credibotResponse.appendChild(
+        message
+    );
+
+
+    scrollCrediBotToBottom();
+
+}
+
+
+/*==================================================
+    TYPING INDICATOR
+==================================================*/
+
+function showCrediBotTyping() {
+
+    if (
+        !credibotResponse ||
+        credibotTyping
+    ) {
+
+        return;
 
     }
 
 
-    /*==================================================
-        SHOW QUESTION IN INPUT
-    ==================================================*/
-
-    credibotQuestions.forEach(questionButton => {
-
-        questionButton.addEventListener(
-            "click",
-            () => {
-
-                if (!credibotInput) return;
+    credibotTyping = true;
 
 
-                const question =
-                    questionButton.dataset.question;
+    const typing =
+        document.createElement("div");
+
+    typing.className =
+        "credibot-message bot-message";
+
+    typing.id =
+        "credibotTyping";
 
 
-                if (!question) return;
+    typing.innerHTML = `
+
+        <div class="message-avatar">
+
+            <i class="fa-solid fa-robot"></i>
+
+        </div>
 
 
-                /*
-                 * Put the selected question
-                 * into the typing area.
-                 *
-                 * It will NOT send automatically.
-                 */
+        <div
+            class="message-content"
+            style="
+                display:flex;
+                align-items:center;
+                gap:5px;
+                min-height:22px;
+            "
+        >
 
-                credibotInput.value =
-                    question;
+            <span class="message-name">
+                CrediBot
+            </span>
 
 
-                credibotInput.focus();
+            <span
+                style="
+                    display:inline-flex;
+                    align-items:center;
+                    gap:4px;
+                    margin-left:4px;
+                    color:#64748b;
+                "
+            >
+
+                <span
+                    style="
+                        width:5px;
+                        height:5px;
+                        border-radius:50%;
+                        background:#38bdf8;
+                        animation:credibotTypingDot 1.2s infinite ease-in-out;
+                    "
+                ></span>
+
+                <span
+                    style="
+                        width:5px;
+                        height:5px;
+                        border-radius:50%;
+                        background:#38bdf8;
+                        animation:credibotTypingDot 1.2s .15s infinite ease-in-out;
+                    "
+                ></span>
+
+                <span
+                    style="
+                        width:5px;
+                        height:5px;
+                        border-radius:50%;
+                        background:#38bdf8;
+                        animation:credibotTypingDot 1.2s .3s infinite ease-in-out;
+                    "
+                ></span>
+
+            </span>
+
+        </div>
+
+    `;
 
 
-                /*
-                 * Move cursor to the end
-                 */
+    credibotResponse.appendChild(
+        typing
+    );
 
-                credibotInput.setSelectionRange(
-                    credibotInput.value.length,
-                    credibotInput.value.length
-                );
 
-            }
+    scrollCrediBotToBottom();
+
+}
+
+
+/*==================================================
+    REMOVE TYPING INDICATOR
+==================================================*/
+
+function hideCrediBotTyping() {
+
+    const typing =
+        document.getElementById(
+            "credibotTyping"
         );
+
+
+    if (typing) {
+
+        typing.remove();
+
+    }
+
+
+    credibotTyping = false;
+
+}
+
+
+/*==================================================
+    SCROLL CHAT HISTORY TO BOTTOM
+==================================================*/
+
+function scrollCrediBotToBottom() {
+
+    if (!credibotChatHistory) return;
+
+
+    requestAnimationFrame(() => {
+
+        credibotChatHistory.scrollTo({
+
+            top:
+                credibotChatHistory.scrollHeight,
+
+            behavior:
+                "smooth"
+
+        });
 
     });
 
-
-    /*==================================================
-        DISPLAY CREDIBOT RESPONSE
-    ==================================================*/
-
-    function displayCrediBotResponse(
-        question,
-        answer
-    ) {
-
-        if (!credibotResponse) return;
+}
 
 
-        credibotResponse.innerHTML = `
+/*==================================================
+    DISPLAY RESPONSE
+==================================================*/
 
-            <div class="credibot-message user-message">
+function displayCrediBotResponse(
+    question,
+    answer
+) {
 
-                <div class="message-avatar">
-
-                    <i class="fa-solid fa-user"></i>
-
-                </div>
-
-
-                <div class="message-content">
-
-                    <span class="message-name">
-                        You
-                    </span>
-
-                    <p>
-                        ${escapeCrediBotHTML(question)}
-                    </p>
-
-                </div>
-
-            </div>
+    if (!credibotResponse) return;
 
 
-            <div class="credibot-message bot-message">
+    displayCrediBotUserMessage(
+        question
+    );
+
+
+    showCrediBotTyping();
+
+
+    /*
+     * Give the typing indicator enough time
+     * to become visible before the response.
+     */
+
+    credibotResponseTimeout =
+        setTimeout(() => {
+
+            hideCrediBotTyping();
+
+
+            displayCrediBotBotMessage(
+                answer
+            );
+
+
+            credibotResponseTimeout =
+                null;
+
+
+        }, 650);
+
+}
+
+
+/*==================================================
+    ESCAPE CREDIBOT HTML
+==================================================*/
+
+function escapeCrediBotHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+
+    div.textContent =
+        text;
+
+
+    return div.innerHTML;
+
+}
+
+
+/*==================================================
+    UNSUPPORTED QUESTION RESPONSE
+==================================================*/
+
+function displayCrediBotUnsupported(
+    question
+) {
+
+    if (!credibotResponse) return;
+
+
+    displayCrediBotUserMessage(
+        question
+    );
+
+
+    showCrediBotTyping();
+
+
+    credibotResponseTimeout =
+        setTimeout(() => {
+
+            hideCrediBotTyping();
+
+
+            const message =
+                document.createElement("div");
+
+            message.className =
+                "credibot-message bot-message";
+
+
+            message.innerHTML = `
 
                 <div class="message-avatar">
 
@@ -1398,230 +1784,568 @@ if (pageLoader) {
                         CrediBot
                     </span>
 
+
                     <p>
-                        ${escapeCrediBotHTML(answer)}
+                        I'm currently programmed to answer
+                        the supported digital literacy questions
+                        available in this section. Please choose
+                        a Common Question or ask a question related
+                        to evaluating information credibility.
                     </p>
 
-                </div>
 
-            </div>
-
-        `;
-
-
-        /*
-         * Scroll the response into view
-         */
-
-        credibotResponse.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
-        });
-
-    }
-
-
-    /*==================================================
-        ESCAPE CREDIBOT HTML
-    ==================================================*/
-
-    function escapeCrediBotHTML(text) {
-
-        const div =
-            document.createElement("div");
-
-
-        div.textContent =
-            text;
-
-
-        return div.innerHTML;
-
-    }
-
-
-    /*==================================================
-        SEND QUESTION
-    ==================================================*/
-
-    function sendCrediBotQuestion() {
-
-        if (!credibotInput) return;
-
-
-        const originalQuestion =
-            credibotInput.value.trim();
-
-
-        /*
-         * Do nothing if input is empty
-         */
-
-        if (!originalQuestion) {
-
-            credibotInput.focus();
-
-            return;
-
-        }
-
-
-        const normalizedQuestion =
-            normalizeCrediBotQuestion(
-                originalQuestion
-            );
-
-
-        const answer =
-            credibotAnswers[
-                normalizedQuestion
-            ];
-
-
-        /*==================================================
-            SUPPORTED QUESTION
-        ==================================================*/
-
-        if (answer) {
-
-            displayCrediBotResponse(
-                originalQuestion,
-                answer
-            );
-
-
-            /*
-             * Clear input after sending
-             */
-
-            credibotInput.value = "";
-
-
-            return;
-
-        }
-
-
-        /*==================================================
-            UNSUPPORTED QUESTION
-        ==================================================*/
-
-        if (credibotResponse) {
-
-            credibotResponse.innerHTML = `
-
-                <div class="credibot-message user-message">
-
-                    <div class="message-avatar">
-
-                        <i class="fa-solid fa-user"></i>
-
-                    </div>
-
-
-                    <div class="message-content">
-
-                        <span class="message-name">
-                            You
-                        </span>
-
-                        <p>
-                            ${escapeCrediBotHTML(
-                                originalQuestion
-                            )}
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="credibot-message bot-message">
-
-                    <div class="message-avatar">
-
-                        <i class="fa-solid fa-robot"></i>
-
-                    </div>
-
-
-                    <div class="message-content">
-
-                        <span class="message-name">
-                            CrediBot
-                        </span>
-
-                        <p>
-                            I'm currently programmed to
-                            answer the supported digital
-                            literacy questions provided
-                            above. Please choose one of the
-                            Common Questions or type a
-                            supported question.
-                        </p>
-
-                    </div>
+                    <small
+                        style="
+                            display:block;
+                            margin-top:6px;
+                            font-size:.68rem;
+                            color:#64748b;
+                        "
+                    >
+                        ${getCrediBotTime()}
+                    </small>
 
                 </div>
 
             `;
 
 
-            credibotResponse.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-            });
-
-        }
+            credibotResponse.appendChild(
+                message
+            );
 
 
-        /*
-         * Clear unsupported question
-         */
+            scrollCrediBotToBottom();
 
-        credibotInput.value = "";
+
+            credibotResponseTimeout =
+                null;
+
+
+        }, 650);
+
+}
+
+
+/*==================================================
+    SEND QUESTION
+==================================================*/
+
+function sendCrediBotQuestion() {
+
+    if (!credibotInput) return;
+
+
+    const originalQuestion =
+        credibotInput.value.trim();
+
+
+    if (!originalQuestion) {
+
+        credibotInput.focus();
+
+        return;
 
     }
 
 
-    /*==================================================
-        SEND BUTTON
-    ==================================================*/
+    /*
+     * Prevent sending another message
+     * while CrediBot is responding.
+     */
 
-    if (credibotSend) {
+    if (credibotTyping) {
 
-        credibotSend.addEventListener(
-            "click",
-            sendCrediBotQuestion
+        return;
+
+    }
+
+
+    const normalizedQuestion =
+        normalizeCrediBotQuestion(
+            originalQuestion
+        );
+
+
+    const answer =
+        credibotAnswers[
+            normalizedQuestion
+        ];
+
+
+    /*
+     * Supported question
+     */
+
+    if (answer) {
+
+        credibotConversation.push({
+
+            question:
+                originalQuestion,
+
+            answer:
+                answer
+
+        });
+
+
+        displayCrediBotResponse(
+            originalQuestion,
+            answer
         );
 
     }
 
 
-    /*==================================================
-        ENTER KEY
-        SEND QUESTION
-    ==================================================*/
+    /*
+     * Unsupported question
+     */
+
+    else {
+
+        credibotConversation.push({
+
+            question:
+                originalQuestion,
+
+            answer:
+                null
+
+        });
+
+
+        displayCrediBotUnsupported(
+            originalQuestion
+        );
+
+    }
+
+
+    /*
+     * Clear input
+     */
+
+    credibotInput.value = "";
+
+
+    credibotInput.classList.remove(
+        "has-text"
+    );
+
+
+    /*
+     * Keep input ready
+     */
+
+    setTimeout(() => {
+
+        credibotInput.focus();
+
+    }, 50);
+
+}
+
+
+/*==================================================
+    NEW CHAT / RESET CONVERSATION
+==================================================*/
+
+function resetCrediBotChat() {
+
+    /*
+     * Cancel any pending bot response.
+     */
+
+    if (credibotResponseTimeout) {
+
+        clearTimeout(
+            credibotResponseTimeout
+        );
+
+        credibotResponseTimeout =
+            null;
+
+    }
+
+
+    /*
+     * Remove typing indicator.
+     */
+
+    hideCrediBotTyping();
+
+
+    /*
+     * Reset conversation state.
+     */
+
+    credibotConversation = [];
+
+    credibotTyping = false;
+
+
+    /*
+     * Delete all previous messages.
+     */
+
+    if (credibotResponse) {
+
+        credibotResponse.innerHTML = "";
+
+    }
+
+
+    /*
+     * Clear input field.
+     */
 
     if (credibotInput) {
 
-        credibotInput.addEventListener(
-            "keydown",
-            (e) => {
+        credibotInput.value = "";
 
-                if (e.key === "Enter") {
-
-                    e.preventDefault();
-
-                    sendCrediBotQuestion();
-
-                }
-
-            }
+        credibotInput.classList.remove(
+            "has-text"
         );
+
+    }
+
+
+    /*
+     * Return chat scroll position
+     * to the beginning.
+     */
+
+    if (credibotChatHistory) {
+
+        credibotChatHistory.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+
+    /*
+     * Put cursor back into the input.
+     */
+
+    if (credibotInput) {
+
+        setTimeout(() => {
+
+            credibotInput.focus();
+
+        }, 100);
 
     }
 
 }
 
+
+/*==================================================
+    NEW CHAT BUTTON
+==================================================*/
+
+if (credibotNewChat) {
+
+    credibotNewChat.addEventListener(
+        "click",
+        () => {
+
+            resetCrediBotChat();
+
+        }
+    );
+
+}
+
+
+/*==================================================
+    COMMON QUESTION BUTTONS
+    PUT QUESTION INTO INPUT ONLY
+==================================================*/
+
+credibotQuestions.forEach(
+    questionButton => {
+
+        questionButton.addEventListener(
+            "click",
+            () => {
+
+                const question =
+                    questionButton.dataset.question;
+
+
+                if (!question) return;
+
+
+                /*
+                 * Put the selected question
+                 * into the typing/input area.
+                 *
+                 * DO NOT SEND AUTOMATICALLY.
+                 */
+
+                credibotInput.value =
+                    question;
+
+
+                /*
+                 * Update input state
+                 * exactly like normal typing.
+                 */
+
+                credibotInput.dispatchEvent(
+                    new Event(
+                        "input",
+                        {
+                            bubbles: true
+                        }
+                    )
+                );
+
+
+                /*
+                 * Put the cursor in the input.
+                 */
+
+                credibotInput.focus();
+
+
+                /*
+                 * Move cursor to the end
+                 * of the selected question.
+                 */
+
+                const inputLength =
+                    credibotInput.value.length;
+
+
+                credibotInput.setSelectionRange(
+                    inputLength,
+                    inputLength
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/*==================================================
+    SEND BUTTON
+==================================================*/
+
+if (credibotSend) {
+
+    credibotSend.addEventListener(
+        "click",
+        () => {
+
+            sendCrediBotQuestion();
+
+        }
+    );
+
+}
+
+
+/*==================================================
+    ENTER KEY
+==================================================*/
+
+if (credibotInput) {
+
+    credibotInput.addEventListener(
+        "keydown",
+        (e) => {
+
+            if (
+                e.key === "Enter" &&
+                !e.shiftKey
+            ) {
+
+                e.preventDefault();
+
+                sendCrediBotQuestion();
+
+            }
+
+        }
+    );
+
+}
+
+
+/*==================================================
+    CREDIBOT STATUS
+==================================================*/
+
+if (credibotInput) {
+
+    credibotInput.addEventListener(
+        "input",
+        () => {
+
+            if (
+                credibotInput.value.length > 0
+            ) {
+
+                credibotInput.classList.add(
+                    "has-text"
+                );
+
+            } else {
+
+                credibotInput.classList.remove(
+                    "has-text"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/*==================================================
+    CREDIBOT TYPING ANIMATION
+    GENERATED THROUGH JAVASCRIPT
+==================================================*/
+
+if (
+    !document.getElementById(
+        "credibotTypingStyle"
+    )
+) {
+
+    const style =
+        document.createElement("style");
+
+    style.id =
+        "credibotTypingStyle";
+
+
+    style.textContent = `
+
+        @keyframes credibotTypingDot {
+
+            0%,
+            60%,
+            100% {
+
+                transform: translateY(0);
+
+                opacity: .35;
+
+            }
+
+            30% {
+
+                transform: translateY(-3px);
+
+                opacity: 1;
+
+            }
+
+        }
+
+    `;
+
+
+    document.head.appendChild(
+        style
+    );
+
+}
+
+
+
+/* ==========================================================
+   ABOUT CREDIVAULT MODAL
+========================================================== */
+
+const openAboutModal =
+    document.getElementById("openAboutModal");
+
+const aboutModal =
+    document.getElementById("aboutModal");
+
+const closeAboutModal =
+    document.getElementById("closeAboutModal");
+
+const closeAboutModalBtn =
+    document.getElementById("closeAboutModalBtn");
+
+
+/* OPEN MODAL */
+
+if (openAboutModal && aboutModal) {
+
+    openAboutModal.addEventListener("click", () => {
+
+        aboutModal.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+}
+
+
+/* CLOSE MODAL - OVERLAY */
+
+if (closeAboutModal && aboutModal) {
+
+    closeAboutModal.addEventListener("click", () => {
+
+        aboutModal.classList.remove("show");
+
+        document.body.style.overflow = "";
+
+    });
+
+}
+
+
+/* CLOSE MODAL - X BUTTON */
+
+if (closeAboutModalBtn && aboutModal) {
+
+    closeAboutModalBtn.addEventListener("click", () => {
+
+        aboutModal.classList.remove("show");
+
+        document.body.style.overflow = "";
+
+    });
+
+}
+
+
+/* CLOSE MODAL - ESC KEY */
+
+document.addEventListener("keydown", (event) => {
+
+    if (
+        event.key === "Escape" &&
+        aboutModal &&
+        aboutModal.classList.contains("show")
+    ) {
+
+        aboutModal.classList.remove("show");
+
+        document.body.style.overflow = "";
+
+    }
+
+});
+
+}
 });
