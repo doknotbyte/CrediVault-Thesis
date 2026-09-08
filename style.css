@@ -7589,7 +7589,7 @@ body {
     min-width: 0;
     justify-content: center;
     padding: 10px 16px;
-    font-size: .74rem;
+    font-size: .54rem;
     border-radius: 10px;
 }
 
@@ -7634,138 +7634,7 @@ body {
     }
 
 
-    /* ======================================================
-       HERO VISUAL
-    ====================================================== */
-
-    .hero-visual {
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        min-height: 275px;
-        margin: -5px auto 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: visible;
-        transform: none;
-    }
-
-
-    /* ======================================================
-       LEGACY VAULT / ORBIT CORE
-    ====================================================== */
-
-    .vault-core {
-        width: 220px;
-        height: 220px;
-    }
-
-    .ring-1 {
-        width: 220px;
-        height: 225px;
-    }
-
-    .ring-2 {
-        width: 175px;
-        height: 175px;
-    }
-
-    .ring-3 {
-        width: 135px;
-        height: 135px;
-    }
-
-
-    /* ======================================================
-       CENTER CARD
-    ====================================================== */
-
-    .core-card {
-        width: 145px;
-        height: 145px;
-        border-radius: 22px;
-    }
-
-    .core-card h2 {
-        font-size: 1.12rem;
-        margin-bottom: 4px;
-    }
-
-    .core-card p {
-        font-size: .66rem;
-        line-height: 1.35;
-        margin-bottom: 9px;
-    }
-
-
-    /* ======================================================
-       SHIELD
-    ====================================================== */
-
-    .shield-logo {
-        margin-bottom: 10px;
-    }
-
-    .shield-bg {
-        width: 53px;
-        height: 41px;
-        border-radius: 15px;
-    }
-
-    .shield-bg i {
-        font-size: 19px;
-    }
-
-
-    /* ======================================================
-       STATUS
-    ====================================================== */
-
-    .status {
-        padding: 5px 8px;
-        gap: 5px;
-        font-size: .58rem;
-    }
-
-    .status-dot {
-        width: 6px;
-        height: 6px;
-    }
-
-
-    /* ======================================================
-       FLOATING CARDS
-    ====================================================== */
-
-    .floating-card {
-        min-width: 92px;
-        max-width: 108px;
-        padding: 6px 8px;
-        gap: 5px;
-        font-size: .54rem;
-        border-radius: 10px;
-    }
-
-    .card-top {
-        top: 0;
-        left: 50%;
-    }
-
-    .card-left {
-        left: 0;
-        top: 50%;
-    }
-
-    .card-right {
-        right: 0;
-        top: 50%;
-    }
-
-    .card-bottom {
-        bottom: 0;
-        left: 50%;
-    }
+    
 
 
     /* ======================================================
