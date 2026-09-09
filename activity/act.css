@@ -3441,9 +3441,9 @@ body {
     ------------------------------------------------------ */
 
     .question-screen {
-        padding: 40px 4%;
+    padding: 65px 4% 40px;
     }
-
+    
     .question-container {
         max-width: 100%;
     }
