@@ -6744,11 +6744,9 @@ body {
 
         padding: 12px;
         gap: 7px;
-
         margin: 0;
 
         background: #08111f;
-
         border-top: 1px solid rgba(255, 255, 255, .08);
 
         z-index: 999;
@@ -6772,9 +6770,7 @@ body {
     .hero-section {
         width: 100%;
         min-height: auto;
-
         padding: 85px 22px 55px;
-
         overflow: hidden;
     }
 
@@ -6787,7 +6783,6 @@ body {
         align-items: center;
 
         gap: 0;
-
         text-align: center;
     }
 
@@ -6797,7 +6792,6 @@ body {
         min-width: 0;
 
         margin: 0 auto;
-
         text-align: center;
     }
 
@@ -6806,8 +6800,8 @@ body {
        HIDE HERO VISUAL ON TABLET
     ====================================================== */
 
-    .hero-container .hero-visual {
-        display: none !important;
+    .cv-hero-visual {
+    display: none !important;
     }
 
 
@@ -6840,7 +6834,6 @@ body {
 
         font-size: 2.25rem;
         line-height: 1.08;
-
         letter-spacing: -.8px;
 
         overflow-wrap: anywhere;
@@ -6875,7 +6868,6 @@ body {
         align-items: center;
 
         gap: 9px;
-
         margin: 18px auto 0;
 
         flex-wrap: wrap;
@@ -6885,9 +6877,7 @@ body {
     .hero-buttons .primary-btn,
     .hero-buttons .secondary-btn {
         padding: 10px 15px;
-
         font-size: .72rem;
-
         border-radius: 10px;
     }
 
@@ -6904,7 +6894,6 @@ body {
         grid-template-columns: repeat(3, minmax(0, 1fr));
 
         gap: 6px;
-
         margin: 16px auto 0;
     }
 
@@ -6913,7 +6902,6 @@ body {
         min-width: 0;
 
         padding: 9px 5px;
-
         border-radius: 11px;
 
         text-align: center;
@@ -6922,14 +6910,12 @@ body {
     .stat-box h2 {
         font-size: 1rem;
         line-height: 1.1;
-
         margin-bottom: 3px;
     }
 
     .stat-box h3,
     .stat-box strong {
         font-size: .82rem;
-
         margin-bottom: 3px;
     }
 
@@ -6941,12 +6927,11 @@ body {
 
 
     /* ======================================================
-       HOME — LEARNING TOPICS
+       LEARNING TOPICS
     ====================================================== */
 
     .features-section {
         width: 100%;
-
         padding: 55px 22px 65px;
     }
 
@@ -6955,7 +6940,6 @@ body {
         max-width: 800px;
 
         margin: 0 auto 32px;
-
         text-align: center;
     }
 
@@ -6978,32 +6962,29 @@ body {
 
     /* ======================================================
        EMBEDDED / TOPIC GRID
-       2 PER ROW
+       FORCE 2 PER ROW
     ====================================================== */
 
     .topic-grid {
-        width: 94%;
+        width: 94% !important;
         max-width: 900px;
 
         margin: 0 auto;
 
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 
         gap: 14px;
     }
 
     .topic-card {
-        width: 100%;
-        min-width: 0;
+        width: 100% !important;
+        min-width: 0 !important;
 
         height: auto;
         min-height: 0;
 
         border-radius: 14px;
-
         overflow: hidden;
     }
 
@@ -7019,7 +7000,6 @@ body {
     .topic-content h3 {
         font-size: .84rem;
         line-height: 1.3;
-
         margin-bottom: 6px;
     }
 
@@ -7039,7 +7019,6 @@ body {
         min-height: auto;
 
         padding: 60px 22px 65px;
-
         overflow: hidden;
     }
 
@@ -7062,7 +7041,6 @@ body {
         max-width: 700px;
 
         margin: 0 auto;
-
         text-align: center;
     }
 
@@ -7096,8 +7074,7 @@ body {
 
 
     /* ======================================================
-       ABOUT — WHAT YOU'LL LEARN
-       RIGHT PANEL BELOW
+       ABOUT — TOPICS PANEL
     ====================================================== */
 
     .about-credivault-topics {
@@ -7106,15 +7083,14 @@ body {
         width: 100%;
         max-width: 850px;
 
-        left: 0;
-        top: 0;
+        left: 0 !important;
+        top: 0 !important;
 
         margin: 0 auto;
     }
 
     .about-topics-header {
         margin-bottom: 18px;
-
         text-align: center;
     }
 
@@ -7142,11 +7118,9 @@ body {
     .about-topic-card {
         width: 100%;
         min-width: 0;
-
         min-height: 0;
 
         padding: 15px;
-
         gap: 11px;
 
         border-radius: 11px;
@@ -7155,7 +7129,6 @@ body {
     .about-topic-number {
         top: 9px;
         right: 11px;
-
         font-size: .59rem;
     }
 
@@ -7164,7 +7137,6 @@ body {
         height: 36px;
 
         border-radius: 9px;
-
         font-size: .84rem;
     }
 
@@ -7186,107 +7158,99 @@ body {
     }
 
 
-    /* ======================================================
-       READ & LEARN
-       3 VIDEOS PER ROW
-    ====================================================== */
+/* ======================================================
+   READ & LEARN
+   2 VIDEOS PER ROW
+====================================================== */
 
-    .read-learn-videos-section {
-        width: 100%;
+.read-learn-videos-section {
+    width: 100%;
+    padding: 50px 22px 60px;
+}
 
-        padding: 50px 22px 60px;
-    }
+.read-learn-videos-container {
+    width: 94%;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-    .read-learn-videos-container {
-        width: 94%;
-        max-width: 1000px;
+.read-learn-videos-header {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 27px;
+    text-align: center;
+}
 
-        margin: 0 auto;
-    }
+.read-learn-eyebrow {
+    margin-bottom: 7px;
+    font-size: .6rem;
+    letter-spacing: 1.2px;
+}
 
-    .read-learn-videos-header {
-        width: 100%;
-        max-width: 750px;
+.read-learn-videos-header h2 {
+    font-size: 1.65rem;
+    line-height: 1.2;
+}
 
-        margin: 0 auto 27px;
+.read-learn-videos-header p {
+    font-size: .72rem;
+    line-height: 1.6;
+}
 
-        text-align: center;
-    }
+.read-learn-video-grid {
+    width: 100%;
 
-    .read-learn-eyebrow {
-        margin-bottom: 7px;
+    display: grid !important;
 
-        font-size: .6rem;
-        letter-spacing: 1.2px;
-    }
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
 
-    .read-learn-videos-header h2 {
-        font-size: 1.65rem;
-        line-height: 1.2;
-    }
+    column-gap: 14px;
+    row-gap: 16px;
+}
 
-    .read-learn-videos-header p {
-        font-size: .72rem;
-        line-height: 1.6;
-    }
+.read-learn-video-card {
+    width: 100%;
+    min-width: 0;
+    border-radius: 10px;
+}
 
-    .read-learn-video-grid {
-        width: 100%;
+.read-learn-video {
+    width: calc(100% - 8px);
 
-        display: grid;
+    margin: 4px;
 
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
+    aspect-ratio: 35 / 17;
 
-        column-gap: 11px;
-        row-gap: 15px;
-    }
+    border-radius: 7px;
+}
 
-    .read-learn-video-card {
-        width: 100%;
-        min-width: 0;
+.read-learn-video iframe {
+    width: 100%;
+    height: 100%;
+}
 
-        border-radius: 10px;
-    }
+.read-learn-video-content {
+    padding: 9px 10px 11px;
+}
 
-    .read-learn-video {
-        width: calc(100% - 8px);
+.read-learn-video-number {
+    margin-bottom: 3px;
+    font-size: .46rem;
+    letter-spacing: .8px;
+}
 
-        margin: 4px;
+.read-learn-video-content h3 {
+    margin-bottom: 3px;
 
-        aspect-ratio: 35 / 17;
+    font-size: .69rem;
+    line-height: 1.25;
+}
 
-        border-radius: 7px;
-    }
-
-    .read-learn-video iframe {
-        width: 100%;
-        height: 100%;
-    }
-
-    .read-learn-video-content {
-        padding: 9px 10px 11px;
-    }
-
-    .read-learn-video-number {
-        margin-bottom: 3px;
-
-        font-size: .46rem;
-        letter-spacing: .8px;
-    }
-
-    .read-learn-video-content h3 {
-        margin-bottom: 3px;
-
-        font-size: .69rem;
-        line-height: 1.25;
-    }
-
-    .read-learn-video-content p {
-        font-size: .55rem;
-        line-height: 1.4;
-    }
-
+.read-learn-video-content p {
+    font-size: .55rem;
+    line-height: 1.4;
+}
 
     /* ======================================================
        CHECK BEFORE YOU SHARE
@@ -7294,7 +7258,6 @@ body {
 
     .check-section {
         width: 100%;
-
         padding: 55px 22px 60px;
     }
 
@@ -7305,13 +7268,9 @@ body {
         margin: 0 auto;
 
         display: grid;
-
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
         gap: 28px;
-
         align-items: center;
     }
 
@@ -7320,7 +7279,6 @@ body {
         max-width: 100%;
 
         margin: 0;
-
         text-align: left;
     }
 
@@ -7347,7 +7305,6 @@ body {
     .check-interactive {
         width: 100%;
         max-width: 100%;
-
         margin: 0;
     }
 
@@ -7355,7 +7312,6 @@ body {
         min-height: 64px;
 
         padding: 9px 10px;
-
         gap: 9px;
 
         border-radius: 13px;
@@ -7366,7 +7322,6 @@ body {
         height: 40px;
 
         border-radius: 11px;
-
         font-size: .62rem;
     }
 
@@ -7380,19 +7335,16 @@ body {
 
     .check-detail {
         padding: 14px;
-
         border-radius: 15px;
     }
 
 
     /* ======================================================
-       TOOLS
-       2 PER ROW
+       TOOLS — 2 PER ROW
     ====================================================== */
 
     .tools-section {
         width: 100%;
-
         padding: 50px 22px 60px;
     }
 
@@ -7407,9 +7359,7 @@ body {
         margin: 0 auto;
 
         display: grid;
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
         gap: 14px;
     }
@@ -7419,7 +7369,6 @@ body {
         min-width: 0;
 
         min-height: 280px;
-
         padding: 18px 15px;
     }
 
@@ -7430,7 +7379,6 @@ body {
 
     .how-section {
         width: 100%;
-
         padding: 25px 22px 50px;
     }
 
@@ -7441,7 +7389,6 @@ body {
         margin: 0 auto;
 
         padding: 28px 20px;
-
         border-radius: 17px;
     }
 
@@ -7458,7 +7405,6 @@ body {
         width: 100%;
 
         display: flex;
-
         flex-wrap: nowrap;
 
         gap: 12px;
@@ -7477,13 +7423,11 @@ body {
 
 
     /* ======================================================
-       REMINDERS
-       2 PER ROW
+       REMINDERS — 2 PER ROW
     ====================================================== */
 
     .reminders-section {
         width: 100%;
-
         padding: 30px 22px 50px;
     }
 
@@ -7498,9 +7442,7 @@ body {
         margin: 0 auto;
 
         display: grid;
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
         gap: 12px;
     }
@@ -7517,7 +7459,6 @@ body {
 
     .final-reminder {
         width: 100%;
-
         padding: 0 22px 45px;
     }
 
@@ -7528,7 +7469,6 @@ body {
         margin: 0 auto;
 
         padding: 16px 18px;
-
         gap: 10px;
     }
 
@@ -7548,7 +7488,6 @@ body {
 
     .credibot-section {
         width: 100%;
-
         padding: 55px 22px 65px;
     }
 
@@ -7561,7 +7500,6 @@ body {
 
     .credibot-header {
         gap: 15px;
-
         margin-bottom: 20px;
 
         align-items: center;
@@ -7574,7 +7512,6 @@ body {
         flex-shrink: 0;
 
         border-radius: 14px;
-
         font-size: 1.2rem;
     }
 
@@ -7605,20 +7542,17 @@ body {
         width: 100%;
 
         padding: 20px;
-
         border-radius: 18px;
     }
 
     .credibot-message {
         gap: 10px;
-
         margin-bottom: 18px;
     }
 
     .message-avatar {
         width: 36px;
         height: 36px;
-
         font-size: .84rem;
     }
 
@@ -7642,15 +7576,12 @@ body {
 
     .credibot-questions {
         width: 100%;
-
         margin-top: 13px;
     }
 
     .questions-heading {
         gap: 6px;
-
         margin-bottom: 7px;
-
         font-size: .69rem;
     }
 
@@ -7659,7 +7590,6 @@ body {
         max-width: 100%;
 
         display: flex;
-
         flex-wrap: nowrap;
         align-items: center;
 
@@ -7706,7 +7636,6 @@ body {
         align-items: center;
 
         gap: 8px;
-
         margin-top: 9px;
     }
 
@@ -7715,7 +7644,6 @@ body {
         min-width: 0;
 
         height: 40px;
-
         padding: 0 11px;
 
         border-radius: 10px;
@@ -7723,14 +7651,12 @@ body {
 
     .credibot-input-wrapper > i {
         margin-right: 6px;
-
         font-size: .7rem;
     }
 
     .credibot-input {
         width: 100%;
         min-width: 0;
-
         font-size: .7rem;
     }
 
@@ -7742,13 +7668,11 @@ body {
         flex: 0 0 auto;
 
         height: 40px;
-
         padding: 0 13px;
 
         gap: 5px;
 
         border-radius: 10px;
-
         font-size: .69rem;
     }
 
@@ -7758,9 +7682,9 @@ body {
 
     .credibot-response {
         width: 100%;
-
         margin-top: 11px;
     }
+
 }
 
 
