@@ -4381,7 +4381,6 @@ body {
    HIDE HAMBURGER WHEN NAVIGATION IS OPEN
 ========================================================== */
 
-
 body:has(.floating-nav.active) .floating-menu-btn {
 
     opacity: 0;
@@ -4407,5 +4406,134 @@ body:has(.floating-nav.active) .floating-menu-btn {
         transform .25s ease,
         background .25s ease,
         box-shadow .25s ease;
+
+}
+
+/* ======================================================
+   ACTIVITY QUESTION CARD — RESPONSIVE
+   ONLY 3 BREAKPOINTS:
+   992px / 700px / 480px
+   ====================================================== */
+
+
+/* ======================================================
+   992px — SMALL DESKTOP / TABLET LANDSCAPE
+   KEEP LEFT + RIGHT LAYOUT
+   ====================================================== */
+
+@media (max-width: 992px) {
+
+    .question-card {
+        grid-template-columns: 42% 58%;
+    }
+
+    .question-image {
+        min-height: 320px;
+    }
+
+    .question-image img {
+        height: 320px;
+        object-fit: contain;
+    }
+
+    .question-content {
+        padding: 24px 22px;
+    }
+
+}
+
+
+/* ======================================================
+   700px — MOBILE / TABLET PORTRAIT
+   IMAGE BECOMES ONE FULL ROW
+   QUESTION + CHOICES GO BELOW IT
+   ====================================================== */
+
+@media (max-width: 700px) {
+
+    .question-card {
+        display: block;
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------
+       IMAGE — FULL WIDTH, ONE ROW
+       ----------------------------------------------- */
+
+    .question-image {
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .question-image img {
+        width: 100%;
+        height: auto;
+        max-height: 360px;
+        display: block;
+        object-fit: contain;
+        object-position: center;
+    }
+
+
+    /* -----------------------------------------------
+       QUESTION CONTENT — BELOW IMAGE
+       ----------------------------------------------- */
+
+    .question-content {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 24px 20px;
+    }
+
+
+    /* -----------------------------------------------
+       NO IMAGE — KEEP FULL WIDTH
+       ----------------------------------------------- */
+
+    .question-card:has(.question-image[style*="display: none"]) {
+        display: block;
+    }
+
+    .question-card:has(.question-image[style*="display: none"])
+    .question-content {
+        width: 100%;
+    }
+
+}
+
+
+/* ======================================================
+   480px — SMALL MOBILE
+   ONLY TIGHTEN SPACING / SIZING
+   ====================================================== */
+
+@media (max-width: 480px) {
+
+    .question-card {
+        width: 100%;
+    }
+
+    .question-image {
+        width: 100%;
+    }
+
+    .question-image img {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .question-content {
+        padding: 20px 16px;
+    }
+
+    .choice-button {
+        font-size: .82rem;
+    }
 
 }
