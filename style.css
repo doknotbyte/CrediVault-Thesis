@@ -5314,14 +5314,14 @@ body {
 
 /* ==========================================================
    QUESTION LIST
-   WRAPS CARDS INSTEAD OF CUTTING THEM
+   COMPACT HORIZONTAL ROW
 ========================================================== */
 
 .question-list {
 
     display: flex;
 
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
     align-items: center;
 
@@ -5329,9 +5329,9 @@ body {
 
     width: 100%;
 
-    max-height: none;
+    max-height: 38px;
 
-    overflow: visible;
+    overflow: hidden;
 
     padding: 2px 1px 2px;
 
@@ -5340,9 +5340,10 @@ body {
 }
 
 
+
 /* ==========================================================
    QUESTION BUTTON
-   LONG QUESTIONS USE ELLIPSIS
+   COMPACT WITH ELLIPSIS
 ========================================================== */
 
 .credibot-question {
@@ -5355,15 +5356,17 @@ body {
 
     gap: 6px;
 
-    flex: 0 1 auto;
+    flex: 0 0 auto;
 
     width: auto;
 
     min-width: 0;
 
-    max-width: 100%;
+    max-width: 250px;
 
     min-height: 30px;
+
+    height: 30px;
 
     padding: 6px 11px;
 
@@ -5392,6 +5395,8 @@ body {
 
     overflow: hidden;
 
+    text-overflow: ellipsis;
+
     transition:
         transform .2s ease,
         background .2s ease,
@@ -5400,6 +5405,7 @@ body {
         box-shadow .2s ease;
 
 }
+
 
 
 /* ==========================================================
@@ -5415,6 +5421,7 @@ body {
     font-size: .58rem;
 
 }
+
 
 
 /* ==========================================================
@@ -5700,7 +5707,7 @@ body {
 
     padding: 3px 18px 9px;
 
-    font-size: .73rem;
+    font-size: .68rem;
 
     line-height: 1.4;
 
@@ -5722,10 +5729,10 @@ body {
     color: #99f6e4;
 
     /* SLIGHTLY LARGER */
-    font-size: .75rem;
+    font-size: .65rem;
 
     /* MOVE ICON UP */
-    transform: translateY(-8px);
+    transform: translateY(-7px);
 
     opacity: .9;
 }
