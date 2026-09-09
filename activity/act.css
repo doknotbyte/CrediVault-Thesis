@@ -3393,12 +3393,15 @@ body {
 
 
 /* ==========================================================
-   LARGE TABLETS / SMALL LAPTOPS
+   RESPONSIVE — TABLET / SMALL DESKTOP
+   992px
 ========================================================== */
 
-@media (max-width: 1100px) {
+@media (max-width: 992px) {
 
-    /* OVERVIEW */
+    /* ------------------------------------------------------
+       OVERVIEW
+    ------------------------------------------------------ */
 
     .overview-screen {
         padding: 35px 3% 65px;
@@ -3425,95 +3428,6 @@ body {
         margin-left: 0;
     }
 
-}
-
-
-/* ==========================================================
-   TABLET
-========================================================== */
-
-@media (max-width: 900px) {
-
-    /* ------------------------------------------------------
-       OVERVIEW LAYOUT
-    ------------------------------------------------------ */
-
-    .overview-screen {
-        padding: 35px 25px 60px;
-    }
-
-    .overview-layout {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 30px;
-    }
-
-
-    /* ------------------------------------------------------
-       LEFT CONTENT
-    ------------------------------------------------------ */
-
-    .overview-content {
-        width: 100%;
-        padding: 0;
-        transform: none;
-    }
-
-
-    .overview-content h1 {
-        font-size: clamp(2.6rem, 7vw, 4rem);
-    }
-
-
-    .overview-description {
-        max-width: 700px;
-    }
-
-
-    /* ------------------------------------------------------
-       TOPIC GRID
-    ------------------------------------------------------ */
-
-    .topic-grid {
-        width: 100%;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 35px;
-    }
-
-
-    /* Reset desktop second-row movement */
-
-    .topic-card:nth-child(3),
-    .topic-card:nth-child(4) {
-        transform: none;
-    }
-
-    .topic-card:nth-child(3):hover,
-    .topic-card:nth-child(4):hover {
-        transform: translateY(-7px);
-    }
-
-
-    /* ------------------------------------------------------
-       PARTICIPANTS PANEL
-    ------------------------------------------------------ */
-
-    .participants-panel {
-        width: 100%;
-        margin: 0;
-        position: static;
-        min-height: auto;
-        height: auto;
-    }
-
-
-    .participants-list {
-        max-height: 320px;
-        overflow-y: auto;
-    }
-
 
     /* ------------------------------------------------------
        QUESTION SCREEN
@@ -3528,17 +3442,78 @@ body {
     }
 
 
+    /* ------------------------------------------------------
+       QUESTION IMAGE
+    ------------------------------------------------------ */
+
     .question-image {
-        min-height: 320px;
+        min-height: 300px;
+        height: 300px;
     }
 
     .question-image img {
-        height: 320px;
+        width: auto;
+        max-width: 100%;
+        height: 300px;
+        object-fit: contain;
     }
 
 
+    /* Individual image sizes */
+
+    .question-image img.image-digital {
+        width: 96%;
+        height: 300px;
+    }
+
+    .question-image img.image-ai-text {
+        width: 100%;
+        height: 320px;
+    }
+
+    .question-image img.image-clickbait {
+        width: 96%;
+        height: 300px;
+    }
+
+    .question-image img.image-popularity1 {
+        width: 96%;
+        height: 300px;
+    }
+
+    .question-image img.image-popularity2 {
+        width: 92%;
+        height: 290px;
+    }
+
+    .question-image img.image-source {
+        width: 94%;
+        height: 295px;
+    }
+
+    .question-image img.image-social {
+        width: 92%;
+        height: 290px;
+    }
+
+
+    /* ------------------------------------------------------
+       QUESTION CONTENT
+    ------------------------------------------------------ */
+
     .question-content {
         padding: 27px 25px 28px;
+    }
+
+
+    /* ------------------------------------------------------
+       CHOICES
+    ------------------------------------------------------ */
+
+    .choice-button {
+        min-height: 54px;
+        padding: 10px 14px;
+        font-size: .73rem;
     }
 
 
@@ -3562,10 +3537,11 @@ body {
 
 
 /* ==========================================================
-   MOBILE — 768px
+   RESPONSIVE — MOBILE
+   700px
 ========================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
     /* ------------------------------------------------------
        OVERVIEW
@@ -3575,15 +3551,22 @@ body {
         padding: 85px 18px 50px;
     }
 
-
     .overview-layout {
+        display: flex;
+        flex-direction: column;
         gap: 25px;
     }
 
 
     /* ------------------------------------------------------
-       TITLE
+       LEFT CONTENT
     ------------------------------------------------------ */
+
+    .overview-content {
+        width: 100%;
+        padding: 0;
+        transform: none;
+    }
 
     .overview-content h1 {
         font-size: clamp(2.3rem, 9vw, 3.2rem);
@@ -3591,11 +3574,9 @@ body {
         line-height: 1.05;
     }
 
-
     .overview-content h1 span {
         margin-top: 4px;
     }
-
 
     .overview-description {
         padding: 0 5px;
@@ -3616,55 +3597,42 @@ body {
         margin-top: 25px;
     }
 
-
-    /* ------------------------------------------------------
-       TOPIC CARDS
-    ------------------------------------------------------ */
-
     .topic-card {
         width: 100%;
         height: auto;
         min-height: 0;
     }
 
-
     .topic-card:nth-child(3),
     .topic-card:nth-child(4) {
         transform: none;
     }
-
 
     .topic-card:nth-child(3):hover,
     .topic-card:nth-child(4):hover {
         transform: translateY(-7px);
     }
 
-
     .topic-image {
-        height: 160px;
+        height: 150px;
     }
-
 
     .topic-card-content {
         padding: 20px;
     }
 
-
     .topic-card h2 {
         font-size: 1rem;
     }
-
 
     .topic-card p {
         font-size: .75rem;
         line-height: 1.55;
     }
 
-
     .topic-subtopics span {
         font-size: .62rem;
     }
-
 
     .start-topic {
         font-size: .68rem;
@@ -3676,15 +3644,18 @@ body {
     ------------------------------------------------------ */
 
     .participants-panel {
+        width: 100%;
+        margin: 0;
+        position: static;
+        min-height: auto;
+        height: auto;
         padding: 18px;
         border-radius: 16px;
     }
 
-
     .participants-header {
         padding-bottom: 13px;
     }
-
 
     .participants-icon {
         width: 38px;
@@ -3692,16 +3663,13 @@ body {
         font-size: .85rem;
     }
 
-
     .participants-title h2 {
         font-size: .85rem;
     }
 
-
     .participants-title p {
         font-size: .58rem;
     }
-
 
     .participants-count {
         min-width: 34px;
@@ -3709,19 +3677,17 @@ body {
         font-size: .7rem;
     }
 
-
     .participants-list {
         gap: 8px;
         padding: 13px 0;
         max-height: 280px;
+        overflow-y: auto;
     }
-
 
     .participant-item {
         padding: 9px;
         gap: 9px;
     }
-
 
     .participant-avatar {
         width: 33px;
@@ -3729,16 +3695,13 @@ body {
         font-size: .67rem;
     }
 
-
     .participant-info strong {
         font-size: .69rem;
     }
 
-
     .participant-info span {
         font-size: .56rem;
     }
-
 
     .participants-footer {
         font-size: .56rem;
@@ -3746,37 +3709,32 @@ body {
     }
 
 
-    /* ------------------------------------------------------
+    /* ======================================================
        QUESTION SCREEN
-    ------------------------------------------------------ */
+    ====================================================== */
 
     .question-screen {
         padding: 80px 18px 45px;
     }
-
 
     .question-topbar {
         gap: 10px;
         margin-bottom: 13px;
     }
 
-
     .back-button {
         font-size: .72rem;
     }
-
 
     .progress-info {
         gap: 9px;
         font-size: .67rem;
     }
 
-
     #topicTitle {
         max-width: 150px;
         text-align: right;
     }
-
 
     .progress-bar {
         margin-bottom: 22px;
@@ -3792,33 +3750,103 @@ body {
     }
 
 
-    .question-image {
-        min-height: 260px;
-    }
+    /* ======================================================
+       IMAGE QUESTIONS
+       
+       IMPORTANT:
+       Image stays compact on top.
+       Choices/question content stay below.
+    ====================================================== */
 
+    .question-image {
+        width: 100%;
+        height: 210px;
+        min-height: 210px;
+        padding: 8px 10px;
+        box-sizing: border-box;
+    }
 
     .question-image img {
-        width: 100%;
-        height: 260px;
+        width: auto;
+        height: 194px;
+        max-width: 100%;
+        max-height: 194px;
         object-fit: contain;
+        object-position: center;
     }
 
+
+    /* ------------------------------------------------------
+       INDIVIDUAL MOBILE IMAGE SIZES
+    ------------------------------------------------------ */
+
+    .question-image img.image-digital {
+        width: auto;
+        height: 194px;
+        max-width: 96%;
+        max-height: 194px;
+    }
+
+    .question-image img.image-ai-text {
+        width: auto;
+        height: 200px;
+        max-width: 98%;
+        max-height: 200px;
+    }
+
+    .question-image img.image-clickbait {
+        width: auto;
+        height: 194px;
+        max-width: 96%;
+        max-height: 194px;
+    }
+
+    .question-image img.image-popularity1 {
+        width: auto;
+        height: 194px;
+        max-width: 96%;
+        max-height: 194px;
+    }
+
+    .question-image img.image-popularity2 {
+        width: auto;
+        height: 188px;
+        max-width: 94%;
+        max-height: 188px;
+    }
+
+    .question-image img.image-source {
+        width: auto;
+        height: 190px;
+        max-width: 96%;
+        max-height: 190px;
+    }
+
+    .question-image img.image-social {
+        width: auto;
+        height: 188px;
+        max-width: 94%;
+        max-height: 188px;
+    }
+
+
+    /* ======================================================
+       QUESTION CONTENT
+    ====================================================== */
 
     .question-content {
-        padding: 23px 19px 24px;
+        padding: 22px 18px 23px;
     }
-
 
     .question-text,
     .question-content h2 {
-        font-size: 1.08rem;
+        font-size: 1rem;
         line-height: 1.4;
         margin: 5px 0 8px;
     }
 
-
     .question-instruction {
-        font-size: .75rem;
+        font-size: .73rem;
         margin-bottom: 16px;
     }
 
@@ -3831,21 +3859,20 @@ body {
         gap: 9px;
     }
 
-
     .choice-button {
-        min-height: 56px;
-        padding: 11px 13px;
-        gap: 11px;
-        border-radius: 12px;
-        font-size: .74rem;
+        min-height: 55px;
+        padding: 10px 12px;
+        gap: 10px;
+        border-radius: 11px;
+        font-size: .73rem;
+        line-height: 1.4;
     }
 
-
     .choice-letter {
-        width: 33px;
-        height: 33px;
+        width: 32px;
+        height: 32px;
         border-radius: 8px;
-        font-size: .75rem;
+        font-size: .74rem;
     }
 
 
@@ -3859,21 +3886,18 @@ body {
         border-radius: 10px;
     }
 
-
     .feedback-icon {
         width: 30px;
         height: 30px;
         flex-shrink: 0;
     }
 
-
     .answer-feedback strong {
-        font-size: .8rem;
+        font-size: .79rem;
     }
 
-
     .answer-feedback p {
-        font-size: .69rem;
+        font-size: .68rem;
         line-height: 1.5;
     }
 
@@ -3885,47 +3909,48 @@ body {
     .next-button {
         min-height: 48px;
         margin-top: 16px;
-        font-size: .74rem;
+        font-size: .73rem;
     }
 
 
-    /* ------------------------------------------------------
+    /* ======================================================
        RESULT
-    ------------------------------------------------------ */
+    ====================================================== */
 
     .result-screen {
         padding: 85px 18px 50px;
     }
 
-
     .result-card {
         max-width: 100%;
-        padding: 45px 25px 32px;
+        padding: 42px 22px 30px;
         border-radius: 20px;
     }
 
-
     .result-icon {
-        width: 65px;
-        height: 65px;
-        margin-bottom: 20px;
-        font-size: 1.7rem;
+        width: 62px;
+        height: 62px;
+        margin-bottom: 18px;
+        font-size: 1.65rem;
     }
-
 
     .result-card h1 {
-        font-size: 2rem;
+        font-size: 1.95rem;
     }
-
 
     .result-card > p {
-        font-size: .76rem;
+        font-size: .74rem;
+    }
+
+    .result-actions {
+        flex-direction: column;
+        gap: 10px;
     }
 
 
-    /* ------------------------------------------------------
+    /* ======================================================
        FLOATING NAV
-    ------------------------------------------------------ */
+    ====================================================== */
 
     .floating-menu-btn {
         top: 15px;
@@ -3936,19 +3961,16 @@ body {
         font-size: 17px;
     }
 
-
     .floating-nav {
         width: 82%;
         max-width: 285px;
         padding: 20px 15px;
     }
 
-
     .floating-nav-header {
         padding: 5px 5px 20px;
         margin-bottom: 16px;
     }
-
 
     .floating-nav-item {
         padding: 13px 14px;
@@ -3959,36 +3981,27 @@ body {
 
 
 /* ==========================================================
-   SMALL PHONES — 576px
+   RESPONSIVE — SMALL MOBILE
+   480px
 ========================================================== */
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
 
     /* ------------------------------------------------------
        OVERVIEW
     ------------------------------------------------------ */
 
     .overview-screen {
-        padding: 78px 14px 40px;
+        padding: 76px 13px 40px;
     }
-
-
-    .activity-badge {
-        padding: 8px 14px;
-        margin-bottom: 18px;
-        font-size: .6rem;
-        gap: 7px;
-    }
-
 
     .overview-content h1 {
-        font-size: clamp(2rem, 10vw, 2.7rem);
+        font-size: clamp(2rem, 10vw, 2.65rem);
         letter-spacing: -1.4px;
     }
 
-
     .overview-description {
-        font-size: .72rem;
+        font-size: .71rem;
         line-height: 1.65;
         margin-bottom: 20px;
     }
@@ -4003,16 +4016,13 @@ body {
         margin-top: 20px;
     }
 
-
     .topic-image {
-        height: 135px;
+        height: 130px;
     }
-
 
     .topic-card-content {
         padding: 17px;
     }
-
 
     .topic-icon {
         width: 37px;
@@ -4021,19 +4031,16 @@ body {
         margin-bottom: 11px;
     }
 
-
     .topic-card h2 {
         font-size: .9rem;
         margin-bottom: 7px;
     }
 
-
     .topic-card p {
-        font-size: .69rem;
+        font-size: .68rem;
         line-height: 1.5;
         margin-bottom: 13px;
     }
-
 
     .topic-subtopics {
         margin-top: 5px;
@@ -4041,20 +4048,17 @@ body {
         gap: 2px;
     }
 
-
     .topic-subtopics span {
-        font-size: .57rem;
+        font-size: .56rem;
         gap: 4px;
     }
-
 
     .topic-subtopics i {
         width: 11px;
     }
 
-
     .start-topic {
-        font-size: .62rem;
+        font-size: .61rem;
         padding-top: 5px;
     }
 
@@ -4068,11 +4072,9 @@ body {
         border-radius: 14px;
     }
 
-
     .participants-title {
         gap: 8px;
     }
-
 
     .participants-icon {
         width: 35px;
@@ -4080,122 +4082,184 @@ body {
         border-radius: 9px;
     }
 
-
     .participants-title h2 {
-        font-size: .79rem;
+        font-size: .78rem;
     }
-
 
     .participants-title p {
-        font-size: .54rem;
+        font-size: .53rem;
     }
-
 
     .participants-count {
         min-width: 31px;
         height: 28px;
         border-radius: 8px;
-        font-size: .66rem;
+        font-size: .65rem;
     }
-
 
     .participant-item {
         padding: 8px;
         border-radius: 9px;
     }
 
-
     .participant-avatar {
         width: 30px;
         height: 30px;
     }
 
-
     .participant-info strong {
-        font-size: .65rem;
+        font-size: .64rem;
+    }
+
+    .participant-info span {
+        font-size: .52rem;
     }
 
 
-    .participant-info span {
-        font-size: .53rem;
+    /* ======================================================
+       QUESTION
+    ====================================================== */
+
+    .question-screen {
+        padding: 73px 11px 40px;
+    }
+
+    .question-topbar {
+        gap: 6px;
+        align-items: flex-start;
+    }
+
+    .back-button {
+        font-size: .64rem;
+    }
+
+    .progress-info {
+        font-size: .59rem;
+        gap: 6px;
+    }
+
+    #topicTitle {
+        max-width: 105px;
     }
 
 
     /* ------------------------------------------------------
-       QUESTION
+       COMPACT IMAGE AREA
     ------------------------------------------------------ */
 
-    .question-screen {
-        padding: 75px 12px 40px;
-    }
-
-
-    .question-topbar {
-        align-items: flex-start;
-    }
-
-
-    .back-button {
-        font-size: .66rem;
-    }
-
-
-    .progress-info {
-        font-size: .61rem;
-        gap: 6px;
-    }
-
-
-    #topicTitle {
-        max-width: 110px;
-    }
-
-
     .question-image {
-        min-height: 220px;
+        height: 175px;
+        min-height: 175px;
+        padding: 6px 8px;
     }
-
 
     .question-image img {
-        height: 220px;
+        width: auto;
+        height: 163px;
+        max-width: 100%;
+        max-height: 163px;
     }
 
+
+    /* Individual images */
+
+    .question-image img.image-digital {
+        height: 163px;
+        max-height: 163px;
+        max-width: 96%;
+    }
+
+    .question-image img.image-ai-text {
+        height: 168px;
+        max-height: 168px;
+        max-width: 98%;
+    }
+
+    .question-image img.image-clickbait {
+        height: 163px;
+        max-height: 163px;
+        max-width: 96%;
+    }
+
+    .question-image img.image-popularity1 {
+        height: 163px;
+        max-height: 163px;
+        max-width: 96%;
+    }
+
+    .question-image img.image-popularity2 {
+        height: 158px;
+        max-height: 158px;
+        max-width: 94%;
+    }
+
+    .question-image img.image-source {
+        height: 160px;
+        max-height: 160px;
+        max-width: 96%;
+    }
+
+    .question-image img.image-social {
+        height: 158px;
+        max-height: 158px;
+        max-width: 94%;
+    }
+
+
+    /* ------------------------------------------------------
+       QUESTION CONTENT
+    ------------------------------------------------------ */
 
     .question-content {
-        padding: 20px 15px 20px;
+        padding: 19px 14px 20px;
     }
-
 
     .question-text,
     .question-content h2 {
-        font-size: .95rem;
+        font-size: .92rem;
+        line-height: 1.4;
     }
-
 
     .question-instruction {
-        font-size: .68rem;
+        font-size: .67rem;
+        line-height: 1.5;
+        margin-bottom: 15px;
     }
 
+
+    /* ------------------------------------------------------
+       CHOICES
+    ------------------------------------------------------ */
+
+    .choices {
+        gap: 8px;
+    }
 
     .choice-button {
-        min-height: 53px;
-        padding: 10px 11px;
-        gap: 9px;
-        font-size: .69rem;
+        min-height: 51px;
+        padding: 9px 10px;
+        gap: 8px;
+        border-radius: 10px;
+        font-size: .68rem;
+        line-height: 1.4;
     }
-
 
     .choice-letter {
-        width: 30px;
-        height: 30px;
-        font-size: .68rem;
+        width: 29px;
+        height: 29px;
+        border-radius: 7px;
+        font-size: .67rem;
     }
 
+
+    /* ------------------------------------------------------
+       FEEDBACK
+    ------------------------------------------------------ */
 
     .answer-feedback.show {
-        padding: 12px;
+        padding: 11px 12px;
+        gap: 8px;
     }
-
 
     .feedback-icon {
         width: 27px;
@@ -4203,20 +4267,24 @@ body {
         font-size: .7rem;
     }
 
-
     .answer-feedback strong {
-        font-size: .74rem;
+        font-size: .73rem;
     }
-
 
     .answer-feedback p {
-        font-size: .64rem;
+        font-size: .63rem;
+        line-height: 1.5;
     }
 
 
+    /* ------------------------------------------------------
+       NEXT BUTTON
+    ------------------------------------------------------ */
+
     .next-button {
-        min-height: 46px;
-        font-size: .69rem;
+        min-height: 45px;
+        margin-top: 14px;
+        font-size: .68rem;
     }
 
 
@@ -4225,49 +4293,41 @@ body {
     ------------------------------------------------------ */
 
     .result-screen {
-        padding: 75px 14px 40px;
+        padding: 73px 13px 40px;
     }
 
-
     .result-card {
-        padding: 38px 19px 27px;
+        padding: 37px 18px 27px;
         border-radius: 18px;
     }
 
-
     .result-icon {
-        width: 58px;
-        height: 58px;
-        font-size: 1.45rem;
-        border-radius: 16px;
+        width: 57px;
+        height: 57px;
+        font-size: 1.4rem;
     }
-
 
     .result-card h1 {
-        font-size: 1.75rem;
+        font-size: 1.7rem;
     }
 
-
     .result-card > p {
-        font-size: .7rem;
+        font-size: .69rem;
         line-height: 1.6;
     }
 
-
     .score-box {
-        padding: 18px 15px;
-        margin-bottom: 22px;
+        padding: 17px 14px;
+        margin-bottom: 20px;
     }
-
 
     .score-box strong {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
     }
 
-
     .result-button {
-        padding: 12px;
-        font-size: .69rem;
+        padding: 11px;
+        font-size: .67rem;
     }
 
 
@@ -4278,28 +4338,24 @@ body {
     .floating-menu-btn {
         top: 13px;
         left: 13px;
-        width: 42px;
-        height: 42px;
+        width: 41px;
+        height: 41px;
         border-radius: 10px;
     }
 
-
     .floating-nav {
-        width: 84%;
+        width: 85%;
         max-width: 285px;
         padding: 18px 13px;
     }
 
-
     .floating-nav-title {
-        font-size: .9rem;
+        font-size: .88rem;
     }
-
 
     .floating-nav-title i {
-        font-size: 16px;
+        font-size: 15px;
     }
-
 
     .floating-nav-close {
         width: 35px;
@@ -4307,133 +4363,15 @@ body {
         font-size: 15px;
     }
 
-
     .floating-nav-item {
-        padding: 12px 12px;
-        font-size: .78rem;
-        gap: 11px;
+        padding: 12px;
+        font-size: .77rem;
+        gap: 10px;
     }
-
 
     .floating-nav-item i {
         width: 20px;
         font-size: 14px;
-    }
-
-}
-
-
-/* ==========================================================
-   VERY SMALL PHONES — 400px
-========================================================== */
-
-@media (max-width: 400px) {
-
-    /* ------------------------------------------------------
-       OVERVIEW
-    ------------------------------------------------------ */
-
-    .overview-screen {
-        padding: 72px 11px 35px;
-    }
-
-
-    .overview-content h1 {
-        font-size: 1.9rem;
-    }
-
-
-    .overview-description {
-        font-size: .67rem;
-    }
-
-
-    .topic-image {
-        height: 120px;
-    }
-
-
-    .topic-card-content {
-        padding: 15px;
-    }
-
-
-    /* ------------------------------------------------------
-       QUESTION
-    ------------------------------------------------------ */
-
-    .question-screen {
-        padding: 70px 9px 35px;
-    }
-
-
-    .question-topbar {
-        gap: 5px;
-    }
-
-
-    .back-button {
-        font-size: .61rem;
-    }
-
-
-    .progress-info {
-        font-size: .56rem;
-    }
-
-
-    #topicTitle {
-        max-width: 90px;
-    }
-
-
-    .question-image {
-        min-height: 190px;
-    }
-
-
-    .question-image img {
-        height: 190px;
-    }
-
-
-    .question-content {
-        padding: 18px 12px;
-    }
-
-
-    .question-text,
-    .question-content h2 {
-        font-size: .88rem;
-    }
-
-
-    .choice-button {
-        min-height: 50px;
-        padding: 9px;
-        font-size: .65rem;
-    }
-
-
-    .choice-letter {
-        width: 28px;
-        height: 28px;
-    }
-
-
-    /* ------------------------------------------------------
-       NAV
-    ------------------------------------------------------ */
-
-    .floating-nav {
-        width: 86%;
-    }
-
-
-    .floating-menu-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
     }
 
 }
