@@ -392,7 +392,7 @@ popularity: [
                 "A strong verification process focuses on evidence rather than presentation or popularity. Search for the specific claim, consult credible health organizations or research, and compare the available evidence with what the creator is saying.",
 
             image:
-                "images/source.jpeg"
+                "images/source.png"
         },
 
 
@@ -1505,10 +1505,10 @@ function loadQuestion() {
 
 
     /* ======================================================
-       QUESTION IMAGE
-    ====================================================== */
+   QUESTION IMAGE
+====================================================== */
 
-    if (questionImage) {
+if (questionImage) {
 
     if (question.image) {
 
@@ -1522,6 +1522,77 @@ function loadQuestion() {
 
         image.alt =
             "Activity question image";
+
+        /* ==============================================
+           INDIVIDUAL IMAGE CLASS BASED ON FILE NAME
+        ============================================== */
+
+        const imageName =
+            question.image
+                .split("/")
+                .pop()
+                .split(".")[0]
+                .toLowerCase();
+
+        image.classList.add(
+            "activity-image"
+        );
+
+        if (imageName === "digital") {
+
+            image.classList.add(
+                "image-digital"
+            );
+
+        }
+
+        else if (imageName === "ai-text") {
+
+            image.classList.add(
+                "image-ai-text"
+            );
+
+        }
+
+        else if (imageName === "clickbait") {
+
+            image.classList.add(
+                "image-clickbait"
+            );
+
+        }
+
+        else if (imageName === "popularity1") {
+
+            image.classList.add(
+                "image-popularity1"
+            );
+
+        }
+
+        else if (imageName === "popularity2") {
+
+            image.classList.add(
+                "image-popularity2"
+            );
+
+        }
+
+        else if (imageName === "source") {
+
+            image.classList.add(
+                "image-source"
+            );
+
+        }
+
+        else if (imageName === "social") {
+
+            image.classList.add(
+                "image-social"
+            );
+
+        }
 
         questionImage.appendChild(
             image

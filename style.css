@@ -5700,7 +5700,7 @@ body {
 
     padding: 3px 18px 9px;
 
-    font-size: .70rem;
+    font-size: .73rem;
 
     line-height: 1.4;
 
@@ -5718,12 +5718,16 @@ body {
 
     flex-shrink: 0;
 
-    color: #5eead4;
+    /* LIGHTER / BRIGHTER COLOR */
+    color: #99f6e4;
 
-    opacity: .65;
+    /* SLIGHTLY LARGER */
+    font-size: .75rem;
 
-    font-size: .53rem;
+    /* MOVE ICON UP */
+    transform: translateY(-8px);
 
+    opacity: .9;
 }
 
 

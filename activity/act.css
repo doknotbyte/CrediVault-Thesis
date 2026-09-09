@@ -1488,7 +1488,7 @@ body {
 
 .question-screen {
 
-    padding: 50px 6%;
+    padding: 40px 6%;
 
 }
 
@@ -1497,7 +1497,7 @@ body {
 
     width: 100%;
 
-    max-width: 1000px;
+    max-width: 1100px;
 
     margin: auto;
 
@@ -1591,7 +1591,7 @@ body {
 
     overflow: hidden;
 
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 
 }
 
@@ -1611,6 +1611,7 @@ body {
 
 /* ==========================================================
    QUESTION CARD
+   DESKTOP — IMAGE LEFT / CONTENT RIGHT
 ========================================================== */
 
 .question-card {
@@ -1621,16 +1622,23 @@ body {
 
     margin: 0 auto;
 
+    display: grid;
+
+    grid-template-columns: 44% 56%;
+
+    align-items: stretch;
+
     background: #0d1b2b;
 
     border: 1px solid rgba(255,255,255,.10);
 
-    border-radius: 24px;
+    border-radius: 20px;
 
     overflow: hidden;
 
     box-shadow:
         0 15px 40px rgba(0,0,0,.18);
+
 }
 
 
@@ -1642,7 +1650,9 @@ body {
 
     width: 100%;
 
-    min-height: 360px;
+    min-height: 470px;
+
+    height: 100%;
 
     display: flex;
 
@@ -1650,21 +1660,26 @@ body {
 
     justify-content: center;
 
-    padding: 0;
+    padding: 18px;
+
+    box-sizing: border-box;
 
     background: #081625;
 
     overflow: hidden;
+
 }
 
 
-/* ACTUAL QUESTION IMAGE */
+/* ==========================================================
+   ACTUAL QUESTION IMAGE
+========================================================== */
 
 .question-image img {
 
     width: 100%;
 
-    height: 360px;
+    height: 430px;
 
     display: block;
 
@@ -1673,16 +1688,207 @@ body {
     object-position: center;
 
     background: #081625;
+
 }
 
 
 /* ==========================================================
-   QUESTION CONTENT
+   INDIVIDUAL IMAGE SIZES
+========================================================== */
+
+/* AI — Digital Manipulation */
+
+.question-image img.image-digital {
+
+    width: 100%;
+
+    height: 490px;
+
+}
+
+
+/* AI — AI Generated Misinformation */
+
+.question-image img.image-ai-text {
+
+    width: 96%;
+
+    height: 460px;
+
+}
+
+
+/* Clickbait */
+
+.question-image img.image-clickbait {
+
+    width: 98%;
+
+    height: 480px;
+
+}
+
+
+/* Popularity — Image 1 */
+
+.question-image img.image-popularity1 {
+
+    width: 96%;
+
+    height: 450px;
+
+}
+
+
+/* Popularity — Image 2 */
+
+.question-image img.image-popularity2 {
+
+    width: 96%;
+
+    height: 440px;
+
+}
+
+
+/* Cross-Checking — Source */
+
+.question-image img.image-source {
+
+    width: 100%;
+
+    height: 500px;
+
+}
+
+
+/* Cross-Checking — Social */
+
+.question-image img.image-social {
+
+    width: 100%;
+
+    height: 500px;
+
+}
+
+
+/* ==========================================================
+   QUESTION CONTENT — RIGHT PANEL
 ========================================================== */
 
 .question-content {
 
-    padding: 30px 32px 32px;
+    grid-column: 2;
+
+    padding: 27px 30px 28px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    min-width: 0;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(14, 31, 48, .98),
+            rgba(9, 23, 37, .98)
+        );
+
+    border-left: 1px solid rgba(59,221,255,.08);
+
+}
+
+
+/* ==========================================================
+   NO-IMAGE QUESTION
+   EXPAND QUESTION CONTENT ACROSS ENTIRE CARD
+========================================================== */
+
+.question-card:has(
+    .question-image[style*="display: none"]
+) {
+
+    display: block;
+
+}
+
+
+.question-card:has(
+    .question-image[style*="display: none"]
+) .question-content {
+
+    width: 100%;
+
+    grid-column: auto;
+
+    border-left: none;
+
+}
+
+
+/* ==========================================================
+   SUBTLE DIGITAL ACCENT
+========================================================== */
+
+.question-content::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 3px;
+    height: 72px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #3bddff,
+            rgba(59,221,255,0)
+        );
+
+    opacity: .8;
+
+}
+
+
+/* ==========================================================
+   QUESTION LABEL
+   Works with common question label elements
+========================================================== */
+
+.question-content .question-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    width: fit-content;
+
+    margin-bottom: 9px;
+
+    color: #3bddff;
+
+    font-size: .63rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
 }
 
 
@@ -1693,13 +1899,20 @@ body {
 .question-text,
 .question-content h2 {
 
-    margin: 8px 0 10px;
+    margin: 0 0 9px;
 
-    font-size: 1.15rem;
-
-    line-height: 1.4;
+    max-width: 100%;
 
     color: #ffffff;
+
+    font-size: 1.02rem;
+
+    line-height: 1.46;
+
+    font-weight: 700;
+
+    letter-spacing: -.1px;
+
 }
 
 
@@ -1709,13 +1922,39 @@ body {
 
 .question-instruction {
 
-    margin: 0 0 20px;
+    margin: 0 0 17px;
 
     color: #8fa2b8;
 
-    font-size: .85rem;
+    font-size: .75rem;
 
     line-height: 1.5;
+
+}
+
+
+/* ==========================================================
+   SMALL DIGITAL DIVIDER
+========================================================== */
+
+.question-content .question-instruction::after {
+
+    content: "";
+
+    display: block;
+
+    width: 42px;
+
+    height: 2px;
+
+    margin-top: 12px;
+
+    border-radius: 5px;
+
+    background: #3bddff;
+
+    opacity: .45;
+
 }
 
 
@@ -1726,8 +1965,11 @@ body {
 .choices {
 
     display: flex;
+
     flex-direction: column;
-    gap: 10px;
+
+    gap: 8px;
+
     width: 100%;
 
 }
@@ -1741,37 +1983,75 @@ body {
 
     width: 100%;
 
-    min-height: 52px;
+    min-height: 48px;
 
-    padding: 10px 16px;
+    padding: 9px 13px;
 
     display: flex;
+
     align-items: center;
 
-    gap: 12px;
+    gap: 11px;
 
-    border: 1px solid rgba(255,255,255,.10);
+    box-sizing: border-box;
 
-    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.09);
 
-    background: #172638;
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23,38,56,.98),
+            rgba(19,34,51,.98)
+        );
 
     color: #ffffff;
 
     font-family: inherit;
 
-    font-size: .75rem;
+    font-size: .78rem;
 
-    line-height: 1.35;
+    line-height: 1.42;
 
     text-align: left;
 
     cursor: pointer;
 
+    position: relative;
+
+    overflow: hidden;
+
     transition:
         background .2s ease,
         border-color .2s ease,
-        transform .2s ease;
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+/* ==========================================================
+   CHOICE DIGITAL ACCENT
+========================================================== */
+
+.choice-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 2px;
+    height: 100%;
+
+    background: #3bddff;
+
+    opacity: 0;
+
+    transition: opacity .2s ease;
 
 }
 
@@ -1782,11 +2062,28 @@ body {
 
 .choice-button:hover:not(.disabled) {
 
-    transform: translateY(-2px);
+    transform: translateX(2px);
 
     border-color: rgba(59,221,255,.35);
 
-    background: #1b3045;
+    background:
+        linear-gradient(
+            135deg,
+            #1a3045,
+            #172b40
+        );
+
+    box-shadow:
+        0 4px 16px rgba(0,0,0,.18),
+        0 0 12px rgba(59,221,255,.04);
+
+}
+
+
+.choice-button:hover:not(.disabled)::before {
+
+    opacity: 1;
+
 }
 
 
@@ -1795,137 +2092,6 @@ body {
 ========================================================== */
 
 .choice-letter {
-
-    flex-shrink: 0;
-
-    width: 38px;
-
-    height: 38px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 9px;
-
-    background: rgba(59,221,255,.12);
-
-    color: #3bddff;
-
-    font-size: .85rem;
-
-    font-weight: 800;
-
-}
-
-
-/* ==========================================================
-   CORRECT ANSWER
-========================================================== */
-
-.choice-button.correct {
-
-    background: rgba(34, 197, 94, .16);
-
-    border-color: rgba(34, 197, 94, .65);
-
-    color: #ffffff;
-}
-
-
-.choice-button.correct .choice-letter {
-
-    background: rgba(34, 197, 94, .22);
-
-    color: #4ade80;
-}
-
-
-/* ==========================================================
-   WRONG ANSWER
-========================================================== */
-
-.choice-button.wrong {
-
-    background: rgba(239, 68, 68, .16);
-
-    border-color: rgba(239, 68, 68, .65);
-
-    color: #ffffff;
-}
-
-
-.choice-button.wrong .choice-letter {
-
-    background: rgba(239, 68, 68, .22);
-
-    color: #f87171;
-}
-
-
-/* ==========================================================
-   DISABLED CHOICES
-========================================================== */
-
-.choice-button.disabled {
-
-    cursor: not-allowed;
-
-    transform: none;
-}
-
-
-/* ==========================================================
-   ANSWER FEEDBACK
-========================================================== */
-
-.answer-feedback {
-
-    margin-top: 20px;
-
-    display: none;
-}
-
-
-.answer-feedback.show {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 12px;
-
-    padding: 16px 18px;
-
-    border-radius: 12px;
-
-    background: rgba(34, 197, 94, .10);
-
-    border: 1px solid rgba(34, 197, 94, .25);
-
-    color: #ffffff;
-}
-
-
-/* ==========================================================
-   WRONG ANSWER FEEDBACK
-========================================================== */
-
-.answer-feedback.wrong {
-
-    background: rgba(239, 68, 68, .10);
-
-    border-color: rgba(239, 68, 68, .25);
-}
-
-
-/* ==========================================================
-   FEEDBACK ICON
-========================================================== */
-
-.feedback-icon {
 
     flex-shrink: 0;
 
@@ -1939,19 +2105,233 @@ body {
 
     justify-content: center;
 
-    border-radius: 50%;
+    border-radius: 8px;
 
-    background: rgba(34, 197, 94, .18);
+    background: rgba(59,221,255,.10);
+
+    border: 1px solid rgba(59,221,255,.08);
+
+    color: #3bddff;
+
+    font-size: .78rem;
+
+    font-weight: 800;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease;
+
+}
+
+
+/* ==========================================================
+   CHOICE HOVER LETTER
+========================================================== */
+
+.choice-button:hover:not(.disabled) .choice-letter {
+
+    background: rgba(59,221,255,.16);
+
+    border-color: rgba(59,221,255,.22);
+
+}
+
+
+/* ==========================================================
+   CORRECT ANSWER
+========================================================== */
+
+.choice-button.correct {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34,197,94,.16),
+            rgba(22,72,50,.20)
+        );
+
+    border-color: rgba(34,197,94,.60);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 0 14px rgba(34,197,94,.05);
+
+}
+
+
+.choice-button.correct::before {
+
+    background: #4ade80;
+
+    opacity: 1;
+
+}
+
+
+.choice-button.correct .choice-letter {
+
+    background: rgba(34,197,94,.22);
+
+    border-color: rgba(34,197,94,.25);
 
     color: #4ade80;
+
+}
+
+
+/* ==========================================================
+   WRONG ANSWER
+========================================================== */
+
+.choice-button.wrong {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239,68,68,.16),
+            rgba(82,30,35,.20)
+        );
+
+    border-color: rgba(239,68,68,.60);
+
+    color: #ffffff;
+
+}
+
+
+.choice-button.wrong::before {
+
+    background: #f87171;
+
+    opacity: 1;
+
+}
+
+
+.choice-button.wrong .choice-letter {
+
+    background: rgba(239,68,68,.22);
+
+    border-color: rgba(239,68,68,.25);
+
+    color: #f87171;
+
+}
+
+
+/* ==========================================================
+   DISABLED CHOICES
+========================================================== */
+
+.choice-button.disabled {
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* ==========================================================
+   ANSWER FEEDBACK
+========================================================== */
+
+.answer-feedback {
+
+    margin-top: 14px;
+
+    display: none;
+
+}
+
+
+/* ==========================================================
+   FEEDBACK BOX
+========================================================== */
+
+.answer-feedback.show {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 12px 14px;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34,197,94,.10),
+            rgba(34,197,94,.04)
+        );
+
+    border: 1px solid rgba(34,197,94,.25);
+
+    color: #ffffff;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.025);
+
+}
+
+
+/* ==========================================================
+   WRONG ANSWER FEEDBACK
+========================================================== */
+
+.answer-feedback.wrong {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239,68,68,.10),
+            rgba(239,68,68,.04)
+        );
+
+    border-color: rgba(239,68,68,.25);
+
+}
+
+
+/* ==========================================================
+   FEEDBACK ICON
+========================================================== */
+
+.feedback-icon {
+
+    flex-shrink: 0;
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(34,197,94,.16);
+
+    color: #4ade80;
+
+    font-size: .78rem;
+
 }
 
 
 .answer-feedback.wrong .feedback-icon {
 
-    background: rgba(239, 68, 68, .18);
+    background: rgba(239,68,68,.16);
 
     color: #f87171;
+
 }
 
 
@@ -1963,17 +2343,19 @@ body {
 
     display: block;
 
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 
-    font-size: .9rem;
+    font-size: .78rem;
 
     color: #4ade80;
+
 }
 
 
 .answer-feedback.wrong strong {
 
     color: #f87171;
+
 }
 
 
@@ -1983,9 +2365,10 @@ body {
 
     color: #a9b8c8;
 
-    font-size: .78rem;
+    font-size: .70rem;
 
-    line-height: 1.55;
+    line-height: 1.48;
+
 }
 
 
@@ -1995,25 +2378,30 @@ body {
 
 .next-button {
 
-    margin-top: 20px;
+    margin-top: 14px;
 
     width: 100%;
 
-    min-height: 52px;
+    min-height: 45px;
 
     border: 0;
 
-    border-radius: 12px;
+    border-radius: 10px;
 
-    padding: 14px;
+    padding: 11px 14px;
 
-    background: #3bddff;
+    background:
+        linear-gradient(
+            135deg,
+            #3bddff,
+            #2bc5e8
+        );
 
     color: #06121e;
 
     font-family: inherit;
 
-    font-size: .8rem;
+    font-size: .76rem;
 
     font-weight: 800;
 
@@ -2027,7 +2415,13 @@ body {
 
     gap: 8px;
 
-    transition: .2s ease;
+    box-shadow:
+        0 5px 16px rgba(59,221,255,.10);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
 
 }
 
@@ -2036,7 +2430,15 @@ body {
 
     transform: translateY(-2px);
 
-    background: #64e5ff;
+    background:
+        linear-gradient(
+            135deg,
+            #64e5ff,
+            #3bddff
+        );
+
+    box-shadow:
+        0 7px 20px rgba(59,221,255,.16);
 
 }
 
@@ -2046,6 +2448,8 @@ body {
     opacity: .35;
 
     cursor: not-allowed;
+
+    box-shadow: none;
 
 }
 
@@ -2277,6 +2681,7 @@ body {
     transition: .2s ease;
 
 }
+
 
 /* ==========================================================
    CLICKBAIT ACTIVITY CONTENT
