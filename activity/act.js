@@ -28,71 +28,74 @@ const supabaseClient =
 
 const activities = {
 
-    /* ======================================================
-       AI-MANIPULATION IDENTIFICATION
-    ====================================================== */
+/* ======================================================
+    AI-MANIPULATION IDENTIFICATION
+====================================================== */
 
-    ai: [
+ai: [
 
-        {
-            question:
-                "The image appears realistic and is presented as evidence of an event. However, you are unsure whether the image is authentic. Which action would provide the strongest basis for deciding whether the image should be trusted?",
+    {
+        question:
+            "The image appears realistic and is presented as evidence of an event. However, you are unsure whether the image is authentic. Which action would provide the strongest basis for deciding whether the image should be trusted?",
 
-            choices: [
-                "Check whether the image appears realistic enough to be genuine.",
-                "Look for the original source, compare the image with credible reports, and check whether the event is independently documented.",
-                "Trust the image if several social media users describe the same event in the comments.",
-                "Assume the image is authentic because digitally manipulated images are usually easy to recognize."
-            ],
+        choices: [
+            "Check whether the image appears realistic enough to be genuine.",
+            "Look for the original source, compare the image with credible reports, and check whether the event is independently documented.",
+            "Trust the image if several social media users describe the same event in the comments.",
+            "Assume the image is authentic because digitally manipulated images are usually easy to recognize."
+        ],
 
-            answer: 1,
+        answer: 1,
 
-            explanation:
-                "A realistic appearance is not enough to establish authenticity. The stronger approach is to trace the original source, compare the claim with credible independent reporting, and determine whether the event is supported by reliable evidence.",
+        explanation:
+            "A realistic appearance is not enough to establish authenticity. The stronger approach is to trace the original source, compare the claim with credible independent reporting, and determine whether the event is supported by reliable evidence.",
 
-            image:
-                "images/digital.jpg"
-        },
+        image:
+            "images/digital.jpg"
+    },
 
 
-        {
-            question:
-                "An image contains text claiming that a major event happened at a specific location and date. The post provides no original source, but the image looks convincing. What is the most appropriate next step before sharing it?",
+    {
+        question:
+            "An image contains text claiming that a major event happened at a specific location and date. The post provides no original source, but the image looks convincing. What is the most appropriate next step before sharing it?",
 
-            choices: [
-                "Search for the same image and claim using independent and credible sources, then compare the date, location, and available evidence.",
-                "Share the image with a warning because people can decide for themselves whether it is true.",
-                "Accept the claim because adding specific details such as a location and date makes the post more credible.",
-                "Check how many reactions the post has and use the audience's response as an indication of accuracy."
-            ],
+        choices: [
+            "Search for the same image and claim using independent and credible sources, then compare the date, location, and available evidence.",
+            "Share the image with a warning because people can decide for themselves whether it is true.",
+            "Accept the claim because adding specific details such as a location and date makes the post more credible.",
+            "Check how many reactions the post has and use the audience's response as an indication of accuracy."
+        ],
 
-            answer: 0,
+        answer: 0,
 
-            explanation:
-                "Specific details can make misinformation appear convincing, but they do not prove that the claim is true. Searching for independent evidence and comparing the date, location, and original source provides a stronger basis for verification.",
+        explanation:
+            "Specific details can make misinformation appear convincing, but they do not prove that the claim is true. Searching for independent evidence and comparing the date, location, and original source provides a stronger basis for verification.",
 
-            image:
-                "images/ai-text.jpg"
-        },
+        image:
+            "images/ai-text.jpg"
+    },
 
-        /* ==================================================
+
+    /* ==================================================
        QUESTION 3
     ================================================== */
 
     {
         question:
-            "A student posts an AI-generated image showing a supposed disaster in a familiar city. Several details look convincing, but the shadows, faces, and emergency signs appear unusual. A local news page has not reported the event. What should you conclude at this stage?",
+            "A student sees an image claiming that a major disaster has just occurred in a familiar city. The scene looks realistic, but several details—such as shadows, faces, and emergency signs—appear inconsistent. No local news organization has reported the event yet. Which conclusion is the most defensible?",
+
         choices: [
-            "The image is probably false because AI-generated images commonly contain unusual details.",
-            "The claim remains unverified until the image and event can be supported by independent evidence.",
-            "The image can still be accepted because unusual visual details do not necessarily affect the event being shown.",
-            "The absence of a news report is enough to establish that the event shown in the image never occurred."
+            "The image is probably false because several visual details appear inconsistent with a real event.",
+            "The image may be credible because the lack of local reports does not automatically disprove the event.",
+            "The claim should remain unverified because the available clues raise concerns but do not establish whether the event actually occurred.",
+            "The event likely did not happen because major disasters would normally receive immediate local coverage."
         ],
-        answer: 1,
+
+        answer: 2,
+
         explanation:
-            "Suspicious visual details are reasons to investigate, not automatic proof that an image is fake. The strongest conclusion is that the claim remains unverified until reliable independent evidence supports it."
+            "The visual inconsistencies and lack of independent reporting provide reasons for further investigation, but they do not automatically prove that the event is false. A careful evaluator separates suspicious evidence from conclusive evidence and seeks reliable independent confirmation."
     },
-    
 
 
     /* ==================================================
@@ -101,16 +104,19 @@ const activities = {
 
     {
         question:
-            "You find two versions of a photo showing the same supposed political event. One version contains a large crowd, while another has noticeably fewer people. Both versions are being shared as evidence of the same event. What should you investigate first?",
+            "You encounter two versions of a photo being used to support the same political claim. One shows a large crowd, while the other shows noticeably fewer people. Both versions are widely shared and each is presented as the original image. Which investigation would be most useful?",
+
         choices: [
-            "Determine which version receives more engagement before deciding which image is more trustworthy.",
-            "Compare the image quality and choose the version with clearer details and fewer visible distortions.",
-            "Trace both versions to their earliest available sources and determine whether either image was edited.",
-            "Use the version shared by established accounts because reputable users are less likely to post altered images."
+            "Compare the engagement on both versions and determine which image received stronger public support.",
+            "Examine the visual quality of both versions and choose the one that appears more natural and less edited.",
+            "Trace both versions to their earliest identifiable sources, compare their dates and contexts, and check whether either was cropped or altered.",
+            "Prefer the version posted by an established news account because professional organizations are generally more reliable."
         ],
+
         answer: 2,
+
         explanation:
-            "Different versions of the same image require source tracing and comparison. Identifying the earliest source and checking for alterations is more reliable than using popularity, image quality, or the reputation of the account alone."
+            "Conflicting versions should be investigated through source tracing and contextual comparison. The earliest identifiable source, publication date, original context, and possible cropping or editing provide stronger evidence than engagement, appearance, or account reputation alone."
     },
 
 
@@ -120,19 +126,22 @@ const activities = {
 
     {
         question:
-            "An AI-generated video appears to show a public figure making a controversial statement. The speaker's face and voice look convincing, but the video has no identifiable original source. Another post provides a longer version with slightly different wording. Which approach is strongest?",
+            "An AI-generated video appears to show a public figure making a controversial statement. The face, voice, and setting appear convincing. However, the post does not identify the original source. A second account uploads a longer version with slightly different wording. What should you examine first?",
+
         choices: [
-            "Compare the videos with verified recordings or statements from reliable sources and examine whether the original footage exists.",
-            "Accept the longer video because additional footage generally provides more context than a shorter edited clip.",
-            "Treat the statement as authentic unless experts publicly identify the video as AI-generated or manipulated.",
-            "Use the version with more views because widespread attention makes major manipulated claims easier to detect."
+            "Compare both versions and favor the longer video if it contains fewer obvious signs of manipulation.",
+            "Search for an original recording, transcript, or verified statement and compare it with the circulating versions.",
+            "Treat the statement as potentially authentic because two accounts show the same person saying similar words.",
+            "Wait for an AI-detection expert or fact-checker to label the video before evaluating the statement."
         ],
-        answer: 0,
+
+        answer: 1,
+
         explanation:
-            "Convincing faces and voices are not sufficient evidence of authenticity. Comparing the footage with verified recordings or statements and tracing the original source provides a stronger basis for evaluating the claim."
+            "The existence of multiple versions does not establish that the statement is authentic. The strongest approach is to locate verifiable evidence, such as an original recording, transcript, or reliable statement, and compare it with the circulating footage and wording."
     }
 
-    ],
+],
 
 
     /* ======================================================
@@ -170,83 +179,70 @@ const activities = {
     },
 
 
-    /* ==================================================
-       NEW CLICKBAIT QUESTION 2
-    ================================================== */
+/* ==================================================
+   CLICKBAIT QUESTION 2
+================================================== */
 
-    {
-        question:
-            "You see a widely shared post with the headline \"SHOCKING NEW GOVERNMENT RULE WILL CHANGE THE LIVES OF EVERY FILIPINO!\" When you read the article, you discover that the policy only applies to a specific program and a limited group of people. What is the strongest reason the headline should be treated cautiously?",
+{
+    question:
+        "A widely shared post uses the headline \"SHOCKING NEW GOVERNMENT RULE WILL CHANGE THE LIVES OF EVERY FILIPINO!\" The article linked in the post explains that the policy actually applies only to a specific government program and a limited group of beneficiaries. If you were evaluating the post's credibility rather than simply deciding whether the policy itself is real, which interpretation is most justified?",
 
-        choices: [
-            "The post has many reactions and shares, which automatically makes it unreliable.",
+    choices: [
+        "The claim is unreliable because government policies should be explained without emotional or dramatic language.",
+        "The headline is misleading because it expands a limited policy into a claim about every Filipino, creating a broader impression than the evidence in the article supports.",
+        "The headline is acceptable because attention-grabbing language does not affect the factual accuracy of the policy described in the article.",
+        "The claim should be considered credible because the linked article provides enough information to show that a real government policy exists."
+    ],
 
-            "The headline exaggerates the scope of the information and creates an impression that the article does not actually support.",
+    answer: 1,
 
-            "Government policies should not be discussed on social media.",
-
-            "Capital letters automatically make a headline misleading."
-        ],
-
-        answer: 1,
-
-        explanation:
-            "The headline exaggerates the scope of the policy by making it appear that every Filipino will be affected, even though the article only applies it to a specific program and limited group. This mismatch between the headline and the actual information is a warning sign of clickbait."
-
-    },
+    explanation:
+        "The issue is the mismatch between the scope suggested by the headline and the scope supported by the article. A real policy can still be presented misleadingly when a limited measure is framed as something affecting everyone. Evaluating credibility therefore requires comparing the headline's implied claim with the actual evidence and context provided."
+},
 
 
-    /* ==================================================
-       NEW CLICKBAIT QUESTION 3
-    ================================================== */
+/* ==================================================
+   CLICKBAIT QUESTION 3
+================================================== */
 
-    {
-        question:
-            "A post claims that \"DOCTORS ARE WARNING ABOUT THIS EVERYDAY HABIT\" but does not identify the habit in the headline. The linked article discusses a preliminary study under specific conditions, while the post presents the findings as proof that the habit is dangerous for everyone. What should you do to properly evaluate the claim?",
+{
+    question:
+        "A post warns, \"DOCTORS ARE WARNING ABOUT THIS EVERYDAY HABIT,\" but the headline never identifies the habit. The linked article reports on a preliminary study conducted under specific conditions. The study itself describes limitations and does not conclude that the habit is dangerous for everyone. Before deciding whether the social media post is justified, which reasoning is strongest?",
 
-        choices: [
-            "Trust it because the post refers to doctors and scientific research.",
+    choices: [
+        "The post should be considered credible because it refers to doctors and a scientific study, even if the study's conditions differ from the claim.",
+        "The post should be rejected immediately because preliminary studies cannot provide useful information about health risks.",
+        "The broader warning should be evaluated against the original study's methods, population, limitations, and actual findings to determine whether the evidence supports the conclusion being presented.",
+        "The post can be accepted provisionally because the study may eventually prove the broader claim once more researchers investigate the issue."
+    ],
 
-            "Share it with others while warning them that the study may be important.",
+    answer: 2,
 
-            "Examine the original study, its limitations, and whether it supports the broader claim made by the post.",
-
-            "Reject it immediately because curiosity-based headlines are always false."
-        ],
-
-        answer: 2,
-
-        explanation:
-            "The post makes a broader claim than what the preliminary study actually establishes. You should examine the original study, its limitations, and whether the evidence really supports the broader claim made by the social media post."
-
-    },
+    explanation:
+        "The important issue is whether the evidence actually supports the conclusion made by the post. A critical reader must examine what the original study investigated, who or what it applied to, what limitations it identified, and whether its findings justify extending the conclusion to everyone."
+},
 
 
-    /* ==================================================
-       NEW CLICKBAIT QUESTION 4
-    ================================================== */
+/* ==================================================
+   CLICKBAIT QUESTION 4
+================================================== */
 
-    {
-        question:
-            "A post titled \"THE TRUTH THEY DON'T WANT YOU TO KNOW!\" has thousands of shares but provides no identifiable sources, while another post with fewer interactions links to an original report and explains the evidence and its limitations. Although the first post appears more convincing because of its popularity, you need to determine which information is more credible. What is the best approach?",
+{
+    question:
+        "Two posts discuss the same issue. Post A uses the headline \"THE TRUTH THEY DON'T WANT YOU TO KNOW!\" and has thousands of shares but provides no identifiable source. Post B has far fewer interactions but links to an original report, explains the relevant evidence, and acknowledges limitations. A classmate argues that Post A is more trustworthy because its large audience suggests that many people have already evaluated the information. Which response best evaluates the classmate's reasoning?",
 
-        choices: [
-            "Trust the first post because more people have shared it.",
+    choices: [
+        "The classmate is correct because information shared by many people has already undergone a form of public verification.",
+        "The classmate is partly correct because high engagement is useful evidence that the information is important, even if it cannot prove every detail.",
+        "The classmate's reasoning confuses social popularity with evidentiary support; credibility should be judged by the quality, traceability, and context of the evidence rather than the number of people who interacted with the post.",
+        "The classmate is incorrect only because Post B has fewer interactions, since low engagement is generally a sign of higher-quality information."
+    ],
 
-            "Trust the second post because posts with fewer interactions are usually accurate.",
+    answer: 2,
 
-            "Compare the sources, evidence, and context instead of using popularity or engagement as proof of accuracy.",
-
-            "Trust the first post because strong emotional reactions indicate important information."
-        ],
-
-        answer: 2,
-
-        explanation:
-            "Popularity and emotional reactions do not prove that information is accurate. The better approach is to compare the sources, examine the evidence, and consider the context before deciding which information is more credible."
-
-    }
-
+    explanation:
+        "High engagement can show that content attracted attention, but it does not establish that the underlying claim was independently evaluated or verified. The stronger basis for credibility is traceable evidence, identifiable sources, appropriate context, and acknowledgment of limitations—not the number of people who shared or reacted to the post."
+}
 ],
 
 
@@ -258,19 +254,19 @@ popularity: [
 
     {
         question:
-            "A viral post claims that several public figures are involved in a major scam. The post has thousands of shares and many comments, but it provides no clear evidence or reliable source. What is the most appropriate way to evaluate the claim?",
+            "A viral post claims that several public figures are involved in a major scam. It has thousands of shares and comments, and many users express confidence in the allegation. However, the post provides no original documents or identifiable evidence. What is the most defensible response?",
 
         choices: [
-            "Consider the claim credible because many people have already shared and discussed it.",
-            "Assume the claim is false because viral posts about public figures are usually misleading.",
-            "Treat the popularity as evidence that the claim deserves attention, but verify the specific allegation using reliable sources and supporting evidence.",
-            "Accept the claim if several comments describe similar experiences, even if they do not provide independent evidence."
+            "The claim is credible enough because widespread discussion suggests that many users have examined it.",
+            "The claim should be dismissed because viral allegations about public figures are usually unreliable.",
+            "The claim deserves attention, but its accuracy still depends on evidence that can be traced and independently checked.",
+            "The comments provide useful confirmation because many users reached similar conclusions about the allegation."
         ],
 
         answer: 2,
 
         explanation:
-            "High engagement shows that the claim has attracted attention, but it does not prove that the claim is accurate. A responsible evaluation requires checking reliable sources, looking for supporting evidence, and determining whether the information comes from independent and credible reporting.",
+            "Popularity can show that a claim has attracted attention, but it cannot establish its accuracy. The specific allegation still needs to be supported by identifiable and independently verifiable evidence.",
 
         image:
             "images/popularity1.jpg"
@@ -279,19 +275,19 @@ popularity: [
 
     {
         question:
-            "A widely shared post promotes a supposed healing method and shows a large number of reactions and comments from people who claim it worked for them. Which factor should carry the most weight when deciding whether the health claim is trustworthy?",
+            "A widely shared post promotes a supposed healing method. Hundreds of commenters say that they tried it and experienced positive results, while the creator presents these comments as proof that the method works. No clinical research or qualified health source is provided. Which evidence should influence your judgment most?",
 
         choices: [
-            "The number of people who reacted positively because widespread agreement suggests that the method is effective.",
-            "The personal experiences in the comments because real users can provide stronger evidence than professional sources.",
-            "The popularity of the post together with the confidence of the person presenting it.",
-            "Evidence from qualified health professionals, credible health organizations, or reliable research that independently supports the claim."
+            "The number of positive experiences reported by users who tried the method.",
+            "The confidence of the creator combined with the large amount of positive engagement.",
+            "The consistency of comments from users who describe similar results.",
+            "Independent evidence from qualified professionals, health organizations, or reliable research."
         ],
 
         answer: 3,
 
         explanation:
-            "Personal experiences, positive comments, and high engagement can make a health claim appear convincing, but they do not establish that the claim is medically reliable. Stronger evidence comes from qualified professionals, credible health organizations, and research that can independently support the claim.",
+            "Personal experiences and engagement can make a health claim persuasive, but they cannot establish whether the method is medically effective. Independent professional or research-based evidence provides a stronger basis for evaluating the claim.",
 
         image:
             "images/popularity2.jpg"
@@ -304,20 +300,19 @@ popularity: [
 
     {
         question:
-            "A social media post about a controversial issue has received over 500,000 views and is being repeatedly reposted. Another post from a less-followed account provides links to official records and explains limitations in the available evidence. Which approach best demonstrates responsible evaluation?",
+            "A controversial post has received over 500,000 views and has been reposted by several large accounts. Another post has very little engagement but links to official records and explains the limits of the available evidence. A student argues that the viral post deserves more trust because more people have already seen it. How should this reasoning be evaluated?",
 
         choices: [
-            "Prioritize the viral post because a large number of views indicates that the information has already been widely examined.",
-            "Give greater weight to the less-popular post if its evidence can be independently checked, regardless of the difference in engagement.",
-            "Compare the number of views and comments first, then accept whichever post has stronger public agreement.",
-            "Treat both posts as equally credible because popularity and evidence are separate forms of public validation."
+            "It is reasonable because widespread exposure increases the chance that inaccurate claims have been challenged.",
+            "It is weak because the number of viewers shows reach, not whether the underlying claim was actually verified.",
+            "It is convincing because large audiences provide a broader basis for judging whether information is accurate.",
+            "It is partly valid because repeated attention can make a claim more reliable than information from smaller accounts."
         ],
 
         answer: 1,
 
         explanation:
-            "Popularity measures how widely information has circulated, not whether it is accurate. Evidence should be evaluated based on its quality, relevance, source, and whether it can be independently verified. A less-popular post may still provide stronger support for a claim.",
-
+            "The student's reasoning confuses visibility with verification. A claim can receive enormous attention without its evidence ever being examined. Audience size measures circulation, while credibility depends on the quality and verifiability of the supporting evidence."
     },
 
 
@@ -327,20 +322,19 @@ popularity: [
 
     {
         question:
-            "A student sees a post claiming that a new government policy has already been implemented nationwide. The post has thousands of reactions, while most comments express confidence that the claim is true. However, the student cannot find the policy on the official government website. What should the student conclude?",
+            "A student sees a post claiming that a new government policy has already been implemented nationwide. The post has thousands of reactions, and most comments confidently support the claim. However, the student cannot find an official announcement confirming the policy. What is the most appropriate conclusion at this point?",
 
         choices: [
-            "The claim is probably accurate because a large number of users would likely notice if the information were completely wrong.",
-            "The claim should be accepted temporarily because public agreement can serve as preliminary confirmation.",
-            "The engagement should not be treated as proof; the student should verify whether an official government source confirms the policy before accepting the claim.",
-            "The claim is definitely false because information that is not immediately available on social media cannot be considered reliable."
+            "The claim is likely true because widespread public agreement suggests that the policy has already been confirmed.",
+            "The claim is false because legitimate government policies should always appear on social media first.",
+            "The claim remains uncertain and should be checked against appropriate official records before being accepted.",
+            "The claim is probably accurate because users would likely correct a major policy error if enough people saw it."
         ],
 
         answer: 2,
 
         explanation:
-            "Public agreement and high engagement do not replace primary-source verification. When a post makes a specific claim about a government policy, checking an appropriate official source is more reliable than relying on reactions, comments, or the number of people repeating the claim.",
-
+            "High engagement and public agreement do not establish that a government policy exists. The lack of confirmation from an appropriate official source means the claim should not yet be accepted, but it also does not automatically prove that the claim is false."
     },
 
 
@@ -350,145 +344,149 @@ popularity: [
 
     {
         question:
-            "Two posts make the same scientific claim. Post A has millions of views and thousands of comments but cites no original study. Post B has far fewer interactions but links to the original research and explains where the findings may not apply. Which conclusion is most justified?",
+            "Two posts make the same scientific claim. Post A has millions of views and thousands of comments but does not identify the original study. Post B has little engagement but links to the original research and explains that the findings have specific limitations. Which post provides the stronger basis for evaluating the claim?",
 
         choices: [
-            "Post A is more trustworthy because widespread exposure increases the likelihood that inaccurate information would have been corrected.",
-            "Post B deserves closer consideration because the presence of traceable evidence allows the claim to be evaluated beyond its popularity.",
-            "Both posts should be considered equally reliable because neither the number of interactions nor the presence of a source can establish accuracy by itself.",
-            "Post A should be preferred because scientific information becomes more credible when it receives strong public engagement."
+            "Post A, because extensive public attention makes it more likely that the claim has been examined.",
+            "Post B, because its source can be traced and its interpretation can be compared with the actual research.",
+            "Both posts, because popularity and source information provide different but equally useful forms of evidence.",
+            "Post A, because scientific claims with high engagement are more likely to be noticed when they are inaccurate."
         ],
 
         answer: 1,
 
         explanation:
-            "Popularity is a measure of reach and engagement, not a measure of truth. Post B provides traceable evidence and acknowledges the limits of the research, allowing readers to examine whether the claim is actually supported. Responsible evaluation focuses on evidence and source quality rather than audience size.",
-
+            "Post B provides a stronger basis for evaluation because the original research can be examined directly. Its limited engagement does not weaken the evidentiary value of a traceable source, while Post A's popularity only demonstrates how widely the claim circulated."
     }
+
 
 ],
 
 
-    /* ======================================================
-       CROSS-CHECKING
-    ====================================================== */
+/* ======================================================
+   CROSS-CHECKING
+====================================================== */
 
-    cross: [
+cross: [
 
-        {
-            question:
-                "A creator posts a health-related claim and cites no study or organization. The video has a professional presentation and thousands of positive comments. If you want to evaluate the claim responsibly, which sequence of actions is strongest?",
+    {
+        question:
+    "A Philstar Fact Check post reports that an AI-generated photo falsely depicts Vice President Sara Duterte giving food packs. If you want to determine whether the claim is credible, which sequence of actions is strongest?",
 
-            choices: [
-                "Check the number of views, read the comments, and decide whether most viewers seem convinced.",
-                "Search for the exact claim, identify whether credible health organizations or research support it, and compare the evidence with the creator's statement.",
-                "Trust the claim temporarily because the creator appears knowledgeable, then wait for the video to become more popular.",
-                "Look for another social media post making the same claim and treat repeated posts as confirmation."
-            ],
+        choices: [
+            "Check the reactions and comments first, then accept the claim if most users agree that the photo looks real.",
+            "Trace the original source of the image and claim, check the date and context, compare the evidence with the fact-check, and confirm the finding using another credible source.",
+            "Look for other posts using the same photo and treat the repeated use of the image as evidence that the event really happened.",
+            "Focus on the quality and realism of the photo, since a professionally presented image is more likely to represent an actual event."
+        ],
 
-            answer: 1,
+        answer: 1,
 
-            explanation:
-                "A strong verification process focuses on evidence rather than presentation or popularity. Search for the specific claim, consult credible health organizations or research, and compare the available evidence with what the creator is saying.",
+        explanation:
+            "Strong cross-checking goes beyond how convincing or popular a post appears. Trace the original source, examine the date and context, compare the available evidence with the fact-check, and confirm the finding using another credible and independent source.",
 
-            image:
-                "images/source.png"
-        },
-
-
-        {
-            question:
-                "A viral video claims that a recent event occurred and has more than 1.2 million views. You find several accounts repeating the same claim, but most of them appear to have copied the original post. What does this tell you?",
-
-            choices: [
-                "The claim is confirmed because multiple accounts are reporting the same information.",
-                "The large number of views and repeated posts make the claim more reliable than information from a less popular source.",
-                "The repeated posts may indicate that the claim spread widely, but they do not independently verify it if the accounts are relying on the same original source.",
-                "The claim should automatically be considered false because viral information is usually manipulated."
-            ],
-
-            answer: 2,
-
-            explanation:
-                "Multiple posts do not necessarily represent independent confirmation. If several accounts copied the same original claim, they may all be relying on the same unverified information. Independent evidence from credible sources is needed to strengthen verification.",
-
-            image:
-                "images/social.jpeg"
-        },
-
-/* ==================================================
-   QUESTION 3
-================================================== */
-
-{
-    question:
-        "A post claims that a government agency recently changed a policy. You find three articles supporting the claim, but all three were published after quoting the same social media post. You also find an older official document that appears to describe a different policy. What should you examine first?",
-
-    choices: [
-        "Look at how closely the three articles agree before deciding whether their accounts provide sufficient confirmation.",
-        "Check the official document's date, scope, and whether a newer announcement has replaced or modified the policy it describes.",
-        "Compare the publication dates of the articles and use the most recent report as the strongest indication of what happened.",
-        "Trace the claim back to the social media post and determine whether its details explain the similarities among the three reports."
-    ],
-
-    answer: 1,
-
-    explanation:
-        "The three articles do not necessarily provide independent confirmation because they rely on the same original post. The older official document must also be checked for its date, scope, and possible replacement by a newer official announcement. Cross-checking requires examining the relationship between sources and determining which evidence is authoritative and current.",
-
-    // NO IMAGE
-},
+        image:
+            "images/source.png"
+    },
 
 
-/* ==================================================
-   QUESTION 4
-================================================== */
+    /* ==================================================
+       QUESTION 2
+    ================================================== */
 
-{
-    question:
-        "A viral post presents a statistic claiming that '80% of students support the new policy.' When you search for the figure, you find a survey with the same percentage, but the original report states that only 200 students from one school participated. What is the most defensible evaluation of the post?",
+    {
+        question:
+            "A viral video claims that a recent event occurred and has more than 1.2 million views. Six other accounts repeat the same claim, but five of them copied the original video and caption, while the sixth refers to the same unidentified source. What should this pattern tell you about the claim?",
 
-    choices: [
-        "The figure has limited value because the survey involved only 200 respondents and therefore cannot represent student opinions at all.",
-        "Since the percentage matches the original report, the post is supported even if it leaves out information about the participants.",
-        "It may be accurate for the surveyed students, but applying the result to students more broadly requires evidence that the sample supports that conclusion.",
-        "Similar reactions from students on social media would make the reported percentage more convincing as an estimate of wider student opinion."
-    ],
+        choices: [
+            "The claim is stronger because several accounts have independently chosen to report the same event.",
+            "The claim is weaker because repeated posts may reflect the same source rather than separate confirmation.",
+            "The claim is probably false because unidentified sources cannot provide useful information about an event.",
+            "The claim is more credible because the large number of views suggests that many users have checked the video."
+        ],
 
-    answer: 2,
+        answer: 1,
 
-    explanation:
-        "Cross-checking involves more than confirming whether a number appears in an original source. The scope and methodology of the source must also be considered. A statistic may accurately describe the surveyed participants while still being misleading when generalized to a much larger population.",
+        explanation:
+            "The number of accounts does not necessarily indicate independent confirmation. If the posts ultimately rely on the same source, they represent repeated circulation of the same information rather than separate evidence.",
 
-    // NO IMAGE
-},
-
-
-/* ==================================================
-   QUESTION 5
-================================================== */
-
-{
-    question:
-        "Two reports describe the same breaking-news event but provide different details about what happened. Report A cites an eyewitness post, while Report B cites an official statement released several hours later. You also discover that Report A was published before the official statement was available. Which evaluation is most appropriate?",
-
-    choices: [
-        "Give greater weight to Report B simply because an official statement was eventually released by the agency involved.",
-        "Report A may still contain useful information, particularly if its eyewitness account includes details that the later statement does not address.",
-        "The timing and source of each report should be considered together, including whether later information confirms, clarifies, or contradicts the earlier account.",
-        "Public reaction can help resolve the disagreement when readers have enough time to compare which version appears more convincing."
-    ],
-
-    answer: 2,
-
-    explanation:
-        "Conflicting information should be evaluated in context rather than decided through popularity or publication order alone. The timing of each report, the type of source used, and whether later information clarifies or changes the earlier account are important when assessing which details are better supported.",
-
-    // NO IMAGE
-}
+        image:
+            "images/social.jpeg"
+    },
 
 
-    ]
+    /* ==================================================
+       QUESTION 3
+    ================================================== */
+
+    {
+        question:
+            "A post claims that a government agency recently changed a policy. Three news articles appear to support the claim, but all three were published after quoting the same social media post. An older official document describes a different policy. Which step would best clarify the conflict?",
+
+        choices: [
+            "Compare the wording of the three articles to see whether their agreement provides enough support for the claim.",
+            "Use the newest article because recent reporting is more likely to reflect the agency's current position.",
+            "Check the official document's date and scope, then look for a later announcement that may have changed the policy.",
+            "Compare the social media post with the three articles to determine whether their descriptions of the policy are consistent."
+        ],
+
+        answer: 2,
+
+        explanation:
+            "The three articles are not independent confirmation if they all rely on the same social media post. The older official document also needs to be placed in its proper timeline and compared with any newer official announcement.",
+
+        // NO IMAGE
+    },
+
+
+    /* ==================================================
+       QUESTION 4
+    ================================================== */
+
+    {
+        question:
+            "A viral post states, '80% OF STUDENTS SUPPORT THE NEW POLICY.' You locate the original survey and confirm that the 80% figure is correct. However, the survey included only 200 students from one school, while the post presents the result as representing students nationwide. How should the claim be evaluated?",
+
+        choices: [
+            "The claim is supported because the percentage in the post matches the percentage in the original survey.",
+            "The survey is unreliable because 200 respondents are too few to provide any meaningful information.",
+            "The claim may be valid for the surveyed students but requires further evidence to represent students nationwide.",
+            "The nationwide claim becomes stronger if other students online express similar opinions about the policy."
+        ],
+
+        answer: 2,
+
+        explanation:
+            "Confirming the percentage does not automatically confirm the broader interpretation. The survey may accurately describe its participants while still being insufficient to support a nationwide conclusion.",
+
+        // NO IMAGE
+    },
+
+
+    /* ==================================================
+       QUESTION 5
+    ================================================== */
+
+    {
+        question:
+            "Two reports describe the same breaking-news event but disagree about several details. Report A was published first and relies on an eyewitness post. Report B appeared several hours later and cites an official statement that confirms some details but contradicts others. What is the best way to evaluate the conflicting reports?",
+
+        choices: [
+            "Prefer Report B because an official statement automatically makes every detail more reliable.",
+            "Prefer Report A because eyewitness information was collected closer to the event.",
+            "Choose the version that received more public support after comparing the reactions to both reports.",
+            "Examine each disputed detail using the timing, source, and later evidence before deciding what is supported."
+        ],
+
+        answer: 3,
+
+        explanation:
+            "Neither source type nor publication order automatically settles every disagreement. Each detail should be evaluated using the circumstances in which it was reported, the reliability of the source, and whether later evidence confirms or contradicts it.",
+
+        // NO IMAGE
+    }
+
+]
 
 };
 
