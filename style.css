@@ -6763,167 +6763,170 @@ body {
     }
 
 
-    /* ======================================================
-       HOME HERO
-    ====================================================== */
+/* ======================================================
+   HOME HERO
+====================================================== */
 
-    .hero-section {
-        width: 100%;
-        min-height: auto;
-        padding: 85px 22px 55px;
-        overflow: hidden;
-    }
+.hero-section {
+    width: 100%;
+    min-height: auto;
 
-    .hero-container {
-        width: 100%;
-        max-width: 100%;
+    /* MORE VERTICAL SPACE BEFORE ABOUT CREDIVAULT */
+    padding: 100px 22px 90px;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    overflow: hidden;
+}
 
-        gap: 0;
-        text-align: center;
-    }
+.hero-container {
+    width: 100%;
+    max-width: 100%;
 
-    .hero-content {
-        width: 100%;
-        max-width: 720px;
-        min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-        margin: 0 auto;
-        text-align: center;
-    }
+    gap: 0;
+    text-align: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 760px;
+    min-width: 0;
+
+    margin: 0 auto;
+    text-align: center;
+}
 
 
-    /* ======================================================
-       HIDE HERO VISUAL ON TABLET
-    ====================================================== */
+/* ======================================================
+   HIDE HERO VISUAL ON TABLET
+====================================================== */
 
-    .cv-hero-visual {
+.cv-hero-visual {
     display: none !important;
-    }
+}
 
 
-    /* ======================================================
-       HERO BADGE
-    ====================================================== */
+/* ======================================================
+   HERO BADGE
+====================================================== */
 
-    .hero-badge {
-        max-width: 100%;
+.hero-badge {
+    max-width: 100%;
 
-        padding: 7px 12px;
-        margin-bottom: 13px;
+    padding: 8px 13px;
+    margin-bottom: 16px;
 
-        font-size: .65rem;
-        gap: 7px;
+    font-size: .68rem;
+    gap: 8px;
 
-        justify-content: center;
-    }
-
-
-    /* ======================================================
-       HERO TITLE
-    ====================================================== */
-
-    .hero-content h1 {
-        width: 100%;
-        max-width: 700px;
-
-        margin: 0 auto 13px;
-
-        font-size: 2.25rem;
-        line-height: 1.08;
-        letter-spacing: -.8px;
-
-        overflow-wrap: anywhere;
-    }
+    justify-content: center;
+}
 
 
-    /* ======================================================
-       HERO PARAGRAPH
-    ====================================================== */
+/* ======================================================
+   HERO TITLE
+====================================================== */
 
-    .hero-content p {
-        width: 100%;
-        max-width: 620px;
+.hero-content h1 {
+    width: 100%;
+    max-width: 720px;
 
-        margin: 0 auto;
+    margin: 0 auto 16px;
 
-        font-size: .78rem;
-        line-height: 1.55;
-    }
+    font-size: 2.45rem;
+    line-height: 1.08;
+    letter-spacing: -.8px;
 
-
-    /* ======================================================
-       HERO BUTTONS
-    ====================================================== */
-
-    .hero-buttons {
-        width: 100%;
-        max-width: 430px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        gap: 9px;
-        margin: 18px auto 0;
-
-        flex-wrap: wrap;
-    }
-
-    .hero-buttons .btn,
-    .hero-buttons .primary-btn,
-    .hero-buttons .secondary-btn {
-        padding: 10px 15px;
-        font-size: .72rem;
-        border-radius: 10px;
-    }
+    overflow-wrap: anywhere;
+}
 
 
-    /* ======================================================
-       HERO STATS
-    ====================================================== */
+/* ======================================================
+   HERO PARAGRAPH
+====================================================== */
 
-    .hero-stats {
-        width: 100%;
-        max-width: 380px;
+.hero-content p {
+    width: 100%;
+    max-width: 650px;
 
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0 auto;
 
-        gap: 6px;
-        margin: 16px auto 0;
-    }
+    font-size: .82rem;
+    line-height: 1.6;
+}
 
-    .stat-box {
-        width: 100%;
-        min-width: 0;
 
-        padding: 9px 5px;
-        border-radius: 11px;
+/* ======================================================
+   HERO BUTTONS
+====================================================== */
 
-        text-align: center;
-    }
+.hero-buttons {
+    width: 100%;
+    max-width: 430px;
 
-    .stat-box h2 {
-        font-size: 1rem;
-        line-height: 1.1;
-        margin-bottom: 3px;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .stat-box h3,
-    .stat-box strong {
-        font-size: .82rem;
-        margin-bottom: 3px;
-    }
+    gap: 9px;
+    margin: 18px auto 0;
 
-    .stat-box span,
-    .stat-box p {
-        font-size: .58rem;
-        line-height: 1.25;
-    }
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn,
+.hero-buttons .primary-btn,
+.hero-buttons .secondary-btn {
+    padding: 10px 15px;
+    font-size: .72rem;
+    border-radius: 10px;
+}
+
+
+/* ======================================================
+   HERO STATS
+====================================================== */
+
+.hero-stats {
+    width: 100%;
+    max-width: 400px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 7px;
+    margin: 20px auto 0;
+}
+
+.stat-box {
+    width: 100%;
+    min-width: 0;
+
+    padding: 10px 6px;
+    border-radius: 11px;
+
+    text-align: center;
+}
+
+.stat-box h2 {
+    font-size: 1.05rem;
+    line-height: 1.1;
+    margin-bottom: 3px;
+}
+
+.stat-box h3,
+.stat-box strong {
+    font-size: .84rem;
+    margin-bottom: 3px;
+}
+
+.stat-box span,
+.stat-box p {
+    font-size: .59rem;
+    line-height: 1.3;
+}
 
 
     /* ======================================================
