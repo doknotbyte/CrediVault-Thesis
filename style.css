@@ -6714,6 +6714,7 @@ body {
 
     .nav-container {
         position: relative;
+        width: 100%;
         padding: 12px 18px;
     }
 
@@ -6733,27 +6734,22 @@ body {
 
     .nav-links {
         position: absolute;
-
         top: 100%;
         left: 0;
-
         width: 100%;
 
-        background: #08111f;
-
+        display: none;
         flex-direction: column;
         align-items: flex-start;
 
         padding: 12px;
-
-        gap: 8px;
-
-        display: none;
-
-        border-top:
-            1px solid rgba(255, 255, 255, 0.08);
+        gap: 7px;
 
         margin: 0;
+
+        background: #08111f;
+
+        border-top: 1px solid rgba(255, 255, 255, .08);
 
         z-index: 999;
     }
@@ -6764,54 +6760,71 @@ body {
 
     .nav-item {
         width: 100%;
-
-        font-size: 0.85rem;
-
-        padding: 8px 10px;
+        padding: 9px 11px;
+        font-size: .82rem;
     }
 
 
     /* ======================================================
-       HERO
+       HOME HERO
     ====================================================== */
 
     .hero-section {
         width: 100%;
+        min-height: auto;
 
-        padding:
-            18px 20px
-            32px;
+        padding: 85px 22px 55px;
 
         overflow: hidden;
     }
 
     .hero-container {
         width: 100%;
+        max-width: 100%;
 
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        gap: 22px;
+        gap: 0;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 720px;
+        min-width: 0;
+
+        margin: 0 auto;
 
         text-align: center;
     }
 
 
     /* ======================================================
-       HERO CONTENT — MOVE UP
+       HIDE HERO VISUAL ON TABLET
     ====================================================== */
 
-    .hero-content {
-        width: 100%;
-
-        max-width: 720px;
-
-        margin:
-            -28px auto 0;
+    .hero-container .hero-visual {
+        display: none !important;
     }
 
-    .hero-content > p {
-        margin-left: auto;
-        margin-right: auto;
+
+    /* ======================================================
+       HERO BADGE
+    ====================================================== */
+
+    .hero-badge {
+        max-width: 100%;
+
+        padding: 7px 12px;
+        margin-bottom: 13px;
+
+        font-size: .65rem;
+        gap: 7px;
+
+        justify-content: center;
     }
 
 
@@ -6820,24 +6833,32 @@ body {
     ====================================================== */
 
     .hero-content h1 {
-        font-size: 2.25rem;
+        width: 100%;
+        max-width: 700px;
 
+        margin: 0 auto 13px;
+
+        font-size: 2.25rem;
         line-height: 1.08;
 
-        margin-bottom: 11px;
+        letter-spacing: -.8px;
 
-        letter-spacing: -0.8px;
+        overflow-wrap: anywhere;
     }
 
+
+    /* ======================================================
+       HERO PARAGRAPH
+    ====================================================== */
+
     .hero-content p {
+        width: 100%;
         max-width: 620px;
 
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
 
-        font-size: 0.82rem;
-
-        line-height: 1.5;
+        font-size: .78rem;
+        line-height: 1.55;
     }
 
 
@@ -6846,192 +6867,76 @@ body {
     ====================================================== */
 
     .hero-buttons {
+        width: 100%;
+        max-width: 430px;
+
+        display: flex;
         justify-content: center;
+        align-items: center;
 
-        gap: 10px;
+        gap: 9px;
 
-        margin-top: 14px;
+        margin: 18px auto 0;
 
         flex-wrap: wrap;
     }
 
-    .hero-buttons a,
-    .hero-buttons button {
-        padding: 9px 15px;
+    .hero-buttons .btn,
+    .hero-buttons .primary-btn,
+    .hero-buttons .secondary-btn {
+        padding: 10px 15px;
 
-        font-size: 0.76rem;
+        font-size: .72rem;
+
+        border-radius: 10px;
     }
 
 
     /* ======================================================
        HERO STATS
-       KEEP ORIGINAL DESKTOP CARD SHAPE
     ====================================================== */
 
     .hero-stats {
-        justify-content: center;
-
-        gap: 14px;
-
-        margin-top: 17px;
-
-        flex-wrap: nowrap;
-    }
-
-    /*
-       IMPORTANT:
-       No border, border-radius, width,
-       or shape override here.
-
-       Digital / Interactive / Verified
-       keep their original desktop design.
-    */
-
-
-    /* ======================================================
-       HERO VISUAL AREA
-    ====================================================== */
-
-    .hero-visual {
-        position: relative;
-
         width: 100%;
+        max-width: 380px;
 
-        max-width: 520px;
-
-        min-height: 315px;
-
-        margin:
-            8px auto 0;
-
-        transform: scale(.78);
-
-        transform-origin:
-            center top;
-
-        overflow: visible;
-    }
-
-
-    /* ======================================================
-       VAULT / ORBIT CORE
-       SLIGHTLY SMALLER
-    ====================================================== */
-
-    .vault-core {
-        width: 285px;
-
-        height: 285px;
-
-        margin: 0 auto;
-    }
-
-
-    /* ======================================================
-       RINGS
-    ====================================================== */
-
-    .ring-1 {
-        width: 285px;
-        height: 290px;
-    }
-
-    .ring-2 {
-        width: 225px;
-        height: 225px;
-    }
-
-    .ring-3 {
-        width: 170px;
-        height: 170px;
-    }
-
-
-    /* ======================================================
-       CENTER CREDIVAULT CARD
-    ====================================================== */
-
-    .core-card {
-        width: 180px;
-
-        height: 180px;
-
-        border-radius: 26px;
-    }
-
-    .core-card h2 {
-        font-size: 1.35rem;
-    }
-
-    .core-card p {
-        font-size: 0.72rem;
-    }
-
-
-    /* ======================================================
-       FLOATING TOPIC CARDS
-       COMPACT AROUND THE ORBIT
-    ====================================================== */
-
-    .floating-card {
-        min-width: 105px;
-
-        max-width: 135px;
-
-        padding:
-            7px 10px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
 
         gap: 6px;
 
+        margin: 16px auto 0;
+    }
+
+    .stat-box {
+        width: 100%;
+        min-width: 0;
+
+        padding: 9px 5px;
+
         border-radius: 11px;
 
-        font-size: 0.62rem;
-
-        white-space: nowrap;
+        text-align: center;
     }
 
+    .stat-box h2 {
+        font-size: 1rem;
+        line-height: 1.1;
 
-    /* ======================================================
-       TOP TOPIC
-    ====================================================== */
-
-    .card-top {
-        top: -6px;
-
-        left: 50%;
+        margin-bottom: 3px;
     }
 
+    .stat-box h3,
+    .stat-box strong {
+        font-size: .82rem;
 
-    /* ======================================================
-       LEFT TOPIC
-    ====================================================== */
-
-    .card-left {
-        left: 8px;
-
-        top: 50%;
+        margin-bottom: 3px;
     }
 
-
-    /* ======================================================
-       RIGHT TOPIC
-    ====================================================== */
-
-    .card-right {
-        right: 8px;
-
-        top: 50%;
-    }
-
-
-    /* ======================================================
-       BOTTOM TOPIC
-    ====================================================== */
-
-    .card-bottom {
-        bottom: -5px;
-
-        left: 50%;
+    .stat-box span,
+    .stat-box p {
+        font-size: .58rem;
+        line-height: 1.25;
     }
 
 
@@ -7040,164 +6945,482 @@ body {
     ====================================================== */
 
     .features-section {
-        padding: 60px 22px 75px;
+        width: 100%;
+
+        padding: 55px 22px 65px;
     }
 
     .features-section .section-header {
         width: 94%;
+        max-width: 800px;
 
-        margin-bottom: 40px;
+        margin: 0 auto 32px;
+
+        text-align: center;
+    }
+
+    .features-section .mini-title {
+        font-size: .62rem;
+        padding: 6px 11px;
+        margin-bottom: 12px;
     }
 
     .features-section .section-header h2 {
-        font-size: 2rem;
+        font-size: 1.9rem;
+        line-height: 1.2;
     }
 
     .features-section .section-header p {
-        font-size: .84rem;
+        font-size: .78rem;
+        line-height: 1.6;
     }
 
 
     /* ======================================================
-       TOPIC GRID — TABLET
-       IMPORTANT: KEEP INSIDE MEDIA QUERY
+       EMBEDDED / TOPIC GRID
+       2 PER ROW
     ====================================================== */
 
     .topic-grid {
         width: 94%;
+        max-width: 900px;
+
+        margin: 0 auto;
+
+        display: grid;
 
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
-        gap: 13px;
+        gap: 14px;
     }
 
     .topic-card {
         width: 100%;
+        min-width: 0;
 
-        height: 315px;
-
+        height: auto;
         min-height: 0;
+
+        border-radius: 14px;
+
+        overflow: hidden;
     }
 
     .topic-visual {
-        height: 155px;
+        width: 100%;
+        height: 145px;
     }
 
     .topic-content {
-        padding:
-            14px 15px 16px;
+        padding: 13px 14px 15px;
     }
 
     .topic-content h3 {
-        font-size: .88rem;
-
+        font-size: .84rem;
         line-height: 1.3;
 
         margin-bottom: 6px;
     }
 
     .topic-content p {
-        font-size: .68rem;
-
+        font-size: .66rem;
         line-height: 1.5;
     }
 
-}
+
+    /* ======================================================
+       ABOUT CREDIVAULT
+       LEFT PANEL FIRST
+    ====================================================== */
+
+    .about-credivault-section {
+        width: 100%;
+        min-height: auto;
+
+        padding: 60px 22px 65px;
+
+        overflow: hidden;
+    }
+
+    .about-credivault-container {
+        width: 94%;
+        max-width: 900px;
+
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+
+        align-items: start;
+    }
+
+    .about-credivault-content {
+        width: 100%;
+        max-width: 700px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+    .about-eyebrow {
+        margin-bottom: 13px;
+        font-size: .65rem;
+    }
+
+    .about-credivault-content h2 {
+        margin-bottom: 15px;
+
+        font-size: 1.9rem;
+        line-height: 1.15;
+    }
+
+    .about-credivault-content > p {
+        margin-bottom: 13px;
+
+        font-size: .76rem;
+        line-height: 1.65;
+    }
+
+    .about-learn-more-btn {
+        margin-top: 10px;
+
+        padding: 10px 15px;
+
+        font-size: .74rem;
+        border-radius: 9px;
+    }
 
 
     /* ======================================================
-       HOME — CHECK BEFORE YOU SHARE
+       ABOUT — WHAT YOU'LL LEARN
+       RIGHT PANEL BELOW
+    ====================================================== */
+
+    .about-credivault-topics {
+        position: relative;
+
+        width: 100%;
+        max-width: 850px;
+
+        left: 0;
+        top: 0;
+
+        margin: 0 auto;
+    }
+
+    .about-topics-header {
+        margin-bottom: 18px;
+
+        text-align: center;
+    }
+
+    .about-topics-label {
+        font-size: .61rem;
+        letter-spacing: 1.4px;
+    }
+
+    .about-topics-header h3 {
+        margin-top: 6px;
+
+        font-size: 1.35rem;
+        line-height: 1.2;
+    }
+
+    .about-topic-list {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .about-topic-card {
+        width: 100%;
+        min-width: 0;
+
+        min-height: 0;
+
+        padding: 15px;
+
+        gap: 11px;
+
+        border-radius: 11px;
+    }
+
+    .about-topic-number {
+        top: 9px;
+        right: 11px;
+
+        font-size: .59rem;
+    }
+
+    .about-topic-icon {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 9px;
+
+        font-size: .84rem;
+    }
+
+    .about-topic-content {
+        min-width: 0;
+        padding-right: 10px;
+    }
+
+    .about-topic-content h4 {
+        margin: 1px 0 5px;
+
+        font-size: .8rem;
+        line-height: 1.3;
+    }
+
+    .about-topic-content p {
+        font-size: .65rem;
+        line-height: 1.5;
+    }
+
+
+    /* ======================================================
+       READ & LEARN
+       3 VIDEOS PER ROW
+    ====================================================== */
+
+    .read-learn-videos-section {
+        width: 100%;
+
+        padding: 50px 22px 60px;
+    }
+
+    .read-learn-videos-container {
+        width: 94%;
+        max-width: 1000px;
+
+        margin: 0 auto;
+    }
+
+    .read-learn-videos-header {
+        width: 100%;
+        max-width: 750px;
+
+        margin: 0 auto 27px;
+
+        text-align: center;
+    }
+
+    .read-learn-eyebrow {
+        margin-bottom: 7px;
+
+        font-size: .6rem;
+        letter-spacing: 1.2px;
+    }
+
+    .read-learn-videos-header h2 {
+        font-size: 1.65rem;
+        line-height: 1.2;
+    }
+
+    .read-learn-videos-header p {
+        font-size: .72rem;
+        line-height: 1.6;
+    }
+
+    .read-learn-video-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        column-gap: 11px;
+        row-gap: 15px;
+    }
+
+    .read-learn-video-card {
+        width: 100%;
+        min-width: 0;
+
+        border-radius: 10px;
+    }
+
+    .read-learn-video {
+        width: calc(100% - 8px);
+
+        margin: 4px;
+
+        aspect-ratio: 35 / 17;
+
+        border-radius: 7px;
+    }
+
+    .read-learn-video iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .read-learn-video-content {
+        padding: 9px 10px 11px;
+    }
+
+    .read-learn-video-number {
+        margin-bottom: 3px;
+
+        font-size: .46rem;
+        letter-spacing: .8px;
+    }
+
+    .read-learn-video-content h3 {
+        margin-bottom: 3px;
+
+        font-size: .69rem;
+        line-height: 1.25;
+    }
+
+    .read-learn-video-content p {
+        font-size: .55rem;
+        line-height: 1.4;
+    }
+
+
+    /* ======================================================
+       CHECK BEFORE YOU SHARE
     ====================================================== */
 
     .check-section {
+        width: 100%;
 
-    padding: 55px 22px;
+        padding: 55px 22px 60px;
+    }
 
-}
+    .check-container {
+        width: 94%;
+        max-width: 950px;
 
-.check-container {
+        margin: 0 auto;
 
-    width: 94%;
+        display: grid;
 
-    grid-template-columns: 1.05fr .95fr;
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
 
-    gap: 35px;
+        gap: 28px;
 
-    align-items: center;
+        align-items: center;
+    }
 
-}
+    .check-content {
+        width: 100%;
+        max-width: 100%;
 
-.check-content {
+        margin: 0;
 
-    max-width: 750px;
+        text-align: left;
+    }
 
-    margin: 0;
+    .check-content h2 {
+        font-size: 1.85rem;
+        line-height: 1.2;
+    }
 
-    text-align: left;
+    .check-content p {
+        font-size: .76rem;
+        line-height: 1.65;
+    }
 
-}
+    .check-status {
+        font-size: .6rem;
+        padding: 6px 10px;
+    }
 
-.check-content h2 {
+    .check-hint {
+        font-size: .62rem;
+        justify-content: flex-start;
+    }
 
-    font-size: 2rem;
+    .check-interactive {
+        width: 100%;
+        max-width: 100%;
 
-}
+        margin: 0;
+    }
 
-.check-content p {
+    .check-step {
+        min-height: 64px;
 
-    font-size: .84rem;
+        padding: 9px 10px;
 
-}
+        gap: 9px;
 
-.check-status {
+        border-radius: 13px;
+    }
 
-    margin: 0;
+    .step-number {
+        width: 40px;
+        height: 40px;
 
-}
+        border-radius: 11px;
 
-.check-hint {
+        font-size: .62rem;
+    }
 
-    justify-content: flex-start;
+    .step-content strong {
+        font-size: .76rem;
+    }
 
-}
+    .step-content small {
+        font-size: .61rem;
+    }
 
-.check-interactive {
+    .check-detail {
+        padding: 14px;
 
-    width: 100%;
-
-    max-width: 750px;
-
-    margin: 0;
-
-}
+        border-radius: 15px;
+    }
 
 
     /* ======================================================
        TOOLS
+       2 PER ROW
     ====================================================== */
 
+    .tools-section {
+        width: 100%;
+
+        padding: 50px 22px 60px;
+    }
+
+    .tool-filters {
+        gap: 8px;
+    }
+
     .tool-grid {
+        width: 94%;
+        max-width: 900px;
 
-        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
 
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
     }
 
     .tool-card {
+        width: 100%;
+        min-width: 0;
 
-        min-height: 320px;
+        min-height: 280px;
 
-    }
-
-
-    /* ======================================================
-       REMINDERS
-    ====================================================== */
-
-    .reminder-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
+        padding: 18px 15px;
     }
 
 
@@ -7205,218 +7428,340 @@ body {
        HOW TO USE
     ====================================================== */
 
+    .how-section {
+        width: 100%;
+
+        padding: 25px 22px 50px;
+    }
+
+    .how-container {
+        width: 94%;
+        max-width: 950px;
+
+        margin: 0 auto;
+
+        padding: 28px 20px;
+
+        border-radius: 17px;
+    }
+
+    .how-heading h2 {
+        font-size: 1.4rem;
+    }
+
+    .how-heading p {
+        font-size: .74rem;
+        line-height: 1.6;
+    }
+
     .how-steps {
+        width: 100%;
 
-        flex-wrap: wrap;
+        display: flex;
 
+        flex-wrap: nowrap;
+
+        gap: 12px;
+    }
+
+    .how-step {
+        flex: 1 1 0;
+        min-width: 0;
+
+        min-height: 135px;
     }
 
     .step-arrow {
-
         display: none;
-
     }
 
 
     /* ======================================================
-       CREDIBOT — TABLET
+       REMINDERS
+       2 PER ROW
     ====================================================== */
 
-    .credibot-section {
-
+    .reminders-section {
         width: 100%;
 
-        padding: 70px 22px 75px;
-
+        padding: 30px 22px 50px;
     }
 
-    .credibot-container {
+    .reminders-heading h2 {
+        font-size: 1.4rem;
+    }
 
+    .reminder-grid {
         width: 94%;
-
-        max-width: 1100px;
+        max-width: 900px;
 
         margin: 0 auto;
 
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .reminder-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* ======================================================
+       FINAL REMINDER
+    ====================================================== */
+
+    .final-reminder {
+        width: 100%;
+
+        padding: 0 22px 45px;
+    }
+
+    .final-reminder-content {
+        width: 94%;
+        max-width: 950px;
+
+        margin: 0 auto;
+
+        padding: 16px 18px;
+
+        gap: 10px;
+    }
+
+    .final-reminder-content strong {
+        font-size: .78rem;
+    }
+
+    .final-reminder-content span {
+        font-size: .69rem;
+        line-height: 1.5;
+    }
+
+
+    /* ======================================================
+       CREDIBOT
+    ====================================================== */
+
+    .credibot-section {
+        width: 100%;
+
+        padding: 55px 22px 65px;
+    }
+
+    .credibot-container {
+        width: 94%;
+        max-width: 1000px;
+
+        margin: 0 auto;
     }
 
     .credibot-header {
+        gap: 15px;
 
-        gap: 18px;
+        margin-bottom: 20px;
 
-        margin-bottom: 24px;
-
+        align-items: center;
     }
 
     .credibot-icon {
+        width: 50px;
+        height: 50px;
 
-        width: 54px;
+        flex-shrink: 0;
 
-        height: 54px;
+        border-radius: 14px;
 
-        border-radius: 15px;
+        font-size: 1.2rem;
+    }
 
-        font-size: 1.3rem;
-
+    .credibot-label {
+        font-size: .6rem;
+        letter-spacing: 1.1px;
     }
 
     .credibot-heading h2 {
-
-        font-size: 1.85rem;
-
+        font-size: 1.7rem;
+        line-height: 1.15;
     }
 
     .credibot-heading p {
+        width: 100%;
+        max-width: 620px;
 
-        max-width: 600px;
+        margin-left: 0;
+        margin-right: 0;
 
-        margin-left: auto;
-
-        margin-right: auto;
-
-        font-size: .82rem;
-
+        font-size: .76rem;
         line-height: 1.55;
 
         white-space: normal;
-
     }
 
     .credibot-chat {
+        width: 100%;
 
-        padding: 24px;
+        padding: 20px;
 
-        border-radius: 20px;
-
+        border-radius: 18px;
     }
 
     .credibot-message {
+        gap: 10px;
 
-        gap: 11px;
-
-        margin-bottom: 21px;
-
+        margin-bottom: 18px;
     }
 
     .message-avatar {
+        width: 36px;
+        height: 36px;
 
-        width: 38px;
-
-        height: 38px;
-
-        font-size: .9rem;
-
+        font-size: .84rem;
     }
 
     .message-content {
+        max-width: calc(100% - 46px);
 
-        max-width: calc(100% - 50px);
+        padding: 10px 12px;
 
-        padding: 11px 14px;
+        border-radius: 0 11px 11px 11px;
+    }
 
+    .message-name {
+        font-size: .66rem;
+        margin-bottom: 2px;
     }
 
     .message-content p {
-
-        font-size: .84rem;
-
+        font-size: .74rem;
+        line-height: 1.5;
     }
 
     .credibot-questions {
+        width: 100%;
 
-        margin-top: 15px;
-
+        margin-top: 13px;
     }
 
     .questions-heading {
+        gap: 6px;
 
-        margin-bottom: 9px;
+        margin-bottom: 7px;
 
-        font-size: .78rem;
-
+        font-size: .69rem;
     }
 
     .question-list {
+        width: 100%;
+        max-width: 100%;
 
-        gap: 9px;
-
-        padding: 2px 2px 9px;
-
-        overflow-x: auto;
-
-        overflow-y: hidden;
+        display: flex;
 
         flex-wrap: nowrap;
+        align-items: center;
+
+        gap: 8px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 2px 2px 8px;
 
         scrollbar-width: thin;
-
+        -webkit-overflow-scrolling: touch;
     }
 
     .credibot-question {
-
         flex: 0 0 auto;
 
         width: auto;
-
-        max-width: 300px;
-
         min-width: 0;
+        max-width: 280px;
 
-        min-height: 40px;
+        min-height: 38px;
+        height: 38px;
 
-        padding: 8px 13px;
+        padding: 7px 12px;
 
-        font-size: .73rem;
+        border-radius: 10px;
 
-        line-height: 1.2;
+        font-size: .68rem;
+        line-height: 1;
 
         white-space: nowrap;
 
         overflow: hidden;
-
         text-overflow: ellipsis;
 
+        display: block;
     }
 
     .credibot-input-area {
+        width: 100%;
 
-        gap: 9px;
+        display: flex;
+        align-items: center;
 
-        margin-top: 11px;
+        gap: 8px;
 
+        margin-top: 9px;
     }
 
     .credibot-input-wrapper {
+        flex: 1 1 auto;
+        min-width: 0;
 
-        height: 42px;
+        height: 40px;
 
-        padding: 0 13px;
+        padding: 0 11px;
 
+        border-radius: 10px;
+    }
+
+    .credibot-input-wrapper > i {
+        margin-right: 6px;
+
+        font-size: .7rem;
     }
 
     .credibot-input {
-
-        font-size: .78rem;
-
+        width: 100%;
         min-width: 0;
 
+        font-size: .7rem;
+    }
+
+    .credibot-input::placeholder {
+        font-size: .67rem;
     }
 
     .credibot-send {
+        flex: 0 0 auto;
 
-        height: 42px;
+        height: 40px;
 
-        padding: 0 15px;
+        padding: 0 13px;
 
-        font-size: .76rem;
+        gap: 5px;
 
+        border-radius: 10px;
+
+        font-size: .69rem;
+    }
+
+    .credibot-send i {
+        font-size: .68rem;
     }
 
     .credibot-response {
+        width: 100%;
 
-        margin-top: 13px;
-
+        margin-top: 11px;
     }
+}
 
 
 
