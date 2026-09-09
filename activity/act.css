@@ -3664,6 +3664,38 @@ body {
         font-size: .84rem;
     }
 
+    /* ==========================================================
+   HIDE HAMBURGER WHEN NAVIGATION IS OPEN
+========================================================== */
+
+body:has(.floating-nav.active) .floating-menu-btn {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: scale(.85);
+
+}
+
+
+/* ==========================================================
+   HAMBURGER TRANSITION
+========================================================== */
+
+.floating-menu-btn {
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease,
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
+
 }
 
 
@@ -4060,6 +4092,38 @@ body {
         width: 20px;
         font-size: 14px;
     }
+
+    /* ==========================================================
+   HIDE HAMBURGER WHEN NAVIGATION IS OPEN
+========================================================== */
+
+body:has(.floating-nav.active) .floating-menu-btn {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: scale(.85);
+
+}
+
+
+/* ==========================================================
+   HAMBURGER TRANSITION
+========================================================== */
+
+.floating-menu-btn {
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease,
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
 
 }
 
