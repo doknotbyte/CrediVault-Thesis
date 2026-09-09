@@ -3072,6 +3072,323 @@ body {
 }
 
 
+/* ==========================================================
+   MOBILE SPACING
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .result-screen {
+
+        padding: 35px 18px 50px;
+
+    }
+
+
+    .result-card {
+
+        padding: 42px 22px 30px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .result-card h1 {
+
+        font-size: 2rem;
+
+    }
+
+
+    .result-actions {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+}
+
+/* ==========================================================
+   FLOATING MAIN NAVIGATION
+   Activities Page
+========================================================== */
+
+/* HAMBURGER BUTTON */
+
+.floating-menu-btn {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 14px;
+
+    background: rgba(8, 17, 31, .92);
+    color: #ffffff;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    z-index: 9998;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+.floating-menu-btn:hover {
+    transform: translateY(-2px);
+
+    background: #2563eb;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+.nav-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .55);
+
+    backdrop-filter: blur(3px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 9999;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ==========================================================
+   SIDE NAVIGATION
+========================================================== */
+
+.floating-nav {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 285px;
+    height: 100vh;
+
+    padding: 25px 18px;
+
+    background: #08111f;
+
+    border-right: 1px solid rgba(255, 255, 255, .08);
+
+    box-shadow: 15px 0 40px rgba(0, 0, 0, .35);
+
+    transform: translateX(-105%);
+
+    z-index: 10000;
+
+    transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+
+    overflow-y: auto;
+}
+
+.floating-nav.active {
+    transform: translateX(0);
+}
+
+
+/* ==========================================================
+   NAV HEADER
+========================================================== */
+
+.floating-nav-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px 5px 25px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+
+    margin-bottom: 20px;
+}
+
+.floating-nav-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+}
+
+.floating-nav-title i {
+    color: #3bddff;
+
+    font-size: 18px;
+}
+
+
+/* CLOSE BUTTON */
+
+.floating-nav-close {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, .06);
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
+}
+
+.floating-nav-close:hover {
+    background: rgba(255, 255, 255, .12);
+
+    transform: rotate(90deg);
+}
+
+
+/* ==========================================================
+   NAV LINKS
+========================================================== */
+
+.floating-nav-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.floating-nav-item {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border-radius: 12px;
+
+    color: rgba(255, 255, 255, .72);
+
+    text-decoration: none;
+
+    font-size: .88rem;
+
+    font-weight: 600;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+}
+
+.floating-nav-item i {
+    width: 22px;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    color: #3bddff;
+
+    transition: color .25s ease;
+}
+
+.floating-nav-item:hover {
+    background: rgba(59, 221, 255, .08);
+
+    color: #ffffff;
+
+    transform: translateX(4px);
+}
+
+
+/* ACTIVE PAGE */
+
+.floating-nav-item.active {
+    background: rgba(59, 221, 255, .12);
+
+    color: #ffffff;
+}
+
+.floating-nav-item.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 50%;
+
+    width: 3px;
+
+    height: 24px;
+
+    border-radius: 0 5px 5px 0;
+
+    background: #3bddff;
+
+    transform: translateY(-50%);
+}
+
+.floating-nav-item.active i {
+    color: #3bddff;
+
+}
+
 
 
 
@@ -3664,37 +3981,6 @@ body {
         font-size: .84rem;
     }
 
-    /* ==========================================================
-   HIDE HAMBURGER WHEN NAVIGATION IS OPEN
-========================================================== */
-
-body:has(.floating-nav.active) .floating-menu-btn {
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transform: scale(.85);
-
-}
-
-
-/* ==========================================================
-   HAMBURGER TRANSITION
-========================================================== */
-
-.floating-menu-btn {
-
-    transition:
-        opacity .25s ease,
-        visibility .25s ease,
-        transform .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
-
-}
 
 }
 
@@ -3868,13 +4154,21 @@ body:has(.floating-nav.active) .floating-menu-btn {
 
     .question-image {
     width: 100%;
-    height: 350px;
+    min-height: 0;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
 }
 
 .question-image img {
     width: 100%;
-    height: 350px;
+    height: 400px;
     max-width: 100%;
+    display: block;
+    margin: 0 auto;
     object-fit: contain;
     object-position: center center;
 }
@@ -4092,38 +4386,6 @@ body:has(.floating-nav.active) .floating-menu-btn {
         width: 20px;
         font-size: 14px;
     }
-
-    /* ==========================================================
-   HIDE HAMBURGER WHEN NAVIGATION IS OPEN
-========================================================== */
-
-body:has(.floating-nav.active) .floating-menu-btn {
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transform: scale(.85);
-
-}
-
-
-/* ==========================================================
-   HAMBURGER TRANSITION
-========================================================== */
-
-.floating-menu-btn {
-
-    transition:
-        opacity .25s ease,
-        visibility .25s ease,
-        transform .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
-
-}
 
 }
 
