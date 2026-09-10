@@ -8334,10 +8334,10 @@ body {
     ====================================================== */
 
     .read-learn-video-grid {
-        width: 100%;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 9px;
-        row-gap: 13px;
+    width: 100%;
+    grid-template-columns: 1fr;
+    column-gap: 9px;
+    row-gap: 13px;
     }
 
     .read-learn-video-card {
