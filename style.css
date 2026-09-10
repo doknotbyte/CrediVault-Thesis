@@ -8335,8 +8335,8 @@ body {
 
     .read-learn-video-grid {
     width: 100%;
-    grid-template-columns: 1fr;
-    column-gap: 9px;
+    grid-template-columns: 1fr !important;
+    column-gap: 0;
     row-gap: 13px;
     }
 
