@@ -3792,54 +3792,53 @@ body {
     ------------------------------------------------------ */
 
     .question-image img.image-digital {
-        width: auto;
-        height: 194px;
-        max-width: 96%;
-        max-height: 194px;
-    }
+    width: auto;
+    height: 250px;
+    max-width: 96%;
+    max-height: 250px;
+}
 
-    .question-image img.image-ai-text {
-        width: auto;
-        height: 200px;
-        max-width: 98%;
-        max-height: 200px;
-    }
+.question-image img.image-ai-text {
+    width: auto;
+    height: 255px;
+    max-width: 98%;
+    max-height: 255px;
+}
 
-    .question-image img.image-clickbait {
-        width: auto;
-        height: 194px;
-        max-width: 96%;
-        max-height: 194px;
-    }
+.question-image img.image-clickbait {
+    width: auto;
+    height: 250px;
+    max-width: 96%;
+    max-height: 250px;
+}
 
-    .question-image img.image-popularity1 {
-        width: auto;
-        height: 194px;
-        max-width: 96%;
-        max-height: 194px;
-    }
+.question-image img.image-popularity1 {
+    width: auto;
+    height: 250px;
+    max-width: 96%;
+    max-height: 250px;
+}
 
-    .question-image img.image-popularity2 {
-        width: auto;
-        height: 188px;
-        max-width: 94%;
-        max-height: 188px;
-    }
+.question-image img.image-popularity2 {
+    width: auto;
+    height: 245px;
+    max-width: 94%;
+    max-height: 245px;
+}
 
-    .question-image img.image-source {
-        width: auto;
-        height: 190px;
-        max-width: 96%;
-        max-height: 190px;
-    }
+.question-image img.image-source {
+    width: auto;
+    height: 310px;
+    max-width: 94%;
+    max-height: 310px;
+}
 
-    .question-image img.image-social {
-        width: auto;
-        height: 188px;
-        max-width: 94%;
-        max-height: 188px;
-    }
-
+.question-image img.image-social {
+    width: auto;
+    height: 250px;
+    max-width: 96%;
+    max-height: 250px;
+}
 
     /* ======================================================
        QUESTION CONTENT
