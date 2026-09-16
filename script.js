@@ -967,19 +967,6 @@ if (pageLoader) {
         );
 
 
-    /*
-     * LOADER WILL SHOW:
-     *
-     * 1. First opening of the website
-     * 2. Manual page refresh
-     *
-     * LOADER WILL NOT SHOW:
-     *
-     * 1. Moving from one navigation page to another
-     * 2. Returning to Home from another page
-     * 3. Browser back / forward navigation
-     */
-
     const shouldShowLoader =
         !loaderAlreadyShown ||
         navigationType === "reload";
@@ -991,7 +978,8 @@ if (pageLoader) {
 
     if (!shouldShowLoader) {
 
-        pageLoader.style.display = "none";
+        pageLoader.style.display =
+            "none";
 
     }
 
@@ -1002,31 +990,23 @@ if (pageLoader) {
 
     else {
 
-        /*
-         * Save loader state immediately.
-         *
-         * This prevents the loader from appearing
-         * again when navigating between pages.
-         */
-
         sessionStorage.setItem(
             "crediVaultLoaderShown",
             "true"
         );
 
 
-        /*==================================================
-            INITIAL STATE
-        ==================================================*/
-
         let progress = 0;
+
+        const circumference = 282.74;
 
 
         pageLoader.classList.remove(
             "loader-hidden"
         );
 
-        pageLoader.style.display = "flex";
+        pageLoader.style.display =
+            "flex";
 
 
         if (loaderPercentage) {
@@ -1035,13 +1015,6 @@ if (pageLoader) {
                 "0%";
 
         }
-
-
-        /*==================================================
-            SVG CIRCLE
-        ==================================================*/
-
-        const circumference = 282.74;
 
 
         if (loaderRing) {
@@ -1056,46 +1029,26 @@ if (pageLoader) {
 
 
         /*==================================================
-            LOADING COUNTER
+            FASTER AND CONSISTENT LOADER
         ==================================================*/
 
         const loadingInterval =
             setInterval(() => {
 
-
-                /*------------------------------------------
-                    PROGRESS SPEED
-                ------------------------------------------*/
-
-                if (progress < 70) {
-
-                    progress += 2;
-
-                }
-
-                else if (progress < 90) {
-
-                    progress += 1;
-
-                }
-
-                else if (progress < 100) {
-
-                    progress += 1;
-
-                }
+                progress += 4;
 
 
-                if (progress > 100) {
+
+                if (progress >= 100) {
 
                     progress = 100;
 
+                    clearInterval(
+                        loadingInterval
+                    );
+
                 }
 
-
-                /*------------------------------------------
-                    UPDATE PERCENTAGE
-                ------------------------------------------*/
 
                 if (loaderPercentage) {
 
@@ -1104,10 +1057,6 @@ if (pageLoader) {
 
                 }
 
-
-                /*------------------------------------------
-                    UPDATE RING
-                ------------------------------------------*/
 
                 if (loaderRing) {
 
@@ -1122,20 +1071,7 @@ if (pageLoader) {
                 }
 
 
-                /*==================================================
-                    LOADING COMPLETE
-                ==================================================*/
-
                 if (progress >= 100) {
-
-                    clearInterval(
-                        loadingInterval
-                    );
-
-
-                    /*
-                     * Keep 100% visible briefly
-                     */
 
                     setTimeout(() => {
 
@@ -1144,28 +1080,24 @@ if (pageLoader) {
                         );
 
 
-                        /*
-                         * Completely remove loader
-                         * after fade-out animation.
-                         */
-
                         setTimeout(() => {
 
                             pageLoader.style.display =
                                 "none";
 
-                        }, 400);
+                        }, 250);
 
 
-                    }, 200);
+                    }, 100);
 
                 }
 
 
-            }, 30);
-            
+            }, 45);
 
     }
+
+
 /*==================================================
     CREDIBOT
     PRE-PROGRAMMED DIGITAL LITERACY ASSISTANT
