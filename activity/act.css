@@ -4558,27 +4558,63 @@ body:has(.floating-nav.active) .floating-menu-btn {
 
 
     /* -----------------------------------------------
-       IMAGE — FULL WIDTH, ONE ROW
+       IMAGE — FULL WIDTH
+       REMOVE LANDSCAPE BOX
        ----------------------------------------------- */
 
     .question-image {
-    width: 100%;
-    min-height: 0;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-}
+        width: 100% !important;
+        min-height: 0 !important;
+        height: auto !important;
 
-.question-image img {
-    width: 100%;
-    height: auto;
-    max-height: 360px;
-    display: block;
-    object-fit: contain;
-    object-position: center;
-}
+        display: block !important;
+
+        align-items: unset;
+        justify-content: unset;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        overflow: hidden;
+
+        background: #081625;
+    }
+
+
+    /* -----------------------------------------------
+       IMAGE — MAKE IT LARGE
+       ----------------------------------------------- */
+
+    .question-image img {
+        width: 100% !important;
+        height: auto !important;
+
+        max-width: 100% !important;
+        max-height: none !important;
+
+        display: block;
+
+        object-fit: contain;
+        object-position: center;
+    }
+
+
+    /* -----------------------------------------------
+       OVERRIDE INDIVIDUAL IMAGE SIZES
+       ----------------------------------------------- */
+
+    .question-image img.image-digital,
+    .question-image img.image-ai-text,
+    .question-image img.image-clickbait,
+    .question-image img.image-popularity1,
+    .question-image img.image-popularity2,
+    .question-image img.image-source,
+    .question-image img.image-social {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        max-height: none !important;
+    }
 
 
     /* -----------------------------------------------
@@ -4586,7 +4622,7 @@ body:has(.floating-nav.active) .floating-menu-btn {
        ----------------------------------------------- */
 
     .question-content {
-        width: 100%;
+        width: 100% !important;
         box-sizing: border-box;
         padding: 24px 20px;
     }
@@ -4602,7 +4638,7 @@ body:has(.floating-nav.active) .floating-menu-btn {
 
     .question-card:has(.question-image[style*="display: none"])
     .question-content {
-        width: 100%;
+        width: 100% !important;
     }
 
 }
