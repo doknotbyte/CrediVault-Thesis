@@ -3749,116 +3749,123 @@ body {
 
 
     /* ------------------------------------------------------
-       QUESTION CARD
-    ------------------------------------------------------ */
+   QUESTION CARD
+------------------------------------------------------ */
 
-    .question-card {
-        border-radius: 18px;
-    }
+.question-card {
+    border-radius: 18px;
+}
 
 
-    /* ======================================================
-       IMAGE QUESTIONS
-       
-       IMPORTANT:
-       Image stays compact on top.
-       Choices/question content stay below.
-    ====================================================== */
+/* ======================================================
+   IMAGE QUESTIONS
+   TALLER IMAGE CONTAINER + LARGER ACTUAL IMAGES
+====================================================== */
 
-    .question-image {
+.question-image {
     width: 100%;
     min-height: 0;
-    height: 400px;
+    height: 500px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding: 0;
     overflow: hidden;
 }
 
 .question-image img {
     width: 100%;
-    height: 400px;
+    height: 550px;
+
     max-width: 100%;
+    max-height: 100%;
+
     display: block;
     margin: 0 auto;
+
     object-fit: contain;
     object-position: center center;
 }
 
 
-    /* ------------------------------------------------------
-       INDIVIDUAL MOBILE IMAGE SIZES
-    ------------------------------------------------------ */
+/* ------------------------------------------------------
+   INDIVIDUAL MOBILE IMAGE SIZES
+   Larger so the images fill more of the
+   taller image container.
+------------------------------------------------------ */
 
-    .question-image img.image-digital {
+.question-image img.image-digital {
     width: auto;
-    height: 250px;
+    height: 370px;
     max-width: 96%;
-    max-height: 250px;
+    max-height: 370px;
 }
 
 .question-image img.image-ai-text {
     width: auto;
-    height: 255px;
+    height: 380px;
     max-width: 98%;
-    max-height: 255px;
+    max-height: 380px;
 }
 
 .question-image img.image-clickbait {
     width: auto;
-    height: 250px;
+    height: 370px;
     max-width: 96%;
-    max-height: 250px;
+    max-height: 370px;
 }
 
 .question-image img.image-popularity1 {
     width: auto;
-    height: 250px;
+    height: 370px;
     max-width: 96%;
-    max-height: 250px;
+    max-height: 370px;
 }
 
 .question-image img.image-popularity2 {
     width: auto;
-    height: 245px;
+    height: 360px;
     max-width: 94%;
-    max-height: 245px;
+    max-height: 360px;
 }
 
 .question-image img.image-source {
     width: auto;
-    height: 310px;
+    height: 430px;
     max-width: 94%;
-    max-height: 310px;
+    max-height: 430px;
 }
 
 .question-image img.image-social {
     width: auto;
-    height: 250px;
+    height: 370px;
     max-width: 96%;
-    max-height: 250px;
+    max-height: 370px;
 }
 
-    /* ======================================================
-       QUESTION CONTENT
-    ====================================================== */
 
-    .question-content {
-        padding: 22px 18px 23px;
-    }
+/* ======================================================
+   QUESTION CONTENT
+====================================================== */
 
-    .question-text,
-    .question-content h2 {
-        font-size: 1rem;
-        line-height: 1.4;
-        margin: 5px 0 8px;
-    }
+.question-content {
+    padding: 22px 18px 23px;
+}
 
-    .question-instruction {
-        font-size: .73rem;
-        margin-bottom: 16px;
-    }
+.question-text,
+.question-content h2 {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 5px 0 8px;
+}
+
+.question-instruction {
+    font-size: .73rem;
+    margin-bottom: 16px;
+}
+
 
 
     /* ------------------------------------------------------
@@ -3874,7 +3881,7 @@ body {
         padding: 10px 12px;
         gap: 10px;
         border-radius: 11px;
-        font-size: .73rem;
+        font-size: .53rem;
         line-height: 1.4;
     }
 
