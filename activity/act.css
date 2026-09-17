@@ -4563,58 +4563,55 @@ body:has(.floating-nav.active) .floating-menu-btn {
        ----------------------------------------------- */
 
     .question-image {
-        width: 100% !important;
-        min-height: 0 !important;
-        height: auto !important;
+    width: 100% !important;
+    height: 300px !important;
+    min-height: 300px !important;
 
-        display: block !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 
-        align-items: unset;
-        justify-content: unset;
+    padding: 0 !important;
+    margin: 0 !important;
 
-        padding: 0 !important;
-        margin: 0 !important;
+    overflow: hidden;
 
-        overflow: hidden;
-
-        background: #081625;
-    }
+    background: #081625;
+}
 
 
-    /* -----------------------------------------------
-       IMAGE — MAKE IT LARGE
-       ----------------------------------------------- */
 
-    .question-image img {
-        width: 100% !important;
-        height: auto !important;
 
-        max-width: 100% !important;
-        max-height: none !important;
+.question-image img {
+    width: 100% !important;
+    height: 300px !important;
 
-        display: block;
+    max-width: 100% !important;
+    max-height: 300px !important;
 
-        object-fit: contain;
-        object-position: center;
-    }
+    display: block;
+
+    object-fit: contain;
+    object-position: center;
+}
 
 
     /* -----------------------------------------------
        OVERRIDE INDIVIDUAL IMAGE SIZES
        ----------------------------------------------- */
 
-    .question-image img.image-digital,
-    .question-image img.image-ai-text,
-    .question-image img.image-clickbait,
-    .question-image img.image-popularity1,
-    .question-image img.image-popularity2,
-    .question-image img.image-source,
-    .question-image img.image-social {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
-        max-height: none !important;
-    }
+.question-image img.image-digital,
+.question-image img.image-ai-text,
+.question-image img.image-clickbait,
+.question-image img.image-popularity1,
+.question-image img.image-popularity2,
+.question-image img.image-source,
+.question-image img.image-social {
+    width: 100% !important;
+    height: 300px !important;
+    max-width: 100% !important;
+    max-height: 300px !important;
+}
 
 
     /* -----------------------------------------------
