@@ -986,6 +986,72 @@ body {
 
 }
 
+/* ==========================================================
+   PARTICIPANTS — SEE MORE
+========================================================== */
+
+.participant-item:nth-child(n + 14) {
+    display: none;
+}
+
+
+/* ==========================================================
+   SHOW MORE BUTTON
+========================================================== */
+
+.participants-see-more {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    margin: 0 0 15px;
+    padding: 9px 12px;
+
+    border: 1px solid rgba(59,221,255,.12);
+    border-radius: 9px;
+
+    background: rgba(59,221,255,.045);
+
+    color: #3bddff;
+
+    font-family: inherit;
+    font-size: .72rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.participants-see-more:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,221,255,.10),
+            rgba(37,99,235,.10)
+        );
+
+    border-color: rgba(59,221,255,.28);
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+.participants-see-more i {
+    font-size: .56rem;
+
+    transition:
+        transform .25s ease;
+}
+
+
 
 /* ==========================================================
    PARTICIPANT ITEM

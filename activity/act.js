@@ -725,6 +725,13 @@ async function loadParticipants() {
 
         updateParticipantPanel();
 
+
+        /* ==================================================
+           INITIALIZE SEE MORE AFTER PARTICIPANTS ARE RENDERED
+        ================================================== */
+
+        initializeParticipantsSeeMore();
+
     }
 
     catch (error) {
@@ -1159,6 +1166,14 @@ function addParticipantLocally(name) {
 
     updateParticipantPanel();
 
+
+    /* ==================================================
+       INITIALIZE SEE MORE AFTER LOCAL PARTICIPANT
+       IS RENDERED
+    ================================================== */
+
+    initializeParticipantsSeeMore();
+
 }
 
 
@@ -1503,119 +1518,127 @@ function loadQuestion() {
 
 
     /* ======================================================
-   QUESTION IMAGE
-====================================================== */
+       QUESTION IMAGE
+    ====================================================== */
 
-if (questionImage) {
+    if (questionImage) {
 
-    if (question.image) {
+        if (question.image) {
 
-        questionImage.innerHTML = "";
+            questionImage.innerHTML = "";
 
-        const image =
-            document.createElement("img");
+            const image =
+                document.createElement("img");
 
-        image.src =
-            question.image;
 
-        image.alt =
-            "Activity question image";
+            image.src =
+                question.image;
 
-        /* ==============================================
-           INDIVIDUAL IMAGE CLASS BASED ON FILE NAME
-        ============================================== */
 
-        const imageName =
-            question.image
-                .split("/")
-                .pop()
-                .split(".")[0]
-                .toLowerCase();
+            image.alt =
+                "Activity question image";
 
-        image.classList.add(
-            "activity-image"
-        );
 
-        if (imageName === "digital") {
+            /* ==============================================
+               INDIVIDUAL IMAGE CLASS BASED ON FILE NAME
+            ============================================== */
+
+            const imageName =
+                question.image
+                    .split("/")
+                    .pop()
+                    .split(".")[0]
+                    .toLowerCase();
+
 
             image.classList.add(
-                "image-digital"
+                "activity-image"
             );
+
+
+            if (imageName === "digital") {
+
+                image.classList.add(
+                    "image-digital"
+                );
+
+            }
+
+            else if (imageName === "ai-text") {
+
+                image.classList.add(
+                    "image-ai-text"
+                );
+
+            }
+
+            else if (imageName === "clickbait") {
+
+                image.classList.add(
+                    "image-clickbait"
+                );
+
+            }
+
+            else if (imageName === "popularity1") {
+
+                image.classList.add(
+                    "image-popularity1"
+                );
+
+            }
+
+            else if (imageName === "popularity2") {
+
+                image.classList.add(
+                    "image-popularity2"
+                );
+
+            }
+
+            else if (imageName === "source") {
+
+                image.classList.add(
+                    "image-source"
+                );
+
+            }
+
+            else if (imageName === "social") {
+
+                image.classList.add(
+                    "image-social"
+                );
+
+            }
+
+
+            questionImage.appendChild(
+                image
+            );
+
+
+            questionImage.style.display =
+                "block";
 
         }
 
-        else if (imageName === "ai-text") {
+        else {
 
-            image.classList.add(
-                "image-ai-text"
-            );
+            /* ==============================================
+               NO IMAGE
+               COMPLETELY HIDE THE IMAGE CONTAINER
+            ============================================== */
 
-        }
+            questionImage.innerHTML = "";
 
-        else if (imageName === "clickbait") {
 
-            image.classList.add(
-                "image-clickbait"
-            );
-
-        }
-
-        else if (imageName === "popularity1") {
-
-            image.classList.add(
-                "image-popularity1"
-            );
+            questionImage.style.display =
+                "none";
 
         }
-
-        else if (imageName === "popularity2") {
-
-            image.classList.add(
-                "image-popularity2"
-            );
-
-        }
-
-        else if (imageName === "source") {
-
-            image.classList.add(
-                "image-source"
-            );
-
-        }
-
-        else if (imageName === "social") {
-
-            image.classList.add(
-                "image-social"
-            );
-
-        }
-
-        questionImage.appendChild(
-            image
-        );
-
-        questionImage.style.display =
-            "block";
 
     }
-
-    else {
-
-        /* ==============================================
-           NO IMAGE
-           COMPLETELY HIDE THE IMAGE CONTAINER
-        ============================================== */
-
-        questionImage.innerHTML = "";
-
-        questionImage.style.display =
-            "none";
-
-    }
-
-}
 
 
     /* ======================================================
@@ -2349,17 +2372,336 @@ document.addEventListener(
     "DOMContentLoaded",
     () => {
 
+        loadParticipants();
+
+        initializeActivityEntry();
+
+    }
+);
+
+/* ==========================================================
+   PARTICIPANTS — SEE MORE / SHOW LESS
+========================================================== */
+
+function initializeParticipantsSeeMore() {
+
+    const participantsList =
+        document.getElementById(
+            "participantsList"
+        );
+
+
+    const participantsSeeMore =
+        document.getElementById(
+            "participantsSeeMore"
+        );
+
+
+    /* ======================================================
+       REQUIRED ELEMENTS
+    ====================================================== */
+
+    if (
+        !participantsList ||
+        !participantsSeeMore
+    ) {
+
+        return;
+
+    }
+
+
+    /* ======================================================
+       GET CURRENT PARTICIPANT ITEMS
+       
+       IMPORTANT:
+       The participant list is dynamically rebuilt
+       by updateParticipantPanel(), so we MUST query
+       the elements every time this function runs.
+    ====================================================== */
+
+    const participantItems =
+        participantsList.querySelectorAll(
+            ".participant-item"
+        );
+
+
+    /* ======================================================
+       RESET BUTTON STATE
+    ====================================================== */
+
+    participantsSeeMore.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+
+    const buttonText =
+        participantsSeeMore.querySelector(
+            "span"
+        );
+
+
+    if (buttonText) {
+
+        buttonText.textContent =
+            "See More Participants";
+
+    }
+
+
+    const buttonIcon =
+        participantsSeeMore.querySelector(
+            "i"
+        );
+
+
+    if (buttonIcon) {
+
+        buttonIcon.style.transform =
+            "rotate(0deg)";
+
+    }
+
+
+    /* ======================================================
+       NO NEED FOR SEE MORE IF 13 OR FEWER
+    ====================================================== */
+
+    if (
+        participantItems.length <= 13
+    ) {
+
+        participantsSeeMore.style.display =
+            "none";
+
+
         /*
-           Load existing participant records
-           from Supabase.
+           Make sure every current item is visible.
+           This also handles the case where the list
+           previously had more than 13 participants.
         */
+
+        participantItems.forEach(
+            item => {
+
+                item.style.removeProperty(
+                    "display"
+                );
+
+            }
+        );
+
+
+        return;
+
+    }
+
+
+    /* ======================================================
+       SHOW SEE MORE BUTTON
+    ====================================================== */
+
+    participantsSeeMore.style.display =
+        "flex";
+
+
+    /* ======================================================
+       INITIAL COLLAPSED STATE
+       
+       FIRST 13:
+       VISIBLE
+       
+       14+:
+       HIDDEN
+    ====================================================== */
+
+    participantItems.forEach(
+        (item, index) => {
+
+            if (
+                index >= 13
+            ) {
+
+                item.style.setProperty(
+                    "display",
+                    "none",
+                    "important"
+                );
+
+            }
+
+            else {
+
+                item.style.removeProperty(
+                    "display"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* ======================================================
+       REMOVE OLD CLICK HANDLER
+       
+       Using onclick prevents duplicate event listeners
+       whenever this function is called again after the
+       participant list is rebuilt.
+    ====================================================== */
+
+    participantsSeeMore.onclick =
+        function () {
+
+
+            /* ==============================================
+               GET THE CURRENT PARTICIPANT ITEMS AGAIN
+               
+               DO NOT use the old participantItems variable
+               here because updateParticipantPanel()
+               can replace the list contents.
+            ============================================== */
+
+            const currentItems =
+                participantsList.querySelectorAll(
+                    ".participant-item"
+                );
+
+
+            const isExpanded =
+                participantsSeeMore.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+
+            /* ==============================================
+               EXPAND
+               SHOW ALL PARTICIPANTS
+            ============================================== */
+
+            if (!isExpanded) {
+
+                currentItems.forEach(
+                    item => {
+
+                        item.style.setProperty(
+                            "display",
+                            "flex",
+                            "important"
+                        );
+
+                    }
+                );
+
+
+                participantsSeeMore.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+
+                if (buttonText) {
+
+                    buttonText.textContent =
+                        "Show Less Participants";
+
+                }
+
+
+                if (buttonIcon) {
+
+                    buttonIcon.style.transform =
+                        "rotate(180deg)";
+
+                }
+
+
+                return;
+
+            }
+
+
+            /* ==============================================
+               COLLAPSE
+               SHOW FIRST 13 ONLY
+            ============================================== */
+
+            currentItems.forEach(
+                (item, index) => {
+
+                    if (
+                        index >= 13
+                    ) {
+
+                        item.style.setProperty(
+                            "display",
+                            "none",
+                            "important"
+                        );
+
+                    }
+
+                    else {
+
+                        item.style.removeProperty(
+                            "display"
+                        );
+
+                    }
+
+                }
+            );
+
+
+            participantsSeeMore.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+
+            if (buttonText) {
+
+                buttonText.textContent =
+                    "See More Participants";
+
+            }
+
+
+            if (buttonIcon) {
+
+                buttonIcon.style.transform =
+                    "rotate(0deg)";
+
+            }
+
+        };
+
+}
+
+/* ==========================================================
+   INITIALIZE
+========================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        /* ==================================================
+           LOAD PARTICIPANTS FROM SUPABASE
+           
+           IMPORTANT:
+           loadParticipants() already calls
+           initializeParticipantsSeeMore()
+           after updateParticipantPanel().
+        ================================================== */
 
         loadParticipants();
 
 
-        /*
-           Show name-entry modal.
-        */
+        /* ==================================================
+           INITIALIZE ACTIVITY NAME ENTRY
+        ================================================== */
 
         initializeActivityEntry();
 
