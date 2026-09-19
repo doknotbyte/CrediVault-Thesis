@@ -1006,7 +1006,7 @@ if (pageLoader) {
             navigator.maxTouchPoints > 0;
 
         const totalDuration =
-            isMobile ? 900 : 1200;
+            isMobile ? 750 : 1000;
 
         const startTime =
             performance.now();
@@ -1039,6 +1039,17 @@ if (pageLoader) {
         }
 
 
+        function easeOutCubic(value) {
+
+            return 1 -
+                Math.pow(
+                    1 - value,
+                    3
+                );
+
+        }
+
+
         function updateLoader(
             currentTime
         ) {
@@ -1046,17 +1057,29 @@ if (pageLoader) {
             const elapsed =
                 currentTime - startTime;
 
+            const normalized =
+                Math.min(
+                    elapsed / totalDuration,
+                    1
+                );
+
+            const easedProgress =
+                easeOutCubic(normalized);
+
             progress =
                 Math.min(
                     100,
-                    (elapsed / totalDuration) * 100
+                    easedProgress * 100
                 );
 
 
             if (loaderPercentage) {
 
+                const displayValue =
+                    Math.round(progress);
+
                 loaderPercentage.textContent =
-                    Math.round(progress) + "%";
+                    displayValue + "%";
 
             }
 
@@ -1074,7 +1097,25 @@ if (pageLoader) {
             }
 
 
-            if (progress >= 100) {
+            if (normalized >= 1) {
+
+                progress = 100;
+
+                if (loaderPercentage) {
+
+                    loaderPercentage.textContent =
+                        "100%";
+
+                }
+
+
+                if (loaderRing) {
+
+                    loaderRing.style.strokeDashoffset =
+                        0;
+
+                }
+
 
                 pageLoader.classList.add(
                     "loader-hidden"
@@ -1086,7 +1127,7 @@ if (pageLoader) {
                     pageLoader.style.display =
                         "none";
 
-                }, 180);
+                }, 150);
 
                 return;
 
