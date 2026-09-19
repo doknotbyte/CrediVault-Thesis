@@ -1006,7 +1006,7 @@ if (pageLoader) {
             navigator.maxTouchPoints > 0;
 
         const totalDuration =
-            isMobile ? 750 : 1000;
+            isMobile ? 650 : 900;
 
         const startTime =
             performance.now();
@@ -1039,12 +1039,12 @@ if (pageLoader) {
         }
 
 
-        function easeOutCubic(value) {
+        function easeOutQuart(value) {
 
             return 1 -
                 Math.pow(
                     1 - value,
-                    3
+                    4
                 );
 
         }
@@ -1063,23 +1063,28 @@ if (pageLoader) {
                     1
                 );
 
-            const easedProgress =
-                easeOutCubic(normalized);
+            const targetProgress =
+                easeOutQuart(normalized) * 100;
 
-            progress =
-                Math.min(
-                    100,
-                    easedProgress * 100
-                );
+            const smoothing =
+                isMobile ? 0.12 : 0.16;
+
+            progress +=
+                (targetProgress - progress) *
+                smoothing;
+
+
+            if (Math.abs(targetProgress - progress) < 0.12) {
+
+                progress = targetProgress;
+
+            }
 
 
             if (loaderPercentage) {
 
-                const displayValue =
-                    Math.round(progress);
-
                 loaderPercentage.textContent =
-                    displayValue + "%";
+                    Math.round(progress) + "%";
 
             }
 
@@ -1127,7 +1132,7 @@ if (pageLoader) {
                     pageLoader.style.display =
                         "none";
 
-                }, 150);
+                }, 140);
 
                 return;
 
