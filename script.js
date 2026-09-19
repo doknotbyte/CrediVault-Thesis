@@ -999,6 +999,17 @@ if (pageLoader) {
         let progress = 0;
 
         const circumference = 282.74;
+        const isMobile =
+            window.matchMedia(
+                "(max-width: 768px)"
+            ).matches ||
+            navigator.maxTouchPoints > 0;
+
+        const totalDuration =
+            isMobile ? 900 : 1200;
+
+        const startTime =
+            performance.now();
 
 
         pageLoader.classList.remove(
@@ -1028,72 +1039,70 @@ if (pageLoader) {
         }
 
 
-        /*==================================================
-            FASTER AND CONSISTENT LOADER
-        ==================================================*/
+        function updateLoader(
+            currentTime
+        ) {
 
-        const loadingInterval =
-            setInterval(() => {
+            const elapsed =
+                currentTime - startTime;
 
-                progress += 4;
-
-
-
-                if (progress >= 100) {
-
-                    progress = 100;
-
-                    clearInterval(
-                        loadingInterval
-                    );
-
-                }
+            progress =
+                Math.min(
+                    100,
+                    (elapsed / totalDuration) * 100
+                );
 
 
-                if (loaderPercentage) {
+            if (loaderPercentage) {
 
-                    loaderPercentage.textContent =
-                        progress + "%";
+                loaderPercentage.textContent =
+                    Math.round(progress) + "%";
 
-                }
-
-
-                if (loaderRing) {
-
-                    const offset =
-                        circumference -
-                        (progress / 100) *
-                        circumference;
-
-                    loaderRing.style.strokeDashoffset =
-                        offset;
-
-                }
+            }
 
 
-                if (progress >= 100) {
+            if (loaderRing) {
 
-                    setTimeout(() => {
+                const offset =
+                    circumference -
+                    (progress / 100) *
+                    circumference;
 
-                        pageLoader.classList.add(
-                            "loader-hidden"
-                        );
+                loaderRing.style.strokeDashoffset =
+                    offset;
 
-
-                        setTimeout(() => {
-
-                            pageLoader.style.display =
-                                "none";
-
-                        }, 250);
+            }
 
 
-                    }, 100);
+            if (progress >= 100) {
 
-                }
+                pageLoader.classList.add(
+                    "loader-hidden"
+                );
 
 
-            }, 45);
+                setTimeout(() => {
+
+                    pageLoader.style.display =
+                        "none";
+
+                }, 180);
+
+                return;
+
+            }
+
+
+            requestAnimationFrame(
+                updateLoader
+            );
+
+        }
+
+
+        requestAnimationFrame(
+            updateLoader
+        );
 
     }
 
