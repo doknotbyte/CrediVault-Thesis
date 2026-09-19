@@ -5527,6 +5527,34 @@ html {
 
 }
 
+/* ==========================================================
+   QUESTION LIST — DESKTOP HORIZONTAL SCROLL
+   ========================================================== */
+
+    .question-list {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    /* Chrome / Edge / Safari */
+    .question-list::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .question-list::-webkit-scrollbar-track {
+        background: rgba(255,255,255,.05);
+        border-radius: 10px;
+    }
+
+    .question-list::-webkit-scrollbar-thumb {
+        background: rgba(146, 235, 221, 0.886);
+        border-radius: 10px;
+    }
+
+    .question-list::-webkit-scrollbar-thumb:hover {
+        background: rgba(94,234,212,.60);
+    }
+
 
 /* ==========================================================
    QUESTION HOVER
