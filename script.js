@@ -1006,7 +1006,7 @@ if (pageLoader) {
             navigator.maxTouchPoints > 0;
 
         const totalDuration =
-            isMobile ? 650 : 900;
+            isMobile ? 850 : 1200;
 
         const startTime =
             performance.now();
@@ -1067,14 +1067,14 @@ if (pageLoader) {
                 easeOutQuart(normalized) * 100;
 
             const smoothing =
-                isMobile ? 0.12 : 0.16;
+                isMobile ? 0.105 : 0.14;
 
             progress +=
                 (targetProgress - progress) *
                 smoothing;
 
 
-            if (Math.abs(targetProgress - progress) < 0.12) {
+            if (Math.abs(targetProgress - progress) < 0.1) {
 
                 progress = targetProgress;
 
@@ -1132,7 +1132,7 @@ if (pageLoader) {
                     pageLoader.style.display =
                         "none";
 
-                }, 140);
+                }, 220);
 
                 return;
 
