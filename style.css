@@ -6626,6 +6626,969 @@ html {
     opacity:.8;
 }
 
+/* ==========================================================
+   LEARNING DESIGN — THEORIES USED
+========================================================== */
+
+.learning-design-section {
+
+    position: relative;
+    width: 100%;
+
+    padding: 78px 30px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(37,99,235,.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(6,182,212,.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #091523 0%,
+            #08111f 100%
+        );
+
+    border-top: 1px solid rgba(255,255,255,.06);
+}
+
+
+/* ==========================================================
+   BACKGROUND GRID
+========================================================== */
+
+.learning-design-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.014) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.010) 1px,
+            transparent 1px
+        );
+
+    background-size: 65px 65px;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.learning-design-container {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.learning-design-header {
+
+    max-width: 780px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+
+.learning-design-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    color: #06b6d4;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: .16em;
+}
+
+
+.learning-design-eyebrow i {
+
+    font-size: 13px;
+}
+
+
+.learning-design-header h2 {
+
+    margin: 0 0 16px;
+
+    color: #fff;
+
+    font-size: clamp(30px, 4vw, 44px);
+
+    line-height: 1.1;
+
+    letter-spacing: -.035em;
+}
+
+
+.learning-design-header h2 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #3b82f6,
+            #06b6d4
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.learning-design-header p {
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    color: #94a3b8;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.learning-design-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.learning-design-card {
+
+    position: relative;
+
+    min-width: 0;
+
+    padding: 25px 23px 20px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,23,42,.96),
+            rgba(8,17,31,.94)
+        );
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.20);
+
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.learning-design-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #2563eb,
+            #06b6d4,
+            transparent
+        );
+}
+
+
+.learning-design-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(6,182,212,.28);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.30),
+        0 0 30px rgba(37,99,235,.07);
+}
+
+
+/* ==========================================================
+   CARD TOP
+========================================================== */
+
+.learning-design-card-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 23px;
+}
+
+
+.learning-design-number {
+
+    color: rgba(148,163,184,.65);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: .12em;
+}
+
+
+.learning-design-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 13px;
+
+    color: #67e8f9;
+
+    background:
+        rgba(6,182,212,.08);
+
+    border:
+        1px solid rgba(6,182,212,.16);
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+
+.learning-design-card:hover
+.learning-design-icon {
+
+    transform:
+        translateY(-2px)
+        scale(1.08);
+
+    background:
+        rgba(6,182,212,.14);
+}
+
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+.learning-design-label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #3b82f6;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: .12em;
+}
+
+
+.learning-design-card h3 {
+
+    margin: 0 0 7px;
+
+    color: #f8fafc;
+
+    font-size: 21px;
+
+    line-height: 1.2;
+}
+
+
+.learning-design-card h4 {
+
+    margin: 0;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* ==========================================================
+   VISUAL AREA
+========================================================== */
+
+.learning-design-visual {
+
+    min-height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 22px 0 17px;
+
+    padding: 13px 10px;
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+
+/* ==========================================================
+   ADDIE VISUAL
+========================================================== */
+
+.addie-visual {
+
+    gap: 5px;
+
+    justify-content: space-between;
+}
+
+
+.addie-step {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.addie-step span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 8px;
+
+    color: #94a3b8;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+.addie-step small {
+
+    color: #64748b;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.addie-step.active span {
+
+    color: #67e8f9;
+
+    background:
+        rgba(6,182,212,.12);
+
+    border-color:
+        rgba(6,182,212,.22);
+
+    box-shadow:
+        0 0 15px rgba(6,182,212,.10);
+}
+
+
+.addie-visual > i {
+
+    color: #334155;
+
+    font-size: 7px;
+}
+
+
+/* ==========================================================
+   INOCULATION VISUAL
+========================================================== */
+
+.inoculation-visual {
+
+    gap: 7px;
+}
+
+
+.inoculation-node {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
+
+    flex: 1;
+
+    color: #94a3b8;
+
+    text-align: center;
+
+    font-size: 8px;
+
+    font-weight: 700;
+}
+
+
+.inoculation-node i {
+
+    color: #67e8f9;
+
+    font-size: 16px;
+}
+
+
+.inoculation-visual > i {
+
+    color: #334155;
+
+    font-size: 8px;
+}
+
+
+/* ==========================================================
+   TAGS
+========================================================== */
+
+.learning-design-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin: 0 0 17px;
+}
+
+
+.learning-design-tags span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 6px 8px;
+
+    border-radius: 7px;
+
+    color: #cbd5e1;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    font-size: 8px;
+
+    font-weight: 700;
+}
+
+
+.learning-design-tags i {
+
+    color: #06b6d4;
+
+    font-size: 9px;
+}
+
+
+/* ==========================================================
+   MULTIMEDIA VISUAL
+========================================================== */
+
+.multimedia-visual {
+
+    gap: 8px;
+
+    justify-content: space-around;
+}
+
+
+.multimedia-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #94a3b8;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+.multimedia-item i {
+
+    color: #67e8f9;
+
+    font-size: 15px;
+}
+
+
+.multimedia-operator {
+
+    color: #475569;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   INTERACTIVE DETAILS
+========================================================== */
+
+.learning-design-details {
+
+    margin-top: 3px;
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.06);
+}
+
+
+.learning-design-details summary {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 13px 0;
+
+    color: #38bdf8;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .04em;
+
+    user-select: none;
+}
+
+
+.learning-design-details summary::-webkit-details-marker {
+
+    display: none;
+}
+
+
+.learning-design-details summary span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.learning-design-details summary i:first-child {
+
+    color: #06b6d4;
+}
+
+
+.details-icon {
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    transition:
+        transform .25s ease;
+}
+
+
+.learning-design-details[open]
+.details-icon {
+
+    transform: rotate(45deg);
+
+    color: #06b6d4;
+}
+
+
+.learning-design-details p {
+
+    margin: 0 0 15px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+
+    animation:
+        learningDetails .25s ease;
+}
+
+
+@keyframes learningDetails {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-4px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.learning-design-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 15px;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+.learning-design-status i {
+
+    color: #22c55e;
+
+    font-size: 9px;
+}
+
+
+/* ==========================================================
+   CLOSING LINE
+========================================================== */
+
+.learning-design-closing {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    max-width: 760px;
+
+    margin: 35px auto 0;
+
+    padding: 16px 20px;
+
+    border:
+        1px solid rgba(6,182,212,.10);
+
+    border-radius: 12px;
+
+    background:
+        rgba(6,182,212,.025);
+
+    text-align: center;
+}
+
+
+.learning-design-closing i {
+
+    flex-shrink: 0;
+
+    color: #06b6d4;
+
+    font-size: 13px;
+}
+
+
+.learning-design-closing p {
+
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .learning-design-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+    .learning-design-card:last-child {
+
+        grid-column: 1 / -1;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 640px) {
+
+    .learning-design-section {
+
+        padding: 58px 18px;
+
+    }
+
+
+    .learning-design-header {
+
+        margin-bottom: 32px;
+
+    }
+
+
+    .learning-design-header h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .learning-design-header p {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .learning-design-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+    }
+
+
+    .learning-design-card:last-child {
+
+        grid-column: auto;
+
+    }
+
+
+    .learning-design-card {
+
+        padding: 22px 19px 19px;
+
+    }
+
+
+    .learning-design-card h3 {
+
+        font-size: 20px;
+
+    }
+
+
+    .learning-design-card p {
+
+        font-size: 12px;
+
+    }
+
+
+    .addie-visual {
+
+        gap: 3px;
+
+    }
+
+
+    .addie-step span {
+
+        width: 25px;
+
+        height: 25px;
+
+    }
+
+
+    .addie-step small {
+
+        font-size: 6px;
+
+    }
+
+
+    .learning-design-closing {
+
+        align-items: flex-start;
+
+        text-align: left;
+
+    }
+
+}
 
 /* ==========================================================
    FOOTER
